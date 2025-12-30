@@ -111,18 +111,6 @@ const SidebarIndex = ({ chapters, activeChapterSlug, isOpen, onClose }: SidebarI
           isOpen ? "translate-x-0" : "-translate-x-full"
         )}
       >
-        {/* Download buttons */}
-        <div className="p-4 border-b border-sidebar-border flex gap-2">
-          <a href="#" className="btn-download btn-download-primary flex-1 justify-center text-xs">
-            <FileText className="w-3.5 h-3.5" />
-            PDF
-          </a>
-          <a href="#" className="btn-download btn-download-outline flex-1 justify-center text-xs">
-            <BookOpen className="w-3.5 h-3.5" />
-            EPUB
-          </a>
-        </div>
-
         {/* Chapters List */}
         <nav className="flex-1 overflow-y-auto p-4">
           <ul className="space-y-1">
