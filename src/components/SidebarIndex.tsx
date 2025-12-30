@@ -1,0 +1,206 @@
+import { useState, useEffect, useCallback } from "react";
+import { Menu, X, FileText, BookOpen, ChevronDown, ChevronRight } from "lucide-react";
+import { cn } from "@/lib/utils";
+
+export interface ChapterItem {
+  id: string;
+  title: string;
+  number?: string;
+  children?: ChapterItem[];
+}
+
+interface SidebarIndexProps {
+  chapters: ChapterItem[];
+  activeSection?: string;
+  onNavigate?: (id: string) => void;
+}
+
+const SidebarIndex = ({ chapters, activeSection, onNavigate }: SidebarIndexProps) => {
+  const [isOpen, setIsOpen] = useState(false);
+  const [expandedGroups, setExpandedGroups] = useState<Set<string>>(new Set());
+  const [currentActiveSection, setCurrentActiveSection] = useState(activeSection || "");
+
+  // Handle scroll spy
+  useEffect(() => {
+    const handleScroll = () => {
+      const sections = chapters.flatMap(ch => 
+        ch.children ? [ch, ...ch.children] : [ch]
+      );
+      
+      let currentSection = "";
+      
+      for (const section of sections) {
+        const element = document.getElementById(section.id);
+        if (element) {
+          const rect = element.getBoundingClientRect();
+          if (rect.top <= 150) {
+            currentSection = section.id;
+          }
+        }
+      }
+      
+      if (currentSection && currentSection !== currentActiveSection) {
+        setCurrentActiveSection(currentSection);
+      }
+    };
+
+    window.addEventListener("scroll", handleScroll, { passive: true });
+    handleScroll();
+    
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, [chapters, currentActiveSection]);
+
+  const handleNavigate = useCallback((id: string) => {
+    const element = document.getElementById(id);
+    if (element) {
+      element.scrollIntoView({ behavior: "smooth" });
+    }
+    onNavigate?.(id);
+    setIsOpen(false);
+  }, [onNavigate]);
+
+  const toggleGroup = (id: string) => {
+    setExpandedGroups(prev => {
+      const next = new Set(prev);
+      if (next.has(id)) {
+        next.delete(id);
+      } else {
+        next.add(id);
+      }
+      return next;
+    });
+  };
+
+  const renderChapter = (chapter: ChapterItem, depth = 0) => {
+    const isActive = currentActiveSection === chapter.id;
+    const hasChildren = chapter.children && chapter.children.length > 0;
+    const isExpanded = expandedGroups.has(chapter.id);
+    const hasActiveChild = chapter.children?.some(c => c.id === currentActiveSection);
+
+    return (
+      <li key={chapter.id} className="relative">
+        <div className="flex items-center">
+          {hasChildren && (
+            <button
+              onClick={() => toggleGroup(chapter.id)}
+              className="p-1 mr-1 text-muted-foreground hover:text-gold transition-colors"
+            >
+              {isExpanded || hasActiveChild ? (
+                <ChevronDown className="w-4 h-4" />
+              ) : (
+                <ChevronRight className="w-4 h-4" />
+              )}
+            </button>
+          )}
+          
+          <button
+            onClick={() => handleNavigate(chapter.id)}
+            className={cn(
+              "sidebar-active-indicator flex-1 text-left py-2.5 px-3 rounded-sm transition-all duration-200 font-sans text-sm",
+              "hover:bg-sidebar-accent hover:text-gold",
+              depth === 0 ? "font-medium" : "font-normal",
+              !hasChildren && "ml-6",
+              isActive && "active text-gold bg-sidebar-accent",
+              hasActiveChild && "text-gold/80"
+            )}
+          >
+            <span className="flex items-baseline gap-2">
+              {chapter.number && (
+                <span className="text-gold-muted text-xs font-sans tracking-wider">
+                  {chapter.number}
+                </span>
+              )}
+              <span className={cn(
+                depth > 0 && "text-sidebar-foreground/80",
+                isActive && "text-gold"
+              )}>
+                {chapter.title}
+              </span>
+            </span>
+          </button>
+        </div>
+        
+        {hasChildren && (isExpanded || hasActiveChild) && (
+          <ul className="ml-4 mt-1 space-y-0.5 border-l border-sidebar-border pl-2">
+            {chapter.children?.map(child => renderChapter(child, depth + 1))}
+          </ul>
+        )}
+      </li>
+    );
+  };
+
+  return (
+    <>
+      {/* Mobile Toggle Button */}
+      <button
+        onClick={() => setIsOpen(!isOpen)}
+        className="lg:hidden fixed top-4 left-4 z-50 flex items-center gap-2 px-4 py-2 bg-sidebar/95 backdrop-blur-sm border border-sidebar-border rounded text-foreground hover:text-gold transition-colors"
+      >
+        {isOpen ? <X className="w-5 h-5" /> : <Menu className="w-5 h-5" />}
+        <span className="text-sm uppercase tracking-wider font-sans">Índice</span>
+      </button>
+
+      {/* Overlay for mobile */}
+      {isOpen && (
+        <div 
+          className="lg:hidden fixed inset-0 bg-background/80 backdrop-blur-sm z-40"
+          onClick={() => setIsOpen(false)}
+        />
+      )}
+
+      {/* Sidebar */}
+      <aside
+        className={cn(
+          "fixed left-0 top-0 h-screen z-40 bg-sidebar border-r border-sidebar-border",
+          "w-[320px] flex flex-col",
+          "transition-transform duration-300 ease-in-out",
+          "lg:translate-x-0",
+          isOpen ? "translate-x-0" : "-translate-x-full"
+        )}
+      >
+        {/* Header */}
+        <div className="p-6 border-b border-sidebar-border">
+          <h2 className="font-serif text-xl text-foreground mb-1">Índice</h2>
+          <p className="text-xs text-muted-foreground uppercase tracking-wider">
+            Contenido del libro
+          </p>
+        </div>
+
+        {/* Download buttons */}
+        <div className="p-4 border-b border-sidebar-border flex gap-2">
+          <a href="#" className="btn-download btn-download-primary flex-1 justify-center text-xs">
+            <FileText className="w-3.5 h-3.5" />
+            PDF
+          </a>
+          <a href="#" className="btn-download btn-download-outline flex-1 justify-center text-xs">
+            <BookOpen className="w-3.5 h-3.5" />
+            EPUB
+          </a>
+        </div>
+
+        {/* Chapters List */}
+        <nav className="flex-1 overflow-y-auto p-4">
+          <ul className="space-y-1">
+            {chapters.map(chapter => renderChapter(chapter))}
+          </ul>
+        </nav>
+
+        {/* Footer links */}
+        <div className="p-4 border-t border-sidebar-border">
+          <div className="flex gap-2">
+            <a href="#" className="btn-download btn-download-outline flex-1 justify-center text-xs">
+              <FileText className="w-3.5 h-3.5" />
+              PDF
+            </a>
+            <a href="#" className="btn-download btn-download-outline flex-1 justify-center text-xs">
+              <BookOpen className="w-3.5 h-3.5" />
+              EPUB
+            </a>
+          </div>
+        </div>
+      </aside>
+    </>
+  );
+};
+
+export default SidebarIndex;
