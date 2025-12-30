@@ -1,5 +1,5 @@
 import { useParams, Navigate } from "react-router-dom";
-import { useState, useMemo } from "react";
+import { useState, useMemo, useEffect } from "react";
 import SidebarIndex, { ChapterItem } from "@/components/SidebarIndex";
 import Header from "@/components/Header";
 import ChapterSection from "@/components/ChapterSection";
@@ -365,6 +365,11 @@ const Chapter = () => {
   
   // Get all chapters in flat order for navigation
   const allChapters = useMemo(() => getAllChapters(), []);
+  
+  // Scroll to top when chapter changes
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, [slug]);
   
   if (!slug) {
     return <Navigate to="/" replace />;
