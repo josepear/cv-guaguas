@@ -4,6 +4,7 @@ import SidebarIndex, { ChapterItem } from "@/components/SidebarIndex";
 import Header from "@/components/Header";
 import ChapterSection from "@/components/ChapterSection";
 import ChapterNavigation from "@/components/ChapterNavigation";
+import ReadingProgressBar from "@/components/ReadingProgressBar";
 import EditorialQuote from "@/components/EditorialQuote";
 import ContentImage from "@/components/ContentImage";
 import InstitutionalFooter from "@/components/InstitutionalFooter";
@@ -395,6 +396,8 @@ const Chapter = () => {
         isMenuOpen={isMenuOpen} 
       />
 
+      <ReadingProgressBar />
+
       <SidebarIndex 
         chapters={chaptersData} 
         activeChapterSlug={slug}
@@ -403,7 +406,7 @@ const Chapter = () => {
       />
 
       {/* Main Content */}
-      <main className="pt-[52px] min-h-screen">
+      <main className="pt-[56px] min-h-screen">
         <div className="max-w-4xl mx-auto px-6 md:px-12 lg:px-16 py-16">
           <ChapterSection 
             id={chapter.id} 
