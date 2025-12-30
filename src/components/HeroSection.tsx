@@ -1,28 +1,16 @@
-import { ArrowDown, FileText, BookOpen } from "lucide-react";
+import { ArrowRight, FileText, BookOpen } from "lucide-react";
+import { Link } from "react-router-dom";
 import heroImage from "@/assets/hero-stadium.jpg";
 
 interface HeroSectionProps {
   title: string;
   subtitle?: string;
-  onScrollToContent?: () => void;
 }
 
 const HeroSection = ({ 
   title = "Historia del Estadio",
-  subtitle = "Un recorrido por la arquitectura y los momentos que definieron una era",
-  onScrollToContent 
+  subtitle = "Un recorrido por la arquitectura y los momentos que definieron una era"
 }: HeroSectionProps) => {
-  const handleScrollClick = () => {
-    if (onScrollToContent) {
-      onScrollToContent();
-    } else {
-      const firstSection = document.getElementById("prologo");
-      if (firstSection) {
-        firstSection.scrollIntoView({ behavior: "smooth" });
-      }
-    }
-  };
-
   return (
     <section 
       id="hero" 
@@ -57,7 +45,7 @@ const HeroSection = ({
         )}
         
         {/* Download buttons */}
-        <div className="flex flex-col sm:flex-row items-center justify-center gap-4 mb-16 opacity-0 animate-fade-in-up [animation-delay:600ms]">
+        <div className="flex flex-col sm:flex-row items-center justify-center gap-4 mb-12 opacity-0 animate-fade-in-up [animation-delay:600ms]">
           <a href="#" className="btn-download btn-download-primary">
             <FileText className="w-4 h-4" />
             Descargar PDF
@@ -68,16 +56,16 @@ const HeroSection = ({
           </a>
         </div>
         
-        {/* Scroll indicator */}
-        <button
-          onClick={handleScrollClick}
-          className="inline-flex flex-col items-center text-foreground/60 hover:text-gold transition-colors duration-300 opacity-0 animate-fade-in-up [animation-delay:800ms]"
+        {/* CTA to start reading */}
+        <Link
+          to="/capitulo/prologo"
+          className="inline-flex items-center gap-2 text-gold hover:text-gold-light transition-colors duration-300 opacity-0 animate-fade-in-up [animation-delay:800ms] group"
         >
-          <span className="text-xs uppercase tracking-widest mb-2 font-sans">
-            Consulta el índice
+          <span className="text-sm uppercase tracking-widest font-sans">
+            Comenzar a leer
           </span>
-          <ArrowDown className="w-5 h-5 animate-bounce" />
-        </button>
+          <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
+        </Link>
       </div>
       
       {/* Bottom gradient fade */}

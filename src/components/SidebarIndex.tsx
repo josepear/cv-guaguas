@@ -1,9 +1,11 @@
-import { useState, useEffect, useCallback } from "react";
-import { Menu, X, FileText, BookOpen, ChevronDown, ChevronRight } from "lucide-react";
+import { useState } from "react";
+import { Link } from "react-router-dom";
+import { Menu, X, FileText, BookOpen, ChevronDown, ChevronRight, Home } from "lucide-react";
 import { cn } from "@/lib/utils";
 
 export interface ChapterItem {
   id: string;
+  slug: string;
   title: string;
   number?: string;
   children?: ChapterItem[];
@@ -11,53 +13,12 @@ export interface ChapterItem {
 
 interface SidebarIndexProps {
   chapters: ChapterItem[];
-  activeSection?: string;
-  onNavigate?: (id: string) => void;
+  activeChapterSlug?: string;
 }
 
-const SidebarIndex = ({ chapters, activeSection, onNavigate }: SidebarIndexProps) => {
+const SidebarIndex = ({ chapters, activeChapterSlug }: SidebarIndexProps) => {
   const [isOpen, setIsOpen] = useState(false);
   const [expandedGroups, setExpandedGroups] = useState<Set<string>>(new Set());
-  const [currentActiveSection, setCurrentActiveSection] = useState(activeSection || "");
-
-  // Handle scroll spy
-  useEffect(() => {
-    const handleScroll = () => {
-      const sections = chapters.flatMap(ch => 
-        ch.children ? [ch, ...ch.children] : [ch]
-      );
-      
-      let currentSection = "";
-      
-      for (const section of sections) {
-        const element = document.getElementById(section.id);
-        if (element) {
-          const rect = element.getBoundingClientRect();
-          if (rect.top <= 150) {
-            currentSection = section.id;
-          }
-        }
-      }
-      
-      if (currentSection && currentSection !== currentActiveSection) {
-        setCurrentActiveSection(currentSection);
-      }
-    };
-
-    window.addEventListener("scroll", handleScroll, { passive: true });
-    handleScroll();
-    
-    return () => window.removeEventListener("scroll", handleScroll);
-  }, [chapters, currentActiveSection]);
-
-  const handleNavigate = useCallback((id: string) => {
-    const element = document.getElementById(id);
-    if (element) {
-      element.scrollIntoView({ behavior: "smooth" });
-    }
-    onNavigate?.(id);
-    setIsOpen(false);
-  }, [onNavigate]);
 
   const toggleGroup = (id: string) => {
     setExpandedGroups(prev => {
@@ -72,10 +33,10 @@ const SidebarIndex = ({ chapters, activeSection, onNavigate }: SidebarIndexProps
   };
 
   const renderChapter = (chapter: ChapterItem, depth = 0) => {
-    const isActive = currentActiveSection === chapter.id;
+    const isActive = activeChapterSlug === chapter.slug;
     const hasChildren = chapter.children && chapter.children.length > 0;
     const isExpanded = expandedGroups.has(chapter.id);
-    const hasActiveChild = chapter.children?.some(c => c.id === currentActiveSection);
+    const hasActiveChild = chapter.children?.some(c => c.slug === activeChapterSlug);
 
     return (
       <li key={chapter.id} className="relative">
@@ -93,8 +54,9 @@ const SidebarIndex = ({ chapters, activeSection, onNavigate }: SidebarIndexProps
             </button>
           )}
           
-          <button
-            onClick={() => handleNavigate(chapter.id)}
+          <Link
+            to={`/capitulo/${chapter.slug}`}
+            onClick={() => setIsOpen(false)}
             className={cn(
               "sidebar-active-indicator flex-1 text-left py-2.5 px-3 rounded-sm transition-all duration-200 font-sans text-sm",
               "hover:bg-sidebar-accent hover:text-gold",
@@ -117,12 +79,12 @@ const SidebarIndex = ({ chapters, activeSection, onNavigate }: SidebarIndexProps
                 {chapter.title}
               </span>
             </span>
-          </button>
+          </Link>
         </div>
         
         {hasChildren && (isExpanded || hasActiveChild) && (
           <ul className="ml-4 mt-1 space-y-0.5 border-l border-sidebar-border pl-2">
-            {chapter.children?.map(child => renderChapter(child, depth + 1))}
+            {chapter.children?.map(child => renderChapter(child as ChapterItem, depth + 1))}
           </ul>
         )}
       </li>
@@ -160,6 +122,10 @@ const SidebarIndex = ({ chapters, activeSection, onNavigate }: SidebarIndexProps
       >
         {/* Header */}
         <div className="p-6 border-b border-sidebar-border">
+          <Link to="/" className="flex items-center gap-2 text-foreground hover:text-gold transition-colors mb-3">
+            <Home className="w-4 h-4" />
+            <span className="text-xs uppercase tracking-wider">Volver al inicio</span>
+          </Link>
           <h2 className="font-serif text-xl text-foreground mb-1">Índice</h2>
           <p className="text-xs text-muted-foreground uppercase tracking-wider">
             Contenido del libro
