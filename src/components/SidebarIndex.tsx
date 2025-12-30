@@ -1,7 +1,7 @@
-import { useState } from "react";
 import { Link } from "react-router-dom";
-import { Menu, X, FileText, BookOpen, ChevronDown, ChevronRight, Home } from "lucide-react";
+import { FileText, BookOpen, ChevronDown, ChevronRight } from "lucide-react";
 import { cn } from "@/lib/utils";
+import { useState } from "react";
 
 export interface ChapterItem {
   id: string;
@@ -14,10 +14,11 @@ export interface ChapterItem {
 interface SidebarIndexProps {
   chapters: ChapterItem[];
   activeChapterSlug?: string;
+  isOpen: boolean;
+  onClose: () => void;
 }
 
-const SidebarIndex = ({ chapters, activeChapterSlug }: SidebarIndexProps) => {
-  const [isOpen, setIsOpen] = useState(false);
+const SidebarIndex = ({ chapters, activeChapterSlug, isOpen, onClose }: SidebarIndexProps) => {
   const [expandedGroups, setExpandedGroups] = useState<Set<string>>(new Set());
 
   const toggleGroup = (id: string) => {
@@ -56,7 +57,7 @@ const SidebarIndex = ({ chapters, activeChapterSlug }: SidebarIndexProps) => {
           
           <Link
             to={`/capitulo/${chapter.slug}`}
-            onClick={() => setIsOpen(false)}
+            onClick={onClose}
             className={cn(
               "sidebar-active-indicator flex-1 text-left py-2.5 px-3 rounded-sm transition-all duration-200 font-sans text-sm",
               "hover:bg-sidebar-accent hover:text-gold",
@@ -93,45 +94,23 @@ const SidebarIndex = ({ chapters, activeChapterSlug }: SidebarIndexProps) => {
 
   return (
     <>
-      {/* Mobile Toggle Button */}
-      <button
-        onClick={() => setIsOpen(!isOpen)}
-        className="lg:hidden fixed top-4 left-4 z-50 flex items-center gap-2 px-4 py-2 bg-sidebar/95 backdrop-blur-sm border border-sidebar-border rounded text-foreground hover:text-gold transition-colors"
-      >
-        {isOpen ? <X className="w-5 h-5" /> : <Menu className="w-5 h-5" />}
-        <span className="text-sm uppercase tracking-wider font-sans">Índice</span>
-      </button>
-
       {/* Overlay for mobile */}
       {isOpen && (
         <div 
-          className="lg:hidden fixed inset-0 bg-background/80 backdrop-blur-sm z-40"
-          onClick={() => setIsOpen(false)}
+          className="fixed inset-0 bg-background/80 backdrop-blur-sm z-40 top-[52px]"
+          onClick={onClose}
         />
       )}
 
       {/* Sidebar */}
       <aside
         className={cn(
-          "fixed left-0 top-0 h-screen z-40 bg-sidebar border-r border-sidebar-border",
+          "fixed left-0 top-[52px] h-[calc(100vh-52px)] z-40 bg-sidebar border-r border-sidebar-border",
           "w-[320px] flex flex-col",
           "transition-transform duration-300 ease-in-out",
-          "lg:translate-x-0",
           isOpen ? "translate-x-0" : "-translate-x-full"
         )}
       >
-        {/* Header */}
-        <div className="p-6 border-b border-sidebar-border">
-          <Link to="/" className="flex items-center gap-2 text-foreground hover:text-gold transition-colors mb-3">
-            <Home className="w-4 h-4" />
-            <span className="text-xs uppercase tracking-wider">Volver al inicio</span>
-          </Link>
-          <h2 className="font-serif text-xl text-foreground mb-1">Índice</h2>
-          <p className="text-xs text-muted-foreground uppercase tracking-wider">
-            Contenido del libro
-          </p>
-        </div>
-
         {/* Download buttons */}
         <div className="p-4 border-b border-sidebar-border flex gap-2">
           <a href="#" className="btn-download btn-download-primary flex-1 justify-center text-xs">

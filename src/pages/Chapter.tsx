@@ -1,5 +1,7 @@
 import { useParams, Navigate } from "react-router-dom";
+import { useState } from "react";
 import SidebarIndex, { ChapterItem } from "@/components/SidebarIndex";
+import Header from "@/components/Header";
 import ChapterSection from "@/components/ChapterSection";
 import EditorialQuote from "@/components/EditorialQuote";
 import ContentImage from "@/components/ContentImage";
@@ -359,6 +361,7 @@ const chapterContent: Record<string, React.ReactNode> = {
 
 const Chapter = () => {
   const { slug } = useParams<{ slug: string }>();
+  const [isMenuOpen, setIsMenuOpen] = useState(false);
   
   if (!slug) {
     return <Navigate to="/" replace />;
@@ -374,32 +377,36 @@ const Chapter = () => {
 
   return (
     <div className="min-h-screen bg-background">
-      {/* Main Layout with Sidebar */}
-      <div className="relative lg:flex">
-        {/* Sticky Sidebar */}
-        <SidebarIndex chapters={chaptersData} activeChapterSlug={slug} />
+      <Header 
+        onMenuToggle={() => setIsMenuOpen(!isMenuOpen)} 
+        isMenuOpen={isMenuOpen} 
+      />
 
-        {/* Main Content */}
-        <main className="lg:ml-[320px] min-h-screen">
-          <div className="max-w-4xl mx-auto px-6 md:px-12 lg:px-16 py-16">
-            <ChapterSection 
-              id={chapter.id} 
-              number={chapter.number} 
-              title={chapter.title}
-              showChapterMarker={!!chapter.number}
-            >
-              {content || <p>Contenido del capítulo próximamente.</p>}
-            </ChapterSection>
-          </div>
-        </main>
-      </div>
+      <SidebarIndex 
+        chapters={chaptersData} 
+        activeChapterSlug={slug}
+        isOpen={isMenuOpen}
+        onClose={() => setIsMenuOpen(false)}
+      />
+
+      {/* Main Content */}
+      <main className="pt-[52px] min-h-screen">
+        <div className="max-w-4xl mx-auto px-6 md:px-12 lg:px-16 py-16">
+          <ChapterSection 
+            id={chapter.id} 
+            number={chapter.number} 
+            title={chapter.title}
+            showChapterMarker={!!chapter.number}
+          >
+            {content || <p>Contenido del capítulo próximamente.</p>}
+          </ChapterSection>
+        </div>
+      </main>
 
       {/* Footer */}
-      <div className="lg:ml-[320px]">
-        <InstitutionalFooter 
-          copyrightText="© 2024 Fundación Estadio Histórico. Todos los derechos reservados."
-        />
-      </div>
+      <InstitutionalFooter 
+        copyrightText="© 2024 Fundación Estadio Histórico. Todos los derechos reservados."
+      />
     </div>
   );
 };
