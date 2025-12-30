@@ -1,13 +1,13 @@
 import { useParams, Navigate } from "react-router-dom";
-import { useState } from "react";
+import { useState, useMemo } from "react";
 import SidebarIndex, { ChapterItem } from "@/components/SidebarIndex";
 import Header from "@/components/Header";
 import ChapterSection from "@/components/ChapterSection";
+import ChapterNavigation from "@/components/ChapterNavigation";
 import EditorialQuote from "@/components/EditorialQuote";
 import ContentImage from "@/components/ContentImage";
 import InstitutionalFooter from "@/components/InstitutionalFooter";
 import heroImage from "@/assets/hero-stadium.jpg";
-
 // Chapter data with slugs for routing
 const chaptersData: ChapterItem[] = [
   { id: "prologo", slug: "prologo", title: "Prólogo", number: "" },
@@ -363,6 +363,9 @@ const Chapter = () => {
   const { slug } = useParams<{ slug: string }>();
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   
+  // Get all chapters in flat order for navigation
+  const allChapters = useMemo(() => getAllChapters(), []);
+  
   if (!slug) {
     return <Navigate to="/" replace />;
   }
@@ -374,6 +377,11 @@ const Chapter = () => {
   }
 
   const content = chapterContent[slug];
+  
+  // Find previous and next chapters
+  const currentIndex = allChapters.findIndex(ch => ch.slug === slug);
+  const previousChapter = currentIndex > 0 ? allChapters[currentIndex - 1] : null;
+  const nextChapter = currentIndex < allChapters.length - 1 ? allChapters[currentIndex + 1] : null;
 
   return (
     <div className="min-h-screen bg-background">
@@ -400,6 +408,12 @@ const Chapter = () => {
           >
             {content || <p>Contenido del capítulo próximamente.</p>}
           </ChapterSection>
+
+          {/* Chapter Navigation */}
+          <ChapterNavigation 
+            previousChapter={previousChapter}
+            nextChapter={nextChapter}
+          />
         </div>
       </main>
 
