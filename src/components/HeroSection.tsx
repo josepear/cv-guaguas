@@ -1,6 +1,7 @@
 import { ArrowRight, FileText, BookOpen } from "lucide-react";
 import { Link } from "react-router-dom";
 import heroImage from "@/assets/hero-stadium.jpg";
+import logoGuaguas from "@/assets/logo-guaguas.png";
 
 interface HeroSectionProps {
   title: string;
@@ -8,8 +9,8 @@ interface HeroSectionProps {
 }
 
 const HeroSection = ({ 
-  title = "Historia del Estadio",
-  subtitle = "Un recorrido por la arquitectura y los momentos que definieron una era"
+  title = "Historia del CV Guaguas",
+  subtitle = "Un recorrido por la trayectoria del club que ha conquistado el voleibol español"
 }: HeroSectionProps) => {
   return (
     <section 
@@ -27,13 +28,22 @@ const HeroSection = ({
       
       {/* Content */}
       <div className="relative z-10 text-center px-6 max-w-4xl mx-auto">
+        {/* Logo */}
+        <div className="mb-8 opacity-0 animate-fade-in-up">
+          <img 
+            src={logoGuaguas} 
+            alt="CV Guaguas" 
+            className="h-32 md:h-40 w-auto mx-auto drop-shadow-2xl"
+          />
+        </div>
+        
         {/* Institution marker */}
-        <span className="chapter-marker inline-block mb-6 opacity-0 animate-fade-in-up">
+        <span className="chapter-marker inline-block mb-6 opacity-0 animate-fade-in-up [animation-delay:100ms]">
           Libro Institucional
         </span>
         
         {/* Main Title */}
-        <h1 className="font-serif text-4xl md:text-5xl lg:text-7xl text-foreground mb-6 opacity-0 animate-fade-in-up [animation-delay:200ms]">
+        <h1 className="font-serif font-bold text-4xl md:text-5xl lg:text-7xl text-foreground mb-6 opacity-0 animate-fade-in-up [animation-delay:200ms]">
           <span className="text-gold-gradient">{title}</span>
         </h1>
         
@@ -58,7 +68,7 @@ const HeroSection = ({
         
         {/* CTA to start reading */}
         <Link
-          to="/capitulo/prologo"
+          to="/capitulo/capitulo-01"
           className="inline-flex items-center gap-2 text-gold hover:text-gold-light transition-colors duration-300 opacity-0 animate-fade-in-up [animation-delay:800ms] group"
         >
           <span className="text-sm uppercase tracking-widest font-sans">

@@ -66,7 +66,7 @@ export default {
         },
       },
       fontFamily: {
-        serif: ["Playfair Display", "Georgia", "serif"],
+        serif: ["Montserrat", "-apple-system", "BlinkMacSystemFont", "sans-serif"],
         sans: ["Inter", "-apple-system", "BlinkMacSystemFont", "sans-serif"],
       },
       borderRadius: {
