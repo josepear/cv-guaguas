@@ -1,0 +1,15 @@
+/*
+Theme Name: CV Guaguas - Libro Institucional
+Theme URI: https://cvguaguas.com
+Author: CV Guaguas
+Author URI: https://cvguaguas.com
+Description: Plantilla para el libro institucional del CV Guaguas con índice lateral y diseño editorial moderno
+Version: 1.0.0
+License: GNU General Public License v2 or later
+License URI: http://www.gnu.org/licenses/gpl-2.0.html
+Text Domain: cv-guaguas-libro
+Tags: book, institutional, editorial, sidebar, dark-theme
+*/
+
+/* Importar los estilos principales */
+@import url('./assets/css/main.css');
