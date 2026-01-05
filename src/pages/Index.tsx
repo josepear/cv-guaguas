@@ -3,28 +3,32 @@ import HeroSection from "@/components/HeroSection";
 import Header from "@/components/Header";
 import SidebarIndex from "@/components/SidebarIndex";
 import InstitutionalFooter from "@/components/InstitutionalFooter";
+import { ChapterItem } from "@/components/SidebarIndex";
 
-// Chapter data for the sidebar
-const chapters = [
-  { id: "prologo", slug: "prologo", title: "Prólogo", number: "" },
-  { id: "introduccion", slug: "introduccion", title: "Introducción", number: "" },
-  { id: "capitulo-01", slug: "capitulo-01", title: "Los Orígenes", number: "01" },
-  { id: "capitulo-02", slug: "capitulo-02", title: "Construcción del Recinto", number: "02" },
-  { id: "capitulo-03", slug: "capitulo-03", title: "La Inauguración", number: "03" },
-  { id: "capitulo-04", slug: "capitulo-04", title: "Primeros Eventos", number: "04" },
-  { id: "capitulo-05", slug: "capitulo-05", title: "Década de Consolidación", number: "05" },
-  { id: "capitulo-06", slug: "capitulo-06", title: "Expansiones y Mejoras", number: "06" },
-  { id: "capitulo-07", slug: "capitulo-07", title: "Momentos Históricos", number: "07" },
-  { id: "capitulo-08", slug: "capitulo-08", title: "El Estadio y la Ciudad", number: "08" },
-  { id: "capitulo-09", slug: "capitulo-09", title: "Modernización", number: "09" },
-  { id: "capitulo-10", slug: "capitulo-10", title: "Sostenibilidad", number: "10" },
-  { id: "capitulo-11", slug: "capitulo-11", title: "Eventos Memorables", number: "11" },
-  { id: "capitulo-12", slug: "capitulo-12", title: "Figuras Destacadas", number: "12" },
-  { id: "capitulo-13", slug: "capitulo-13", title: "El Futuro", number: "13" },
-  { id: "epilogo", slug: "epilogo", title: "Epílogo", number: "" },
-  { id: "agradecimientos", slug: "agradecimientos", title: "Agradecimientos", number: "" },
-  { id: "bibliografia", slug: "bibliografia", title: "Bibliografía", number: "" },
-  { id: "creditos", slug: "creditos", title: "Créditos", number: "" },
+// Chapter data for the sidebar - CV Guaguas book structure
+const chapters: ChapterItem[] = [
+  { 
+    id: "capitulo-01", 
+    slug: "capitulo-01",
+    title: "Prólogos", 
+    number: "01",
+    children: [
+      { id: "prologo-01", slug: "prologo-fernando-clavijo", title: "Fernando Clavijo" },
+      { id: "prologo-02", slug: "prologo-antonio-morales", title: "Antonio Morales" },
+      { id: "prologo-03", slug: "prologo-carolina-darias", title: "Carolina Darias" },
+      { id: "prologo-04", slug: "prologo-poli-suarez", title: "Poli Suárez" },
+      { id: "prologo-05", slug: "prologo-carla-campoamor", title: "Carla Campoamor" },
+      { id: "prologo-06", slug: "prologo-felipe-pascual", title: "Felipe Pascual" },
+      { id: "prologo-07", slug: "prologo-roberto-melian", title: "Roberto Melián" },
+      { id: "prologo-08", slug: "prologo-eduardo-ramirez", title: "Eduardo Ramírez" },
+      { id: "prologo-09", slug: "prologo-09", title: "Nombre, cargo" },
+      { id: "prologo-10", slug: "prologo-10", title: "Nombre, cargo" },
+    ]
+  },
+  { id: "capitulo-02", slug: "capitulo-02", title: "Del patio del colegio a la División de Honor", number: "02" },
+  { id: "capitulo-03", slug: "capitulo-03", title: "Así se forjó una leyenda", number: "03" },
+  { id: "capitulo-04", slug: "capitulo-04", title: "Una transición dolorosa", number: "04" },
+  { id: "capitulo-05", slug: "capitulo-05", title: "Vuelve el gran Guaguas", number: "05" },
 ];
 
 const Index = () => {
@@ -45,12 +49,12 @@ const Index = () => {
 
       <main className="pt-[52px]">
         <HeroSection 
-          title="Historia del Estadio"
-          subtitle="Un recorrido por la arquitectura y los momentos que definieron una era deportiva en nuestra ciudad"
+          title="Historia del CV Guaguas"
+          subtitle="Un recorrido por la trayectoria del club que ha conquistado el voleibol español"
         />
         
         <InstitutionalFooter 
-          copyrightText="© 2024 Fundación Estadio Histórico. Todos los derechos reservados."
+          copyrightText="© 2024 Club Voleibol Guaguas. Todos los derechos reservados."
         />
       </main>
     </div>

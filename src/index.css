@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&family=Inter:wght@300;400;500;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800;900&family=Inter:wght@300;400;500;600;700&display=swap');
 
 @tailwind base;
 @tailwind components;
@@ -6,66 +6,66 @@
 
 /* 
  * ============================================
- * DESIGN SYSTEM - Institutional Book Template
+ * DESIGN SYSTEM - CV Guaguas Book
  * ============================================
- * Dark/Golden theme inspired by editorial design
+ * Azul marino y amarillo - colores del CV Guaguas
  * All colors in HSL format
  */
 
 @layer base {
   :root {
-    /* Primary Colors - Golden Accent */
-    --gold: 42 87% 55%;
-    --gold-light: 42 87% 65%;
-    --gold-dark: 42 87% 45%;
-    --gold-muted: 42 40% 50%;
+    /* Primary Colors - Guaguas Yellow/Gold */
+    --gold: 45 100% 50%;
+    --gold-light: 45 100% 60%;
+    --gold-dark: 45 100% 40%;
+    --gold-muted: 45 60% 45%;
 
-    /* Dark Theme Base */
-    --background: 220 15% 8%;
-    --background-elevated: 220 15% 12%;
-    --background-card: 220 15% 14%;
-    --foreground: 42 30% 95%;
+    /* Dark Theme Base - Navy Blue */
+    --background: 220 50% 10%;
+    --background-elevated: 220 45% 14%;
+    --background-card: 220 45% 16%;
+    --foreground: 0 0% 98%;
 
     /* Semantic Colors */
-    --card: 220 15% 12%;
-    --card-foreground: 42 30% 95%;
+    --card: 220 45% 14%;
+    --card-foreground: 0 0% 98%;
 
-    --popover: 220 15% 10%;
-    --popover-foreground: 42 30% 95%;
+    --popover: 220 50% 12%;
+    --popover-foreground: 0 0% 98%;
 
-    --primary: 42 87% 55%;
-    --primary-foreground: 220 15% 8%;
+    --primary: 45 100% 50%;
+    --primary-foreground: 220 50% 10%;
 
-    --secondary: 220 15% 18%;
-    --secondary-foreground: 42 30% 90%;
+    --secondary: 220 45% 20%;
+    --secondary-foreground: 0 0% 95%;
 
-    --muted: 220 10% 20%;
-    --muted-foreground: 220 10% 60%;
+    --muted: 220 30% 22%;
+    --muted-foreground: 220 15% 65%;
 
-    --accent: 42 87% 55%;
-    --accent-foreground: 220 15% 8%;
+    --accent: 45 100% 50%;
+    --accent-foreground: 220 50% 10%;
 
     --destructive: 0 84% 60%;
     --destructive-foreground: 0 0% 100%;
 
-    --border: 220 10% 20%;
-    --input: 220 10% 25%;
-    --ring: 42 87% 55%;
+    --border: 220 30% 22%;
+    --input: 220 30% 25%;
+    --ring: 45 100% 50%;
 
     --radius: 0.25rem;
 
-    /* Sidebar Specific */
-    --sidebar-background: 220 15% 6%;
-    --sidebar-foreground: 42 30% 85%;
-    --sidebar-primary: 42 87% 55%;
-    --sidebar-primary-foreground: 220 15% 8%;
-    --sidebar-accent: 220 15% 15%;
-    --sidebar-accent-foreground: 42 30% 95%;
-    --sidebar-border: 220 10% 15%;
-    --sidebar-ring: 42 87% 55%;
+    /* Sidebar Specific - Darker Navy */
+    --sidebar-background: 220 55% 8%;
+    --sidebar-foreground: 0 0% 90%;
+    --sidebar-primary: 45 100% 50%;
+    --sidebar-primary-foreground: 220 50% 10%;
+    --sidebar-accent: 220 45% 18%;
+    --sidebar-accent-foreground: 0 0% 98%;
+    --sidebar-border: 220 40% 18%;
+    --sidebar-ring: 45 100% 50%;
 
     /* Typography */
-    --font-serif: 'Playfair Display', Georgia, serif;
+    --font-serif: 'Montserrat', -apple-system, BlinkMacSystemFont, sans-serif;
     --font-sans: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
 
     /* Spacing for reading */
@@ -78,20 +78,20 @@
     --transition-fast: all 0.15s ease;
 
     /* Shadows */
-    --shadow-soft: 0 4px 20px hsl(220 15% 5% / 0.5);
-    --shadow-glow: 0 0 30px hsl(42 87% 55% / 0.15);
+    --shadow-soft: 0 4px 20px hsl(220 50% 5% / 0.5);
+    --shadow-glow: 0 0 30px hsl(45 100% 50% / 0.2);
   }
 
   /* Light mode variant (optional) */
   .light {
-    --background: 45 30% 96%;
-    --background-elevated: 45 20% 92%;
-    --foreground: 220 15% 15%;
+    --background: 0 0% 98%;
+    --background-elevated: 0 0% 95%;
+    --foreground: 220 50% 15%;
     --card: 0 0% 100%;
-    --card-foreground: 220 15% 15%;
-    --muted: 45 20% 90%;
-    --muted-foreground: 220 10% 40%;
-    --border: 45 20% 85%;
+    --card-foreground: 220 50% 15%;
+    --muted: 220 20% 92%;
+    --muted-foreground: 220 20% 40%;
+    --border: 220 20% 88%;
   }
 }
 
