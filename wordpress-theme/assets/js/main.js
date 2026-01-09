@@ -14,6 +14,7 @@
     const closeIcon = toggleBtn?.querySelector('.close-icon');
     const chapterLinks = document.querySelectorAll('.capitulo-link');
     const sections = document.querySelectorAll('.capitulo-section');
+    const accordionToggles = document.querySelectorAll('.accordion-toggle');
 
     /**
      * Toggle Mobile Sidebar
@@ -51,31 +52,122 @@
     overlay?.addEventListener('click', closeSidebar);
 
     /**
+     * Accordion Toggle for Subchapters
+     */
+    function initAccordions() {
+        accordionToggles.forEach(toggle => {
+            toggle.addEventListener('click', function(e) {
+                e.preventDefault();
+                e.stopPropagation();
+                
+                const accordionItem = this.closest('.accordion-item');
+                const content = accordionItem?.querySelector('.accordion-content');
+                const icon = this.querySelector('.accordion-icon');
+                
+                if (!content) return;
+                
+                const isOpen = !content.classList.contains('hidden');
+                
+                if (isOpen) {
+                    // Close accordion
+                    content.style.maxHeight = content.scrollHeight + 'px';
+                    content.offsetHeight; // Force reflow
+                    content.style.maxHeight = '0';
+                    content.style.opacity = '0';
+                    
+                    setTimeout(() => {
+                        content.classList.add('hidden');
+                        content.style.maxHeight = '';
+                        content.style.opacity = '';
+                    }, 300);
+                    
+                    icon?.classList.remove('rotate-180');
+                    accordionItem?.classList.remove('is-open');
+                } else {
+                    // Open accordion
+                    content.classList.remove('hidden');
+                    content.style.maxHeight = '0';
+                    content.style.opacity = '0';
+                    content.offsetHeight; // Force reflow
+                    content.style.maxHeight = content.scrollHeight + 'px';
+                    content.style.opacity = '1';
+                    
+                    setTimeout(() => {
+                        content.style.maxHeight = '';
+                        content.style.opacity = '';
+                    }, 300);
+                    
+                    icon?.classList.add('rotate-180');
+                    accordionItem?.classList.add('is-open');
+                }
+            });
+        });
+    }
+
+    /**
+     * Expand accordion if it contains the active section
+     */
+    function expandActiveAccordion() {
+        const activeLink = document.querySelector('.capitulo-link.active, .sub-capitulo-link.active');
+        
+        if (activeLink) {
+            const accordionItem = activeLink.closest('.accordion-item');
+            const content = accordionItem?.querySelector('.accordion-content');
+            const icon = accordionItem?.querySelector('.accordion-icon');
+            
+            if (content && content.classList.contains('hidden')) {
+                content.classList.remove('hidden');
+                icon?.classList.add('rotate-180');
+                accordionItem?.classList.add('is-open');
+            }
+        }
+    }
+
+    // Initialize accordions
+    initAccordions();
+    expandActiveAccordion();
+
+    /**
      * Smooth Scroll for Chapter Links
      */
-    chapterLinks.forEach(link => {
-        link.addEventListener('click', function(e) {
-            e.preventDefault();
-            
-            const targetId = this.getAttribute('href').substring(1);
-            const targetSection = document.getElementById(targetId);
-            
-            if (targetSection) {
-                // Close mobile sidebar first
-                if (window.innerWidth < 1024) {
-                    closeSidebar();
-                }
+    function initSmoothScroll() {
+        const allLinks = document.querySelectorAll('.capitulo-link, .sub-capitulo-link');
+        
+        allLinks.forEach(link => {
+            link.addEventListener('click', function(e) {
+                const href = this.getAttribute('href');
                 
-                // Smooth scroll to section
-                setTimeout(() => {
-                    targetSection.scrollIntoView({
-                        behavior: 'smooth',
-                        block: 'start'
-                    });
-                }, 100);
-            }
+                // Only handle anchor links
+                if (!href || !href.startsWith('#')) return;
+                
+                e.preventDefault();
+                
+                const targetId = href.substring(1);
+                const targetSection = document.getElementById(targetId);
+                
+                if (targetSection) {
+                    // Close mobile sidebar first
+                    if (window.innerWidth < 1024) {
+                        closeSidebar();
+                    }
+                    
+                    // Smooth scroll to section
+                    setTimeout(() => {
+                        const headerOffset = 80;
+                        const elementPosition = targetSection.getBoundingClientRect().top;
+                        const offsetPosition = elementPosition + window.pageYOffset - headerOffset;
+                        
+                        window.scrollTo({
+                            top: offsetPosition,
+                            behavior: 'smooth'
+                        });
+                    }, 100);
+                }
+            });
         });
-    });
+    }
+
+    initSmoothScroll();
 
     /**
      * Scroll Spy - Highlight Active Section
@@ -94,11 +186,24 @@
         });
 
         // Update active state in sidebar
-        chapterLinks.forEach(link => {
-            const sectionId = link.getAttribute('data-section') || link.getAttribute('href').substring(1);
+        const allLinks = document.querySelectorAll('.capitulo-link, .sub-capitulo-link');
+        
+        allLinks.forEach(link => {
+            const sectionId = link.getAttribute('data-section') || link.getAttribute('href')?.substring(1);
             
             if (sectionId === currentSection) {
                 link.classList.add('active', 'text-gold', 'bg-sidebar-accent/50');
+                
+                // Expand parent accordion if this is a sub-chapter
+                const accordionItem = link.closest('.accordion-item');
+                const content = accordionItem?.querySelector('.accordion-content');
+                const icon = accordionItem?.querySelector('.accordion-icon');
+                
+                if (content && content.classList.contains('hidden')) {
+                    content.classList.remove('hidden');
+                    icon?.classList.add('rotate-180');
+                    accordionItem?.classList.add('is-open');
+                }
             } else {
                 link.classList.remove('active', 'text-gold', 'bg-sidebar-accent/50');
             }
@@ -146,7 +251,7 @@
     }
 
     /**
-     * Reading Progress Bar (optional)
+     * Reading Progress Bar
      */
     function updateReadingProgress() {
         const progressBar = document.getElementById('reading-progress');
@@ -184,6 +289,18 @@
                 sidebar?.classList.add('-translate-x-full');
             }
         }
+    });
+
+    /**
+     * Keyboard Navigation for Accessibility
+     */
+    accordionToggles.forEach(toggle => {
+        toggle.addEventListener('keydown', function(e) {
+            if (e.key === 'Enter' || e.key === ' ') {
+                e.preventDefault();
+                this.click();
+            }
+        });
     });
 
 })();
