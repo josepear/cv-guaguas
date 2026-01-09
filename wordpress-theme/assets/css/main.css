@@ -488,9 +488,143 @@ h1, h2, h3, h4, h5, h6 {
     .lg\:gap-14 { gap: 3.5rem; }
 }
 
+/* ============================================
+   CONTENT IMAGES
+   ============================================ */
+
+.content-image {
+    position: relative;
+    overflow: hidden;
+    border-radius: var(--radius);
+}
+
+.content-image img {
+    width: 100%;
+    height: auto;
+    display: block;
+    transition: transform 0.5s ease;
+}
+
+.content-image:hover img {
+    transform: scale(1.02);
+}
+
+.content-image figcaption {
+    padding: 0.75rem 0;
+    font-size: 0.875rem;
+    color: hsl(var(--muted-foreground));
+    font-style: italic;
+    border-bottom: 1px solid hsl(var(--border) / 0.3);
+}
+
+/* ============================================
+   SIDEBAR ACCORDION
+   ============================================ */
+
+.sidebar-accordion-toggle {
+    background: none;
+    border: none;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+}
+
+.sidebar-accordion-toggle[aria-expanded="true"] svg {
+    transform: rotate(90deg);
+}
+
+.subcapitulos-list {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.3s ease, opacity 0.3s ease;
+    opacity: 0;
+}
+
+.subcapitulos-list.expanded {
+    max-height: 1000px;
+    opacity: 1;
+}
+
+.subcapitulos-list:not(.hidden) {
+    display: block;
+}
+
+.subcapitulo-item {
+    position: relative;
+}
+
+.subcapitulo-item::before {
+    content: '';
+    position: absolute;
+    left: -1rem;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 6px;
+    height: 1px;
+    background: hsl(var(--border));
+}
+
+/* Child chapters styling */
+.capitulo-hijo {
+    padding-left: 1rem;
+    border-left: 2px solid hsl(var(--gold) / 0.2);
+    margin-left: 1rem;
+}
+
+.capitulo-hijo .capitulo-header {
+    position: relative;
+}
+
+.capitulo-hijo .capitulo-header::before {
+    content: '';
+    position: absolute;
+    left: -1.5rem;
+    top: 0.5rem;
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background: hsl(var(--gold) / 0.4);
+}
+
+/* ============================================
+   MOBILE IMPROVEMENTS
+   ============================================ */
+
+@media (max-width: 767px) {
+    .reading-content {
+        font-size: 1rem;
+        line-height: 1.8;
+    }
+    
+    .editorial-quote {
+        padding-left: 1rem;
+        margin-left: 0;
+        margin-right: 0;
+    }
+    
+    .editorial-quote p {
+        font-size: 1.125rem !important;
+    }
+    
+    .content-image {
+        margin-left: -1.5rem;
+        margin-right: -1.5rem;
+        border-radius: 0;
+    }
+    
+    .capitulo-hijo {
+        padding-left: 0.5rem;
+        margin-left: 0.5rem;
+    }
+}
+
 /* Print styles */
 @media print {
     .no-print { display: none !important; }
     body { background: white; color: black; }
     .hero-overlay { display: none; }
+    .content-image { break-inside: avoid; }
+    .editorial-quote { break-inside: avoid; }
 }
