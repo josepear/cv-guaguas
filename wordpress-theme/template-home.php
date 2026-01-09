@@ -1,14 +1,14 @@
 <?php
 /**
- * Template Name: Página Libro CV Guaguas
- * Description: Plantilla para la página principal del libro institucional
+ * Template Name: Página 50 Aniversario CV Guaguas
+ * Description: Plantilla para la página principal del 50 aniversario del CV Guaguas
  */
 
 get_header();
 
 // Obtener opciones del tema
-$hero_title = get_option('libro_hero_title', 'CV Guaguas');
-$hero_subtitle = get_option('libro_hero_subtitle', 'Un legado de pasión y excelencia en el voleibol canario');
+$hero_title = get_option('libro_hero_title', '50 Años de Historia');
+$hero_subtitle = get_option('libro_hero_subtitle', 'Cinco décadas de pasión, títulos y leyendas del voleibol canario');
 $pdf_url = get_option('libro_pdf_url', '#');
 $epub_url = get_option('libro_epub_url', '#');
 ?>
@@ -38,9 +38,9 @@ $epub_url = get_option('libro_epub_url', '#');
             >
         </div>
         
-        <!-- Institutional Marker -->
+        <!-- Anniversary Marker -->
         <p class="text-xs md:text-sm uppercase tracking-widest text-gold opacity-80 mb-4 font-sans animate-fade-in-up animation-delay-100">
-            Libro Institucional
+            50 Aniversario · 1976 - 2026
         </p>
         
         <!-- Title -->

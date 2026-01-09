@@ -40,7 +40,7 @@ $libro_url = $libro_page ? get_permalink($libro_page[0]->ID) : home_url();
                 <ol class="flex items-center gap-2 text-sm text-muted-foreground">
                     <li>
                         <a href="<?php echo esc_url($libro_url); ?>" class="hover:text-gold transition-colors">
-                            Libro
+                            50 Aniversario
                         </a>
                     </li>
                     <li>

@@ -26,7 +26,7 @@ $epub_url = get_option('libro_epub_url', '#');
             <img src="<?php echo LIBRO_URI; ?>/assets/images/logo-guaguas.png" alt="CV Guaguas" class="w-10 h-10 object-contain">
             <div>
                 <h2 class="font-serif text-lg text-foreground leading-tight">CV Guaguas</h2>
-                <p class="text-xs text-gold uppercase tracking-wider">Libro Institucional</p>
+                <p class="text-xs text-gold uppercase tracking-wider">50 Aniversario · 1976-2026</p>
             </div>
         </div>
         <p class="text-xs text-muted-foreground uppercase tracking-wider">
