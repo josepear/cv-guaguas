@@ -9,8 +9,8 @@ interface HeroSectionProps {
 }
 
 const HeroSection = ({ 
-  title = "Historia del CV Guaguas",
-  subtitle = "Un recorrido por la trayectoria del club que ha conquistado el voleibol español"
+  title = "50 Años de Historia",
+  subtitle = "Cinco décadas de pasión, títulos y leyendas del voleibol canario"
 }: HeroSectionProps) => {
   return (
     <section 
@@ -37,9 +37,9 @@ const HeroSection = ({
           />
         </div>
         
-        {/* Institution marker */}
+        {/* Anniversary marker */}
         <span className="chapter-marker inline-block mb-6 opacity-0 animate-fade-in-up [animation-delay:100ms]">
-          Libro Institucional
+          50 Aniversario · 1976 - 2026
         </span>
         
         {/* Main Title */}

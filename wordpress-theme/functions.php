@@ -1,6 +1,6 @@
 <?php
 /**
- * CV Guaguas - Libro Institucional Functions
+ * CV Guaguas - 50 Aniversario Functions
  */
 
 // Definir constantes del tema
@@ -379,11 +379,11 @@ function libro_options_page_html() {
             <table class="form-table">
                 <tr>
                     <th scope="row"><label for="libro_hero_title">Título del Hero</label></th>
-                    <td><input type="text" id="libro_hero_title" name="libro_hero_title" value="<?php echo esc_attr(get_option('libro_hero_title', 'CV Guaguas: Historia de un Club')); ?>" class="regular-text"></td>
+                    <td><input type="text" id="libro_hero_title" name="libro_hero_title" value="<?php echo esc_attr(get_option('libro_hero_title', '50 Años de Historia')); ?>" class="regular-text"></td>
                 </tr>
                 <tr>
                     <th scope="row"><label for="libro_hero_subtitle">Subtítulo del Hero</label></th>
-                    <td><textarea id="libro_hero_subtitle" name="libro_hero_subtitle" class="large-text" rows="2"><?php echo esc_textarea(get_option('libro_hero_subtitle', 'Una crónica apasionante del voleibol en Las Palmas de Gran Canaria')); ?></textarea></td>
+                    <td><textarea id="libro_hero_subtitle" name="libro_hero_subtitle" class="large-text" rows="2"><?php echo esc_textarea(get_option('libro_hero_subtitle', 'Cinco décadas de pasión, títulos y leyendas del voleibol canario')); ?></textarea></td>
                 </tr>
                 <tr>
                     <th scope="row"><label for="libro_pdf_url">URL del PDF</label></th>
