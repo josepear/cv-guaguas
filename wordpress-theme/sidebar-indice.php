@@ -1,12 +1,16 @@
 <?php
 /**
  * Sidebar con índice de capítulos - CV Guaguas
+ * Soporta estructura jerárquica (capítulos con subcapítulos)
  */
+
+// Obtener capítulos principales (sin padre)
 $capitulos = get_posts(array(
     'post_type'      => 'capitulo',
     'posts_per_page' => -1,
     'orderby'        => 'menu_order',
     'order'          => 'ASC',
+    'post_parent'    => 0,
 ));
 
 // URLs de descarga desde opciones del tema
@@ -50,20 +54,62 @@ $epub_url = get_option('libro_epub_url', '#');
     <nav class="flex-1 overflow-y-auto p-4" aria-label="Índice de capítulos">
         <ul class="lista-capitulos space-y-1">
             <?php foreach ($capitulos as $cap) : 
-                $numero = get_field('numero_capitulo', $cap->ID);
+                $numero = libro_get_field('numero_capitulo', $cap->ID);
                 $slug = sanitize_title($cap->post_title);
+                
+                // Obtener subcapítulos
+                $subcapitulos = get_posts(array(
+                    'post_type'      => 'capitulo',
+                    'posts_per_page' => -1,
+                    'orderby'        => 'menu_order',
+                    'order'          => 'ASC',
+                    'post_parent'    => $cap->ID,
+                ));
+                
+                $has_children = !empty($subcapitulos);
             ?>
-            <li class="capitulo-item relative">
-                <a href="#<?php echo esc_attr($slug); ?>" 
-                   class="capitulo-link sidebar-active-indicator flex-1 text-left py-2.5 px-3 rounded-sm transition-all duration-200 font-sans text-sm hover:bg-sidebar-accent hover:text-gold block text-sidebar-foreground"
-                   data-section="<?php echo esc_attr($slug); ?>">
-                    <span class="flex items-baseline gap-2">
-                        <?php if ($numero) : ?>
-                            <span class="text-gold/60 text-xs font-sans tracking-wider min-w-[1.5rem]"><?php echo esc_html($numero); ?></span>
-                        <?php endif; ?>
-                        <span><?php echo esc_html($cap->post_title); ?></span>
-                    </span>
-                </a>
+            <li class="capitulo-item relative <?php echo $has_children ? 'has-children' : ''; ?>">
+                <div class="flex items-center">
+                    <?php if ($has_children) : ?>
+                    <button 
+                        type="button" 
+                        class="sidebar-accordion-toggle p-2 text-muted-foreground hover:text-gold transition-colors"
+                        aria-expanded="false"
+                        aria-controls="subcapitulos-<?php echo $cap->ID; ?>"
+                    >
+                        <svg class="w-4 h-4 transition-transform duration-200" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/>
+                        </svg>
+                    </button>
+                    <?php endif; ?>
+                    
+                    <a href="#<?php echo esc_attr($slug); ?>" 
+                       class="capitulo-link sidebar-active-indicator flex-1 text-left py-2.5 px-3 rounded-sm transition-all duration-200 font-sans text-sm hover:bg-sidebar-accent hover:text-gold block text-sidebar-foreground"
+                       data-section="<?php echo esc_attr($slug); ?>">
+                        <span class="flex items-baseline gap-2">
+                            <?php if ($numero) : ?>
+                                <span class="text-gold/60 text-xs font-sans tracking-wider min-w-[1.5rem]"><?php echo esc_html($numero); ?></span>
+                            <?php endif; ?>
+                            <span><?php echo esc_html($cap->post_title); ?></span>
+                        </span>
+                    </a>
+                </div>
+                
+                <?php if ($has_children) : ?>
+                <ul id="subcapitulos-<?php echo $cap->ID; ?>" class="subcapitulos-list pl-8 mt-1 space-y-0.5 hidden">
+                    <?php foreach ($subcapitulos as $sub) : 
+                        $sub_slug = sanitize_title($sub->post_title);
+                    ?>
+                    <li class="subcapitulo-item">
+                        <a href="#<?php echo esc_attr($sub_slug); ?>" 
+                           class="subcapitulo-link sidebar-active-indicator block py-2 px-3 text-sm text-sidebar-foreground/70 hover:text-gold hover:bg-sidebar-accent/50 rounded-sm transition-all duration-200"
+                           data-section="<?php echo esc_attr($sub_slug); ?>">
+                            <?php echo esc_html($sub->post_title); ?>
+                        </a>
+                    </li>
+                    <?php endforeach; ?>
+                </ul>
+                <?php endif; ?>
             </li>
             <?php endforeach; ?>
         </ul>

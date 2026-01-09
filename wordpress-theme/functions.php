@@ -8,6 +8,10 @@ define('LIBRO_VERSION', '1.0.0');
 define('LIBRO_DIR', get_template_directory());
 define('LIBRO_URI', get_template_directory_uri());
 
+// Cargar módulos del tema
+require_once LIBRO_DIR . '/inc/meta-boxes.php';
+require_once LIBRO_DIR . '/inc/sample-content.php';
+
 /**
  * Enqueue scripts y styles
  */
@@ -60,6 +64,7 @@ function libro_register_capitulos_cpt() {
         'view_item'          => 'Ver capítulo',
         'search_items'       => 'Buscar capítulos',
         'not_found'          => 'No se encontraron capítulos',
+        'parent_item_colon'  => 'Capítulo padre:',
     );
     
     $args = array(
@@ -84,13 +89,14 @@ function libro_register_capitulos_cpt() {
 add_action('init', 'libro_register_capitulos_cpt');
 
 /**
- * Registrar campos personalizados con ACF (opcional)
+ * Registrar campos personalizados con ACF (opcional - como fallback)
+ * Si ACF está instalado, estos campos estarán disponibles además de los meta boxes nativos
  */
 function libro_register_acf_fields() {
     if (function_exists('acf_add_local_field_group')) {
         acf_add_local_field_group(array(
             'key' => 'group_capitulo',
-            'title' => 'Datos del Capítulo',
+            'title' => 'Datos del Capítulo (ACF)',
             'fields' => array(
                 array(
                     'key' => 'field_numero_capitulo',
@@ -128,6 +134,7 @@ function libro_register_acf_fields() {
                     ),
                 ),
             ),
+            'active' => false, // Desactivado por defecto, se usa meta-boxes.php
         ));
     }
 }
@@ -143,6 +150,7 @@ function libro_shortcode_indice($atts) {
         'posts_per_page' => -1,
         'orderby'        => 'menu_order',
         'order'          => 'ASC',
+        'post_parent'    => 0, // Solo capítulos principales
     ));
     
     if (empty($capitulos)) {
@@ -154,8 +162,17 @@ function libro_shortcode_indice($atts) {
     <nav class="indice-libro">
         <ul class="lista-capitulos space-y-1">
             <?php foreach ($capitulos as $cap) : 
-                $numero = get_field('numero_capitulo', $cap->ID);
+                $numero = libro_get_field('numero_capitulo', $cap->ID);
                 $slug = sanitize_title($cap->post_title);
+                
+                // Obtener hijos
+                $hijos = get_posts(array(
+                    'post_type'      => 'capitulo',
+                    'posts_per_page' => -1,
+                    'orderby'        => 'menu_order',
+                    'order'          => 'ASC',
+                    'post_parent'    => $cap->ID,
+                ));
             ?>
             <li class="capitulo-item">
                 <a href="#<?php echo esc_attr($slug); ?>" class="capitulo-link sidebar-active-indicator">
@@ -164,6 +181,20 @@ function libro_shortcode_indice($atts) {
                     <?php endif; ?>
                     <span class="capitulo-titulo"><?php echo esc_html($cap->post_title); ?></span>
                 </a>
+                
+                <?php if (!empty($hijos)) : ?>
+                <ul class="subcapitulos pl-4 mt-1 space-y-1">
+                    <?php foreach ($hijos as $hijo) : 
+                        $hijo_slug = sanitize_title($hijo->post_title);
+                    ?>
+                    <li>
+                        <a href="#<?php echo esc_attr($hijo_slug); ?>" class="text-sm text-muted-foreground hover:text-gold">
+                            <?php echo esc_html($hijo->post_title); ?>
+                        </a>
+                    </li>
+                    <?php endforeach; ?>
+                </ul>
+                <?php endif; ?>
             </li>
             <?php endforeach; ?>
         </ul>
@@ -178,6 +209,7 @@ add_shortcode('indice_libro', 'libro_shortcode_indice');
  * Uso: [contenido_libro]
  */
 function libro_shortcode_contenido($atts) {
+    // Obtener todos los capítulos ordenados
     $capitulos = get_posts(array(
         'post_type'      => 'capitulo',
         'posts_per_page' => -1,
@@ -189,20 +221,60 @@ function libro_shortcode_contenido($atts) {
         return '';
     }
     
+    // Organizar en estructura jerárquica
+    $capitulos_organizados = array();
+    $hijos_por_padre = array();
+    
+    foreach ($capitulos as $cap) {
+        if ($cap->post_parent === 0) {
+            $capitulos_organizados[] = $cap;
+        } else {
+            if (!isset($hijos_por_padre[$cap->post_parent])) {
+                $hijos_por_padre[$cap->post_parent] = array();
+            }
+            $hijos_por_padre[$cap->post_parent][] = $cap;
+        }
+    }
+    
     ob_start();
-    foreach ($capitulos as $cap) :
-        $numero = get_field('numero_capitulo', $cap->ID);
-        $mostrar_marcador = get_field('mostrar_marcador', $cap->ID);
-        $cita = get_field('cita_destacada', $cap->ID);
-        $autor_cita = get_field('autor_cita', $cap->ID);
-        $slug = sanitize_title($cap->post_title);
+    
+    foreach ($capitulos_organizados as $cap) :
+        echo libro_render_capitulo($cap);
+        
+        // Renderizar hijos si existen
+        if (isset($hijos_por_padre[$cap->ID])) {
+            foreach ($hijos_por_padre[$cap->ID] as $hijo) {
+                echo libro_render_capitulo($hijo, true);
+            }
+        }
+    endforeach;
+    
+    return ob_get_clean();
+}
+add_shortcode('contenido_libro', 'libro_shortcode_contenido');
+
+/**
+ * Renderizar un capítulo individual
+ */
+function libro_render_capitulo($cap, $is_child = false) {
+    $numero = libro_get_field('numero_capitulo', $cap->ID);
+    $mostrar_marcador = libro_get_field('mostrar_marcador', $cap->ID);
+    $cita = libro_get_field('cita_destacada', $cap->ID);
+    $autor_cita = libro_get_field('autor_cita', $cap->ID);
+    $slug = sanitize_title($cap->post_title);
+    
+    // Clase adicional para hijos
+    $section_class = $is_child ? 'capitulo-section capitulo-hijo' : 'capitulo-section';
+    $header_size = $is_child ? 'text-2xl md:text-3xl lg:text-4xl' : 'text-3xl md:text-4xl lg:text-5xl';
+    
+    ob_start();
     ?>
-    <section id="<?php echo esc_attr($slug); ?>" class="capitulo-section scroll-mt-24 py-16 md:py-24 border-b border-border/30">
+    <section id="<?php echo esc_attr($slug); ?>" class="<?php echo esc_attr($section_class); ?> scroll-mt-24 py-16 md:py-24 border-b border-border/30">
         <header class="capitulo-header mb-8 md:mb-12">
             <?php if ($mostrar_marcador && $numero) : ?>
                 <span class="chapter-marker block mb-4">Capítulo <?php echo esc_html($numero); ?></span>
             <?php endif; ?>
-            <h2 class="font-serif text-3xl md:text-4xl lg:text-5xl text-foreground leading-tight">
+            <h2 class="font-serif <?php echo esc_attr($header_size); ?> text-foreground leading-tight">
                 <?php echo esc_html($cap->post_title); ?>
             </h2>
         </header>
@@ -213,11 +285,11 @@ function libro_shortcode_contenido($atts) {
             <?php if ($cita) : ?>
             <blockquote class="editorial-quote my-8 md:my-12 py-4">
                 <p class="text-xl md:text-2xl text-foreground/90 leading-relaxed mb-4">
-                    <?php echo esc_html($cita); ?>
+                    "<?php echo esc_html($cita); ?>"
                 </p>
                 <?php if ($autor_cita) : ?>
                 <footer class="text-sm text-muted-foreground">
-                    <cite class="not-italic font-medium"><?php echo esc_html($autor_cita); ?></cite>
+                    <cite class="not-italic font-medium">— <?php echo esc_html($autor_cita); ?></cite>
                 </footer>
                 <?php endif; ?>
             </blockquote>
@@ -225,10 +297,8 @@ function libro_shortcode_contenido($atts) {
         </div>
     </section>
     <?php
-    endforeach;
     return ob_get_clean();
 }
-add_shortcode('contenido_libro', 'libro_shortcode_contenido');
 
 /**
  * Añadir soporte para el tema
@@ -326,6 +396,35 @@ function libro_options_page_html() {
             </table>
             <?php submit_button('Guardar cambios'); ?>
         </form>
+        
+        <hr>
+        
+        <h2>Información del Tema</h2>
+        <p>Este tema incluye:</p>
+        <ul style="list-style: disc; margin-left: 20px;">
+            <li><strong>Custom Post Type "Capítulo"</strong> - Para gestionar los capítulos del libro</li>
+            <li><strong>Estructura jerárquica</strong> - Los capítulos pueden tener subcapítulos (prólogos, secciones, etc.)</li>
+            <li><strong>Campos personalizados nativos</strong> - No necesitas ACF</li>
+            <li><strong>Contenido de ejemplo</strong> - Se importa automáticamente al activar el tema</li>
+        </ul>
+        
+        <h3>Cómo añadir nuevos capítulos</h3>
+        <ol style="margin-left: 20px;">
+            <li>Ve a <strong>Libro → Añadir capítulo</strong></li>
+            <li>Escribe el título y contenido</li>
+            <li>Usa los campos personalizados para número de capítulo, citas, etc.</li>
+            <li>Si es un subcapítulo, selecciona el padre en "Atributos de página"</li>
+            <li>Ajusta el "Orden" para controlar la posición en el índice</li>
+        </ol>
     </div>
     <?php
 }
+
+/**
+ * Flush rewrite rules al activar el tema
+ */
+function libro_theme_activation() {
+    libro_register_capitulos_cpt();
+    flush_rewrite_rules();
+}
+add_action('after_switch_theme', 'libro_theme_activation');
