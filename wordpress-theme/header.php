@@ -20,16 +20,24 @@
 <body <?php body_class('bg-background text-foreground antialiased'); ?>>
 <?php wp_body_open(); ?>
 
-<!-- Mobile Index Toggle -->
-<button id="toggle-indice" class="lg:hidden fixed top-4 left-4 z-50 flex items-center gap-2 px-4 py-2 bg-sidebar/95 backdrop-blur-sm border border-sidebar-border rounded text-foreground hover:text-gold transition-colors" aria-label="Abrir índice">
-    <svg class="menu-icon w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/>
-    </svg>
-    <svg class="close-icon w-5 h-5 hidden" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"/>
-    </svg>
-    <span class="text-sm uppercase tracking-wider font-sans">Índice</span>
-</button>
+<!-- Fixed Header -->
+<header class="fixed top-0 left-0 right-0 z-50 flex items-center justify-between px-4 py-2 header-blur border-b border-sidebar-border">
+    <!-- Menu Toggle Button -->
+    <button id="toggle-indice" class="flex items-center gap-2 px-3 py-2 text-foreground hover:text-gold transition-colors" aria-label="Abrir índice">
+        <svg class="menu-icon w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/>
+        </svg>
+        <svg class="close-icon w-5 h-5 hidden" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"/>
+        </svg>
+        <span class="text-sm uppercase tracking-wider font-sans">Menú</span>
+    </button>
+    
+    <!-- Logo -->
+    <a href="<?php echo home_url(); ?>" class="flex items-center gap-2 px-2 py-1 hover:opacity-80 transition-opacity">
+        <img src="<?php echo LIBRO_URI; ?>/assets/images/logo-guaguas.png" alt="CV Guaguas" class="h-10 w-auto">
+    </a>
+</header>
 
 <!-- Mobile Overlay -->
 <div id="sidebar-overlay" class="lg:hidden fixed inset-0 bg-background/80 backdrop-blur-sm z-40 hidden"></div>
