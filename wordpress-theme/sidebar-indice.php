@@ -83,7 +83,7 @@ $epub_url = get_option('libro_epub_url', '#');
                     </button>
                     <?php endif; ?>
                     
-                    <a href="#<?php echo esc_attr($slug); ?>" 
+                    <a href="<?php echo get_permalink($cap->ID); ?>" 
                        class="capitulo-link sidebar-active-indicator flex-1 text-left py-2.5 px-3 rounded-sm transition-all duration-200 font-sans text-sm hover:bg-sidebar-accent hover:text-gold block text-sidebar-foreground"
                        data-section="<?php echo esc_attr($slug); ?>">
                         <span class="flex items-baseline gap-2">
@@ -101,7 +101,7 @@ $epub_url = get_option('libro_epub_url', '#');
                         $sub_slug = sanitize_title($sub->post_title);
                     ?>
                     <li class="subcapitulo-item">
-                        <a href="#<?php echo esc_attr($sub_slug); ?>" 
+                        <a href="<?php echo get_permalink($sub->ID); ?>" 
                            class="subcapitulo-link sidebar-active-indicator block py-2 px-3 text-sm text-sidebar-foreground/70 hover:text-gold hover:bg-sidebar-accent/50 rounded-sm transition-all duration-200"
                            data-section="<?php echo esc_attr($sub_slug); ?>">
                             <?php echo esc_html($sub->post_title); ?>
