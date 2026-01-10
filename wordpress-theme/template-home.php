@@ -87,8 +87,19 @@ $epub_url = get_option('libro_epub_url', '#');
         </div>
         
         <!-- CTA - Start Reading -->
+        <?php
+        // Obtener el primer capítulo para el enlace
+        $primer_capitulo = get_posts(array(
+            'post_type'      => 'capitulo',
+            'posts_per_page' => 1,
+            'orderby'        => 'menu_order',
+            'order'          => 'ASC',
+            'post_parent'    => 0,
+        ));
+        $primer_capitulo_url = !empty($primer_capitulo) ? get_permalink($primer_capitulo[0]->ID) : '#';
+        ?>
         <a 
-            href="#capitulo-1" 
+            href="<?php echo esc_url($primer_capitulo_url); ?>" 
             class="inline-flex items-center gap-2 text-gold hover:text-gold-light transition-colors animate-fade-in-up animation-delay-500"
         >
             <span class="text-sm uppercase tracking-widest font-sans">Comenzar a leer</span>
@@ -105,12 +116,5 @@ $epub_url = get_option('libro_epub_url', '#');
 
 <!-- Sidebar -->
 <?php get_template_part('sidebar', 'indice'); ?>
-
-<!-- Main Content -->
-<main class="main-content lg:ml-\[320px\] pt-header">
-    <div class="max-w-4xl mx-auto px-6 lg:px-12 py-16">
-        <?php echo do_shortcode('[contenido_libro]'); ?>
-    </div>
-</main>
 
 <?php get_footer(); ?>

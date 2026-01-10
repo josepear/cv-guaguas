@@ -50,6 +50,16 @@ function libro_enqueue_assets() {
 add_action('wp_enqueue_scripts', 'libro_enqueue_assets');
 
 /**
+ * Enqueue media uploader para la página de opciones
+ */
+function libro_admin_scripts($hook) {
+    if ($hook === 'appearance_page_libro-options') {
+        wp_enqueue_media();
+    }
+}
+add_action('admin_enqueue_scripts', 'libro_admin_scripts');
+
+/**
  * Registrar Custom Post Type: Capítulos
  */
 function libro_register_capitulos_cpt() {
@@ -337,13 +347,14 @@ function libro_widgets_init() {
 add_action('widgets_init', 'libro_widgets_init');
 
 /**
- * Opciones del tema para URLs de descarga
+ * Opciones del tema para URLs de descarga y logos
  */
 function libro_register_settings() {
     register_setting('libro_options', 'libro_pdf_url');
     register_setting('libro_options', 'libro_epub_url');
     register_setting('libro_options', 'libro_hero_title');
     register_setting('libro_options', 'libro_hero_subtitle');
+    register_setting('libro_options', 'libro_footer_logos');
 }
 add_action('admin_init', 'libro_register_settings');
 
@@ -371,11 +382,16 @@ function libro_options_page_html() {
     }
     
     settings_errors('libro_messages');
+    
+    // Obtener logos actuales
+    $logos = get_option('libro_footer_logos', array());
     ?>
     <div class="wrap">
         <h1><?php echo esc_html(get_admin_page_title()); ?></h1>
         <form action="options.php" method="post">
             <?php settings_fields('libro_options'); ?>
+            
+            <h2>Sección Hero</h2>
             <table class="form-table">
                 <tr>
                     <th scope="row"><label for="libro_hero_title">Título del Hero</label></th>
@@ -385,6 +401,10 @@ function libro_options_page_html() {
                     <th scope="row"><label for="libro_hero_subtitle">Subtítulo del Hero</label></th>
                     <td><textarea id="libro_hero_subtitle" name="libro_hero_subtitle" class="large-text" rows="2"><?php echo esc_textarea(get_option('libro_hero_subtitle', 'Cinco décadas de pasión, títulos y leyendas del voleibol canario')); ?></textarea></td>
                 </tr>
+            </table>
+            
+            <h2>Archivos de Descarga</h2>
+            <table class="form-table">
                 <tr>
                     <th scope="row"><label for="libro_pdf_url">URL del PDF</label></th>
                     <td><input type="url" id="libro_pdf_url" name="libro_pdf_url" value="<?php echo esc_attr(get_option('libro_pdf_url', '#')); ?>" class="regular-text"></td>
@@ -394,7 +414,38 @@ function libro_options_page_html() {
                     <td><input type="url" id="libro_epub_url" name="libro_epub_url" value="<?php echo esc_attr(get_option('libro_epub_url', '#')); ?>" class="regular-text"></td>
                 </tr>
             </table>
-            <?php submit_button('Guardar cambios'); ?>
+            
+            <h2>Logos del Footer</h2>
+            <p class="description">Añade los logos de las instituciones colaboradoras. Si no añades ninguno, se mostrarán placeholders.</p>
+            
+            <div id="logos-container" style="margin-top: 20px;">
+                <?php if (!empty($logos)) : ?>
+                    <?php foreach ($logos as $index => $logo) : ?>
+                    <div class="logo-row" style="background: #f9f9f9; padding: 15px; margin-bottom: 10px; border: 1px solid #ddd; border-radius: 4px;">
+                        <p>
+                            <label><strong>Nombre/Alt:</strong></label><br>
+                            <input type="text" name="libro_footer_logos[<?php echo $index; ?>][alt]" value="<?php echo esc_attr($logo['alt']); ?>" class="regular-text" placeholder="Ej: Gobierno de Canarias">
+                        </p>
+                        <p>
+                            <label><strong>URL de la imagen:</strong></label><br>
+                            <input type="url" name="libro_footer_logos[<?php echo $index; ?>][src]" value="<?php echo esc_attr($logo['src']); ?>" class="regular-text" placeholder="https://...">
+                            <button type="button" class="button libro-upload-logo">Seleccionar imagen</button>
+                        </p>
+                        <p>
+                            <label><strong>Enlace (opcional):</strong></label><br>
+                            <input type="url" name="libro_footer_logos[<?php echo $index; ?>][url]" value="<?php echo esc_attr($logo['url']); ?>" class="regular-text" placeholder="https://...">
+                        </p>
+                        <button type="button" class="button libro-remove-logo" style="color: #a00;">Eliminar logo</button>
+                    </div>
+                    <?php endforeach; ?>
+                <?php endif; ?>
+            </div>
+            
+            <button type="button" id="add-logo" class="button button-secondary" style="margin-top: 10px;">+ Añadir logo</button>
+            
+            <p style="margin-top: 30px;">
+                <?php submit_button('Guardar cambios', 'primary', 'submit', false); ?>
+            </p>
         </form>
         
         <hr>
@@ -403,9 +454,9 @@ function libro_options_page_html() {
         <p>Este tema incluye:</p>
         <ul style="list-style: disc; margin-left: 20px;">
             <li><strong>Custom Post Type "Capítulo"</strong> - Para gestionar los capítulos del libro</li>
-            <li><strong>Estructura jerárquica</strong> - Los capítulos pueden tener subcapítulos (prólogos, secciones, etc.)</li>
+            <li><strong>Estructura jerárquica</strong> - Los capítulos pueden tener subcapítulos</li>
             <li><strong>Campos personalizados nativos</strong> - No necesitas ACF</li>
-            <li><strong>Contenido de ejemplo</strong> - Se importa automáticamente al activar el tema</li>
+            <li><strong>Logos del footer configurables</strong> - Sin necesidad de widgets</li>
         </ul>
         
         <h3>Cómo añadir nuevos capítulos</h3>
@@ -417,6 +468,53 @@ function libro_options_page_html() {
             <li>Ajusta el "Orden" para controlar la posición en el índice</li>
         </ol>
     </div>
+    
+    <script>
+    jQuery(document).ready(function($) {
+        var logoIndex = <?php echo !empty($logos) ? count($logos) : 0; ?>;
+        
+        // Añadir nuevo logo
+        $('#add-logo').on('click', function() {
+            var html = '<div class="logo-row" style="background: #f9f9f9; padding: 15px; margin-bottom: 10px; border: 1px solid #ddd; border-radius: 4px;">' +
+                '<p><label><strong>Nombre/Alt:</strong></label><br>' +
+                '<input type="text" name="libro_footer_logos[' + logoIndex + '][alt]" class="regular-text" placeholder="Ej: Gobierno de Canarias"></p>' +
+                '<p><label><strong>URL de la imagen:</strong></label><br>' +
+                '<input type="url" name="libro_footer_logos[' + logoIndex + '][src]" class="regular-text" placeholder="https://...">' +
+                ' <button type="button" class="button libro-upload-logo">Seleccionar imagen</button></p>' +
+                '<p><label><strong>Enlace (opcional):</strong></label><br>' +
+                '<input type="url" name="libro_footer_logos[' + logoIndex + '][url]" class="regular-text" placeholder="https://..."></p>' +
+                '<button type="button" class="button libro-remove-logo" style="color: #a00;">Eliminar logo</button></div>';
+            
+            $('#logos-container').append(html);
+            logoIndex++;
+        });
+        
+        // Eliminar logo
+        $(document).on('click', '.libro-remove-logo', function() {
+            $(this).closest('.logo-row').remove();
+        });
+        
+        // Media uploader para logos
+        $(document).on('click', '.libro-upload-logo', function(e) {
+            e.preventDefault();
+            var button = $(this);
+            var inputField = button.prev('input');
+            
+            var mediaUploader = wp.media({
+                title: 'Seleccionar logo',
+                button: { text: 'Usar esta imagen' },
+                multiple: false
+            });
+            
+            mediaUploader.on('select', function() {
+                var attachment = mediaUploader.state().get('selection').first().toJSON();
+                inputField.val(attachment.url);
+            });
+            
+            mediaUploader.open();
+        });
+    });
+    </script>
     <?php
 }
 
