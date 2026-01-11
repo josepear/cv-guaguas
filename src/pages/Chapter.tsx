@@ -294,9 +294,7 @@ const Chapter = () => {
       </main>
 
       {/* Footer */}
-      <InstitutionalFooter 
-        copyrightText="© 2024 Fundación Estadio Histórico. Todos los derechos reservados."
-      />
+      <InstitutionalFooter />
     </div>
   );
 };

@@ -53,9 +53,7 @@ const Index = () => {
           subtitle="Un recorrido por la trayectoria del club que ha conquistado el voleibol español"
         />
         
-        <InstitutionalFooter 
-          copyrightText="© 2024 Club Voleibol Guaguas. Todos los derechos reservados."
-        />
+        <InstitutionalFooter />
       </main>
     </div>
   );
