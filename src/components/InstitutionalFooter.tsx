@@ -5,7 +5,7 @@ interface InstitutionalFooterProps {
 
 const InstitutionalFooter = ({ 
   logos = [],
-  copyrightText = "© 2024 Todos los derechos reservados"
+  copyrightText = `© ${new Date().getFullYear()} Club Voleibol Guaguas. Todos los derechos reservados.`
 }: InstitutionalFooterProps) => {
   // Default placeholder logos if none provided
   const defaultLogos = [
