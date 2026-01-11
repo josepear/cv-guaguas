@@ -35,7 +35,7 @@
     
     <!-- Logo -->
     <a href="<?php echo home_url(); ?>" class="flex items-center gap-2 px-2 py-1 hover:opacity-80 transition-opacity">
-        <img src="<?php echo LIBRO_URI; ?>/assets/images/logo-guaguas.png" alt="CV Guaguas" class="h-10 w-auto">
+        <img src="<?php echo LIBRO_URI; ?>/assets/images/logo-guaguas.svg" alt="CV Guaguas" class="h-10 w-auto">
     </a>
 </header>
 

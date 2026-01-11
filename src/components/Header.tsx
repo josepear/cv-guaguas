@@ -1,6 +1,6 @@
 import { Link } from "react-router-dom";
 import { Menu, X } from "lucide-react";
-import logoGuaguas from "@/assets/logo-guaguas.png";
+import logoGuaguas from "@/assets/logo-guaguas.svg";
 
 interface HeaderProps {
   onMenuToggle: () => void;
