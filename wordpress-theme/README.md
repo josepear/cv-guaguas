@@ -139,6 +139,111 @@ Al activar el tema, automáticamente:
 - Números más bajos aparecen primero
 - Ejemplo: Prólogo = 0, Capítulo 1 = 10, Capítulo 2 = 20...
 
+## 📝 Shortcodes disponibles
+
+El tema incluye shortcodes para enriquecer el contenido de los capítulos con elementos editoriales idénticos a los componentes React.
+
+### Cita Editorial
+
+Muestra una cita destacada con estilo editorial, borde dorado y comillas decorativas.
+
+```
+[cita_editorial author="Nombre del autor" source="Fuente opcional"]
+Texto de la cita aquí. Puede ser una frase memorable o reflexión importante.
+[/cita_editorial]
+```
+
+**Parámetros:**
+| Parámetro | Requerido | Descripción |
+|-----------|-----------|-------------|
+| `author` | No | Nombre del autor de la cita |
+| `source` | No | Fuente, cargo o contexto de la cita |
+
+**Ejemplo de uso:**
+```
+[cita_editorial author="Manolo Berenguer" source="Fundador del CV Guaguas, 1976"]
+El voleibol no es solo un deporte, es una forma de vida que nos une como familia.
+[/cita_editorial]
+```
+
+---
+
+### Imagen con pie de foto
+
+Inserta una imagen con pie de foto opcional y efecto hover elegante.
+
+#### Opción 1: URL externa
+
+```
+[imagen_contenido src="URL_DE_LA_IMAGEN" alt="Descripción" caption="Pie de foto" fullwidth="false"]
+```
+
+**Parámetros:**
+| Parámetro | Requerido | Descripción |
+|-----------|-----------|-------------|
+| `src` | Sí | URL completa de la imagen |
+| `alt` | No | Texto alternativo para accesibilidad |
+| `caption` | No | Pie de foto que aparece debajo |
+| `fullwidth` | No | `true` para ancho completo, `false` para ancho contenido (por defecto) |
+
+**Ejemplo:**
+```
+[imagen_contenido src="https://ejemplo.com/imagen.jpg" alt="Equipo campeón 1985" caption="El CV Guaguas celebrando su primer título de liga" fullwidth="true"]
+```
+
+---
+
+#### Opción 2: Imagen de la biblioteca de medios
+
+```
+[imagen id="ID_DE_IMAGEN" caption="Pie de foto" fullwidth="false"]
+```
+
+**Parámetros:**
+| Parámetro | Requerido | Descripción |
+|-----------|-----------|-------------|
+| `id` | Sí | ID numérico de la imagen en la biblioteca de medios |
+| `caption` | No | Pie de foto personalizado (si no se especifica, usa el caption de la imagen) |
+| `fullwidth` | No | `true` para ancho completo |
+
+**Ejemplo:**
+```
+[imagen id="123" caption="Pabellón Insular durante la final de 1992"]
+```
+
+**Cómo obtener el ID de una imagen:**
+1. Ve a `Medios → Biblioteca`
+2. Haz clic en la imagen
+3. El ID aparece en la URL: `post=123` → el ID es 123
+
+---
+
+### Ejemplos combinados
+
+```html
+<!-- Capítulo con cita y imagen -->
+<p>El CV Guaguas nació en 1976 como un sueño de un grupo de amigos apasionados por el voleibol.</p>
+
+[cita_editorial author="Manolo Berenguer" source="Presidente fundador"]
+Empezamos con nada más que una pelota y muchas ganas. Hoy somos historia.
+[/cita_editorial]
+
+<p>La primera temporada fue dura pero gratificante...</p>
+
+[imagen id="45" caption="El equipo fundador del CV Guaguas en 1976" fullwidth="true"]
+
+<p>Aquella imagen representa el espíritu que nos ha acompañado durante 50 años.</p>
+```
+
+---
+
+### Notas importantes
+
+- Los shortcodes generan HTML idéntico a los componentes React (`EditorialQuote` y `ContentImage`)
+- Los estilos están incluidos en `header.php` y son consistentes con el diseño del tema
+- Las imágenes tienen efecto hover con zoom suave (`transform: scale(1.02)`)
+- Las citas incluyen comillas decorativas doradas y borde lateral
+
 ## 🎨 Personalización
 
 ### Variables CSS
