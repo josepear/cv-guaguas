@@ -526,3 +526,122 @@ function libro_theme_activation() {
     flush_rewrite_rules();
 }
 add_action('after_switch_theme', 'libro_theme_activation');
+
+/**
+ * Shortcode: Editorial Quote - idéntico a React EditorialQuote.tsx
+ * Uso: [cita_editorial author="Nombre" source="Fuente"]Texto de la cita[/cita_editorial]
+ */
+function libro_shortcode_cita_editorial($atts, $content = null) {
+    $atts = shortcode_atts(array(
+        'author' => '',
+        'source' => '',
+    ), $atts, 'cita_editorial');
+    
+    ob_start();
+    ?>
+    <blockquote class="editorial-quote my-8 md:my-12 py-4">
+        <p class="text-xl md:text-2xl text-foreground/90 leading-relaxed mb-4">
+            <?php echo wp_kses_post($content); ?>
+        </p>
+        <?php if ($atts['author'] || $atts['source']) : ?>
+        <footer class="text-sm text-muted-foreground">
+            <?php if ($atts['author']) : ?>
+            <cite class="not-italic font-medium"><?php echo esc_html($atts['author']); ?></cite>
+            <?php endif; ?>
+            <?php if ($atts['source']) : ?>
+            <span class="ml-2">— <?php echo esc_html($atts['source']); ?></span>
+            <?php endif; ?>
+        </footer>
+        <?php endif; ?>
+    </blockquote>
+    <?php
+    return ob_get_clean();
+}
+add_shortcode('cita_editorial', 'libro_shortcode_cita_editorial');
+
+/**
+ * Shortcode: Content Image - idéntico a React ContentImage.tsx
+ * Uso: [imagen_contenido src="url" alt="descripción" caption="pie de foto" fullwidth="true"]
+ */
+function libro_shortcode_imagen_contenido($atts) {
+    $atts = shortcode_atts(array(
+        'src' => '',
+        'alt' => '',
+        'caption' => '',
+        'fullwidth' => 'false',
+    ), $atts, 'imagen_contenido');
+    
+    if (empty($atts['src'])) {
+        return '';
+    }
+    
+    $fullwidth_class = $atts['fullwidth'] === 'true' ? '-mx-4 md:-mx-8' : '';
+    
+    ob_start();
+    ?>
+    <figure class="content-image my-8 md:my-12 <?php echo esc_attr($fullwidth_class); ?>">
+        <div class="overflow-hidden rounded bg-muted/20">
+            <img 
+                src="<?php echo esc_url($atts['src']); ?>" 
+                alt="<?php echo esc_attr($atts['alt']); ?>"
+                class="w-full h-auto object-cover transition-transform duration-500 hover:scale-[1.02]"
+                loading="lazy"
+            >
+        </div>
+        <?php if ($atts['caption']) : ?>
+        <figcaption class="mt-3 text-sm text-muted-foreground italic text-center">
+            <?php echo esc_html($atts['caption']); ?>
+        </figcaption>
+        <?php endif; ?>
+    </figure>
+    <?php
+    return ob_get_clean();
+}
+add_shortcode('imagen_contenido', 'libro_shortcode_imagen_contenido');
+
+/**
+ * Shortcode alternativo para imágenes usando ID de media
+ * Uso: [imagen id="123" caption="pie de foto" fullwidth="true"]
+ */
+function libro_shortcode_imagen_id($atts) {
+    $atts = shortcode_atts(array(
+        'id' => '',
+        'size' => 'large',
+        'caption' => '',
+        'fullwidth' => 'false',
+    ), $atts, 'imagen');
+    
+    if (empty($atts['id'])) {
+        return '';
+    }
+    
+    $image_src = wp_get_attachment_image_url($atts['id'], $atts['size']);
+    $image_alt = get_post_meta($atts['id'], '_wp_attachment_image_alt', true);
+    
+    if (!$image_src) {
+        return '';
+    }
+    
+    $fullwidth_class = $atts['fullwidth'] === 'true' ? '-mx-4 md:-mx-8' : '';
+    
+    ob_start();
+    ?>
+    <figure class="content-image my-8 md:my-12 <?php echo esc_attr($fullwidth_class); ?>">
+        <div class="overflow-hidden rounded bg-muted/20">
+            <img 
+                src="<?php echo esc_url($image_src); ?>" 
+                alt="<?php echo esc_attr($image_alt); ?>"
+                class="w-full h-auto object-cover transition-transform duration-500 hover:scale-[1.02]"
+                loading="lazy"
+            >
+        </div>
+        <?php if ($atts['caption']) : ?>
+        <figcaption class="mt-3 text-sm text-muted-foreground italic text-center">
+            <?php echo esc_html($atts['caption']); ?>
+        </figcaption>
+        <?php endif; ?>
+    </figure>
+    <?php
+    return ob_get_clean();
+}
+add_shortcode('imagen', 'libro_shortcode_imagen_id');
