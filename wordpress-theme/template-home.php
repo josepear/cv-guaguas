@@ -32,7 +32,7 @@ $epub_url = get_option('libro_epub_url', '#');
         <!-- Logo -->
         <div class="mb-8 animate-fade-in-up">
             <img 
-                src="<?php echo LIBRO_URI; ?>/assets/images/logo-guaguas.png" 
+                src="<?php echo LIBRO_URI; ?>/assets/images/logo-guaguas.svg" 
                 alt="CV Guaguas Logo" 
                 class="h-32 md:h-40 w-auto mx-auto drop-shadow-2xl"
             >

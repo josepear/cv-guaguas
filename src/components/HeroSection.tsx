@@ -1,7 +1,7 @@
 import { ArrowRight, FileText, BookOpen } from "lucide-react";
 import { Link } from "react-router-dom";
 import heroImage from "@/assets/hero-stadium.jpg";
-import logoGuaguas from "@/assets/logo-guaguas.png";
+import logoGuaguas from "@/assets/logo-guaguas.svg";
 
 interface HeroSectionProps {
   title: string;
