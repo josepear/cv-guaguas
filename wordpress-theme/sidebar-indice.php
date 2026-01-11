@@ -2,6 +2,7 @@
 /**
  * Sidebar con índice de capítulos - CV Guaguas
  * Soporta estructura jerárquica (capítulos con subcapítulos)
+ * IDENTICAL styling to React SidebarIndex.tsx
  */
 
 // Obtener capítulos principales (sin padre)
@@ -73,7 +74,7 @@ $epub_url = get_option('libro_epub_url', '#');
                     <?php if ($has_children) : ?>
                     <button 
                         type="button" 
-                        class="sidebar-accordion-toggle p-2 text-muted-foreground hover:text-gold transition-colors"
+                        class="sidebar-accordion-toggle p-2 text-muted-foreground hover:text-gold transition-colors duration-300"
                         aria-expanded="false"
                         aria-controls="subcapitulos-<?php echo $cap->ID; ?>"
                     >
