@@ -280,5 +280,5 @@
     </a>
 </header>
 
-<!-- Mobile Overlay -->
-<div id="sidebar-overlay" class="lg:hidden fixed inset-0 bg-background/80 backdrop-blur-sm z-40 hidden"></div>
+<!-- Overlay - IDENTICAL to React (shows on all devices when sidebar is open) -->
+<div id="sidebar-overlay" class="fixed inset-0 top-[52px] bg-background/80 backdrop-blur-sm z-40 hidden"></div>
