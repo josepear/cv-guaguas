@@ -210,6 +210,50 @@
         .\[animation-delay\:400ms\] { animation-delay: 400ms; }
         .\[animation-delay\:600ms\] { animation-delay: 600ms; }
         .\[animation-delay\:800ms\] { animation-delay: 800ms; }
+        
+        /* Editorial Quote - identical to React */
+        .editorial-quote {
+            position: relative;
+            padding-left: 1.5rem;
+            border-left: 3px solid hsl(45 100% 50%);
+            font-style: italic;
+        }
+        .editorial-quote::before {
+            content: '"';
+            position: absolute;
+            top: -0.5rem;
+            left: 0.5rem;
+            font-size: 3rem;
+            font-family: Georgia, serif;
+            color: hsl(45 100% 50% / 0.3);
+            line-height: 1;
+        }
+        
+        /* Content Image hover effect */
+        .content-image img {
+            transition: transform 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+        .content-image:hover img {
+            transform: scale(1.02);
+        }
+        
+        /* Reading content typography */
+        .reading-content p {
+            font-size: 1.125rem;
+            line-height: 1.8;
+            margin-bottom: 1.5rem;
+        }
+        .reading-content p:last-child {
+            margin-bottom: 0;
+        }
+        
+        /* Card background for Tailwind */
+        .bg-card\/30 {
+            background-color: hsl(220 45% 20% / 0.3);
+        }
+        .bg-card\/50 {
+            background-color: hsl(220 45% 20% / 0.5);
+        }
     </style>
     
     <?php wp_head(); ?>
