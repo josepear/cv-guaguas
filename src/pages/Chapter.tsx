@@ -7,11 +7,19 @@ import ChapterNavigation from "@/components/ChapterNavigation";
 import ReadingProgressBar from "@/components/ReadingProgressBar";
 import EditorialQuote from "@/components/EditorialQuote";
 import ContentImage from "@/components/ContentImage";
+import ChapterHero, { ChapterHeroProps, TitleLine } from "@/components/ChapterHero";
 import InstitutionalFooter from "@/components/InstitutionalFooter";
 import heroImage from "@/assets/hero-stadium.jpg";
 
+// Extended ChapterItem with hero config
+interface ChapterItemWithHero extends ChapterItem {
+  hero?: Omit<ChapterHeroProps, 'titleLines'> & {
+    titleLines: TitleLine[];
+  };
+}
+
 // Chapter data with slugs for routing - CV Guaguas book structure
-const chaptersData: ChapterItem[] = [
+const chaptersData: ChapterItemWithHero[] = [
   { 
     id: "capitulo-01", 
     slug: "capitulo-01",
@@ -30,25 +38,45 @@ const chaptersData: ChapterItem[] = [
       { id: "prologo-10", slug: "prologo-10", title: "Nombre, cargo" },
     ]
   },
-  { id: "capitulo-02", slug: "capitulo-02", title: "Del patio del colegio a la División de Honor", number: "02" },
+  { 
+    id: "capitulo-02", 
+    slug: "capitulo-02", 
+    title: "Del patio del colegio a la División de Honor", 
+    number: "02",
+    // Example hero config - can be set per chapter
+    hero: {
+      backgroundImage: heroImage,
+      backgroundOverlay: "rgba(212, 175, 55, 0.85)",
+      icon: "star",
+      iconColor: "#1a237e",
+      alignment: "right",
+      verticalPosition: "center",
+      titleLines: [
+        { text: "DEL PATIO", color: "#1a237e", highlightColor: "#FFFFFF" },
+        { text: "DEL COLEGIO", color: "#1a237e", highlightColor: "#FFFFFF" },
+        { text: "A LA DIVISIÓN", color: "#1a237e", highlightColor: "#FFFFFF" },
+        { text: "DE HONOR", color: "#1a237e", highlightColor: "#FFFFFF" },
+      ],
+    }
+  },
   { id: "capitulo-03", slug: "capitulo-03", title: "Así se forjó una leyenda", number: "03" },
   { id: "capitulo-04", slug: "capitulo-04", title: "Una transición dolorosa", number: "04" },
   { id: "capitulo-05", slug: "capitulo-05", title: "Vuelve el gran Guaguas", number: "05" },
 ];
 
 // Helper to find chapter by slug
-const getAllChapters = (): ChapterItem[] => {
-  const all: ChapterItem[] = [];
+const getAllChapters = (): ChapterItemWithHero[] => {
+  const all: ChapterItemWithHero[] = [];
   chaptersData.forEach(ch => {
     all.push(ch);
     if (ch.children) {
-      ch.children.forEach(child => all.push(child));
+      ch.children.forEach(child => all.push(child as ChapterItemWithHero));
     }
   });
   return all;
 };
 
-const getChapterBySlug = (slug: string) => getAllChapters().find(ch => ch.slug === slug);
+const getChapterBySlug = (slug: string): ChapterItemWithHero | undefined => getAllChapters().find(ch => ch.slug === slug);
 
 // Content for each chapter
 const chapterContent: Record<string, React.ReactNode> = {
@@ -275,12 +303,28 @@ const Chapter = () => {
 
       {/* Main Content */}
       <main className="pt-[56px] min-h-screen">
+        {/* Chapter Hero (if configured) */}
+        {chapter.hero && (
+          <ChapterHero
+            backgroundImage={chapter.hero.backgroundImage}
+            backgroundOverlay={chapter.hero.backgroundOverlay}
+            icon={chapter.hero.icon}
+            iconColor={chapter.hero.iconColor}
+            iconSize={chapter.hero.iconSize}
+            alignment={chapter.hero.alignment}
+            verticalPosition={chapter.hero.verticalPosition}
+            borderColor={chapter.hero.borderColor}
+            titleLines={chapter.hero.titleLines}
+            minHeight="400px"
+          />
+        )}
+        
         <div className="max-w-4xl mx-auto px-6 md:px-12 lg:px-16 py-16">
           <ChapterSection 
             id={chapter.id} 
             number={chapter.number} 
             title={chapter.title}
-            showChapterMarker={!!chapter.number}
+            showChapterMarker={!chapter.hero && !!chapter.number}
           >
             {content || <p>Contenido del capítulo próximamente.</p>}
           </ChapterSection>

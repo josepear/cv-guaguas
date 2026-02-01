@@ -10,9 +10,44 @@ get_header();
 $capitulo_numero = get_post_meta(get_the_ID(), '_capitulo_numero', true);
 $capitulo_subtitulo = get_post_meta(get_the_ID(), '_capitulo_subtitulo', true);
 
+// Hero fields
+$hero_enabled = get_post_meta(get_the_ID(), '_hero_enabled', true);
+$hero_image = get_post_meta(get_the_ID(), '_hero_image', true);
+$hero_overlay = get_post_meta(get_the_ID(), '_hero_overlay', true);
+$hero_icon = get_post_meta(get_the_ID(), '_hero_icon', true) ?: 'star';
+$hero_icon_color = get_post_meta(get_the_ID(), '_hero_icon_color', true) ?: '#D4AF37';
+$hero_alignment = get_post_meta(get_the_ID(), '_hero_alignment', true) ?: 'center';
+$hero_vertical = get_post_meta(get_the_ID(), '_hero_vertical', true) ?: 'center';
+$hero_title_lines = get_post_meta(get_the_ID(), '_hero_title_lines', true);
+$hero_border_color = get_post_meta(get_the_ID(), '_hero_border_color', true);
+
 // Navegación entre capítulos
 $prev_capitulo = get_adjacent_post(false, '', true);
 $next_capitulo = get_adjacent_post(false, '', false);
+
+// Alignment classes for hero
+$align_classes = array(
+    'left' => 'items-start text-left',
+    'center' => 'items-center text-center',
+    'right' => 'items-end text-right',
+);
+
+$vertical_classes = array(
+    'top' => 'justify-start pt-16',
+    'center' => 'justify-center',
+    'bottom' => 'justify-end pb-16',
+);
+
+$alignment_class = isset($align_classes[$hero_alignment]) ? $align_classes[$hero_alignment] : $align_classes['center'];
+$vertical_class = isset($vertical_classes[$hero_vertical]) ? $vertical_classes[$hero_vertical] : $vertical_classes['center'];
+
+// Icon SVG
+$icon_svg = '';
+if ($hero_icon === 'star') {
+    $icon_svg = '<svg class="w-12 h-12 fill-current" style="color: ' . esc_attr($hero_icon_color) . ';" viewBox="0 0 24 24"><polygon points="12,2 15.09,8.26 22,9.27 17,14.14 18.18,21.02 12,17.77 5.82,21.02 7,14.14 2,9.27 8.91,8.26"/></svg>';
+} elseif ($hero_icon === 'star-outline') {
+    $icon_svg = '<svg class="w-12 h-12" style="color: ' . esc_attr($hero_icon_color) . ';" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><polygon points="12,2 15.09,8.26 22,9.27 17,14.14 18.18,21.02 12,17.77 5.82,21.02 7,14.14 2,9.27 8.91,8.26"/></svg>';
+}
 ?>
 
 <!-- Reading Progress Bar - igual que React -->
@@ -25,10 +60,67 @@ $next_capitulo = get_adjacent_post(false, '', false);
 
 <!-- Main Content - estructura idéntica a React -->
 <main class="pt-[56px] min-h-screen bg-background">
+    
+    <?php if ($hero_enabled === '1' && $hero_image) : ?>
+    <!-- Chapter Hero -->
+    <div class="chapter-hero relative overflow-hidden" style="min-height: 400px;">
+        <div class="absolute inset-0 bg-cover bg-center bg-no-repeat" style="background-image: url('<?php echo esc_url($hero_image); ?>');"></div>
+        
+        <?php if ($hero_overlay) : ?>
+        <div class="absolute inset-0" style="background-color: <?php echo esc_attr($hero_overlay); ?>;"></div>
+        <?php endif; ?>
+        
+        <?php if ($hero_border_color) : ?>
+        <div class="absolute inset-4 sm:inset-6 md:inset-8 border-2 pointer-events-none" style="border-color: <?php echo esc_attr($hero_border_color); ?>;"></div>
+        <?php endif; ?>
+        
+        <div class="relative z-10 flex flex-col h-full w-full px-6 sm:px-8 md:px-12 py-8 <?php echo esc_attr($alignment_class . ' ' . $vertical_class); ?>" style="min-height: 400px;">
+            <?php if ($icon_svg) : ?>
+            <div class="mb-4"><?php echo $icon_svg; ?></div>
+            <?php endif; ?>
+            
+            <div class="flex flex-col gap-1 <?php echo $hero_alignment === 'center' ? 'items-center' : ($hero_alignment === 'right' ? 'items-end' : 'items-start'); ?>">
+                <?php 
+                if (!empty($hero_title_lines) && is_array($hero_title_lines)) :
+                    foreach ($hero_title_lines as $line) :
+                        $text = isset($line['text']) ? $line['text'] : '';
+                        $color = isset($line['color']) ? $line['color'] : '#FFFFFF';
+                        $highlight = isset($line['highlight']) ? $line['highlight'] : '';
+                        $use_highlight = isset($line['use_highlight']) && $line['use_highlight'] === '1';
+                        
+                        $style = 'color: ' . esc_attr($color) . ';';
+                        $classes = 'font-display font-black text-2xl sm:text-3xl md:text-4xl lg:text-5xl uppercase tracking-tight leading-tight';
+                        
+                        if ($use_highlight && $highlight) :
+                            $style .= ' background-color: ' . esc_attr($highlight) . ';';
+                            ?>
+                            <span class="<?php echo esc_attr($classes); ?> inline-block px-2 py-1" style="<?php echo esc_attr($style); ?>">
+                                <?php echo esc_html($text); ?>
+                            </span>
+                        <?php else : ?>
+                            <span class="block <?php echo esc_attr($classes); ?>" style="<?php echo esc_attr($style); ?>">
+                                <?php echo esc_html($text); ?>
+                            </span>
+                        <?php 
+                        endif;
+                    endforeach;
+                else :
+                    // Fallback: usar el título del capítulo
+                    ?>
+                    <span class="block font-display font-black text-2xl sm:text-3xl md:text-4xl lg:text-5xl uppercase tracking-tight leading-tight text-white">
+                        <?php the_title(); ?>
+                    </span>
+                <?php endif; ?>
+            </div>
+        </div>
+    </div>
+    <?php endif; ?>
+
     <div class="max-w-4xl mx-auto px-6 md:px-12 lg:px-16 py-16">
         
         <!-- Chapter Section - igual que ChapterSection.tsx -->
         <section class="scroll-mt-24 py-16 md:py-24 border-b border-border/30 last:border-b-0">
+            <?php if ($hero_enabled !== '1') : ?>
             <header class="mb-8 md:mb-12">
                 <?php if ($capitulo_numero) : ?>
                 <span class="chapter-marker block mb-4">
@@ -40,6 +132,7 @@ $next_capitulo = get_adjacent_post(false, '', false);
                     <?php the_title(); ?>
                 </h2>
             </header>
+            <?php endif; ?>
             
             <div class="reading-content text-foreground/85">
                 <?php if (has_post_thumbnail()) : ?>

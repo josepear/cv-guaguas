@@ -66,6 +66,7 @@
     /* Typography */
     --font-serif: 'Montserrat', -apple-system, BlinkMacSystemFont, sans-serif;
     --font-sans: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+    --font-display: 'Montserrat', -apple-system, BlinkMacSystemFont, sans-serif;
 
     /* Spacing for reading */
     --content-max-width: 70ch;
@@ -861,6 +862,37 @@ h1, h2, h3, h4, h5, h6 {
     }
 }
 
+/* Chapter Hero Styles */
+.chapter-hero {
+    position: relative;
+    overflow: hidden;
+}
+
+.chapter-hero .font-display {
+    font-family: var(--font-display);
+}
+
+.chapter-hero .font-black {
+    font-weight: 900;
+}
+
+.chapter-hero .uppercase {
+    text-transform: uppercase;
+}
+
+.chapter-hero .tracking-tight {
+    letter-spacing: -0.025em;
+}
+
+.chapter-hero .leading-tight {
+    line-height: 1.25;
+}
+
+/* Utility classes for font-display */
+.font-display {
+    font-family: var(--font-display);
+}
+
 /* Print styles */
 @media print {
     .no-print { display: none !important; }
@@ -868,4 +900,5 @@ h1, h2, h3, h4, h5, h6 {
     .hero-overlay { display: none; }
     .content-image { break-inside: avoid; }
     .editorial-quote { break-inside: avoid; }
+    .chapter-hero { display: none; }
 }

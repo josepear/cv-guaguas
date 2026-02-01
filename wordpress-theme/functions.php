@@ -645,3 +645,107 @@ function libro_shortcode_imagen_id($atts) {
     return ob_get_clean();
 }
 add_shortcode('imagen', 'libro_shortcode_imagen_id');
+
+/**
+ * Shortcode: Chapter Hero - Cabecera de capítulo personalizable
+ * Uso: [hero_capitulo background="url" overlay="rgba(0,0,0,0.5)" icon="star" icon_color="#D4AF37" alignment="center" vertical="center" border_color="#D4AF37"]
+ *      [hero_linea color="#FFFFFF" highlight="#D4AF37"]Texto de la línea[/hero_linea]
+ * [/hero_capitulo]
+ */
+function libro_shortcode_hero_capitulo($atts, $content = null) {
+    $atts = shortcode_atts(array(
+        'background' => '',
+        'overlay' => '',
+        'icon' => 'star',
+        'icon_color' => '#D4AF37',
+        'alignment' => 'center',
+        'vertical' => 'center',
+        'border_color' => '',
+        'min_height' => '400px',
+        'aspect_ratio' => '',
+    ), $atts, 'hero_capitulo');
+    
+    // Alignment classes
+    $align_classes = array(
+        'left' => 'items-start text-left',
+        'center' => 'items-center text-center',
+        'right' => 'items-end text-right',
+    );
+    
+    $vertical_classes = array(
+        'top' => 'justify-start pt-16',
+        'center' => 'justify-center',
+        'bottom' => 'justify-end pb-16',
+    );
+    
+    $alignment_class = isset($align_classes[$atts['alignment']]) ? $align_classes[$atts['alignment']] : $align_classes['center'];
+    $vertical_class = isset($vertical_classes[$atts['vertical']]) ? $vertical_classes[$atts['vertical']] : $vertical_classes['center'];
+    
+    // Icon SVG
+    $icon_svg = '';
+    if ($atts['icon'] === 'star') {
+        $icon_svg = '<svg class="w-12 h-12 fill-current" style="color: ' . esc_attr($atts['icon_color']) . ';" viewBox="0 0 24 24"><polygon points="12,2 15.09,8.26 22,9.27 17,14.14 18.18,21.02 12,17.77 5.82,21.02 7,14.14 2,9.27 8.91,8.26"/></svg>';
+    } elseif ($atts['icon'] === 'star-outline') {
+        $icon_svg = '<svg class="w-12 h-12" style="color: ' . esc_attr($atts['icon_color']) . ';" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><polygon points="12,2 15.09,8.26 22,9.27 17,14.14 18.18,21.02 12,17.77 5.82,21.02 7,14.14 2,9.27 8.91,8.26"/></svg>';
+    }
+    
+    // Style for container
+    $container_style = '';
+    if ($atts['aspect_ratio']) {
+        $container_style .= 'aspect-ratio: ' . esc_attr($atts['aspect_ratio']) . ';';
+    } else {
+        $container_style .= 'min-height: ' . esc_attr($atts['min_height']) . ';';
+    }
+    
+    ob_start();
+    ?>
+    <div class="chapter-hero relative overflow-hidden" style="<?php echo $container_style; ?>">
+        <?php if ($atts['background']) : ?>
+        <div class="absolute inset-0 bg-cover bg-center bg-no-repeat" style="background-image: url('<?php echo esc_url($atts['background']); ?>');"></div>
+        <?php endif; ?>
+        
+        <?php if ($atts['overlay']) : ?>
+        <div class="absolute inset-0" style="background-color: <?php echo esc_attr($atts['overlay']); ?>;"></div>
+        <?php endif; ?>
+        
+        <?php if ($atts['border_color']) : ?>
+        <div class="absolute inset-4 sm:inset-6 md:inset-8 border-2 pointer-events-none" style="border-color: <?php echo esc_attr($atts['border_color']); ?>;"></div>
+        <?php endif; ?>
+        
+        <div class="relative z-10 flex flex-col h-full w-full px-6 sm:px-8 md:px-12 py-8 <?php echo esc_attr($alignment_class . ' ' . $vertical_class); ?>">
+            <?php if ($icon_svg) : ?>
+            <div class="mb-4"><?php echo $icon_svg; ?></div>
+            <?php endif; ?>
+            
+            <div class="flex flex-col gap-1 <?php echo $atts['alignment'] === 'center' ? 'items-center' : ($atts['alignment'] === 'right' ? 'items-end' : 'items-start'); ?>">
+                <?php echo do_shortcode($content); ?>
+            </div>
+        </div>
+    </div>
+    <?php
+    return ob_get_clean();
+}
+add_shortcode('hero_capitulo', 'libro_shortcode_hero_capitulo');
+
+/**
+ * Shortcode: Hero Line - Línea de título dentro del hero
+ * Uso: [hero_linea color="#FFFFFF" highlight="#D4AF37"]Texto[/hero_linea]
+ */
+function libro_shortcode_hero_linea($atts, $content = null) {
+    $atts = shortcode_atts(array(
+        'color' => '#FFFFFF',
+        'highlight' => '',
+    ), $atts, 'hero_linea');
+    
+    $style = 'color: ' . esc_attr($atts['color']) . ';';
+    $classes = 'font-display font-black text-2xl sm:text-3xl md:text-4xl lg:text-5xl uppercase tracking-tight leading-tight';
+    
+    if ($atts['highlight']) {
+        $style .= ' background-color: ' . esc_attr($atts['highlight']) . ';';
+        $classes .= ' inline-block px-2 py-1';
+        return '<span class="' . esc_attr($classes) . '" style="' . esc_attr($style) . '">' . wp_kses_post($content) . '</span>';
+    }
+    
+    return '<span class="block ' . esc_attr($classes) . '" style="' . esc_attr($style) . '">' . wp_kses_post($content) . '</span>';
+}
+add_shortcode('hero_linea', 'libro_shortcode_hero_linea');

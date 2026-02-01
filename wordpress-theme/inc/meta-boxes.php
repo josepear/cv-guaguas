@@ -39,6 +39,17 @@ function libro_capitulo_meta_box_html($post) {
     $cita = get_post_meta($post->ID, '_cita_destacada', true);
     $autor_cita = get_post_meta($post->ID, '_autor_cita', true);
     
+    // Hero fields
+    $hero_enabled = get_post_meta($post->ID, '_hero_enabled', true);
+    $hero_image = get_post_meta($post->ID, '_hero_image', true);
+    $hero_overlay = get_post_meta($post->ID, '_hero_overlay', true);
+    $hero_icon = get_post_meta($post->ID, '_hero_icon', true) ?: 'star';
+    $hero_icon_color = get_post_meta($post->ID, '_hero_icon_color', true) ?: '#D4AF37';
+    $hero_alignment = get_post_meta($post->ID, '_hero_alignment', true) ?: 'center';
+    $hero_vertical = get_post_meta($post->ID, '_hero_vertical', true) ?: 'center';
+    $hero_title_lines = get_post_meta($post->ID, '_hero_title_lines', true);
+    $hero_border_color = get_post_meta($post->ID, '_hero_border_color', true);
+    
     // Si es nuevo, marcador activado por defecto
     if ($mostrar_marcador === '') {
         $mostrar_marcador = '1';
@@ -54,6 +65,7 @@ function libro_capitulo_meta_box_html($post) {
             margin-bottom: 5px;
         }
         .libro-meta-field input[type="text"],
+        .libro-meta-field input[type="url"],
         .libro-meta-field textarea {
             width: 100%;
         }
@@ -67,6 +79,39 @@ function libro_capitulo_meta_box_html($post) {
             display: flex;
             align-items: center;
             gap: 10px;
+        }
+        .libro-meta-section {
+            background: #f9f9f9;
+            border: 1px solid #ddd;
+            padding: 20px;
+            margin-top: 25px;
+            border-radius: 4px;
+        }
+        .libro-meta-section h3 {
+            margin-top: 0;
+            padding-bottom: 10px;
+            border-bottom: 1px solid #ddd;
+        }
+        .libro-title-line {
+            background: #fff;
+            border: 1px solid #ddd;
+            padding: 15px;
+            margin-bottom: 10px;
+            border-radius: 4px;
+        }
+        .libro-title-line-fields {
+            display: grid;
+            grid-template-columns: 2fr 1fr 1fr;
+            gap: 10px;
+        }
+        .libro-color-preview {
+            width: 30px;
+            height: 30px;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            display: inline-block;
+            vertical-align: middle;
+            margin-left: 5px;
         }
     </style>
     
@@ -120,6 +165,198 @@ function libro_capitulo_meta_box_html($post) {
             style="max-width: 400px;"
         >
     </div>
+    
+    <!-- HERO SECTION -->
+    <div class="libro-meta-section">
+        <h3>🖼️ Cabecera del Capítulo (Hero)</h3>
+        <p class="description" style="margin-top: -5px; margin-bottom: 15px;">
+            Configura una imagen de cabecera personalizada con títulos estilizados.
+        </p>
+        
+        <div class="libro-meta-field">
+            <div class="libro-meta-field-inline">
+                <input 
+                    type="checkbox" 
+                    id="libro_hero_enabled" 
+                    name="libro_hero_enabled" 
+                    value="1" 
+                    <?php checked($hero_enabled, '1'); ?>
+                >
+                <label for="libro_hero_enabled" style="margin-bottom: 0; font-weight: normal;">
+                    Activar cabecera personalizada
+                </label>
+            </div>
+        </div>
+        
+        <div id="hero-fields" style="<?php echo $hero_enabled !== '1' ? 'display:none;' : ''; ?>">
+            <div class="libro-meta-field">
+                <label for="libro_hero_image">Imagen de fondo</label>
+                <input 
+                    type="url" 
+                    id="libro_hero_image" 
+                    name="libro_hero_image" 
+                    value="<?php echo esc_attr($hero_image); ?>" 
+                    placeholder="https://..."
+                    style="max-width: 70%; display: inline-block;"
+                >
+                <button type="button" class="button libro-upload-hero-image">Seleccionar imagen</button>
+            </div>
+            
+            <div class="libro-meta-field">
+                <label for="libro_hero_overlay">Color de overlay (opcional)</label>
+                <input 
+                    type="text" 
+                    id="libro_hero_overlay" 
+                    name="libro_hero_overlay" 
+                    value="<?php echo esc_attr($hero_overlay); ?>" 
+                    placeholder="Ej: rgba(212,175,55,0.8) o #1a237e"
+                    style="max-width: 300px;"
+                >
+                <p class="description">Usa rgba() para transparencia. Ej: rgba(26,35,126,0.7) para azul oscuro</p>
+            </div>
+            
+            <div class="libro-meta-field">
+                <label for="libro_hero_border_color">Color del borde decorativo (opcional)</label>
+                <input 
+                    type="text" 
+                    id="libro_hero_border_color" 
+                    name="libro_hero_border_color" 
+                    value="<?php echo esc_attr($hero_border_color); ?>" 
+                    placeholder="Ej: #D4AF37 o rgba(212,175,55,0.8)"
+                    style="max-width: 300px;"
+                >
+            </div>
+            
+            <div style="display: grid; grid-template-columns: 1fr 1fr 1fr 1fr; gap: 15px;">
+                <div class="libro-meta-field">
+                    <label for="libro_hero_icon">Icono</label>
+                    <select id="libro_hero_icon" name="libro_hero_icon">
+                        <option value="star" <?php selected($hero_icon, 'star'); ?>>★ Estrella rellena</option>
+                        <option value="star-outline" <?php selected($hero_icon, 'star-outline'); ?>>☆ Estrella vacía</option>
+                        <option value="none" <?php selected($hero_icon, 'none'); ?>>Sin icono</option>
+                    </select>
+                </div>
+                
+                <div class="libro-meta-field">
+                    <label for="libro_hero_icon_color">Color del icono</label>
+                    <input 
+                        type="color" 
+                        id="libro_hero_icon_color" 
+                        name="libro_hero_icon_color" 
+                        value="<?php echo esc_attr($hero_icon_color ?: '#D4AF37'); ?>"
+                        style="width: 60px; height: 35px; padding: 2px;"
+                    >
+                </div>
+                
+                <div class="libro-meta-field">
+                    <label for="libro_hero_alignment">Alineación horizontal</label>
+                    <select id="libro_hero_alignment" name="libro_hero_alignment">
+                        <option value="left" <?php selected($hero_alignment, 'left'); ?>>Izquierda</option>
+                        <option value="center" <?php selected($hero_alignment, 'center'); ?>>Centro</option>
+                        <option value="right" <?php selected($hero_alignment, 'right'); ?>>Derecha</option>
+                    </select>
+                </div>
+                
+                <div class="libro-meta-field">
+                    <label for="libro_hero_vertical">Posición vertical</label>
+                    <select id="libro_hero_vertical" name="libro_hero_vertical">
+                        <option value="top" <?php selected($hero_vertical, 'top'); ?>>Arriba</option>
+                        <option value="center" <?php selected($hero_vertical, 'center'); ?>>Centro</option>
+                        <option value="bottom" <?php selected($hero_vertical, 'bottom'); ?>>Abajo</option>
+                    </select>
+                </div>
+            </div>
+            
+            <div class="libro-meta-field">
+                <label>Líneas de título</label>
+                <p class="description" style="margin-bottom: 10px;">
+                    Cada línea puede tener su propio color y resaltado. Deja vacío para usar el título del capítulo.
+                </p>
+                
+                <div id="hero-title-lines">
+                    <?php 
+                    if (!empty($hero_title_lines) && is_array($hero_title_lines)) :
+                        foreach ($hero_title_lines as $index => $line) :
+                    ?>
+                    <div class="libro-title-line">
+                        <div class="libro-title-line-fields">
+                            <div>
+                                <label>Texto</label>
+                                <input type="text" name="libro_hero_title_lines[<?php echo $index; ?>][text]" value="<?php echo esc_attr($line['text']); ?>" placeholder="Texto de la línea">
+                            </div>
+                            <div>
+                                <label>Color del texto</label>
+                                <input type="color" name="libro_hero_title_lines[<?php echo $index; ?>][color]" value="<?php echo esc_attr($line['color'] ?: '#FFFFFF'); ?>" style="width: 50px; height: 30px;">
+                            </div>
+                            <div>
+                                <label>Resaltado (opcional)</label>
+                                <input type="color" name="libro_hero_title_lines[<?php echo $index; ?>][highlight]" value="<?php echo esc_attr($line['highlight'] ?: '#D4AF37'); ?>" style="width: 50px; height: 30px;">
+                                <input type="checkbox" name="libro_hero_title_lines[<?php echo $index; ?>][use_highlight]" value="1" <?php checked(!empty($line['use_highlight'])); ?>> Usar
+                            </div>
+                        </div>
+                        <button type="button" class="button libro-remove-title-line" style="margin-top: 10px; color: #a00;">Eliminar línea</button>
+                    </div>
+                    <?php 
+                        endforeach;
+                    endif; 
+                    ?>
+                </div>
+                
+                <button type="button" id="add-title-line" class="button">+ Añadir línea de título</button>
+            </div>
+        </div>
+    </div>
+    
+    <script>
+    jQuery(document).ready(function($) {
+        // Toggle hero fields
+        $('#libro_hero_enabled').on('change', function() {
+            $('#hero-fields').toggle(this.checked);
+        });
+        
+        // Media uploader para imagen hero
+        $('.libro-upload-hero-image').on('click', function(e) {
+            e.preventDefault();
+            var inputField = $(this).prev('input');
+            
+            var mediaUploader = wp.media({
+                title: 'Seleccionar imagen de cabecera',
+                button: { text: 'Usar esta imagen' },
+                multiple: false
+            });
+            
+            mediaUploader.on('select', function() {
+                var attachment = mediaUploader.state().get('selection').first().toJSON();
+                inputField.val(attachment.url);
+            });
+            
+            mediaUploader.open();
+        });
+        
+        // Añadir línea de título
+        var lineIndex = <?php echo !empty($hero_title_lines) ? count($hero_title_lines) : 0; ?>;
+        
+        $('#add-title-line').on('click', function() {
+            var html = '<div class="libro-title-line">' +
+                '<div class="libro-title-line-fields">' +
+                '<div><label>Texto</label><input type="text" name="libro_hero_title_lines[' + lineIndex + '][text]" placeholder="Texto de la línea"></div>' +
+                '<div><label>Color del texto</label><input type="color" name="libro_hero_title_lines[' + lineIndex + '][color]" value="#FFFFFF" style="width: 50px; height: 30px;"></div>' +
+                '<div><label>Resaltado (opcional)</label><input type="color" name="libro_hero_title_lines[' + lineIndex + '][highlight]" value="#D4AF37" style="width: 50px; height: 30px;"> ' +
+                '<input type="checkbox" name="libro_hero_title_lines[' + lineIndex + '][use_highlight]" value="1"> Usar</div>' +
+                '</div>' +
+                '<button type="button" class="button libro-remove-title-line" style="margin-top: 10px; color: #a00;">Eliminar línea</button>' +
+                '</div>';
+            
+            $('#hero-title-lines').append(html);
+            lineIndex++;
+        });
+        
+        // Eliminar línea de título
+        $(document).on('click', '.libro-remove-title-line', function() {
+            $(this).closest('.libro-title-line').remove();
+        });
+    });
+    </script>
     <?php
 }
 
@@ -163,6 +400,56 @@ function libro_save_capitulo_meta($post_id) {
     // Guardar autor de la cita
     if (isset($_POST['libro_autor_cita'])) {
         update_post_meta($post_id, '_autor_cita', sanitize_text_field($_POST['libro_autor_cita']));
+    }
+    
+    // Guardar campos de Hero
+    $hero_enabled = isset($_POST['libro_hero_enabled']) ? '1' : '0';
+    update_post_meta($post_id, '_hero_enabled', $hero_enabled);
+    
+    if (isset($_POST['libro_hero_image'])) {
+        update_post_meta($post_id, '_hero_image', esc_url_raw($_POST['libro_hero_image']));
+    }
+    
+    if (isset($_POST['libro_hero_overlay'])) {
+        update_post_meta($post_id, '_hero_overlay', sanitize_text_field($_POST['libro_hero_overlay']));
+    }
+    
+    if (isset($_POST['libro_hero_border_color'])) {
+        update_post_meta($post_id, '_hero_border_color', sanitize_text_field($_POST['libro_hero_border_color']));
+    }
+    
+    if (isset($_POST['libro_hero_icon'])) {
+        update_post_meta($post_id, '_hero_icon', sanitize_text_field($_POST['libro_hero_icon']));
+    }
+    
+    if (isset($_POST['libro_hero_icon_color'])) {
+        update_post_meta($post_id, '_hero_icon_color', sanitize_hex_color($_POST['libro_hero_icon_color']));
+    }
+    
+    if (isset($_POST['libro_hero_alignment'])) {
+        update_post_meta($post_id, '_hero_alignment', sanitize_text_field($_POST['libro_hero_alignment']));
+    }
+    
+    if (isset($_POST['libro_hero_vertical'])) {
+        update_post_meta($post_id, '_hero_vertical', sanitize_text_field($_POST['libro_hero_vertical']));
+    }
+    
+    // Guardar líneas de título
+    if (isset($_POST['libro_hero_title_lines']) && is_array($_POST['libro_hero_title_lines'])) {
+        $title_lines = array();
+        foreach ($_POST['libro_hero_title_lines'] as $line) {
+            if (!empty($line['text'])) {
+                $title_lines[] = array(
+                    'text' => sanitize_text_field($line['text']),
+                    'color' => isset($line['color']) ? sanitize_hex_color($line['color']) : '#FFFFFF',
+                    'highlight' => isset($line['highlight']) ? sanitize_hex_color($line['highlight']) : '',
+                    'use_highlight' => isset($line['use_highlight']) ? '1' : '0',
+                );
+            }
+        }
+        update_post_meta($post_id, '_hero_title_lines', $title_lines);
+    } else {
+        delete_post_meta($post_id, '_hero_title_lines');
     }
 }
 add_action('save_post_capitulo', 'libro_save_capitulo_meta');
