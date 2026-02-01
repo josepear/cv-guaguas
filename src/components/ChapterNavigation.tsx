@@ -14,7 +14,7 @@ interface ChapterNavigationProps {
 
 const ChapterNavigation = ({ previousChapter, nextChapter }: ChapterNavigationProps) => {
   return (
-    <nav className="mt-16 pt-8 border-t border-border/30">
+    <nav className="mt-16 pt-8">
       <div className="flex flex-col sm:flex-row items-stretch gap-4">
         {/* Previous Chapter */}
         {previousChapter ? (
