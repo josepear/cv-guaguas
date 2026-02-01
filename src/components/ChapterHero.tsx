@@ -1,5 +1,6 @@
 import { ReactNode } from "react";
 import { Star } from "lucide-react";
+import InlineSvgIcon from "./InlineSvgIcon";
 
 export interface TitleLine {
   text: string;
@@ -13,6 +14,7 @@ export interface ChapterHeroProps {
   backgroundOverlay?: string; // Overlay color with opacity (e.g., "rgba(0,0,0,0.5)" or "hsl(45 100% 50% / 0.8)")
   icon?: "star" | "star-outline" | "none" | ReactNode;
   customIconSrc?: string; // URL to custom icon image (supports SVG, PNG, etc.)
+  customIconColor?: string; // Color to apply to SVG icons (only works with SVG files)
   iconColor?: string;
   iconSize?: "sm" | "md" | "lg" | "xl";
   iconWidth?: number; // Custom width in pixels
@@ -33,6 +35,7 @@ const ChapterHero = ({
   backgroundOverlay,
   icon = "star",
   customIconSrc,
+  customIconColor,
   iconColor = "hsl(var(--gold))",
   iconSize = "md",
   iconWidth,
@@ -97,8 +100,22 @@ const ChapterHero = ({
   const renderIcon = () => {
     if (icon === "none") return null;
     
-    // Custom icon image
+    // Custom icon image - use InlineSvgIcon for SVGs to support coloring
     if (customIconSrc) {
+      const isSvg = customIconSrc.toLowerCase().endsWith(".svg");
+      
+      if (isSvg) {
+        return (
+          <InlineSvgIcon
+            src={customIconSrc}
+            color={customIconColor}
+            width={iconDims.width}
+            height={iconDims.height}
+          />
+        );
+      }
+      
+      // Non-SVG images (PNG, JPG, etc.)
       return (
         <img 
           src={customIconSrc}

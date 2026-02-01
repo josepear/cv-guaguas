@@ -18,6 +18,7 @@ $hero_overlay = get_post_meta(get_the_ID(), '_hero_overlay', true);
 $hero_icon = get_post_meta(get_the_ID(), '_hero_icon', true) ?: 'star';
 $hero_icon_color = get_post_meta(get_the_ID(), '_hero_icon_color', true) ?: '#D4AF37';
 $hero_custom_icon = get_post_meta(get_the_ID(), '_hero_custom_icon', true);
+$hero_custom_icon_color = get_post_meta(get_the_ID(), '_hero_custom_icon_color', true);
 $hero_icon_width = get_post_meta(get_the_ID(), '_hero_icon_width', true) ?: 80;
 $hero_icon_height = get_post_meta(get_the_ID(), '_hero_icon_height', true) ?: 80;
 $hero_alignment = get_post_meta(get_the_ID(), '_hero_alignment', true) ?: 'center';
@@ -68,12 +69,24 @@ $icon_html = '';
 $icon_size_style = 'width: ' . intval($hero_icon_width) . 'px; height: ' . intval($hero_icon_height) . 'px;';
 
 if ($hero_icon === 'custom' && $hero_custom_icon) {
-    // Custom image icon (supports SVG, PNG, etc.)
-    $icon_html = '<img src="' . esc_url($hero_custom_icon) . '" alt="" style="' . $icon_size_style . ' object-contain;">';
+    // Check if it's an SVG file
+    $is_svg = preg_match('/\.svg$/i', $hero_custom_icon);
+    
+    if ($is_svg && $hero_custom_icon_color) {
+        // For SVG with color - use inline SVG via JavaScript
+        $icon_html = '<div class="inline-svg-icon" 
+            data-src="' . esc_url($hero_custom_icon) . '" 
+            data-color="' . esc_attr($hero_custom_icon_color) . '" 
+            style="' . $icon_size_style . ' display: inline-block;"
+        ></div>';
+    } else {
+        // Regular image (PNG, JPG, or SVG without color change)
+        $icon_html = '<img src="' . esc_url($hero_custom_icon) . '" alt="" style="' . $icon_size_style . ' object-fit: contain;" class="drop-shadow-lg">';
+    }
 } elseif ($hero_icon === 'star') {
-    $icon_html = '<svg style="' . $icon_size_style . ' color: ' . esc_attr($hero_icon_color) . ';" class="fill-current" viewBox="0 0 24 24"><polygon points="12,2 15.09,8.26 22,9.27 17,14.14 18.18,21.02 12,17.77 5.82,21.02 7,14.14 2,9.27 8.91,8.26"/></svg>';
+    $icon_html = '<svg style="' . $icon_size_style . ' color: ' . esc_attr($hero_icon_color) . ';" class="fill-current drop-shadow-lg" viewBox="0 0 24 24"><polygon points="12,2 15.09,8.26 22,9.27 17,14.14 18.18,21.02 12,17.77 5.82,21.02 7,14.14 2,9.27 8.91,8.26"/></svg>';
 } elseif ($hero_icon === 'star-outline') {
-    $icon_html = '<svg style="' . $icon_size_style . ' color: ' . esc_attr($hero_icon_color) . ';" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><polygon points="12,2 15.09,8.26 22,9.27 17,14.14 18.18,21.02 12,17.77 5.82,21.02 7,14.14 2,9.27 8.91,8.26"/></svg>';
+    $icon_html = '<svg style="' . $icon_size_style . ' color: ' . esc_attr($hero_icon_color) . ';" fill="none" stroke="currentColor" stroke-width="2" class="drop-shadow-lg" viewBox="0 0 24 24"><polygon points="12,2 15.09,8.26 22,9.27 17,14.14 18.18,21.02 12,17.77 5.82,21.02 7,14.14 2,9.27 8.91,8.26"/></svg>';
 }
 ?>
 

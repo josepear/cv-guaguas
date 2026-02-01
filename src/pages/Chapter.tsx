@@ -16,6 +16,7 @@ import starGold from "@/assets/star-gold.png";
 interface ChapterItemWithHero extends ChapterItem {
   hero?: Omit<ChapterHeroProps, 'titleLines'> & {
     titleLines: TitleLine[];
+    customIconColor?: string;
   };
 }
 
@@ -314,6 +315,7 @@ const Chapter = () => {
             backgroundOverlay={chapter.hero.backgroundOverlay}
             icon={chapter.hero.icon}
             customIconSrc={chapter.hero.customIconSrc}
+            customIconColor={chapter.hero.customIconColor}
             iconColor={chapter.hero.iconColor}
             iconSize={chapter.hero.iconSize}
             iconWidth={chapter.hero.iconWidth}

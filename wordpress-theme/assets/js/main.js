@@ -165,4 +165,76 @@
         });
     });
 
+    /**
+     * Inline SVG Icon Loader with Color Support
+     * Loads SVG files and applies custom colors
+     */
+    function initInlineSvgIcons() {
+        const svgContainers = document.querySelectorAll('.inline-svg-icon');
+        
+        svgContainers.forEach(async container => {
+            const src = container.dataset.src;
+            const color = container.dataset.color;
+            
+            if (!src) return;
+            
+            try {
+                const response = await fetch(src);
+                if (!response.ok) throw new Error('Failed to load SVG');
+                
+                let svgText = await response.text();
+                
+                // Parse SVG
+                const parser = new DOMParser();
+                const doc = parser.parseFromString(svgText, 'image/svg+xml');
+                const svgElement = doc.querySelector('svg');
+                
+                if (!svgElement) throw new Error('Invalid SVG');
+                
+                // Get dimensions from container style
+                const containerStyle = container.getAttribute('style');
+                const widthMatch = containerStyle.match(/width:\s*(\d+)px/);
+                const heightMatch = containerStyle.match(/height:\s*(\d+)px/);
+                
+                if (widthMatch) svgElement.setAttribute('width', widthMatch[1]);
+                if (heightMatch) svgElement.setAttribute('height', heightMatch[1]);
+                
+                // Apply color if provided
+                if (color) {
+                    const elements = svgElement.querySelectorAll('*');
+                    elements.forEach(el => {
+                        const fill = el.getAttribute('fill');
+                        const stroke = el.getAttribute('stroke');
+                        
+                        if (fill && fill !== 'none') {
+                            el.setAttribute('fill', color);
+                        }
+                        if (stroke && stroke !== 'none') {
+                            el.setAttribute('stroke', color);
+                        }
+                    });
+                    
+                    // Also set on root SVG
+                    const rootFill = svgElement.getAttribute('fill');
+                    if (rootFill && rootFill !== 'none') {
+                        svgElement.setAttribute('fill', color);
+                    }
+                }
+                
+                // Add drop-shadow class
+                svgElement.classList.add('drop-shadow-lg');
+                
+                // Replace container with SVG
+                container.innerHTML = svgElement.outerHTML;
+                
+            } catch (error) {
+                console.error('Error loading SVG:', error);
+                // Fallback to img tag
+                container.innerHTML = '<img src="' + src + '" alt="" style="' + container.getAttribute('style') + ' object-fit: contain;" class="drop-shadow-lg">';
+            }
+        });
+    }
+
+    initInlineSvgIcons();
+
 })();

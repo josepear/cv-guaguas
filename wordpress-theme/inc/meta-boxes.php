@@ -47,6 +47,7 @@ function libro_capitulo_meta_box_html($post) {
     $hero_icon = get_post_meta($post->ID, '_hero_icon', true) ?: 'star';
     $hero_icon_color = get_post_meta($post->ID, '_hero_icon_color', true) ?: '#D4AF37';
     $hero_custom_icon = get_post_meta($post->ID, '_hero_custom_icon', true);
+    $hero_custom_icon_color = get_post_meta($post->ID, '_hero_custom_icon_color', true);
     $hero_icon_width = get_post_meta($post->ID, '_hero_icon_width', true) ?: '80';
     $hero_icon_height = get_post_meta($post->ID, '_hero_icon_height', true) ?: '80';
     $hero_alignment = get_post_meta($post->ID, '_hero_alignment', true) ?: 'center';
@@ -276,6 +277,26 @@ function libro_capitulo_meta_box_html($post) {
                     style="max-width: 60%; display: inline-block;"
                 >
                 <button type="button" class="button libro-upload-custom-icon">Seleccionar imagen</button>
+                <p class="description" style="margin-top: 5px;">Los archivos SVG permiten cambiar el color. Las imágenes PNG/JPG mantienen su color original.</p>
+            </div>
+            
+            <div id="hero-custom-icon-color-field" class="libro-meta-field" style="<?php echo ($hero_icon !== 'custom' || !$hero_custom_icon) ? 'display:none;' : ''; ?>">
+                <label for="libro_hero_custom_icon_color">Color del icono SVG (opcional)</label>
+                <input 
+                    type="color" 
+                    id="libro_hero_custom_icon_color" 
+                    name="libro_hero_custom_icon_color" 
+                    value="<?php echo esc_attr($hero_custom_icon_color ?: '#D4AF37'); ?>"
+                    style="width: 60px; height: 35px; padding: 2px;"
+                >
+                <input 
+                    type="checkbox" 
+                    id="libro_hero_use_custom_icon_color" 
+                    name="libro_hero_use_custom_icon_color" 
+                    value="1" 
+                    <?php checked(!empty($hero_custom_icon_color)); ?>
+                > Aplicar color
+                <p class="description" style="margin-top: 5px;">Solo funciona con archivos SVG. Marca "Aplicar color" para colorear el icono.</p>
             </div>
             
             <div style="display: grid; grid-template-columns: 1fr 1fr 1fr 1fr; gap: 15px;">
@@ -389,6 +410,19 @@ function libro_capitulo_meta_box_html($post) {
             var isCustom = $(this).val() === 'custom';
             $('#hero-custom-icon-field').toggle(isCustom);
             $('#hero-icon-color-field').toggle(!isCustom && $(this).val() !== 'none');
+            
+            // Show color field for custom icon if it's an SVG
+            var iconUrl = $('#libro_hero_custom_icon').val();
+            var isSvg = iconUrl && iconUrl.toLowerCase().endsWith('.svg');
+            $('#hero-custom-icon-color-field').toggle(isCustom && isSvg);
+        });
+        
+        // Show/hide SVG color field based on file type
+        $('#libro_hero_custom_icon').on('change input', function() {
+            var iconUrl = $(this).val();
+            var isSvg = iconUrl && iconUrl.toLowerCase().endsWith('.svg');
+            var isCustom = $('#libro_hero_icon').val() === 'custom';
+            $('#hero-custom-icon-color-field').toggle(isCustom && isSvg);
         });
         
         // Media uploader para imagen hero
@@ -531,6 +565,13 @@ function libro_save_capitulo_meta($post_id) {
     
     if (isset($_POST['libro_hero_custom_icon'])) {
         update_post_meta($post_id, '_hero_custom_icon', esc_url_raw($_POST['libro_hero_custom_icon']));
+    }
+    
+    // Guardar color del icono SVG personalizado
+    if (isset($_POST['libro_hero_use_custom_icon_color']) && isset($_POST['libro_hero_custom_icon_color'])) {
+        update_post_meta($post_id, '_hero_custom_icon_color', sanitize_hex_color($_POST['libro_hero_custom_icon_color']));
+    } else {
+        delete_post_meta($post_id, '_hero_custom_icon_color');
     }
     
     if (isset($_POST['libro_hero_icon_width'])) {

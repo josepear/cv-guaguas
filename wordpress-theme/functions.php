@@ -655,9 +655,14 @@ add_shortcode('imagen', 'libro_shortcode_imagen_id');
 function libro_shortcode_hero_capitulo($atts, $content = null) {
     $atts = shortcode_atts(array(
         'background' => '',
+        'height' => '',
         'overlay' => '',
         'icon' => 'star',
         'icon_color' => '#D4AF37',
+        'custom_icon' => '',
+        'custom_icon_color' => '',
+        'icon_width' => '80',
+        'icon_height' => '80',
         'alignment' => 'center',
         'vertical' => 'center',
         'border_color' => '',
@@ -681,17 +686,39 @@ function libro_shortcode_hero_capitulo($atts, $content = null) {
     $alignment_class = isset($align_classes[$atts['alignment']]) ? $align_classes[$atts['alignment']] : $align_classes['center'];
     $vertical_class = isset($vertical_classes[$atts['vertical']]) ? $vertical_classes[$atts['vertical']] : $vertical_classes['center'];
     
-    // Icon SVG
-    $icon_svg = '';
-    if ($atts['icon'] === 'star') {
-        $icon_svg = '<svg class="w-12 h-12 fill-current" style="color: ' . esc_attr($atts['icon_color']) . ';" viewBox="0 0 24 24"><polygon points="12,2 15.09,8.26 22,9.27 17,14.14 18.18,21.02 12,17.77 5.82,21.02 7,14.14 2,9.27 8.91,8.26"/></svg>';
+    // Icon size style
+    $icon_width = intval($atts['icon_width']) ?: 80;
+    $icon_height = intval($atts['icon_height']) ?: 80;
+    $icon_size_style = 'width: ' . $icon_width . 'px; height: ' . $icon_height . 'px;';
+    
+    // Icon HTML
+    $icon_html = '';
+    if ($atts['icon'] === 'custom' && $atts['custom_icon']) {
+        // Check if it's an SVG file
+        $is_svg = preg_match('/\.svg$/i', $atts['custom_icon']);
+        
+        if ($is_svg && $atts['custom_icon_color']) {
+            // For SVG with color - use inline SVG via JavaScript
+            $icon_html = '<div class="inline-svg-icon" 
+                data-src="' . esc_url($atts['custom_icon']) . '" 
+                data-color="' . esc_attr($atts['custom_icon_color']) . '" 
+                style="' . $icon_size_style . ' display: inline-block;"
+            ></div>';
+        } else {
+            // Regular image (PNG, JPG, or SVG without color change)
+            $icon_html = '<img src="' . esc_url($atts['custom_icon']) . '" alt="" style="' . $icon_size_style . ' object-fit: contain;" class="drop-shadow-lg">';
+        }
+    } elseif ($atts['icon'] === 'star') {
+        $icon_html = '<svg style="' . $icon_size_style . ' color: ' . esc_attr($atts['icon_color']) . ';" class="fill-current drop-shadow-lg" viewBox="0 0 24 24"><polygon points="12,2 15.09,8.26 22,9.27 17,14.14 18.18,21.02 12,17.77 5.82,21.02 7,14.14 2,9.27 8.91,8.26"/></svg>';
     } elseif ($atts['icon'] === 'star-outline') {
-        $icon_svg = '<svg class="w-12 h-12" style="color: ' . esc_attr($atts['icon_color']) . ';" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><polygon points="12,2 15.09,8.26 22,9.27 17,14.14 18.18,21.02 12,17.77 5.82,21.02 7,14.14 2,9.27 8.91,8.26"/></svg>';
+        $icon_html = '<svg style="' . $icon_size_style . ' color: ' . esc_attr($atts['icon_color']) . ';" fill="none" stroke="currentColor" stroke-width="2" class="drop-shadow-lg" viewBox="0 0 24 24"><polygon points="12,2 15.09,8.26 22,9.27 17,14.14 18.18,21.02 12,17.77 5.82,21.02 7,14.14 2,9.27 8.91,8.26"/></svg>';
     }
     
     // Style for container
     $container_style = '';
-    if ($atts['aspect_ratio']) {
+    if ($atts['height']) {
+        $container_style .= 'height: ' . esc_attr($atts['height']) . '; min-height: auto;';
+    } elseif ($atts['aspect_ratio']) {
         $container_style .= 'aspect-ratio: ' . esc_attr($atts['aspect_ratio']) . ';';
     } else {
         $container_style .= 'min-height: ' . esc_attr($atts['min_height']) . ';';
@@ -713,8 +740,8 @@ function libro_shortcode_hero_capitulo($atts, $content = null) {
         <?php endif; ?>
         
         <div class="relative z-10 flex flex-col h-full w-full px-6 sm:px-8 md:px-12 py-8 <?php echo esc_attr($alignment_class . ' ' . $vertical_class); ?>">
-            <?php if ($icon_svg) : ?>
-            <div class="mb-4"><?php echo $icon_svg; ?></div>
+            <?php if ($icon_html) : ?>
+            <div class="mb-4"><?php echo $icon_html; ?></div>
             <?php endif; ?>
             
             <div class="flex flex-col gap-1 <?php echo $atts['alignment'] === 'center' ? 'items-center' : ($atts['alignment'] === 'right' ? 'items-end' : 'items-start'); ?>">
