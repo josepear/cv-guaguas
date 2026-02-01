@@ -70,10 +70,10 @@ const SidebarIndex = ({ chapters, activeChapterSlug, isOpen, onClose }: SidebarI
             <span className="flex items-center gap-2.5">
               {chapter.number && (
               <span className={cn(
-                  "flex items-center justify-center font-semibold font-sans rounded-sm",
+                  "flex items-center justify-center font-semibold font-sans rounded-sm transition-all duration-200 hover:scale-110",
                   depth === 0 
-                    ? "min-w-[1.5rem] h-[1.5rem] text-[11px] bg-gold text-[hsl(220,50%,10%)]" 
-                    : "min-w-[1.25rem] h-[1.25rem] text-[10px] bg-white text-[hsl(220,50%,10%)]"
+                    ? "min-w-[1.5rem] h-[1.5rem] text-[11px] bg-gold text-[hsl(220,50%,10%)] hover:shadow-[0_0_8px_hsl(45,100%,50%,0.5)]" 
+                    : "min-w-[1.25rem] h-[1.25rem] text-[10px] bg-white text-[hsl(220,50%,10%)] hover:shadow-[0_0_6px_rgba(255,255,255,0.4)]"
                 )}>
                   {chapter.number}
                 </span>
