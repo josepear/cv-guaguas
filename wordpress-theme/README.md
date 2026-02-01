@@ -244,6 +244,89 @@ Empezamos con nada más que una pelota y muchas ganas. Hoy somos historia.
 - Las imágenes tienen efecto hover con zoom suave (`transform: scale(1.02)`)
 - Las citas incluyen comillas decorativas doradas y borde lateral
 
+---
+
+### Cabecera de Capítulo (Hero)
+
+Crea cabeceras visuales personalizadas con imagen de fondo, iconos decorativos y títulos estilizados.
+
+#### Opción 1: Desde el editor de WordPress
+
+1. Edita un capítulo
+2. Activa la sección **"Cabecera del Capítulo (Hero)"**
+3. Configura:
+   - Imagen de fondo
+   - Color de overlay (transparencia)
+   - Icono (estrella, sin icono)
+   - Color del icono
+   - Alineación horizontal y vertical
+   - Borde decorativo (opcional)
+   - Líneas de título con colores y resaltados personalizados
+
+#### Opción 2: Usando shortcodes
+
+```
+[hero_capitulo 
+    background="https://ejemplo.com/fondo.jpg" 
+    overlay="rgba(26,35,126,0.7)" 
+    icon="star" 
+    icon_color="#D4AF37" 
+    alignment="right" 
+    vertical="center"
+    border_color="#D4AF37"
+]
+    [hero_linea color="#FFFFFF"]DEL PATIO[/hero_linea]
+    [hero_linea color="#1a237e" highlight="#D4AF37"]DEL COLEGIO[/hero_linea]
+    [hero_linea color="#1a237e" highlight="#D4AF37"]A LA DIVISIÓN[/hero_linea]
+    [hero_linea color="#1a237e" highlight="#D4AF37"]DE HONOR[/hero_linea]
+[/hero_capitulo]
+```
+
+**Parámetros de `[hero_capitulo]`:**
+| Parámetro | Requerido | Descripción |
+|-----------|-----------|-------------|
+| `background` | Sí | URL de la imagen de fondo |
+| `overlay` | No | Color del overlay con transparencia (ej: `rgba(0,0,0,0.5)`) |
+| `icon` | No | `star` (rellena), `star-outline` (vacía), `none` (sin icono) |
+| `icon_color` | No | Color del icono en hex (por defecto: `#D4AF37`) |
+| `alignment` | No | `left`, `center`, `right` (por defecto: `center`) |
+| `vertical` | No | `top`, `center`, `bottom` (por defecto: `center`) |
+| `border_color` | No | Color del borde decorativo interno |
+| `min_height` | No | Altura mínima (por defecto: `400px`) |
+| `aspect_ratio` | No | Ratio de aspecto (ej: `16/9`, `4/3`) |
+
+**Parámetros de `[hero_linea]`:**
+| Parámetro | Requerido | Descripción |
+|-----------|-----------|-------------|
+| `color` | No | Color del texto (por defecto: `#FFFFFF`) |
+| `highlight` | No | Color de fondo/resaltado (si se especifica, el texto tendrá fondo de este color) |
+
+**Ejemplos de estilos:**
+
+1. **Estilo documentos antiguos (azul oscuro con estrella dorada):**
+```
+[hero_capitulo background="estatutos.jpg" overlay="rgba(26,35,126,0.85)" border_color="#D4AF37"]
+    [hero_linea color="#D4AF37" highlight="#1a237e"]ESTATUTOS[/hero_linea]
+    [hero_linea color="#D4AF37" highlight="#1a237e"]FUNDACIONALES[/hero_linea]
+[/hero_capitulo]
+```
+
+2. **Estilo duotono dorado (fondo amarillo):**
+```
+[hero_capitulo background="jugador.jpg" overlay="rgba(212,175,55,0.8)" icon_color="#1a237e"]
+    [hero_linea color="#FFFFFF"]PACO SÁNCHEZ[/hero_linea]
+    [hero_linea color="#FFFFFF" highlight="#1a237e"]JOVER[/hero_linea]
+[/hero_capitulo]
+```
+
+3. **Estilo minimalista (título a la derecha):**
+```
+[hero_capitulo background="colegio.jpg" overlay="rgba(212,175,55,0.9)" icon="star" icon_color="#1a237e" alignment="right"]
+    [hero_linea color="#1a237e" highlight="#FFFFFF"]DEL PATIO[/hero_linea]
+    [hero_linea color="#1a237e" highlight="#FFFFFF"]DEL COLEGIO[/hero_linea]
+[/hero_capitulo]
+```
+
 ## 🎨 Personalización
 
 ### Variables CSS
