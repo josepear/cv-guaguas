@@ -10,6 +10,7 @@ import ContentImage from "@/components/ContentImage";
 import ChapterHero, { ChapterHeroProps, TitleLine } from "@/components/ChapterHero";
 import InstitutionalFooter from "@/components/InstitutionalFooter";
 import heroImage from "@/assets/hero-stadium.jpg";
+import starGold from "@/assets/star-gold.png";
 
 // Extended ChapterItem with hero config
 interface ChapterItemWithHero extends ChapterItem {
@@ -47,12 +48,15 @@ const chaptersData: ChapterItemWithHero[] = [
     hero: {
       backgroundImage: heroImage,
       backgroundOverlay: "rgba(212, 175, 55, 0.85)",
-      icon: "star",
-      iconColor: "#1a237e",
+      customIconSrc: starGold,
+      iconWidth: 80,
+      iconHeight: 80,
       alignment: "right",
       verticalPosition: "center",
+      height: "500px",
+      titleFontWeight: "black",
       titleLines: [
-        { text: "DEL PATIO", color: "#1a237e", highlightColor: "#FFFFFF" },
+        { text: "DEL PATIO", color: "#1a237e", highlightColor: "#FFFFFF", fontWeight: "black" },
         { text: "DEL COLEGIO", color: "#1a237e", highlightColor: "#FFFFFF" },
         { text: "A LA DIVISIÓN", color: "#1a237e", highlightColor: "#FFFFFF" },
         { text: "DE HONOR", color: "#1a237e", highlightColor: "#FFFFFF" },
@@ -309,13 +313,19 @@ const Chapter = () => {
             backgroundImage={chapter.hero.backgroundImage}
             backgroundOverlay={chapter.hero.backgroundOverlay}
             icon={chapter.hero.icon}
+            customIconSrc={chapter.hero.customIconSrc}
             iconColor={chapter.hero.iconColor}
             iconSize={chapter.hero.iconSize}
+            iconWidth={chapter.hero.iconWidth}
+            iconHeight={chapter.hero.iconHeight}
             alignment={chapter.hero.alignment}
             verticalPosition={chapter.hero.verticalPosition}
             borderColor={chapter.hero.borderColor}
             titleLines={chapter.hero.titleLines}
-            minHeight="400px"
+            titleFontWeight={chapter.hero.titleFontWeight}
+            height={chapter.hero.height}
+            minHeight={chapter.hero.minHeight}
+            aspectRatio={chapter.hero.aspectRatio}
           />
         )}
         
