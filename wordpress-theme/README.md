@@ -264,6 +264,7 @@ Crea cabeceras visuales personalizadas con imagen de fondo, iconos decorativos y
      - `☆ Estrella vacía`: Icono de estrella con solo borde
      - `📷 Imagen personalizada`: Sube tu propio icono (SVG, PNG, JPG, etc.)
      - `Sin icono`: No mostrar icono
+   - **Color del icono SVG** (nuevo): Si subes un archivo SVG, puedes cambiar su color marcando "Aplicar color" y seleccionando el color deseado. Los archivos PNG/JPG mantienen su color original.
    - **Dimensiones del icono**: Ancho y alto en píxeles (20-300px)
    - **Alineación**: Horizontal (izquierda, centro, derecha) y vertical (arriba, centro, abajo)
    - **Líneas de título**: Cada línea con:
@@ -304,6 +305,7 @@ Crea cabeceras visuales personalizadas con imagen de fondo, iconos decorativos y
 | `icon` | No | `star` (rellena), `star-outline` (vacía), `custom` (imagen), `none` (sin icono) |
 | `icon_color` | No | Color del icono en hex (por defecto: `#D4AF37`). Solo aplica a estrellas |
 | `custom_icon` | No | URL de imagen personalizada para el icono (SVG, PNG, etc.). Requiere `icon="custom"` |
+| `custom_icon_color` | No | Color a aplicar al icono SVG (solo funciona con archivos .svg) |
 | `icon_width` | No | Ancho del icono en píxeles (por defecto: `80`) |
 | `icon_height` | No | Alto del icono en píxeles (por defecto: `80`) |
 | `alignment` | No | `left`, `center`, `right` (por defecto: `center`) |
@@ -321,7 +323,15 @@ Crea cabeceras visuales personalizadas con imagen de fondo, iconos decorativos y
 
 **Ejemplos de estilos:**
 
-1. **Estilo con icono personalizado (estrella dorada del club):**
+1. **Estilo con icono SVG y color personalizado:**
+```
+[hero_capitulo background="estadio.jpg" height="500px" icon="custom" custom_icon="https://mi-sitio.com/icono.svg" custom_icon_color="#D4AF37" icon_width="120" icon_height="120"]
+    [hero_linea color="#FFFFFF" font_weight="black"]LOS ORÍGENES[/hero_linea]
+    [hero_linea color="#D4AF37" font_weight="extrabold"]DEL CLUB[/hero_linea]
+[/hero_capitulo]
+```
+
+2. **Estilo con icono PNG (sin cambio de color):**
 ```
 [hero_capitulo background="estadio.jpg" height="500px" icon="custom" custom_icon="https://mi-sitio.com/star-gold.png" icon_width="120" icon_height="120"]
     [hero_linea color="#FFFFFF" font_weight="black"]LOS ORÍGENES[/hero_linea]
