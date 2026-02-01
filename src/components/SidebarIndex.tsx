@@ -67,9 +67,14 @@ const SidebarIndex = ({ chapters, activeChapterSlug, isOpen, onClose }: SidebarI
               hasActiveChild && "text-gold/80"
             )}
           >
-            <span className="flex items-baseline gap-2">
+            <span className="flex items-center gap-2.5">
               {chapter.number && (
-                <span className="text-gold-muted text-xs font-sans tracking-wider">
+                <span className={cn(
+                  "flex items-center justify-center min-w-[1.75rem] h-[1.75rem] text-xs font-semibold font-sans rounded-sm",
+                  depth === 0 
+                    ? "bg-gold text-[hsl(220,50%,10%)]" 
+                    : "bg-white text-[hsl(220,50%,10%)]"
+                )}>
                   {chapter.number}
                 </span>
               )}
