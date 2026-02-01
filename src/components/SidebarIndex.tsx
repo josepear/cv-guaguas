@@ -8,6 +8,7 @@ export interface ChapterItem {
   slug: string;
   title: string;
   number?: string;
+  hideNumber?: boolean;
   children?: ChapterItem[];
 }
 
@@ -68,7 +69,7 @@ const SidebarIndex = ({ chapters, activeChapterSlug, isOpen, onClose }: SidebarI
             )}
           >
             <span className="flex items-center gap-2.5">
-              {chapter.number && (
+              {chapter.number && !chapter.hideNumber && (
               <span className={cn(
                   "flex items-center justify-center font-semibold font-sans rounded-sm transition-all duration-200 hover:scale-110",
                   depth === 0 
