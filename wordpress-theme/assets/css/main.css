@@ -66,6 +66,7 @@
     /* Typography */
     --font-serif: 'Montserrat', -apple-system, BlinkMacSystemFont, sans-serif;
     --font-sans: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+    --font-display: 'Montserrat', -apple-system, BlinkMacSystemFont, sans-serif;
 
     /* Spacing for reading */
     --content-max-width: 70ch;
