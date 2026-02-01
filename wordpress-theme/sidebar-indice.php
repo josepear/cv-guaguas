@@ -89,9 +89,10 @@ $current_slug = is_singular('capitulo') ? get_post_field('post_name', get_the_ID
                     <?php foreach ($subcapitulos as $sub) : 
                         $sub_slug = get_post_field('post_name', $sub->ID);
                         $sub_is_active = ($sub_slug === $current_slug);
+                        // Priority: manual number > auto-generated from parent
                         $sub_numero = libro_get_field('numero_capitulo', $sub->ID);
-                        // Generate sub number if parent has number
                         if (!$sub_numero && $numero) {
+                            // Auto-generate only if parent has number and sub doesn't
                             $sub_numero = $numero . '.' . $sub_index;
                         }
                     ?>
