@@ -121,16 +121,16 @@ function libro_capitulo_meta_box_html($post) {
     </style>
     
     <div class="libro-meta-field">
-        <label for="libro_numero_capitulo">Número de Capítulo</label>
+        <label for="libro_numero_capitulo">Número de Capítulo / Subcapítulo</label>
         <input 
             type="text" 
             id="libro_numero_capitulo" 
             name="libro_numero_capitulo" 
             value="<?php echo esc_attr($numero); ?>" 
-            placeholder="Ej: 01, 02, 03..."
+            placeholder="Ej: 01, 1.1, 1.2..."
             style="max-width: 150px;"
         >
-        <p class="description">Deja vacío para prólogos o secciones sin numeración.</p>
+        <p class="description">Para capítulos principales usa "01", "02", etc. Para subcapítulos usa "1.1", "1.2", etc. Si dejas vacío en un subcapítulo, se auto-generará a partir del número del padre.</p>
     </div>
     
     <div class="libro-meta-field">
