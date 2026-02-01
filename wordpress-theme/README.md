@@ -127,6 +127,43 @@ Al activar el tema, automáticamente:
    - **Autor de la cita**: Quien dijo la cita
 5. Publica el capítulo
 
+### Numeración de capítulos y subcapítulos
+
+El sidebar muestra números con estilo visual distintivo:
+
+- **Capítulos principales**: Badge dorado con texto azul oscuro (ej: `01`, `02`)
+- **Subcapítulos**: Badge blanco con texto azul oscuro (ej: `1.1`, `1.2`)
+
+#### Sistema de numeración automática
+
+| Situación | Resultado |
+|-----------|-----------|
+| Capítulo con número definido | Se muestra el número configurado |
+| Subcapítulo con número definido | Se muestra el número configurado |
+| Subcapítulo sin número + padre con número | Se auto-genera (ej: padre "01" → hijos "01.1", "01.2"...) |
+| Sin número definido | No se muestra badge de número |
+
+#### Ocultar número específico
+
+Puedes ocultar completamente el número de cualquier capítulo o subcapítulo:
+
+1. Edita el capítulo
+2. En "Datos del Capítulo", marca **"Ocultar número en el menú lateral"**
+3. La vista previa mostrará el badge atenuado con "(oculto)"
+4. Guarda los cambios
+
+Esto es útil para:
+- Prólogos o introducciones sin numeración
+- Secciones especiales (anexos, agradecimientos, etc.)
+- Subcapítulos que no deben mostrar número aunque el padre lo tenga
+
+#### Vista previa en el editor
+
+El campo de número incluye una **vista previa en tiempo real** que muestra:
+- Cómo se verá el badge (estilo dorado o blanco según sea capítulo/subcapítulo)
+- Indicador "(auto-generado)" cuando el número se calcula del padre
+- Indicador "(oculto)" cuando está marcada la opción de ocultar
+
 ### Crear subcapítulos
 
 1. Crea un nuevo capítulo normalmente
