@@ -5,20 +5,26 @@ export interface TitleLine {
   text: string;
   color?: string; // CSS color value
   highlightColor?: string; // Background highlight color
+  fontWeight?: "normal" | "medium" | "semibold" | "bold" | "extrabold" | "black";
 }
 
 export interface ChapterHeroProps {
   backgroundImage?: string;
   backgroundOverlay?: string; // Overlay color with opacity (e.g., "rgba(0,0,0,0.5)" or "hsl(45 100% 50% / 0.8)")
   icon?: "star" | "star-outline" | "none" | ReactNode;
+  customIconSrc?: string; // URL to custom icon image (supports SVG, PNG, etc.)
   iconColor?: string;
-  iconSize?: "sm" | "md" | "lg";
+  iconSize?: "sm" | "md" | "lg" | "xl";
+  iconWidth?: number; // Custom width in pixels
+  iconHeight?: number; // Custom height in pixels
   titleLines: TitleLine[];
+  titleFontWeight?: "normal" | "medium" | "semibold" | "bold" | "extrabold" | "black";
   alignment?: "left" | "center" | "right";
   verticalPosition?: "top" | "center" | "bottom";
   className?: string;
-  aspectRatio?: "16/9" | "4/3" | "3/2" | "1/1" | "auto";
+  aspectRatio?: "16/9" | "4/3" | "3/2" | "21/9" | "1/1" | "auto";
   minHeight?: string;
+  height?: string; // Fixed height (e.g., "500px", "60vh")
   borderColor?: string; // For decorative border like in example 1
 }
 
@@ -26,22 +32,38 @@ const ChapterHero = ({
   backgroundImage,
   backgroundOverlay,
   icon = "star",
+  customIconSrc,
   iconColor = "hsl(var(--gold))",
   iconSize = "md",
+  iconWidth,
+  iconHeight,
   titleLines,
+  titleFontWeight = "black",
   alignment = "center",
   verticalPosition = "center",
   className = "",
   aspectRatio = "auto",
   minHeight = "400px",
+  height,
   borderColor,
 }: ChapterHeroProps) => {
   
   // Icon size mapping
   const iconSizes = {
-    sm: "w-8 h-8",
-    md: "w-12 h-12",
-    lg: "w-16 h-16",
+    sm: { width: 32, height: 32 },
+    md: { width: 48, height: 48 },
+    lg: { width: 64, height: 64 },
+    xl: { width: 96, height: 96 },
+  };
+
+  // Font weight mapping
+  const fontWeights = {
+    normal: "font-normal",
+    medium: "font-medium",
+    semibold: "font-semibold",
+    bold: "font-bold",
+    extrabold: "font-extrabold",
+    black: "font-black",
   };
 
   // Alignment classes
@@ -58,15 +80,48 @@ const ChapterHero = ({
     bottom: "justify-end pb-16",
   };
 
+  // Get icon dimensions
+  const getIconDimensions = () => {
+    if (iconWidth || iconHeight) {
+      return {
+        width: iconWidth || iconHeight || 48,
+        height: iconHeight || iconWidth || 48,
+      };
+    }
+    return iconSizes[iconSize];
+  };
+
+  const iconDims = getIconDimensions();
+
   // Render icon
   const renderIcon = () => {
     if (icon === "none") return null;
     
+    // Custom icon image
+    if (customIconSrc) {
+      return (
+        <img 
+          src={customIconSrc}
+          alt="Chapter icon"
+          style={{ 
+            width: iconDims.width, 
+            height: iconDims.height,
+            objectFit: "contain"
+          }}
+          className="drop-shadow-lg"
+        />
+      );
+    }
+    
     if (icon === "star") {
       return (
         <Star 
-          className={`${iconSizes[iconSize]} fill-current`} 
-          style={{ color: iconColor }}
+          className="fill-current drop-shadow-lg"
+          style={{ 
+            color: iconColor,
+            width: iconDims.width,
+            height: iconDims.height
+          }}
         />
       );
     }
@@ -74,8 +129,12 @@ const ChapterHero = ({
     if (icon === "star-outline") {
       return (
         <Star 
-          className={`${iconSizes[iconSize]}`} 
-          style={{ color: iconColor }}
+          style={{ 
+            color: iconColor,
+            width: iconDims.width,
+            height: iconDims.height
+          }}
+          className="drop-shadow-lg"
         />
       );
     }
@@ -87,6 +146,9 @@ const ChapterHero = ({
   // Render title lines
   const renderTitleLines = () => {
     return titleLines.map((line, index) => {
+      const lineWeight = line.fontWeight || titleFontWeight;
+      const weightClass = fontWeights[lineWeight];
+      
       const textStyle: React.CSSProperties = {
         color: line.color || "hsl(var(--foreground))",
       };
@@ -95,7 +157,7 @@ const ChapterHero = ({
         return (
           <span
             key={index}
-            className="inline-block px-2 py-1 font-display font-black text-2xl sm:text-3xl md:text-4xl lg:text-5xl uppercase tracking-tight leading-tight"
+            className={`inline-block px-2 py-1 font-display ${weightClass} text-2xl sm:text-3xl md:text-4xl lg:text-5xl uppercase tracking-tight leading-tight`}
             style={{
               ...textStyle,
               backgroundColor: line.highlightColor,
@@ -109,7 +171,7 @@ const ChapterHero = ({
       return (
         <span
           key={index}
-          className="block font-display font-black text-2xl sm:text-3xl md:text-4xl lg:text-5xl uppercase tracking-tight leading-tight"
+          className={`block font-display ${weightClass} text-2xl sm:text-3xl md:text-4xl lg:text-5xl uppercase tracking-tight leading-tight`}
           style={textStyle}
         >
           {line.text}
@@ -118,13 +180,21 @@ const ChapterHero = ({
     });
   };
 
+  // Calculate container styles
+  const containerStyle: React.CSSProperties = {};
+  
+  if (height) {
+    containerStyle.height = height;
+  } else if (aspectRatio !== "auto") {
+    containerStyle.aspectRatio = aspectRatio;
+  } else {
+    containerStyle.minHeight = minHeight;
+  }
+
   return (
     <div 
-      className={`relative overflow-hidden ${className}`}
-      style={{ 
-        aspectRatio: aspectRatio !== "auto" ? aspectRatio : undefined,
-        minHeight: aspectRatio === "auto" ? minHeight : undefined,
-      }}
+      className={`relative overflow-hidden w-full ${className}`}
+      style={containerStyle}
     >
       {/* Background Image */}
       {backgroundImage && (
@@ -155,7 +225,7 @@ const ChapterHero = ({
         className={`relative z-10 flex flex-col h-full w-full px-6 sm:px-8 md:px-12 py-8 ${alignmentClasses[alignment]} ${verticalClasses[verticalPosition]}`}
       >
         {/* Icon */}
-        {icon !== "none" && (
+        {(icon !== "none" || customIconSrc) && (
           <div className="mb-4">
             {renderIcon()}
           </div>
