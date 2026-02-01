@@ -255,30 +255,43 @@ Crea cabeceras visuales personalizadas con imagen de fondo, iconos decorativos y
 1. Edita un capítulo
 2. Activa la sección **"Cabecera del Capítulo (Hero)"**
 3. Configura:
-   - Imagen de fondo
-   - Color de overlay (transparencia)
-   - Icono (estrella, sin icono)
-   - Color del icono
-   - Alineación horizontal y vertical
-   - Borde decorativo (opcional)
-   - Líneas de título con colores y resaltados personalizados
+   - **Imagen de fondo**: Selecciona desde la biblioteca de medios
+   - **Altura del hero**: Define en `px` (ej: `500px`) o `vh` (ej: `60vh`). Deja vacío para altura automática
+   - **Color de overlay**: Usa `rgba()` para transparencia (ej: `rgba(26,35,126,0.7)`)
+   - **Borde decorativo**: Color del borde interno opcional
+   - **Tipo de icono**:
+     - `★ Estrella rellena`: Icono de estrella sólida con color personalizable
+     - `☆ Estrella vacía`: Icono de estrella con solo borde
+     - `📷 Imagen personalizada`: Sube tu propio icono (SVG, PNG, JPG, etc.)
+     - `Sin icono`: No mostrar icono
+   - **Dimensiones del icono**: Ancho y alto en píxeles (20-300px)
+   - **Alineación**: Horizontal (izquierda, centro, derecha) y vertical (arriba, centro, abajo)
+   - **Líneas de título**: Cada línea con:
+     - Texto
+     - Color del texto
+     - Resaltado (color de fondo opcional)
+     - **Peso de fuente**: Normal, Medium, Semibold, Bold, Extrabold, Black
 
 #### Opción 2: Usando shortcodes
 
 ```
 [hero_capitulo 
     background="https://ejemplo.com/fondo.jpg" 
+    height="500px"
     overlay="rgba(26,35,126,0.7)" 
     icon="star" 
-    icon_color="#D4AF37" 
+    icon_color="#D4AF37"
+    custom_icon="https://ejemplo.com/mi-icono.svg"
+    icon_width="100"
+    icon_height="100"
     alignment="right" 
     vertical="center"
     border_color="#D4AF37"
 ]
-    [hero_linea color="#FFFFFF"]DEL PATIO[/hero_linea]
-    [hero_linea color="#1a237e" highlight="#D4AF37"]DEL COLEGIO[/hero_linea]
-    [hero_linea color="#1a237e" highlight="#D4AF37"]A LA DIVISIÓN[/hero_linea]
-    [hero_linea color="#1a237e" highlight="#D4AF37"]DE HONOR[/hero_linea]
+    [hero_linea color="#FFFFFF" font_weight="black"]DEL PATIO[/hero_linea]
+    [hero_linea color="#1a237e" highlight="#D4AF37" font_weight="extrabold"]DEL COLEGIO[/hero_linea]
+    [hero_linea color="#1a237e" highlight="#D4AF37" font_weight="bold"]A LA DIVISIÓN[/hero_linea]
+    [hero_linea color="#1a237e" highlight="#D4AF37" font_weight="bold"]DE HONOR[/hero_linea]
 [/hero_capitulo]
 ```
 
@@ -286,13 +299,17 @@ Crea cabeceras visuales personalizadas con imagen de fondo, iconos decorativos y
 | Parámetro | Requerido | Descripción |
 |-----------|-----------|-------------|
 | `background` | Sí | URL de la imagen de fondo |
+| `height` | No | Altura fija del hero (ej: `500px`, `60vh`). Si no se especifica, usa altura automática |
 | `overlay` | No | Color del overlay con transparencia (ej: `rgba(0,0,0,0.5)`) |
-| `icon` | No | `star` (rellena), `star-outline` (vacía), `none` (sin icono) |
-| `icon_color` | No | Color del icono en hex (por defecto: `#D4AF37`) |
+| `icon` | No | `star` (rellena), `star-outline` (vacía), `custom` (imagen), `none` (sin icono) |
+| `icon_color` | No | Color del icono en hex (por defecto: `#D4AF37`). Solo aplica a estrellas |
+| `custom_icon` | No | URL de imagen personalizada para el icono (SVG, PNG, etc.). Requiere `icon="custom"` |
+| `icon_width` | No | Ancho del icono en píxeles (por defecto: `80`) |
+| `icon_height` | No | Alto del icono en píxeles (por defecto: `80`) |
 | `alignment` | No | `left`, `center`, `right` (por defecto: `center`) |
 | `vertical` | No | `top`, `center`, `bottom` (por defecto: `center`) |
 | `border_color` | No | Color del borde decorativo interno |
-| `min_height` | No | Altura mínima (por defecto: `400px`) |
+| `min_height` | No | Altura mínima (por defecto: `400px`). Alternativa a `height` |
 | `aspect_ratio` | No | Ratio de aspecto (ej: `16/9`, `4/3`) |
 
 **Parámetros de `[hero_linea]`:**
@@ -300,30 +317,39 @@ Crea cabeceras visuales personalizadas con imagen de fondo, iconos decorativos y
 |-----------|-----------|-------------|
 | `color` | No | Color del texto (por defecto: `#FFFFFF`) |
 | `highlight` | No | Color de fondo/resaltado (si se especifica, el texto tendrá fondo de este color) |
+| `font_weight` | No | Peso de la fuente: `normal`, `medium`, `semibold`, `bold`, `extrabold`, `black` (por defecto: `black`) |
 
 **Ejemplos de estilos:**
 
-1. **Estilo documentos antiguos (azul oscuro con estrella dorada):**
+1. **Estilo con icono personalizado (estrella dorada del club):**
 ```
-[hero_capitulo background="estatutos.jpg" overlay="rgba(26,35,126,0.85)" border_color="#D4AF37"]
-    [hero_linea color="#D4AF37" highlight="#1a237e"]ESTATUTOS[/hero_linea]
-    [hero_linea color="#D4AF37" highlight="#1a237e"]FUNDACIONALES[/hero_linea]
+[hero_capitulo background="estadio.jpg" height="500px" icon="custom" custom_icon="https://mi-sitio.com/star-gold.png" icon_width="120" icon_height="120"]
+    [hero_linea color="#FFFFFF" font_weight="black"]LOS ORÍGENES[/hero_linea]
+    [hero_linea color="#D4AF37" font_weight="extrabold"]DEL CLUB[/hero_linea]
 [/hero_capitulo]
 ```
 
-2. **Estilo duotono dorado (fondo amarillo):**
+2. **Estilo documentos antiguos (azul oscuro con estrella dorada):**
+```
+[hero_capitulo background="estatutos.jpg" height="60vh" overlay="rgba(26,35,126,0.85)" border_color="#D4AF37"]
+    [hero_linea color="#D4AF37" highlight="#1a237e" font_weight="black"]ESTATUTOS[/hero_linea]
+    [hero_linea color="#D4AF37" highlight="#1a237e" font_weight="bold"]FUNDACIONALES[/hero_linea]
+[/hero_capitulo]
+```
+
+3. **Estilo duotono dorado (fondo amarillo):**
 ```
 [hero_capitulo background="jugador.jpg" overlay="rgba(212,175,55,0.8)" icon_color="#1a237e"]
-    [hero_linea color="#FFFFFF"]PACO SÁNCHEZ[/hero_linea]
-    [hero_linea color="#FFFFFF" highlight="#1a237e"]JOVER[/hero_linea]
+    [hero_linea color="#FFFFFF" font_weight="extrabold"]PACO SÁNCHEZ[/hero_linea]
+    [hero_linea color="#FFFFFF" highlight="#1a237e" font_weight="black"]JOVER[/hero_linea]
 [/hero_capitulo]
 ```
 
-3. **Estilo minimalista (título a la derecha):**
+4. **Estilo minimalista (título a la derecha con pesos variados):**
 ```
 [hero_capitulo background="colegio.jpg" overlay="rgba(212,175,55,0.9)" icon="star" icon_color="#1a237e" alignment="right"]
-    [hero_linea color="#1a237e" highlight="#FFFFFF"]DEL PATIO[/hero_linea]
-    [hero_linea color="#1a237e" highlight="#FFFFFF"]DEL COLEGIO[/hero_linea]
+    [hero_linea color="#1a237e" highlight="#FFFFFF" font_weight="medium"]DEL PATIO[/hero_linea]
+    [hero_linea color="#1a237e" highlight="#FFFFFF" font_weight="black"]DEL COLEGIO[/hero_linea]
 [/hero_capitulo]
 ```
 
