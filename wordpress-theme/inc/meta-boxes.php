@@ -120,18 +120,108 @@ function libro_capitulo_meta_box_html($post) {
         }
     </style>
     
+    <?php
+    // Check if this is a subchapter (has parent)
+    $parent_id = wp_get_post_parent_id($post->ID);
+    $parent_numero = $parent_id ? get_post_meta($parent_id, '_numero_capitulo', true) : '';
+    $is_subchapter = $parent_id > 0;
+    
+    // Count siblings to calculate auto-number
+    $sibling_order = 1;
+    if ($is_subchapter) {
+        $siblings = get_posts(array(
+            'post_type' => 'capitulo',
+            'posts_per_page' => -1,
+            'post_parent' => $parent_id,
+            'orderby' => 'menu_order',
+            'order' => 'ASC',
+            'fields' => 'ids'
+        ));
+        $sibling_order = array_search($post->ID, $siblings);
+        if ($sibling_order === false) {
+            $sibling_order = count($siblings);
+        }
+        $sibling_order++; // 1-based index
+    }
+    ?>
+    
     <div class="libro-meta-field">
         <label for="libro_numero_capitulo">Número de Capítulo / Subcapítulo</label>
-        <input 
-            type="text" 
-            id="libro_numero_capitulo" 
-            name="libro_numero_capitulo" 
-            value="<?php echo esc_attr($numero); ?>" 
-            placeholder="Ej: 01, 1.1, 1.2..."
-            style="max-width: 150px;"
-        >
-        <p class="description">Para capítulos principales usa "01", "02", etc. Para subcapítulos usa "1.1", "1.2", etc. Si dejas vacío en un subcapítulo, se auto-generará a partir del número del padre.</p>
+        <div style="display: flex; align-items: center; gap: 15px;">
+            <input 
+                type="text" 
+                id="libro_numero_capitulo" 
+                name="libro_numero_capitulo" 
+                value="<?php echo esc_attr($numero); ?>" 
+                placeholder="<?php echo $is_subchapter ? 'Ej: 1.1, 1.2...' : 'Ej: 01, 02...'; ?>"
+                style="max-width: 150px;"
+            >
+            
+            <!-- Preview badge -->
+            <div id="numero-preview-container" style="display: flex; align-items: center; gap: 10px;">
+                <span style="color: #666; font-size: 12px;">Vista previa:</span>
+                <span id="numero-preview" style="
+                    display: inline-flex;
+                    align-items: center;
+                    justify-content: center;
+                    min-width: <?php echo $is_subchapter ? '1.25rem' : '1.5rem'; ?>;
+                    height: <?php echo $is_subchapter ? '1.25rem' : '1.5rem'; ?>;
+                    font-size: <?php echo $is_subchapter ? '10px' : '11px'; ?>;
+                    font-weight: 600;
+                    border-radius: 2px;
+                    background-color: <?php echo $is_subchapter ? '#fff' : '#FBBF24'; ?>;
+                    color: #1a365d;
+                    box-shadow: 0 1px 3px rgba(0,0,0,0.2);
+                    padding: 0 6px;
+                "><?php 
+                    if ($numero) {
+                        echo esc_html($numero);
+                    } elseif ($is_subchapter && $parent_numero) {
+                        echo esc_html($parent_numero . '.' . $sibling_order);
+                    } else {
+                        echo '—';
+                    }
+                ?></span>
+                <?php if ($is_subchapter && !$numero && $parent_numero) : ?>
+                    <span style="color: #666; font-size: 11px; font-style: italic;">(auto-generado)</span>
+                <?php endif; ?>
+            </div>
+        </div>
+        <p class="description">
+            <?php if ($is_subchapter) : ?>
+                Este es un subcapítulo. Si dejas vacío, se auto-generará como "<?php echo esc_html($parent_numero ?: 'X'); ?>.<?php echo $sibling_order; ?>" basado en el número del padre.
+            <?php else : ?>
+                Para capítulos principales usa "01", "02", etc. Los subcapítulos heredarán este número.
+            <?php endif; ?>
+        </p>
     </div>
+    
+    <script>
+    jQuery(document).ready(function($) {
+        var isSubchapter = <?php echo $is_subchapter ? 'true' : 'false'; ?>;
+        var parentNumero = '<?php echo esc_js($parent_numero); ?>';
+        var siblingOrder = <?php echo (int)$sibling_order; ?>;
+        
+        $('#libro_numero_capitulo').on('input', function() {
+            var value = $(this).val().trim();
+            var preview = $('#numero-preview');
+            var container = $('#numero-preview-container');
+            
+            if (value) {
+                preview.text(value);
+                container.find('span[style*="italic"]').remove();
+            } else if (isSubchapter && parentNumero) {
+                preview.text(parentNumero + '.' + siblingOrder);
+                if (container.find('span[style*="italic"]').length === 0) {
+                    container.append('<span style="color: #666; font-size: 11px; font-style: italic;">(auto-generado)</span>');
+                }
+            } else {
+                preview.text('—');
+                container.find('span[style*="italic"]').remove();
+            }
+        });
+    });
+    </script>
     
     <div class="libro-meta-field">
         <div class="libro-meta-field-inline">
