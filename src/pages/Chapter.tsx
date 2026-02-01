@@ -65,18 +65,18 @@ const chaptersData: ChapterItemWithHero[] = [
 ];
 
 // Helper to find chapter by slug
-const getAllChapters = (): ChapterItem[] => {
-  const all: ChapterItem[] = [];
+const getAllChapters = (): ChapterItemWithHero[] => {
+  const all: ChapterItemWithHero[] = [];
   chaptersData.forEach(ch => {
     all.push(ch);
     if (ch.children) {
-      ch.children.forEach(child => all.push(child));
+      ch.children.forEach(child => all.push(child as ChapterItemWithHero));
     }
   });
   return all;
 };
 
-const getChapterBySlug = (slug: string) => getAllChapters().find(ch => ch.slug === slug);
+const getChapterBySlug = (slug: string): ChapterItemWithHero | undefined => getAllChapters().find(ch => ch.slug === slug);
 
 // Content for each chapter
 const chapterContent: Record<string, React.ReactNode> = {
@@ -303,12 +303,28 @@ const Chapter = () => {
 
       {/* Main Content */}
       <main className="pt-[56px] min-h-screen">
+        {/* Chapter Hero (if configured) */}
+        {chapter.hero && (
+          <ChapterHero
+            backgroundImage={chapter.hero.backgroundImage}
+            backgroundOverlay={chapter.hero.backgroundOverlay}
+            icon={chapter.hero.icon}
+            iconColor={chapter.hero.iconColor}
+            iconSize={chapter.hero.iconSize}
+            alignment={chapter.hero.alignment}
+            verticalPosition={chapter.hero.verticalPosition}
+            borderColor={chapter.hero.borderColor}
+            titleLines={chapter.hero.titleLines}
+            minHeight="400px"
+          />
+        )}
+        
         <div className="max-w-4xl mx-auto px-6 md:px-12 lg:px-16 py-16">
           <ChapterSection 
             id={chapter.id} 
             number={chapter.number} 
             title={chapter.title}
-            showChapterMarker={!!chapter.number}
+            showChapterMarker={!chapter.hero && !!chapter.number}
           >
             {content || <p>Contenido del capítulo próximamente.</p>}
           </ChapterSection>
