@@ -13,9 +13,13 @@ $capitulo_subtitulo = get_post_meta(get_the_ID(), '_capitulo_subtitulo', true);
 // Hero fields
 $hero_enabled = get_post_meta(get_the_ID(), '_hero_enabled', true);
 $hero_image = get_post_meta(get_the_ID(), '_hero_image', true);
+$hero_height = get_post_meta(get_the_ID(), '_hero_height', true);
 $hero_overlay = get_post_meta(get_the_ID(), '_hero_overlay', true);
 $hero_icon = get_post_meta(get_the_ID(), '_hero_icon', true) ?: 'star';
 $hero_icon_color = get_post_meta(get_the_ID(), '_hero_icon_color', true) ?: '#D4AF37';
+$hero_custom_icon = get_post_meta(get_the_ID(), '_hero_custom_icon', true);
+$hero_icon_width = get_post_meta(get_the_ID(), '_hero_icon_width', true) ?: 80;
+$hero_icon_height = get_post_meta(get_the_ID(), '_hero_icon_height', true) ?: 80;
 $hero_alignment = get_post_meta(get_the_ID(), '_hero_alignment', true) ?: 'center';
 $hero_vertical = get_post_meta(get_the_ID(), '_hero_vertical', true) ?: 'center';
 $hero_title_lines = get_post_meta(get_the_ID(), '_hero_title_lines', true);
@@ -38,15 +42,38 @@ $vertical_classes = array(
     'bottom' => 'justify-end pb-16',
 );
 
+// Font weight classes mapping
+$font_weight_classes = array(
+    'normal' => 'font-normal',
+    'medium' => 'font-medium',
+    'semibold' => 'font-semibold',
+    'bold' => 'font-bold',
+    'extrabold' => 'font-extrabold',
+    'black' => 'font-black',
+);
+
 $alignment_class = isset($align_classes[$hero_alignment]) ? $align_classes[$hero_alignment] : $align_classes['center'];
 $vertical_class = isset($vertical_classes[$hero_vertical]) ? $vertical_classes[$hero_vertical] : $vertical_classes['center'];
 
-// Icon SVG
-$icon_svg = '';
-if ($hero_icon === 'star') {
-    $icon_svg = '<svg class="w-12 h-12 fill-current" style="color: ' . esc_attr($hero_icon_color) . ';" viewBox="0 0 24 24"><polygon points="12,2 15.09,8.26 22,9.27 17,14.14 18.18,21.02 12,17.77 5.82,21.02 7,14.14 2,9.27 8.91,8.26"/></svg>';
+// Build hero height style
+$hero_height_style = '';
+if ($hero_height) {
+    $hero_height_style = 'height: ' . esc_attr($hero_height) . '; min-height: auto;';
+} else {
+    $hero_height_style = 'min-height: 400px;';
+}
+
+// Icon HTML
+$icon_html = '';
+$icon_size_style = 'width: ' . intval($hero_icon_width) . 'px; height: ' . intval($hero_icon_height) . 'px;';
+
+if ($hero_icon === 'custom' && $hero_custom_icon) {
+    // Custom image icon (supports SVG, PNG, etc.)
+    $icon_html = '<img src="' . esc_url($hero_custom_icon) . '" alt="" style="' . $icon_size_style . ' object-contain;">';
+} elseif ($hero_icon === 'star') {
+    $icon_html = '<svg style="' . $icon_size_style . ' color: ' . esc_attr($hero_icon_color) . ';" class="fill-current" viewBox="0 0 24 24"><polygon points="12,2 15.09,8.26 22,9.27 17,14.14 18.18,21.02 12,17.77 5.82,21.02 7,14.14 2,9.27 8.91,8.26"/></svg>';
 } elseif ($hero_icon === 'star-outline') {
-    $icon_svg = '<svg class="w-12 h-12" style="color: ' . esc_attr($hero_icon_color) . ';" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><polygon points="12,2 15.09,8.26 22,9.27 17,14.14 18.18,21.02 12,17.77 5.82,21.02 7,14.14 2,9.27 8.91,8.26"/></svg>';
+    $icon_html = '<svg style="' . $icon_size_style . ' color: ' . esc_attr($hero_icon_color) . ';" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><polygon points="12,2 15.09,8.26 22,9.27 17,14.14 18.18,21.02 12,17.77 5.82,21.02 7,14.14 2,9.27 8.91,8.26"/></svg>';
 }
 ?>
 
@@ -63,7 +90,7 @@ if ($hero_icon === 'star') {
     
     <?php if ($hero_enabled === '1' && $hero_image) : ?>
     <!-- Chapter Hero -->
-    <div class="chapter-hero relative overflow-hidden" style="min-height: 400px;">
+    <div class="chapter-hero relative overflow-hidden w-full" style="<?php echo esc_attr($hero_height_style); ?>">
         <div class="absolute inset-0 bg-cover bg-center bg-no-repeat" style="background-image: url('<?php echo esc_url($hero_image); ?>');"></div>
         
         <?php if ($hero_overlay) : ?>
@@ -74,9 +101,9 @@ if ($hero_icon === 'star') {
         <div class="absolute inset-4 sm:inset-6 md:inset-8 border-2 pointer-events-none" style="border-color: <?php echo esc_attr($hero_border_color); ?>;"></div>
         <?php endif; ?>
         
-        <div class="relative z-10 flex flex-col h-full w-full px-6 sm:px-8 md:px-12 py-8 <?php echo esc_attr($alignment_class . ' ' . $vertical_class); ?>" style="min-height: 400px;">
-            <?php if ($icon_svg) : ?>
-            <div class="mb-4"><?php echo $icon_svg; ?></div>
+        <div class="relative z-10 flex flex-col h-full w-full px-6 sm:px-8 md:px-12 py-8 <?php echo esc_attr($alignment_class . ' ' . $vertical_class); ?>" style="<?php echo esc_attr($hero_height_style); ?>">
+            <?php if ($icon_html) : ?>
+            <div class="mb-4"><?php echo $icon_html; ?></div>
             <?php endif; ?>
             
             <div class="flex flex-col gap-1 <?php echo $hero_alignment === 'center' ? 'items-center' : ($hero_alignment === 'right' ? 'items-end' : 'items-start'); ?>">
@@ -87,9 +114,12 @@ if ($hero_icon === 'star') {
                         $color = isset($line['color']) ? $line['color'] : '#FFFFFF';
                         $highlight = isset($line['highlight']) ? $line['highlight'] : '';
                         $use_highlight = isset($line['use_highlight']) && $line['use_highlight'] === '1';
+                        $font_weight = isset($line['font_weight']) ? $line['font_weight'] : 'black';
+                        
+                        $weight_class = isset($font_weight_classes[$font_weight]) ? $font_weight_classes[$font_weight] : 'font-black';
                         
                         $style = 'color: ' . esc_attr($color) . ';';
-                        $classes = 'font-display font-black text-2xl sm:text-3xl md:text-4xl lg:text-5xl uppercase tracking-tight leading-tight';
+                        $classes = 'font-display ' . $weight_class . ' text-2xl sm:text-3xl md:text-4xl lg:text-5xl uppercase tracking-tight leading-tight';
                         
                         if ($use_highlight && $highlight) :
                             $style .= ' background-color: ' . esc_attr($highlight) . ';';

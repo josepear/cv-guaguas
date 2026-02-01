@@ -42,9 +42,13 @@ function libro_capitulo_meta_box_html($post) {
     // Hero fields
     $hero_enabled = get_post_meta($post->ID, '_hero_enabled', true);
     $hero_image = get_post_meta($post->ID, '_hero_image', true);
+    $hero_height = get_post_meta($post->ID, '_hero_height', true) ?: '';
     $hero_overlay = get_post_meta($post->ID, '_hero_overlay', true);
     $hero_icon = get_post_meta($post->ID, '_hero_icon', true) ?: 'star';
     $hero_icon_color = get_post_meta($post->ID, '_hero_icon_color', true) ?: '#D4AF37';
+    $hero_custom_icon = get_post_meta($post->ID, '_hero_custom_icon', true);
+    $hero_icon_width = get_post_meta($post->ID, '_hero_icon_width', true) ?: '80';
+    $hero_icon_height = get_post_meta($post->ID, '_hero_icon_height', true) ?: '80';
     $hero_alignment = get_post_meta($post->ID, '_hero_alignment', true) ?: 'center';
     $hero_vertical = get_post_meta($post->ID, '_hero_vertical', true) ?: 'center';
     $hero_title_lines = get_post_meta($post->ID, '_hero_title_lines', true);
@@ -203,6 +207,19 @@ function libro_capitulo_meta_box_html($post) {
             </div>
             
             <div class="libro-meta-field">
+                <label for="libro_hero_height">Altura del hero (opcional)</label>
+                <input 
+                    type="text" 
+                    id="libro_hero_height" 
+                    name="libro_hero_height" 
+                    value="<?php echo esc_attr($hero_height); ?>" 
+                    placeholder="Ej: 500px, 60vh, auto"
+                    style="max-width: 200px;"
+                >
+                <p class="description">Usa px para píxeles fijos o vh para porcentaje de pantalla. Deja vacío para altura automática.</p>
+            </div>
+            
+            <div class="libro-meta-field">
                 <label for="libro_hero_overlay">Color de overlay (opcional)</label>
                 <input 
                     type="text" 
@@ -227,24 +244,66 @@ function libro_capitulo_meta_box_html($post) {
                 >
             </div>
             
+            <div class="libro-meta-field">
+                <label for="libro_hero_icon">Tipo de icono</label>
+                <select id="libro_hero_icon" name="libro_hero_icon">
+                    <option value="star" <?php selected($hero_icon, 'star'); ?>>★ Estrella rellena</option>
+                    <option value="star-outline" <?php selected($hero_icon, 'star-outline'); ?>>☆ Estrella vacía</option>
+                    <option value="custom" <?php selected($hero_icon, 'custom'); ?>>📷 Imagen personalizada</option>
+                    <option value="none" <?php selected($hero_icon, 'none'); ?>>Sin icono</option>
+                </select>
+            </div>
+            
+            <div id="hero-icon-color-field" class="libro-meta-field" style="<?php echo $hero_icon === 'custom' ? 'display:none;' : ''; ?>">
+                <label for="libro_hero_icon_color">Color del icono</label>
+                <input 
+                    type="color" 
+                    id="libro_hero_icon_color" 
+                    name="libro_hero_icon_color" 
+                    value="<?php echo esc_attr($hero_icon_color ?: '#D4AF37'); ?>"
+                    style="width: 60px; height: 35px; padding: 2px;"
+                >
+            </div>
+            
+            <div id="hero-custom-icon-field" class="libro-meta-field" style="<?php echo $hero_icon !== 'custom' ? 'display:none;' : ''; ?>">
+                <label for="libro_hero_custom_icon">Imagen del icono (SVG, PNG, etc.)</label>
+                <input 
+                    type="url" 
+                    id="libro_hero_custom_icon" 
+                    name="libro_hero_custom_icon" 
+                    value="<?php echo esc_attr($hero_custom_icon); ?>" 
+                    placeholder="https://..."
+                    style="max-width: 60%; display: inline-block;"
+                >
+                <button type="button" class="button libro-upload-custom-icon">Seleccionar imagen</button>
+            </div>
+            
             <div style="display: grid; grid-template-columns: 1fr 1fr 1fr 1fr; gap: 15px;">
                 <div class="libro-meta-field">
-                    <label for="libro_hero_icon">Icono</label>
-                    <select id="libro_hero_icon" name="libro_hero_icon">
-                        <option value="star" <?php selected($hero_icon, 'star'); ?>>★ Estrella rellena</option>
-                        <option value="star-outline" <?php selected($hero_icon, 'star-outline'); ?>>☆ Estrella vacía</option>
-                        <option value="none" <?php selected($hero_icon, 'none'); ?>>Sin icono</option>
-                    </select>
+                    <label for="libro_hero_icon_width">Ancho del icono (px)</label>
+                    <input 
+                        type="number" 
+                        id="libro_hero_icon_width" 
+                        name="libro_hero_icon_width" 
+                        value="<?php echo esc_attr($hero_icon_width); ?>" 
+                        placeholder="80"
+                        style="max-width: 100px;"
+                        min="20"
+                        max="300"
+                    >
                 </div>
                 
                 <div class="libro-meta-field">
-                    <label for="libro_hero_icon_color">Color del icono</label>
+                    <label for="libro_hero_icon_height">Alto del icono (px)</label>
                     <input 
-                        type="color" 
-                        id="libro_hero_icon_color" 
-                        name="libro_hero_icon_color" 
-                        value="<?php echo esc_attr($hero_icon_color ?: '#D4AF37'); ?>"
-                        style="width: 60px; height: 35px; padding: 2px;"
+                        type="number" 
+                        id="libro_hero_icon_height" 
+                        name="libro_hero_icon_height" 
+                        value="<?php echo esc_attr($hero_icon_height); ?>" 
+                        placeholder="80"
+                        style="max-width: 100px;"
+                        min="20"
+                        max="300"
                     >
                 </div>
                 
@@ -279,7 +338,7 @@ function libro_capitulo_meta_box_html($post) {
                         foreach ($hero_title_lines as $index => $line) :
                     ?>
                     <div class="libro-title-line">
-                        <div class="libro-title-line-fields">
+                        <div class="libro-title-line-fields" style="grid-template-columns: 2fr 1fr 1fr 1fr;">
                             <div>
                                 <label>Texto</label>
                                 <input type="text" name="libro_hero_title_lines[<?php echo $index; ?>][text]" value="<?php echo esc_attr($line['text']); ?>" placeholder="Texto de la línea">
@@ -289,9 +348,20 @@ function libro_capitulo_meta_box_html($post) {
                                 <input type="color" name="libro_hero_title_lines[<?php echo $index; ?>][color]" value="<?php echo esc_attr($line['color'] ?: '#FFFFFF'); ?>" style="width: 50px; height: 30px;">
                             </div>
                             <div>
-                                <label>Resaltado (opcional)</label>
+                                <label>Resaltado</label>
                                 <input type="color" name="libro_hero_title_lines[<?php echo $index; ?>][highlight]" value="<?php echo esc_attr($line['highlight'] ?: '#D4AF37'); ?>" style="width: 50px; height: 30px;">
                                 <input type="checkbox" name="libro_hero_title_lines[<?php echo $index; ?>][use_highlight]" value="1" <?php checked(!empty($line['use_highlight'])); ?>> Usar
+                            </div>
+                            <div>
+                                <label>Peso</label>
+                                <select name="libro_hero_title_lines[<?php echo $index; ?>][font_weight]" style="width: 100%;">
+                                    <option value="normal" <?php selected(($line['font_weight'] ?? 'black'), 'normal'); ?>>Normal</option>
+                                    <option value="medium" <?php selected(($line['font_weight'] ?? 'black'), 'medium'); ?>>Medium</option>
+                                    <option value="semibold" <?php selected(($line['font_weight'] ?? 'black'), 'semibold'); ?>>Semibold</option>
+                                    <option value="bold" <?php selected(($line['font_weight'] ?? 'black'), 'bold'); ?>>Bold</option>
+                                    <option value="extrabold" <?php selected(($line['font_weight'] ?? 'black'), 'extrabold'); ?>>Extrabold</option>
+                                    <option value="black" <?php selected(($line['font_weight'] ?? 'black'), 'black'); ?>>Black</option>
+                                </select>
                             </div>
                         </div>
                         <button type="button" class="button libro-remove-title-line" style="margin-top: 10px; color: #a00;">Eliminar línea</button>
@@ -314,6 +384,13 @@ function libro_capitulo_meta_box_html($post) {
             $('#hero-fields').toggle(this.checked);
         });
         
+        // Toggle icon fields based on icon type
+        $('#libro_hero_icon').on('change', function() {
+            var isCustom = $(this).val() === 'custom';
+            $('#hero-custom-icon-field').toggle(isCustom);
+            $('#hero-icon-color-field').toggle(!isCustom && $(this).val() !== 'none');
+        });
+        
         // Media uploader para imagen hero
         $('.libro-upload-hero-image').on('click', function(e) {
             e.preventDefault();
@@ -333,16 +410,38 @@ function libro_capitulo_meta_box_html($post) {
             mediaUploader.open();
         });
         
+        // Media uploader para icono personalizado
+        $('.libro-upload-custom-icon').on('click', function(e) {
+            e.preventDefault();
+            var inputField = $(this).prev('input');
+            
+            var mediaUploader = wp.media({
+                title: 'Seleccionar icono',
+                button: { text: 'Usar esta imagen' },
+                multiple: false
+            });
+            
+            mediaUploader.on('select', function() {
+                var attachment = mediaUploader.state().get('selection').first().toJSON();
+                inputField.val(attachment.url);
+            });
+            
+            mediaUploader.open();
+        });
+        
         // Añadir línea de título
         var lineIndex = <?php echo !empty($hero_title_lines) ? count($hero_title_lines) : 0; ?>;
         
         $('#add-title-line').on('click', function() {
             var html = '<div class="libro-title-line">' +
-                '<div class="libro-title-line-fields">' +
+                '<div class="libro-title-line-fields" style="grid-template-columns: 2fr 1fr 1fr 1fr;">' +
                 '<div><label>Texto</label><input type="text" name="libro_hero_title_lines[' + lineIndex + '][text]" placeholder="Texto de la línea"></div>' +
                 '<div><label>Color del texto</label><input type="color" name="libro_hero_title_lines[' + lineIndex + '][color]" value="#FFFFFF" style="width: 50px; height: 30px;"></div>' +
-                '<div><label>Resaltado (opcional)</label><input type="color" name="libro_hero_title_lines[' + lineIndex + '][highlight]" value="#D4AF37" style="width: 50px; height: 30px;"> ' +
+                '<div><label>Resaltado</label><input type="color" name="libro_hero_title_lines[' + lineIndex + '][highlight]" value="#D4AF37" style="width: 50px; height: 30px;"> ' +
                 '<input type="checkbox" name="libro_hero_title_lines[' + lineIndex + '][use_highlight]" value="1"> Usar</div>' +
+                '<div><label>Peso</label><select name="libro_hero_title_lines[' + lineIndex + '][font_weight]" style="width: 100%;">' +
+                '<option value="normal">Normal</option><option value="medium">Medium</option><option value="semibold">Semibold</option>' +
+                '<option value="bold">Bold</option><option value="extrabold">Extrabold</option><option value="black" selected>Black</option></select></div>' +
                 '</div>' +
                 '<button type="button" class="button libro-remove-title-line" style="margin-top: 10px; color: #a00;">Eliminar línea</button>' +
                 '</div>';
@@ -410,6 +509,10 @@ function libro_save_capitulo_meta($post_id) {
         update_post_meta($post_id, '_hero_image', esc_url_raw($_POST['libro_hero_image']));
     }
     
+    if (isset($_POST['libro_hero_height'])) {
+        update_post_meta($post_id, '_hero_height', sanitize_text_field($_POST['libro_hero_height']));
+    }
+    
     if (isset($_POST['libro_hero_overlay'])) {
         update_post_meta($post_id, '_hero_overlay', sanitize_text_field($_POST['libro_hero_overlay']));
     }
@@ -424,6 +527,18 @@ function libro_save_capitulo_meta($post_id) {
     
     if (isset($_POST['libro_hero_icon_color'])) {
         update_post_meta($post_id, '_hero_icon_color', sanitize_hex_color($_POST['libro_hero_icon_color']));
+    }
+    
+    if (isset($_POST['libro_hero_custom_icon'])) {
+        update_post_meta($post_id, '_hero_custom_icon', esc_url_raw($_POST['libro_hero_custom_icon']));
+    }
+    
+    if (isset($_POST['libro_hero_icon_width'])) {
+        update_post_meta($post_id, '_hero_icon_width', absint($_POST['libro_hero_icon_width']));
+    }
+    
+    if (isset($_POST['libro_hero_icon_height'])) {
+        update_post_meta($post_id, '_hero_icon_height', absint($_POST['libro_hero_icon_height']));
     }
     
     if (isset($_POST['libro_hero_alignment'])) {
@@ -444,6 +559,7 @@ function libro_save_capitulo_meta($post_id) {
                     'color' => isset($line['color']) ? sanitize_hex_color($line['color']) : '#FFFFFF',
                     'highlight' => isset($line['highlight']) ? sanitize_hex_color($line['highlight']) : '',
                     'use_highlight' => isset($line['use_highlight']) ? '1' : '0',
+                    'font_weight' => isset($line['font_weight']) ? sanitize_text_field($line['font_weight']) : 'black',
                 );
             }
         }
