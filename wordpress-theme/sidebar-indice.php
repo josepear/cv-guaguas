@@ -73,29 +73,44 @@ $current_slug = is_singular('capitulo') ? get_post_field('post_name', get_the_ID
                     <a href="<?php echo get_permalink($cap->ID); ?>" 
                        class="sidebar-active-indicator flex-1 text-left py-2.5 px-3 rounded-sm transition-all duration-200 font-sans text-sm font-medium hover:bg-sidebar-accent hover:text-gold <?php echo !$has_children ? 'ml-6' : ''; ?> <?php echo $is_active ? 'active text-gold bg-sidebar-accent' : 'text-sidebar-foreground'; ?> <?php echo $has_active_child ? 'text-gold/80' : ''; ?>"
                        data-section="<?php echo esc_attr($cap_slug); ?>">
-                        <span class="flex items-baseline gap-2">
+                        <span class="flex items-center gap-2.5">
                             <?php if ($numero) : ?>
-                                <span class="text-gold-muted text-xs font-sans tracking-wider"><?php echo esc_html($numero); ?></span>
+                                <span class="chapter-number chapter-number--main"><?php echo esc_html($numero); ?></span>
                             <?php endif; ?>
                             <span class="<?php echo $is_active ? 'text-gold' : ''; ?>"><?php echo esc_html($cap->post_title); ?></span>
                         </span>
                     </a>
                 </div>
                 
-                <?php if ($has_children) : ?>
+                <?php if ($has_children) : 
+                    $sub_index = 1;
+                ?>
                 <ul id="subcapitulos-<?php echo $cap->ID; ?>" class="subcapitulos-list ml-4 mt-1 space-y-0.5 border-l border-sidebar-border pl-2 <?php echo $has_active_child ? '' : 'hidden'; ?>">
                     <?php foreach ($subcapitulos as $sub) : 
                         $sub_slug = get_post_field('post_name', $sub->ID);
                         $sub_is_active = ($sub_slug === $current_slug);
+                        $sub_numero = libro_get_field('numero_capitulo', $sub->ID);
+                        // Generate sub number if parent has number
+                        if (!$sub_numero && $numero) {
+                            $sub_numero = $numero . '.' . $sub_index;
+                        }
                     ?>
                     <li class="subcapitulo-item">
                         <a href="<?php echo get_permalink($sub->ID); ?>" 
-                           class="sidebar-active-indicator ml-6 block py-2.5 px-3 text-sm rounded-sm transition-all duration-200 hover:bg-sidebar-accent hover:text-gold <?php echo $sub_is_active ? 'active text-gold bg-sidebar-accent' : 'text-sidebar-foreground/80'; ?>"
+                           class="sidebar-active-indicator block py-2.5 px-3 text-sm rounded-sm transition-all duration-200 hover:bg-sidebar-accent hover:text-gold <?php echo $sub_is_active ? 'active text-gold bg-sidebar-accent' : 'text-sidebar-foreground/80'; ?>"
                            data-section="<?php echo esc_attr($sub_slug); ?>">
-                            <?php echo esc_html($sub->post_title); ?>
+                            <span class="flex items-center gap-2.5">
+                                <?php if ($sub_numero) : ?>
+                                    <span class="chapter-number chapter-number--sub"><?php echo esc_html($sub_numero); ?></span>
+                                <?php endif; ?>
+                                <span><?php echo esc_html($sub->post_title); ?></span>
+                            </span>
                         </a>
                     </li>
-                    <?php endforeach; ?>
+                    <?php 
+                        $sub_index++;
+                        endforeach; 
+                    ?>
                 </ul>
                 <?php endif; ?>
             </li>

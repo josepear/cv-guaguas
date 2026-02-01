@@ -235,6 +235,47 @@ h1, h2, h3, h4, h5, h6 {
     height: 60%;
 }
 
+/* Chapter number badges - IDENTICAL to React SidebarIndex.tsx */
+.chapter-number {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 600;
+    font-family: var(--font-sans);
+    border-radius: calc(var(--radius) * 0.5);
+    transition: all 0.2s ease;
+}
+
+.chapter-number:hover {
+    transform: scale(1.1);
+}
+
+/* Main chapter numbers - gold background */
+.chapter-number--main {
+    min-width: 1.5rem;
+    height: 1.5rem;
+    font-size: 11px;
+    background-color: hsl(var(--gold));
+    color: hsl(220 50% 10%);
+}
+
+.chapter-number--main:hover {
+    box-shadow: 0 0 8px hsl(45 100% 50% / 0.5);
+}
+
+/* Subchapter numbers - white background */
+.chapter-number--sub {
+    min-width: 1.25rem;
+    height: 1.25rem;
+    font-size: 10px;
+    background-color: white;
+    color: hsl(220 50% 10%);
+}
+
+.chapter-number--sub:hover {
+    box-shadow: 0 0 6px rgba(255, 255, 255, 0.4);
+}
+
 /* Editorial quote styling */
 .editorial-quote {
     font-family: var(--font-serif);
