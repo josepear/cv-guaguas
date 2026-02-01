@@ -69,11 +69,11 @@ const SidebarIndex = ({ chapters, activeChapterSlug, isOpen, onClose }: SidebarI
           >
             <span className="flex items-center gap-2.5">
               {chapter.number && (
-                <span className={cn(
-                  "flex items-center justify-center min-w-[1.75rem] h-[1.75rem] text-xs font-semibold font-sans rounded-sm",
+              <span className={cn(
+                  "flex items-center justify-center font-semibold font-sans rounded-sm",
                   depth === 0 
-                    ? "bg-gold text-[hsl(220,50%,10%)]" 
-                    : "bg-white text-[hsl(220,50%,10%)]"
+                    ? "min-w-[1.5rem] h-[1.5rem] text-[11px] bg-gold text-[hsl(220,50%,10%)]" 
+                    : "min-w-[1.25rem] h-[1.25rem] text-[10px] bg-white text-[hsl(220,50%,10%)]"
                 )}>
                   {chapter.number}
                 </span>
