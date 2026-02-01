@@ -35,6 +35,7 @@ function libro_capitulo_meta_box_html($post) {
     
     // Obtener valores guardados
     $numero = get_post_meta($post->ID, '_numero_capitulo', true);
+    $ocultar_numero = get_post_meta($post->ID, '_ocultar_numero', true);
     $mostrar_marcador = get_post_meta($post->ID, '_mostrar_marcador', true);
     $cita = get_post_meta($post->ID, '_cita_destacada', true);
     $autor_cita = get_post_meta($post->ID, '_autor_cita', true);
@@ -194,6 +195,21 @@ function libro_capitulo_meta_box_html($post) {
                 Para capítulos principales usa "01", "02", etc. Los subcapítulos heredarán este número.
             <?php endif; ?>
         </p>
+        
+        <!-- Opción para ocultar número -->
+        <div style="margin-top: 10px;">
+            <label style="display: inline-flex; align-items: center; gap: 8px; font-weight: normal; cursor: pointer;">
+                <input 
+                    type="checkbox" 
+                    id="libro_ocultar_numero" 
+                    name="libro_ocultar_numero" 
+                    value="1" 
+                    <?php checked($ocultar_numero, '1'); ?>
+                >
+                <span>Ocultar número en el menú lateral</span>
+            </label>
+            <p class="description" style="margin-left: 26px; margin-top: 3px;">Marca esta opción para que este capítulo/subcapítulo no muestre etiqueta de número.</p>
+        </div>
     </div>
     
     <script>
@@ -202,24 +218,35 @@ function libro_capitulo_meta_box_html($post) {
         var parentNumero = '<?php echo esc_js($parent_numero); ?>';
         var siblingOrder = <?php echo (int)$sibling_order; ?>;
         
-        $('#libro_numero_capitulo').on('input', function() {
-            var value = $(this).val().trim();
+        function updatePreview() {
+            var value = $('#libro_numero_capitulo').val().trim();
+            var hidden = $('#libro_ocultar_numero').is(':checked');
             var preview = $('#numero-preview');
             var container = $('#numero-preview-container');
             
-            if (value) {
-                preview.text(value);
-                container.find('span[style*="italic"]').remove();
+            // Remove auto-generated label
+            container.find('span[style*="italic"]').remove();
+            
+            if (hidden) {
+                preview.text('—').css('opacity', '0.4');
+                container.append('<span style="color: #666; font-size: 11px; font-style: italic;">(oculto)</span>');
+            } else if (value) {
+                preview.text(value).css('opacity', '1');
             } else if (isSubchapter && parentNumero) {
-                preview.text(parentNumero + '.' + siblingOrder);
-                if (container.find('span[style*="italic"]').length === 0) {
-                    container.append('<span style="color: #666; font-size: 11px; font-style: italic;">(auto-generado)</span>');
-                }
+                preview.text(parentNumero + '.' + siblingOrder).css('opacity', '1');
+                container.append('<span style="color: #666; font-size: 11px; font-style: italic;">(auto-generado)</span>');
             } else {
-                preview.text('—');
-                container.find('span[style*="italic"]').remove();
+                preview.text('—').css('opacity', '1');
             }
-        });
+        }
+        
+        $('#libro_numero_capitulo').on('input', updatePreview);
+        $('#libro_ocultar_numero').on('change', updatePreview);
+        
+        // Initial state
+        if ($('#libro_ocultar_numero').is(':checked')) {
+            $('#numero-preview').css('opacity', '0.4');
+        }
     });
     </script>
     
@@ -610,6 +637,10 @@ function libro_save_capitulo_meta($post_id) {
     if (isset($_POST['libro_numero_capitulo'])) {
         update_post_meta($post_id, '_numero_capitulo', sanitize_text_field($_POST['libro_numero_capitulo']));
     }
+    
+    // Guardar ocultar número (checkbox)
+    $ocultar_numero = isset($_POST['libro_ocultar_numero']) ? '1' : '0';
+    update_post_meta($post_id, '_ocultar_numero', $ocultar_numero);
     
     // Guardar mostrar marcador (checkbox)
     $mostrar_marcador = isset($_POST['libro_mostrar_marcador']) ? '1' : '0';

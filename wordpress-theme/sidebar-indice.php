@@ -29,6 +29,7 @@ $current_slug = is_singular('capitulo') ? get_post_field('post_name', get_the_ID
         <ul class="space-y-1">
             <?php foreach ($capitulos as $cap) : 
                 $numero = libro_get_field('numero_capitulo', $cap->ID);
+                $ocultar_numero = get_post_meta($cap->ID, '_ocultar_numero', true) === '1';
                 $cap_slug = get_post_field('post_name', $cap->ID);
                 $is_active = ($cap_slug === $current_slug);
                 
@@ -74,7 +75,7 @@ $current_slug = is_singular('capitulo') ? get_post_field('post_name', get_the_ID
                        class="sidebar-active-indicator flex-1 text-left py-2.5 px-3 rounded-sm transition-all duration-200 font-sans text-sm font-medium hover:bg-sidebar-accent hover:text-gold <?php echo !$has_children ? 'ml-6' : ''; ?> <?php echo $is_active ? 'active text-gold bg-sidebar-accent' : 'text-sidebar-foreground'; ?> <?php echo $has_active_child ? 'text-gold/80' : ''; ?>"
                        data-section="<?php echo esc_attr($cap_slug); ?>">
                         <span class="flex items-center gap-2.5">
-                            <?php if ($numero) : ?>
+                            <?php if ($numero && !$ocultar_numero) : ?>
                                 <span class="chapter-number chapter-number--main"><?php echo esc_html($numero); ?></span>
                             <?php endif; ?>
                             <span class="<?php echo $is_active ? 'text-gold' : ''; ?>"><?php echo esc_html($cap->post_title); ?></span>
@@ -89,11 +90,16 @@ $current_slug = is_singular('capitulo') ? get_post_field('post_name', get_the_ID
                     <?php foreach ($subcapitulos as $sub) : 
                         $sub_slug = get_post_field('post_name', $sub->ID);
                         $sub_is_active = ($sub_slug === $current_slug);
-                        // Priority: manual number > auto-generated from parent
-                        $sub_numero = libro_get_field('numero_capitulo', $sub->ID);
-                        if (!$sub_numero && $numero) {
-                            // Auto-generate only if parent has number and sub doesn't
-                            $sub_numero = $numero . '.' . $sub_index;
+                        $sub_ocultar_numero = get_post_meta($sub->ID, '_ocultar_numero', true) === '1';
+                        
+                        // Priority: check if hidden > manual number > auto-generated from parent
+                        $sub_numero = '';
+                        if (!$sub_ocultar_numero) {
+                            $sub_numero = libro_get_field('numero_capitulo', $sub->ID);
+                            if (!$sub_numero && $numero) {
+                                // Auto-generate only if parent has number and sub doesn't
+                                $sub_numero = $numero . '.' . $sub_index;
+                            }
                         }
                     ?>
                     <li class="subcapitulo-item">
