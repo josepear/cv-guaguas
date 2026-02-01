@@ -247,7 +247,7 @@ if ($hero_icon === 'custom' && $hero_custom_icon) {
         </section>
         
         <!-- Chapter Navigation - idéntico a ChapterNavigation.tsx -->
-        <nav class="mt-16 pt-8 border-t border-border/30">
+        <nav class="mt-16 pt-8">
             <div class="flex flex-col sm:flex-row items-stretch gap-4">
                 
                 <!-- Previous Chapter -->
