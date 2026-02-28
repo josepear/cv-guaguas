@@ -6,6 +6,16 @@ import EditorialQuote from "@/components/EditorialQuote";
 import NewspaperQuote from "@/components/NewspaperQuote";
 import ArticleBlock from "@/components/ArticleBlock";
 import { Timeline, TimelineEvent } from "@/components/TimelineEvent";
+import ContentImage from "@/components/ContentImage";
+
+// Content images
+import imgEquipoChampions from "@/assets/content/equipo-champions.jpg";
+import imgPartidoGuaguas from "@/assets/content/partido-guaguas.jpg";
+import imgCopaDelRey from "@/assets/content/copa-del-rey.jpg";
+import imgVictoriaGuaguas from "@/assets/content/victoria-guaguas.png";
+import imgJugadorAccion from "@/assets/content/jugador-accion.png";
+import imgJorgeAlmansa from "@/assets/content/jorge-almansa.png";
+import imgOsmanyJuantorena from "@/assets/content/osmany-juantorena.png";
 
 // Chapter content mapped by slug
 export const chapterContent: Record<string, React.ReactNode> = {
@@ -14,6 +24,12 @@ export const chapterContent: Record<string, React.ReactNode> = {
       <p>
         Este capítulo reúne las palabras de las personalidades más destacadas del ámbito deportivo, político e institucional que han acompañado al CV Guaguas en su extraordinaria trayectoria. Sus testimonios reflejan el impacto del club en la sociedad canaria y en el voleibol español.
       </p>
+      <ContentImage 
+        src={imgEquipoChampions} 
+        alt="El CV Guaguas en competición europea" 
+        caption="El CV Guaguas, embajador del voleibol canario en las competiciones europeas." 
+        fullWidth 
+      />
       <EditorialQuote author="Club Voleibol Guaguas">
         "Más que un club, una familia. Más que voleibol, pasión por nuestra tierra."
       </EditorialQuote>
@@ -73,6 +89,11 @@ export const chapterContent: Record<string, React.ReactNode> = {
       <p>
         A la espera de que cale en categoría masculina, donde su introducción es más paulatina, las niñas toman la bandera y es la sección femenina la que inicia los pasos del Calvo Sotelo en los primeros torneos rivalizando con otros equipos. Y con resultados de impresión. Así, en los III Juegos Escolares Femeninos de la Enseñanza General Básica (EGB), correspondientes al curso 1971-72, el equipo infantil del Colegio Nacional Calvo Sotelo se impone a nivel provincial y regional, desplazándose en junio de 1972 hasta Málaga para disputar la fase final en la que se proclama campeón de España.
       </p>
+      <ContentImage 
+        src={imgCopaDelRey} 
+        alt="Jugadores del Calvo Sotelo en sus primeros años de competición" 
+        caption="Los primeros años del Calvo Sotelo en competición federada marcaron el inicio de una leyenda." 
+      />
 
       <SectionHeader>Silvestre Cabrera y el salto cualitativo</SectionHeader>
 
@@ -89,6 +110,12 @@ export const chapterContent: Record<string, React.ReactNode> = {
       <p>
         La temporada 1974-75, ya con los primeros resultados de la gestión de Cabrera al frente del voleibol provincial, resulta crucial en el desarrollo del Calvo Sotelo, pues se materializa la creación de la selección cadete de Las Palmas, que estará a cargo de Felipe Nuez. "Nuestra intención es continuar con ellos para recoger el fruto de nuestra labor dentro de unos 3 o 4 años y poder presentar un gran equipo que destaque en la Liga Nacional", añadía, a modo de premonición, el técnico. De esta selección cadete saldría la base del primer Calvo Sotelo masculino, que, en esa misma campaña, debutaría en competición federada: el Campeonato Provincial de Segunda División Masculino.
       </p>
+      <ContentImage 
+        src={imgPartidoGuaguas} 
+        alt="Partido de voleibol en el Centro Insular de Deportes" 
+        caption="El Centro Insular de Deportes se convirtió en la casa del voleibol grancanario." 
+        fullWidth 
+      />
 
       <SectionHeader>Estatutos fundacionales y despegue</SectionHeader>
 
@@ -235,6 +262,12 @@ export const chapterContent: Record<string, React.ReactNode> = {
       <p>
         El 21 de octubre de 1986 se celebra la asamblea general extraordinaria del club. Ahí arranca la etapa de Juan Ruiz en el alto mando y que se prolongaría, de manera ininterrumpida, hasta 1998. Y la noticia más esperada desde hacía meses se anunció el 5 de noviembre: Juan Ruiz confirma que Guaguas Municipales patrocinará a la entidad, que, desde entonces pasará a denominarse Guaguas Las Palmas.
       </p>
+      <ContentImage 
+        src={imgEquipoChampions} 
+        alt="El CV Guaguas celebra una victoria en competición europea" 
+        caption="El Guaguas inauguró su palmarés con la Copa del Rey de 1989 y forjó una hegemonía de cinco Ligas consecutivas." 
+        fullWidth 
+      />
 
       <SectionHeader>Fichajes de impacto y hegemonía</SectionHeader>
 
@@ -257,6 +290,11 @@ export const chapterContent: Record<string, React.ReactNode> = {
       <p>
         Fueron doce los títulos que se atraparon desde 1989 a 1997, etapa de concentración luminosa, y que granjeó la leyenda de un Guaguas que, por momentos, llevó la bandera del deporte en Gran Canaria.
       </p>
+      <ContentImage 
+        src={imgVictoriaGuaguas} 
+        alt="El CV Guaguas celebra un título de Liga" 
+        caption="Los años dorados del Guaguas: cinco Ligas consecutivas, Copas del Rey y presencia en Europa." 
+      />
 
       <SectionHeader>La salida de Juan Ruiz, principio del fin</SectionHeader>
 
@@ -432,12 +470,24 @@ export const chapterContent: Record<string, React.ReactNode> = {
   "capitulo-05": (
     <>
       <DropCap>Los grandes nombres que han escrito la historia del CV Guaguas. Jugadores que dejaron su huella en el voleibol español y que convirtieron al club en leyenda. Desde los canteranos que crecieron en el patio del Calvo Sotelo hasta las estrellas internacionales que llegaron para elevar el proyecto a cotas inimaginables, todos contribuyeron a forjar un legado deportivo sin parangón en Canarias.</DropCap>
+
+      <ContentImage 
+        src={imgJugadorAccion} 
+        alt="Jugador del CV Guaguas en acción durante un partido" 
+        caption="El talento individual al servicio del colectivo: seña de identidad del Guaguas a lo largo de su historia." 
+        fullWidth 
+      />
     </>
   ),
 
   "cap05-camarero": (
     <PlayerProfile name="Sergio Miguel Camarero">
       <DropCap>Cuando Sergio Miguel Camarero (Las Palmas de Gran Canaria, 1967) destacaba en el fútbol y como prometedor jugador del San Antonio, el equipo de su barrio, ya soñaba con hacer historia en el deporte. Su aspiración se iba a cumplir, aunque de manera insospechada porque, efectivamente, haría carrera pero en otra disciplina que tardó en practicar y a la que llegó de rebote. "Empecé a jugar al voleibol porque, al regreso de unas vacaciones en el sur de la isla, ya no tenía posibilidad de inscribirme en el equipo de fútbol. Se había acabado el plazo. Y me apunté en la Escuela de Voleibol del San Román. Mis primeros entrenadores fueron Félix Rodríguez, Joselu Sánchez e Ignacio Brito. Tendría 14 o 15 años. Y me enganché."</DropCap>
+      <ContentImage 
+        src={imgJorgeAlmansa} 
+        alt="Jorge Almansa, capitán del CV Guaguas" 
+        caption="Jorge Almansa, actual capitán del CV Guaguas, heredero de una larga tradición de líderes en la cancha." 
+      />
 
       <p>
         "Era una época complicada en la calle, el riesgo de las malas influencias, las amistades que en esa etapa de la vida te pueden llevar por el mal camino. Mi suerte fue que elegí el deporte, el voleibol, y conocí a una persona como Felipe Nuez con la que pude crecer y desarrollarme en el mejor ambiente posible. Ya integrado en el Calvo Sotelo se puede decir que empecé a ver que esta iba a ser mi vida, que quería dedicarme a esto pese a ser muy joven."
@@ -509,6 +559,11 @@ export const chapterContent: Record<string, React.ReactNode> = {
     <PlayerProfile name="Ireneusz Klos">
       <DropCap>Ireneusz Klos aterrizó en Gran Canaria junto a su compatriota Golec en 1989 y rápidamente se convirtió en una de las piezas fundamentales del engranaje del Guaguas campeón. Considerado uno de los cinco mejores colocadores del mundo, "no sabías si iba a rematar o a colocar", como recordaba Isidro Quintana.</DropCap>
 
+      <ContentImage 
+        src={imgOsmanyJuantorena} 
+        alt="Osmany Juantorena, estrella internacional del CV Guaguas" 
+        caption="El Guaguas siempre ha contado con estrellas internacionales que elevaron el nivel del equipo." 
+      />
       <p>
         Su inteligencia táctica y su capacidad para dirigir el juego elevaron al Guaguas a un nivel que pocos equipos en la historia del voleibol español han alcanzado. La precisión de sus colocaciones alimentó el arsenal ofensivo de un equipo que dominó la Liga española durante un lustro.
       </p>
