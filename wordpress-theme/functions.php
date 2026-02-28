@@ -539,7 +539,7 @@ function libro_shortcode_cita_editorial($atts, $content = null) {
     
     ob_start();
     ?>
-    <blockquote class="editorial-quote my-8 md:my-12 py-4">
+    <blockquote class="editorial-quote my-8 md:my-12 py-4" data-reveal="left">
         <p class="text-xl md:text-2xl text-foreground/90 leading-relaxed mb-4">
             <?php echo wp_kses_post($content); ?>
         </p>
@@ -579,7 +579,7 @@ function libro_shortcode_imagen_contenido($atts) {
     
     ob_start();
     ?>
-    <figure class="content-image my-8 md:my-12 <?php echo esc_attr($fullwidth_class); ?>">
+    <figure class="content-image my-8 md:my-12 <?php echo esc_attr($fullwidth_class); ?>" data-reveal="up">
         <div class="overflow-hidden rounded bg-muted/20">
             <img 
                 src="<?php echo esc_url($atts['src']); ?>" 
@@ -626,7 +626,7 @@ function libro_shortcode_imagen_id($atts) {
     
     ob_start();
     ?>
-    <figure class="content-image my-8 md:my-12 <?php echo esc_attr($fullwidth_class); ?>">
+    <figure class="content-image my-8 md:my-12 <?php echo esc_attr($fullwidth_class); ?>" data-reveal="up">
         <div class="overflow-hidden rounded bg-muted/20">
             <img 
                 src="<?php echo esc_url($image_src); ?>" 
@@ -728,7 +728,7 @@ function libro_shortcode_hero_capitulo($atts, $content = null) {
     ?>
     <div class="chapter-hero relative overflow-hidden" style="<?php echo $container_style; ?>">
         <?php if ($atts['background']) : ?>
-        <div class="absolute inset-0 bg-cover bg-center bg-no-repeat" style="background-image: url('<?php echo esc_url($atts['background']); ?>');"></div>
+        <div class="absolute inset-0 bg-cover bg-center bg-no-repeat hero-bg-parallax" style="background-image: url('<?php echo esc_url($atts['background']); ?>');"></div>
         <?php endif; ?>
         
         <?php if ($atts['overlay']) : ?>
@@ -741,7 +741,7 @@ function libro_shortcode_hero_capitulo($atts, $content = null) {
         
         <div class="relative z-10 flex flex-col h-full w-full px-6 sm:px-8 md:px-12 py-8 <?php echo esc_attr($alignment_class . ' ' . $vertical_class); ?>">
             <?php if ($icon_html) : ?>
-            <div class="mb-4"><?php echo $icon_html; ?></div>
+            <div class="mb-4 hero-icon-animated"><?php echo $icon_html; ?></div>
             <?php endif; ?>
             
             <div class="flex flex-col gap-1 <?php echo $atts['alignment'] === 'center' ? 'items-center' : ($atts['alignment'] === 'right' ? 'items-end' : 'items-start'); ?>">
@@ -770,10 +770,10 @@ function libro_shortcode_hero_linea($atts, $content = null) {
     if ($atts['highlight']) {
         $style .= ' background-color: ' . esc_attr($atts['highlight']) . ';';
         $classes .= ' inline-block px-2 py-1';
-        return '<span class="' . esc_attr($classes) . '" style="' . esc_attr($style) . '">' . wp_kses_post($content) . '</span>';
+        return '<div class="hero-line-animated"><span class="' . esc_attr($classes) . '" style="' . esc_attr($style) . '">' . wp_kses_post($content) . '</span></div>';
     }
     
-    return '<span class="block ' . esc_attr($classes) . '" style="' . esc_attr($style) . '">' . wp_kses_post($content) . '</span>';
+    return '<div class="hero-line-animated"><span class="block ' . esc_attr($classes) . '" style="' . esc_attr($style) . '">' . wp_kses_post($content) . '</span></div>';
 }
 add_shortcode('hero_linea', 'libro_shortcode_hero_linea');
 
@@ -804,7 +804,7 @@ function libro_shortcode_seccion_header($atts, $content = null) {
     ), $atts, 'seccion_header');
 
     if ($atts['highlighted'] === 'true' || $atts['highlighted'] === '1') {
-        return '<div class="mt-10 mb-5"><h3 class="section-header-highlighted">' . wp_kses_post($content) . '</h3></div>';
+        return '<div class="mt-10 mb-5" data-reveal="left"><h3 class="section-header-highlighted">' . wp_kses_post($content) . '</h3></div>';
     }
 
     return '<h3 class="font-serif text-xl md:text-2xl font-bold text-foreground mt-12 mb-6 uppercase tracking-wide">' . wp_kses_post($content) . '</h3>';
@@ -829,7 +829,7 @@ function libro_shortcode_perfil_jugador($atts, $content = null) {
 
     ob_start();
     ?>
-    <div class="my-12 md:my-16">
+    <div class="my-12 md:my-16" data-reveal="up">
         <h3 class="player-profile-name"><?php echo esc_html($atts['nombre']); ?></h3>
         <?php if ($atts['subtitulo']) : ?>
         <p class="text-sm text-muted-foreground italic mb-6"><?php echo esc_html($atts['subtitulo']); ?></p>
@@ -873,7 +873,7 @@ function libro_shortcode_cita_prensa($atts, $content = null) {
 
     ob_start();
     ?>
-    <div class="newspaper-quote">
+    <div class="newspaper-quote" data-reveal="left">
         <p><?php echo wp_kses_post($content); ?></p>
         <?php if ($atts['source']) : ?>
         <div class="newspaper-source"><?php echo esc_html($atts['source']); ?></div>
@@ -889,7 +889,7 @@ add_shortcode('cita_prensa', 'libro_shortcode_cita_prensa');
  * Uso: [capitular]Texto del primer párrafo...[/capitular]
  */
 function libro_shortcode_capitular($atts, $content = null) {
-    return '<p class="first-letter:text-5xl first-letter:font-serif first-letter:font-bold first-letter:text-gold first-letter:float-left first-letter:mr-3 first-letter:mt-1 first-letter:leading-none">' . wp_kses_post($content) . '</p>';
+    return '<p class="first-letter:text-5xl first-letter:font-serif first-letter:font-bold first-letter:text-gold first-letter:float-left first-letter:mr-3 first-letter:mt-1 first-letter:leading-none" data-reveal="none">' . wp_kses_post($content) . '</p>';
 }
 add_shortcode('capitular', 'libro_shortcode_capitular');
 

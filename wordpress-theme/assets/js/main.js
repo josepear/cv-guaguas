@@ -237,4 +237,60 @@
 
     initInlineSvgIcons();
 
+    /**
+     * Scroll-Reveal Animations via IntersectionObserver
+     * Replicates React useScrollReveal hook behavior
+     */
+    function initScrollReveal() {
+        if (!('IntersectionObserver' in window)) {
+            // Fallback: show everything immediately
+            document.querySelectorAll('[data-reveal]').forEach(el => el.classList.add('revealed'));
+            return;
+        }
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('revealed');
+                    observer.unobserve(entry.target);
+                }
+            });
+        }, {
+            threshold: 0.2
+        });
+
+        document.querySelectorAll('[data-reveal]').forEach(el => observer.observe(el));
+    }
+
+    initScrollReveal();
+
+    /**
+     * Parallax Effect for Chapter Hero Background
+     * Replicates React framer-motion useScroll + useTransform
+     */
+    function initHeroParallax() {
+        const heroEl = document.querySelector('.chapter-hero');
+        const heroBg = heroEl?.querySelector('.hero-bg-parallax');
+        if (!heroEl || !heroBg) return;
+
+        function updateParallax() {
+            const rect = heroEl.getBoundingClientRect();
+            const heroHeight = heroEl.offsetHeight;
+            const viewportHeight = window.innerHeight;
+
+            // Progress: 0 when top of hero is at top of viewport, 1 when bottom of hero reaches top
+            const progress = Math.max(0, Math.min(1, -rect.top / (heroHeight + viewportHeight - heroHeight)));
+            
+            // Map progress [0,1] → translateY [0%, 20%] (matches React: ["0%", "20%"])
+            const scrollFraction = Math.max(0, Math.min(1, (window.scrollY) / (heroHeight)));
+            const yOffset = scrollFraction * 20;
+            heroBg.style.transform = 'scale(1.1) translateY(' + yOffset + '%)';
+        }
+
+        window.addEventListener('scroll', updateParallax, { passive: true });
+        updateParallax();
+    }
+
+    initHeroParallax();
+
 })();

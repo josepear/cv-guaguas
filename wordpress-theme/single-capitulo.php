@@ -104,7 +104,7 @@ if ($hero_icon === 'custom' && $hero_custom_icon) {
     <?php if ($hero_enabled === '1' && $hero_image) : ?>
     <!-- Chapter Hero -->
     <div class="chapter-hero relative overflow-hidden w-full" style="<?php echo esc_attr($hero_height_style); ?>">
-        <div class="absolute inset-0 bg-cover bg-center bg-no-repeat" style="background-image: url('<?php echo esc_url($hero_image); ?>');"></div>
+        <div class="absolute inset-0 bg-cover bg-center bg-no-repeat hero-bg-parallax" style="background-image: url('<?php echo esc_url($hero_image); ?>');"></div>
         
         <?php if ($hero_overlay) : ?>
         <div class="absolute inset-0" style="background-color: <?php echo esc_attr($hero_overlay); ?>;"></div>
@@ -116,7 +116,7 @@ if ($hero_icon === 'custom' && $hero_custom_icon) {
         
         <div class="relative z-10 flex flex-col h-full w-full px-6 sm:px-8 md:px-12 py-8 <?php echo esc_attr($alignment_class . ' ' . $vertical_class); ?>" style="<?php echo esc_attr($hero_height_style); ?>">
             <?php if ($icon_html) : ?>
-            <div class="mb-4"><?php echo $icon_html; ?></div>
+            <div class="mb-4 hero-icon-animated"><?php echo $icon_html; ?></div>
             <?php endif; ?>
             
             <div class="flex flex-col gap-1 <?php echo $hero_alignment === 'center' ? 'items-center' : ($hero_alignment === 'right' ? 'items-end' : 'items-start'); ?>">
@@ -137,22 +137,27 @@ if ($hero_icon === 'custom' && $hero_custom_icon) {
                         if ($use_highlight && $highlight) :
                             $style .= ' background-color: ' . esc_attr($highlight) . ';';
                             ?>
-                            <span class="<?php echo esc_attr($classes); ?> inline-block px-2 py-1" style="<?php echo esc_attr($style); ?>">
-                                <?php echo esc_html($text); ?>
-                            </span>
+                            <div class="hero-line-animated">
+                                <span class="<?php echo esc_attr($classes); ?> inline-block px-2 py-1" style="<?php echo esc_attr($style); ?>">
+                                    <?php echo esc_html($text); ?>
+                                </span>
+                            </div>
                         <?php else : ?>
-                            <span class="block <?php echo esc_attr($classes); ?>" style="<?php echo esc_attr($style); ?>">
-                                <?php echo esc_html($text); ?>
-                            </span>
+                            <div class="hero-line-animated">
+                                <span class="block <?php echo esc_attr($classes); ?>" style="<?php echo esc_attr($style); ?>">
+                                    <?php echo esc_html($text); ?>
+                                </span>
+                            </div>
                         <?php 
                         endif;
                     endforeach;
                 else :
-                    // Fallback: usar el título del capítulo
                     ?>
-                    <span class="block font-display font-black text-2xl sm:text-3xl md:text-4xl lg:text-5xl uppercase tracking-tight leading-tight text-white">
-                        <?php the_title(); ?>
-                    </span>
+                    <div class="hero-line-animated">
+                        <span class="block font-display font-black text-2xl sm:text-3xl md:text-4xl lg:text-5xl uppercase tracking-tight leading-tight text-white">
+                            <?php the_title(); ?>
+                        </span>
+                    </div>
                 <?php endif; ?>
             </div>
         </div>
