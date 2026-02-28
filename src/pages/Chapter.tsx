@@ -208,43 +208,43 @@ const chapterContent: Record<string, React.ReactNode> = {
         fullWidth
       />
       <p>
-        El crecimiento fue constante, impulsado por la pasión de jugadores, entrenadores y aficionados que veían en cada partido la oportunidad de escribir una nueva página en la historia del deporte canario.
+        El crecimiento fue constante, impulsado por la pasión de jugadores, entrenadores y aficionados que veían en cada partido la oportunidad de escribir una <HighlightText highlightColor="#1a237e" textColor="#FFFFFF">nueva página en la historia</HighlightText> del deporte canario.
       </p>
       <EditorialQuote>
-        "En aquellos patios de colegio nacieron los campeones del mañana. Cada remate, cada bloqueo, forjaba el carácter de quienes harían grande al Guaguas."
+        "En aquellos patios de colegio nacieron los <HighlightText highlightColor="#D4AF37" textColor="#1a237e">campeones del mañana</HighlightText>. Cada remate, cada bloqueo, forjaba el carácter de quienes harían grande al Guaguas."
       </EditorialQuote>
     </>
   ),
   "capitulo-03": (
     <>
       <p>
-        El ascenso del CV Guaguas a las más altas cotas del voleibol español no fue casualidad. Fue el resultado de una planificación meticulosa, de la incorporación de talentos nacionales e internacionales, y de una estructura organizativa que sentó las bases para el éxito sostenido.
+        El ascenso del CV Guaguas a las más altas cotas del voleibol español no fue casualidad. Fue el resultado de una <HighlightText highlightColor="#e8d5b7" textColor="#3e2723">planificación meticulosa</HighlightText>, de la incorporación de talentos nacionales e internacionales, y de una estructura organizativa que sentó las bases para el éxito sostenido.
       </p>
       <p>
-        Los primeros títulos llegaron como recompensa a años de trabajo incansable. Cada trofeo levantado representaba no solo la victoria en una competición, sino la consolidación de un proyecto deportivo sin precedentes en las islas.
+        Los primeros títulos llegaron como recompensa a años de trabajo incansable. Cada trofeo levantado representaba no solo la victoria en una competición, sino la <HighlightText highlightColor="#b71c1c" textColor="#FFFFFF">consolidación de un proyecto deportivo</HighlightText> sin precedentes en las islas.
       </p>
       <EditorialQuote author="Historia del club">
-        "Las leyendas no nacen, se forjan. Y el CV Guaguas forjó la suya punto a punto, set a set, título a título."
+        "Las leyendas no nacen, se forjan. Y el CV Guaguas forjó la suya <HighlightText highlightColor="#D4AF37" textColor="#1a237e">punto a punto, set a set, título a título</HighlightText>."
       </EditorialQuote>
     </>
   ),
   "capitulo-04": (
     <>
       <p>
-        Todo proyecto deportivo atraviesa momentos de incertidumbre. Para el CV Guaguas, la transición entre diferentes etapas supuso enfrentarse a retos que pusieron a prueba la solidez del club y el compromiso de quienes lo conforman.
+        Todo proyecto deportivo atraviesa momentos de incertidumbre. Para el CV Guaguas, la transición entre diferentes etapas supuso enfrentarse a retos que pusieron a prueba la <HighlightText highlightColor="#37474f" textColor="#ffd54f">solidez del club</HighlightText> y el compromiso de quienes lo conforman.
       </p>
       <p>
-        Los cambios en la dirección deportiva, las dificultades económicas y la renovación generacional fueron obstáculos que, lejos de debilitar al club, lo fortalecieron. De esa transición dolorosa emergió un Guaguas más maduro y preparado para afrontar nuevos desafíos.
+        Los cambios en la dirección deportiva, las <HighlightText highlightColor="#ff8f00" textColor="#FFFFFF">dificultades económicas</HighlightText> y la renovación generacional fueron obstáculos que, lejos de debilitar al club, lo fortalecieron. De esa transición dolorosa emergió un Guaguas más maduro y preparado para afrontar nuevos desafíos.
       </p>
       <EditorialQuote>
-        "En los momentos más difíciles se demuestra la verdadera fortaleza de un club. El Guaguas no solo sobrevivió, renació con más fuerza."
+        "En los momentos más difíciles se demuestra la verdadera fortaleza de un club. El Guaguas no solo sobrevivió, <HighlightText highlightColor="#1b5e20" textColor="#FFFFFF">renació con más fuerza</HighlightText>."
       </EditorialQuote>
     </>
   ),
   "capitulo-05": (
     <>
       <p>
-        El regreso del gran Guaguas marcó el inicio de una nueva era dorada. Con una plantilla renovada, una afición entregada y una estructura consolidada, el club volvió a conquistar los títulos más importantes del voleibol español.
+        El regreso del gran Guaguas marcó el inicio de una <HighlightText highlightColor="#D4AF37" textColor="#1a237e">nueva era dorada</HighlightText>. Con una plantilla renovada, una afición entregada y una estructura consolidada, el club volvió a conquistar los títulos más importantes del voleibol español.
       </p>
       <ContentImage 
         src={heroImage} 
@@ -253,10 +253,10 @@ const chapterContent: Record<string, React.ReactNode> = {
         fullWidth
       />
       <p>
-        La Copa del Rey, la Superliga y la Supercopa volvieron a lucir en las vitrinas del club, recordando a todos que el Guaguas había vuelto para quedarse en lo más alto del voleibol nacional.
+        La <HighlightText highlightColor="#1a237e" textColor="#D4AF37">Copa del Rey</HighlightText>, la <HighlightText highlightColor="#1a237e" textColor="#D4AF37">Superliga</HighlightText> y la <HighlightText highlightColor="#1a237e" textColor="#D4AF37">Supercopa</HighlightText> volvieron a lucir en las vitrinas del club, recordando a todos que el Guaguas había vuelto para quedarse en lo más alto del voleibol nacional.
       </p>
       <EditorialQuote author="Afición del CV Guaguas">
-        "¡Vuelve el gran Guaguas! Con la fuerza de siempre, con la pasión de una isla entera."
+        "¡Vuelve el gran Guaguas! Con la fuerza de siempre, con la <HighlightText highlightColor="#D4AF37" textColor="#1a237e">pasión de una isla entera</HighlightText>."
       </EditorialQuote>
     </>
   ),
