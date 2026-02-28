@@ -798,6 +798,98 @@ Las siguientes áreas son editables con Elementor:
 
 ---
 
+## ✏️ Shortcodes de contenido
+
+Estos shortcodes replican los componentes de React para mantener paridad visual al 100%.
+
+### `[resaltado]` — Resaltado de texto
+
+Resalta cualquier fragmento de texto con colores personalizables. Equivalente al componente React `<HighlightText>`.
+
+**Parámetros:**
+
+| Parámetro     | Descripción                  | Por defecto |
+|---------------|------------------------------|-------------|
+| `color_fondo` | Color de fondo del resaltado | `#D4AF37`   |
+| `color_texto` | Color del texto resaltado    | `#1a237e`   |
+
+**Ejemplos de uso:**
+
+```
+<!-- Resaltado por defecto (dorado con texto azul marino) -->
+Llegaron a la [resaltado]División de Honor[/resaltado] tras años de esfuerzo.
+
+<!-- Azul marino con texto blanco -->
+Una [resaltado color_fondo="#1a237e" color_texto="#FFFFFF"]nueva página en la historia[/resaltado] del deporte.
+
+<!-- Rojo con texto blanco -->
+La [resaltado color_fondo="#b71c1c" color_texto="#FFFFFF"]consolidación del proyecto[/resaltado] sin precedentes.
+
+<!-- Crema con texto marrón -->
+Una [resaltado color_fondo="#e8d5b7" color_texto="#3e2723"]planificación meticulosa[/resaltado] del club.
+
+<!-- Gris oscuro con texto amarillo -->
+La [resaltado color_fondo="#37474f" color_texto="#ffd54f"]solidez del club[/resaltado] quedó demostrada.
+
+<!-- Naranja con texto blanco -->
+Las [resaltado color_fondo="#ff8f00" color_texto="#FFFFFF"]dificultades económicas[/resaltado] no frenaron al equipo.
+
+<!-- Verde con texto blanco -->
+El club [resaltado color_fondo="#1b5e20" color_texto="#FFFFFF"]renació con más fuerza[/resaltado].
+
+<!-- Azul marino con texto dorado (invertido) -->
+La [resaltado color_fondo="#1a237e" color_texto="#D4AF37"]Copa del Rey[/resaltado] volvió a las vitrinas.
+```
+
+**HTML generado:**
+
+```html
+<mark class="px-1 py-0.5 rounded-sm font-semibold" style="background-color: #D4AF37; color: #1a237e;">
+  División de Honor
+</mark>
+```
+
+---
+
+### `[cita_editorial]` — Cita destacada
+
+Muestra una cita editorial con autor opcional. Equivalente a `<EditorialQuote>`.
+
+```
+[cita_editorial author="Club Voleibol Guaguas"]
+"Más que un club, una familia."
+[/cita_editorial]
+```
+
+### `[imagen_contenido]` — Imagen con pie de foto
+
+Inserta una imagen con pie de foto opcional. Equivalente a `<ContentImage>`.
+
+```
+[imagen_contenido src="https://..." alt="Descripción" caption="Pie de foto" fullwidth="true"]
+```
+
+### `[imagen]` — Imagen desde la biblioteca de medios
+
+Igual que `[imagen_contenido]` pero usando el ID de la biblioteca de WordPress.
+
+```
+[imagen id="123" caption="Pie de foto" fullwidth="true"]
+```
+
+### `[hero_capitulo]` + `[hero_linea]` — Cabecera de capítulo
+
+Crea una cabecera visual personalizada. Equivalente a `<ChapterHero>`.
+
+```
+[hero_capitulo background="url" overlay="rgba(212,175,55,0.85)" icon="custom" custom_icon="url" alignment="right" height="500px"]
+  [hero_linea color="#1a237e" highlight="#FFFFFF"]DEL PATIO[/hero_linea]
+  [hero_linea color="#1a237e" highlight="#FFFFFF"]DEL COLEGIO[/hero_linea]
+[/hero_capitulo]
+```
+
+---
+
 ## 📦 Dependencias opcionales
 
 - **ACF (Advanced Custom Fields)**: Para campos personalizados de capítulos
