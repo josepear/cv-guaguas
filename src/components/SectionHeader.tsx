@@ -7,9 +7,11 @@ interface SectionHeaderProps {
 const SectionHeader = ({ children, highlighted = true, className = "" }: SectionHeaderProps) => {
   if (highlighted) {
     return (
-      <h3 className={`section-header-highlighted ${className}`}>
-        {children}
-      </h3>
+      <div className="mt-10 mb-5">
+        <h3 className={`section-header-highlighted ${className}`}>
+          {children}
+        </h3>
+      </div>
     );
   }
   
