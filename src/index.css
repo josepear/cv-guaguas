@@ -242,6 +242,133 @@
     font-size: 1.5rem;
   }
 
+  /* Drop Cap - Editorial book style */
+  .drop-cap-paragraph {
+    font-size: 1.125rem;
+    line-height: 1.85;
+    margin-bottom: 1.5em;
+  }
+
+  .drop-cap {
+    float: left;
+    font-family: var(--font-serif);
+    font-size: 4.5rem;
+    font-weight: 900;
+    line-height: 0.8;
+    padding-right: 0.5rem;
+    padding-top: 0.15em;
+    color: hsl(var(--gold));
+  }
+
+  /* Section header highlighted - yellow background like the book */
+  .section-header-highlighted {
+    display: inline-block;
+    font-family: var(--font-serif);
+    font-size: 1rem;
+    font-weight: 800;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    line-height: 1.4;
+    color: hsl(220 50% 10%);
+    background-color: hsl(var(--gold));
+    padding: 0.35rem 0.75rem;
+    margin-top: 2.5rem;
+    margin-bottom: 1.25rem;
+  }
+
+  /* Player profile name - bold uppercase like book */
+  .player-profile-name {
+    font-family: var(--font-serif);
+    font-size: 2.5rem;
+    font-weight: 900;
+    text-transform: uppercase;
+    letter-spacing: -0.02em;
+    line-height: 1;
+    color: hsl(var(--foreground));
+    margin-bottom: 1.5rem;
+    padding-bottom: 0.5rem;
+  }
+
+  /* Timeline styles */
+  .timeline-container {
+    border-left: 3px solid hsl(var(--gold));
+    padding-left: 1.5rem;
+  }
+
+  .timeline-event {
+    margin-bottom: 1.25rem;
+    position: relative;
+  }
+
+  .timeline-event::before {
+    content: '';
+    position: absolute;
+    left: -1.85rem;
+    top: 0.5rem;
+    width: 10px;
+    height: 10px;
+    background: hsl(var(--gold));
+    border-radius: 0;
+    transform: rotate(45deg);
+  }
+
+  .timeline-year {
+    font-family: var(--font-serif);
+    font-weight: 800;
+    font-size: 1.125rem;
+    color: hsl(var(--gold));
+    display: block;
+    margin-bottom: 0.25rem;
+  }
+
+  .timeline-content {
+    font-size: 0.95rem;
+    line-height: 1.7;
+    color: hsl(var(--foreground) / 0.8);
+  }
+
+  /* Article block (estatutos) */
+  .article-block {
+    margin-bottom: 1rem;
+    font-size: 0.95rem;
+    line-height: 1.7;
+  }
+
+  .article-number {
+    font-family: var(--font-serif);
+    font-weight: 800;
+    color: hsl(220 50% 10%);
+    background-color: hsl(var(--gold));
+    padding: 0.1rem 0.4rem;
+    margin-right: 0.5rem;
+    font-size: 0.85rem;
+  }
+
+  .article-text {
+    color: hsl(var(--foreground) / 0.85);
+  }
+
+  /* Newspaper quote - press citations */
+  .newspaper-quote {
+    margin: 1.5rem 0;
+    padding: 1rem 1.5rem;
+    background: hsl(var(--muted) / 0.3);
+    border-left: 3px solid hsl(var(--gold) / 0.5);
+    font-style: italic;
+    font-size: 0.95rem;
+    line-height: 1.7;
+    color: hsl(var(--foreground) / 0.85);
+  }
+
+  .newspaper-quote-source {
+    display: block;
+    margin-top: 0.5rem;
+    font-style: normal;
+    font-size: 0.8rem;
+    color: hsl(var(--muted-foreground));
+    font-weight: 500;
+  }
+
   /* Download button special */
   .btn-download {
     @apply inline-flex items-center gap-2 px-5 py-2.5 rounded border font-medium transition-all duration-300;
