@@ -776,3 +776,19 @@ function libro_shortcode_hero_linea($atts, $content = null) {
     return '<span class="block ' . esc_attr($classes) . '" style="' . esc_attr($style) . '">' . wp_kses_post($content) . '</span>';
 }
 add_shortcode('hero_linea', 'libro_shortcode_hero_linea');
+
+/**
+ * Shortcode: Resaltado de texto - idéntico a React HighlightText.tsx
+ * Uso: [resaltado color_fondo="#D4AF37" color_texto="#1a237e"]Texto resaltado[/resaltado]
+ */
+function libro_shortcode_resaltado($atts, $content = null) {
+    $atts = shortcode_atts(array(
+        'color_fondo' => '#D4AF37',
+        'color_texto' => '#1a237e',
+    ), $atts, 'resaltado');
+
+    $style = 'background-color: ' . esc_attr($atts['color_fondo']) . '; color: ' . esc_attr($atts['color_texto']) . ';';
+
+    return '<mark class="px-1 py-0.5 rounded-sm font-semibold" style="' . esc_attr($style) . '">' . wp_kses_post($content) . '</mark>';
+}
+add_shortcode('resaltado', 'libro_shortcode_resaltado');
