@@ -26,63 +26,38 @@ $hero_vertical = get_post_meta(get_the_ID(), '_hero_vertical', true) ?: 'center'
 $hero_title_lines = get_post_meta(get_the_ID(), '_hero_title_lines', true);
 $hero_border_color = get_post_meta(get_the_ID(), '_hero_border_color', true);
 
-// Navegación entre capítulos por menu_order (no por fecha)
-$current_order = get_post_field('menu_order', get_the_ID());
-$current_parent = wp_get_post_parent_id(get_the_ID());
-
-// Get all chapters (top-level + sub) ordered by menu_order
-// We navigate within the same level (siblings)
-$siblings = get_posts(array(
+// Navegación depth-first (idéntica a React getAllChapters())
+// Parent → Child1 → Child2 → ... → Next Parent
+$top_chapters = get_posts(array(
     'post_type'      => 'capitulo',
     'posts_per_page' => -1,
     'orderby'        => 'menu_order',
     'order'          => 'ASC',
-    'post_parent'    => $current_parent,
-    'fields'         => 'ids',
+    'post_parent'    => 0,
 ));
 
-$current_index = array_search(get_the_ID(), $siblings);
-$prev_capitulo = ($current_index !== false && $current_index > 0) 
-    ? get_post($siblings[$current_index - 1]) 
-    : null;
-$next_capitulo = ($current_index !== false && $current_index < count($siblings) - 1) 
-    ? get_post($siblings[$current_index + 1]) 
-    : null;
-
-// If no next sibling and we're a top-level chapter, check for first sub-chapter
-if (!$next_capitulo && $current_parent === 0) {
-    $first_child = get_posts(array(
-        'post_type'      => 'capitulo',
-        'posts_per_page' => 1,
-        'orderby'        => 'menu_order',
-        'order'          => 'ASC',
-        'post_parent'    => get_the_ID(),
-    ));
-    if (!empty($first_child)) {
-        $next_capitulo = $first_child[0];
-    }
-}
-
-// If no prev sibling and we're a sub-chapter, go back to parent
-if (!$prev_capitulo && $current_parent > 0) {
-    $prev_capitulo = get_post($current_parent);
-}
-
-// If no next sibling and we're a sub-chapter, go to next top-level after parent
-if (!$next_capitulo && $current_parent > 0) {
-    $parent_siblings = get_posts(array(
+$all_chapters_flat = array(); // Flat depth-first list of IDs
+foreach ($top_chapters as $top) {
+    $all_chapters_flat[] = $top->ID;
+    $children = get_posts(array(
         'post_type'      => 'capitulo',
         'posts_per_page' => -1,
         'orderby'        => 'menu_order',
         'order'          => 'ASC',
-        'post_parent'    => 0,
-        'fields'         => 'ids',
+        'post_parent'    => $top->ID,
     ));
-    $parent_index = array_search($current_parent, $parent_siblings);
-    if ($parent_index !== false && $parent_index < count($parent_siblings) - 1) {
-        $next_capitulo = get_post($parent_siblings[$parent_index + 1]);
+    foreach ($children as $child) {
+        $all_chapters_flat[] = $child->ID;
     }
 }
+
+$current_flat_index = array_search(get_the_ID(), $all_chapters_flat);
+$prev_capitulo = ($current_flat_index !== false && $current_flat_index > 0)
+    ? get_post($all_chapters_flat[$current_flat_index - 1])
+    : null;
+$next_capitulo = ($current_flat_index !== false && $current_flat_index < count($all_chapters_flat) - 1)
+    ? get_post($all_chapters_flat[$current_flat_index + 1])
+    : null;
 
 // Alignment classes for hero
 $align_classes = array(
