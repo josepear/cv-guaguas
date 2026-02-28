@@ -792,3 +792,125 @@ function libro_shortcode_resaltado($atts, $content = null) {
     return '<mark class="px-1 py-0.5 rounded-sm font-semibold" style="' . esc_attr($style) . '">' . wp_kses_post($content) . '</mark>';
 }
 add_shortcode('resaltado', 'libro_shortcode_resaltado');
+
+/**
+ * Shortcode: Section Header - idéntico a React SectionHeader.tsx
+ * Uso: [seccion_header]Título de la sección[/seccion_header]
+ * Uso sin resalte: [seccion_header highlighted="false"]Título[/seccion_header]
+ */
+function libro_shortcode_seccion_header($atts, $content = null) {
+    $atts = shortcode_atts(array(
+        'highlighted' => 'true',
+    ), $atts, 'seccion_header');
+
+    if ($atts['highlighted'] === 'true' || $atts['highlighted'] === '1') {
+        return '<div class="mt-10 mb-5"><h3 class="section-header-highlighted">' . wp_kses_post($content) . '</h3></div>';
+    }
+
+    return '<h3 class="font-serif text-xl md:text-2xl font-bold text-foreground mt-12 mb-6 uppercase tracking-wide">' . wp_kses_post($content) . '</h3>';
+}
+add_shortcode('seccion_header', 'libro_shortcode_seccion_header');
+
+/**
+ * Shortcode: Player Profile - idéntico a React PlayerProfile.tsx
+ * Uso: [perfil_jugador nombre="Nombre" subtitulo="Subtítulo" imagen="url" imagen_alt="alt" imagen_caption="caption" posicion_imagen="left"]
+ *      Contenido del perfil...
+ * [/perfil_jugador]
+ */
+function libro_shortcode_perfil_jugador($atts, $content = null) {
+    $atts = shortcode_atts(array(
+        'nombre'          => '',
+        'subtitulo'       => '',
+        'imagen'          => '',
+        'imagen_alt'      => '',
+        'imagen_caption'  => '',
+        'posicion_imagen' => 'left',
+    ), $atts, 'perfil_jugador');
+
+    ob_start();
+    ?>
+    <div class="my-12 md:my-16">
+        <h3 class="player-profile-name"><?php echo esc_html($atts['nombre']); ?></h3>
+        <?php if ($atts['subtitulo']) : ?>
+        <p class="text-sm text-muted-foreground italic mb-6"><?php echo esc_html($atts['subtitulo']); ?></p>
+        <?php endif; ?>
+
+        <div class="flex flex-col <?php echo $atts['imagen'] ? 'md:flex-row gap-8' : ''; ?> <?php echo $atts['posicion_imagen'] === 'right' ? 'md:flex-row-reverse' : ''; ?>">
+            <?php if ($atts['imagen']) : ?>
+            <div class="md:w-2/5 flex-shrink-0">
+                <figure>
+                    <img src="<?php echo esc_url($atts['imagen']); ?>"
+                         alt="<?php echo esc_attr($atts['imagen_alt'] ?: $atts['nombre']); ?>"
+                         class="w-full h-auto object-cover grayscale hover:grayscale-0 transition-all duration-700"
+                         loading="lazy">
+                    <?php if ($atts['imagen_caption']) : ?>
+                    <figcaption class="mt-2 text-xs text-muted-foreground italic leading-relaxed">
+                        <?php echo esc_html($atts['imagen_caption']); ?>
+                    </figcaption>
+                    <?php endif; ?>
+                </figure>
+            </div>
+            <?php endif; ?>
+
+            <div class="<?php echo $atts['imagen'] ? 'md:w-3/5' : ''; ?> reading-content">
+                <?php echo do_shortcode(wp_kses_post($content)); ?>
+            </div>
+        </div>
+    </div>
+    <?php
+    return ob_get_clean();
+}
+add_shortcode('perfil_jugador', 'libro_shortcode_perfil_jugador');
+
+/**
+ * Shortcode: Newspaper Quote - idéntico a React NewspaperQuote.tsx
+ * Uso: [cita_prensa source="La Provincia, 1987"]Texto de la cita[/cita_prensa]
+ */
+function libro_shortcode_cita_prensa($atts, $content = null) {
+    $atts = shortcode_atts(array(
+        'source' => '',
+    ), $atts, 'cita_prensa');
+
+    ob_start();
+    ?>
+    <div class="newspaper-quote">
+        <p><?php echo wp_kses_post($content); ?></p>
+        <?php if ($atts['source']) : ?>
+        <div class="newspaper-source"><?php echo esc_html($atts['source']); ?></div>
+        <?php endif; ?>
+    </div>
+    <?php
+    return ob_get_clean();
+}
+add_shortcode('cita_prensa', 'libro_shortcode_cita_prensa');
+
+/**
+ * Shortcode: Drop Cap - Capitular dorada
+ * Uso: [capitular]Texto del primer párrafo...[/capitular]
+ */
+function libro_shortcode_capitular($atts, $content = null) {
+    return '<p class="first-letter:text-5xl first-letter:font-serif first-letter:font-bold first-letter:text-gold first-letter:float-left first-letter:mr-3 first-letter:mt-1 first-letter:leading-none">' . wp_kses_post($content) . '</p>';
+}
+add_shortcode('capitular', 'libro_shortcode_capitular');
+
+/**
+ * Shortcode: Article Block - Bloque de artículo legal
+ * Uso: [articulo numero="1º"]Contenido del artículo[/articulo]
+ */
+function libro_shortcode_articulo($atts, $content = null) {
+    $atts = shortcode_atts(array(
+        'numero' => '',
+    ), $atts, 'articulo');
+
+    ob_start();
+    ?>
+    <div class="my-4 pl-6 border-l-2 border-gold/30">
+        <?php if ($atts['numero']) : ?>
+        <span class="font-sans text-xs font-semibold uppercase tracking-widest text-gold mb-1 block">Artículo <?php echo esc_html($atts['numero']); ?></span>
+        <?php endif; ?>
+        <p class="text-foreground/85 leading-relaxed"><?php echo wp_kses_post($content); ?></p>
+    </div>
+    <?php
+    return ob_get_clean();
+}
+add_shortcode('articulo', 'libro_shortcode_articulo');

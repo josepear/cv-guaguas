@@ -285,6 +285,62 @@ h1, h2, h3, h4, h5, h6 {
     border-left: 3px solid hsl(var(--gold));
 }
 
+/* Section header highlighted - yellow background like the book */
+.section-header-highlighted {
+    display: inline;
+    font-family: var(--font-serif);
+    font-size: 1rem;
+    font-weight: 800;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    line-height: 1.8;
+    color: hsl(220 50% 10%);
+    background-color: hsl(var(--gold));
+    padding: 0.25rem 0.5rem;
+    -webkit-box-decoration-break: clone;
+    box-decoration-break: clone;
+}
+
+/* Player profile name - bold uppercase like book */
+.player-profile-name {
+    font-family: var(--font-serif);
+    font-size: 2.5rem;
+    font-weight: 900;
+    text-transform: uppercase;
+    letter-spacing: -0.02em;
+    line-height: 1.1;
+    color: hsl(0 0% 98%);
+    margin-bottom: 1.5rem;
+}
+
+/* Newspaper quote - old press style */
+.newspaper-quote {
+    margin: 2rem 0;
+    padding: 1.5rem 2rem;
+    background: hsl(45 30% 94%);
+    border-left: 4px solid hsl(var(--gold));
+    position: relative;
+}
+
+.newspaper-quote p {
+    font-family: var(--font-serif);
+    font-size: 1rem;
+    font-style: italic;
+    color: hsl(220 20% 20%);
+    line-height: 1.6;
+    margin-bottom: 0.5rem;
+}
+
+.newspaper-quote .newspaper-source {
+    font-family: var(--font-sans);
+    font-size: 0.75rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    color: hsl(var(--gold-dark));
+    margin-top: 0.75rem;
+}
+
 /* Chapter marker */
 .chapter-marker {
     font-family: var(--font-sans);
