@@ -1,19 +1,32 @@
 
 
-## Plan: Importar contenido desde Word y replicar diseño del libro oficial
+## Plan: Añadir breadcrumbs a los capítulos
 
-Sí, puedo hacerlo. El proceso sería:
+### Componente React
 
-1. **Documento Word**: Me lo pasas y uso la herramienta de parsing para extraer todo el texto, estructura de capítulos, citas, y contenido. Lo organizo en los capítulos correspondientes del proyecto.
+Crear `src/components/ChapterBreadcrumb.tsx`:
+- Usa los componentes existentes de `@/components/ui/breadcrumb`
+- Props: `chapter` (con su `parentId`, `title`, `number`)
+- Lógica:
+  - Siempre muestra "Inicio" (link a `/`)
+  - Si el capítulo tiene padre → muestra el padre (link a `/capitulo/{parentSlug}`)
+  - Muestra el capítulo actual como `BreadcrumbPage` (sin link)
+- Estilo: texto `text-xs`, colores `text-muted-foreground`, separador chevron, gold en hover
 
-2. **Imágenes del libro maquetado**: Me pasas capturas/fotos de páginas del libro oficial y analizo la tipografía, espaciados, colores, disposición de elementos, tratamiento de imágenes, citas, cabeceras de capítulo, etc.
+### Integración en `Chapter.tsx`
 
-3. **Aplicar el diseño**: Ajusto los estilos CSS, componentes y estructura para replicar lo más fielmente posible la maquetación del libro físico en la versión web.
+- Importar `ChapterBreadcrumb`
+- Renderizarlo dentro del `div.max-w-4xl` justo antes del `ChapterSection`, con `mb-6`
+- Pasarle los datos del capítulo actual y su padre (obtenido de `chaptersData`)
 
-### Lo que necesito de ti
+### WordPress (`single-capitulo.php`)
 
-- El archivo `.docx` con el contenido completo
-- Varias capturas/fotos de páginas representativas del libro (portada, inicio de capítulo, página de texto normal, página con fotos, citas destacadas, etc.)
+- Añadir el mismo HTML del breadcrumb justo antes del contenido del capítulo
+- Usar `wp_get_post_parent_id()` para detectar si hay padre
+- Mismo estilo con clases Tailwind
 
-Cuando me los pases, empiezo directamente.
+### Archivos a modificar
+1. **Crear** `src/components/ChapterBreadcrumb.tsx`
+2. **Editar** `src/pages/Chapter.tsx` — insertar breadcrumb
+3. **Editar** `wordpress-theme/single-capitulo.php` — insertar breadcrumb HTML
 
