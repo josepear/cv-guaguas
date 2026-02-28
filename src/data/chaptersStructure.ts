@@ -80,44 +80,128 @@ export const chaptersData: ChapterItemWithHero[] = [
       { id: "cap04-elite", slug: "cap04-elite", title: "Llegar a la élite para quedarse" },
       { id: "cap04-fichajes", slug: "cap04-fichajes", title: "Fichajes de impacto y hegemonía" },
       { id: "cap04-salida-ruiz", slug: "cap04-salida-ruiz", title: "La salida de Juan Ruiz, principio del fin" },
+      { id: "cap04-proyecto-juan-ruiz", slug: "cap04-proyecto-juan-ruiz", title: "El proyecto visionario de Juan Ruiz" },
     ]
   },
   { 
     id: "capitulo-05", 
     slug: "capitulo-05", 
-    title: "El proyecto visionario de Juan Ruiz", 
-    number: "05" 
+    title: "Iconos y estrellas del Guaguas", 
+    number: "05",
+    children: [
+      { id: "cap05-camarero", slug: "cap05-camarero", title: "Sergio Miguel Camarero" },
+      { id: "cap05-sanchez-jover", slug: "cap05-sanchez-jover", title: "Paco Sánchez Jover" },
+      { id: "cap05-golec", slug: "cap05-golec", title: "Waclaw Golec" },
+      { id: "cap05-klos", slug: "cap05-klos", title: "Ireneusz Klos" },
+    ]
   },
   { 
     id: "capitulo-06", 
     slug: "capitulo-06", 
-    title: "Iconos y estrellas del Guaguas", 
-    number: "06",
+    title: "Ignacio Brito y Tributo a los Salesianos", 
+    number: "06" 
+  },
+  { 
+    id: "capitulo-07", 
+    slug: "capitulo-07", 
+    title: "Marek", 
+    number: "07" 
+  },
+  { 
+    id: "capitulo-08", 
+    slug: "capitulo-08", 
+    title: "Embajadores por Europa", 
+    number: "08",
     children: [
-      { id: "cap06-camarero", slug: "cap06-camarero", title: "Sergio Miguel Camarero" },
-      { id: "cap06-sanchez-jover", slug: "cap06-sanchez-jover", title: "Paco Sánchez Jover" },
-      { id: "cap06-golec", slug: "cap06-golec", title: "Waclaw Golec" },
-      { id: "cap06-klos", slug: "cap06-klos", title: "Ireneusz Klos" },
+      { id: "cap08-manuel-palacios", slug: "cap08-manuel-palacios", title: "Manuel Palacios" },
+      { id: "cap08-antonio-benitez", slug: "cap08-antonio-benitez", title: "Antonio Benítez" },
+      { id: "cap08-jorge-ramon", slug: "cap08-jorge-ramon", title: "Jorge Ramón" },
+      { id: "cap08-juanma-martin", slug: "cap08-juanma-martin", title: "Juanma Martín" },
+      { id: "cap08-oscar-campos", slug: "cap08-oscar-campos", title: "Óscar Campos" },
+      { id: "cap08-venancio-acosta", slug: "cap08-venancio-acosta", title: "Venancio Acosta" },
+      { id: "cap08-antonio-miralles", slug: "cap08-antonio-miralles", title: "Antonio Miralles" },
+      { id: "cap08-chava-gonzalez", slug: "cap08-chava-gonzalez", title: "Chava González" },
+      { id: "cap08-sandeep-sharma", slug: "cap08-sandeep-sharma", title: "Sandeep Sharma" },
+      { id: "cap08-juan-jose-cardona", slug: "cap08-juan-jose-cardona", title: "Juan José Cardona" },
     ]
   },
-  { id: "capitulo-07", slug: "capitulo-07", title: "Ignacio Brito y Tributo a los Salesianos", number: "07" },
-  { id: "capitulo-08", slug: "capitulo-08", title: "Marek", number: "08" },
-  { id: "capitulo-09", slug: "capitulo-09", title: "Embajadores por Europa", number: "09" },
-  { id: "capitulo-10", slug: "capitulo-10", title: "Relevo generacional", number: "10" },
-  { id: "capitulo-11", slug: "capitulo-11", title: "Una transición dolorosa", number: "11" },
-  { id: "capitulo-12", slug: "capitulo-12", title: "Todos los títulos", number: "12" },
-  { id: "capitulo-13", slug: "capitulo-13", title: "Vuelve el gran Guaguas", number: "13" },
-  { id: "capitulo-14", slug: "capitulo-14", title: "Del CID al Arenas", number: "14" },
-  { id: "capitulo-15", slug: "capitulo-15", title: "Los nuevos ídolos", number: "15" },
-  { id: "capitulo-16", slug: "capitulo-16", title: "El impacto del escudo", number: "16" },
-  { id: "capitulo-17", slug: "capitulo-17", title: "La directiva", number: "17" },
-  { id: "capitulo-18", slug: "capitulo-18", title: "El Guaguas que viene", number: "18" },
-  { id: "capitulo-19", slug: "capitulo-19", title: "Empleados y técnicos", number: "19" },
-  { id: "capitulo-20", slug: "capitulo-20", title: "La plantilla del cincuentenario", number: "20" },
-  { id: "capitulo-21", slug: "capitulo-21", title: "Miguel Ángel Ramírez", number: "21" },
-  { id: "capitulo-22", slug: "capitulo-22", title: "Comunicación digital", number: "22" },
-  { id: "capitulo-23", slug: "capitulo-23", title: "Socios y abonados", number: "23" },
-  { id: "capitulo-24", slug: "capitulo-24", title: "Empresarios de la tierra", number: "24" },
+  { 
+    id: "capitulo-09", 
+    slug: "capitulo-09", 
+    title: "Relevo generacional", 
+    number: "09",
+    children: [
+      { id: "cap09-alexis-valido", slug: "cap09-alexis-valido", title: "Alexis Valido" },
+      { id: "cap09-antonio-sanchez", slug: "cap09-antonio-sanchez", title: "Antonio Sánchez" },
+      { id: "cap09-daniel-castaneda", slug: "cap09-daniel-castaneda", title: "Daniel Castañeda" },
+      { id: "cap09-juan-carlos-vega", slug: "cap09-juan-carlos-vega", title: "Juan Carlos Vega" },
+      { id: "cap09-hermanos-cabrera", slug: "cap09-hermanos-cabrera", title: "Hermanos Cabrera" },
+      { id: "cap09-nichel-gomez", slug: "cap09-nichel-gomez", title: "Níchel Gómez" },
+      { id: "cap09-raul-davila", slug: "cap09-raul-davila", title: "Raúl Dávila" },
+    ]
+  },
+  { 
+    id: "capitulo-10", 
+    slug: "capitulo-10", 
+    title: "Una transición dolorosa", 
+    number: "10",
+    children: [
+      { id: "cap10-traspaso-poderes", slug: "cap10-traspaso-poderes", title: "Juan Ruiz traspasa sus poderes" },
+      { id: "cap10-estabilidad-imposible", slug: "cap10-estabilidad-imposible", title: "La estabilidad imposible" },
+      { id: "cap10-camino-2009", slug: "cap10-camino-2009", title: "Camino del fatídico 2009" },
+      { id: "cap10-peor-desenlace", slug: "cap10-peor-desenlace", title: "El peor desenlace posible" },
+      { id: "cap10-cronologia", slug: "cap10-cronologia", title: "La cronología" },
+      { id: "cap10-david-rodriguez", slug: "cap10-david-rodriguez", title: "David Rodríguez" },
+      { id: "cap10-joel-sotelo", slug: "cap10-joel-sotelo", title: "Joel Sotelo" },
+      { id: "cap10-pedro-cuarental", slug: "cap10-pedro-cuarental", title: "Pedro Cuarental" },
+      { id: "cap10-marcos-dreyer", slug: "cap10-marcos-dreyer", title: "Marcos Dreyer" },
+    ]
+  },
+  { 
+    id: "capitulo-11", 
+    slug: "capitulo-11", 
+    title: "Todos los títulos", 
+    number: "11",
+    children: [
+      { id: "cap11-joselu-sanchez", slug: "cap11-joselu-sanchez", title: "Joselu Sánchez" },
+    ]
+  },
+  { 
+    id: "capitulo-12", 
+    slug: "capitulo-12", 
+    title: "Vuelve el gran Guaguas", 
+    number: "12",
+    children: [
+      { id: "cap12-aclamacion", slug: "cap12-aclamacion", title: "Un paso por aclamación" },
+      { id: "cap12-presidentes", slug: "cap12-presidentes", title: "Presidentes" },
+      { id: "cap12-entrenadores", slug: "cap12-entrenadores", title: "Entrenadores" },
+    ]
+  },
+  { 
+    id: "capitulo-13", 
+    slug: "capitulo-13", 
+    title: "Del CID al Arenas", 
+    number: "13" 
+  },
+  { 
+    id: "capitulo-14", 
+    slug: "capitulo-14", 
+    title: "Los nuevos ídolos", 
+    number: "14",
+    children: [
+      { id: "cap14-kukartsev", slug: "cap14-kukartsev", title: "Pablo Kukartsev" },
+      { id: "cap14-moises-cezar", slug: "cap14-moises-cezar", title: "Moisés Cézar" },
+    ]
+  },
+  { id: "capitulo-15", slug: "capitulo-15", title: "El impacto del escudo", number: "15" },
+  { id: "capitulo-16", slug: "capitulo-16", title: "La directiva", number: "16" },
+  { id: "capitulo-17", slug: "capitulo-17", title: "El Guaguas que viene", number: "17" },
+  { id: "capitulo-18", slug: "capitulo-18", title: "Empleados y técnicos", number: "18" },
+  { id: "capitulo-19", slug: "capitulo-19", title: "La plantilla del cincuentenario", number: "19" },
+  { id: "capitulo-20", slug: "capitulo-20", title: "Miguel Ángel Ramírez", number: "20" },
+  { id: "capitulo-21", slug: "capitulo-21", title: "Comunicación digital", number: "21" },
+  { id: "capitulo-22", slug: "capitulo-22", title: "Socios y abonados", number: "22" },
+  { id: "capitulo-23", slug: "capitulo-23", title: "Empresarios de la tierra", number: "23" },
 ];
 
 // Helper to find chapter by slug
