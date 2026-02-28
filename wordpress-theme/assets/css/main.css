@@ -308,37 +308,112 @@ h1, h2, h3, h4, h5, h6 {
     font-weight: 900;
     text-transform: uppercase;
     letter-spacing: -0.02em;
-    line-height: 1.1;
-    color: hsl(0 0% 98%);
+    line-height: 1;
+    color: hsl(var(--foreground));
     margin-bottom: 1.5rem;
+    padding-bottom: 0.5rem;
 }
 
-/* Newspaper quote - old press style */
+/* Newspaper quote - identical to React index.css */
 .newspaper-quote {
-    margin: 2rem 0;
-    padding: 1.5rem 2rem;
-    background: hsl(45 30% 94%);
-    border-left: 4px solid hsl(var(--gold));
-    position: relative;
+    margin: 1.5rem 0;
+    padding: 1rem 1.5rem;
+    background: hsl(var(--muted) / 0.3);
+    border-left: 3px solid hsl(var(--gold) / 0.5);
+    font-style: italic;
+    font-size: 0.95rem;
+    line-height: 1.7;
+    color: hsl(var(--foreground) / 0.85);
 }
 
 .newspaper-quote p {
-    font-family: var(--font-serif);
-    font-size: 1rem;
-    font-style: italic;
-    color: hsl(220 20% 20%);
-    line-height: 1.6;
-    margin-bottom: 0.5rem;
+    margin: 0;
 }
 
-.newspaper-quote .newspaper-source {
-    font-family: var(--font-sans);
-    font-size: 0.75rem;
-    font-weight: 600;
-    text-transform: uppercase;
-    letter-spacing: 0.1em;
-    color: hsl(var(--gold-dark));
-    margin-top: 0.75rem;
+.newspaper-quote-source {
+    display: block;
+    margin-top: 0.5rem;
+    font-style: normal;
+    font-size: 0.8rem;
+    color: hsl(var(--muted-foreground));
+    font-weight: 500;
+}
+
+/* Drop Cap - Editorial book style */
+.drop-cap-paragraph {
+    font-size: 1.125rem;
+    line-height: 1.85;
+    margin-bottom: 1.5em;
+}
+
+.drop-cap {
+    float: left;
+    font-family: var(--font-serif);
+    font-size: 4.5rem;
+    font-weight: 900;
+    line-height: 0.8;
+    padding-right: 0.5rem;
+    padding-top: 0.15em;
+    color: hsl(var(--gold));
+}
+
+/* Timeline styles */
+.timeline-container {
+    border-left: 3px solid hsl(var(--gold));
+    padding-left: 1.5rem;
+}
+
+.timeline-event {
+    margin-bottom: 1.25rem;
+    position: relative;
+}
+
+.timeline-event::before {
+    content: '';
+    position: absolute;
+    left: -1.85rem;
+    top: 0.5rem;
+    width: 10px;
+    height: 10px;
+    background: hsl(var(--gold));
+    border-radius: 0;
+    transform: rotate(45deg);
+}
+
+.timeline-year {
+    font-family: var(--font-serif);
+    font-weight: 800;
+    font-size: 1.125rem;
+    color: hsl(var(--gold));
+    display: block;
+    margin-bottom: 0.25rem;
+}
+
+.timeline-content {
+    font-size: 0.95rem;
+    line-height: 1.7;
+    color: hsl(var(--foreground) / 0.8);
+}
+
+/* Article block (estatutos) */
+.article-block {
+    margin-bottom: 1rem;
+    font-size: 0.95rem;
+    line-height: 1.7;
+}
+
+.article-number {
+    font-family: var(--font-serif);
+    font-weight: 800;
+    color: hsl(220 50% 10%);
+    background-color: hsl(var(--gold));
+    padding: 0.1rem 0.4rem;
+    margin-right: 0.5rem;
+    font-size: 0.85rem;
+}
+
+.article-text {
+    color: hsl(var(--foreground) / 0.85);
 }
 
 /* Chapter marker */

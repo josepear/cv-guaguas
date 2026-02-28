@@ -807,7 +807,7 @@ function libro_shortcode_seccion_header($atts, $content = null) {
         return '<div class="mt-10 mb-5" data-reveal="left"><h3 class="section-header-highlighted">' . wp_kses_post($content) . '</h3></div>';
     }
 
-    return '<h3 class="font-serif text-xl md:text-2xl font-bold text-foreground mt-12 mb-6 uppercase tracking-wide">' . wp_kses_post($content) . '</h3>';
+    return '<h3 class="font-serif text-xl md:text-2xl font-bold text-foreground mt-12 mb-6 uppercase tracking-wide" data-reveal="left">' . wp_kses_post($content) . '</h3>';
 }
 add_shortcode('seccion_header', 'libro_shortcode_seccion_header');
 
@@ -873,11 +873,13 @@ function libro_shortcode_cita_prensa($atts, $content = null) {
 
     ob_start();
     ?>
-    <div class="newspaper-quote" data-reveal="left">
-        <p><?php echo wp_kses_post($content); ?></p>
-        <?php if ($atts['source']) : ?>
-        <div class="newspaper-source"><?php echo esc_html($atts['source']); ?></div>
-        <?php endif; ?>
+    <div data-reveal="left">
+        <blockquote class="newspaper-quote">
+            <p><?php echo wp_kses_post($content); ?></p>
+            <?php if ($atts['source']) : ?>
+            <cite class="newspaper-quote-source"><?php echo esc_html($atts['source']); ?></cite>
+            <?php endif; ?>
+        </blockquote>
     </div>
     <?php
     return ob_get_clean();
@@ -889,7 +891,10 @@ add_shortcode('cita_prensa', 'libro_shortcode_cita_prensa');
  * Uso: [capitular]Texto del primer párrafo...[/capitular]
  */
 function libro_shortcode_capitular($atts, $content = null) {
-    return '<p class="first-letter:text-5xl first-letter:font-serif first-letter:font-bold first-letter:text-gold first-letter:float-left first-letter:mr-3 first-letter:mt-1 first-letter:leading-none" data-reveal="none">' . wp_kses_post($content) . '</p>';
+    if (empty($content)) return '';
+    $first = mb_substr($content, 0, 1);
+    $rest = mb_substr($content, 1);
+    return '<p class="drop-cap-paragraph" data-reveal="none"><span class="drop-cap">' . esc_html($first) . '</span>' . wp_kses_post($rest) . '</p>';
 }
 add_shortcode('capitular', 'libro_shortcode_capitular');
 
@@ -902,15 +907,12 @@ function libro_shortcode_articulo($atts, $content = null) {
         'numero' => '',
     ), $atts, 'articulo');
 
-    ob_start();
-    ?>
-    <div class="my-4 pl-6 border-l-2 border-gold/30">
-        <?php if ($atts['numero']) : ?>
-        <span class="font-sans text-xs font-semibold uppercase tracking-widest text-gold mb-1 block">Artículo <?php echo esc_html($atts['numero']); ?></span>
-        <?php endif; ?>
-        <p class="text-foreground/85 leading-relaxed"><?php echo wp_kses_post($content); ?></p>
-    </div>
-    <?php
-    return ob_get_clean();
+    $html = '<div class="article-block">';
+    if ($atts['numero']) {
+        $html .= '<span class="article-number">Artículo ' . esc_html($atts['numero']) . '.</span>';
+    }
+    $html .= '<span class="article-text">' . wp_kses_post($content) . '</span>';
+    $html .= '</div>';
+    return $html;
 }
 add_shortcode('articulo', 'libro_shortcode_articulo');
