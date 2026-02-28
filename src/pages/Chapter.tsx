@@ -9,6 +9,7 @@ import EditorialQuote from "@/components/EditorialQuote";
 import ContentImage from "@/components/ContentImage";
 import ChapterHero, { ChapterHeroProps, TitleLine } from "@/components/ChapterHero";
 import InstitutionalFooter from "@/components/InstitutionalFooter";
+import HighlightText from "@/components/HighlightText";
 import heroImage from "@/assets/hero-stadium.jpg";
 import starGold from "@/assets/star-gold.png";
 
@@ -198,7 +199,7 @@ const chapterContent: Record<string, React.ReactNode> = {
   "capitulo-02": (
     <>
       <p>
-        Los inicios del voleibol en Gran Canaria se remontan a las canchas improvisadas de los patios escolares, donde jóvenes apasionados descubrieron un deporte que pronto se convertiría en su forma de vida. Desde aquellos primeros partidos entre amigos hasta la llegada a la División de Honor, el camino estuvo lleno de sacrificios y sueños.
+        Los inicios del voleibol en Gran Canaria se remontan a las canchas improvisadas de los patios escolares, donde jóvenes apasionados descubrieron un deporte que pronto se convertiría en su forma de vida. Desde aquellos primeros partidos entre amigos hasta la llegada a la <HighlightText>División de Honor</HighlightText>, el camino estuvo lleno de sacrificios y sueños.
       </p>
       <ContentImage 
         src={heroImage} 
