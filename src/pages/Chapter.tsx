@@ -81,6 +81,7 @@ const Chapter = () => {
             number={chapter.number} 
             title={chapter.title}
             showChapterMarker={!chapter.hero && !!chapter.number}
+            showTitle={!chapter.hero}
           >
             {content || <p>Contenido del capítulo próximamente.</p>}
           </ChapterSection>
