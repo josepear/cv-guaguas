@@ -7,6 +7,7 @@ import ChapterNavigation from "@/components/ChapterNavigation";
 import ReadingProgressBar from "@/components/ReadingProgressBar";
 import ChapterHero from "@/components/ChapterHero";
 import InstitutionalFooter from "@/components/InstitutionalFooter";
+import ChapterBreadcrumb from "@/components/ChapterBreadcrumb";
 import { chaptersData, getAllChapters, getChapterBySlug } from "@/data/chaptersStructure";
 import { chapterContent } from "@/data/chapterContent";
 
@@ -76,6 +77,11 @@ const Chapter = () => {
         )}
         
         <div className="max-w-4xl mx-auto px-6 md:px-12 lg:px-16 py-16">
+          <ChapterBreadcrumb 
+            chapterSlug={slug}
+            chapterTitle={chapter.title}
+            chapterNumber={chapter.number}
+          />
           <ChapterSection 
             id={chapter.id} 
             number={chapter.number} 
