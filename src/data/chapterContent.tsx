@@ -275,9 +275,9 @@ export const chapterContent: Record<string, React.ReactNode> = {
   ),
 
   // ═══════════════════════════════════════════════
-  // CAPÍTULO 5: El proyecto visionario de Juan Ruiz
+  // El proyecto visionario de Juan Ruiz (subcapítulo de Cap. 4)
   // ═══════════════════════════════════════════════
-  "capitulo-05": (
+  "cap04-proyecto-juan-ruiz": (
     <>
       <DropCap>Nacido en La Aldea de San Nicolás en 1953, emigrante con su familia a Tenerife durante gran parte su adolescencia (1960-1969), en la que hizo sus pinitos en la lucha canaria o el fútbol ("con 16 años llegué a jugar en Tercera División en las filas del Adeje"), Juan Ruiz estaba llamado, sin saberlo, a escribir una historia sin parangón en el deporte canario y al frente del Calvo Sotelo.</DropCap>
 
@@ -427,15 +427,15 @@ export const chapterContent: Record<string, React.ReactNode> = {
   ),
 
   // ═══════════════════════════════════════════════
-  // CAPÍTULO 6: Iconos y estrellas del Guaguas (COMPLETO)
+  // CAPÍTULO 5: Iconos y estrellas del Guaguas (COMPLETO)
   // ═══════════════════════════════════════════════
-  "capitulo-06": (
+  "capitulo-05": (
     <>
       <DropCap>Los grandes nombres que han escrito la historia del CV Guaguas. Jugadores que dejaron su huella en el voleibol español y que convirtieron al club en leyenda. Desde los canteranos que crecieron en el patio del Calvo Sotelo hasta las estrellas internacionales que llegaron para elevar el proyecto a cotas inimaginables, todos contribuyeron a forjar un legado deportivo sin parangón en Canarias.</DropCap>
     </>
   ),
 
-  "cap06-camarero": (
+  "cap05-camarero": (
     <PlayerProfile name="Sergio Miguel Camarero">
       <DropCap>Cuando Sergio Miguel Camarero (Las Palmas de Gran Canaria, 1967) destacaba en el fútbol y como prometedor jugador del San Antonio, el equipo de su barrio, ya soñaba con hacer historia en el deporte. Su aspiración se iba a cumplir, aunque de manera insospechada porque, efectivamente, haría carrera pero en otra disciplina que tardó en practicar y a la que llegó de rebote. "Empecé a jugar al voleibol porque, al regreso de unas vacaciones en el sur de la isla, ya no tenía posibilidad de inscribirme en el equipo de fútbol. Se había acabado el plazo. Y me apunté en la Escuela de Voleibol del San Román. Mis primeros entrenadores fueron Félix Rodríguez, Joselu Sánchez e Ignacio Brito. Tendría 14 o 15 años. Y me enganché."</DropCap>
 
@@ -469,7 +469,7 @@ export const chapterContent: Record<string, React.ReactNode> = {
     </PlayerProfile>
   ),
 
-  "cap06-sanchez-jover": (
+  "cap05-sanchez-jover": (
     <PlayerProfile name="Paco Sánchez Jover">
       <DropCap>Paco Sánchez Jover es, junto a Camarero, el otro gran pilar sobre el que se construyó la leyenda del Guaguas. Llegado en el verano de 1987 como el gran fichaje estrella de Juan Ruiz, el mejor jugador de España en aquel momento, vino para no irse jamás y liderar los años dorados que ya estaban incubándose.</DropCap>
 
@@ -491,7 +491,7 @@ export const chapterContent: Record<string, React.ReactNode> = {
     </PlayerProfile>
   ),
 
-  "cap06-golec": (
+  "cap05-golec": (
     <PlayerProfile name="Waclaw Golec">
       <DropCap>En el verano de 1989, Juan Ruiz une a su elenco de estrellas a los internacionales polacos Ireneusz Klos y Waclaw Golec, llamados a ser ídolos y figuras diferenciales. Golec, gran rematador de potente salto, especialista en remates de zona cuatro y zagueros, con gran recepción, fue considerado un jugador muy completo.</DropCap>
 
@@ -505,7 +505,7 @@ export const chapterContent: Record<string, React.ReactNode> = {
     </PlayerProfile>
   ),
 
-  "cap06-klos": (
+  "cap05-klos": (
     <PlayerProfile name="Ireneusz Klos">
       <DropCap>Ireneusz Klos aterrizó en Gran Canaria junto a su compatriota Golec en 1989 y rápidamente se convirtió en una de las piezas fundamentales del engranaje del Guaguas campeón. Considerado uno de los cinco mejores colocadores del mundo, "no sabías si iba a rematar o a colocar", como recordaba Isidro Quintana.</DropCap>
 
