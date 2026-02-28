@@ -106,315 +106,345 @@ function libro_get_sample_chapters() {
         
         // ===== PRÓLOGOS INDIVIDUALES (HIJOS) =====
         array(
-            'title' => 'Fernando Clavijo Batlle',
+            'title' => 'Fernando Clavijo',
             'numero' => '',
             'order' => 2,
             'show_marker' => false,
             'parent' => 'prologos',
             'content' => '
 <p class="text-gold uppercase tracking-widest text-sm mb-4">Presidente del Gobierno de Canarias</p>
-
-<p>Es un honor para mí presentar esta obra que recoge la extraordinaria trayectoria del Club Voleibol Guaguas, una institución que ha sabido convertirse en un referente del deporte canario y español.</p>
-
-<p>El CV Guaguas representa los valores que definen a nuestra tierra: el esfuerzo, la constancia, el trabajo en equipo y esa capacidad única de superar las adversidades que siempre ha caracterizado al pueblo canario. Desde el Gobierno de Canarias, seguiremos apoyando iniciativas como esta que ponen en valor nuestra cultura deportiva.</p>
-
-<p>A lo largo de estas páginas, el lector podrá sumergirse en una historia de pasión y entrega que ha situado a Gran Canaria en el mapa del voleibol internacional. Una historia que nos llena de orgullo a todos los canarios.</p>
+<p>Texto del prólogo pendiente de redacción.</p>
 ',
-            'quote' => 'El deporte es un reflejo de los valores de una sociedad, y el CV Guaguas encarna lo mejor de Canarias.',
-            'quote_author' => 'Fernando Clavijo Batlle',
         ),
         
         array(
-            'title' => 'Antonio Morales Méndez',
+            'title' => 'Antonio Morales',
             'numero' => '',
             'order' => 3,
             'show_marker' => false,
             'parent' => 'prologos',
             'content' => '
 <p class="text-gold uppercase tracking-widest text-sm mb-4">Presidente del Cabildo de Gran Canaria</p>
-
-<p>Gran Canaria ha sido siempre una tierra de deportistas, de personas que entienden que la práctica deportiva va más allá de la competición. El CV Guaguas es el máximo exponente de esta filosofía.</p>
-
-<p>Desde el Cabildo de Gran Canaria hemos sido testigos privilegiados de la evolución de este club, que ha pasado de ser un proyecto local a convertirse en una referencia nacional. El Centro Insular de Deportes ha sido escenario de noches mágicas que quedarán para siempre en la memoria colectiva de nuestra isla.</p>
-
-<p>Este libro es un merecido reconocimiento a todos los que han hecho posible este sueño. Un sueño que, temporada tras temporada, sigue creciendo y conquistando nuevas metas.</p>
+<p>Texto del prólogo pendiente de redacción.</p>
 ',
-            'quote' => 'El Centro Insular de Deportes vibra cada vez que juega el Guaguas. Es nuestra casa, nuestra fortaleza.',
-            'quote_author' => 'Antonio Morales Méndez',
         ),
         
         array(
-            'title' => 'Carolina Darias San Sebastián',
+            'title' => 'Carolina Darias',
             'numero' => '',
             'order' => 4,
             'show_marker' => false,
             'parent' => 'prologos',
             'content' => '
 <p class="text-gold uppercase tracking-widest text-sm mb-4">Alcaldesa de Las Palmas de Gran Canaria</p>
-
-<p>Las Palmas de Gran Canaria es una ciudad que vive el deporte con intensidad, y el voleibol ocupa un lugar especial en el corazón de nuestros ciudadanos gracias, en gran medida, al CV Guaguas.</p>
-
-<p>Como alcaldesa, me enorgullece ver cómo un club de nuestra ciudad representa con tanta dignidad los valores del deporte: respeto, superación, compañerismo y fair play. El Guaguas no solo compite, educa y forma a las nuevas generaciones en estos principios.</p>
-
-<p>Este libro recoge la esencia de un proyecto que ha trascendido lo deportivo para convertirse en un fenómeno social que une a familias, amigos y vecinos bajo los colores amarillo y azul.</p>
+<p>Texto del prólogo pendiente de redacción.</p>
 ',
-            'quote' => 'El Guaguas ha convertido Las Palmas de Gran Canaria en la capital del voleibol español.',
-            'quote_author' => 'Carolina Darias San Sebastián',
         ),
         
         array(
-            'title' => 'Poli Suárez Nuez',
+            'title' => 'Roberto Melián',
             'numero' => '',
             'order' => 5,
             'show_marker' => false,
             'parent' => 'prologos',
             'content' => '
-<p class="text-gold uppercase tracking-widest text-sm mb-4">Consejero de Deportes del Gobierno de Canarias</p>
-
-<p>El deporte canario tiene en el CV Guaguas uno de sus máximos exponentes. Un club que ha demostrado que desde las islas se puede competir al más alto nivel nacional e internacional.</p>
-
-<p>La historia del Guaguas es la historia del voleibol canario. Una disciplina que ha crecido de la mano de este club y que hoy cuenta con una base de practicantes y aficionados que no para de crecer gracias al efecto arrastre de los éxitos del primer equipo.</p>
-
-<p>Desde la Consejería de Deportes seguiremos trabajando para que clubes como el Guaguas cuenten con los recursos necesarios para seguir poniendo el nombre de Canarias en lo más alto del deporte español.</p>
+<p class="text-gold uppercase tracking-widest text-sm mb-4">Presidente de la Federación Canaria de Voleibol</p>
+<p>Texto del prólogo pendiente de redacción.</p>
 ',
-            'quote' => 'El Guaguas ha demostrado que la insularidad no es un obstáculo, sino un impulso para alcanzar la excelencia.',
-            'quote_author' => 'Poli Suárez Nuez',
         ),
         
         array(
-            'title' => 'Carla Campoamor Padilla',
+            'title' => 'Jorge Almansa',
             'numero' => '',
             'order' => 6,
             'show_marker' => false,
             'parent' => 'prologos',
             'content' => '
-<p class="text-gold uppercase tracking-widest text-sm mb-4">Concejala de Deportes de Las Palmas de Gran Canaria</p>
-
-<p>Trabajar mano a mano con el CV Guaguas ha sido una de las experiencias más gratificantes de mi trayectoria en la gestión deportiva municipal. Estamos ante un club modelo en todos los sentidos.</p>
-
-<p>Su compromiso con la cantera, su profesionalidad en la gestión y su capacidad para generar ilusión en la ciudad son valores que desde el Ayuntamiento queremos seguir apoyando y potenciando.</p>
-
-<p>Este libro es un testimonio de todo lo que se puede conseguir cuando hay pasión, trabajo y una visión clara de hacia dónde se quiere llegar. El Guaguas es un orgullo para nuestra ciudad.</p>
+<p class="text-gold uppercase tracking-widest text-sm mb-4">Capitán del CV Guaguas</p>
+<p>Texto del prólogo pendiente de redacción.</p>
 ',
-            'quote' => 'El Guaguas es mucho más que un club: es un proyecto de ciudad.',
-            'quote_author' => 'Carla Campoamor Padilla',
         ),
         
         array(
-            'title' => 'Felipe Pascual Cobo',
+            'title' => 'Juan Ruiz',
             'numero' => '',
             'order' => 7,
             'show_marker' => false,
             'parent' => 'prologos',
             'content' => '
-<p class="text-gold uppercase tracking-widest text-sm mb-4">Presidente de la Real Federación Española de Voleibol</p>
-
-<p>El CV Guaguas representa lo mejor del voleibol español. Un club que ha sabido combinar la excelencia deportiva con una gestión ejemplar y un compromiso inquebrantable con la formación de jóvenes talentos.</p>
-
-<p>Desde la Real Federación Española de Voleibol contemplamos con admiración el trabajo que se realiza en Las Palmas de Gran Canaria. El ambiente que se vive en el Centro Insular de Deportes es único en España y comparable a los mejores pabellones europeos.</p>
-
-<p>Este libro es un merecido homenaje a una institución que ha contribuido decisivamente al crecimiento de nuestro deporte en España.</p>
+<p class="text-gold uppercase tracking-widest text-sm mb-4">Presidente del CV Guaguas</p>
+<p>Texto del prólogo pendiente de redacción.</p>
 ',
-            'quote' => 'El modelo Guaguas es un ejemplo a seguir para todos los clubes de voleibol de España.',
-            'quote_author' => 'Felipe Pascual Cobo',
         ),
         
+        // ===== CAPÍTULO 02: DEL PATIO DEL COLEGIO A DIVISIÓN DE HONOR =====
         array(
-            'title' => 'Roberto Melián Arbelo',
-            'numero' => '',
-            'order' => 8,
-            'show_marker' => false,
-            'parent' => 'prologos',
-            'content' => '
-<p class="text-gold uppercase tracking-widest text-sm mb-4">Presidente de la Federación Canaria de Voleibol</p>
-
-<p>Como presidente de la Federación Canaria de Voleibol, he tenido el privilegio de vivir en primera persona la evolución del CV Guaguas. Un club que ha sido locomotora de nuestro deporte en las islas.</p>
-
-<p>Los éxitos del Guaguas han tenido un efecto multiplicador en la práctica del voleibol en Canarias. Hoy contamos con más licencias, más clubes y más competiciones gracias, en buena medida, al efecto inspirador que ejerce el primer equipo sobre las nuevas generaciones.</p>
-
-<p>Este libro recoge una historia de éxito que no ha hecho más que empezar.</p>
-',
-            'quote' => 'El Guaguas ha sido el motor que ha impulsado el voleibol canario hacia la excelencia.',
-            'quote_author' => 'Roberto Melián Arbelo',
-        ),
-        
-        array(
-            'title' => 'Eduardo Ramírez González',
-            'numero' => '',
-            'order' => 9,
-            'show_marker' => false,
-            'parent' => 'prologos',
-            'content' => '
-<p class="text-gold uppercase tracking-widest text-sm mb-4">Presidente de Guaguas Municipales</p>
-
-<p>Cuando Guaguas Municipales decidió apostar por el patrocinio del Club Voleibol Guaguas, sabíamos que estábamos uniéndonos a un proyecto especial. Lo que no imaginábamos era hasta qué punto esta alianza iba a transformar la imagen de nuestra empresa y la percepción de los ciudadanos.</p>
-
-<p>El Guaguas lleva nuestro nombre por toda España, y lo hace con orgullo, con trabajo y con resultados. Es un embajador excepcional de nuestra ciudad y de nuestra empresa.</p>
-
-<p>Esta obra refleja una historia de éxito compartido que esperamos se prolongue durante muchos años más.</p>
-',
-            'quote' => 'Ser el patrocinador principal del Guaguas es un orgullo para toda la familia de Guaguas Municipales.',
-            'quote_author' => 'Eduardo Ramírez González',
-        ),
-        
-        array(
-            'title' => 'Prólogo 09',
-            'numero' => '',
-            'order' => 10,
-            'show_marker' => false,
-            'parent' => 'prologos',
-            'content' => '
-<p class="text-gold uppercase tracking-widest text-sm mb-4">Nombre y cargo pendiente de confirmación</p>
-
-<p>Contenido del prólogo pendiente de redacción. Este espacio está reservado para un prólogo adicional que se incorporará a la versión final del libro.</p>
-
-<p>El texto definitivo será proporcionado por el autor correspondiente y reflejará su visión personal sobre la trayectoria y el significado del CV Guaguas para el deporte canario.</p>
-',
-            'quote' => '',
-            'quote_author' => '',
-        ),
-        
-        array(
-            'title' => 'Prólogo 10',
-            'numero' => '',
-            'order' => 11,
-            'show_marker' => false,
-            'parent' => 'prologos',
-            'content' => '
-<p class="text-gold uppercase tracking-widest text-sm mb-4">Nombre y cargo pendiente de confirmación</p>
-
-<p>Contenido del prólogo pendiente de redacción. Este espacio está reservado para el último prólogo que completará esta sección introductoria del libro institucional.</p>
-
-<p>Una vez confirmado el autor, se incorporará el texto definitivo que cerrará esta serie de presentaciones institucionales.</p>
-',
-            'quote' => '',
-            'quote_author' => '',
-        ),
-        
-        // ===== CAPÍTULO 02 =====
-        array(
-            'title' => 'Del patio del colegio a la División de Honor',
+            'title' => 'Del patio del colegio a División de Honor',
             'numero' => '02',
             'order' => 12,
             'show_marker' => true,
             'content' => '
-<p>Todo comenzó en los patios de los colegios de Las Palmas de Gran Canaria, donde un grupo de jóvenes descubrió en el voleibol algo más que un simple pasatiempo. Era la década de los ochenta, y el voleibol comenzaba a ganar adeptos en una isla donde el fútbol reinaba sin discusión.</p>
+[seccion_header]Las horas extraescolares con Francisco Rodríguez[/seccion_header]
 
-<figure class="content-image my-8 md:my-12">
-    <img 
-        src="' . $image_url . '" 
-        alt="Los inicios del CV Guaguas" 
-        class="w-full rounded-lg shadow-lg"
-        loading="lazy"
-    >
-    <figcaption class="text-sm text-muted-foreground mt-3 italic">
-        El Centro Insular de Deportes, testigo de la historia del voleibol grancanario
-    </figcaption>
-</figure>
+[capitular]Antes que el club fue el colegio. Porque el Calvo Sotelo nació del centro educativo del mismo nombre que se inauguró para el curso escolar 1967-68 en el barrio de Las Rehoyas, en la época punto de convergencia de la zona alta de Las Palmas de Gran Canaria y con familias de extracción social y economías precarias.[/capitular]
 
-<p>Aquellos pioneros no podían imaginar que estaban sentando las bases de lo que décadas después se convertiría en el club de voleibol más laureado de Canarias. Con recursos limitados pero con una ilusión desbordante, comenzaron a competir en las categorías regionales.</p>
+<p>Con todo, y según ha dejado documentado Miriam Quiroga, las primeras influencias para introducir el juego del voleibol en el Calvo Sotelo corresponden a Francisco Rodríguez, profesor que, de manera experimental, fomenta su práctica en las horas extraescolares.</p>
 
-<p>Los primeros años fueron de aprendizaje. Las derrotas dolían, pero cada partido era una lección que acercaba al equipo a sus objetivos. La perseverancia fue la seña de identidad de aquellos primeros equipos, que entrenaban donde podían y competían con lo que tenían.</p>
+[seccion_header]Silvestre Cabrera y el salto cualitativo[/seccion_header]
 
-<p>El salto a las competiciones nacionales supuso un antes y un después. Por primera vez, el voleibol grancanario se medía a los grandes clubes peninsulares. Las dificultades logísticas de la insularidad, lejos de ser un obstáculo, se convirtieron en un acicate para superarse.</p>
+<p>Un acontecimiento externo va a suponer el definitivo impulso para el desarrollo y crecimiento de la disciplina: la llegada a la presidencia de la Federación de Las Palmas de Voleibol de Silvestre Cabrera.</p>
 
-<h3>Los primeros títulos</h3>
+[seccion_header]La selección cadete con Felipe Nuez como germen[/seccion_header]
 
-<p>La llegada de los primeros títulos regionales consolidó el proyecto. El CV Guaguas comenzaba a ser un nombre reconocido en el panorama del voleibol español. Las gradas del Centro Insular de Deportes empezaban a llenarse de aficionados que veían en aquel equipo algo diferente.</p>
+<p>La temporada 1974-75 resulta crucial en el desarrollo del Calvo Sotelo, pues se materializa la creación de la selección cadete de Las Palmas, que estará a cargo de Felipe Nuez.</p>
 
-<p>El ascenso a la División de Honor, la máxima categoría del voleibol español, fue el culmen de aquellos años de trabajo silencioso. Un logro que parecía inalcanzable se hacía realidad gracias al esfuerzo colectivo de jugadores, técnicos y directivos.</p>
+[seccion_header]Estatutos fundacionales y despegue[/seccion_header]
+
+<p>En noviembre de 1976, concretamente el día 6, se redactan los estatutos de fundación del Club Voleibol Calvo Sotelo.</p>
+
+[seccion_header]El ascenso a Segunda División de 1979[/seccion_header]
+
+<p>Contenido pendiente de importación del documento Word.</p>
+
+[seccion_header]El acceso a la élite y su conflicto burocrático[/seccion_header]
+
+<p>Contenido pendiente de importación del documento Word.</p>
+
+[seccion_header]La cronología[/seccion_header]
+
+<p>Contenido pendiente de importación del documento Word.</p>
 ',
             'quote' => 'En aquellos patios de colegio nació algo más que un equipo: nació una familia que ha perdurado durante décadas.',
             'quote_author' => 'Historia del CV Guaguas',
         ),
         
-        // ===== CAPÍTULO 03 =====
+        // ===== CAPÍTULO 03: ESTATUTOS FUNDACIONALES =====
         array(
-            'title' => 'Así se forjó una leyenda',
+            'title' => 'Estatutos Fundacionales',
             'numero' => '03',
             'order' => 13,
             'show_marker' => true,
             'content' => '
-<p>La permanencia en la División de Honor no fue tarea fácil. Cada temporada suponía un reto mayúsculo para un club que, pese a su crecimiento, seguía siendo modesto en comparación con los grandes presupuestos del voleibol peninsular.</p>
+[seccion_header]Capítulo I. Constitución, fines y domicilio[/seccion_header]
 
-<p>Sin embargo, fue precisamente esa condición de "pequeño" la que forjó el carácter del Guaguas. La obligación de hacer más con menos agudizó el ingenio directivo y deportivo. Se apostó por la cantera como pilar fundamental del proyecto, formando jugadores que más tarde brillarían en el primer equipo y en la selección española.</p>
+[articulo numero="1º"]El nombre que adoptará la nueva entidad será el de Club Voleibol Calvo Sotelo.[/articulo]
 
-<p>Los años noventa trajeron los primeros éxitos nacionales. Copas del Rey, Supercopas y un protagonismo creciente en la Superliga convirtieron al Guaguas en un habitual de las fases finales. La afición respondía llenando el pabellón en cada partido importante.</p>
+[seccion_header]Capítulo II. De los socios[/seccion_header]
 
-<h3>El factor cancha</h3>
-
-<p>Jugar en el Centro Insular de Deportes se convirtió en una ventaja competitiva. El ambiente creado por una afición entregada hacía de cada partido en casa una fortaleza casi inexpugnable. Los rivales temían visitar Las Palmas, donde el ruido ensordecedor de la grada amarilla podía decidir los puntos más ajustados.</p>
-
-<p>La identidad del club se fue definiendo temporada tras temporada. El Guaguas era sinónimo de lucha, de entrega, de no dar un balón por perdido. Una filosofía que conectaba perfectamente con el carácter canario y que generaba una identificación única entre el equipo y su afición.</p>
-
-<p>Los jugadores que vestían la camiseta amarilla sabían que llevaban sobre sus hombros el peso de toda una isla. Una responsabilidad que, lejos de abrumar, motivaba a dar siempre el máximo en cada entrenamiento y en cada partido.</p>
+<p>Articulado completo de los estatutos fundacionales del club.</p>
 ',
-            'quote' => 'La leyenda del Guaguas se forjó partido a partido, con el sudor de quienes dieron todo por estos colores.',
-            'quote_author' => 'Historia del club',
         ),
         
-        // ===== CAPÍTULO 04 =====
+        // ===== CAPÍTULO 04: ASÍ SE FORJÓ UNA LEYENDA =====
         array(
-            'title' => 'Una transición dolorosa',
+            'title' => 'Así se forjó una leyenda',
             'numero' => '04',
             'order' => 14,
             'show_marker' => true,
             'content' => '
-<p>Como toda gran historia, la del CV Guaguas también tiene sus capítulos oscuros. Hubo momentos en los que el futuro del club estuvo en entredicho, años en los que las dificultades económicas amenazaron con acabar con décadas de trabajo.</p>
+[seccion_header]Llegar a la élite para quedarse[/seccion_header]
 
-<p>La crisis económica que azotó España a finales de la primera década del siglo XXI golpeó con especial dureza al deporte. Los patrocinadores se retiraban, las subvenciones se recortaban y mantener un equipo profesional se convertía en una hazaña casi imposible.</p>
+[capitular]La temporada 1985-86 fue la del estreno del Calvo Sotelo en la División de Honor y se afrontó bajo las mismas líneas maestras que habían marcado su trayecto, desde las consideraciones de Felipe Nuez, aunque con la importante novedad del fichaje del yugoslavo Ivo Martinovic.[/capitular]
 
-<p>Fueron años de incertidumbre, de reuniones interminables buscando soluciones, de jugadores que aceptaban cobrar tarde o incluso renunciar a parte de sus salarios por mantener vivo el proyecto. La familia del Guaguas demostró en aquellos momentos difíciles que los lazos que les unían iban mucho más allá de un contrato laboral.</p>
+[seccion_header]Fichajes de impacto y hegemonía[/seccion_header]
 
-<h3>La luz al final del túnel</h3>
+<p>El verano de 1987, ya con dos años de experiencia en la élite, marca el escalón cualitativo que instala al Guaguas en la excelencia. El fichaje de Paco Sánchez Jover fue una auténtica jugada maestra de Juan Ruiz.</p>
 
-<p>Cuando todo parecía perdido, surgieron las manos salvadoras. Nuevos directivos tomaron las riendas con la determinación de reflotar el club. Se renegociaron deudas, se ajustaron presupuestos y se diseñó un plan de viabilidad que, poco a poco, fue devolviendo la estabilidad a la entidad.</p>
+[seccion_header]La salida de Juan Ruiz, principio del fin[/seccion_header]
 
-<p>La afición, una vez más, fue clave en este proceso. Nunca dejó de acudir al pabellón, de animar a sus jugadores, de creer que volverían los buenos tiempos. Esa fidelidad incondicional fue el mejor aval para convencer a nuevos patrocinadores de que apostar por el Guaguas merecía la pena.</p>
-
-<p>De aquella crisis el club salió reforzado. Las estructuras se profesionalizaron, la gestión se modernizó y se establecieron las bases para el crecimiento sostenible que vendría después.</p>
+<p>Tras doce años en la presidencia, Juan Ruiz quiso respetar lo reflejado en los estatutos y ceñirse a lo establecido con la máxima durabilidad de su cargo.</p>
 ',
-            'quote' => 'En los momentos más oscuros, cuando todo parecía perdido, la familia del Guaguas demostró que hay lazos más fuertes que cualquier crisis.',
-            'quote_author' => 'Crónica del CV Guaguas',
+            'quote' => 'La leyenda del Guaguas se forjó partido a partido.',
+            'quote_author' => 'Historia del club',
         ),
         
-        // ===== CAPÍTULO 05 =====
+        // ===== CAPÍTULO 05: ICONOS Y ESTRELLAS DEL GUAGUAS =====
         array(
-            'title' => 'Vuelve el gran Guaguas',
+            'title' => 'Iconos y estrellas del Guaguas',
             'numero' => '05',
             'order' => 15,
             'show_marker' => true,
             'content' => '
-<p>El renacimiento del CV Guaguas ha sido, quizás, el capítulo más emocionante de toda su historia. De las cenizas de la crisis surgió un proyecto renovado, más ambicioso que nunca, dispuesto a conquistar las cotas más altas del voleibol español y europeo.</p>
+[capitular]Los grandes nombres que han escrito la historia del CV Guaguas. Jugadores que dejaron su huella en el voleibol español y que convirtieron al club en leyenda.[/capitular]
 
-<figure class="content-image my-8 md:my-12">
-    <img 
-        src="' . $image_url . '" 
-        alt="Celebración del CV Guaguas" 
-        class="w-full rounded-lg shadow-lg"
-        loading="lazy"
-    >
-    <figcaption class="text-sm text-muted-foreground mt-3 italic">
-        La afición del CV Guaguas celebrando uno de los múltiples títulos conquistados
-    </figcaption>
-</figure>
+[perfil_jugador nombre="Sergio Miguel Camarero"]
+<p>Cuando Sergio Miguel Camarero (Las Palmas de Gran Canaria, 1967) destacaba en el fútbol, ya soñaba con hacer historia en el deporte. Su aspiración se iba a cumplir en el voleibol.</p>
+[/perfil_jugador]
 
-<p>Las últimas temporadas han sido de ensueño. Títulos de liga, copas del rey, supercopas... el palmarés del club ha crecido exponencialmente, situando al Guaguas como el equipo más laureado del voleibol español en el siglo XXI.</p>
+[perfil_jugador nombre="Paco Sánchez Jover"]
+<p>Paco Sánchez Jover es, junto a Camarero, el otro gran pilar sobre el que se construyó la leyenda del Guaguas.</p>
+[/perfil_jugador]
 
-<p>Pero más allá de los trofeos, lo que verdaderamente define esta nueva era es la consolidación de un modelo de club ejemplar. La cantera sigue siendo el pilar fundamental, nutriendo al primer equipo de talentos locales que compiten codo con codo con las mejores incorporaciones internacionales.</p>
+[perfil_jugador nombre="Waclaw Golec"]
+<p>En el verano de 1989, Juan Ruiz une a su elenco de estrellas a los internacionales polacos Ireneusz Klos y Waclaw Golec.</p>
+[/perfil_jugador]
 
-<h3>Mirando al futuro</h3>
-
-<p>El Centro Insular de Deportes se ha convertido en un templo del voleibol europeo. Partidos de competiciones continentales con lleno absoluto, noches mágicas que quedan grabadas en la memoria de los aficionados, momentos que trascienden lo deportivo para convertirse en experiencias vitales.</p>
-
-<p>El CV Guaguas de hoy es una institución consolidada, respetada en toda Europa, que sigue creciendo sin perder su esencia. Los valores que caracterizaron a aquellos pioneros de los patios de colegio siguen vigentes: trabajo, humildad, pasión y un amor incondicional por estos colores.</p>
-
-<p>El futuro se presenta lleno de retos y oportunidades. Nuevas instalaciones, mayor proyección internacional, más títulos por conquistar... pero siempre con los pies en la tierra, recordando de dónde venimos y honrando a todos los que hicieron posible este sueño.</p>
-
-<p>Esta historia continúa escribiéndose cada día. Y tú, que sostienes este libro entre tus manos, eres parte de ella.</p>
+[perfil_jugador nombre="Ireneusz Klos"]
+<p>Ireneusz Klos aterrizó en Gran Canaria junto a su compatriota Golec en 1989 y rápidamente se convirtió en una de las piezas fundamentales.</p>
+[/perfil_jugador]
 ',
-            'quote' => 'El Guaguas no es solo un club: es el latido de una isla, el orgullo de una ciudad, el sueño cumplido de generaciones.',
-            'quote_author' => 'Afición del CV Guaguas',
+        ),
+        
+        // ===== CAPÍTULO 06: IGNACIO BRITO Y TRIBUTO A LOS SALESIANOS =====
+        array(
+            'title' => 'Ignacio Brito y Tributo a los Salesianos',
+            'numero' => '06',
+            'order' => 16,
+            'show_marker' => true,
+            'content' => '<p>Contenido pendiente de importación.</p>',
+        ),
+        
+        // ===== CAPÍTULO 07: MAREK =====
+        array(
+            'title' => 'Marek',
+            'numero' => '07',
+            'order' => 17,
+            'show_marker' => true,
+            'content' => '<p>Contenido pendiente de importación.</p>',
+        ),
+        
+        // ===== CAPÍTULO 08: EMBAJADORES POR EUROPA =====
+        array(
+            'title' => 'Embajadores por Europa',
+            'numero' => '08',
+            'order' => 18,
+            'show_marker' => true,
+            'content' => '<p>Contenido pendiente de importación.</p>',
+        ),
+        
+        // ===== CAPÍTULO 09: RELEVO GENERACIONAL =====
+        array(
+            'title' => 'Relevo generacional',
+            'numero' => '09',
+            'order' => 19,
+            'show_marker' => true,
+            'content' => '<p>Contenido pendiente de importación.</p>',
+        ),
+        
+        // ===== CAPÍTULO 10: UNA TRANSICIÓN DOLOROSA =====
+        array(
+            'title' => 'Una transición dolorosa',
+            'numero' => '10',
+            'order' => 20,
+            'show_marker' => true,
+            'content' => '<p>Contenido pendiente de importación.</p>',
+        ),
+        
+        // ===== CAPÍTULO 11: TODOS LOS TÍTULOS =====
+        array(
+            'title' => 'Todos los títulos',
+            'numero' => '11',
+            'order' => 21,
+            'show_marker' => true,
+            'content' => '<p>Contenido pendiente de importación.</p>',
+        ),
+        
+        // ===== CAPÍTULO 12: VUELVE EL GRAN GUAGUAS =====
+        array(
+            'title' => 'Vuelve el gran Guaguas',
+            'numero' => '12',
+            'order' => 22,
+            'show_marker' => true,
+            'content' => '<p>Contenido pendiente de importación.</p>',
+        ),
+        
+        // ===== CAPÍTULO 13: DEL CID AL ARENAS =====
+        array(
+            'title' => 'Del CID al Arenas',
+            'numero' => '13',
+            'order' => 23,
+            'show_marker' => true,
+            'content' => '<p>Contenido pendiente de importación.</p>',
+        ),
+        
+        // ===== CAPÍTULO 14: LOS NUEVOS ÍDOLOS =====
+        array(
+            'title' => 'Los nuevos ídolos',
+            'numero' => '14',
+            'order' => 24,
+            'show_marker' => true,
+            'content' => '<p>Contenido pendiente de importación.</p>',
+        ),
+        
+        // ===== CAPÍTULO 15: EL IMPACTO DEL ESCUDO =====
+        array(
+            'title' => 'El impacto del escudo',
+            'numero' => '15',
+            'order' => 25,
+            'show_marker' => true,
+            'content' => '<p>Contenido pendiente de importación.</p>',
+        ),
+        
+        // ===== CAPÍTULO 16: LA DIRECTIVA =====
+        array(
+            'title' => 'La directiva',
+            'numero' => '16',
+            'order' => 26,
+            'show_marker' => true,
+            'content' => '<p>Contenido pendiente de importación.</p>',
+        ),
+        
+        // ===== CAPÍTULO 17: EL GUAGUAS QUE VIENE =====
+        array(
+            'title' => 'El Guaguas que viene',
+            'numero' => '17',
+            'order' => 27,
+            'show_marker' => true,
+            'content' => '<p>Contenido pendiente de importación.</p>',
+        ),
+        
+        // ===== CAPÍTULO 18: EMPLEADOS Y TÉCNICOS =====
+        array(
+            'title' => 'Empleados y técnicos',
+            'numero' => '18',
+            'order' => 28,
+            'show_marker' => true,
+            'content' => '<p>Contenido pendiente de importación.</p>',
+        ),
+        
+        // ===== CAPÍTULO 19: LA PLANTILLA DEL CINCUENTENARIO =====
+        array(
+            'title' => 'La plantilla del cincuentenario',
+            'numero' => '19',
+            'order' => 29,
+            'show_marker' => true,
+            'content' => '<p>Contenido pendiente de importación.</p>',
+        ),
+        
+        // ===== CAPÍTULO 20: MIGUEL ÁNGEL RAMÍREZ =====
+        array(
+            'title' => 'Miguel Ángel Ramírez',
+            'numero' => '20',
+            'order' => 30,
+            'show_marker' => true,
+            'content' => '<p>Contenido pendiente de importación.</p>',
+        ),
+        
+        // ===== CAPÍTULO 21: COMUNICACIÓN DIGITAL =====
+        array(
+            'title' => 'Comunicación digital',
+            'numero' => '21',
+            'order' => 31,
+            'show_marker' => true,
+            'content' => '<p>Contenido pendiente de importación.</p>',
+        ),
+        
+        // ===== CAPÍTULO 22: SOCIOS Y ABONADOS =====
+        array(
+            'title' => 'Socios y abonados',
+            'numero' => '22',
+            'order' => 32,
+            'show_marker' => true,
+            'content' => '<p>Contenido pendiente de importación.</p>',
+        ),
+        
+        // ===== CAPÍTULO 23: EMPRESARIOS DE LA TIERRA =====
+        array(
+            'title' => 'Empresarios de la tierra',
+            'numero' => '23',
+            'order' => 33,
+            'show_marker' => true,
+            'content' => '<p>Contenido pendiente de importación.</p>',
         ),
     );
 }

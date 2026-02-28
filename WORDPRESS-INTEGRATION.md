@@ -851,6 +851,29 @@ La [resaltado color_fondo="#1a237e" color_texto="#D4AF37"]Copa del Rey[/resaltad
 
 ---
 
+### `[seccion_header]` — Encabezado de sección resaltado
+
+Muestra un encabezado con fondo dorado que se ajusta al ancho del texto. Equivalente a `<SectionHeader>`.
+
+```
+[seccion_header]Las horas extraescolares con Francisco Rodríguez[/seccion_header]
+
+<!-- Sin resaltado -->
+[seccion_header highlighted="false"]Título sin fondo[/seccion_header]
+```
+
+**HTML generado:**
+
+```html
+<div class="mt-10 mb-5">
+  <h3 class="section-header-highlighted">Las horas extraescolares</h3>
+</div>
+```
+
+El fondo dorado se ajusta línea por línea al ancho del texto (usando `box-decoration-break: clone`).
+
+---
+
 ### `[cita_editorial]` — Cita destacada
 
 Muestra una cita editorial con autor opcional. Equivalente a `<EditorialQuote>`.
@@ -859,6 +882,51 @@ Muestra una cita editorial con autor opcional. Equivalente a `<EditorialQuote>`.
 [cita_editorial author="Club Voleibol Guaguas"]
 "Más que un club, una familia."
 [/cita_editorial]
+```
+
+### `[cita_prensa]` — Cita de prensa histórica
+
+Muestra una cita de periódico con fuente. Equivalente a `<NewspaperQuote>`.
+
+```
+[cita_prensa source="La Provincia, 17 de julio de 1987"]
+"Estamos en una nube con muchos cimientos..."
+[/cita_prensa]
+```
+
+### `[perfil_jugador]` — Perfil de jugador
+
+Muestra un perfil biográfico con foto opcional. Equivalente a `<PlayerProfile>`.
+
+```
+[perfil_jugador nombre="Sergio Miguel Camarero" subtitulo="Leyenda del Guaguas" imagen="url" posicion_imagen="left"]
+Contenido del perfil...
+[/perfil_jugador]
+```
+
+| Parámetro         | Descripción                    | Por defecto |
+|-------------------|--------------------------------|-------------|
+| `nombre`          | Nombre del jugador (requerido) | —           |
+| `subtitulo`       | Subtítulo o apodo              | —           |
+| `imagen`          | URL de la imagen               | —           |
+| `imagen_alt`      | Texto alternativo              | nombre      |
+| `imagen_caption`  | Pie de foto                    | —           |
+| `posicion_imagen` | `left` o `right`               | `left`      |
+
+### `[capitular]` — Capitular dorada
+
+Aplica una letra capitular dorada al inicio del párrafo. Equivalente a `<DropCap>`.
+
+```
+[capitular]Antes que el club fue el colegio...[/capitular]
+```
+
+### `[articulo]` — Bloque de artículo legal
+
+Para los estatutos fundacionales. Equivalente a `<ArticleBlock>`.
+
+```
+[articulo numero="1º"]El nombre de la nueva entidad será...[/articulo]
 ```
 
 ### `[imagen_contenido]` — Imagen con pie de foto
@@ -892,9 +960,38 @@ Crea una cabecera visual personalizada. Equivalente a `<ChapterHero>`.
 
 ## 📦 Dependencias opcionales
 
-- **ACF (Advanced Custom Fields)**: Para campos personalizados de capítulos
 - **Yoast SEO**: Para optimización SEO
 - **WP Rocket**: Para caché y optimización
+
+---
+
+## 📖 Estructura de capítulos (23 capítulos)
+
+| Nº | Título |
+|----|--------|
+| 01 | Prólogos |
+| 02 | Del patio del colegio a División de Honor |
+| 03 | Estatutos Fundacionales |
+| 04 | Así se forjó una leyenda |
+| 05 | Iconos y estrellas del Guaguas |
+| 06 | Ignacio Brito y Tributo a los Salesianos |
+| 07 | Marek |
+| 08 | Embajadores por Europa |
+| 09 | Relevo generacional |
+| 10 | Una transición dolorosa |
+| 11 | Todos los títulos |
+| 12 | Vuelve el gran Guaguas |
+| 13 | Del CID al Arenas |
+| 14 | Los nuevos ídolos |
+| 15 | El impacto del escudo |
+| 16 | La directiva |
+| 17 | El Guaguas que viene |
+| 18 | Empleados y técnicos |
+| 19 | La plantilla del cincuentenario |
+| 20 | Miguel Ángel Ramírez |
+| 21 | Comunicación digital |
+| 22 | Socios y abonados |
+| 23 | Empresarios de la tierra |
 
 ---
 
@@ -902,11 +999,11 @@ Crea una cabecera visual personalizada. Equivalente a `<ChapterHero>`.
 
 ```css
 :root {
-    --gold: 42 87% 55%;           /* Dorado principal */
-    --background: 220 15% 8%;      /* Fondo oscuro */
-    --foreground: 42 30% 95%;      /* Texto claro */
-    --sidebar-width: 320px;        /* Ancho del índice */
-    --font-serif: 'Playfair Display';
+    --gold: 45 100% 50%;            /* Dorado principal */
+    --background: 220 50% 10%;      /* Fondo oscuro */
+    --foreground: 0 0% 98%;         /* Texto claro */
+    --sidebar-width: 320px;         /* Ancho del índice */
+    --font-serif: 'Montserrat';
     --font-sans: 'Inter';
 }
 ```
