@@ -465,6 +465,74 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 /* ============================================
+   SCROLL-REVEAL ANIMATIONS
+   Replicates framer-motion useScrollReveal hook
+   ============================================ */
+
+[data-reveal] {
+    opacity: 0;
+    transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+    will-change: opacity, transform;
+}
+
+[data-reveal="up"] { transform: translateY(30px); }
+[data-reveal="down"] { transform: translateY(-30px); }
+[data-reveal="left"] { transform: translateX(30px); }
+[data-reveal="right"] { transform: translateX(-30px); }
+[data-reveal="none"] { transform: none; }
+
+[data-reveal].revealed {
+    opacity: 1;
+    transform: translateY(0) translateX(0);
+}
+
+[data-reveal-delay="100"] { transition-delay: 100ms; }
+[data-reveal-delay="200"] { transition-delay: 200ms; }
+[data-reveal-delay="300"] { transition-delay: 300ms; }
+[data-reveal-delay="400"] { transition-delay: 400ms; }
+[data-reveal-delay="500"] { transition-delay: 500ms; }
+
+/* ============================================
+   CHAPTER HERO STAGGERED ANIMATIONS
+   ============================================ */
+
+@keyframes heroIconIn {
+    from { opacity: 0; transform: scale(0.6); }
+    to   { opacity: 1; transform: scale(1); }
+}
+
+@keyframes heroLineIn {
+    from { opacity: 0; transform: translateY(20px); }
+    to   { opacity: 1; transform: translateY(0); }
+}
+
+.hero-icon-animated {
+    opacity: 0;
+    animation: heroIconIn 0.5s ease-out 0.2s forwards;
+}
+
+.hero-line-animated {
+    opacity: 0;
+    animation: heroLineIn 0.5s ease-out forwards;
+}
+
+.hero-line-animated:nth-child(1) { animation-delay: 0.4s; }
+.hero-line-animated:nth-child(2) { animation-delay: 0.55s; }
+.hero-line-animated:nth-child(3) { animation-delay: 0.7s; }
+.hero-line-animated:nth-child(4) { animation-delay: 0.85s; }
+.hero-line-animated:nth-child(5) { animation-delay: 1.0s; }
+
+/* ============================================
+   PARALLAX HERO BACKGROUND
+   ============================================ */
+
+.hero-bg-parallax {
+    transform: scale(1.1);
+    will-change: transform;
+    transition: none;
+}
+
+/* ============================================
    TAILWIND-LIKE UTILITIES
    ============================================ */
 
