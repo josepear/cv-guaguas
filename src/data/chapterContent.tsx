@@ -16,6 +16,16 @@ import imgVictoriaGuaguas from "@/assets/content/victoria-guaguas.png";
 import imgJugadorAccion from "@/assets/content/jugador-accion.png";
 import imgJorgeAlmansa from "@/assets/content/jorge-almansa.png";
 import imgOsmanyJuantorena from "@/assets/content/osmany-juantorena.png";
+import imgDobromirSaque from "@/assets/content/dobromir-saque.jpg";
+import imgEquipoLiga from "@/assets/content/equipo-liga.jpeg";
+import imgAugustoColito from "@/assets/content/augusto-colito.jpg";
+import imgRemateGuaguas from "@/assets/content/remate-guaguas.png";
+import imgBannerEntradas from "@/assets/content/banner-entradas.png";
+import imgAugustoPerfil from "@/assets/content/augusto-colito-perfil.png";
+import imgWallaSouza from "@/assets/content/walla-souza.png";
+import imgIoDeAmo from "@/assets/content/io-de-amo.png";
+import imgHelderSpencer from "@/assets/content/helder-spencer.png";
+import imgNicoBruno from "@/assets/content/nico-bruno.png";
 
 // Chapter content mapped by slug
 export const chapterContent: Record<string, React.ReactNode> = {
@@ -572,6 +582,352 @@ export const chapterContent: Record<string, React.ReactNode> = {
         "Tener a un superclase como Golec, o Klos, que no sabías si iba a rematar o a colocar, considerado uno de los cinco mejores colocadores del mundo, la conexión brutal de Camarero con una grada que hacía volar a los jugadores... Es una secuencia increíble de éxitos y superaciones."
       </EditorialQuote>
     </PlayerProfile>
+  ),
+
+  // ═══════════════════════════════════════════════
+  // CAPÍTULO 6: Ignacio Brito y Tributo a los Salesianos
+  // ═══════════════════════════════════════════════
+  "capitulo-06": (
+    <>
+      <DropCap>La historia del voleibol en Gran Canaria no puede entenderse sin la contribución de los Salesianos. Ignacio Brito, formado en las instalaciones del colegio salesiano, fue uno de los primeros técnicos que comprendió que la cantera era el verdadero tesoro del club.</DropCap>
+
+      <ContentImage 
+        src={imgCopaDelRey} 
+        alt="Los Salesianos, cuna del voleibol grancanario" 
+        caption="El colegio Salesiano fue uno de los principales viveros del voleibol en Las Palmas de Gran Canaria." 
+        fullWidth 
+      />
+
+      <p>Contenido pendiente de importación del documento original.</p>
+    </>
+  ),
+
+  // ═══════════════════════════════════════════════
+  // CAPÍTULO 7: Marek
+  // ═══════════════════════════════════════════════
+  "capitulo-07": (
+    <>
+      <DropCap>Marek llegó a Gran Canaria como una estrella internacional y se marchó convertido en leyenda. Su impacto en el Guaguas trascendió lo deportivo para convertirse en un referente cultural del voleibol en las islas.</DropCap>
+
+      <ContentImage 
+        src={imgDobromirSaque} 
+        alt="Momento de un saque en un partido del CV Guaguas" 
+        caption="El nivel técnico de los jugadores internacionales elevó la competitividad del Guaguas en todas las competiciones." 
+      />
+
+      <p>Contenido pendiente de importación del documento original.</p>
+    </>
+  ),
+
+  // ═══════════════════════════════════════════════
+  // CAPÍTULO 8: Embajadores por Europa
+  // ═══════════════════════════════════════════════
+  "capitulo-08": (
+    <>
+      <DropCap>La aventura europea del CV Guaguas es una de las páginas más brillantes de su historia. Desde la primera participación en la Copa de Europa hasta las campañas recientes en la Champions League, el club ha sido embajador del voleibol canario en los más prestigiosos escenarios del continente.</DropCap>
+
+      <ContentImage 
+        src={imgEquipoChampions} 
+        alt="El CV Guaguas en competición europea" 
+        caption="La expedición del CV Guaguas antes de un partido de Champions League, continuando la tradición europea del club." 
+        fullWidth 
+      />
+
+      <ContentImage 
+        src={imgAugustoColito} 
+        alt="Augusto Colito en la Champions League" 
+        caption="Augusto Colito, pieza clave del Guaguas en la Champions League 2025-2026." 
+      />
+
+      <p>Contenido pendiente de importación del documento original.</p>
+    </>
+  ),
+
+  // ═══════════════════════════════════════════════
+  // CAPÍTULO 9: Relevo generacional
+  // ═══════════════════════════════════════════════
+  "capitulo-09": (
+    <>
+      <DropCap>Cada generación del Guaguas ha sido el eslabón de una cadena ininterrumpida de talento canario. El relevo generacional ha sido una constante en la vida del club, desde los pioneros del Calvo Sotelo hasta los actuales jugadores de la cantera que sueñan con vestir la camiseta amarilla.</DropCap>
+
+      <ContentImage 
+        src={imgNicoBruno} 
+        alt="Nico Bruno, receptor del CV Guaguas" 
+        caption="Nico Bruno representa la nueva generación de jugadores que llegan al Guaguas con hambre de títulos." 
+      />
+
+      <ContentImage 
+        src={imgHelderSpencer} 
+        alt="Hélder Spencer, central del CV Guaguas" 
+        caption="Hélder Spencer, uno de los refuerzos internacionales que alimentan la competitividad del equipo." 
+      />
+
+      <p>Contenido pendiente de importación del documento original.</p>
+    </>
+  ),
+
+  // ═══════════════════════════════════════════════
+  // CAPÍTULO 10: Una transición dolorosa
+  // ═══════════════════════════════════════════════
+  "capitulo-10": (
+    <>
+      <DropCap>Los años posteriores a la marcha de Juan Ruiz fueron los más convulsos en la historia del club. La inestabilidad directiva, los problemas económicos y la pérdida progresiva de competitividad culminaron en el peor desenlace posible: la desaparición temporal del equipo en 2009.</DropCap>
+
+      <ContentImage 
+        src={imgEquipoLiga} 
+        alt="El equipo del CV Guaguas en competición" 
+        caption="A pesar de las dificultades, el espíritu del Guaguas nunca se extinguió completamente." 
+        fullWidth 
+      />
+
+      <p>Contenido pendiente de importación del documento original.</p>
+    </>
+  ),
+
+  // ═══════════════════════════════════════════════
+  // CAPÍTULO 11: Todos los títulos
+  // ═══════════════════════════════════════════════
+  "capitulo-11": (
+    <>
+      <DropCap>El palmarés del CV Guaguas es el más brillante del voleibol español. Nueve Ligas, nueve Copas del Rey, cinco Supercopas y una Copa Ibérica conforman un historial de éxitos que ningún otro club del país ha igualado.</DropCap>
+
+      <ContentImage 
+        src={imgVictoriaGuaguas} 
+        alt="El CV Guaguas celebra un título" 
+        caption="La celebración de los títulos ha sido una constante en la historia del club amarillo." 
+        fullWidth 
+      />
+
+      <ContentImage 
+        src={imgPartidoGuaguas} 
+        alt="Ambiente en un partido del CV Guaguas" 
+        caption="El Centro Insular de Deportes y el Gran Canaria Arena han sido testigos de las gestas del club." 
+      />
+
+      <p>Contenido pendiente de importación del documento original.</p>
+    </>
+  ),
+
+  // ═══════════════════════════════════════════════
+  // CAPÍTULO 12: Vuelve el gran Guaguas
+  // ═══════════════════════════════════════════════
+  "capitulo-12": (
+    <>
+      <DropCap>En 2020, cuando el club se encontraba de nuevo al borde del abismo, Juan Ruiz regresó para devolver al Guaguas a la élite. Su vuelta fue recibida con esperanza y emoción por una afición que no había olvidado los años gloriosos.</DropCap>
+
+      <ContentImage 
+        src={imgRemateGuaguas} 
+        alt="Remate del CV Guaguas en un partido de Superliga" 
+        caption="El regreso del Guaguas a los títulos confirmó que la leyenda no había terminado." 
+        fullWidth 
+      />
+
+      <p>Contenido pendiente de importación del documento original.</p>
+    </>
+  ),
+
+  // ═══════════════════════════════════════════════
+  // CAPÍTULO 13: Del CID al Arenas
+  // ═══════════════════════════════════════════════
+  "capitulo-13": (
+    <>
+      <DropCap>Del Centro Insular de Deportes al Gran Canaria Arena: la evolución de la casa del voleibol grancanario. El CID fue durante décadas la catedral del voleibol en Canarias, un pabellón cuyo ambiente era temido por todos los rivales.</DropCap>
+
+      <ContentImage 
+        src={imgBannerEntradas} 
+        alt="Cartelería de partidos del CV Guaguas en el Gran Canaria Arena" 
+        caption="El Gran Canaria Arena acoge hoy los grandes eventos del voleibol canario." 
+        fullWidth 
+      />
+
+      <p>Contenido pendiente de importación del documento original.</p>
+    </>
+  ),
+
+  // ═══════════════════════════════════════════════
+  // CAPÍTULO 14: Los nuevos ídolos
+  // ═══════════════════════════════════════════════
+  "capitulo-14": (
+    <>
+      <DropCap>Una nueva generación de estrellas ha tomado el relevo en el Gran Canaria Arena. Los nuevos ídolos del Guaguas combinan talento internacional con la pasión local para escribir nuevos capítulos en la historia del club.</DropCap>
+
+      <ContentImage 
+        src={imgWallaSouza} 
+        alt="Walla Souza, opuesto del CV Guaguas" 
+        caption="Walla Souza, uno de los jugadores más determinantes del Guaguas actual." 
+      />
+
+      <ContentImage 
+        src={imgAugustoPerfil} 
+        alt="Augusto Colito, internacional español del CV Guaguas" 
+        caption="Augusto Colito, internacional español y pilar del proyecto deportivo del Guaguas." 
+      />
+
+      <p>Contenido pendiente de importación del documento original.</p>
+    </>
+  ),
+
+  // ═══════════════════════════════════════════════
+  // CAPÍTULO 15: El impacto del escudo
+  // ═══════════════════════════════════════════════
+  "capitulo-15": (
+    <>
+      <DropCap>El escudo del CV Guaguas es mucho más que un símbolo deportivo. Representa la identidad de un club que ha trascendido el voleibol para convertirse en un referente cultural de Gran Canaria y del deporte canario.</DropCap>
+
+      <ContentImage 
+        src={imgJugadorAccion} 
+        alt="Jugador del CV Guaguas en acción" 
+        caption="El escudo del Guaguas, presente en cada camiseta que viste un jugador que sale a la cancha a defender los colores amarillos." 
+      />
+
+      <p>Contenido pendiente de importación del documento original.</p>
+    </>
+  ),
+
+  // ═══════════════════════════════════════════════
+  // CAPÍTULO 16: La directiva
+  // ═══════════════════════════════════════════════
+  "capitulo-16": (
+    <>
+      <DropCap>Detrás de cada título y cada logro deportivo hay una estructura directiva que ha trabajado incansablemente por el bien del club. Desde los fundadores del Calvo Sotelo hasta la actual junta directiva, la gestión del Guaguas ha sido un ejemplo de compromiso y sacrificio.</DropCap>
+
+      <ContentImage 
+        src={imgEquipoLiga} 
+        alt="El equipo y cuerpo técnico del CV Guaguas" 
+        caption="La directiva y el cuerpo técnico, piezas fundamentales del engranaje del Guaguas." 
+      />
+
+      <p>Contenido pendiente de importación del documento original.</p>
+    </>
+  ),
+
+  // ═══════════════════════════════════════════════
+  // CAPÍTULO 17: El Guaguas que viene
+  // ═══════════════════════════════════════════════
+  "capitulo-17": (
+    <>
+      <DropCap>El futuro del Guaguas se construye en la cantera. Los equipos de categorías inferiores trabajan cada día para formar a los jugadores que, algún día, defenderán los colores amarillos en la máxima competición.</DropCap>
+
+      <ContentImage 
+        src={imgNicoBruno} 
+        alt="Jóvenes promesas del CV Guaguas" 
+        caption="La apuesta por la cantera es una seña de identidad del club desde sus orígenes en el Calvo Sotelo." 
+        fullWidth 
+      />
+
+      <p>Contenido pendiente de importación del documento original.</p>
+    </>
+  ),
+
+  // ═══════════════════════════════════════════════
+  // CAPÍTULO 18: Empleados y técnicos
+  // ═══════════════════════════════════════════════
+  "capitulo-18": (
+    <>
+      <DropCap>Un club no funciona solo con jugadores. Detrás de cada partido, cada entrenamiento y cada evento hay un equipo de profesionales que hace posible la maquinaria del CV Guaguas: empleados, técnicos, fisioterapeutas, utilleros y tantos otros nombres sin los cuales nada sería posible.</DropCap>
+
+      <ContentImage 
+        src={imgIoDeAmo} 
+        alt="Io De Amo, colocador del CV Guaguas" 
+        caption="Io De Amo, uno de los jugadores del plantel actual bajo la dirección técnica de Sergio Miguel Camarero." 
+      />
+
+      <p>Contenido pendiente de importación del documento original.</p>
+    </>
+  ),
+
+  // ═══════════════════════════════════════════════
+  // CAPÍTULO 19: La plantilla del cincuentenario
+  // ═══════════════════════════════════════════════
+  "capitulo-19": (
+    <>
+      <DropCap>La temporada 2025-2026 marca el cincuentenario del Club Voleibol Guaguas. Una plantilla competitiva en cuatro frentes —Liga, Copa, Supercopa y Champions League— escribe las últimas líneas de esta historia de medio siglo de pasión por el voleibol.</DropCap>
+
+      <ContentImage 
+        src={imgEquipoChampions} 
+        alt="La plantilla del CV Guaguas en la temporada del cincuentenario" 
+        caption="La plantilla del cincuentenario, competitiva en todas las competiciones nacionales y europeas." 
+        fullWidth 
+      />
+
+      <ContentImage 
+        src={imgJorgeAlmansa} 
+        alt="Jorge Almansa, capitán del CV Guaguas" 
+        caption="Jorge Almansa, capitán y símbolo de una generación que honra el legado del club." 
+      />
+
+      <p>Contenido pendiente de importación del documento original.</p>
+    </>
+  ),
+
+  // ═══════════════════════════════════════════════
+  // CAPÍTULO 20: Miguel Ángel Ramírez
+  // ═══════════════════════════════════════════════
+  "capitulo-20": (
+    <>
+      <DropCap>Miguel Ángel Ramírez, presidente de la UD Las Palmas, ha sido una figura clave en el apoyo institucional al CV Guaguas. Su visión del deporte como motor de la sociedad canaria ha permitido que el club cuente con los recursos necesarios para competir al máximo nivel.</DropCap>
+
+      <ContentImage 
+        src={imgDobromirSaque} 
+        alt="El CV Guaguas en competición" 
+        caption="El apoyo institucional ha sido fundamental para mantener la competitividad del club a nivel nacional y europeo." 
+      />
+
+      <p>Contenido pendiente de importación del documento original.</p>
+    </>
+  ),
+
+  // ═══════════════════════════════════════════════
+  // CAPÍTULO 21: Comunicación digital
+  // ═══════════════════════════════════════════════
+  "capitulo-21": (
+    <>
+      <DropCap>El CV Guaguas ha sido pionero en la comunicación digital dentro del deporte español. Su presencia en redes sociales, la producción de contenidos audiovisuales y la cobertura periodística propia han creado un modelo de referencia para otros clubes.</DropCap>
+
+      <ContentImage 
+        src={imgBannerEntradas} 
+        alt="Comunicación digital del CV Guaguas" 
+        caption="La comunicación digital del Guaguas conecta al club con su afición en todos los rincones del mundo." 
+        fullWidth 
+      />
+
+      <p>Contenido pendiente de importación del documento original.</p>
+    </>
+  ),
+
+  // ═══════════════════════════════════════════════
+  // CAPÍTULO 22: Socios y abonados
+  // ═══════════════════════════════════════════════
+  "capitulo-22": (
+    <>
+      <DropCap>La afición del Guaguas es el motor del club. Desde aquellos primeros espectadores en el patio del colegio hasta los miles de abonados que llenan el Gran Canaria Arena, los socios han sido el alma del proyecto deportivo más exitoso del voleibol español.</DropCap>
+
+      <ContentImage 
+        src={imgPartidoGuaguas} 
+        alt="La afición del CV Guaguas en el Gran Canaria Arena" 
+        caption="La marea amarilla, incondicional con su equipo en cada partido, en cada competición." 
+        fullWidth 
+      />
+
+      <p>Contenido pendiente de importación del documento original.</p>
+    </>
+  ),
+
+  // ═══════════════════════════════════════════════
+  // CAPÍTULO 23: Empresarios de la tierra
+  // ═══════════════════════════════════════════════
+  "capitulo-23": (
+    <>
+      <DropCap>El CV Guaguas ha contado siempre con el apoyo de empresarios canarios que creyeron en el proyecto. Desde Guaguas Municipales, el primer gran patrocinador, hasta las empresas que hoy respaldan al club, el tejido empresarial de la tierra ha sido pilar fundamental de la entidad.</DropCap>
+
+      <ContentImage 
+        src={imgRemateGuaguas} 
+        alt="El CV Guaguas en acción con sus patrocinadores" 
+        caption="Los patrocinadores locales han sido parte esencial de la historia del club, acompañándolo en cada etapa." 
+      />
+
+      <p>Contenido pendiente de importación del documento original.</p>
+    </>
   ),
 
 };
