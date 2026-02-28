@@ -1,5 +1,6 @@
 import { ReactNode } from "react";
 import { Star } from "lucide-react";
+import { motion } from "framer-motion";
 import InlineSvgIcon from "./InlineSvgIcon";
 
 export interface TitleLine {
@@ -243,14 +244,52 @@ const ChapterHero = ({
       >
         {/* Icon */}
         {(icon !== "none" || customIconSrc) && (
-          <div className="mb-4">
+          <motion.div
+            className="mb-4"
+            initial={{ opacity: 0, scale: 0.6 }}
+            animate={{ opacity: 1, scale: 1 }}
+            transition={{ duration: 0.5, delay: 0.2, ease: "easeOut" }}
+          >
             {renderIcon()}
-          </div>
+          </motion.div>
         )}
 
         {/* Title Lines */}
         <div className={`flex flex-col gap-1 ${alignment === "center" ? "items-center" : alignment === "right" ? "items-end" : "items-start"}`}>
-          {renderTitleLines()}
+          {titleLines.map((line, index) => {
+            const lineWeight = line.fontWeight || titleFontWeight;
+            const weightClass = fontWeights[lineWeight];
+            const textStyle: React.CSSProperties = {
+              color: line.color || "hsl(var(--foreground))",
+            };
+
+            const content = line.highlightColor ? (
+              <span
+                className={`inline-block px-2 py-1 font-display ${weightClass} text-2xl sm:text-3xl md:text-4xl lg:text-5xl uppercase tracking-tight leading-tight`}
+                style={{ ...textStyle, backgroundColor: line.highlightColor }}
+              >
+                {line.text}
+              </span>
+            ) : (
+              <span
+                className={`block font-display ${weightClass} text-2xl sm:text-3xl md:text-4xl lg:text-5xl uppercase tracking-tight leading-tight`}
+                style={textStyle}
+              >
+                {line.text}
+              </span>
+            );
+
+            return (
+              <motion.div
+                key={index}
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.5, delay: 0.4 + index * 0.15, ease: "easeOut" }}
+              >
+                {content}
+              </motion.div>
+            );
+          })}
         </div>
       </div>
     </div>
