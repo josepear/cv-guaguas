@@ -1,6 +1,6 @@
-import { ReactNode } from "react";
+import { ReactNode, useRef } from "react";
 import { Star } from "lucide-react";
-import { motion } from "framer-motion";
+import { motion, useScroll, useTransform } from "framer-motion";
 import InlineSvgIcon from "./InlineSvgIcon";
 
 export interface TitleLine {
@@ -51,7 +51,13 @@ const ChapterHero = ({
   height,
   borderColor,
 }: ChapterHeroProps) => {
-  
+  const heroRef = useRef(null);
+  const { scrollYProgress } = useScroll({
+    target: heroRef,
+    offset: ["start start", "end start"],
+  });
+  const bgY = useTransform(scrollYProgress, [0, 1], ["0%", "20%"]);
+
   // Icon size mapping
   const iconSizes = {
     sm: { width: 32, height: 32 },
@@ -211,14 +217,15 @@ const ChapterHero = ({
 
   return (
     <div 
+      ref={heroRef}
       className={`relative overflow-hidden w-full ${className}`}
       style={containerStyle}
     >
-      {/* Background Image */}
+      {/* Background Image with Parallax */}
       {backgroundImage && (
-        <div 
-          className="absolute inset-0 bg-cover bg-center bg-no-repeat"
-          style={{ backgroundImage: `url(${backgroundImage})` }}
+        <motion.div 
+          className="absolute inset-0 bg-cover bg-center bg-no-repeat will-change-transform"
+          style={{ backgroundImage: `url(${backgroundImage})`, y: bgY, scale: 1.1 }}
         />
       )}
 
