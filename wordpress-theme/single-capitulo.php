@@ -195,6 +195,46 @@ if ($hero_icon === 'custom' && $hero_custom_icon) {
 
     <div class="max-w-4xl mx-auto px-6 md:px-12 lg:px-16 py-16">
         
+        <!-- Breadcrumb - idéntico a ChapterBreadcrumb.tsx -->
+        <?php
+        $parent_id = wp_get_post_parent_id(get_the_ID());
+        $cap_numero = libro_get_field('numero_capitulo', get_the_ID());
+        $ocultar_num = get_post_meta(get_the_ID(), '_ocultar_numero', true) === '1';
+        $current_label = (!$ocultar_num && $cap_numero) ? $cap_numero . '. ' . get_the_title() : get_the_title();
+        ?>
+        <nav aria-label="breadcrumb" class="mb-6">
+            <ol class="flex flex-wrap items-center gap-1.5 break-words text-xs text-muted-foreground sm:gap-2.5">
+                <li class="inline-flex items-center gap-1.5">
+                    <a href="<?php echo esc_url(home_url('/')); ?>" class="text-muted-foreground hover:text-gold transition-colors flex items-center gap-1">
+                        <svg class="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6"/></svg>
+                        Inicio
+                    </a>
+                </li>
+                <?php if ($parent_id) : 
+                    $parent_numero = libro_get_field('numero_capitulo', $parent_id);
+                    $parent_ocultar = get_post_meta($parent_id, '_ocultar_numero', true) === '1';
+                    $parent_label = (!$parent_ocultar && $parent_numero) ? $parent_numero . '. ' . get_the_title($parent_id) : get_the_title($parent_id);
+                ?>
+                <li role="presentation" aria-hidden="true" class="[&>svg]:size-3.5">
+                    <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/></svg>
+                </li>
+                <li class="inline-flex items-center gap-1.5">
+                    <a href="<?php echo get_permalink($parent_id); ?>" class="text-muted-foreground hover:text-gold transition-colors">
+                        <?php echo esc_html($parent_label); ?>
+                    </a>
+                </li>
+                <?php endif; ?>
+                <li role="presentation" aria-hidden="true" class="[&>svg]:size-3.5">
+                    <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/></svg>
+                </li>
+                <li class="inline-flex items-center gap-1.5">
+                    <span role="link" aria-disabled="true" aria-current="page" class="font-normal text-foreground/70">
+                        <?php echo esc_html($current_label); ?>
+                    </span>
+                </li>
+            </ol>
+        </nav>
+        
         <!-- Chapter Section - igual que ChapterSection.tsx -->
         <section class="scroll-mt-24 py-16 md:py-24 border-b border-border/30 last:border-b-0">
             <?php if ($hero_enabled !== '1') : ?>
