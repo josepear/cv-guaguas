@@ -135,6 +135,14 @@
     --shadow-soft: 0 4px 20px hsl(220 20% 80% / 0.3);
     --shadow-glow: 0 0 30px hsl(45 100% 42% / 0.15);
   }
+
+  /* Hero in light mode: restore bright gold (dark overlay needs vibrant colors) */
+  .light #hero {
+    --gold: 45 100% 50%;
+    --gold-light: 45 100% 60%;
+    --gold-dark: 45 100% 40%;
+    --gold-muted: 45 60% 45%;
+  }
 }
 
 @layer base {

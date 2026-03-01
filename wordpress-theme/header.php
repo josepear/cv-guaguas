@@ -161,6 +161,13 @@
         .light .btn-download-outline { color: var(--lm-fg); border-color: var(--lm-border); }
         .light .btn-download-outline:hover { border-color: var(--lm-gold); color: var(--lm-gold); }
 
+        /* Hero in light mode: restore bright gold (dark overlay needs vibrant colors) */
+        .light #hero { --gold: 45 100% 50%; --gold-light: 45 100% 60%; --gold-dark: 45 100% 40%; --gold-muted: 45 60% 45%; }
+        .light #hero .text-gold, .light #hero .chapter-marker, .light #hero .drop-cap { color: hsl(45 100% 50%) !important; }
+        .light #hero .bg-gold { background-color: hsl(45 100% 50%) !important; }
+        .light #hero .btn-download-primary { background-color: hsl(45 100% 50%) !important; border-color: hsl(45 100% 50%) !important; color: hsl(220 50% 10%) !important; }
+        .light #hero .btn-download-primary:hover { background-color: transparent !important; color: hsl(45 100% 50%) !important; }
+
         /* Smooth theme transition */
         body, header, aside, footer, .bg-sidebar, .bg-card, .bg-background {
             transition: background-color 0.4s ease, color 0.4s ease, border-color 0.4s ease;
