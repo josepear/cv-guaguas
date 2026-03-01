@@ -779,11 +779,11 @@ add_shortcode('hero_linea', 'libro_shortcode_hero_linea');
 
 /**
  * Shortcode: Resaltado de texto - idéntico a React HighlightText.tsx
- * Uso: [resaltado color_fondo="#D4AF37" color_texto="#1a237e"]Texto resaltado[/resaltado]
+ * Uso: [resaltado color_fondo="hsl(45, 100%, 50%)" color_texto="#1a237e"]Texto resaltado[/resaltado]
  */
 function libro_shortcode_resaltado($atts, $content = null) {
     $atts = shortcode_atts(array(
-        'color_fondo' => '#D4AF37',
+        'color_fondo' => 'hsl(45, 100%, 50%)',
         'color_texto' => '#1a237e',
     ), $atts, 'resaltado');
 
