@@ -1,7 +1,7 @@
 import { Link } from "react-router-dom";
 import { FileText, BookOpen, ChevronDown, ChevronRight } from "lucide-react";
 import { cn } from "@/lib/utils";
-import { useState } from "react";
+import { useState, forwardRef } from "react";
 
 export interface ChapterItem {
   id: string;
@@ -19,7 +19,7 @@ interface SidebarIndexProps {
   onClose: () => void;
 }
 
-const SidebarIndex = ({ chapters, activeChapterSlug, isOpen, onClose }: SidebarIndexProps) => {
+const SidebarIndex = forwardRef<HTMLDivElement, SidebarIndexProps>(({ chapters, activeChapterSlug, isOpen, onClose }, ref) => {
   const [expandedGroups, setExpandedGroups] = useState<Set<string>>(new Set());
 
   const toggleGroup = (id: string) => {
@@ -141,6 +141,8 @@ const SidebarIndex = ({ chapters, activeChapterSlug, isOpen, onClose }: SidebarI
       </aside>
     </>
   );
-};
+});
+
+SidebarIndex.displayName = "SidebarIndex";
 
 export default SidebarIndex;

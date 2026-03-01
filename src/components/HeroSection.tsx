@@ -1,3 +1,4 @@
+import { forwardRef } from "react";
 import { ArrowRight, FileText, BookOpen } from "lucide-react";
 import { Link } from "react-router-dom";
 import heroImage from "@/assets/hero-stadium.jpg";
@@ -8,13 +9,14 @@ interface HeroSectionProps {
   subtitle?: string;
 }
 
-const HeroSection = ({ 
+const HeroSection = forwardRef<HTMLElement, HeroSectionProps>(({ 
   title = "50 Años de Historia",
   subtitle = "Cinco décadas de pasión, títulos y leyendas del voleibol canario"
-}: HeroSectionProps) => {
+}, ref) => {
   return (
     <section 
-      id="hero" 
+      ref={ref}
+      id="hero"
       className="relative min-h-screen flex items-center justify-center overflow-hidden"
     >
       {/* Background Image */}
@@ -82,6 +84,8 @@ const HeroSection = ({
       <div className="absolute bottom-0 left-0 right-0 h-32 bg-gradient-to-t from-background to-transparent" />
     </section>
   );
-};
+});
+
+HeroSection.displayName = "HeroSection";
 
 export default HeroSection;
