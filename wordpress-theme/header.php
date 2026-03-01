@@ -182,8 +182,11 @@
         .light #hero .btn-download-primary:hover { background-color: transparent !important; color: hsl(45 100% 50%) !important; }
 
         /* Smooth theme transition */
-        body, header, aside, footer, .bg-sidebar, .bg-card, .bg-background {
+        body, header, footer, .bg-card, .bg-background {
             transition: background-color 0.4s ease, color 0.4s ease, border-color 0.4s ease;
+        }
+        aside, aside *, .bg-sidebar, .border-sidebar-border {
+            transition: background-color 0.05s ease, color 0.05s ease, border-color 0.05s ease;
         }
 
         /* === DARK MODE (default) STYLES === */
