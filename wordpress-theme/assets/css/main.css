@@ -705,7 +705,12 @@ h1, h2, h3, h4, h5, h6 {
 .overflow-y-auto { overflow-y: auto; }
 .object-cover { object-fit: cover; }
 .object-contain { object-fit: contain; }
+.opacity-40 { opacity: 0.4; }
 .opacity-80 { opacity: 0.8; }
+.opacity-90 { opacity: 0.9; }
+.grayscale { filter: grayscale(100%); }
+.invert { filter: invert(100%); }
+.grayscale.invert { filter: grayscale(100%) invert(100%); }
 .backdrop-blur-sm { backdrop-filter: blur(4px); }
 .drop-shadow-2xl { filter: drop-shadow(0 25px 25px rgb(0 0 0 / 0.15)); }
 .transition-colors { transition-property: color, background-color, border-color; transition-duration: 150ms; }
@@ -713,7 +718,12 @@ h1, h2, h3, h4, h5, h6 {
 .transition-transform { transition-property: transform; transition-duration: 150ms; }
 .duration-200 { transition-duration: 200ms; }
 .duration-300 { transition-duration: 300ms; }
+.duration-500 { transition-duration: 500ms; }
 .ease-in-out { transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1); }
+
+/* Group hover utilities (for footer logos) */
+.group:hover .group-hover\:opacity-80 { opacity: 0.8; }
+.group:hover .group-hover\:opacity-90 { opacity: 0.9; }
 
 /* Transform */
 .translate-x-0 { transform: translateX(0); }
