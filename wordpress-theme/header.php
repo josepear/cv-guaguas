@@ -133,8 +133,8 @@
         .light .bg-gold { background-color: var(--lm-gold) !important; }
         .light .text-gold-muted { color: hsl(45 50% 38%) !important; }
         .light .header-blur { background-color: hsl(40 25% 95% / 0.95) !important; }
-        .light .section-header-highlighted { color: hsl(220 50% 10%); background-color: hsl(40 100% 35%); }
-        .light .article-number { color: hsl(220 50% 10%); background-color: hsl(40 100% 35%); }
+        .light .section-header-highlighted { color: hsl(220 50% 10%); background-color: hsl(45 100% 50%); }
+        .light .article-number { color: hsl(220 50% 10%); background-color: hsl(45 100% 50%); }
 
         .light .hero-overlay {
             background: linear-gradient(135deg, hsl(220 30% 15% / 0.75) 0%, hsl(42 30% 25% / 0.6) 50%, hsl(220 30% 15% / 0.8) 100%);
