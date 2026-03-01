@@ -115,6 +115,7 @@
         .light .bg-sidebar, .light .bg-sidebar\/95 { background-color: var(--lm-sidebar-bg) !important; }
         .light .border-sidebar-border { border-color: var(--lm-sidebar-border) !important; }
         .light .bg-sidebar-accent { background-color: var(--lm-sidebar-accent) !important; }
+        .light .hover\:bg-sidebar-accent:hover { background-color: var(--lm-sidebar-accent) !important; }
         .light .text-sidebar-foreground { color: var(--lm-fg) !important; }
         .light .text-sidebar-foreground\/80 { color: hsl(220 50% 12% / 0.8) !important; }
         .light .text-muted-foreground { color: var(--lm-muted-fg) !important; }
