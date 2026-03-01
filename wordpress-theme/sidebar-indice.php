@@ -28,7 +28,7 @@ $current_slug = is_singular('capitulo') ? get_post_field('post_name', get_the_ID
     <nav class="flex-1 overflow-y-auto p-4">
         <ul class="space-y-1">
             <?php foreach ($capitulos as $cap) : 
-                $numero = libro_get_field('numero_capitulo', $cap->ID);
+                $numero = get_post_meta($cap->ID, '_capitulo_numero', true);
                 $ocultar_numero = get_post_meta($cap->ID, '_ocultar_numero', true) === '1';
                 $cap_slug = get_post_field('post_name', $cap->ID);
                 $is_active = ($cap_slug === $current_slug);
@@ -60,19 +60,20 @@ $current_slug = is_singular('capitulo') ? get_post_field('post_name', get_the_ID
                     <?php if ($has_children) : ?>
                     <button 
                         type="button" 
-                        class="sidebar-accordion-toggle p-1 mr-1 text-muted-foreground hover:text-gold transition-colors"
+                        class="sidebar-accordion-toggle w-6 flex-shrink-0 flex items-center justify-center text-muted-foreground hover:text-gold transition-colors"
                         aria-expanded="<?php echo $has_active_child ? 'true' : 'false'; ?>"
                         aria-controls="subcapitulos-<?php echo $cap->ID; ?>"
                     >
-                        <!-- ChevronRight (closed) -->
                         <svg class="chevron-icon w-4 h-4 transition-transform duration-200 <?php echo $has_active_child ? 'rotate-90' : ''; ?>" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/>
                         </svg>
                     </button>
+                    <?php else : ?>
+                    <span class="w-6 flex-shrink-0"></span>
                     <?php endif; ?>
                     
                     <a href="<?php echo get_permalink($cap->ID); ?>" 
-                       class="sidebar-active-indicator flex-1 text-left py-2.5 px-3 rounded-sm transition-all duration-200 font-sans text-sm font-medium hover:bg-sidebar-accent hover:text-gold <?php echo !$has_children ? 'ml-6' : ''; ?> <?php echo $is_active ? 'active text-gold bg-sidebar-accent' : 'text-sidebar-foreground'; ?> <?php echo $has_active_child ? 'text-gold/80' : ''; ?>"
+                       class="sidebar-active-indicator flex-1 text-left py-2.5 px-3 rounded-sm transition-all duration-200 font-sans text-sm font-medium hover:bg-sidebar-accent hover:text-gold <?php echo $is_active ? 'active text-gold bg-sidebar-accent' : 'text-sidebar-foreground'; ?> <?php echo $has_active_child ? 'text-gold/80' : ''; ?>"
                        data-section="<?php echo esc_attr($cap_slug); ?>">
                         <span class="flex items-center gap-2.5">
                             <?php if ($numero && !$ocultar_numero) : ?>
@@ -95,7 +96,7 @@ $current_slug = is_singular('capitulo') ? get_post_field('post_name', get_the_ID
                         // Priority: check if hidden > manual number > auto-generated from parent
                         $sub_numero = '';
                         if (!$sub_ocultar_numero) {
-                            $sub_numero = libro_get_field('numero_capitulo', $sub->ID);
+                            $sub_numero = get_post_meta($sub->ID, '_capitulo_numero', true);
                             if (!$sub_numero && $numero) {
                                 // Auto-generate only if parent has number and sub doesn't
                                 $sub_numero = $numero . '.' . $sub_index;
