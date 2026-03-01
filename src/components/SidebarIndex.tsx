@@ -113,7 +113,7 @@ const SidebarIndex = ({ chapters, activeChapterSlug, isOpen, onClose }: SidebarI
       <aside
         className={cn(
           "fixed left-0 top-[52px] h-[calc(100vh-52px)] z-40 bg-sidebar border-r border-sidebar-border",
-          "w-[320px] flex flex-col",
+          "w-full sm:w-[320px] flex flex-col",
           "transition-transform duration-300 ease-in-out",
           isOpen ? "translate-x-0" : "-translate-x-full"
         )}
@@ -126,7 +126,7 @@ const SidebarIndex = ({ chapters, activeChapterSlug, isOpen, onClose }: SidebarI
         </nav>
 
         {/* Footer links */}
-        <div className="p-4 border-t border-sidebar-border">
+        <div className="p-4 pb-[calc(1rem+env(safe-area-inset-bottom))] border-t border-sidebar-border">
           <div className="flex gap-2">
             <a href="#" className="btn-download btn-download-outline flex-1 justify-center text-xs">
               <FileText className="w-3.5 h-3.5" />
