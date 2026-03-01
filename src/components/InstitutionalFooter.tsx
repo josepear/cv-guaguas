@@ -41,7 +41,7 @@ const InstitutionalFooter = ({
                   <img 
                     src={logo.src} 
                     alt={logo.alt}
-                    className="h-8 md:h-10 lg:h-12 w-auto object-contain transition-all duration-500 grayscale opacity-40 group-hover:grayscale-0 group-hover:opacity-90 group-hover:brightness-0 dark:brightness-0 dark:invert dark:opacity-40 dark:group-hover:opacity-100"
+                    className="h-8 md:h-10 lg:h-12 w-auto object-contain transition-all duration-500 grayscale opacity-40 group-hover:opacity-80 dark:invert dark:group-hover:opacity-90"
                     loading="lazy"
                   />
                 ) : (
