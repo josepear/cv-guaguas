@@ -326,15 +326,15 @@
     color: hsl(var(--gold));
   }
 
-  /* Section header - light mode: keep gold background */
+  /* Section header - light mode: same gold as dark mode */
   .light .section-header-highlighted {
     color: hsl(220 50% 10%);
-    background-color: hsl(var(--gold));
+    background-color: hsl(45 100% 50%);
   }
 
   .light .article-number {
     color: hsl(220 50% 10%);
-    background-color: hsl(var(--gold));
+    background-color: hsl(45 100% 50%);
   }
 
   /* Section header highlighted - yellow background like the book */
