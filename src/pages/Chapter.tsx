@@ -54,7 +54,7 @@ const Chapter = () => {
         onClose={() => setIsMenuOpen(false)}
       />
 
-      <main className="pt-[56px] min-h-screen">
+      <main className="pt-[52px] min-h-screen">
         {chapter.hero && (
           <ChapterHero
             backgroundImage={chapter.hero.backgroundImage}
