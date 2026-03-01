@@ -19,8 +19,11 @@
   <meta property="og:description" content="Un recorrido por la trayectoria del club que ha conquistado el voleibol español">
   <meta name="twitter:description" content="Un recorrido por la trayectoria del club que ha conquistado el voleibol español">
 </head>
-
   <body>
+    <script>
+      // Prevent flash of wrong theme
+      (function(){var t=localStorage.getItem('cv-guaguas-theme')||(window.matchMedia('(prefers-color-scheme:light)').matches?'light':'dark');document.documentElement.classList.add(t);})();
+    </script>
     <div id="root"></div>
     <script type="module" src="/src/main.tsx"></script>
   </body>
