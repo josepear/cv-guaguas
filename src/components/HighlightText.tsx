@@ -7,7 +7,7 @@ interface HighlightTextProps {
 
 const HighlightText = ({
   children,
-  highlightColor = "#D4AF37",
+  highlightColor = "hsl(45, 100%, 50%)",
   textColor = "#1a237e",
   className = "",
 }: HighlightTextProps) => {
