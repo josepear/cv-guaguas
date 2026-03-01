@@ -31,11 +31,18 @@ export function useTheme() {
     setTheme(theme === "dark" ? "light" : "dark");
   }, [theme, setTheme]);
 
-  // Apply class to <html>
+  // Apply class to <html> with temporary transition lock to avoid sidebar flicker
   useEffect(() => {
     const root = document.documentElement;
+    root.classList.add("theme-switching");
     root.classList.remove("light", "dark");
     root.classList.add(theme);
+
+    const timeoutId = window.setTimeout(() => {
+      root.classList.remove("theme-switching");
+    }, 140);
+
+    return () => window.clearTimeout(timeoutId);
   }, [theme]);
 
   // Listen for system preference changes

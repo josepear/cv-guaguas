@@ -189,6 +189,14 @@
             transition: background-color 0.05s ease, color 0.05s ease, border-color 0.05s ease;
         }
 
+        body.theme-switching aside,
+        body.theme-switching aside *,
+        body.theme-switching aside *::before,
+        body.theme-switching aside *::after {
+            transition: none !important;
+            animation: none !important;
+        }
+
         /* === DARK MODE (default) STYLES === */
         /* Hero Overlay - identical to React */
         .dark .hero-overlay,
