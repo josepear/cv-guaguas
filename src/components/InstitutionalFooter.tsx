@@ -7,6 +7,8 @@ import logoTurismo from "@/assets/sponsors/turismo-gran-canaria.png";
 import logoIslasCanarias from "@/assets/sponsors/islas-canarias.png";
 import logoRFEVB from "@/assets/sponsors/rfevb.png";
 
+import { forwardRef } from "react";
+
 interface InstitutionalFooterProps {
   logos?: { src: string; alt: string; url?: string }[];
   copyrightText?: string;
@@ -23,14 +25,14 @@ const defaultLogos = [
   { src: logoRFEVB, alt: "Real Federación Española de Voleibol", url: "https://www.rfevb.com" },
 ];
 
-const InstitutionalFooter = ({ 
+const InstitutionalFooter = forwardRef<HTMLElement, InstitutionalFooterProps>(({ 
   logos,
   copyrightText = `© ${new Date().getFullYear()} Club Voleibol Guaguas. Todos los derechos reservados.`
-}: InstitutionalFooterProps) => {
+}, ref) => {
   const displayLogos = logos && logos.length > 0 ? logos : defaultLogos;
 
   return (
-    <footer className="bg-sidebar border-t border-sidebar-border">
+    <footer ref={ref} className="bg-sidebar border-t border-sidebar-border">
       {/* Logos Section */}
       <div className="py-12 md:py-16 border-b border-sidebar-border">
         <div className="container mx-auto px-6">
@@ -87,6 +89,8 @@ const InstitutionalFooter = ({
       </div>
     </footer>
   );
-};
+});
+
+InstitutionalFooter.displayName = "InstitutionalFooter";
 
 export default InstitutionalFooter;
