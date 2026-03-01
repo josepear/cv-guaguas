@@ -69,23 +69,6 @@ export const chaptersData: ChapterItemWithHero[] = [
         { text: "DE HONOR", color: "#1a237e", highlightColor: "#FFFFFF" },
       ],
     },
-    children: [
-      { id: "cap02-francisco-rodriguez", slug: "cap02-francisco-rodriguez", title: "Las horas extraescolares con Francisco Rodríguez" },
-      { id: "cap02-silvestre-cabrera", slug: "cap02-silvestre-cabrera", title: "Silvestre Cabrera y el salto cualitativo" },
-      { id: "cap02-seleccion-cadete", slug: "cap02-seleccion-cadete", title: "La selección cadete con Felipe Nuez" },
-      { id: "cap02-estatutos-despegue", slug: "cap02-estatutos-despegue", title: "Estatutos fundacionales y despegue" },
-      { id: "cap02-ascenso-1979", slug: "cap02-ascenso-1979", title: "El ascenso a Segunda División de 1979" },
-      { id: "cap02-acceso-elite", slug: "cap02-acceso-elite", title: "El acceso a la élite" },
-      { id: "cap02-cronologia", slug: "cap02-cronologia", title: "La cronología" },
-      { id: "cap02-felipe-nuez", slug: "cap02-felipe-nuez", title: "Felipe Nuez" },
-      { id: "cap02-jose-miguel-santana", slug: "cap02-jose-miguel-santana", title: "José Miguel Santana" },
-      { id: "cap02-florencio-tejera", slug: "cap02-florencio-tejera", title: "Florencio Tejera" },
-      { id: "cap02-tony-vazquez", slug: "cap02-tony-vazquez", title: "Tony Vázquez" },
-      { id: "cap02-isidro-quintana", slug: "cap02-isidro-quintana", title: "Isidro Quintana" },
-      { id: "cap02-pericles", slug: "cap02-pericles", title: "Pericles" },
-      { id: "cap02-jose-millan", slug: "cap02-jose-millan", title: "José Millán" },
-      { id: "cap02-miriam-quiroga", slug: "cap02-miriam-quiroga", title: "Miriam Quiroga" },
-    ]
   },
   { 
     id: "capitulo-03", 
