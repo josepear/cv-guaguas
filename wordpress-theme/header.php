@@ -161,6 +161,11 @@
         .light .btn-download-outline { color: var(--lm-fg); border-color: var(--lm-border); }
         .light .btn-download-outline:hover { border-color: var(--lm-gold); color: var(--lm-gold); }
 
+        /* Smooth theme transition */
+        body, header, aside, footer, .bg-sidebar, .bg-card, .bg-background {
+            transition: background-color 0.4s ease, color 0.4s ease, border-color 0.4s ease;
+        }
+
         /* === DARK MODE (default) STYLES === */
         /* Hero Overlay - identical to React */
         .dark .hero-overlay,

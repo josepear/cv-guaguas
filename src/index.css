@@ -151,6 +151,12 @@
     @apply bg-background text-foreground antialiased;
     font-family: var(--font-sans);
     line-height: 1.7;
+    transition: background-color 0.4s ease, color 0.4s ease;
+  }
+
+  /* Smooth theme transition for key elements */
+  header, aside, footer, .bg-sidebar, .bg-card, .bg-background, .border-border, .border-sidebar-border {
+    transition: background-color 0.4s ease, color 0.4s ease, border-color 0.4s ease;
   }
 
   /* Editorial Typography */
