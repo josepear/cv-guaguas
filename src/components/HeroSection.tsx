@@ -43,24 +43,24 @@ const HeroSection = ({
         </span>
         
         {/* Main Title */}
-        <h1 className="font-serif font-bold text-4xl md:text-5xl lg:text-7xl text-foreground mb-6 opacity-0 animate-fade-in-up [animation-delay:200ms]">
+        <h1 className="font-serif font-bold text-4xl md:text-5xl lg:text-7xl text-white mb-6 opacity-0 animate-fade-in-up [animation-delay:200ms]">
           <span className="text-gold-gradient">{title}</span>
         </h1>
         
         {/* Subtitle */}
         {subtitle && (
-          <p className="font-sans text-lg md:text-xl text-foreground/80 max-w-2xl mx-auto mb-12 opacity-0 animate-fade-in-up [animation-delay:400ms]">
+          <p className="font-sans text-lg md:text-xl text-white/80 max-w-2xl mx-auto mb-12 opacity-0 animate-fade-in-up [animation-delay:400ms]">
             {subtitle}
           </p>
         )}
         
         {/* Download buttons */}
         <div className="flex flex-col sm:flex-row items-center justify-center gap-4 mb-12 opacity-0 animate-fade-in-up [animation-delay:600ms]">
-          <a href="#" className="btn-download btn-download-primary">
+          <a href="#" className="btn-download btn-download-primary !bg-gold !text-[hsl(220,50%,10%)] !border-gold hover:!bg-transparent hover:!text-gold">
             <FileText className="w-4 h-4" />
             Descargar PDF
           </a>
-          <a href="#" className="btn-download btn-download-outline">
+          <a href="#" className="btn-download !bg-transparent !text-white !border-white/30 hover:!border-gold hover:!text-gold">
             <BookOpen className="w-4 h-4" />
             Descargar EPUB
           </a>

@@ -198,13 +198,13 @@
     );
   }
 
-  /* Hero Overlay - light mode */
+  /* Hero Overlay - light mode: keep dark for readability over photos */
   .light .hero-overlay {
     background: linear-gradient(
       135deg,
-      hsl(40 20% 95% / 0.85) 0%,
-      hsl(45 40% 80% / 0.6) 50%,
-      hsl(40 20% 95% / 0.9) 100%
+      hsl(220 30% 15% / 0.75) 0%,
+      hsl(42 30% 25% / 0.6) 50%,
+      hsl(220 30% 15% / 0.8) 100%
     );
   }
 
