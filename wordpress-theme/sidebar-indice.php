@@ -22,7 +22,7 @@ $current_slug = is_singular('capitulo') ? get_post_field('post_name', get_the_ID
 ?>
 
 <!-- Sidebar - IDENTICAL to React SidebarIndex.tsx -->
-<aside id="sidebar-indice" class="fixed left-0 top-[52px] h-[calc(100vh-52px)] z-40 bg-sidebar border-r border-sidebar-border w-[320px] flex flex-col transition-transform duration-300 ease-in-out -translate-x-full">
+<aside id="sidebar-indice" class="fixed left-0 top-[52px] h-[calc(100vh-52px)] z-40 bg-sidebar border-r border-sidebar-border w-full sm:w-[320px] flex flex-col transition-transform duration-300 ease-in-out -translate-x-full">
     
     <!-- Chapters List -->
     <nav class="flex-1 overflow-y-auto p-4">
@@ -123,7 +123,7 @@ $current_slug = is_singular('capitulo') ? get_post_field('post_name', get_the_ID
     </nav>
 
     <!-- Footer links - IDENTICAL to React -->
-    <div class="p-4 border-t border-sidebar-border">
+    <div class="p-4 pb-[calc(1rem+env(safe-area-inset-bottom))] border-t border-sidebar-border">
         <div class="flex gap-2">
             <a href="<?php echo esc_url($pdf_url); ?>" class="btn-download btn-download-outline flex-1 justify-center text-xs" download>
                 <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
