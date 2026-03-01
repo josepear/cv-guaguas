@@ -120,8 +120,8 @@ if ($hero_icon === 'custom' && $hero_custom_icon) {
 ?>
 
 <!-- Reading Progress Bar - igual que React -->
-<div id="reading-progress" class="fixed top-[52px] left-0 right-0 h-0.5 bg-border/20 z-40">
-    <div id="reading-progress-bar" class="h-full bg-gradient-to-r from-gold via-gold-light to-gold transition-all duration-150 ease-out" style="width: 0%;"></div>
+<div class="fixed top-[52px] left-0 right-0 h-1 bg-border/30 z-40">
+    <div id="reading-progress-bar" class="h-full bg-gold transition-all duration-100 ease-out" style="width: 0%;"></div>
 </div>
 
 <!-- Sidebar -->
@@ -228,7 +228,7 @@ if ($hero_icon === 'custom' && $hero_custom_icon) {
                     <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/></svg>
                 </li>
                 <li class="inline-flex items-center gap-1.5">
-                    <span role="link" aria-disabled="true" aria-current="page" class="font-normal text-foreground/70">
+                    <span role="link" aria-disabled="true" aria-current="page" class="font-normal text-foreground">
                         <?php echo esc_html($current_label); ?>
                     </span>
                 </li>
@@ -341,7 +341,7 @@ if ($hero_icon === 'custom' && $hero_custom_icon) {
                         </span>
                         <span class="font-serif text-foreground group-hover:text-gold transition-colors">
                             <?php if ($prev_numero) : ?>
-                                <span class="text-gold/60 mr-2"><?php echo esc_html($prev_numero); ?></span>
+                                <span class="text-gold-muted mr-2"><?php echo esc_html($prev_numero); ?></span>
                             <?php endif; ?>
                             <?php echo esc_html($prev_capitulo->post_title); ?>
                         </span>
@@ -365,7 +365,7 @@ if ($hero_icon === 'custom' && $hero_custom_icon) {
                         </span>
                         <span class="font-serif text-foreground group-hover:text-gold transition-colors">
                             <?php if ($next_numero) : ?>
-                                <span class="text-gold/60 mr-2"><?php echo esc_html($next_numero); ?></span>
+                                <span class="text-gold-muted mr-2"><?php echo esc_html($next_numero); ?></span>
                             <?php endif; ?>
                             <?php echo esc_html($next_capitulo->post_title); ?>
                         </span>
