@@ -1,23 +1,33 @@
+import logoCabildo from "@/assets/sponsors/cabildo-gran-canaria.png";
+import logoInstitutoInsular from "@/assets/sponsors/instituto-insular-deportes.png";
+import logoGobCan from "@/assets/sponsors/gobierno-canarias.png";
+import logoAyto from "@/assets/sponsors/ayuntamiento-las-palmas.png";
+import logoIMD from "@/assets/sponsors/instituto-municipal-deportes.png";
+import logoTurismo from "@/assets/sponsors/turismo-gran-canaria.png";
+import logoIslasCanarias from "@/assets/sponsors/islas-canarias.png";
+import logoRFEVB from "@/assets/sponsors/rfevb.png";
+
 interface InstitutionalFooterProps {
   logos?: { src: string; alt: string; url?: string }[];
   copyrightText?: string;
 }
 
+const defaultLogos = [
+  { src: logoCabildo, alt: "Cabildo de Gran Canaria", url: "https://www.grancanaria.com" },
+  { src: logoInstitutoInsular, alt: "Instituto Insular de Deportes", url: "https://www.grancanaria.com" },
+  { src: logoGobCan, alt: "Gobierno de Canarias", url: "https://www.gobiernodecanarias.org" },
+  { src: logoIslasCanarias, alt: "Islas Canarias", url: "https://www.islascanarias.org" },
+  { src: logoAyto, alt: "Ayuntamiento de Las Palmas de Gran Canaria", url: "https://www.laspalmasgc.es" },
+  { src: logoIMD, alt: "Instituto Municipal de Deportes", url: "https://www.laspalmasgc.es" },
+  { src: logoTurismo, alt: "Turismo de Gran Canaria", url: "https://www.grancanaria.com" },
+  { src: logoRFEVB, alt: "Real Federación Española de Voleibol", url: "https://www.rfevb.com" },
+];
+
 const InstitutionalFooter = ({ 
-  logos = [],
+  logos,
   copyrightText = `© ${new Date().getFullYear()} Club Voleibol Guaguas. Todos los derechos reservados.`
 }: InstitutionalFooterProps) => {
-  // Default placeholder logos if none provided
-  const defaultLogos = [
-    { alt: "Gobierno Regional", src: "", url: "#" },
-    { alt: "Cabildo Insular", src: "", url: "#" },
-    { alt: "Instituto Deportivo", src: "", url: "#" },
-    { alt: "Ayuntamiento", src: "", url: "#" },
-    { alt: "Universidad", src: "", url: "#" },
-    { alt: "Fundación", src: "", url: "#" },
-  ];
-
-  const displayLogos = logos.length > 0 ? logos : defaultLogos;
+  const displayLogos = logos && logos.length > 0 ? logos : defaultLogos;
 
   return (
     <footer className="bg-sidebar border-t border-sidebar-border">
@@ -45,7 +55,6 @@ const InstitutionalFooter = ({
                     loading="lazy"
                   />
                 ) : (
-                  // Placeholder logo
                   <div className="h-10 md:h-12 px-4 flex items-center justify-center bg-muted/30 rounded border border-border/50 text-muted-foreground text-xs uppercase tracking-wider">
                     {logo.alt}
                   </div>

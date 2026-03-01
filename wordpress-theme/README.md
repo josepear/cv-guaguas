@@ -10,7 +10,9 @@ Tema WordPress conmemorativo del 50 aniversario del CV Guaguas (1976-2026). Dise
 - **Scroll suave** con indicador de sección activa
 - **Tipografía editorial** (Montserrat + Inter)
 - **Botones de descarga** PDF/EPUB
-- **Footer institucional** con logos
+- **Footer institucional** con 8 logos reales de patrocinadores (modo claro/oscuro)
+- **Soporte completo dark/light mode** con toggle manual y detección del sistema
+- **Resaltados en amarillo dorado** `hsl(45 100% 50%)` consistentes en ambos modos
 - **100% responsive** (mobile-first)
 - **Colores del CV Guaguas** (azul marino + amarillo/dorado)
 
@@ -31,15 +33,27 @@ cv-guaguas-50aniversario/
 ├── README.md                    # Esta documentación
 ├── inc/
 │   ├── meta-boxes.php           # Campos personalizados nativos
-│   └── sample-content.php       # 15 capítulos de ejemplo
+│   └── sample-content.php       # 23 capítulos de ejemplo
 └── assets/
     ├── css/
     │   └── main.css             # Estilos completos (Tailwind-like)
     ├── js/
-    │   └── main.js              # JavaScript (acordeón, scroll spy, mobile)
+    │   └── main.js              # JavaScript (acordeón, scroll spy, mobile, theme toggle)
     └── images/
         ├── logo-guaguas.png     # Logo del club
-        └── hero-stadium.jpg     # Imagen de fondo del hero
+        ├── logo-guaguas.svg     # Logo del club (vector)
+        ├── star-gold.png        # Icono estrella dorada
+        ├── hero-*.jpg           # Imágenes hero de capítulos (9 imágenes)
+        ├── content/             # Imágenes de contenido (16 imágenes)
+        └── sponsors/            # 8 logos de patrocinadores
+            ├── cabildo-gran-canaria.png
+            ├── instituto-insular-deportes.png
+            ├── gobierno-canarias.png
+            ├── islas-canarias.png
+            ├── ayuntamiento-las-palmas.png
+            ├── instituto-municipal-deportes.png
+            ├── turismo-gran-canaria.png
+            └── rfevb.png
 ```
 
 ## ⚙️ Requisitos previos
@@ -107,11 +121,20 @@ Al activar el tema, automáticamente:
    - **URL del EPUB**: Enlace al archivo EPUB
 3. Guarda los cambios
 
-#### 4. Añadir logos al footer (opcional)
+#### 4. Logos del footer (automáticos)
 
-1. Ve a `Apariencia → Widgets`
-2. Busca el área "Área de Logos Footer"
-3. Añade widgets de imagen con los logos institucionales
+Los 8 logos de patrocinadores institucionales se cargan automáticamente desde `assets/images/sponsors/`. No requiere configuración adicional. Los logos incluidos son:
+
+1. Cabildo de Gran Canaria
+2. Instituto Insular de Deportes
+3. Gobierno de Canarias
+4. Islas Canarias
+5. Ayuntamiento de Las Palmas de Gran Canaria
+6. Instituto Municipal de Deportes
+7. Turismo de Gran Canaria
+8. Real Federación Española de Voleibol
+
+Para personalizar los logos, edita el array en `footer.php` o configúralos desde `Apariencia → Opciones Libro`.
 
 ## 📖 Gestión de capítulos
 
@@ -466,10 +489,13 @@ Reemplaza el archivo `assets/images/hero-stadium.jpg` manteniendo el mismo nombr
 
 El tema incluye contenido de ejemplo que se importa automáticamente:
 
-- **15 capítulos** con estructura jerárquica
+- **23 capítulos** con estructura jerárquica
 - **Contenido real** sobre la historia del CV Guaguas
 - **Citas destacadas** de figuras importantes
-- **Imágenes**: hero-stadium.jpg, logo-guaguas.png
+- **8 logos de patrocinadores** en el footer
+- **9 imágenes hero** para cabeceras de capítulo
+- **16 imágenes de contenido** (equipo, partidos, jugadores)
+- **Imágenes base**: logo-guaguas.png, logo-guaguas.svg, star-gold.png
 
 ## 📜 Licencia
 
