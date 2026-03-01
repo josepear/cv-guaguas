@@ -85,10 +85,10 @@
   /* Light mode variant */
   .light {
     /* Gold stays the same */
-    --gold: 45 100% 42%;
-    --gold-light: 45 100% 50%;
-    --gold-dark: 45 100% 32%;
-    --gold-muted: 45 50% 38%;
+    --gold: 40 100% 35%;
+    --gold-light: 42 100% 42%;
+    --gold-dark: 38 100% 28%;
+    --gold-muted: 40 60% 32%;
 
     /* Light base */
     --background: 40 20% 96%;
