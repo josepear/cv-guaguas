@@ -228,7 +228,7 @@ if ($hero_icon === 'custom' && $hero_custom_icon) {
                     <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/></svg>
                 </li>
                 <li class="inline-flex items-center gap-1.5">
-                    <span role="link" aria-disabled="true" aria-current="page" class="font-normal text-foreground">
+                    <span role="link" aria-disabled="true" aria-current="page" class="font-normal text-foreground/70">
                         <?php echo esc_html($current_label); ?>
                     </span>
                 </li>
