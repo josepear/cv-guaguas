@@ -96,7 +96,74 @@
     
     <!-- Custom styles for components not covered by Tailwind -->
     <style>
+        /* === LIGHT MODE OVERRIDES === */
+        .light {
+            --lm-bg: hsl(40 20% 96%);
+            --lm-fg: hsl(220 50% 12%);
+            --lm-card: hsl(0 0% 100%);
+            --lm-muted: hsl(220 15% 90%);
+            --lm-muted-fg: hsl(220 15% 45%);
+            --lm-border: hsl(220 15% 85%);
+            --lm-gold: hsl(45 100% 42%);
+            --lm-sidebar-bg: hsl(40 25% 95%);
+            --lm-sidebar-border: hsl(220 15% 88%);
+            --lm-sidebar-accent: hsl(40 15% 90%);
+        }
+        .light { background-color: var(--lm-bg) !important; color: var(--lm-fg) !important; }
+        .light .bg-background { background-color: var(--lm-bg) !important; }
+        .light .text-foreground { color: var(--lm-fg) !important; }
+        .light .bg-sidebar, .light .bg-sidebar\/95 { background-color: var(--lm-sidebar-bg) !important; }
+        .light .border-sidebar-border { border-color: var(--lm-sidebar-border) !important; }
+        .light .bg-sidebar-accent { background-color: var(--lm-sidebar-accent) !important; }
+        .light .text-sidebar-foreground { color: var(--lm-fg) !important; }
+        .light .text-sidebar-foreground\/80 { color: hsl(220 50% 12% / 0.8) !important; }
+        .light .text-muted-foreground { color: var(--lm-muted-fg) !important; }
+        .light .bg-muted { background-color: var(--lm-muted) !important; }
+        .light .bg-muted\/30 { background-color: hsl(220 15% 90% / 0.3) !important; }
+        .light .border-border { border-color: var(--lm-border) !important; }
+        .light .border-border\/30 { border-color: hsl(220 15% 85% / 0.3) !important; }
+        .light .border-border\/50 { border-color: hsl(220 15% 85% / 0.5) !important; }
+        .light .text-foreground\/85 { color: hsl(220 50% 12% / 0.85) !important; }
+        .light .text-foreground\/80 { color: hsl(220 50% 12% / 0.8) !important; }
+        .light .text-foreground\/70 { color: hsl(220 50% 12% / 0.7) !important; }
+        .light .bg-card\/30 { background-color: hsl(0 0% 100% / 0.3) !important; }
+        .light .bg-card\/50 { background-color: hsl(0 0% 100% / 0.5) !important; }
+        .light .bg-background\/80 { background-color: hsl(40 20% 96% / 0.8) !important; }
+        .light .text-gold { color: var(--lm-gold) !important; }
+        .light .bg-gold { background-color: var(--lm-gold) !important; }
+        .light .text-gold-muted { color: hsl(45 50% 38%) !important; }
+        .light .header-blur { background-color: hsl(40 25% 95% / 0.95) !important; }
+        .light .section-header-highlighted { color: hsl(0 0% 100%); background-color: hsl(220 50% 15%); }
+        .light .article-number { color: hsl(0 0% 100%); background-color: hsl(220 50% 15%); }
+
+        .light .hero-overlay {
+            background: linear-gradient(135deg, hsl(40 20% 95% / 0.85) 0%, hsl(45 40% 80% / 0.6) 50%, hsl(40 20% 95% / 0.9) 100%);
+        }
+        .light .text-gold-gradient {
+            background: linear-gradient(135deg, hsl(45 100% 50%) 0%, hsl(45 100% 42%) 50%, hsl(45 100% 32%) 100%);
+            -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text;
+        }
+        .light ::-webkit-scrollbar-track { background: var(--lm-bg); }
+        .light ::-webkit-scrollbar-thumb { background: hsl(220 15% 82%); }
+        .light ::-webkit-scrollbar-thumb:hover { background: hsl(45 50% 38%); }
+        .light ::selection { background: hsl(45 100% 42% / 0.25); color: var(--lm-fg); }
+        .light .newspaper-quote { background: hsl(220 15% 90% / 0.3); border-left-color: hsl(45 100% 42% / 0.5); color: hsl(220 50% 12% / 0.85); }
+        .light .editorial-quote { border-left-color: var(--lm-gold); }
+        .light .editorial-quote::before { color: hsl(45 100% 42% / 0.3); }
+        .light .timeline-container { border-left-color: var(--lm-gold); }
+        .light .timeline-event::before { background: var(--lm-gold); }
+        .light .timeline-year { color: var(--lm-gold); }
+        .light .timeline-content { color: hsl(220 50% 12% / 0.8); }
+        .light .chapter-marker { color: var(--lm-gold); }
+        .light .drop-cap { color: var(--lm-gold); }
+        .light .btn-download-primary { background-color: var(--lm-gold); border-color: var(--lm-gold); color: hsl(0 0% 100%); }
+        .light .btn-download-primary:hover { background-color: transparent; color: var(--lm-gold); }
+        .light .btn-download-outline { color: var(--lm-fg); border-color: var(--lm-border); }
+        .light .btn-download-outline:hover { border-color: var(--lm-gold); color: var(--lm-gold); }
+
+        /* === DARK MODE (default) STYLES === */
         /* Hero Overlay - identical to React */
+        .dark .hero-overlay,
         .hero-overlay {
             background: linear-gradient(
                 135deg,
@@ -258,8 +325,18 @@
     
     <?php wp_head(); ?>
 </head>
-<body <?php body_class('bg-background text-foreground antialiased'); ?>>
+<body <?php body_class('dark bg-background text-foreground antialiased'); ?>>
 <?php wp_body_open(); ?>
+
+<script>
+// Theme detection: localStorage > system preference
+(function() {
+    var stored = localStorage.getItem('cv-guaguas-theme');
+    var theme = stored || (window.matchMedia('(prefers-color-scheme: light)').matches ? 'light' : 'dark');
+    document.body.classList.remove('dark', 'light');
+    document.body.classList.add(theme);
+})();
+</script>
 
 <!-- Fixed Header - identical to React -->
 <header class="fixed top-0 left-0 right-0 z-50 flex items-center justify-between px-4 h-[52px] header-blur border-b border-sidebar-border">
@@ -274,10 +351,17 @@
         <span class="text-sm uppercase tracking-wider font-sans">Menú</span>
     </button>
     
-    <!-- Logo -->
-    <a href="<?php echo home_url(); ?>" class="flex items-center gap-2 px-2 py-1 hover:opacity-80 transition-opacity duration-300">
-        <img src="<?php echo LIBRO_URI; ?>/assets/images/logo-guaguas.svg" alt="CV Guaguas" class="h-10 w-auto">
-    </a>
+    <div class="flex items-center gap-2">
+        <!-- Theme Toggle -->
+        <button id="toggle-theme" class="p-2 text-muted-foreground hover:text-gold transition-colors rounded-sm" aria-label="Cambiar tema">
+            <svg class="theme-icon-sun w-[18px] h-[18px] hidden" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2"><circle cx="12" cy="12" r="5"/><line x1="12" y1="1" x2="12" y2="3"/><line x1="12" y1="21" x2="12" y2="23"/><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/><line x1="1" y1="12" x2="3" y2="12"/><line x1="21" y1="12" x2="23" y2="12"/><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/></svg>
+            <svg class="theme-icon-moon w-[18px] h-[18px] hidden" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
+        </button>
+        <!-- Logo -->
+        <a href="<?php echo home_url(); ?>" class="flex items-center gap-2 px-2 py-1 hover:opacity-80 transition-opacity duration-300">
+            <img src="<?php echo LIBRO_URI; ?>/assets/images/logo-guaguas.svg" alt="CV Guaguas" class="h-10 w-auto">
+        </a>
+    </div>
 </header>
 
 <!-- Overlay - IDENTICAL to React (shows on all devices when sidebar is open) -->

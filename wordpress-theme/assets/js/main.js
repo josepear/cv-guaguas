@@ -12,6 +12,49 @@
     const overlay = document.getElementById('sidebar-overlay');
     const menuIcon = toggleBtn?.querySelector('.menu-icon');
     const closeIcon = toggleBtn?.querySelector('.close-icon');
+    const themeBtn = document.getElementById('toggle-theme');
+    const sunIcon = themeBtn?.querySelector('.theme-icon-sun');
+    const moonIcon = themeBtn?.querySelector('.theme-icon-moon');
+
+    /**
+     * Theme Toggle - localStorage + system preference (like React useTheme)
+     */
+    function getTheme() {
+        var stored = localStorage.getItem('cv-guaguas-theme');
+        if (stored === 'light' || stored === 'dark') return stored;
+        return window.matchMedia('(prefers-color-scheme: light)').matches ? 'light' : 'dark';
+    }
+
+    function applyTheme(theme) {
+        document.body.classList.remove('dark', 'light');
+        document.body.classList.add(theme);
+        // Update icons
+        if (sunIcon && moonIcon) {
+            if (theme === 'dark') {
+                sunIcon.classList.remove('hidden');
+                moonIcon.classList.add('hidden');
+            } else {
+                sunIcon.classList.add('hidden');
+                moonIcon.classList.remove('hidden');
+            }
+        }
+    }
+
+    applyTheme(getTheme());
+
+    themeBtn?.addEventListener('click', function() {
+        var current = document.body.classList.contains('dark') ? 'dark' : 'light';
+        var next = current === 'dark' ? 'light' : 'dark';
+        localStorage.setItem('cv-guaguas-theme', next);
+        applyTheme(next);
+    });
+
+    // Listen for system preference changes
+    window.matchMedia('(prefers-color-scheme: light)').addEventListener('change', function() {
+        if (!localStorage.getItem('cv-guaguas-theme')) {
+            applyTheme(getTheme());
+        }
+    });
 
     /**
      * Toggle Sidebar - works identically on all devices (like React)
