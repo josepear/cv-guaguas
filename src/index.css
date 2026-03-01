@@ -162,9 +162,13 @@
     transition: background-color 0.4s ease, color 0.4s ease;
   }
 
-  /* Smooth theme transition for key elements */
-  header, aside, footer, .bg-sidebar, .bg-card, .bg-background, .border-border, .border-sidebar-border {
+  /* Smooth theme transition for key elements — exclude aside to avoid lag when sidebar is open */
+  header, footer, .bg-card, .bg-background {
     transition: background-color 0.4s ease, color 0.4s ease, border-color 0.4s ease;
+  }
+
+  aside, .bg-sidebar, .border-border, .border-sidebar-border {
+    transition: background-color 0.15s ease, color 0.15s ease, border-color 0.15s ease;
   }
 
   /* Editorial Typography */
@@ -468,6 +472,10 @@
 
   .btn-download-outline {
     @apply bg-transparent text-foreground border-border;
+  }
+
+  .light .btn-download-outline {
+    @apply border-muted-foreground/50 text-foreground;
   }
 
   .btn-download-outline:hover {
