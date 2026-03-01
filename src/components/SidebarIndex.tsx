@@ -126,7 +126,7 @@ const SidebarIndex = forwardRef<HTMLDivElement, SidebarIndexProps>(({ chapters, 
         </nav>
 
         {/* Footer links */}
-        <div className="p-4 pb-[calc(1rem+env(safe-area-inset-bottom))] border-t border-sidebar-border">
+        <div className="p-4 pb-[calc(1rem+env(safe-area-inset-bottom)+20px)] border-t border-sidebar-border">
           <div className="flex gap-2">
             <a href="#" className="btn-download btn-download-outline flex-1 justify-center text-xs">
               <FileText className="w-3.5 h-3.5" />
