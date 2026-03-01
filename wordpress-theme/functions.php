@@ -172,7 +172,7 @@ function libro_shortcode_indice($atts) {
     <nav class="indice-libro">
         <ul class="lista-capitulos space-y-1">
             <?php foreach ($capitulos as $cap) : 
-                $numero = get_post_meta($cap->ID, '_capitulo_numero', true);
+                $numero = get_post_meta($cap->ID, '_numero_capitulo', true);
                 $slug = sanitize_title($cap->post_title);
                 
                 // Obtener hijos
@@ -267,7 +267,7 @@ add_shortcode('contenido_libro', 'libro_shortcode_contenido');
  * Renderizar un capítulo individual
  */
 function libro_render_capitulo($cap, $is_child = false) {
-    $numero = get_post_meta($cap->ID, '_capitulo_numero', true);
+    $numero = get_post_meta($cap->ID, '_numero_capitulo', true);
     $mostrar_marcador = libro_get_field('mostrar_marcador', $cap->ID);
     $cita = libro_get_field('cita_destacada', $cap->ID);
     $autor_cita = libro_get_field('autor_cita', $cap->ID);

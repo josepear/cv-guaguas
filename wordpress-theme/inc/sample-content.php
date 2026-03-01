@@ -49,7 +49,7 @@ function libro_import_sample_content() {
         if (!is_wp_error($post_id)) {
             // Save chapter number
             if (!empty($cap['numero'])) {
-                update_post_meta($post_id, '_capitulo_numero', $cap['numero']);
+                update_post_meta($post_id, '_numero_capitulo', $cap['numero']);
             }
             
             // Save marker visibility

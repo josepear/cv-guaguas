@@ -28,7 +28,7 @@ $current_slug = is_singular('capitulo') ? get_post_field('post_name', get_the_ID
     <nav class="flex-1 overflow-y-auto p-4">
         <ul class="space-y-1">
             <?php foreach ($capitulos as $cap) : 
-                $numero = get_post_meta($cap->ID, '_capitulo_numero', true);
+                $numero = get_post_meta($cap->ID, '_numero_capitulo', true);
                 $ocultar_numero = get_post_meta($cap->ID, '_ocultar_numero', true) === '1';
                 $cap_slug = get_post_field('post_name', $cap->ID);
                 $is_active = ($cap_slug === $current_slug);
@@ -96,7 +96,7 @@ $current_slug = is_singular('capitulo') ? get_post_field('post_name', get_the_ID
                         // Priority: check if hidden > manual number > auto-generated from parent
                         $sub_numero = '';
                         if (!$sub_ocultar_numero) {
-                            $sub_numero = get_post_meta($sub->ID, '_capitulo_numero', true);
+                            $sub_numero = get_post_meta($sub->ID, '_numero_capitulo', true);
                             if (!$sub_numero && $numero) {
                                 // Auto-generate only if parent has number and sub doesn't
                                 $sub_numero = $numero . '.' . $sub_index;
