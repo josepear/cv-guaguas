@@ -137,7 +137,7 @@
         .light .article-number { color: hsl(0 0% 100%); background-color: hsl(220 50% 15%); }
 
         .light .hero-overlay {
-            background: linear-gradient(135deg, hsl(40 20% 95% / 0.85) 0%, hsl(45 40% 80% / 0.6) 50%, hsl(40 20% 95% / 0.9) 100%);
+            background: linear-gradient(135deg, hsl(220 30% 15% / 0.75) 0%, hsl(42 30% 25% / 0.6) 50%, hsl(220 30% 15% / 0.8) 100%);
         }
         .light .text-gold-gradient {
             background: linear-gradient(135deg, hsl(45 100% 50%) 0%, hsl(45 100% 42%) 50%, hsl(45 100% 32%) 100%);
