@@ -779,7 +779,7 @@ add_filter('manage_capitulo_posts_columns', 'libro_capitulos_columns');
 function libro_capitulos_column_content($column, $post_id) {
     switch ($column) {
         case 'numero':
-            $numero = libro_get_field('numero_capitulo', $post_id);
+            $numero = get_post_meta($post_id, '_numero_capitulo', true);
             echo $numero ? esc_html($numero) : '—';
             break;
             

@@ -7,7 +7,7 @@
 get_header();
 
 // Obtener datos del capítulo actual
-$capitulo_numero = get_post_meta(get_the_ID(), '_capitulo_numero', true);
+$capitulo_numero = get_post_meta(get_the_ID(), '_numero_capitulo', true);
 $capitulo_subtitulo = get_post_meta(get_the_ID(), '_capitulo_subtitulo', true);
 
 // Hero fields
@@ -198,7 +198,7 @@ if ($hero_icon === 'custom' && $hero_custom_icon) {
         <!-- Breadcrumb - idéntico a ChapterBreadcrumb.tsx -->
         <?php
         $parent_id = wp_get_post_parent_id(get_the_ID());
-        $cap_numero = get_post_meta(get_the_ID(), '_capitulo_numero', true);
+        $cap_numero = get_post_meta(get_the_ID(), '_numero_capitulo', true);
         $ocultar_num = get_post_meta(get_the_ID(), '_ocultar_numero', true) === '1';
         $current_label = (!$ocultar_num && $cap_numero) ? $cap_numero . '. ' . get_the_title() : get_the_title();
         ?>
@@ -211,7 +211,7 @@ if ($hero_icon === 'custom' && $hero_custom_icon) {
                     </a>
                 </li>
                 <?php if ($parent_id) : 
-                    $parent_numero = get_post_meta($parent_id, '_capitulo_numero', true);
+                    $parent_numero = get_post_meta($parent_id, '_numero_capitulo', true);
                     $parent_ocultar = get_post_meta($parent_id, '_ocultar_numero', true) === '1';
                     $parent_label = (!$parent_ocultar && $parent_numero) ? $parent_numero . '. ' . get_the_title($parent_id) : get_the_title($parent_id);
                 ?>
@@ -291,7 +291,7 @@ if ($hero_icon === 'custom' && $hero_custom_icon) {
                     
                     <div class="grid gap-4">
                         <?php foreach ($subcapitulos as $sub) : 
-                            $sub_numero = get_post_meta($sub->ID, '_capitulo_numero', true);
+                            $sub_numero = get_post_meta($sub->ID, '_numero_capitulo', true);
                         ?>
                         <a 
                             href="<?php echo get_permalink($sub->ID); ?>" 
@@ -326,7 +326,7 @@ if ($hero_icon === 'custom' && $hero_custom_icon) {
                 
                 <!-- Previous Chapter -->
                 <?php if ($prev_capitulo) : 
-                    $prev_numero = get_post_meta($prev_capitulo->ID, '_capitulo_numero', true);
+                    $prev_numero = get_post_meta($prev_capitulo->ID, '_numero_capitulo', true);
                 ?>
                 <a 
                     href="<?php echo get_permalink($prev_capitulo->ID); ?>" 
@@ -353,7 +353,7 @@ if ($hero_icon === 'custom' && $hero_custom_icon) {
                 
                 <!-- Next Chapter -->
                 <?php if ($next_capitulo) : 
-                    $next_numero = get_post_meta($next_capitulo->ID, '_capitulo_numero', true);
+                    $next_numero = get_post_meta($next_capitulo->ID, '_numero_capitulo', true);
                 ?>
                 <a 
                     href="<?php echo get_permalink($next_capitulo->ID); ?>" 
