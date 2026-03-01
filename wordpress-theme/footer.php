@@ -41,7 +41,7 @@ if (empty($logos)) {
                         <img 
                             src="<?php echo esc_url($logo['src']); ?>" 
                             alt="<?php echo esc_attr($logo['alt']); ?>"
-                            class="h-8 md:h-10 lg:h-12 w-auto object-contain brightness-75 group-hover:brightness-100 transition-all duration-300"
+                            class="h-8 md:h-10 lg:h-12 w-auto object-contain transition-all duration-500 grayscale opacity-40 group-hover:opacity-80 dark:invert dark:group-hover:opacity-90"
                             loading="lazy"
                         >
                     <?php else : ?>
