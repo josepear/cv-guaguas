@@ -25,9 +25,19 @@
         return window.matchMedia('(prefers-color-scheme: light)').matches ? 'light' : 'dark';
     }
 
-    function applyTheme(theme) {
+    function applyTheme(theme, skipTransitionLock = false) {
+        if (!skipTransitionLock) {
+            document.body.classList.add('theme-switching');
+            requestAnimationFrame(function() {
+                requestAnimationFrame(function() {
+                    document.body.classList.remove('theme-switching');
+                });
+            });
+        }
+
         document.body.classList.remove('dark', 'light');
         document.body.classList.add(theme);
+
         // Update icons
         if (sunIcon && moonIcon) {
             if (theme === 'dark') {
@@ -40,7 +50,7 @@
         }
     }
 
-    applyTheme(getTheme());
+    applyTheme(getTheme(), true);
 
     themeBtn?.addEventListener('click', function() {
         var current = document.body.classList.contains('dark') ? 'dark' : 'light';
