@@ -10,6 +10,7 @@ import InstitutionalFooter from "@/components/InstitutionalFooter";
 import ChapterBreadcrumb from "@/components/ChapterBreadcrumb";
 import { chaptersData, getAllChapters, getChapterBySlug } from "@/data/chaptersStructure";
 import { chapterContent } from "@/data/chapterContent";
+import { sponsorLogos } from "@/data/sponsorLogos";
 
 const Chapter = () => {
   const { slug } = useParams<{ slug: string }>();
@@ -99,7 +100,7 @@ const Chapter = () => {
         </div>
       </main>
 
-      <InstitutionalFooter />
+      <InstitutionalFooter logos={sponsorLogos} />
     </div>
   );
 };

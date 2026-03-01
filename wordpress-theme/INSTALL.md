@@ -155,7 +155,7 @@ location / {
 
 ## 5. Importar contenido de ejemplo
 
-El tema incluye **23 capítulos** con contenido real del libro del 50 aniversario. La importación es automática y sencilla.
+El tema incluye **23 capítulos** con contenido real del libro del 50 aniversario, así como **8 logos de patrocinadores** en el footer. La importación es automática y sencilla.
 
 ### Paso a paso
 
@@ -172,6 +172,7 @@ El tema incluye **23 capítulos** con contenido real del libro del 50 aniversari
 - 🔢 Números de capítulo y subcapítulo configurados
 - 📊 Orden correcto de los capítulos
 - 🖼️ Referencias a imágenes incluidas en el tema
+- 🏛️ 8 logos de patrocinadores en el footer (carga automática)
 
 ### Reimportar contenido
 
