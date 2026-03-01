@@ -8,15 +8,18 @@
 // Obtener logos desde opciones del tema
 $logos = get_option('libro_footer_logos', array());
 
-// Logos por defecto si no hay configurados (identical to React)
+// Logos por defecto con las imágenes incluidas en el tema (identical to React sponsorLogos)
 if (empty($logos)) {
+    $base = get_template_directory_uri() . '/assets/images/sponsors/';
     $logos = array(
-        array('alt' => 'Gobierno Regional', 'src' => '', 'url' => '#'),
-        array('alt' => 'Cabildo Insular', 'src' => '', 'url' => '#'),
-        array('alt' => 'Instituto Deportivo', 'src' => '', 'url' => '#'),
-        array('alt' => 'Ayuntamiento', 'src' => '', 'url' => '#'),
-        array('alt' => 'Universidad', 'src' => '', 'url' => '#'),
-        array('alt' => 'Fundación', 'src' => '', 'url' => '#'),
+        array('alt' => 'Cabildo de Gran Canaria', 'src' => $base . 'cabildo-gran-canaria.png', 'url' => 'https://www.grancanaria.com'),
+        array('alt' => 'Instituto Insular de Deportes', 'src' => $base . 'instituto-insular-deportes.png', 'url' => 'https://www.grancanaria.com'),
+        array('alt' => 'Gobierno de Canarias', 'src' => $base . 'gobierno-canarias.png', 'url' => 'https://www.gobiernodecanarias.org'),
+        array('alt' => 'Islas Canarias', 'src' => $base . 'islas-canarias.png', 'url' => 'https://www.islascanarias.org'),
+        array('alt' => 'Ayuntamiento de Las Palmas de Gran Canaria', 'src' => $base . 'ayuntamiento-las-palmas.png', 'url' => 'https://www.laspalmasgc.es'),
+        array('alt' => 'Instituto Municipal de Deportes', 'src' => $base . 'instituto-municipal-deportes.png', 'url' => 'https://www.laspalmasgc.es'),
+        array('alt' => 'Turismo de Gran Canaria', 'src' => $base . 'turismo-gran-canaria.png', 'url' => 'https://www.grancanaria.com'),
+        array('alt' => 'Real Federación Española de Voleibol', 'src' => $base . 'rfevb.png', 'url' => 'https://www.rfevb.com'),
     );
 }
 ?>
