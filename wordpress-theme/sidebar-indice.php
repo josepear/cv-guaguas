@@ -93,14 +93,10 @@ $current_slug = is_singular('capitulo') ? get_post_field('post_name', get_the_ID
                         $sub_is_active = ($sub_slug === $current_slug);
                         $sub_ocultar_numero = get_post_meta($sub->ID, '_ocultar_numero', true) === '1';
                         
-                        // Priority: check if hidden > manual number > auto-generated from parent
+                        // Only show number if explicitly set in meta (matching React behavior)
                         $sub_numero = '';
                         if (!$sub_ocultar_numero) {
                             $sub_numero = get_post_meta($sub->ID, '_numero_capitulo', true);
-                            if (!$sub_numero && $numero) {
-                                // Auto-generate only if parent has number and sub doesn't
-                                $sub_numero = $numero . '.' . $sub_index;
-                            }
                         }
                     ?>
                     <li class="subcapitulo-item">
