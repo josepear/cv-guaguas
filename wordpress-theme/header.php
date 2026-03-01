@@ -164,6 +164,16 @@
         .light .btn-download-outline { color: var(--lm-fg); border-color: var(--lm-border); }
         .light .btn-download-outline:hover { border-color: var(--lm-gold); color: var(--lm-gold); }
 
+        /* Light mode hover overrides - match React Tailwind behavior */
+        .light .hover\:text-gold:hover { color: var(--lm-gold) !important; }
+        .light .hover\:text-gold-light:hover { color: hsl(45 100% 50%) !important; }
+        .light .hover\:bg-gold-10:hover { background-color: hsl(45 100% 42% / 0.1) !important; }
+        .light .group:hover .group-hover\:text-gold { color: var(--lm-gold) !important; }
+        .light .group:hover .group-hover\:translate-x-1 { transform: translateX(0.25rem); }
+        .light .hover\:border-gold\/50:hover { border-color: hsl(45 100% 42% / 0.5) !important; }
+        .light .text-gold\/80 { color: hsl(45 100% 42% / 0.8) !important; }
+        .light .bg-gold\/10 { background-color: hsl(45 100% 42% / 0.1) !important; }
+
         /* Hero in light mode: restore bright gold (dark overlay needs vibrant colors) */
         .light #hero { --gold: 45 100% 50%; --gold-light: 45 100% 60%; --gold-dark: 45 100% 40%; --gold-muted: 45 60% 45%; }
         .light #hero .text-gold, .light #hero .chapter-marker, .light #hero .drop-cap { color: hsl(45 100% 50%) !important; }

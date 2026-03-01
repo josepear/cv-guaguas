@@ -726,9 +726,11 @@ h1, h2, h3, h4, h5, h6 {
 .duration-500 { transition-duration: 500ms; }
 .ease-in-out { transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1); }
 
-/* Group hover utilities (for footer logos) */
+/* Group hover utilities */
 .group:hover .group-hover\:opacity-80 { opacity: 0.8; }
 .group:hover .group-hover\:opacity-90 { opacity: 0.9; }
+.group:hover .group-hover\:text-gold { color: hsl(var(--gold)); }
+.group:hover .group-hover\:translate-x-1 { transform: translateX(0.25rem); }
 
 /* Transform */
 .translate-x-0 { transform: translateX(0); }
