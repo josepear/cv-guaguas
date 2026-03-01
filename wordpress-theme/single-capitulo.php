@@ -198,7 +198,7 @@ if ($hero_icon === 'custom' && $hero_custom_icon) {
         <!-- Breadcrumb - idéntico a ChapterBreadcrumb.tsx -->
         <?php
         $parent_id = wp_get_post_parent_id(get_the_ID());
-        $cap_numero = libro_get_field('numero_capitulo', get_the_ID());
+        $cap_numero = get_post_meta(get_the_ID(), '_capitulo_numero', true);
         $ocultar_num = get_post_meta(get_the_ID(), '_ocultar_numero', true) === '1';
         $current_label = (!$ocultar_num && $cap_numero) ? $cap_numero . '. ' . get_the_title() : get_the_title();
         ?>
@@ -211,7 +211,7 @@ if ($hero_icon === 'custom' && $hero_custom_icon) {
                     </a>
                 </li>
                 <?php if ($parent_id) : 
-                    $parent_numero = libro_get_field('numero_capitulo', $parent_id);
+                    $parent_numero = get_post_meta($parent_id, '_capitulo_numero', true);
                     $parent_ocultar = get_post_meta($parent_id, '_ocultar_numero', true) === '1';
                     $parent_label = (!$parent_ocultar && $parent_numero) ? $parent_numero . '. ' . get_the_title($parent_id) : get_the_title($parent_id);
                 ?>

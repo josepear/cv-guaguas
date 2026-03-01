@@ -43,10 +43,10 @@ const SidebarIndex = ({ chapters, activeChapterSlug, isOpen, onClose }: SidebarI
     return (
       <li key={chapter.id} className="relative">
         <div className="flex items-center">
-          {hasChildren && (
+          {hasChildren ? (
             <button
               onClick={() => toggleGroup(chapter.id)}
-              className="p-1 mr-1 text-muted-foreground hover:text-gold transition-colors"
+              className="w-6 flex-shrink-0 flex items-center justify-center text-muted-foreground hover:text-gold transition-colors"
             >
               {isExpanded || hasActiveChild ? (
                 <ChevronDown className="w-4 h-4" />
@@ -54,6 +54,8 @@ const SidebarIndex = ({ chapters, activeChapterSlug, isOpen, onClose }: SidebarI
                 <ChevronRight className="w-4 h-4" />
               )}
             </button>
+          ) : (
+            <span className="w-6 flex-shrink-0" />
           )}
           
           <Link
@@ -63,7 +65,6 @@ const SidebarIndex = ({ chapters, activeChapterSlug, isOpen, onClose }: SidebarI
               "sidebar-active-indicator flex-1 text-left py-2.5 px-3 rounded-sm transition-all duration-200 font-sans text-sm",
               "hover:bg-sidebar-accent hover:text-gold",
               depth === 0 ? "font-medium" : "font-normal",
-              !hasChildren && "ml-6",
               isActive && "active text-gold bg-sidebar-accent",
               hasActiveChild && "text-gold/80"
             )}
