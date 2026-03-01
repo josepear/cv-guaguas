@@ -38,6 +38,8 @@ const HeroSection = forwardRef<HTMLElement, HeroSectionProps>(({
           <img 
             src={logoGuaguas} 
             alt="CV Guaguas" 
+            width={160}
+            height={160}
             className="h-32 md:h-40 w-auto mx-auto drop-shadow-2xl"
           />
         </div>

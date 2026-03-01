@@ -46,6 +46,8 @@ const Header = ({ onMenuToggle, isMenuOpen, showMenuButton = true }: HeaderProps
             src={logoGuaguas} 
             alt="CV Guaguas" 
             className="h-10 w-auto"
+            width={40}
+            height={40}
           />
         </Link>
       </div>
