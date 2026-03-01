@@ -124,9 +124,11 @@
         .light .border-border { border-color: var(--lm-border) !important; }
         .light .border-border\/30 { border-color: hsl(220 15% 85% / 0.3) !important; }
         .light .border-border\/50 { border-color: hsl(220 15% 85% / 0.5) !important; }
+        .light .text-foreground\/90 { color: hsl(220 50% 12% / 0.9) !important; }
         .light .text-foreground\/85 { color: hsl(220 50% 12% / 0.85) !important; }
         .light .text-foreground\/80 { color: hsl(220 50% 12% / 0.8) !important; }
         .light .text-foreground\/70 { color: hsl(220 50% 12% / 0.7) !important; }
+        .light .text-foreground\/60 { color: hsl(220 50% 12% / 0.6) !important; }
         .light .bg-card\/30 { background-color: hsl(0 0% 100% / 0.3) !important; }
         .light .bg-card\/50 { background-color: hsl(0 0% 100% / 0.5) !important; }
         .light .bg-background\/80 { background-color: hsl(40 20% 96% / 0.8) !important; }
