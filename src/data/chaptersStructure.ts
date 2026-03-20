@@ -542,9 +542,9 @@ export const chaptersData: ChapterItemWithHero[] = [
   },
   { 
     id: "capitulo-22", 
-    slug: "capitulo-22", 
+    slug: "capitulo-21", 
     title: "Socios y abonados", 
-    number: "22",
+    number: "21",
     hero: {
       backgroundImage: heroCelebracion,
       backgroundOverlay: "rgba(26, 35, 126, 0.80)",
