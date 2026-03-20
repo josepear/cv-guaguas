@@ -29,7 +29,7 @@ import imgNicoBruno from "@/assets/content/nico-bruno.png";
 
 // Chapter content mapped by slug
 export const chapterContent: Record<string, React.ReactNode> = {
-  "capitulo-01": (
+  "capitulo-00": (
     <>
       <p>
         Este capítulo reúne las palabras de las personalidades más destacadas del ámbito deportivo, político e institucional que han acompañado al CV Guaguas en su extraordinaria trayectoria. Sus testimonios reflejan el impacto del club en la sociedad canaria y en el voleibol español.
@@ -58,6 +58,24 @@ export const chapterContent: Record<string, React.ReactNode> = {
       <p>Texto del prólogo pendiente de redacción.</p>
     </>
   ),
+  "prologo-juan-ruiz": (
+    <>
+      <p><strong>Juan Ruiz</strong>, presidente del CV Guaguas.</p>
+      <p>Texto del prólogo pendiente de redacción.</p>
+    </>
+  ),
+  "prologo-poli-suarez": (
+    <>
+      <p><strong>Poli Suárez</strong>, consejero de Deportes del Gobierno de Canarias.</p>
+      <p>Texto del prólogo pendiente de redacción.</p>
+    </>
+  ),
+  "prologo-aridany-romero": (
+    <>
+      <p><strong>Aridany Romero</strong>, consejero de Deportes del Cabildo de Gran Canaria.</p>
+      <p>Texto del prólogo pendiente de redacción.</p>
+    </>
+  ),
   "prologo-carolina-darias": (
     <>
       <p><strong>Carolina Darias</strong>, alcaldesa de Las Palmas de Gran Canaria.</p>
@@ -73,12 +91,6 @@ export const chapterContent: Record<string, React.ReactNode> = {
   "prologo-jorge-almansa": (
     <>
       <p><strong>Jorge Almansa</strong>, capitán del CV Guaguas.</p>
-      <p>Texto del prólogo pendiente de redacción.</p>
-    </>
-  ),
-  "prologo-juan-ruiz": (
-    <>
-      <p><strong>Juan Ruiz</strong>, presidente del CV Guaguas.</p>
       <p>Texto del prólogo pendiente de redacción.</p>
     </>
   ),

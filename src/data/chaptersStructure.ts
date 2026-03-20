@@ -20,10 +20,10 @@ export interface ChapterItemWithHero extends ChapterItem {
 
 export const chaptersData: ChapterItemWithHero[] = [
   { 
-    id: "capitulo-01", 
-    slug: "capitulo-01",
+    id: "capitulo-00", 
+    slug: "capitulo-00",
     title: "Prólogos", 
-    number: "01",
+    number: "0",
     hero: {
       backgroundImage: heroStadium,
       backgroundOverlay: "rgba(26, 35, 126, 0.88)",
@@ -41,10 +41,12 @@ export const chaptersData: ChapterItemWithHero[] = [
     children: [
       { id: "prologo-01", slug: "prologo-fernando-clavijo", title: "Fernando Clavijo" },
       { id: "prologo-02", slug: "prologo-antonio-morales", title: "Antonio Morales" },
-      { id: "prologo-03", slug: "prologo-carolina-darias", title: "Carolina Darias" },
-      { id: "prologo-04", slug: "prologo-roberto-melian", title: "Roberto Melián" },
-      { id: "prologo-05", slug: "prologo-jorge-almansa", title: "Jorge Almansa" },
-      { id: "prologo-06", slug: "prologo-juan-ruiz", title: "Juan Ruiz" },
+      { id: "prologo-03", slug: "prologo-juan-ruiz", title: "Juan Ruiz" },
+      { id: "prologo-04", slug: "prologo-poli-suarez", title: "Poli Suárez" },
+      { id: "prologo-05", slug: "prologo-aridany-romero", title: "Aridany Romero" },
+      { id: "prologo-06", slug: "prologo-carolina-darias", title: "Carolina Darias" },
+      { id: "prologo-07", slug: "prologo-roberto-melian", title: "Roberto Melián" },
+      { id: "prologo-08", slug: "prologo-jorge-almansa", title: "Jorge Almansa" },
     ]
   },
   { 
