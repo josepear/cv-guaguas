@@ -235,9 +235,9 @@ export const chaptersData: ChapterItemWithHero[] = [
   },
   { 
     id: "capitulo-09", 
-    slug: "capitulo-09", 
+    slug: "capitulo-08", 
     title: "Relevo generacional", 
-    number: "09",
+    number: "08",
     hero: {
       backgroundImage: heroCantera,
       backgroundOverlay: "rgba(212, 175, 55, 0.80)",
