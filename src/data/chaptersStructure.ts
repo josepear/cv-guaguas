@@ -51,9 +51,9 @@ export const chaptersData: ChapterItemWithHero[] = [
   },
   { 
     id: "capitulo-02", 
-    slug: "capitulo-02", 
+    slug: "capitulo-01", 
     title: "Del patio del colegio a División de Honor", 
-    number: "02",
+    number: "01",
     hero: {
       backgroundImage: heroPatio,
       backgroundOverlay: "rgba(212, 175, 55, 0.82)",
