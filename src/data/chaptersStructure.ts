@@ -521,9 +521,9 @@ export const chaptersData: ChapterItemWithHero[] = [
   },
   { 
     id: "capitulo-21", 
-    slug: "capitulo-21", 
+    slug: "capitulo-20", 
     title: "Comunicación digital", 
-    number: "21",
+    number: "20",
     hero: {
       backgroundImage: heroMatch,
       backgroundOverlay: "rgba(30, 30, 60, 0.85)",
