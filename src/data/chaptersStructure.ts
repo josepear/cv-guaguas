@@ -202,9 +202,9 @@ export const chaptersData: ChapterItemWithHero[] = [
   },
   { 
     id: "capitulo-08", 
-    slug: "capitulo-08", 
+    slug: "capitulo-07", 
     title: "Embajadores por Europa", 
-    number: "08",
+    number: "07",
     hero: {
       backgroundImage: heroEuropa,
       backgroundOverlay: "rgba(26, 35, 126, 0.78)",
