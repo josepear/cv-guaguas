@@ -252,6 +252,19 @@ function libro_capitulo_meta_box_html($post) {
     </script>
     
     <div class="libro-meta-field">
+        <label for="libro_subtitulo">Subtítulo / Cargo (menú lateral)</label>
+        <input 
+            type="text" 
+            id="libro_subtitulo" 
+            name="libro_subtitulo" 
+            value="<?php echo esc_attr($subtitulo); ?>" 
+            placeholder="Ej: Presidente del Gobierno de Canarias"
+            style="max-width: 100%;"
+        >
+        <p class="description">Se mostrará debajo del título en el menú lateral, en texto pequeño y mayúsculas. Útil para cargos en prólogos.</p>
+    </div>
+    
+    <div class="libro-meta-field">
         <div class="libro-meta-field-inline">
             <input 
                 type="checkbox" 
