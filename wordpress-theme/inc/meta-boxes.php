@@ -37,6 +37,7 @@ function libro_capitulo_meta_box_html($post) {
     $numero = get_post_meta($post->ID, '_numero_capitulo', true);
     $ocultar_numero = get_post_meta($post->ID, '_ocultar_numero', true);
     $mostrar_marcador = get_post_meta($post->ID, '_mostrar_marcador', true);
+    $subtitulo = get_post_meta($post->ID, '_subtitulo', true);
     $cita = get_post_meta($post->ID, '_cita_destacada', true);
     $autor_cita = get_post_meta($post->ID, '_autor_cita', true);
     
@@ -249,6 +250,19 @@ function libro_capitulo_meta_box_html($post) {
         }
     });
     </script>
+    
+    <div class="libro-meta-field">
+        <label for="libro_subtitulo">Subtítulo / Cargo (menú lateral)</label>
+        <input 
+            type="text" 
+            id="libro_subtitulo" 
+            name="libro_subtitulo" 
+            value="<?php echo esc_attr($subtitulo); ?>" 
+            placeholder="Ej: Presidente del Gobierno de Canarias"
+            style="max-width: 100%;"
+        >
+        <p class="description">Se mostrará debajo del título en el menú lateral, en texto pequeño y mayúsculas. Útil para cargos en prólogos.</p>
+    </div>
     
     <div class="libro-meta-field">
         <div class="libro-meta-field-inline">
@@ -636,6 +650,11 @@ function libro_save_capitulo_meta($post_id) {
     // Guardar número de capítulo
     if (isset($_POST['libro_numero_capitulo'])) {
         update_post_meta($post_id, '_numero_capitulo', sanitize_text_field($_POST['libro_numero_capitulo']));
+    }
+    
+    // Guardar subtítulo
+    if (isset($_POST['libro_subtitulo'])) {
+        update_post_meta($post_id, '_subtitulo', sanitize_text_field($_POST['libro_subtitulo']));
     }
     
     // Guardar ocultar número (checkbox)
