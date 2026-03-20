@@ -129,11 +129,11 @@ function libro_get_sample_chapters() {
     return array(
 
     // ═══════════════════════════════════════════════
-    // CAPÍTULO 01: PRÓLOGOS (PADRE)
+    // CAPÍTULO 0: PRÓLOGOS (PADRE)
     // ═══════════════════════════════════════════════
     array(
         'title' => 'Prólogos',
-        'numero' => '01',
+        'numero' => '0',
         'order' => 1,
         'show_marker' => true,
         'ref_id' => 'prologos',
@@ -187,14 +187,14 @@ function libro_get_sample_chapters() {
         'content' => '<p><strong>Jorge Almansa</strong>, capitán del CV Guaguas.</p><p>Texto del prólogo pendiente de redacción.</p>'),
 
     // ═══════════════════════════════════════════════
-    // CAPÍTULO 02: DEL PATIO DEL COLEGIO
+    // CAPÍTULO 01: DEL PATIO DEL COLEGIO
     // ═══════════════════════════════════════════════
     array(
         'title' => 'Del patio del colegio a División de Honor',
-        'numero' => '02',
+        'numero' => '01',
         'order' => 12,
         'show_marker' => true,
-        'ref_id' => 'cap02',
+        'ref_id' => 'cap01',
         'hero' => array(
             'image' => libro_img('hero-patio-colegio.jpg'),
             'overlay' => 'rgba(212, 175, 55, 0.82)',
@@ -254,7 +254,7 @@ function libro_get_sample_chapters() {
     ),
 
     // Cap 02 children
-    array('title' => 'Felipe Nuez', 'numero' => '', 'order' => 13, 'show_marker' => false, 'parent_ref' => 'cap02',
+    array('title' => 'Felipe Nuez', 'numero' => '', 'order' => 13, 'show_marker' => false, 'parent_ref' => 'cap01',
         'content' => '
 [perfil_jugador nombre="Felipe Nuez"]
 [capitular]Felipe Nuez (Moya, 1956) es la figura fundamental y maestra en la vida del club. Presente desde el mismo inicio de la actividad escolar que se dedicó al voleibol con especial ahínco, llegó como profesor en prácticas al colegio Calvo Sotelo en 1973 sin saber que, junto a otros precursores, iniciaría una historia de superación y éxitos que todavía perdura y que es, también, orgullo del deporte canario.[/capitular]
@@ -266,13 +266,13 @@ function libro_get_sample_chapters() {
 [cita_editorial]"Entrenara a cadetes, juveniles o séniors. El trabajo, el compromiso y el sacrificio eran para mí innegociables. De lo contrario, prefería quedarme en mi casa."[/cita_editorial]
 [/perfil_jugador]
 '),
-    array('title' => 'José Miguel Santana', 'numero' => '', 'order' => 14, 'show_marker' => false, 'parent_ref' => 'cap02',
+    array('title' => 'José Miguel Santana', 'numero' => '', 'order' => 14, 'show_marker' => false, 'parent_ref' => 'cap01',
         'content' => '[perfil_jugador nombre="José Miguel Santana"][capitular]José Miguel Santana fue una pieza fundamental en la construcción del Calvo Sotelo durante sus primeros años de existencia. Su compromiso con el proyecto y su entrega en la pista le convirtieron en uno de los referentes del equipo en la época de los ascensos y la consolidación en las categorías nacionales.[/capitular]<p>Como parte del grupo de jugadores que creció bajo la tutela de Felipe Nuez, Santana encarnó los valores de sacrificio y superación que definieron al club desde sus orígenes en el patio del colegio de Las Rehoyas.</p>[/perfil_jugador]'),
-    array('title' => 'Florencio Tejera', 'numero' => '', 'order' => 15, 'show_marker' => false, 'parent_ref' => 'cap02',
+    array('title' => 'Florencio Tejera', 'numero' => '', 'order' => 15, 'show_marker' => false, 'parent_ref' => 'cap01',
         'content' => '[perfil_jugador nombre="Florencio Tejera"][capitular]Florencio Tejera perteneció al núcleo de jugadores y entrenadores que dieron forma al Calvo Sotelo en su etapa formativa. Además de su aportación como jugador, asumió funciones de entrenador en las categorías inferiores, contribuyendo a la formación de nuevos talentos que alimentarían el crecimiento del club.[/capitular]<p>Su polivalencia y entrega fueron características de una generación de deportistas que lo dieron todo por un proyecto nacido en la humildad de un colegio de barrio y que terminaría alcanzando la cima del voleibol español.</p>[/perfil_jugador]'),
-    array('title' => 'Tony Vázquez', 'numero' => '', 'order' => 16, 'show_marker' => false, 'parent_ref' => 'cap02',
+    array('title' => 'Tony Vázquez', 'numero' => '', 'order' => 16, 'show_marker' => false, 'parent_ref' => 'cap01',
         'content' => '[perfil_jugador nombre="Tony Vázquez"][capitular]Tony Vázquez formó con Pericles una línea de recepción formidable que fue seña de identidad del Calvo Sotelo durante varios años. Su talento y constancia le convirtieron en uno de los jugadores más destacados de la formación que protagonizó los ascensos y la llegada a la máxima categoría del voleibol español.[/capitular]<p>Vázquez también contribuyó como entrenador en las categorías femeninas del club, demostrando un compromiso integral con la entidad que iba más allá de su rol como jugador.</p>[/perfil_jugador]'),
-    array('title' => 'Isidro Quintana', 'numero' => '', 'order' => 17, 'show_marker' => false, 'parent_ref' => 'cap02',
+    array('title' => 'Isidro Quintana', 'numero' => '', 'order' => 17, 'show_marker' => false, 'parent_ref' => 'cap01',
         'content' => '
 [perfil_jugador nombre="Isidro Quintana"]
 [capitular]A Isidro Quintana (Las Palmas de Gran Canaria, 1957) le metieron el voleibol en su vida "por obligación", como reconoce, porque, integrado en la sección de baloncesto de la UD Las Palmas durante su adolescencia ("llegué a jugar contra Domingo Díaz, que luego ha sido lo que ha sido"), iba para pívot con su imponente estatura en plena pubertad.[/capitular]
@@ -282,7 +282,7 @@ function libro_get_sample_chapters() {
 <p>Para mí es el rey, la persona clave. No se entiende el Guaguas sin Juan Ruiz y creo que no se entiende Juan Ruiz sin el Guaguas. Apostó por traer extranjeros, por ir a por los mejores jugadores que había en los rivales. Era la única manera de hacer un proyecto ganador.</p>
 [/perfil_jugador]
 '),
-    array('title' => 'Pericles', 'numero' => '', 'order' => 18, 'show_marker' => false, 'parent_ref' => 'cap02',
+    array('title' => 'Pericles', 'numero' => '', 'order' => 18, 'show_marker' => false, 'parent_ref' => 'cap01',
         'content' => '
 [perfil_jugador nombre="Pericles" subtitulo="Pedro Román Rosario"]
 [capitular]Un pelo abundante y la barba que le daba aires intelectuales le valieron el apodo, Pericles, con el que se incrustaría, por derecho propio, en el listado de imprescindibles del Calvo Sotelo. "Me dijeron, medio en serio medio en broma, que me parecía a Pericles. No me lo tomé mal y así me quedé", admite. Pedro Román Rosario (Las Palmas de Gran Canaria, 1958) no fue uno más.[/capitular]
@@ -298,7 +298,7 @@ function libro_get_sample_chapters() {
 <p>"Mi etapa llegó hasta el inicio de la temporada 1986-87, justo con la llegada de Ivo Martinovic. Desde 1977, que se dice pronto. En ese momento sentí que no estaba capacitado para dar el nivel que requería un equipo ya con los mejores de España. Decidí irme."</p>
 [/perfil_jugador]
 '),
-    array('title' => 'José Millán', 'numero' => '', 'order' => 19, 'show_marker' => false, 'parent_ref' => 'cap02',
+    array('title' => 'José Millán', 'numero' => '', 'order' => 19, 'show_marker' => false, 'parent_ref' => 'cap01',
         'content' => '
 [perfil_jugador nombre="José Millán"]
 [capitular]Si la figura de Silvestre Cabrera fue de trascendencia capital para auspiciar el voleibol durante su mandato como presidente de la Federación de Las Palmas (1973-1985), no es menos relevante la influencia, también de enorme impacto, de José Millán, quien en diciembre de 1976 asume el cargo de secretario del ente presidido por Cabrera, toma su relevo a la conclusión de su ciclo como máximo mandatario y termina encabezando la Federación Canaria de Voleibol hasta 2008.[/capitular]
@@ -308,7 +308,7 @@ function libro_get_sample_chapters() {
 [cita_editorial]"Hay que valorar lo que hicieron, saliendo de un colegio y con muy pocos medios. Fueron superándose, nunca se rindieron ante las dificultades."[/cita_editorial]
 [/perfil_jugador]
 '),
-    array('title' => 'Miriam Quiroga', 'numero' => '', 'order' => 20, 'show_marker' => false, 'parent_ref' => 'cap02',
+    array('title' => 'Miriam Quiroga', 'numero' => '', 'order' => 20, 'show_marker' => false, 'parent_ref' => 'cap01',
         'content' => '
 [perfil_jugador nombre="Miriam Quiroga"]
 [capitular]Miriam Quiroga, licenciada en Educación Física y profesora universitaria, publicó en el año 2010 el libro \'Génesis y evolución del voleibol en Gran Canaria 1934-1978\', editado por el Servicio de Publicaciones de la Universidad de Las Palmas de Gran Canaria.[/capitular]
@@ -322,11 +322,11 @@ function libro_get_sample_chapters() {
 '),
 
     // ═══════════════════════════════════════════════
-    // CAPÍTULO 03: ESTATUTOS FUNDACIONALES
+    // CAPÍTULO 02: ESTATUTOS FUNDACIONALES
     // ═══════════════════════════════════════════════
     array(
         'title' => 'Estatutos Fundacionales',
-        'numero' => '03',
+        'numero' => '02',
         'order' => 25,
         'show_marker' => true,
         'hero' => array(
@@ -375,14 +375,14 @@ function libro_get_sample_chapters() {
     ),
 
     // ═══════════════════════════════════════════════
-    // CAPÍTULO 04: ASÍ SE FORJÓ UNA LEYENDA
+    // CAPÍTULO 03: ASÍ SE FORJÓ UNA LEYENDA
     // ═══════════════════════════════════════════════
     array(
         'title' => 'Así se forjó una leyenda',
-        'numero' => '04',
+        'numero' => '03',
         'order' => 30,
         'show_marker' => true,
-        'ref_id' => 'cap04',
+        'ref_id' => 'cap03',
         'hero' => array(
             'image' => libro_img('hero-volleyball-match.jpg'),
             'overlay' => 'rgba(26, 35, 126, 0.80)',
@@ -431,7 +431,7 @@ function libro_get_sample_chapters() {
     ),
 
     // Cap 04 child: El proyecto visionario de Juan Ruiz
-    array('title' => 'El proyecto visionario de Juan Ruiz', 'numero' => '', 'order' => 31, 'show_marker' => false, 'parent_ref' => 'cap04',
+    array('title' => 'El proyecto visionario de Juan Ruiz', 'numero' => '', 'order' => 31, 'show_marker' => false, 'parent_ref' => 'cap03',
         'content' => '
 [capitular]Nacido en La Aldea de San Nicolás en 1953, emigrante con su familia a Tenerife durante gran parte su adolescencia (1960-1969), en la que hizo sus pinitos en la lucha canaria o el fútbol ("con 16 años llegué a jugar en Tercera División en las filas del Adeje"), Juan Ruiz estaba llamado, sin saberlo, a escribir una historia sin parangón en el deporte canario y al frente del Calvo Sotelo.[/capitular]
 
@@ -455,19 +455,19 @@ function libro_get_sample_chapters() {
 '),
 
     // ═══════════════════════════════════════════════
-    // CAPÍTULOS 05-23 (con hero y contenido)
+    // CAPÍTULOS 04-22 (con hero y contenido)
     // ═══════════════════════════════════════════════
 
     // Cap 05
     array(
-        'title' => 'Iconos y estrellas del Guaguas', 'numero' => '05', 'order' => 40, 'show_marker' => true, 'ref_id' => 'cap05',
+        'title' => 'Iconos y estrellas del Guaguas', 'numero' => '04', 'order' => 40, 'show_marker' => true, 'ref_id' => 'cap04',
         'hero' => array('image' => libro_img('hero-volleyball-match.jpg'), 'overlay' => 'rgba(212, 175, 55, 0.85)', 'icon' => 'custom', 'custom_icon' => $star, 'icon_width' => 80, 'icon_height' => 80, 'alignment' => 'center', 'vertical' => 'center', 'height' => '500px',
             'title_lines' => array(libro_hero_line('ICONOS Y', '#1a237e', '#FFFFFF'), libro_hero_line('ESTRELLAS', '#1a237e', '#FFFFFF'), libro_hero_line('DEL GUAGUAS', '#1a237e', '#FFFFFF'))),
         'content' => '[capitular]Los grandes nombres que han escrito la historia del CV Guaguas. Jugadores que dejaron su huella en el voleibol español y que convirtieron al club en leyenda. Desde los canteranos que crecieron en el patio del Calvo Sotelo hasta las estrellas internacionales que llegaron para elevar el proyecto a cotas inimaginables, todos contribuyeron a forjar un legado deportivo sin parangón en Canarias.[/capitular]
 [imagen_contenido src="' . libro_img('content/jugador-accion.png') . '" alt="Jugador del CV Guaguas en acción" caption="El talento individual al servicio del colectivo: seña de identidad del Guaguas a lo largo de su historia." fullwidth="true"]'),
 
     // Cap 05 children
-    array('title' => 'Sergio Miguel Camarero', 'numero' => '', 'order' => 41, 'show_marker' => false, 'parent_ref' => 'cap05',
+    array('title' => 'Sergio Miguel Camarero', 'numero' => '', 'order' => 41, 'show_marker' => false, 'parent_ref' => 'cap04',
         'content' => '
 [perfil_jugador nombre="Sergio Miguel Camarero"]
 [capitular]Cuando Sergio Miguel Camarero (Las Palmas de Gran Canaria, 1967) destacaba en el fútbol y como prometedor jugador del San Antonio, el equipo de su barrio, ya soñaba con hacer historia en el deporte.[/capitular]
@@ -480,7 +480,7 @@ function libro_get_sample_chapters() {
 
 <p>Sergio Miguel Camarero acumuló 48 internacionalidades absolutas y 10 títulos oficiales (5 Ligas y 5 Copas).</p>
 [/perfil_jugador]'),
-    array('title' => 'Paco Sánchez Jover', 'numero' => '', 'order' => 42, 'show_marker' => false, 'parent_ref' => 'cap05',
+    array('title' => 'Paco Sánchez Jover', 'numero' => '', 'order' => 42, 'show_marker' => false, 'parent_ref' => 'cap04',
         'content' => '
 [perfil_jugador nombre="Paco Sánchez Jover"]
 [capitular]Paco Sánchez Jover es, junto a Camarero, el otro gran pilar sobre el que se construyó la leyenda del Guaguas. Llegado en el verano de 1987 como el gran fichaje estrella de Juan Ruiz, el mejor jugador de España en aquel momento.[/capitular]
@@ -489,13 +489,13 @@ function libro_get_sample_chapters() {
 
 [cita_editorial]"Todo cambió y para peor. Tras Felipe Nuez (1988), Sergio Miguel Camarero (1996) y Juan Ruiz (1998), el gigante que hizo feliz al Centro Insular clausuraba un ciclo de doce años con otros tantos títulos y episodios únicos."[/cita_editorial]
 [/perfil_jugador]'),
-    array('title' => 'Waclaw Golec', 'numero' => '', 'order' => 43, 'show_marker' => false, 'parent_ref' => 'cap05',
+    array('title' => 'Waclaw Golec', 'numero' => '', 'order' => 43, 'show_marker' => false, 'parent_ref' => 'cap04',
         'content' => '
 [perfil_jugador nombre="Waclaw Golec"]
 [capitular]En el verano de 1989, Juan Ruiz une a su elenco de estrellas a los internacionales polacos Ireneusz Klos y Waclaw Golec, llamados a ser ídolos y figuras diferenciales.[/capitular]
 <p>La conexión entre Golec y Klos, junto con la potencia de Camarero y el liderazgo de Sánchez Jover, formó un cuarteto irrepetible que llevó al Guaguas a conquistar cinco Ligas consecutivas.</p>
 [/perfil_jugador]'),
-    array('title' => 'Ireneusz Klos', 'numero' => '', 'order' => 44, 'show_marker' => false, 'parent_ref' => 'cap05',
+    array('title' => 'Ireneusz Klos', 'numero' => '', 'order' => 44, 'show_marker' => false, 'parent_ref' => 'cap04',
         'content' => '
 [perfil_jugador nombre="Ireneusz Klos"]
 [capitular]Ireneusz Klos aterrizó en Gran Canaria junto a su compatriota Golec en 1989 y rápidamente se convirtió en una de las piezas fundamentales del engranaje del Guaguas campeón.[/capitular]
@@ -506,21 +506,21 @@ function libro_get_sample_chapters() {
 [/perfil_jugador]'),
 
     // Cap 06-23 with heroes and intro content
-    array('title' => 'Ignacio Brito y Tributo a los Salesianos', 'numero' => '06', 'order' => 50, 'show_marker' => true,
+    array('title' => 'Ignacio Brito y Tributo a los Salesianos', 'numero' => '05', 'order' => 50, 'show_marker' => true,
         'hero' => array('image' => libro_img('hero-patio-colegio.jpg'), 'overlay' => 'rgba(26, 35, 126, 0.85)', 'icon' => 'custom', 'custom_icon' => $star, 'icon_width' => 50, 'icon_height' => 50, 'alignment' => 'left', 'vertical' => 'center', 'height' => '450px',
             'title_lines' => array(libro_hero_line('IGNACIO BRITO', '#D4AF37'), libro_hero_line('Y TRIBUTO A', '#FFFFFF'), libro_hero_line('LOS SALESIANOS', '#FFFFFF'))),
         'content' => '[capitular]La historia del voleibol en Gran Canaria no puede entenderse sin la contribución de los Salesianos. Ignacio Brito, formado en las instalaciones del colegio salesiano, fue uno de los primeros técnicos que comprendió que la cantera era el verdadero tesoro del club.[/capitular]
 [imagen_contenido src="' . libro_img('content/copa-del-rey.jpg') . '" alt="Los Salesianos, cuna del voleibol grancanario" caption="El colegio Salesiano fue uno de los principales viveros del voleibol en Las Palmas de Gran Canaria." fullwidth="true"]
 <p>Contenido pendiente de importación del documento original.</p>'),
 
-    array('title' => 'Marek', 'numero' => '07', 'order' => 55, 'show_marker' => true,
+    array('title' => 'Marek', 'numero' => '06', 'order' => 55, 'show_marker' => true,
         'hero' => array('image' => libro_img('hero-europa.jpg'), 'overlay' => 'rgba(180, 30, 30, 0.80)', 'icon' => 'custom', 'custom_icon' => $star, 'icon_width' => 60, 'icon_height' => 60, 'alignment' => 'right', 'vertical' => 'center', 'height' => '450px',
             'title_lines' => array(libro_hero_line('MAREK', '#FFFFFF'))),
         'content' => '[capitular]Marek llegó a Gran Canaria como una estrella internacional y se marchó convertido en leyenda. Su impacto en el Guaguas trascendió lo deportivo para convertirse en un referente cultural del voleibol en las islas.[/capitular]
 [imagen_contenido src="' . libro_img('content/dobromir-saque.jpg') . '" alt="Momento de un saque" caption="El nivel técnico de los jugadores internacionales elevó la competitividad del Guaguas en todas las competiciones."]
 <p>Contenido pendiente de importación del documento original.</p>'),
 
-    array('title' => 'Embajadores por Europa', 'numero' => '08', 'order' => 60, 'show_marker' => true,
+    array('title' => 'Embajadores por Europa', 'numero' => '07', 'order' => 60, 'show_marker' => true,
         'hero' => array('image' => libro_img('hero-europa.jpg'), 'overlay' => 'rgba(26, 35, 126, 0.78)', 'icon' => 'custom', 'custom_icon' => $star, 'icon_width' => 70, 'icon_height' => 70, 'alignment' => 'center', 'vertical' => 'center', 'height' => '500px',
             'title_lines' => array(libro_hero_line('EMBAJADORES', '#D4AF37'), libro_hero_line('POR EUROPA', '#FFFFFF'))),
         'content' => '[capitular]La aventura europea del CV Guaguas es una de las páginas más brillantes de su historia. Desde la primera participación en la Copa de Europa hasta las campañas recientes en la Champions League, el club ha sido embajador del voleibol canario en los más prestigiosos escenarios del continente.[/capitular]
@@ -528,7 +528,7 @@ function libro_get_sample_chapters() {
 [imagen_contenido src="' . libro_img('content/augusto-colito.jpg') . '" alt="Augusto Colito en la Champions League" caption="Augusto Colito, pieza clave del Guaguas en la Champions League 2025-2026."]
 <p>Contenido pendiente de importación del documento original.</p>'),
 
-    array('title' => 'Relevo generacional', 'numero' => '09', 'order' => 65, 'show_marker' => true,
+    array('title' => 'Relevo generacional', 'numero' => '08', 'order' => 65, 'show_marker' => true,
         'hero' => array('image' => libro_img('hero-cantera.jpg'), 'overlay' => 'rgba(212, 175, 55, 0.80)', 'icon' => 'custom', 'custom_icon' => $star, 'icon_width' => 60, 'icon_height' => 60, 'alignment' => 'left', 'vertical' => 'center', 'height' => '480px',
             'title_lines' => array(libro_hero_line('RELEVO', '#1a237e', '#FFFFFF'), libro_hero_line('GENERACIONAL', '#1a237e', '#FFFFFF'))),
         'content' => '[capitular]Cada generación del Guaguas ha sido el eslabón de una cadena ininterrumpida de talento canario. El relevo generacional ha sido una constante en la vida del club, desde los pioneros del Calvo Sotelo hasta los actuales jugadores de la cantera.[/capitular]
@@ -536,14 +536,14 @@ function libro_get_sample_chapters() {
 [imagen_contenido src="' . libro_img('content/helder-spencer.png') . '" alt="Hélder Spencer" caption="Hélder Spencer, uno de los refuerzos internacionales que alimentan la competitividad del equipo."]
 <p>Contenido pendiente de importación del documento original.</p>'),
 
-    array('title' => 'Una transición dolorosa', 'numero' => '10', 'order' => 70, 'show_marker' => true,
+    array('title' => 'Una transición dolorosa', 'numero' => '09', 'order' => 70, 'show_marker' => true,
         'hero' => array('image' => libro_img('hero-transicion.jpg'), 'overlay' => 'rgba(0, 0, 0, 0.40)', 'icon' => 'custom', 'custom_icon' => $star, 'icon_width' => 50, 'icon_height' => 50, 'alignment' => 'center', 'vertical' => 'center', 'height' => '500px',
             'title_lines' => array(libro_hero_line('UNA TRANSICIÓN', '#8faabe'), libro_hero_line('DOLOROSA', '#FFFFFF'))),
         'content' => '[capitular]Los años posteriores a la marcha de Juan Ruiz fueron los más convulsos en la historia del club. La inestabilidad directiva, los problemas económicos y la pérdida progresiva de competitividad culminaron en el peor desenlace posible: la desaparición temporal del equipo en 2009.[/capitular]
 [imagen_contenido src="' . libro_img('content/equipo-liga.jpeg') . '" alt="El equipo del CV Guaguas" caption="A pesar de las dificultades, el espíritu del Guaguas nunca se extinguió completamente." fullwidth="true"]
 <p>Contenido pendiente de importación del documento original.</p>'),
 
-    array('title' => 'Todos los títulos', 'numero' => '11', 'order' => 75, 'show_marker' => true,
+    array('title' => 'Todos los títulos', 'numero' => '10', 'order' => 75, 'show_marker' => true,
         'hero' => array('image' => libro_img('hero-trophies.jpg'), 'overlay' => 'rgba(212, 175, 55, 0.75)', 'icon' => 'custom', 'custom_icon' => $star, 'icon_width' => 80, 'icon_height' => 80, 'alignment' => 'center', 'vertical' => 'center', 'height' => '500px',
             'title_lines' => array(libro_hero_line('TODOS', '#1a237e', '#FFFFFF'), libro_hero_line('LOS TÍTULOS', '#1a237e', '#FFFFFF'))),
         'content' => '[capitular]El palmarés del CV Guaguas es el más brillante del voleibol español. Nueve Ligas, nueve Copas del Rey, cinco Supercopas y una Copa Ibérica conforman un historial de éxitos que ningún otro club del país ha igualado.[/capitular]
@@ -551,21 +551,21 @@ function libro_get_sample_chapters() {
 [imagen_contenido src="' . libro_img('content/partido-guaguas.jpg') . '" alt="Ambiente en un partido del CV Guaguas" caption="El Centro Insular de Deportes y el Gran Canaria Arena han sido testigos de las gestas del club."]
 <p>Contenido pendiente de importación del documento original.</p>'),
 
-    array('title' => 'Vuelve el gran Guaguas', 'numero' => '12', 'order' => 80, 'show_marker' => true,
+    array('title' => 'Vuelve el gran Guaguas', 'numero' => '11', 'order' => 80, 'show_marker' => true,
         'hero' => array('image' => libro_img('hero-celebracion.jpg'), 'overlay' => 'rgba(26, 35, 126, 0.75)', 'icon' => 'custom', 'custom_icon' => $star, 'icon_width' => 70, 'icon_height' => 70, 'alignment' => 'right', 'vertical' => 'center', 'height' => '500px',
             'title_lines' => array(libro_hero_line('VUELVE', '#D4AF37'), libro_hero_line('EL GRAN', '#FFFFFF'), libro_hero_line('GUAGUAS', '#D4AF37'))),
         'content' => '[capitular]En 2020, cuando el club se encontraba de nuevo al borde del abismo, Juan Ruiz regresó para devolver al Guaguas a la élite. Su vuelta fue recibida con esperanza y emoción por una afición que no había olvidado los años gloriosos.[/capitular]
 [imagen_contenido src="' . libro_img('content/remate-guaguas.png') . '" alt="Remate del CV Guaguas" caption="El regreso del Guaguas a los títulos confirmó que la leyenda no había terminado." fullwidth="true"]
 <p>Contenido pendiente de importación del documento original.</p>'),
 
-    array('title' => 'Del CID al Arenas', 'numero' => '13', 'order' => 85, 'show_marker' => true,
+    array('title' => 'Del CID al Arenas', 'numero' => '12', 'order' => 85, 'show_marker' => true,
         'hero' => array('image' => libro_img('hero-stadium.jpg'), 'overlay' => 'rgba(26, 35, 126, 0.82)', 'icon' => 'custom', 'custom_icon' => $star, 'icon_width' => 60, 'icon_height' => 60, 'alignment' => 'left', 'vertical' => 'center', 'height' => '450px',
             'title_lines' => array(libro_hero_line('DEL CID', '#D4AF37'), libro_hero_line('AL ARENAS', '#FFFFFF'))),
         'content' => '[capitular]Del Centro Insular de Deportes al Gran Canaria Arena: la evolución de la casa del voleibol grancanario. El CID fue durante décadas la catedral del voleibol en Canarias, un pabellón cuyo ambiente era temido por todos los rivales.[/capitular]
 [imagen_contenido src="' . libro_img('content/banner-entradas.png') . '" alt="Cartelería del CV Guaguas en el Gran Canaria Arena" caption="El Gran Canaria Arena acoge hoy los grandes eventos del voleibol canario." fullwidth="true"]
 <p>Contenido pendiente de importación del documento original.</p>'),
 
-    array('title' => 'Los nuevos ídolos', 'numero' => '14', 'order' => 90, 'show_marker' => true,
+    array('title' => 'Los nuevos ídolos', 'numero' => '13', 'order' => 90, 'show_marker' => true,
         'hero' => array('image' => libro_img('hero-volleyball-match.jpg'), 'overlay' => 'rgba(212, 175, 55, 0.82)', 'icon' => 'custom', 'custom_icon' => $star, 'icon_width' => 70, 'icon_height' => 70, 'alignment' => 'right', 'vertical' => 'center', 'height' => '480px',
             'title_lines' => array(libro_hero_line('LOS NUEVOS', '#1a237e', '#FFFFFF'), libro_hero_line('ÍDOLOS', '#1a237e', '#FFFFFF'))),
         'content' => '[capitular]Una nueva generación de estrellas ha tomado el relevo en el Gran Canaria Arena. Los nuevos ídolos del Guaguas combinan talento internacional con la pasión local para escribir nuevos capítulos en la historia del club.[/capitular]
@@ -573,35 +573,35 @@ function libro_get_sample_chapters() {
 [imagen_contenido src="' . libro_img('content/augusto-colito-perfil.png') . '" alt="Augusto Colito" caption="Augusto Colito, internacional español y pilar del proyecto deportivo del Guaguas."]
 <p>Contenido pendiente de importación del documento original.</p>'),
 
-    array('title' => 'El impacto del escudo', 'numero' => '15', 'order' => 95, 'show_marker' => true,
+    array('title' => 'El impacto del escudo', 'numero' => '14', 'order' => 95, 'show_marker' => true,
         'hero' => array('image' => libro_img('hero-stadium.jpg'), 'overlay' => 'rgba(212, 175, 55, 0.88)', 'icon' => 'custom', 'custom_icon' => $star, 'icon_width' => 90, 'icon_height' => 90, 'alignment' => 'center', 'vertical' => 'center', 'height' => '450px',
             'title_lines' => array(libro_hero_line('EL IMPACTO', '#1a237e', '#FFFFFF'), libro_hero_line('DEL ESCUDO', '#1a237e', '#FFFFFF'))),
         'content' => '[capitular]El escudo del CV Guaguas es mucho más que un símbolo deportivo. Representa la identidad de un club que ha trascendido el voleibol para convertirse en un referente cultural de Gran Canaria y del deporte canario.[/capitular]
 [imagen_contenido src="' . libro_img('content/jugador-accion.png') . '" alt="Jugador del CV Guaguas en acción" caption="El escudo del Guaguas, presente en cada camiseta que viste un jugador que sale a la cancha."]
 <p>Contenido pendiente de importación del documento original.</p>'),
 
-    array('title' => 'La directiva', 'numero' => '16', 'order' => 100, 'show_marker' => true,
+    array('title' => 'La directiva', 'numero' => '15', 'order' => 100, 'show_marker' => true,
         'hero' => array('image' => libro_img('hero-estatutos.jpg'), 'overlay' => 'rgba(26, 35, 126, 0.85)', 'icon' => 'custom', 'custom_icon' => $star, 'icon_width' => 50, 'icon_height' => 50, 'alignment' => 'right', 'vertical' => 'center', 'height' => '420px',
             'title_lines' => array(libro_hero_line('LA', '#FFFFFF'), libro_hero_line('DIRECTIVA', '#D4AF37'))),
         'content' => '[capitular]Detrás de cada título y cada logro deportivo hay una estructura directiva que ha trabajado incansablemente por el bien del club. Desde los fundadores del Calvo Sotelo hasta la actual junta directiva, la gestión del Guaguas ha sido un ejemplo de compromiso y sacrificio.[/capitular]
 [imagen_contenido src="' . libro_img('content/equipo-liga.jpeg') . '" alt="El equipo y cuerpo técnico del CV Guaguas" caption="La directiva y el cuerpo técnico, piezas fundamentales del engranaje del Guaguas."]
 <p>Contenido pendiente de importación del documento original.</p>'),
 
-    array('title' => 'El Guaguas que viene', 'numero' => '17', 'order' => 105, 'show_marker' => true,
+    array('title' => 'El Guaguas que viene', 'numero' => '16', 'order' => 105, 'show_marker' => true,
         'hero' => array('image' => libro_img('hero-cantera.jpg'), 'overlay' => 'rgba(26, 35, 126, 0.80)', 'icon' => 'custom', 'custom_icon' => $star, 'icon_width' => 60, 'icon_height' => 60, 'alignment' => 'left', 'vertical' => 'center', 'height' => '480px',
             'title_lines' => array(libro_hero_line('EL GUAGUAS', '#D4AF37'), libro_hero_line('QUE VIENE', '#FFFFFF'))),
         'content' => '[capitular]El futuro del Guaguas se construye en la cantera. Los equipos de categorías inferiores trabajan cada día para formar a los jugadores que, algún día, defenderán los colores amarillos en la máxima competición.[/capitular]
 [imagen_contenido src="' . libro_img('content/nico-bruno.png') . '" alt="Jóvenes promesas del CV Guaguas" caption="La apuesta por la cantera es una seña de identidad del club desde sus orígenes en el Calvo Sotelo." fullwidth="true"]
 <p>Contenido pendiente de importación del documento original.</p>'),
 
-    array('title' => 'Empleados y técnicos', 'numero' => '18', 'order' => 110, 'show_marker' => true,
+    array('title' => 'Empleados y técnicos', 'numero' => '17', 'order' => 110, 'show_marker' => true,
         'hero' => array('image' => libro_img('hero-stadium.jpg'), 'overlay' => 'rgba(62, 39, 15, 0.82)', 'icon' => 'custom', 'custom_icon' => $star, 'icon_width' => 50, 'icon_height' => 50, 'alignment' => 'center', 'vertical' => 'center', 'height' => '420px',
             'title_lines' => array(libro_hero_line('EMPLEADOS', '#D4AF37'), libro_hero_line('Y TÉCNICOS', '#FFFFFF'))),
         'content' => '[capitular]Un club no funciona solo con jugadores. Detrás de cada partido, cada entrenamiento y cada evento hay un equipo de profesionales que hace posible la maquinaria del CV Guaguas.[/capitular]
 [imagen_contenido src="' . libro_img('content/io-de-amo.png') . '" alt="Io De Amo" caption="Io De Amo, uno de los jugadores del plantel actual bajo la dirección técnica de Sergio Miguel Camarero."]
 <p>Contenido pendiente de importación del documento original.</p>'),
 
-    array('title' => 'La plantilla del cincuentenario', 'numero' => '19', 'order' => 115, 'show_marker' => true,
+    array('title' => 'La plantilla del cincuentenario', 'numero' => '18', 'order' => 115, 'show_marker' => true,
         'hero' => array('image' => libro_img('hero-celebracion.jpg'), 'overlay' => 'rgba(212, 175, 55, 0.82)', 'icon' => 'custom', 'custom_icon' => $star, 'icon_width' => 70, 'icon_height' => 70, 'alignment' => 'right', 'vertical' => 'center', 'height' => '500px',
             'title_lines' => array(libro_hero_line('LA PLANTILLA', '#1a237e', '#FFFFFF'), libro_hero_line('DEL', '#1a237e', '#FFFFFF'), libro_hero_line('CINCUENTENARIO', '#1a237e', '#FFFFFF'))),
         'content' => '[capitular]La temporada 2025-2026 marca el cincuentenario del Club Voleibol Guaguas. Una plantilla competitiva en cuatro frentes —Liga, Copa, Supercopa y Champions League— escribe las últimas líneas de esta historia de medio siglo de pasión por el voleibol.[/capitular]
@@ -609,28 +609,28 @@ function libro_get_sample_chapters() {
 [imagen_contenido src="' . libro_img('content/jorge-almansa.png') . '" alt="Jorge Almansa" caption="Jorge Almansa, capitán y símbolo de una generación que honra el legado del club."]
 <p>Contenido pendiente de importación del documento original.</p>'),
 
-    array('title' => 'Miguel Ángel Ramírez', 'numero' => '20', 'order' => 120, 'show_marker' => true,
+    array('title' => 'Miguel Ángel Ramírez', 'numero' => '19', 'order' => 120, 'show_marker' => true,
         'hero' => array('image' => libro_img('hero-stadium.jpg'), 'overlay' => 'rgba(26, 35, 126, 0.85)', 'icon' => 'custom', 'custom_icon' => $star, 'icon_width' => 60, 'icon_height' => 60, 'alignment' => 'left', 'vertical' => 'center', 'height' => '450px',
             'title_lines' => array(libro_hero_line('MIGUEL ÁNGEL', '#D4AF37'), libro_hero_line('RAMÍREZ', '#FFFFFF'))),
         'content' => '[capitular]Miguel Ángel Ramírez, presidente de la UD Las Palmas, ha sido una figura clave en el apoyo institucional al CV Guaguas. Su visión del deporte como motor de la sociedad canaria ha permitido que el club cuente con los recursos necesarios para competir al máximo nivel.[/capitular]
 [imagen_contenido src="' . libro_img('content/dobromir-saque.jpg') . '" alt="El CV Guaguas en competición" caption="El apoyo institucional ha sido fundamental para mantener la competitividad del club a nivel nacional y europeo."]
 <p>Contenido pendiente de importación del documento original.</p>'),
 
-    array('title' => 'Comunicación digital', 'numero' => '21', 'order' => 125, 'show_marker' => true,
+    array('title' => 'Comunicación digital', 'numero' => '20', 'order' => 125, 'show_marker' => true,
         'hero' => array('image' => libro_img('hero-volleyball-match.jpg'), 'overlay' => 'rgba(30, 30, 60, 0.85)', 'icon' => 'custom', 'custom_icon' => $star, 'icon_width' => 50, 'icon_height' => 50, 'alignment' => 'right', 'vertical' => 'center', 'height' => '420px',
             'title_lines' => array(libro_hero_line('COMUNICACIÓN', '#D4AF37'), libro_hero_line('DIGITAL', '#FFFFFF'))),
         'content' => '[capitular]El CV Guaguas ha sido pionero en la comunicación digital dentro del deporte español. Su presencia en redes sociales, la producción de contenidos audiovisuales y la cobertura periodística propia han creado un modelo de referencia para otros clubes.[/capitular]
 [imagen_contenido src="' . libro_img('content/banner-entradas.png') . '" alt="Comunicación digital del CV Guaguas" caption="La comunicación digital del Guaguas conecta al club con su afición en todos los rincones del mundo." fullwidth="true"]
 <p>Contenido pendiente de importación del documento original.</p>'),
 
-    array('title' => 'Socios y abonados', 'numero' => '22', 'order' => 130, 'show_marker' => true,
+    array('title' => 'Socios y abonados', 'numero' => '21', 'order' => 130, 'show_marker' => true,
         'hero' => array('image' => libro_img('hero-celebracion.jpg'), 'overlay' => 'rgba(26, 35, 126, 0.80)', 'icon' => 'custom', 'custom_icon' => $star, 'icon_width' => 60, 'icon_height' => 60, 'alignment' => 'center', 'vertical' => 'center', 'height' => '450px',
             'title_lines' => array(libro_hero_line('SOCIOS Y', '#D4AF37'), libro_hero_line('ABONADOS', '#FFFFFF'))),
         'content' => '[capitular]La afición del Guaguas es el motor del club. Desde aquellos primeros espectadores en el patio del colegio hasta los miles de abonados que llenan el Gran Canaria Arena, los socios han sido el alma del proyecto deportivo más exitoso del voleibol español.[/capitular]
 [imagen_contenido src="' . libro_img('content/partido-guaguas.jpg') . '" alt="La afición del CV Guaguas en el Gran Canaria Arena" caption="La marea amarilla, incondicional con su equipo en cada partido, en cada competición." fullwidth="true"]
 <p>Contenido pendiente de importación del documento original.</p>'),
 
-    array('title' => 'Empresarios de la tierra', 'numero' => '23', 'order' => 135, 'show_marker' => true,
+    array('title' => 'Empresarios de la tierra', 'numero' => '22', 'order' => 135, 'show_marker' => true,
         'hero' => array('image' => libro_img('hero-estatutos.jpg'), 'overlay' => 'rgba(212, 175, 55, 0.80)', 'icon' => 'custom', 'custom_icon' => $star, 'icon_width' => 60, 'icon_height' => 60, 'alignment' => 'left', 'vertical' => 'center', 'height' => '450px',
             'title_lines' => array(libro_hero_line('EMPRESARIOS', '#1a237e', '#FFFFFF'), libro_hero_line('DE LA TIERRA', '#1a237e', '#FFFFFF'))),
         'content' => '[capitular]El CV Guaguas ha contado siempre con el apoyo de empresarios canarios que creyeron en el proyecto. Desde Guaguas Municipales, el primer gran patrocinador, hasta las empresas que hoy respaldan al club, el tejido empresarial de la tierra ha sido pilar fundamental de la entidad.[/capitular]
