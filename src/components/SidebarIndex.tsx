@@ -64,7 +64,7 @@ const SidebarIndex = forwardRef<HTMLDivElement, SidebarIndexProps>(({ chapters, 
               onClick={() => toggleGroup(chapter.id, hasActiveChild)}
               className="w-6 flex-shrink-0 flex items-center justify-center text-muted-foreground hover:text-gold transition-colors"
             >
-              {isExpanded || hasActiveChild ? (
+              {isExpanded ? (
                 <ChevronDown className="w-4 h-4" />
               ) : (
                 <ChevronRight className="w-4 h-4" />
