@@ -652,6 +652,11 @@ function libro_save_capitulo_meta($post_id) {
         update_post_meta($post_id, '_numero_capitulo', sanitize_text_field($_POST['libro_numero_capitulo']));
     }
     
+    // Guardar subtítulo
+    if (isset($_POST['libro_subtitulo'])) {
+        update_post_meta($post_id, '_subtitulo', sanitize_text_field($_POST['libro_subtitulo']));
+    }
+    
     // Guardar ocultar número (checkbox)
     $ocultar_numero = isset($_POST['libro_ocultar_numero']) ? '1' : '0';
     update_post_meta($post_id, '_ocultar_numero', $ocultar_numero);

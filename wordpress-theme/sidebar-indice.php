@@ -105,6 +105,7 @@ $current_slug = is_singular('capitulo') ? get_post_field('post_name', get_the_ID
                         $sub_slug = get_post_field('post_name', $sub->ID);
                         $sub_is_active = ($sub_slug === $current_slug);
                         $sub_ocultar_numero = get_post_meta($sub->ID, '_ocultar_numero', true) === '1';
+                        $sub_subtitulo = get_post_meta($sub->ID, '_subtitulo', true);
                         
                         // Only show number if explicitly set in meta (matching React behavior)
                         $sub_numero = '';
@@ -120,7 +121,12 @@ $current_slug = is_singular('capitulo') ? get_post_field('post_name', get_the_ID
                                 <?php if ($sub_numero) : ?>
                                     <span class="chapter-number chapter-number--sub"><?php echo esc_html($sub_numero); ?></span>
                                 <?php endif; ?>
-                                <span><?php echo esc_html($sub->post_title); ?></span>
+                                <span class="flex flex-col">
+                                    <span><?php echo esc_html($sub->post_title); ?></span>
+                                    <?php if ($sub_subtitulo) : ?>
+                                        <span class="text-[9px] uppercase tracking-wider text-muted-foreground font-medium leading-tight mt-0.5"><?php echo esc_html($sub_subtitulo); ?></span>
+                                    <?php endif; ?>
+                                </span>
                             </span>
                         </a>
                     </li>
