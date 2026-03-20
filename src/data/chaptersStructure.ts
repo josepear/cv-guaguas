@@ -132,9 +132,9 @@ export const chaptersData: ChapterItemWithHero[] = [
   },
   { 
     id: "capitulo-05", 
-    slug: "capitulo-05", 
+    slug: "capitulo-04", 
     title: "Iconos y estrellas del Guaguas", 
-    number: "05",
+    number: "04",
     hero: {
       backgroundImage: heroMatch,
       backgroundOverlay: "rgba(212, 175, 55, 0.85)",
