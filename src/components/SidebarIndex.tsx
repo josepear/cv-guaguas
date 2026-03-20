@@ -76,7 +76,7 @@ const SidebarIndex = forwardRef<HTMLDivElement, SidebarIndexProps>(({ chapters, 
           
           {hasChildren ? (
             <button
-              onClick={() => toggleGroup(chapter.id)}
+              onClick={() => toggleGroup(chapter.id, hasActiveChild)}
               className={cn(
                 "sidebar-active-indicator flex-1 text-left py-2.5 px-3 rounded-sm transition-all duration-200 font-sans text-sm cursor-pointer",
                 "hover:bg-sidebar-accent hover:text-gold",
