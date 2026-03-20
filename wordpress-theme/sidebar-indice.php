@@ -72,8 +72,20 @@ $current_slug = is_singular('capitulo') ? get_post_field('post_name', get_the_ID
                     <span class="w-6 flex-shrink-0"></span>
                     <?php endif; ?>
                     
+                    <?php if ($has_children) : ?>
+                    <button type="button"
+                       class="sidebar-parent-toggle sidebar-active-indicator flex-1 text-left py-2.5 px-3 rounded-sm transition-all duration-200 font-sans text-sm font-medium hover:bg-sidebar-accent hover:text-gold <?php echo $has_active_child ? 'text-gold/80' : 'text-sidebar-foreground'; ?>"
+                       data-target="subcapitulos-<?php echo $cap->ID; ?>">
+                        <span class="flex items-center gap-2.5">
+                            <?php if ($numero && !$ocultar_numero) : ?>
+                                <span class="chapter-number chapter-number--main"><?php echo esc_html($numero); ?></span>
+                            <?php endif; ?>
+                            <span><?php echo esc_html($cap->post_title); ?></span>
+                        </span>
+                    </button>
+                    <?php else : ?>
                     <a href="<?php echo get_permalink($cap->ID); ?>" 
-                       class="sidebar-active-indicator flex-1 text-left py-2.5 px-3 rounded-sm transition-all duration-200 font-sans text-sm font-medium hover:bg-sidebar-accent hover:text-gold <?php echo $is_active ? 'active text-gold bg-sidebar-accent' : 'text-sidebar-foreground'; ?> <?php echo $has_active_child ? 'text-gold/80' : ''; ?>"
+                       class="sidebar-active-indicator flex-1 text-left py-2.5 px-3 rounded-sm transition-all duration-200 font-sans text-sm font-medium hover:bg-sidebar-accent hover:text-gold <?php echo $is_active ? 'active text-gold bg-sidebar-accent' : 'text-sidebar-foreground'; ?>"
                        data-section="<?php echo esc_attr($cap_slug); ?>">
                         <span class="flex items-center gap-2.5">
                             <?php if ($numero && !$ocultar_numero) : ?>
@@ -82,6 +94,7 @@ $current_slug = is_singular('capitulo') ? get_post_field('post_name', get_the_ID
                             <span class="<?php echo $is_active ? 'text-gold' : ''; ?>"><?php echo esc_html($cap->post_title); ?></span>
                         </span>
                     </a>
+                    <?php endif; ?>
                 </div>
                 
                 <?php if ($has_children) : 
