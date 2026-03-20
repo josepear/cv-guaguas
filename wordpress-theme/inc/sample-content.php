@@ -47,6 +47,11 @@ function libro_import_sample_content() {
         $post_id = wp_insert_post($post_data);
         
         if (!is_wp_error($post_id)) {
+            // Save subtitle
+            if (!empty($cap['subtitulo'])) {
+                update_post_meta($post_id, '_subtitulo', $cap['subtitulo']);
+            }
+            
             // Save chapter number
             if (!empty($cap['numero'])) {
                 update_post_meta($post_id, '_numero_capitulo', $cap['numero']);
