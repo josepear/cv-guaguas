@@ -50,7 +50,7 @@ export const chaptersData: ChapterItemWithHero[] = [
     ]
   },
   { 
-    id: "capitulo-02", 
+    id: "capitulo-01", 
     slug: "capitulo-01", 
     title: "Del patio del colegio a División de Honor", 
     number: "01",
@@ -83,7 +83,7 @@ export const chaptersData: ChapterItemWithHero[] = [
     ]
   },
   { 
-    id: "capitulo-03", 
+    id: "capitulo-02", 
     slug: "capitulo-02", 
     title: "Estatutos Fundacionales", 
     number: "02",
@@ -104,7 +104,7 @@ export const chaptersData: ChapterItemWithHero[] = [
     },
   },
   { 
-    id: "capitulo-04", 
+    id: "capitulo-03", 
     slug: "capitulo-03", 
     title: "Así se forjó una leyenda", 
     number: "03",
@@ -131,7 +131,7 @@ export const chaptersData: ChapterItemWithHero[] = [
     ]
   },
   { 
-    id: "capitulo-05", 
+    id: "capitulo-04", 
     slug: "capitulo-04", 
     title: "Iconos y estrellas del Guaguas", 
     number: "04",
@@ -159,7 +159,7 @@ export const chaptersData: ChapterItemWithHero[] = [
     ]
   },
   { 
-    id: "capitulo-06", 
+    id: "capitulo-05", 
     slug: "capitulo-05", 
     title: "Ignacio Brito y Tributo a los Salesianos", 
     number: "05",
@@ -181,7 +181,7 @@ export const chaptersData: ChapterItemWithHero[] = [
     },
   },
   { 
-    id: "capitulo-07", 
+    id: "capitulo-06", 
     slug: "capitulo-06", 
     title: "Marek", 
     number: "06",
@@ -201,7 +201,7 @@ export const chaptersData: ChapterItemWithHero[] = [
     },
   },
   { 
-    id: "capitulo-08", 
+    id: "capitulo-07", 
     slug: "capitulo-07", 
     title: "Embajadores por Europa", 
     number: "07",
@@ -234,7 +234,7 @@ export const chaptersData: ChapterItemWithHero[] = [
     ]
   },
   { 
-    id: "capitulo-09", 
+    id: "capitulo-08", 
     slug: "capitulo-08", 
     title: "Relevo generacional", 
     number: "08",
@@ -264,7 +264,7 @@ export const chaptersData: ChapterItemWithHero[] = [
     ]
   },
   { 
-    id: "capitulo-10", 
+    id: "capitulo-09", 
     slug: "capitulo-09", 
     title: "Una transición dolorosa", 
     number: "09",
@@ -296,7 +296,7 @@ export const chaptersData: ChapterItemWithHero[] = [
     ]
   },
   { 
-    id: "capitulo-11", 
+    id: "capitulo-10", 
     slug: "capitulo-10", 
     title: "Todos los títulos", 
     number: "10",
@@ -320,7 +320,7 @@ export const chaptersData: ChapterItemWithHero[] = [
     ]
   },
   { 
-    id: "capitulo-12", 
+    id: "capitulo-11", 
     slug: "capitulo-11", 
     title: "Vuelve el gran Guaguas", 
     number: "11",
@@ -347,7 +347,7 @@ export const chaptersData: ChapterItemWithHero[] = [
     ]
   },
   { 
-    id: "capitulo-13", 
+    id: "capitulo-12", 
     slug: "capitulo-12", 
     title: "Del CID al Arenas", 
     number: "12",
@@ -368,7 +368,7 @@ export const chaptersData: ChapterItemWithHero[] = [
     },
   },
   { 
-    id: "capitulo-14", 
+    id: "capitulo-13", 
     slug: "capitulo-13", 
     title: "Los nuevos ídolos", 
     number: "13",
@@ -393,7 +393,7 @@ export const chaptersData: ChapterItemWithHero[] = [
     ]
   },
   { 
-    id: "capitulo-15", 
+    id: "capitulo-14", 
     slug: "capitulo-14", 
     title: "El impacto del escudo", 
     number: "14",
@@ -414,7 +414,7 @@ export const chaptersData: ChapterItemWithHero[] = [
     },
   },
   { 
-    id: "capitulo-16", 
+    id: "capitulo-15", 
     slug: "capitulo-15", 
     title: "La directiva", 
     number: "15",
@@ -435,7 +435,7 @@ export const chaptersData: ChapterItemWithHero[] = [
     },
   },
   { 
-    id: "capitulo-17", 
+    id: "capitulo-16", 
     slug: "capitulo-16", 
     title: "El Guaguas que viene", 
     number: "16",
@@ -456,7 +456,7 @@ export const chaptersData: ChapterItemWithHero[] = [
     },
   },
   { 
-    id: "capitulo-18", 
+    id: "capitulo-17", 
     slug: "capitulo-17", 
     title: "Empleados y técnicos", 
     number: "17",
@@ -477,7 +477,7 @@ export const chaptersData: ChapterItemWithHero[] = [
     },
   },
   { 
-    id: "capitulo-19", 
+    id: "capitulo-18", 
     slug: "capitulo-18", 
     title: "La plantilla del cincuentenario", 
     number: "18",
@@ -499,7 +499,7 @@ export const chaptersData: ChapterItemWithHero[] = [
     },
   },
   { 
-    id: "capitulo-20", 
+    id: "capitulo-19", 
     slug: "capitulo-19", 
     title: "Miguel Ángel Ramírez", 
     number: "19",
@@ -520,7 +520,7 @@ export const chaptersData: ChapterItemWithHero[] = [
     },
   },
   { 
-    id: "capitulo-21", 
+    id: "capitulo-20", 
     slug: "capitulo-20", 
     title: "Comunicación digital", 
     number: "20",
@@ -541,7 +541,7 @@ export const chaptersData: ChapterItemWithHero[] = [
     },
   },
   { 
-    id: "capitulo-22", 
+    id: "capitulo-21", 
     slug: "capitulo-21", 
     title: "Socios y abonados", 
     number: "21",
@@ -562,7 +562,7 @@ export const chaptersData: ChapterItemWithHero[] = [
     },
   },
   { 
-    id: "capitulo-23", 
+    id: "capitulo-22", 
     slug: "capitulo-22", 
     title: "Empresarios de la tierra", 
     number: "22",
