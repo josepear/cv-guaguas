@@ -436,9 +436,9 @@ export const chaptersData: ChapterItemWithHero[] = [
   },
   { 
     id: "capitulo-17", 
-    slug: "capitulo-17", 
+    slug: "capitulo-16", 
     title: "El Guaguas que viene", 
-    number: "17",
+    number: "16",
     hero: {
       backgroundImage: heroCantera,
       backgroundOverlay: "rgba(26, 35, 126, 0.80)",
