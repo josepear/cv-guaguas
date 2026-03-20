@@ -32,6 +32,11 @@ const Chapter = () => {
     return <Navigate to="/" replace />;
   }
 
+  // Parent chapters with children redirect to first child
+  if (chapter.children && chapter.children.length > 0) {
+    return <Navigate to={`/capitulo/${chapter.children[0].slug}`} replace />;
+  }
+
   const content = chapterContent[slug];
   
   const currentIndex = allChapters.findIndex(ch => ch.slug === slug);

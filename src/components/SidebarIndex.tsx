@@ -58,36 +58,61 @@ const SidebarIndex = forwardRef<HTMLDivElement, SidebarIndexProps>(({ chapters, 
             <span className="w-6 flex-shrink-0" />
           )}
           
-          <Link
-            to={`/capitulo/${chapter.slug}`}
-            onClick={onClose}
-            className={cn(
-              "sidebar-active-indicator flex-1 text-left py-2.5 px-3 rounded-sm transition-all duration-200 font-sans text-sm",
-              "hover:bg-sidebar-accent hover:text-gold",
-              depth === 0 ? "font-medium" : "font-normal",
-              isActive && "active text-gold bg-sidebar-accent",
-              hasActiveChild && "text-gold/80"
-            )}
-          >
-            <span className="flex items-center gap-2.5">
-              {chapter.number && !chapter.hideNumber && (
-              <span className={cn(
-                  "flex items-center justify-center font-semibold font-sans rounded-sm transition-all duration-200 hover:scale-110",
-                  depth === 0 
-                    ? "min-w-[1.5rem] h-[1.5rem] text-[11px] bg-gold text-[hsl(220,50%,10%)] hover:shadow-[0_0_8px_hsl(45,100%,50%,0.5)]" 
-                    : "min-w-[1.25rem] h-[1.25rem] text-[10px] bg-white text-[hsl(220,50%,10%)] hover:shadow-[0_0_6px_rgba(255,255,255,0.4)]"
-                )}>
-                  {chapter.number}
-                </span>
+          {hasChildren ? (
+            <button
+              onClick={() => toggleGroup(chapter.id)}
+              className={cn(
+                "sidebar-active-indicator flex-1 text-left py-2.5 px-3 rounded-sm transition-all duration-200 font-sans text-sm cursor-pointer",
+                "hover:bg-sidebar-accent hover:text-gold",
+                depth === 0 ? "font-medium" : "font-normal",
+                hasActiveChild && "text-gold/80"
               )}
-              <span className={cn(
-                depth > 0 && "text-sidebar-foreground/80",
-                isActive && "text-gold"
-              )}>
-                {chapter.title}
+            >
+              <span className="flex items-center gap-2.5">
+                {chapter.number && !chapter.hideNumber && (
+                <span className={cn(
+                    "flex items-center justify-center font-semibold font-sans rounded-sm transition-all duration-200 hover:scale-110",
+                    depth === 0 
+                      ? "min-w-[1.5rem] h-[1.5rem] text-[11px] bg-gold text-[hsl(220,50%,10%)] hover:shadow-[0_0_8px_hsl(45,100%,50%,0.5)]" 
+                      : "min-w-[1.25rem] h-[1.25rem] text-[10px] bg-white text-[hsl(220,50%,10%)] hover:shadow-[0_0_6px_rgba(255,255,255,0.4)]"
+                  )}>
+                    {chapter.number}
+                  </span>
+                )}
+                <span>{chapter.title}</span>
               </span>
-            </span>
-          </Link>
+            </button>
+          ) : (
+            <Link
+              to={`/capitulo/${chapter.slug}`}
+              onClick={onClose}
+              className={cn(
+                "sidebar-active-indicator flex-1 text-left py-2.5 px-3 rounded-sm transition-all duration-200 font-sans text-sm",
+                "hover:bg-sidebar-accent hover:text-gold",
+                depth === 0 ? "font-medium" : "font-normal",
+                isActive && "active text-gold bg-sidebar-accent"
+              )}
+            >
+              <span className="flex items-center gap-2.5">
+                {chapter.number && !chapter.hideNumber && (
+                <span className={cn(
+                    "flex items-center justify-center font-semibold font-sans rounded-sm transition-all duration-200 hover:scale-110",
+                    depth === 0 
+                      ? "min-w-[1.5rem] h-[1.5rem] text-[11px] bg-gold text-[hsl(220,50%,10%)] hover:shadow-[0_0_8px_hsl(45,100%,50%,0.5)]" 
+                      : "min-w-[1.25rem] h-[1.25rem] text-[10px] bg-white text-[hsl(220,50%,10%)] hover:shadow-[0_0_6px_rgba(255,255,255,0.4)]"
+                  )}>
+                    {chapter.number}
+                  </span>
+                )}
+                <span className={cn(
+                  depth > 0 && "text-sidebar-foreground/80",
+                  isActive && "text-gold"
+                )}>
+                  {chapter.title}
+                </span>
+              </span>
+            </Link>
+          )}
         </div>
         
         {hasChildren && (isExpanded || hasActiveChild) && (
