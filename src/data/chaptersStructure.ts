@@ -478,9 +478,9 @@ export const chaptersData: ChapterItemWithHero[] = [
   },
   { 
     id: "capitulo-19", 
-    slug: "capitulo-19", 
+    slug: "capitulo-18", 
     title: "La plantilla del cincuentenario", 
-    number: "19",
+    number: "18",
     hero: {
       backgroundImage: heroCelebracion,
       backgroundOverlay: "rgba(212, 175, 55, 0.82)",
