@@ -500,9 +500,9 @@ export const chaptersData: ChapterItemWithHero[] = [
   },
   { 
     id: "capitulo-20", 
-    slug: "capitulo-20", 
+    slug: "capitulo-19", 
     title: "Miguel Ángel Ramírez", 
-    number: "20",
+    number: "19",
     hero: {
       backgroundImage: heroStadium,
       backgroundOverlay: "rgba(26, 35, 126, 0.85)",
