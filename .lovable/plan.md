@@ -1,28 +1,32 @@
 
 
-## Problem
+## Plan: Update Chapter 0 — Prólogos
 
-The hero section always has a dark overlay (even in light mode), but in light mode the `--gold` CSS variables were darkened to `hsl(40 100% 35%)` for better contrast on light backgrounds. This makes the gold text and buttons appear too dark against the hero's dark overlay.
+The current `capitulo-01` "Prólogos" needs to become chapter **0** with 8 subchapters matching the book's structure.
 
-## Solution
+### Changes needed
 
-Override the gold CSS variables back to their bright values specifically inside the hero section when in light mode. This way:
-- Links/buttons on light backgrounds keep the darker, high-contrast gold
-- The hero always uses the bright, vibrant gold since its background is always dark
+**1. Update `src/data/chaptersStructure.ts`**
 
-### Changes
+- Change `number: "01"` → `number: "0"` (or remove number since the book shows `CAP_0`)
+- Reorder and update the 8 children to match the book exactly:
+  1. Fernando Clavijo — Presidente del Gobierno de Canarias
+  2. Antonio Morales — Presidente del Cabildo de Gran Canaria
+  3. Juan Ruiz — Presidente del CV Guaguas
+  4. Poli Suárez — Consejero de Deportes del Gobierno de Canarias *(new)*
+  5. Aridany Romero — Consejero de Deportes del Cabildo de Gran Canaria *(new)*
+  6. Carolina Darias — Alcaldesa del Ayuntamiento de Las Palmas de Gran Canaria
+  7. Roberto Melián — Presidente de la Federación Canaria de Voleibol
+  8. Jorge Almansa — Capitán del CV Guaguas
 
-**`src/index.css`** -- Add a scoped override:
-```css
-.light #hero {
-  --gold: 45 100% 50%;
-  --gold-light: 45 100% 60%;
-  --gold-dark: 45 100% 40%;
-  --gold-muted: 45 60% 45%;
-}
-```
+**2. Update `src/data/chapterContent.tsx`**
 
-This restores the original bright gold palette only within `#hero` in light mode, without affecting the rest of the page.
+- Add placeholder content entries for the two new subchapter slugs (`prologo-poli-suarez`, `prologo-aridany-romero`)
+- Update any existing slug references if slugs change
 
-**`wordpress-theme/header.php`** -- Add the same CSS rule in the WordPress theme's internal styles for parity.
+**3. No visual/UX changes** — hero, sidebar, and navigation remain identical.
+
+### Notes
+- The numbering shifts: current chapters 02–onwards will need renumbering in subsequent updates. We handle that when we get to those chapters.
+- Content for the prologues will be added when you provide the actual text.
 
