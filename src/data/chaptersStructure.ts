@@ -563,9 +563,9 @@ export const chaptersData: ChapterItemWithHero[] = [
   },
   { 
     id: "capitulo-23", 
-    slug: "capitulo-23", 
+    slug: "capitulo-22", 
     title: "Empresarios de la tierra", 
-    number: "23",
+    number: "22",
     hero: {
       backgroundImage: heroEstatutos,
       backgroundOverlay: "rgba(212, 175, 55, 0.80)",
