@@ -7,6 +7,7 @@ export interface ChapterItem {
   id: string;
   slug: string;
   title: string;
+  subtitle?: string;
   number?: string;
   hideNumber?: boolean;
   children?: ChapterItem[];
