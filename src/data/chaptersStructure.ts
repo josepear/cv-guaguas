@@ -348,9 +348,9 @@ export const chaptersData: ChapterItemWithHero[] = [
   },
   { 
     id: "capitulo-13", 
-    slug: "capitulo-13", 
+    slug: "capitulo-12", 
     title: "Del CID al Arenas", 
-    number: "13",
+    number: "12",
     hero: {
       backgroundImage: heroStadium,
       backgroundOverlay: "rgba(26, 35, 126, 0.82)",
