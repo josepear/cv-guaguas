@@ -106,30 +106,40 @@
      */
     function initAccordions() {
         const accordionToggles = document.querySelectorAll('.sidebar-accordion-toggle');
+        const parentToggles = document.querySelectorAll('.sidebar-parent-toggle');
+        
+        function toggleAccordion(capitulo) {
+            const content = capitulo?.querySelector('.subcapitulos-list');
+            const chevronBtn = capitulo?.querySelector('.sidebar-accordion-toggle');
+            const icon = chevronBtn?.querySelector('.chevron-icon');
+            const isExpanded = chevronBtn?.getAttribute('aria-expanded') === 'true';
+            
+            if (!content) return;
+            
+            if (isExpanded) {
+                content.classList.add('hidden');
+                icon?.classList.remove('rotate-90');
+                chevronBtn?.setAttribute('aria-expanded', 'false');
+            } else {
+                content.classList.remove('hidden');
+                icon?.classList.add('rotate-90');
+                chevronBtn?.setAttribute('aria-expanded', 'true');
+            }
+        }
         
         accordionToggles.forEach(toggle => {
             toggle.addEventListener('click', function(e) {
                 e.preventDefault();
                 e.stopPropagation();
-                
-                const capitulo = this.closest('.capitulo-item');
-                const content = capitulo?.querySelector('.subcapitulos-list');
-                const icon = this.querySelector('.chevron-icon');
-                const isExpanded = this.getAttribute('aria-expanded') === 'true';
-                
-                if (!content) return;
-                
-                if (isExpanded) {
-                    // Close
-                    content.classList.add('hidden');
-                    icon?.classList.remove('rotate-90');
-                    this.setAttribute('aria-expanded', 'false');
-                } else {
-                    // Open
-                    content.classList.remove('hidden');
-                    icon?.classList.add('rotate-90');
-                    this.setAttribute('aria-expanded', 'true');
-                }
+                toggleAccordion(this.closest('.capitulo-item'));
+            });
+        });
+        
+        parentToggles.forEach(toggle => {
+            toggle.addEventListener('click', function(e) {
+                e.preventDefault();
+                e.stopPropagation();
+                toggleAccordion(this.closest('.capitulo-item'));
             });
         });
     }
