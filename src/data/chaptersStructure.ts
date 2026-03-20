@@ -394,9 +394,9 @@ export const chaptersData: ChapterItemWithHero[] = [
   },
   { 
     id: "capitulo-15", 
-    slug: "capitulo-15", 
+    slug: "capitulo-14", 
     title: "El impacto del escudo", 
-    number: "15",
+    number: "14",
     hero: {
       backgroundImage: heroStadium,
       backgroundOverlay: "rgba(212, 175, 55, 0.88)",
