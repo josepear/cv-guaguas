@@ -73,12 +73,12 @@ export const chaptersData: ChapterItemWithHero[] = [
     },
     children: [
       { id: "cap02-felipe-nuez", slug: "cap02-felipe-nuez", title: "Felipe Nuez" },
-      { id: "cap02-isidro-quintana", slug: "cap02-isidro-quintana", title: "Isidro Quintana" },
-      { id: "cap02-jose-millan", slug: "cap02-jose-millan", title: "José Millán" },
       { id: "cap02-jose-miguel-santana", slug: "cap02-jose-miguel-santana", title: "José Miguel Santana" },
       { id: "cap02-florencio-tejera", slug: "cap02-florencio-tejera", title: "Florencio Tejera" },
       { id: "cap02-tony-vazquez", slug: "cap02-tony-vazquez", title: "Tony Vázquez" },
+      { id: "cap02-isidro-quintana", slug: "cap02-isidro-quintana", title: "Isidro Quintana" },
       { id: "cap02-pericles", slug: "cap02-pericles", title: "Pericles" },
+      { id: "cap02-jose-millan", slug: "cap02-jose-millan", title: "José Millán" },
       { id: "cap02-miriam-quiroga", slug: "cap02-miriam-quiroga", title: "Miriam Quiroga" },
     ]
   },
