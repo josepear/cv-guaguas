@@ -1,7 +1,7 @@
 import { Link } from "react-router-dom";
 import { FileText, BookOpen, ChevronDown, ChevronRight } from "lucide-react";
 import { cn } from "@/lib/utils";
-import { useState, forwardRef } from "react";
+import { useState, useEffect, forwardRef } from "react";
 
 export interface ChapterItem {
   id: string;
