@@ -37,6 +37,7 @@ function libro_capitulo_meta_box_html($post) {
     $numero = get_post_meta($post->ID, '_numero_capitulo', true);
     $ocultar_numero = get_post_meta($post->ID, '_ocultar_numero', true);
     $mostrar_marcador = get_post_meta($post->ID, '_mostrar_marcador', true);
+    $subtitulo = get_post_meta($post->ID, '_subtitulo', true);
     $cita = get_post_meta($post->ID, '_cita_destacada', true);
     $autor_cita = get_post_meta($post->ID, '_autor_cita', true);
     
