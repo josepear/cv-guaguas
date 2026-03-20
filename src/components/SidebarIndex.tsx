@@ -54,7 +54,7 @@ const SidebarIndex = forwardRef<HTMLDivElement, SidebarIndexProps>(({ chapters, 
     const hasChildren = chapter.children && chapter.children.length > 0;
     const hasActiveChild = chapter.children?.some(c => c.slug === activeChapterSlug) ?? false;
     const isExpanded = hasChildren ? isGroupOpen(chapter.id, hasActiveChild) : false;
-    const hasActiveChild = chapter.children?.some(c => c.slug === activeChapterSlug);
+    
 
     return (
       <li key={chapter.id} className="relative">
