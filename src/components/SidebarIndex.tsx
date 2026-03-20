@@ -131,7 +131,7 @@ const SidebarIndex = forwardRef<HTMLDivElement, SidebarIndexProps>(({ chapters, 
           )}
         </div>
         
-        {hasChildren && (isExpanded || hasActiveChild) && (
+        {hasChildren && isExpanded && (
           <ul className="ml-4 mt-1 space-y-0.5 border-l border-sidebar-border pl-2">
             {chapter.children?.map(child => renderChapter(child as ChapterItem, depth + 1))}
           </ul>
