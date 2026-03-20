@@ -22,6 +22,11 @@ interface SidebarIndexProps {
 const SidebarIndex = forwardRef<HTMLDivElement, SidebarIndexProps>(({ chapters, activeChapterSlug, isOpen, onClose }, ref) => {
   const [expandedGroups, setExpandedGroups] = useState<Set<string>>(new Set());
 
+  // Reset manually expanded groups when active chapter changes — only keep the parent of the active child open
+  useEffect(() => {
+    setExpandedGroups(new Set());
+  }, [activeChapterSlug]);
+
   const toggleGroup = (id: string) => {
     setExpandedGroups(prev => {
       const next = new Set(prev);
