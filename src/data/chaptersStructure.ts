@@ -160,9 +160,9 @@ export const chaptersData: ChapterItemWithHero[] = [
   },
   { 
     id: "capitulo-06", 
-    slug: "capitulo-06", 
+    slug: "capitulo-05", 
     title: "Ignacio Brito y Tributo a los Salesianos", 
-    number: "06",
+    number: "05",
     hero: {
       backgroundImage: heroPatio,
       backgroundOverlay: "rgba(26, 35, 126, 0.85)",
