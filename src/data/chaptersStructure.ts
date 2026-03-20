@@ -369,9 +369,9 @@ export const chaptersData: ChapterItemWithHero[] = [
   },
   { 
     id: "capitulo-14", 
-    slug: "capitulo-14", 
+    slug: "capitulo-13", 
     title: "Los nuevos ídolos", 
-    number: "14",
+    number: "13",
     hero: {
       backgroundImage: heroMatch,
       backgroundOverlay: "rgba(212, 175, 55, 0.82)",
