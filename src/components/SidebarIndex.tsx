@@ -1,7 +1,7 @@
 import { Link } from "react-router-dom";
 import { FileText, BookOpen, ChevronDown, ChevronRight } from "lucide-react";
 import { cn } from "@/lib/utils";
-import { useState, forwardRef } from "react";
+import { useState, useEffect, forwardRef } from "react";
 
 export interface ChapterItem {
   id: string;
@@ -20,35 +20,51 @@ interface SidebarIndexProps {
 }
 
 const SidebarIndex = forwardRef<HTMLDivElement, SidebarIndexProps>(({ chapters, activeChapterSlug, isOpen, onClose }, ref) => {
-  const [expandedGroups, setExpandedGroups] = useState<Set<string>>(new Set());
+  // Map: true = forced open, false = forced closed, absent = auto (follows hasActiveChild)
+  const [overrides, setOverrides] = useState<Map<string, boolean>>(new Map());
 
-  const toggleGroup = (id: string) => {
-    setExpandedGroups(prev => {
-      const next = new Set(prev);
-      if (next.has(id)) {
-        next.delete(id);
+  // Reset overrides when active chapter changes so only the active parent auto-opens
+  useEffect(() => {
+    setOverrides(new Map());
+  }, [activeChapterSlug]);
+
+  const toggleGroup = (id: string, hasActiveChild: boolean) => {
+    setOverrides(prev => {
+      const next = new Map(prev);
+      const current = next.get(id);
+      if (current !== undefined) {
+        // Has an override — toggle it
+        next.set(id, !current);
       } else {
-        next.add(id);
+        // No override — default is open if hasActiveChild, closed otherwise
+        next.set(id, !hasActiveChild);
       }
       return next;
     });
   };
 
+  const isGroupOpen = (id: string, hasActiveChild: boolean) => {
+    const override = overrides.get(id);
+    if (override !== undefined) return override;
+    return hasActiveChild;
+  };
+
   const renderChapter = (chapter: ChapterItem, depth = 0) => {
     const isActive = activeChapterSlug === chapter.slug;
     const hasChildren = chapter.children && chapter.children.length > 0;
-    const isExpanded = expandedGroups.has(chapter.id);
-    const hasActiveChild = chapter.children?.some(c => c.slug === activeChapterSlug);
+    const hasActiveChild = chapter.children?.some(c => c.slug === activeChapterSlug) ?? false;
+    const isExpanded = hasChildren ? isGroupOpen(chapter.id, hasActiveChild) : false;
+    
 
     return (
       <li key={chapter.id} className="relative">
         <div className="flex items-center">
           {hasChildren ? (
             <button
-              onClick={() => toggleGroup(chapter.id)}
+              onClick={() => toggleGroup(chapter.id, hasActiveChild)}
               className="w-6 flex-shrink-0 flex items-center justify-center text-muted-foreground hover:text-gold transition-colors"
             >
-              {isExpanded || hasActiveChild ? (
+              {isExpanded ? (
                 <ChevronDown className="w-4 h-4" />
               ) : (
                 <ChevronRight className="w-4 h-4" />
@@ -60,7 +76,7 @@ const SidebarIndex = forwardRef<HTMLDivElement, SidebarIndexProps>(({ chapters, 
           
           {hasChildren ? (
             <button
-              onClick={() => toggleGroup(chapter.id)}
+              onClick={() => toggleGroup(chapter.id, hasActiveChild)}
               className={cn(
                 "sidebar-active-indicator flex-1 text-left py-2.5 px-3 rounded-sm transition-all duration-200 font-sans text-sm cursor-pointer",
                 "hover:bg-sidebar-accent hover:text-gold",
@@ -115,7 +131,7 @@ const SidebarIndex = forwardRef<HTMLDivElement, SidebarIndexProps>(({ chapters, 
           )}
         </div>
         
-        {hasChildren && (isExpanded || hasActiveChild) && (
+        {hasChildren && isExpanded && (
           <ul className="ml-4 mt-1 space-y-0.5 border-l border-sidebar-border pl-2">
             {chapter.children?.map(child => renderChapter(child as ChapterItem, depth + 1))}
           </ul>
