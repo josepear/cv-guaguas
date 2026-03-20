@@ -20,29 +20,40 @@ interface SidebarIndexProps {
 }
 
 const SidebarIndex = forwardRef<HTMLDivElement, SidebarIndexProps>(({ chapters, activeChapterSlug, isOpen, onClose }, ref) => {
-  const [expandedGroups, setExpandedGroups] = useState<Set<string>>(new Set());
+  // Map: true = forced open, false = forced closed, absent = auto (follows hasActiveChild)
+  const [overrides, setOverrides] = useState<Map<string, boolean>>(new Map());
 
-  // Reset manually expanded groups when active chapter changes — only keep the parent of the active child open
+  // Reset overrides when active chapter changes so only the active parent auto-opens
   useEffect(() => {
-    setExpandedGroups(new Set());
+    setOverrides(new Map());
   }, [activeChapterSlug]);
 
-  const toggleGroup = (id: string) => {
-    setExpandedGroups(prev => {
-      const next = new Set(prev);
-      if (next.has(id)) {
-        next.delete(id);
+  const toggleGroup = (id: string, hasActiveChild: boolean) => {
+    setOverrides(prev => {
+      const next = new Map(prev);
+      const current = next.get(id);
+      if (current !== undefined) {
+        // Has an override — toggle it
+        next.set(id, !current);
       } else {
-        next.add(id);
+        // No override — default is open if hasActiveChild, closed otherwise
+        next.set(id, !hasActiveChild);
       }
       return next;
     });
   };
 
+  const isGroupOpen = (id: string, hasActiveChild: boolean) => {
+    const override = overrides.get(id);
+    if (override !== undefined) return override;
+    return hasActiveChild;
+  };
+
   const renderChapter = (chapter: ChapterItem, depth = 0) => {
     const isActive = activeChapterSlug === chapter.slug;
     const hasChildren = chapter.children && chapter.children.length > 0;
-    const isExpanded = expandedGroups.has(chapter.id);
+    const hasActiveChild = chapter.children?.some(c => c.slug === activeChapterSlug) ?? false;
+    const isExpanded = hasChildren ? isGroupOpen(chapter.id, hasActiveChild) : false;
     const hasActiveChild = chapter.children?.some(c => c.slug === activeChapterSlug);
 
     return (
