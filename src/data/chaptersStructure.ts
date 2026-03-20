@@ -105,9 +105,9 @@ export const chaptersData: ChapterItemWithHero[] = [
   },
   { 
     id: "capitulo-04", 
-    slug: "capitulo-04", 
+    slug: "capitulo-03", 
     title: "Así se forjó una leyenda", 
-    number: "04",
+    number: "03",
     hero: {
       backgroundImage: heroMatch,
       backgroundOverlay: "rgba(26, 35, 126, 0.80)",
