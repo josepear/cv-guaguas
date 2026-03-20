@@ -7,6 +7,7 @@ export interface ChapterItem {
   id: string;
   slug: string;
   title: string;
+  subtitle?: string;
   number?: string;
   hideNumber?: boolean;
   children?: ChapterItem[];
@@ -120,11 +121,18 @@ const SidebarIndex = forwardRef<HTMLDivElement, SidebarIndexProps>(({ chapters, 
                     {chapter.number}
                   </span>
                 )}
-                <span className={cn(
-                  depth > 0 && "text-sidebar-foreground/80",
-                  isActive && "text-gold"
-                )}>
-                  {chapter.title}
+                <span className="flex flex-col">
+                  <span className={cn(
+                    depth > 0 && "text-sidebar-foreground/80",
+                    isActive && "text-gold"
+                  )}>
+                    {chapter.title}
+                  </span>
+                  {chapter.subtitle && (
+                    <span className="text-[9px] uppercase tracking-wider text-muted-foreground font-medium leading-tight mt-0.5">
+                      {chapter.subtitle}
+                    </span>
+                  )}
                 </span>
               </span>
             </Link>
