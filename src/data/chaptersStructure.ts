@@ -39,14 +39,14 @@ export const chaptersData: ChapterItemWithHero[] = [
       ],
     },
     children: [
-      { id: "prologo-01", slug: "prologo-fernando-clavijo", title: "Fernando Clavijo" },
-      { id: "prologo-02", slug: "prologo-antonio-morales", title: "Antonio Morales" },
-      { id: "prologo-03", slug: "prologo-juan-ruiz", title: "Juan Ruiz" },
-      { id: "prologo-04", slug: "prologo-poli-suarez", title: "Poli Suárez" },
-      { id: "prologo-05", slug: "prologo-aridany-romero", title: "Aridany Romero" },
-      { id: "prologo-06", slug: "prologo-carolina-darias", title: "Carolina Darias" },
-      { id: "prologo-07", slug: "prologo-roberto-melian", title: "Roberto Melián" },
-      { id: "prologo-08", slug: "prologo-jorge-almansa", title: "Jorge Almansa" },
+      { id: "prologo-01", slug: "prologo-fernando-clavijo", title: "Fernando Clavijo", subtitle: "Presidente del Gobierno de Canarias" },
+      { id: "prologo-02", slug: "prologo-antonio-morales", title: "Antonio Morales", subtitle: "Presidente del Cabildo de Gran Canaria" },
+      { id: "prologo-03", slug: "prologo-juan-ruiz", title: "Juan Ruiz", subtitle: "Presidente del CV Guaguas" },
+      { id: "prologo-04", slug: "prologo-poli-suarez", title: "Poli Suárez", subtitle: "Consejero de Deportes del Gobierno de Canarias" },
+      { id: "prologo-05", slug: "prologo-aridany-romero", title: "Aridany Romero", subtitle: "Consejero de Deportes del Cabildo de Gran Canaria" },
+      { id: "prologo-06", slug: "prologo-carolina-darias", title: "Carolina Darias", subtitle: "Alcaldesa de Las Palmas de Gran Canaria" },
+      { id: "prologo-07", slug: "prologo-roberto-melian", title: "Roberto Melián", subtitle: "Presidente de la Federación Canaria de Voleibol" },
+      { id: "prologo-08", slug: "prologo-jorge-almansa", title: "Jorge Almansa", subtitle: "Capitán del CV Guaguas" },
     ]
   },
   { 
