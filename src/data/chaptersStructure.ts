@@ -415,9 +415,9 @@ export const chaptersData: ChapterItemWithHero[] = [
   },
   { 
     id: "capitulo-16", 
-    slug: "capitulo-16", 
+    slug: "capitulo-15", 
     title: "La directiva", 
-    number: "16",
+    number: "15",
     hero: {
       backgroundImage: heroEstatutos,
       backgroundOverlay: "rgba(26, 35, 126, 0.85)",
