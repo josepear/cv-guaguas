@@ -1,20 +1,21 @@
 
 
-## Plan: Parent chapters toggle dropdown instead of navigating
-
-### Problem
-Currently, clicking a parent chapter title (e.g., "Prólogos") navigates to its page. Parent chapters with subchapters should not be pages — clicking them should only expand/collapse the subchapter list.
+## Plan: Add subtitle/role to sidebar menu items
 
 ### Changes
 
 **1. `src/components/SidebarIndex.tsx`**
-- For chapters with `children`: replace the `<Link>` with a `<button>` that calls `toggleGroup(chapter.id)` (same as the chevron)
-- Keep `<Link>` only for chapters without children (leaf chapters)
+- Add optional `subtitle` field to `ChapterItem` interface
+- Render subtitle below the title in a second line with smaller, uppercase text styling
 
-**2. `src/pages/Chapter.tsx`**
-- When navigating to a parent chapter slug (one that has children), redirect to its first child instead
-- This handles direct URL access and ensures no empty page is shown
-
-**3. `wordpress-theme/sidebar-indice.php`**
-- Mirror the same behavior: parent chapter links become toggle buttons instead of `<a>` tags
+**2. `src/data/chaptersStructure.ts`**
+- Add `subtitle` to each prologue child:
+  - Fernando Clavijo → "Presidente del Gobierno de Canarias"
+  - Antonio Morales → "Presidente del Cabildo de Gran Canaria"
+  - Juan Ruiz → "Presidente del CV Guaguas"
+  - Poli Suárez → "Consejero de Deportes del Gobierno de Canarias"
+  - Aridany Romero → "Consejero de Deportes del Cabildo de Gran Canaria"
+  - Carolina Darias → "Alcaldesa del Ayuntamiento de Las Palmas de Gran Canaria"
+  - Roberto Melián → "Presidente de la Federación Canaria de Voleibol"
+  - Jorge Almansa → "Capitán del CV Guaguas"
 
