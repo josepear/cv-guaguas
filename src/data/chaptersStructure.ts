@@ -265,9 +265,9 @@ export const chaptersData: ChapterItemWithHero[] = [
   },
   { 
     id: "capitulo-10", 
-    slug: "capitulo-10", 
+    slug: "capitulo-09", 
     title: "Una transición dolorosa", 
-    number: "10",
+    number: "09",
     hero: {
       backgroundImage: heroTransicion,
       backgroundOverlay: "rgba(0, 0, 0, 0.40)",
