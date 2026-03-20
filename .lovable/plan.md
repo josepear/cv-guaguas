@@ -1,32 +1,20 @@
 
 
-## Plan: Update Chapter 0 — Prólogos
+## Plan: Parent chapters toggle dropdown instead of navigating
 
-The current `capitulo-01` "Prólogos" needs to become chapter **0** with 8 subchapters matching the book's structure.
+### Problem
+Currently, clicking a parent chapter title (e.g., "Prólogos") navigates to its page. Parent chapters with subchapters should not be pages — clicking them should only expand/collapse the subchapter list.
 
-### Changes needed
+### Changes
 
-**1. Update `src/data/chaptersStructure.ts`**
+**1. `src/components/SidebarIndex.tsx`**
+- For chapters with `children`: replace the `<Link>` with a `<button>` that calls `toggleGroup(chapter.id)` (same as the chevron)
+- Keep `<Link>` only for chapters without children (leaf chapters)
 
-- Change `number: "01"` → `number: "0"` (or remove number since the book shows `CAP_0`)
-- Reorder and update the 8 children to match the book exactly:
-  1. Fernando Clavijo — Presidente del Gobierno de Canarias
-  2. Antonio Morales — Presidente del Cabildo de Gran Canaria
-  3. Juan Ruiz — Presidente del CV Guaguas
-  4. Poli Suárez — Consejero de Deportes del Gobierno de Canarias *(new)*
-  5. Aridany Romero — Consejero de Deportes del Cabildo de Gran Canaria *(new)*
-  6. Carolina Darias — Alcaldesa del Ayuntamiento de Las Palmas de Gran Canaria
-  7. Roberto Melián — Presidente de la Federación Canaria de Voleibol
-  8. Jorge Almansa — Capitán del CV Guaguas
+**2. `src/pages/Chapter.tsx`**
+- When navigating to a parent chapter slug (one that has children), redirect to its first child instead
+- This handles direct URL access and ensures no empty page is shown
 
-**2. Update `src/data/chapterContent.tsx`**
-
-- Add placeholder content entries for the two new subchapter slugs (`prologo-poli-suarez`, `prologo-aridany-romero`)
-- Update any existing slug references if slugs change
-
-**3. No visual/UX changes** — hero, sidebar, and navigation remain identical.
-
-### Notes
-- The numbering shifts: current chapters 02–onwards will need renumbering in subsequent updates. We handle that when we get to those chapters.
-- Content for the prologues will be added when you provide the actual text.
+**3. `wordpress-theme/sidebar-indice.php`**
+- Mirror the same behavior: parent chapter links become toggle buttons instead of `<a>` tags
 
