@@ -26,7 +26,7 @@ const PrologueLayout = ({ name, role, imageSrc, imageAlt, objectPosition = "cent
       {/* Centered photo with rounded corners */}
       <div className="flex justify-center mb-8">
         {imageSrc ? (
-          <div className="w-32 h-32 md:w-40 md:h-40 rounded-3xl overflow-hidden shadow-lg border border-border/50">
+          <div className="w-32 h-32 md:w-40 md:h-40 rounded-[2rem] overflow-hidden shadow-lg border border-border/50">
             <img
               src={imageSrc}
               alt={imageAlt || name}
