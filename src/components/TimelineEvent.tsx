@@ -4,7 +4,7 @@ import { useScrollReveal } from "@/hooks/useScrollReveal";
 interface TimelineEventProps { year: string; children: React.ReactNode; }
 
 const TimelineEvent = ({ year, children }: TimelineEventProps) => {
-  const reveal = useScrollReveal({ direction: "left", distance: 20, duration: 0.4 });
+  const reveal = useScrollReveal({ direction: "left", distance: 20, duration: 0.4, amount: 0.05 });
   return (
     <motion.div ref={reveal.ref} variants={reveal.variants} initial={reveal.initial} animate={reveal.animate} className="timeline-event">
       <span className="timeline-year">{year}</span>
@@ -16,7 +16,7 @@ const TimelineEvent = ({ year, children }: TimelineEventProps) => {
 interface TimelineProps { children: React.ReactNode; title?: string; }
 
 const Timeline = ({ children, title }: TimelineProps) => {
-  const reveal = useScrollReveal({ direction: "up", distance: 30, duration: 0.5 });
+  const reveal = useScrollReveal({ direction: "up", distance: 30, duration: 0.5, amount: 0.05 });
   return (
     <motion.div ref={reveal.ref} variants={reveal.variants} initial={reveal.initial} animate={reveal.animate} className="timeline-container my-12">
       {title && <h3 className="section-header-highlighted mb-8">{title}</h3>}
