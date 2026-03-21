@@ -199,6 +199,15 @@ export const chapterContent: Record<string, React.ReactNode> = {
   ),
 
   // ═══════════════════════════════════════════════
+  // Los orígenes - Chapter 01 intro
+  // ═══════════════════════════════════════════════
+  "cap01-los-origenes": (
+    <ChapterSection>
+      <p>Contenido pendiente.</p>
+    </ChapterSection>
+  ),
+
+  // ═══════════════════════════════════════════════
   // Player profiles for Chapter 2
   // ═══════════════════════════════════════════════
   "cap02-felipe-nuez": (
