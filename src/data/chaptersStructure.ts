@@ -12,6 +12,7 @@ import heroCantera from "@/assets/hero-cantera.jpg";
 import heroTransicion from "@/assets/hero-transicion.jpg";
 import heroCelebracion from "@/assets/hero-celebracion.jpg";
 import imgJoseMillanHero from "@/assets/1cap_pati_photo_24.jpg";
+import imgPericlesHero from "@/assets/cap1_pericles_hero.jpg";
 
 // Prologue photos
 import imgClavijo from "@/assets/prologues/fernando-clavijo.jpg";
