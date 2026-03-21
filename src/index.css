@@ -340,8 +340,8 @@
 
   /* Section header - light mode: same gold as dark mode */
   .light .section-header-highlighted {
-    color: hsl(220 50% 10%);
-    background-color: #FFFFFF;
+    color: #FFFFFF;
+    background-color: hsl(220 50% 20%);
   }
 
   .light .article-number {
@@ -359,7 +359,7 @@
     letter-spacing: 0.05em;
     line-height: 1.8;
     color: hsl(220 50% 10%);
-    background-color: hsl(var(--gold));
+    background-color: #FFFFFF;
     padding: 0.25rem 0.5rem;
     margin-top: 2.5rem;
     margin-bottom: 1.25rem;
