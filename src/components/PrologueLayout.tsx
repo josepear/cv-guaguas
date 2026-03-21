@@ -8,6 +8,7 @@ interface PrologueLayoutProps {
   imageSrc?: string;
   imageAlt?: string;
   objectPosition?: string;
+  imageScale?: number;
   children: ReactNode;
 }
 
