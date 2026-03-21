@@ -13,6 +13,7 @@ import imgEquipoChampions from "@/assets/content/equipo-champions.jpg";
 import imgPartidoGuaguas from "@/assets/content/partido-guaguas.jpg";
 import imgCopaDelRey from "@/assets/content/copa-del-rey.jpg";
 import imgVictoriaGuaguas from "@/assets/content/victoria-guaguas.png";
+import imgJoseMillan from "@/assets/1cap_pati_photo_24.jpg";
 import imgJugadorAccion from "@/assets/content/jugador-accion.png";
 import imgJorgeAlmansa from "@/assets/content/jorge-almansa.png";
 import imgOsmanyJuantorena from "@/assets/content/osmany-juantorena.png";
