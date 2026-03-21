@@ -35,6 +35,7 @@ export interface ChapterHeroProps {
 const ChapterHero = ({
   backgroundImage,
   backgroundOverlay,
+  backgroundPosition = "center top",
   icon = "star",
   customIconSrc,
   customIconColor,
