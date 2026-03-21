@@ -75,7 +75,7 @@ const HeroSection = forwardRef<HTMLElement, HeroSectionProps>(({
         
         {/* CTA to start reading */}
         <Link
-          to="/capitulo/capitulo-01"
+          to="/capitulo/prologo-fernando-clavijo"
           className="inline-flex items-center gap-2 text-gold hover:text-gold-light transition-colors duration-300 opacity-0 animate-fade-in-up [animation-delay:800ms] group"
         >
           <span className="text-sm uppercase tracking-widest font-sans">
