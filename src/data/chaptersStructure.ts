@@ -11,11 +11,12 @@ import heroCantera from "@/assets/hero-cantera.jpg";
 import heroTransicion from "@/assets/hero-transicion.jpg";
 import heroCelebracion from "@/assets/hero-celebracion.jpg";
 
-export interface ChapterItemWithHero extends ChapterItem {
+export interface ChapterItemWithHero extends Omit<ChapterItem, 'children'> {
   hero?: Omit<ChapterHeroProps, 'titleLines'> & {
     titleLines: TitleLine[];
     customIconColor?: string;
   };
+  children?: ChapterItemWithHero[];
 }
 
 export const chaptersData: ChapterItemWithHero[] = [
@@ -85,23 +86,98 @@ export const chaptersData: ChapterItemWithHero[] = [
   { 
     id: "capitulo-02", 
     slug: "capitulo-02", 
-    title: "Estatutos Fundacionales", 
+    title: "Los Estatutos Fundacionales", 
     number: "02",
-    hero: {
-      backgroundImage: heroEstatutos,
-      backgroundOverlay: "rgba(62, 39, 15, 0.75)",
-      customIconSrc: starGold,
-      iconWidth: 50,
-      iconHeight: 50,
-      alignment: "left",
-      verticalPosition: "center",
-      height: "420px",
-      titleFontWeight: "bold",
-      titleLines: [
-        { text: "ESTATUTOS", color: "#D4AF37", highlightColor: "transparent", fontWeight: "black" },
-        { text: "FUNDACIONALES", color: "#FFFFFF", highlightColor: "transparent" },
-      ],
-    },
+    children: [
+      {
+        id: "capitulo-02-01",
+        slug: "capitulo-02-01",
+        title: "Constitución, fines y domicilio",
+        number: "I",
+        subtitle: "Capítulo I",
+        hero: {
+          backgroundImage: heroEstatutos,
+          backgroundOverlay: "rgba(62, 39, 15, 0.75)",
+          customIconSrc: starGold,
+          iconWidth: 50,
+          iconHeight: 50,
+          alignment: "left",
+          verticalPosition: "center",
+          height: "420px",
+          titleFontWeight: "bold",
+          titleLines: [
+            { text: "ESTATUTOS", color: "#D4AF37", highlightColor: "transparent", fontWeight: "black" },
+            { text: "FUNDACIONALES", color: "#FFFFFF", highlightColor: "transparent" },
+          ],
+        },
+      },
+      {
+        id: "capitulo-02-02",
+        slug: "capitulo-02-02",
+        title: "De los socios",
+        number: "II",
+        subtitle: "Capítulo II",
+        hero: {
+          backgroundImage: heroEstatutos,
+          backgroundOverlay: "rgba(62, 39, 15, 0.75)",
+          customIconSrc: starGold,
+          iconWidth: 50,
+          iconHeight: 50,
+          alignment: "left",
+          verticalPosition: "center",
+          height: "420px",
+          titleFontWeight: "bold",
+          titleLines: [
+            { text: "ESTATUTOS", color: "#D4AF37", highlightColor: "transparent", fontWeight: "black" },
+            { text: "FUNDACIONALES", color: "#FFFFFF", highlightColor: "transparent" },
+          ],
+        },
+      },
+      {
+        id: "capitulo-02-03",
+        slug: "capitulo-02-03",
+        title: "Del Gobierno de la Sociedad",
+        number: "III",
+        subtitle: "Capítulo III",
+        hero: {
+          backgroundImage: heroEstatutos,
+          backgroundOverlay: "rgba(62, 39, 15, 0.75)",
+          customIconSrc: starGold,
+          iconWidth: 50,
+          iconHeight: 50,
+          alignment: "left",
+          verticalPosition: "center",
+          height: "420px",
+          titleFontWeight: "bold",
+          titleLines: [
+            { text: "ESTATUTOS", color: "#D4AF37", highlightColor: "transparent", fontWeight: "black" },
+            { text: "FUNDACIONALES", color: "#FFFFFF", highlightColor: "transparent" },
+          ],
+        },
+      },
+      {
+        id: "capitulo-02-04",
+        slug: "capitulo-02-04",
+        title: "De la administración de la Entidad",
+        number: "IV",
+        subtitle: "Capítulo IV",
+        hero: {
+          backgroundImage: heroEstatutos,
+          backgroundOverlay: "rgba(62, 39, 15, 0.75)",
+          customIconSrc: starGold,
+          iconWidth: 50,
+          iconHeight: 50,
+          alignment: "left",
+          verticalPosition: "center",
+          height: "420px",
+          titleFontWeight: "bold",
+          titleLines: [
+            { text: "ESTATUTOS", color: "#D4AF37", highlightColor: "transparent", fontWeight: "black" },
+            { text: "FUNDACIONALES", color: "#FFFFFF", highlightColor: "transparent" },
+          ],
+        },
+      },
+    ],
   },
   { 
     id: "capitulo-03", 
