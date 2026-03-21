@@ -2,6 +2,7 @@ import { ChapterItem } from "@/components/SidebarIndex";
 import { ChapterHeroProps, TitleLine } from "@/components/ChapterHero";
 import heroStadium from "@/assets/hero-stadium.jpg";
 import starGold from "@/assets/star-gold.png";
+import estrellaIcon from "@/assets/estrella-icon.svg";
 import heroPatio from "@/assets/hero-patio-colegio.jpg";
 import heroEstatutos from "@/assets/hero-estatutos.jpg";
 import heroMatch from "@/assets/hero-volleyball-match.jpg";
