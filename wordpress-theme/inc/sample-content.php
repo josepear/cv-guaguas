@@ -704,8 +704,14 @@ c) Examinar las liquidaciones y balances de la entidad.[/articulo]
 ',
     ),
 
-    // Cap 04 child: El proyecto visionario de Juan Ruiz
-    array('title' => 'El proyecto visionario de Juan Ruiz', 'numero' => '', 'order' => 31, 'show_marker' => false, 'parent_ref' => 'cap03',
+    // Cap 03 children — idéntico a React chaptersStructure.ts
+    array('title' => 'Llegar a la élite para quedarse', 'numero' => '', 'order' => 31, 'show_marker' => false, 'parent_ref' => 'cap03',
+        'content' => '<p>Contenido del subcapítulo próximamente.</p>'),
+    array('title' => 'Fichajes de impacto y hegemonía', 'numero' => '', 'order' => 32, 'show_marker' => false, 'parent_ref' => 'cap03',
+        'content' => '<p>Contenido del subcapítulo próximamente.</p>'),
+    array('title' => 'La salida de Juan Ruiz, principio del fin', 'numero' => '', 'order' => 33, 'show_marker' => false, 'parent_ref' => 'cap03',
+        'content' => '<p>Contenido del subcapítulo próximamente.</p>'),
+    array('title' => 'El proyecto visionario de Juan Ruiz', 'numero' => '', 'order' => 34, 'show_marker' => false, 'parent_ref' => 'cap03',
         'content' => '
 [capitular]Nacido en La Aldea de San Nicolás en 1953, emigrante con su familia a Tenerife durante gran parte su adolescencia (1960-1969), en la que hizo sus pinitos en la lucha canaria o el fútbol ("con 16 años llegué a jugar en Tercera División en las filas del Adeje"), Juan Ruiz estaba llamado, sin saberlo, a escribir una historia sin parangón en el deporte canario y al frente del Calvo Sotelo.[/capitular]
 
