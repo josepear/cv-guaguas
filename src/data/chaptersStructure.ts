@@ -25,6 +25,7 @@ export interface ChapterItemWithHero extends Omit<ChapterItem, 'children'> {
   isPrologue?: boolean;
   prologueImage?: string;
   prologueImagePosition?: string;
+  prologueImageScale?: number;
   children?: ChapterItemWithHero[];
 }
 

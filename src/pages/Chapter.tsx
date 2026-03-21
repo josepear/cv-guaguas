@@ -102,6 +102,7 @@ const Chapter = () => {
                 role={chapter.subtitle || ""}
                 imageSrc={chapter.prologueImage}
                 objectPosition={chapter.prologueImagePosition}
+                imageScale={chapter.prologueImageScale}
               >
                 {content || <p>Texto del prólogo pendiente de redacción.</p>}
               </PrologueLayout>
