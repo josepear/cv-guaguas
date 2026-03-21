@@ -1,22 +1,29 @@
 
 
-## Plan: Crear página propia para el Capítulo 01 "Los orígenes"
+## Plan: Añadir contenido completo a "Los orígenes" (cap01-los-origenes)
 
 ### Contexto
-Actualmente, el Capítulo 01 tiene hijos (subcapítulos) y la lógica en `Chapter.tsx` redirige automáticamente al primer hijo. Se necesita que el capítulo padre tenga su propia página con contenido, accesible como "Los orígenes".
+El subcapítulo `cap01-los-origenes` tiene un placeholder. El contenido proporcionado es el texto completo del Capítulo 01, que actualmente existe en versión resumida bajo la key `"capitulo-01"`. Dado que `capitulo-01` ahora redirige a `cap01-los-origenes`, el contenido completo debe ir en la nueva entrada.
 
 ### Cambios
 
-1. **`src/data/chaptersStructure.ts`** — Añadir un nuevo subcapítulo al inicio de los `children` de `capitulo-01`:
-   - `id: "cap01-los-origenes"`, `slug: "cap01-los-origenes"`, `title: "Los orígenes"`
-   - Será el primer hijo, de modo que la redirección automática lleve a esta página
+**`src/data/chapterContent.tsx`** — Reemplazar el placeholder de `"cap01-los-origenes"` con el contenido completo proporcionado:
 
-2. **`src/data/chapterContent.tsx`** — Añadir entrada placeholder para `"cap01-los-origenes"` (contenido pendiente de recibir del usuario)
+- **6 secciones** con `<SectionHeader>`:
+  - Las horas extraescolares con Francisco Rodríguez
+  - Silvestre Cabrera y el salto cualitativo
+  - La selección cadete con Felipe Nuez como germen
+  - Estatutos fundacionales y despegue
+  - El ascenso a Segunda División de 1979
+  - El acceso a la élite y su conflicto burocrático
 
-3. **`src/pages/Chapter.tsx`** — No requiere cambios; la lógica existente de redirección al primer hijo funcionará automáticamente
+- **Primera sección** usa `<DropCap>` para el primer párrafo (patrón existente)
+- **Citas de prensa** con `<NewspaperQuote>` para las declaraciones de Silvestre Cabrera y los artículos de La Provincia
+- **Cronología final** con `<Timeline>` y `<TimelineEvent>` (18 eventos, del 1967 al 1985)
+- **Título "La cronología"** como `<SectionHeader>` antes del timeline
 
-### Resultado
-- Al navegar al Capítulo 01, se redirigirá a "Los orígenes"
-- En el sidebar aparecerá "Los orígenes" como primer subcapítulo
-- El contenido quedará como placeholder hasta que se proporcione el texto
+- Opcionalmente, simplificar o eliminar el contenido resumido de `"capitulo-01"` ya que esa key nunca se renderiza (el padre redirige al primer hijo).
+
+### Componentes reutilizados
+`SectionHeader`, `DropCap`, `NewspaperQuote`, `Timeline`, `TimelineEvent` — todos ya importados en el archivo.
 
