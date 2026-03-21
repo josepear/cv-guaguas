@@ -20,6 +20,7 @@ import imgSuarez from "@/assets/prologues/poli-suarez.jpg";
 import imgRomero from "@/assets/prologues/aridany-romero.jpg";
 import imgDarias from "@/assets/prologues/carolina-darias.jpg";
 import imgMelian from "@/assets/prologues/roberto-melian.jpg";
+import imgAlmansa from "@/assets/prologues/jorge-almansa.jpg";
 
 export interface ChapterItemWithHero extends Omit<ChapterItem, 'children'> {
   hero?: Omit<ChapterHeroProps, 'titleLines'> & {
@@ -61,7 +62,7 @@ export const chaptersData: ChapterItemWithHero[] = [
       { id: "prologo-05", slug: "prologo-aridany-romero", title: "Aridany Romero", subtitle: "Consejero de Deportes del Cabildo de Gran Canaria", isPrologue: true, prologueImage: imgRomero, prologueImagePosition: "center 20%" },
       { id: "prologo-06", slug: "prologo-carolina-darias", title: "Carolina Darias", subtitle: "Alcaldesa de Las Palmas de Gran Canaria", isPrologue: true, prologueImage: imgDarias, prologueImagePosition: "center 20%" },
       { id: "prologo-07", slug: "prologo-roberto-melian", title: "Roberto Melián", subtitle: "Presidente de la Federación Canaria de Voleibol", isPrologue: true, prologueImage: imgMelian, prologueImagePosition: "-15px -15%", prologueImageScale: 2 },
-      { id: "prologo-08", slug: "prologo-jorge-almansa", title: "Jorge Almansa", subtitle: "Capitán del CV Guaguas", isPrologue: true },
+      { id: "prologo-08", slug: "prologo-jorge-almansa", title: "Jorge Almansa", subtitle: "Capitán del CV Guaguas", isPrologue: true, prologueImage: imgAlmansa, prologueImagePosition: "center 10%" },
     ]
   },
   { 
