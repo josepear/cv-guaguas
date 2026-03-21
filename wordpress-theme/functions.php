@@ -812,6 +812,12 @@ function libro_shortcode_seccion_header($atts, $content = null) {
 add_shortcode('seccion_header', 'libro_shortcode_seccion_header');
 
 /**
+ * Shortcode: Encabezado de sección (alias) - usado en Estatutos
+ * Uso: [encabezado_seccion]Capítulo I — Constitución[/encabezado_seccion]
+ */
+add_shortcode('encabezado_seccion', 'libro_shortcode_seccion_header');
+
+/**
  * Shortcode: Player Profile - idéntico a React PlayerProfile.tsx
  * Uso: [perfil_jugador nombre="Nombre" subtitulo="Subtítulo" imagen="url" imagen_alt="alt" imagen_caption="caption" posicion_imagen="left"]
  *      Contenido del perfil...
