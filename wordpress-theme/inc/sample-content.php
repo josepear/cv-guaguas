@@ -336,10 +336,11 @@ function libro_get_sample_chapters() {
             'icon_width' => 40, 'icon_height' => 40,
             'alignment' => 'center', 'vertical' => 'center',
             'height' => '500px',
-            'border_color' => '#D4AF37',
+            'border_color' => 'hsl(45 100% 50%)',
+            'icon_color' => 'hsl(45 100% 50%)',
             'title_lines' => array(
-                libro_hero_line('ESTATUTOS', '#1a1a1a', '#D4AF37'),
-                libro_hero_line('FUNDACIONALES', '#1a1a1a', '#D4AF37'),
+                libro_hero_line('ESTATUTOS', '#1a1a1a', 'hsl(45, 100%, 50%)'),
+                libro_hero_line('FUNDACIONALES', '#1a1a1a', 'hsl(45, 100%, 50%)'),
             ),
         ),
         'content' => '

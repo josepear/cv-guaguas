@@ -2,6 +2,7 @@ import { ChapterItem } from "@/components/SidebarIndex";
 import { ChapterHeroProps, TitleLine } from "@/components/ChapterHero";
 import heroStadium from "@/assets/hero-stadium.jpg";
 import starGold from "@/assets/star-gold.png";
+import estrellaIcon from "@/assets/estrella-icon.svg";
 import heroPatio from "@/assets/hero-patio-colegio.jpg";
 import heroEstatutos from "@/assets/hero-estatutos.jpg";
 import heroMatch from "@/assets/hero-volleyball-match.jpg";
@@ -91,18 +92,18 @@ export const chaptersData: ChapterItemWithHero[] = [
     hero: {
       backgroundImage: heroEstatutos,
       backgroundOverlay: "rgba(0, 0, 0, 0.15)",
-      customIconSrc: starGold,
-      customIconColor: "#D4AF37",
+      customIconSrc: estrellaIcon,
+      customIconColor: "hsl(45 100% 50%)",
       iconWidth: 40,
       iconHeight: 40,
       alignment: "center",
       verticalPosition: "center",
       height: "500px",
-      borderColor: "#D4AF37",
+      borderColor: "hsl(45 100% 50%)",
       titleFontWeight: "black",
       titleLines: [
-        { text: "ESTATUTOS", color: "#1a1a1a", highlightColor: "#D4AF37", fontWeight: "black" },
-        { text: "FUNDACIONALES", color: "#1a1a1a", highlightColor: "#D4AF37", fontWeight: "black" },
+        { text: "ESTATUTOS", color: "#1a1a1a", highlightColor: "hsl(45 100% 50%)", fontWeight: "black" },
+        { text: "FUNDACIONALES", color: "#1a1a1a", highlightColor: "hsl(45 100% 50%)", fontWeight: "black" },
       ],
     },
   },
