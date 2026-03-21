@@ -21,6 +21,8 @@ export interface ChapterItemWithHero extends Omit<ChapterItem, 'children'> {
     customIconColor?: string;
   };
   isPrologue?: boolean;
+  prologueImage?: string;
+  prologueImagePosition?: string;
   children?: ChapterItemWithHero[];
 }
 
