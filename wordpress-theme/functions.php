@@ -916,3 +916,48 @@ function libro_shortcode_articulo($atts, $content = null) {
     return $html;
 }
 add_shortcode('articulo', 'libro_shortcode_articulo');
+
+/**
+ * Shortcode: Prologue Layout - Maquetación de prólogos al estilo del libro
+ * Uso: [prologo nombre="Fernando Clavijo" cargo="Presidente del Gobierno de Canarias" foto="url" posicion="center 20%"]Texto del prólogo[/prologo]
+ */
+function libro_shortcode_prologo($atts, $content = null) {
+    $atts = shortcode_atts(array(
+        'nombre' => '',
+        'cargo'  => '',
+        'foto'   => '',
+        'posicion' => 'center 20%',
+    ), $atts, 'prologo');
+
+    ob_start();
+    ?>
+    <div class="prologue-layout" data-reveal="up">
+        <div class="flex justify-center mb-8">
+            <?php if ($atts['foto']) : ?>
+            <div class="prologue-photo">
+                <img src="<?php echo esc_url($atts['foto']); ?>" alt="<?php echo esc_attr($atts['nombre']); ?>" style="object-position: <?php echo esc_attr($atts['posicion']); ?>;" loading="lazy" />
+            </div>
+            <?php else : ?>
+            <div class="prologue-photo-fallback">
+                <span><?php
+                    $words = explode(' ', $atts['nombre']);
+                    echo esc_html(implode('', array_map(function($w) { return mb_substr($w, 0, 1); }, $words)));
+                ?></span>
+            </div>
+            <?php endif; ?>
+        </div>
+
+        <div class="text-center mb-2">
+            <h3 class="prologue-name"><?php echo esc_html($atts['nombre']); ?></h3>
+        </div>
+
+        <p class="prologue-role"><?php echo esc_html($atts['cargo']); ?></p>
+
+        <div class="reading-content" style="color: hsl(var(--foreground) / 0.85);">
+            <?php echo wp_kses_post(wpautop($content)); ?>
+        </div>
+    </div>
+    <?php
+    return ob_get_clean();
+}
+add_shortcode('prologo', 'libro_shortcode_prologo');

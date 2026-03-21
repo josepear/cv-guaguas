@@ -8,6 +8,7 @@ import ReadingProgressBar from "@/components/ReadingProgressBar";
 import ChapterHero from "@/components/ChapterHero";
 import InstitutionalFooter from "@/components/InstitutionalFooter";
 import ChapterBreadcrumb from "@/components/ChapterBreadcrumb";
+import PrologueLayout from "@/components/PrologueLayout";
 import { chaptersData, getAllChapters, getChapterBySlug } from "@/data/chaptersStructure";
 import { chapterContent } from "@/data/chapterContent";
 import { sponsorLogos } from "@/data/sponsorLogos";
@@ -92,10 +93,19 @@ const Chapter = () => {
             id={chapter.id} 
             number={chapter.number} 
             title={chapter.title}
-            showChapterMarker={!chapter.hero && !!chapter.number}
-            showTitle={!chapter.hero}
+            showChapterMarker={!chapter.hero && !!chapter.number && !chapter.isPrologue}
+            showTitle={!chapter.hero && !chapter.isPrologue}
           >
-            {content || <p>Contenido del capítulo próximamente.</p>}
+            {chapter.isPrologue ? (
+              <PrologueLayout
+                name={chapter.title}
+                role={chapter.subtitle || ""}
+              >
+                {content || <p>Texto del prólogo pendiente de redacción.</p>}
+              </PrologueLayout>
+            ) : (
+              content || <p>Contenido del capítulo próximamente.</p>
+            )}
           </ChapterSection>
 
           <ChapterNavigation 

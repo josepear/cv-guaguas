@@ -47,52 +47,28 @@ export const chapterContent: Record<string, React.ReactNode> = {
   ),
 
   "prologo-fernando-clavijo": (
-    <>
-      <p><strong>Fernando Clavijo</strong>, presidente del Gobierno de Canarias.</p>
-      <p>Texto del prólogo pendiente de redacción.</p>
-    </>
+    <p>Texto del prólogo pendiente de redacción.</p>
   ),
   "prologo-antonio-morales": (
-    <>
-      <p><strong>Antonio Morales</strong>, presidente del Cabildo de Gran Canaria.</p>
-      <p>Texto del prólogo pendiente de redacción.</p>
-    </>
+    <p>Texto del prólogo pendiente de redacción.</p>
   ),
   "prologo-juan-ruiz": (
-    <>
-      <p><strong>Juan Ruiz</strong>, presidente del CV Guaguas.</p>
-      <p>Texto del prólogo pendiente de redacción.</p>
-    </>
+    <p>Texto del prólogo pendiente de redacción.</p>
   ),
   "prologo-poli-suarez": (
-    <>
-      <p><strong>Poli Suárez</strong>, consejero de Deportes del Gobierno de Canarias.</p>
-      <p>Texto del prólogo pendiente de redacción.</p>
-    </>
+    <p>Texto del prólogo pendiente de redacción.</p>
   ),
   "prologo-aridany-romero": (
-    <>
-      <p><strong>Aridany Romero</strong>, consejero de Deportes del Cabildo de Gran Canaria.</p>
-      <p>Texto del prólogo pendiente de redacción.</p>
-    </>
+    <p>Texto del prólogo pendiente de redacción.</p>
   ),
   "prologo-carolina-darias": (
-    <>
-      <p><strong>Carolina Darias</strong>, alcaldesa de Las Palmas de Gran Canaria.</p>
-      <p>Texto del prólogo pendiente de redacción.</p>
-    </>
+    <p>Texto del prólogo pendiente de redacción.</p>
   ),
   "prologo-roberto-melian": (
-    <>
-      <p><strong>Roberto Melián</strong>, presidente de la Federación Canaria de Voleibol.</p>
-      <p>Texto del prólogo pendiente de redacción.</p>
-    </>
+    <p>Texto del prólogo pendiente de redacción.</p>
   ),
   "prologo-jorge-almansa": (
-    <>
-      <p><strong>Jorge Almansa</strong>, capitán del CV Guaguas.</p>
-      <p>Texto del prólogo pendiente de redacción.</p>
-    </>
+    <p>Texto del prólogo pendiente de redacción.</p>
   ),
 
   // ═══════════════════════════════════════════════
