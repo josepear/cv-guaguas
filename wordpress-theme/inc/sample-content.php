@@ -1015,3 +1015,34 @@ function libro_add_reimport_link($views) {
     return $views;
 }
 add_filter('views_edit-capitulo', 'libro_add_reimport_link');
+
+/**
+ * Asegurar que el capítulo "Prólogos" tenga _numero_capitulo = '0'
+ * Repara importaciones anteriores donde este meta podría faltar
+ */
+function libro_fix_prologos_numero() {
+    $prologos = get_posts(array(
+        'post_type'      => 'capitulo',
+        'posts_per_page' => 1,
+        'post_parent'    => 0,
+        'orderby'        => 'menu_order',
+        'order'          => 'ASC',
+        'meta_query'     => array(
+            'relation' => 'OR',
+            array(
+                'key'     => '_numero_capitulo',
+                'compare' => 'NOT EXISTS',
+            ),
+            array(
+                'key'     => '_numero_capitulo',
+                'value'   => '',
+            ),
+        ),
+        'title'          => 'Prólogos',
+    ));
+    
+    if (!empty($prologos)) {
+        update_post_meta($prologos[0]->ID, '_numero_capitulo', '0');
+    }
+}
+add_action('after_switch_theme', 'libro_fix_prologos_numero');
