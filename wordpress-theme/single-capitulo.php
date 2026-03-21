@@ -238,7 +238,11 @@ if ($hero_icon === 'custom' && $hero_custom_icon) {
         
         <!-- Chapter Section - igual que ChapterSection.tsx -->
         <?php
-        // Detect prologue: has prologo_imagen AND subtitulo
+        // Prologue layout detection (read meta early for header logic)
+        $prologo_imagen = get_post_meta(get_the_ID(), '_prologo_imagen', true);
+        $prologo_posicion = get_post_meta(get_the_ID(), '_prologo_posicion', true) ?: 'center 20%';
+        $prologo_escala = get_post_meta(get_the_ID(), '_prologo_escala', true);
+        $subtitulo_prologo = get_post_meta(get_the_ID(), '_subtitulo', true);
         $is_prologue = !empty($prologo_imagen) && !empty($subtitulo_prologo);
         ?>
         <section class="scroll-mt-24 py-16 md:py-24 border-b border-border/30 last:border-b-0">
