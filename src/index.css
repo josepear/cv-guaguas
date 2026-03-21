@@ -341,7 +341,7 @@
   /* Section header - light mode: same gold as dark mode */
   .light .section-header-highlighted {
     color: hsl(220 50% 10%);
-    background-color: hsl(45 100% 50%);
+    background-color: #FFFFFF;
   }
 
   .light .article-number {
