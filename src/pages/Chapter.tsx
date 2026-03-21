@@ -8,6 +8,7 @@ import ReadingProgressBar from "@/components/ReadingProgressBar";
 import ChapterHero from "@/components/ChapterHero";
 import InstitutionalFooter from "@/components/InstitutionalFooter";
 import ChapterBreadcrumb from "@/components/ChapterBreadcrumb";
+import PrologueLayout from "@/components/PrologueLayout";
 import { chaptersData, getAllChapters, getChapterBySlug } from "@/data/chaptersStructure";
 import { chapterContent } from "@/data/chapterContent";
 import { sponsorLogos } from "@/data/sponsorLogos";
