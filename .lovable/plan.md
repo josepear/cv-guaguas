@@ -1,28 +1,33 @@
 
 
-# Añadir `backgroundPosition` configurable al Hero
+# Fix: PDF/EPUB buttons invisible in WordPress light mode sidebar
 
-## Cambios
+## Problem
+In light mode, the `.btn-download-outline` buttons in the sidebar use `border-color: var(--lm-border)` which is `hsl(220 15% 85%)` -- nearly identical to the sidebar background `hsl(40 25% 95%)`. The buttons become invisible.
 
-### 1. `src/components/ChapterHero.tsx`
-- Añadir prop `backgroundPosition?: string` (default: `"center top"`).
-- En el `<motion.div>` del background (línea 227), reemplazar la clase `bg-center` y añadir `backgroundPosition` al style inline.
+In React, the light mode uses `border-muted-foreground/50` which is `hsl(220 15% 45% / 0.5)` -- much darker and visible.
 
-### 2. `src/data/chaptersStructure.ts`
-- Añadir `backgroundPosition` como campo opcional en la interfaz del hero.
-- Pasar el valor en las entradas que lo necesiten (por defecto `"center top"`).
-- Actualizar `Chapter.tsx` para pasar la prop.
+## Fix
 
-### 3. `src/pages/Chapter.tsx`
-- Pasar `backgroundPosition` del hero config al componente `ChapterHero`.
+### 1. `wordpress-theme/header.php` (line ~164)
+Update the `.light .btn-download-outline` rule to use `--lm-muted-fg` with opacity instead of `--lm-border`:
 
-### 4. `wordpress-theme/single-capitulo.php`
-- Leer un nuevo meta field `_hero_background_position` (default: `center top`).
-- Aplicarlo como `background-position` inline en el div del hero.
+```css
+.light .btn-download-outline { 
+    color: var(--lm-fg); 
+    border-color: hsl(220 15% 45% / 0.5);  /* was: var(--lm-border) */
+}
+```
 
-### 5. `wordpress-theme/inc/meta-boxes.php`
-- Añadir campo de texto `_hero_background_position` al meta-box del capítulo con placeholder "center top".
+### 2. `wordpress-theme/assets/css/main.css` (line ~581-584)
+Update the same rule in main.css for consistency:
 
-### 6. `wordpress-theme/functions.php`
-- Actualizar el shortcode `[chapter_hero]` para soportar atributo `bg_position`.
+```css
+.light .btn-download-outline {
+    border-color: hsl(220 15% 45% / 0.5);  /* matches React muted-foreground/50 */
+    color: hsl(220 50% 12%);
+}
+```
+
+Both changes align with the React implementation where `.light .btn-download-outline` uses `@apply border-muted-foreground/50 text-foreground`.
 
