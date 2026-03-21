@@ -106,8 +106,8 @@ export const chaptersData: ChapterItemWithHero[] = [
           height: "500px",
           titleFontWeight: "black",
           titleLines: [
-            { text: "JOSÉ", color: "#1a1a1a", highlightColor: "hsl(45 100% 50%)", fontWeight: "black" },
-            { text: "MILLÁN", color: "#1a1a1a", highlightColor: "hsl(45 100% 50%)", fontWeight: "black" },
+            { text: "JOSÉ", color: "hsl(220 50% 12%)", highlightColor: "hsl(45 100% 50%)", fontWeight: "black" },
+            { text: "MILLÁN", color: "hsl(220 50% 12%)", highlightColor: "hsl(45 100% 50%)", fontWeight: "black" },
           ],
         },
       },
@@ -132,8 +132,8 @@ export const chaptersData: ChapterItemWithHero[] = [
       borderColor: "hsl(45 100% 50%)",
       titleFontWeight: "black",
       titleLines: [
-        { text: "ESTATUTOS", color: "#1a1a1a", highlightColor: "hsl(45 100% 50%)", fontWeight: "black" },
-        { text: "FUNDACIONALES", color: "#1a1a1a", highlightColor: "hsl(45 100% 50%)", fontWeight: "black" },
+        { text: "ESTATUTOS", color: "hsl(220 50% 12%)", highlightColor: "hsl(45 100% 50%)", fontWeight: "black" },
+        { text: "FUNDACIONALES", color: "hsl(220 50% 12%)", highlightColor: "hsl(45 100% 50%)", fontWeight: "black" },
       ],
     },
   },
