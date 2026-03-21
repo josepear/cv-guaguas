@@ -94,7 +94,9 @@
     }
     </script>
     
-    <!-- Custom styles for components not covered by Tailwind -->
+    <?php wp_head(); ?>
+    
+    <!-- Custom styles AFTER wp_head() to override main.css -->
     <style>
         /* === LIGHT MODE OVERRIDES === */
         .light {
@@ -164,7 +166,7 @@
         .light .btn-download-outline { color: var(--lm-fg); border-color: hsl(220 15% 45% / 0.5); }
         .light .btn-download-outline:hover { border-color: var(--lm-gold); color: var(--lm-gold); }
 
-        /* Light mode hover overrides - match React Tailwind behavior */
+        /* Light mode hover overrides */
         .light .hover\:text-gold:hover { color: var(--lm-gold) !important; }
         .light .hover\:text-gold-light:hover { color: hsl(45 100% 50%) !important; }
         .light .hover\:bg-gold-10:hover { background-color: hsl(45 100% 42% / 0.1) !important; }
@@ -174,7 +176,7 @@
         .light .text-gold\/80 { color: hsl(45 100% 42% / 0.8) !important; }
         .light .bg-gold\/10 { background-color: hsl(45 100% 42% / 0.1) !important; }
 
-        /* Hero in light mode: restore bright gold (dark overlay needs vibrant colors) */
+        /* Hero in light mode */
         .light #hero { --gold: 45 100% 50%; --gold-light: 45 100% 60%; --gold-dark: 45 100% 40%; --gold-muted: 45 60% 45%; }
         .light #hero .text-gold, .light #hero .chapter-marker, .light #hero .drop-cap { color: hsl(45 100% 50%) !important; }
         .light #hero .bg-gold { background-color: hsl(45 100% 50%) !important; }
@@ -188,178 +190,47 @@
         aside, aside *, .bg-sidebar, .border-sidebar-border {
             transition: background-color 0.05s ease, color 0.05s ease, border-color 0.05s ease;
         }
-
-        body.theme-switching aside,
-        body.theme-switching aside *,
-        body.theme-switching aside *::before,
-        body.theme-switching aside *::after {
-            transition: none !important;
-            animation: none !important;
+        body.theme-switching aside, body.theme-switching aside *, body.theme-switching aside *::before, body.theme-switching aside *::after {
+            transition: none !important; animation: none !important;
         }
 
         /* === DARK MODE (default) STYLES === */
-        /* Hero Overlay - identical to React */
-        .dark .hero-overlay,
-        .hero-overlay {
-            background: linear-gradient(
-                135deg,
-                hsl(220 15% 5% / 0.85) 0%,
-                hsl(42 40% 20% / 0.7) 50%,
-                hsl(220 15% 5% / 0.9) 100%
-            );
+        .dark .hero-overlay, .hero-overlay {
+            background: linear-gradient(135deg, hsl(220 15% 5% / 0.85) 0%, hsl(42 40% 20% / 0.7) 50%, hsl(220 15% 5% / 0.9) 100%);
         }
-        
-        /* Text gradient - identical to React */
         .text-gold-gradient {
-            background: linear-gradient(
-                135deg,
-                hsl(45 100% 60%) 0%,
-                hsl(45 100% 50%) 50%,
-                hsl(45 100% 40%) 100%
-            );
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            background-clip: text;
+            background: linear-gradient(135deg, hsl(45 100% 60%) 0%, hsl(45 100% 50%) 50%, hsl(45 100% 40%) 100%);
+            -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text;
         }
-        
-        /* Chapter marker */
-        .chapter-marker {
-            font-family: 'Inter', sans-serif;
-            font-size: 0.75rem;
-            font-weight: 600;
-            letter-spacing: 0.2em;
-            text-transform: uppercase;
-            color: hsl(45 100% 50%);
-        }
-        
-        /* Sidebar active indicator */
-        .sidebar-active-indicator {
-            position: relative;
-        }
-        .sidebar-active-indicator::before {
-            content: '';
-            position: absolute;
-            left: 0;
-            top: 50%;
-            transform: translateY(-50%);
-            width: 3px;
-            height: 0;
-            background: hsl(45 100% 50%);
-            transition: height 0.3s ease;
-            border-radius: 0 2px 2px 0;
-        }
-        .sidebar-active-indicator.active::before {
-            height: 60%;
-        }
-        
-        /* Download button styles */
-        .btn-download {
-            display: inline-flex;
-            align-items: center;
-            gap: 0.5rem;
-            padding: 0.625rem 1.25rem;
-            border-radius: 0.25rem;
-            border: 1px solid;
-            font-family: 'Inter', sans-serif;
-            font-size: 0.875rem;
-            font-weight: 500;
-            letter-spacing: 0.05em;
-            text-transform: uppercase;
-            text-decoration: none;
-            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-        }
-        .btn-download-primary {
-            background-color: hsl(45 100% 50%);
-            color: hsl(220 50% 10%);
-            border-color: hsl(45 100% 50%);
-        }
-        .btn-download-primary:hover {
-            background-color: transparent;
-            color: hsl(45 100% 50%);
-            box-shadow: 0 0 30px hsl(45 100% 50% / 0.2);
-        }
-        .btn-download-outline {
-            background-color: transparent;
-            color: hsl(0 0% 98%);
-            border-color: hsl(220 30% 22%);
-        }
-        .btn-download-outline:hover {
-            border-color: hsl(45 100% 50%);
-            color: hsl(45 100% 50%);
-        }
-        
-        /* Header blur effect */
-        .header-blur {
-            background-color: hsl(220 55% 8% / 0.95);
-            backdrop-filter: blur(8px);
-            -webkit-backdrop-filter: blur(8px);
-        }
-        
-        /* Scrollbar */
+        .chapter-marker { font-family: 'Inter', sans-serif; font-size: 0.75rem; font-weight: 600; letter-spacing: 0.2em; text-transform: uppercase; color: hsl(45 100% 50%); }
+        .sidebar-active-indicator { position: relative; }
+        .sidebar-active-indicator::before { content: ''; position: absolute; left: 0; top: 50%; transform: translateY(-50%); width: 3px; height: 0; background: hsl(45 100% 50%); transition: height 0.3s ease; border-radius: 0 2px 2px 0; }
+        .sidebar-active-indicator.active::before { height: 60%; }
+        .btn-download { display: inline-flex; align-items: center; gap: 0.5rem; padding: 0.625rem 1.25rem; border-radius: 0.25rem; border: 1px solid; font-family: 'Inter', sans-serif; font-size: 0.875rem; font-weight: 500; letter-spacing: 0.05em; text-transform: uppercase; text-decoration: none; transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1); }
+        .btn-download-primary { background-color: hsl(45 100% 50%); color: hsl(220 50% 10%); border-color: hsl(45 100% 50%); }
+        .btn-download-primary:hover { background-color: transparent; color: hsl(45 100% 50%); box-shadow: 0 0 30px hsl(45 100% 50% / 0.2); }
+        .btn-download-outline { background-color: transparent; color: hsl(0 0% 98%); border-color: hsl(220 30% 22%); }
+        .btn-download-outline:hover { border-color: hsl(45 100% 50%); color: hsl(45 100% 50%); }
+        .header-blur { background-color: hsl(220 55% 8% / 0.95); backdrop-filter: blur(8px); -webkit-backdrop-filter: blur(8px); }
         ::-webkit-scrollbar { width: 8px; height: 8px; }
         ::-webkit-scrollbar-track { background: hsl(220 50% 10%); }
         ::-webkit-scrollbar-thumb { background: hsl(220 30% 22%); border-radius: 4px; }
         ::-webkit-scrollbar-thumb:hover { background: hsl(45 60% 45%); }
-        
-        /* Selection */
-        ::selection {
-            background: hsl(45 100% 50% / 0.3);
-            color: hsl(0 0% 98%);
-        }
-        
-        /* Animation delays */
+        ::selection { background: hsl(45 100% 50% / 0.3); color: hsl(0 0% 98%); }
         .\[animation-delay\:100ms\] { animation-delay: 100ms; }
         .\[animation-delay\:200ms\] { animation-delay: 200ms; }
         .\[animation-delay\:400ms\] { animation-delay: 400ms; }
         .\[animation-delay\:600ms\] { animation-delay: 600ms; }
         .\[animation-delay\:800ms\] { animation-delay: 800ms; }
-        
-        /* Editorial Quote - identical to React */
-        .editorial-quote {
-            position: relative;
-            padding-left: 1.5rem;
-            border-left: 3px solid hsl(45 100% 50%);
-            font-style: italic;
-        }
-        .editorial-quote::before {
-            content: '"';
-            position: absolute;
-            top: -0.5rem;
-            left: 0.5rem;
-            font-size: 3rem;
-            font-family: Georgia, serif;
-            color: hsl(45 100% 50% / 0.3);
-            line-height: 1;
-        }
-        
-        /* Content Image hover effect */
-        .content-image img {
-            transition: transform 0.5s cubic-bezier(0.4, 0, 0.2, 1);
-        }
-        .content-image:hover img {
-            transform: scale(1.02);
-        }
-        
-        /* Reading content typography */
-        .reading-content p {
-            font-size: 1.125rem;
-            line-height: 1.8;
-            margin-bottom: 1.5rem;
-        }
-        .reading-content p:last-child {
-            margin-bottom: 0;
-        }
-        
-        /* Card background for Tailwind */
-        .bg-card\/30 {
-            background-color: hsl(220 45% 20% / 0.3);
-        }
-        .bg-card\/50 {
-            background-color: hsl(220 45% 20% / 0.5);
-        }
+        .editorial-quote { position: relative; padding-left: 1.5rem; border-left: 3px solid hsl(45 100% 50%); font-style: italic; }
+        .editorial-quote::before { content: '"'; position: absolute; top: -0.5rem; left: 0.5rem; font-size: 3rem; font-family: Georgia, serif; color: hsl(45 100% 50% / 0.3); line-height: 1; }
+        .content-image img { transition: transform 0.5s cubic-bezier(0.4, 0, 0.2, 1); }
+        .content-image:hover img { transform: scale(1.02); }
+        .reading-content p { font-size: 1.125rem; line-height: 1.8; margin-bottom: 1.5rem; }
+        .reading-content p:last-child { margin-bottom: 0; }
+        .bg-card\/30 { background-color: hsl(220 45% 20% / 0.3); }
+        .bg-card\/50 { background-color: hsl(220 45% 20% / 0.5); }
     </style>
-    
-    <?php wp_head(); ?>
 </head>
 <body <?php body_class('dark bg-background text-foreground antialiased'); ?>>
 <?php wp_body_open(); ?>
