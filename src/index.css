@@ -338,8 +338,20 @@
     color: hsl(var(--gold));
   }
 
-  /* Section header - light mode: same gold as dark mode */
+  /* Section header - light mode */
   .light .section-header-highlighted {
+    color: #FFFFFF;
+    background-color: hsl(220 50% 20%);
+  }
+
+  /* Prologue name highlight - dark mode: gold bg, dark text */
+  .prologue-name-highlight {
+    color: hsl(220 50% 10%);
+    background-color: hsl(var(--gold));
+  }
+
+  /* Prologue name highlight - light mode: navy bg, white text */
+  .light .prologue-name-highlight {
     color: #FFFFFF;
     background-color: hsl(220 50% 20%);
   }

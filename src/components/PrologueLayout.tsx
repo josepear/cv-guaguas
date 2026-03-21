@@ -22,10 +22,10 @@ const PrologueLayout = ({ name, role, imageSrc, imageAlt, objectPosition = "cent
       animate={reveal.animate}
       className="prologue-layout"
     >
-      {/* Centered circular photo */}
+      {/* Centered photo with rounded corners */}
       <div className="flex justify-center mb-8">
         {imageSrc ? (
-          <div className="w-40 h-40 md:w-48 md:h-48 rounded-full overflow-hidden border-4 border-primary shadow-lg">
+          <div className="w-32 h-32 md:w-40 md:h-40 rounded-2xl overflow-hidden shadow-lg">
             <img
               src={imageSrc}
               alt={imageAlt || name}
@@ -35,7 +35,7 @@ const PrologueLayout = ({ name, role, imageSrc, imageAlt, objectPosition = "cent
             />
           </div>
         ) : (
-          <div className="w-40 h-40 md:w-48 md:h-48 rounded-full bg-muted flex items-center justify-center border-4 border-primary">
+          <div className="w-32 h-32 md:w-40 md:h-40 rounded-2xl bg-muted flex items-center justify-center">
             <span className="font-serif text-4xl font-bold text-muted-foreground">
               {name.split(" ").map(w => w[0]).join("")}
             </span>
@@ -43,9 +43,9 @@ const PrologueLayout = ({ name, role, imageSrc, imageAlt, objectPosition = "cent
         )}
       </div>
 
-      {/* Name with highlighted background */}
+      {/* Name with highlighted background - gold in dark, navy in light */}
       <div className="text-center mb-2">
-        <h3 className="inline font-serif text-lg md:text-xl font-black uppercase tracking-wide text-primary-foreground bg-primary px-3 py-1 leading-relaxed"
+        <h3 className="prologue-name-highlight inline font-serif text-lg md:text-xl font-black uppercase tracking-wide px-3 py-1 leading-relaxed"
           style={{ boxDecorationBreak: "clone", WebkitBoxDecorationBreak: "clone" }}
         >
           {name}
