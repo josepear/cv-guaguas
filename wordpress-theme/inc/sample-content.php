@@ -80,6 +80,17 @@ function libro_import_sample_content() {
                 if (!empty($hero['background_position'])) update_post_meta($post_id, '_hero_background_position', $hero['background_position']);
             }
             
+            // Save prologue image fields
+            if (!empty($cap['prologo_imagen'])) {
+                update_post_meta($post_id, '_prologo_imagen', $cap['prologo_imagen']);
+            }
+            if (!empty($cap['prologo_posicion'])) {
+                update_post_meta($post_id, '_prologo_posicion', $cap['prologo_posicion']);
+            }
+            if (!empty($cap['prologo_escala'])) {
+                update_post_meta($post_id, '_prologo_escala', $cap['prologo_escala']);
+            }
+            
             // Track ID for children
             if (!empty($cap['ref_id'])) {
                 $parent_ids[$cap['ref_id']] = $post_id;
