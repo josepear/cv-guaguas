@@ -1,29 +1,18 @@
 
 
-## Plan: Añadir contenido completo a "Los orígenes" (cap01-los-origenes)
-
-### Contexto
-El subcapítulo `cap01-los-origenes` tiene un placeholder. El contenido proporcionado es el texto completo del Capítulo 01, que actualmente existe en versión resumida bajo la key `"capitulo-01"`. Dado que `capitulo-01` ahora redirige a `cap01-los-origenes`, el contenido completo debe ir en la nueva entrada.
+## Plan: Añadir contenido completo a "José Miguel Santana" (cap02-jose-miguel-santana)
 
 ### Cambios
 
-**`src/data/chapterContent.tsx`** — Reemplazar el placeholder de `"cap01-los-origenes"` con el contenido completo proporcionado:
+**`src/data/chapterContent.tsx`** — Reemplazar el placeholder actual (líneas 663-670) con el contenido completo proporcionado:
 
-- **6 secciones** con `<SectionHeader>`:
-  - Las horas extraescolares con Francisco Rodríguez
-  - Silvestre Cabrera y el salto cualitativo
-  - La selección cadete con Felipe Nuez como germen
-  - Estatutos fundacionales y despegue
-  - El ascenso a Segunda División de 1979
-  - El acceso a la élite y su conflicto burocrático
-
-- **Primera sección** usa `<DropCap>` para el primer párrafo (patrón existente)
-- **Citas de prensa** con `<NewspaperQuote>` para las declaraciones de Silvestre Cabrera y los artículos de La Provincia
-- **Cronología final** con `<Timeline>` y `<TimelineEvent>` (18 eventos, del 1967 al 1985)
-- **Título "La cronología"** como `<SectionHeader>` antes del timeline
-
-- Opcionalmente, simplificar o eliminar el contenido resumido de `"capitulo-01"` ya que esa key nunca se renderiza (el padre redirige al primer hijo).
+- **Sin `<PlayerProfile>`**: El texto es narrativo, no un perfil de ficha. Se usa el mismo formato que "Los orígenes" y "Felipe Nuez".
+- **`<DropCap>`** para el primer párrafo (el largo que empieza con "Descubridor de Sergio Miguel Camarero...").
+- **Sin `<SectionHeader>`**: El texto no tiene secciones tituladas en mayúsculas, es una narrativa continua.
+- **Sin `<NewspaperQuote>`**: Las citas están integradas en el texto como discurso directo, no son extractos de prensa con fuente.
+- **6-7 párrafos** con `<p>` para el resto del contenido, respetando los saltos naturales del texto original.
+- **Sin Timeline**: No hay cronología en este subcapítulo.
 
 ### Componentes reutilizados
-`SectionHeader`, `DropCap`, `NewspaperQuote`, `Timeline`, `TimelineEvent` — todos ya importados en el archivo.
+`DropCap` — único componente especial necesario.
 
