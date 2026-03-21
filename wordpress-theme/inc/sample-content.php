@@ -52,8 +52,8 @@ function libro_import_sample_content() {
                 update_post_meta($post_id, '_subtitulo', $cap['subtitulo']);
             }
             
-            // Save chapter number
-            if (!empty($cap['numero'])) {
+            // Save chapter number (strlen check: '0' is valid but empty() treats it as false)
+            if (isset($cap['numero']) && strlen($cap['numero']) > 0) {
                 update_post_meta($post_id, '_numero_capitulo', $cap['numero']);
             }
             
