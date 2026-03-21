@@ -314,7 +314,97 @@ h1, h2, h3, h4, h5, h6 {
     padding-bottom: 0.5rem;
 }
 
-/* Newspaper quote - identical to React index.css */
+/* Prologue Layout */
+.prologue-layout {
+    text-align: left;
+}
+
+.prologue-photo {
+    width: 10rem;
+    height: 10rem;
+    border-radius: 9999px;
+    overflow: hidden;
+    border: 4px solid hsl(var(--gold));
+    box-shadow: 0 4px 20px hsl(220 50% 5% / 0.5);
+}
+
+@media (min-width: 768px) {
+    .prologue-photo {
+        width: 12rem;
+        height: 12rem;
+    }
+}
+
+.prologue-photo img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.prologue-photo-fallback {
+    width: 10rem;
+    height: 10rem;
+    border-radius: 9999px;
+    background: hsl(var(--muted));
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 4px solid hsl(var(--gold));
+}
+
+@media (min-width: 768px) {
+    .prologue-photo-fallback {
+        width: 12rem;
+        height: 12rem;
+    }
+}
+
+.prologue-photo-fallback span {
+    font-family: var(--font-serif);
+    font-size: 2.5rem;
+    font-weight: 700;
+    color: hsl(var(--muted-foreground));
+}
+
+.prologue-name {
+    display: inline;
+    font-family: var(--font-serif);
+    font-size: 1.125rem;
+    font-weight: 900;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    color: hsl(220 50% 10%);
+    background-color: hsl(var(--gold));
+    padding: 0.25rem 0.75rem;
+    line-height: 1.8;
+    -webkit-box-decoration-break: clone;
+    box-decoration-break: clone;
+}
+
+@media (min-width: 768px) {
+    .prologue-name {
+        font-size: 1.25rem;
+    }
+}
+
+.prologue-role {
+    text-align: center;
+    font-family: var(--font-sans);
+    font-size: 0.75rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.15em;
+    color: hsl(var(--muted-foreground));
+    margin-bottom: 2.5rem;
+}
+
+@media (min-width: 768px) {
+    .prologue-role {
+        font-size: 0.875rem;
+    }
+}
+
+
 .newspaper-quote {
     margin: 1.5rem 0;
     padding: 1rem 1.5rem;
