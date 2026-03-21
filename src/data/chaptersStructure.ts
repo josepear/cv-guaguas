@@ -14,6 +14,7 @@ import heroCelebracion from "@/assets/hero-celebracion.jpg";
 
 // Prologue photos
 import imgClavijo from "@/assets/prologues/fernando-clavijo.jpg";
+import imgMorales from "@/assets/prologues/antonio-morales.jpg";
 
 export interface ChapterItemWithHero extends Omit<ChapterItem, 'children'> {
   hero?: Omit<ChapterHeroProps, 'titleLines'> & {
