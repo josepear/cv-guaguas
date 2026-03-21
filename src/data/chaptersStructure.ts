@@ -17,6 +17,7 @@ export interface ChapterItemWithHero extends Omit<ChapterItem, 'children'> {
     titleLines: TitleLine[];
     customIconColor?: string;
   };
+  isPrologue?: boolean;
   children?: ChapterItemWithHero[];
 }
 
