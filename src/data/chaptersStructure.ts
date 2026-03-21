@@ -14,6 +14,7 @@ import heroCelebracion from "@/assets/hero-celebracion.jpg";
 
 // Prologue photos
 import imgClavijo from "@/assets/prologues/fernando-clavijo.jpg";
+import imgMorales from "@/assets/prologues/antonio-morales.jpg";
 
 export interface ChapterItemWithHero extends Omit<ChapterItem, 'children'> {
   hero?: Omit<ChapterHeroProps, 'titleLines'> & {
@@ -48,7 +49,7 @@ export const chaptersData: ChapterItemWithHero[] = [
     },
     children: [
       { id: "prologo-01", slug: "prologo-fernando-clavijo", title: "Fernando Clavijo", subtitle: "Presidente del Gobierno de Canarias", isPrologue: true, prologueImage: imgClavijo, prologueImagePosition: "center 15%" },
-      { id: "prologo-02", slug: "prologo-antonio-morales", title: "Antonio Morales", subtitle: "Presidente del Cabildo de Gran Canaria", isPrologue: true },
+      { id: "prologo-02", slug: "prologo-antonio-morales", title: "Antonio Morales", subtitle: "Presidente del Cabildo de Gran Canaria", isPrologue: true, prologueImage: imgMorales, prologueImagePosition: "center 20%" },
       { id: "prologo-03", slug: "prologo-juan-ruiz", title: "Juan Ruiz", subtitle: "Presidente del CV Guaguas", isPrologue: true },
       { id: "prologo-04", slug: "prologo-poli-suarez", title: "Poli Suárez", subtitle: "Consejero de Deportes del Gobierno de Canarias", isPrologue: true },
       { id: "prologo-05", slug: "prologo-aridany-romero", title: "Aridany Romero", subtitle: "Consejero de Deportes del Cabildo de Gran Canaria", isPrologue: true },
