@@ -967,3 +967,25 @@ function libro_shortcode_prologo($atts, $content = null) {
     return ob_get_clean();
 }
 add_shortcode('prologo', 'libro_shortcode_prologo');
+
+/**
+ * Redirigir capítulos padre al primer subcapítulo
+ * Idéntico al comportamiento de React: Navigate to={children[0].slug}
+ */
+function libro_redirect_parent_chapters() {
+    if (!is_singular('capitulo')) return;
+    
+    $children = get_posts(array(
+        'post_type'      => 'capitulo',
+        'posts_per_page' => 1,
+        'orderby'        => 'menu_order',
+        'order'          => 'ASC',
+        'post_parent'    => get_the_ID(),
+    ));
+    
+    if (!empty($children)) {
+        wp_redirect(get_permalink($children[0]->ID), 301);
+        exit;
+    }
+}
+add_action('template_redirect', 'libro_redirect_parent_chapters');
