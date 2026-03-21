@@ -88,7 +88,7 @@ $current_slug = is_singular('capitulo') ? get_post_field('post_name', get_the_ID
                        class="sidebar-active-indicator flex-1 text-left py-2.5 px-3 rounded-sm transition-all duration-200 font-sans text-sm font-medium hover:bg-sidebar-accent hover:text-gold <?php echo $is_active ? 'active text-gold bg-sidebar-accent' : 'text-sidebar-foreground'; ?>"
                        data-section="<?php echo esc_attr($cap_slug); ?>">
                         <span class="flex items-center gap-2.5">
-                            <?php if ($numero && !$ocultar_numero) : ?>
+                            <?php if (strlen($numero) > 0 && !$ocultar_numero) : ?>
                                 <span class="chapter-number chapter-number--main"><?php echo esc_html($numero); ?></span>
                             <?php endif; ?>
                             <span class="<?php echo $is_active ? 'text-gold' : ''; ?>"><?php echo esc_html($cap->post_title); ?></span>

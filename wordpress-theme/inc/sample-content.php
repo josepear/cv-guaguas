@@ -800,58 +800,96 @@ c) Examinar las liquidaciones y balances de la entidad.[/articulo]
 [imagen_contenido src="' . libro_img('content/dobromir-saque.jpg') . '" alt="Momento de un saque" caption="El nivel técnico de los jugadores internacionales elevó la competitividad del Guaguas en todas las competiciones."]
 <p>Contenido pendiente de importación del documento original.</p>'),
 
-    array('title' => 'Embajadores por Europa', 'numero' => '07', 'order' => 60, 'show_marker' => true,
+    array('title' => 'Embajadores por Europa', 'numero' => '07', 'order' => 60, 'show_marker' => true, 'ref_id' => 'cap07',
         'hero' => array('image' => libro_img('hero-europa.jpg'), 'overlay' => 'rgba(26, 35, 126, 0.78)', 'icon' => 'custom', 'custom_icon' => $star, 'icon_width' => 70, 'icon_height' => 70, 'alignment' => 'center', 'vertical' => 'center', 'height' => '500px',
             'title_lines' => array(libro_hero_line('EMBAJADORES', '#D4AF37'), libro_hero_line('POR EUROPA', '#FFFFFF'))),
         'content' => '[capitular]La aventura europea del CV Guaguas es una de las páginas más brillantes de su historia. Desde la primera participación en la Copa de Europa hasta las campañas recientes en la Champions League, el club ha sido embajador del voleibol canario en los más prestigiosos escenarios del continente.[/capitular]
 [imagen_contenido src="' . libro_img('content/equipo-champions.jpg') . '" alt="El CV Guaguas en competición europea" caption="La expedición del CV Guaguas antes de un partido de Champions League." fullwidth="true"]
 [imagen_contenido src="' . libro_img('content/augusto-colito.jpg') . '" alt="Augusto Colito en la Champions League" caption="Augusto Colito, pieza clave del Guaguas en la Champions League 2025-2026."]
 <p>Contenido pendiente de importación del documento original.</p>'),
+    // Cap 07 children
+    array('title' => 'Manuel Palacios', 'numero' => '', 'order' => 61, 'show_marker' => false, 'parent_ref' => 'cap07', 'content' => '<p>Contenido del subcapítulo próximamente.</p>'),
+    array('title' => 'Antonio Benítez', 'numero' => '', 'order' => 62, 'show_marker' => false, 'parent_ref' => 'cap07', 'content' => '<p>Contenido del subcapítulo próximamente.</p>'),
+    array('title' => 'Jorge Ramón', 'numero' => '', 'order' => 63, 'show_marker' => false, 'parent_ref' => 'cap07', 'content' => '<p>Contenido del subcapítulo próximamente.</p>'),
+    array('title' => 'Juanma Martín', 'numero' => '', 'order' => 64, 'show_marker' => false, 'parent_ref' => 'cap07', 'content' => '<p>Contenido del subcapítulo próximamente.</p>'),
+    array('title' => 'Óscar Campos', 'numero' => '', 'order' => 65, 'show_marker' => false, 'parent_ref' => 'cap07', 'content' => '<p>Contenido del subcapítulo próximamente.</p>'),
+    array('title' => 'Venancio Acosta', 'numero' => '', 'order' => 66, 'show_marker' => false, 'parent_ref' => 'cap07', 'content' => '<p>Contenido del subcapítulo próximamente.</p>'),
+    array('title' => 'Antonio Miralles', 'numero' => '', 'order' => 67, 'show_marker' => false, 'parent_ref' => 'cap07', 'content' => '<p>Contenido del subcapítulo próximamente.</p>'),
+    array('title' => 'Chava González', 'numero' => '', 'order' => 68, 'show_marker' => false, 'parent_ref' => 'cap07', 'content' => '<p>Contenido del subcapítulo próximamente.</p>'),
+    array('title' => 'Sandeep Sharma', 'numero' => '', 'order' => 69, 'show_marker' => false, 'parent_ref' => 'cap07', 'content' => '<p>Contenido del subcapítulo próximamente.</p>'),
+    array('title' => 'Juan José Cardona', 'numero' => '', 'order' => 70, 'show_marker' => false, 'parent_ref' => 'cap07', 'content' => '<p>Contenido del subcapítulo próximamente.</p>'),
 
-    array('title' => 'Relevo generacional', 'numero' => '08', 'order' => 65, 'show_marker' => true,
+    array('title' => 'Relevo generacional', 'numero' => '08', 'order' => 75, 'show_marker' => true, 'ref_id' => 'cap08',
         'hero' => array('image' => libro_img('hero-cantera.jpg'), 'overlay' => 'rgba(212, 175, 55, 0.80)', 'icon' => 'custom', 'custom_icon' => $star, 'icon_width' => 60, 'icon_height' => 60, 'alignment' => 'left', 'vertical' => 'center', 'height' => '480px',
             'title_lines' => array(libro_hero_line('RELEVO', '#1a237e', '#FFFFFF'), libro_hero_line('GENERACIONAL', '#1a237e', '#FFFFFF'))),
         'content' => '[capitular]Cada generación del Guaguas ha sido el eslabón de una cadena ininterrumpida de talento canario. El relevo generacional ha sido una constante en la vida del club, desde los pioneros del Calvo Sotelo hasta los actuales jugadores de la cantera.[/capitular]
 [imagen_contenido src="' . libro_img('content/nico-bruno.png') . '" alt="Nico Bruno" caption="Nico Bruno representa la nueva generación de jugadores que llegan al Guaguas con hambre de títulos."]
 [imagen_contenido src="' . libro_img('content/helder-spencer.png') . '" alt="Hélder Spencer" caption="Hélder Spencer, uno de los refuerzos internacionales que alimentan la competitividad del equipo."]
 <p>Contenido pendiente de importación del documento original.</p>'),
+    // Cap 08 children
+    array('title' => 'Alexis Valido', 'numero' => '', 'order' => 76, 'show_marker' => false, 'parent_ref' => 'cap08', 'content' => '<p>Contenido del subcapítulo próximamente.</p>'),
+    array('title' => 'Antonio Sánchez', 'numero' => '', 'order' => 77, 'show_marker' => false, 'parent_ref' => 'cap08', 'content' => '<p>Contenido del subcapítulo próximamente.</p>'),
+    array('title' => 'Daniel Castañeda', 'numero' => '', 'order' => 78, 'show_marker' => false, 'parent_ref' => 'cap08', 'content' => '<p>Contenido del subcapítulo próximamente.</p>'),
+    array('title' => 'Juan Carlos Vega', 'numero' => '', 'order' => 79, 'show_marker' => false, 'parent_ref' => 'cap08', 'content' => '<p>Contenido del subcapítulo próximamente.</p>'),
+    array('title' => 'Hermanos Cabrera', 'numero' => '', 'order' => 80, 'show_marker' => false, 'parent_ref' => 'cap08', 'content' => '<p>Contenido del subcapítulo próximamente.</p>'),
+    array('title' => 'Níchel Gómez', 'numero' => '', 'order' => 81, 'show_marker' => false, 'parent_ref' => 'cap08', 'content' => '<p>Contenido del subcapítulo próximamente.</p>'),
+    array('title' => 'Raúl Dávila', 'numero' => '', 'order' => 82, 'show_marker' => false, 'parent_ref' => 'cap08', 'content' => '<p>Contenido del subcapítulo próximamente.</p>'),
 
-    array('title' => 'Una transición dolorosa', 'numero' => '09', 'order' => 70, 'show_marker' => true,
+    array('title' => 'Una transición dolorosa', 'numero' => '09', 'order' => 85, 'show_marker' => true, 'ref_id' => 'cap09',
         'hero' => array('image' => libro_img('hero-transicion.jpg'), 'overlay' => 'rgba(0, 0, 0, 0.40)', 'icon' => 'custom', 'custom_icon' => $star, 'icon_width' => 50, 'icon_height' => 50, 'alignment' => 'center', 'vertical' => 'center', 'height' => '500px',
             'title_lines' => array(libro_hero_line('UNA TRANSICIÓN', '#8faabe'), libro_hero_line('DOLOROSA', '#FFFFFF'))),
         'content' => '[capitular]Los años posteriores a la marcha de Juan Ruiz fueron los más convulsos en la historia del club. La inestabilidad directiva, los problemas económicos y la pérdida progresiva de competitividad culminaron en el peor desenlace posible: la desaparición temporal del equipo en 2009.[/capitular]
 [imagen_contenido src="' . libro_img('content/equipo-liga.jpeg') . '" alt="El equipo del CV Guaguas" caption="A pesar de las dificultades, el espíritu del Guaguas nunca se extinguió completamente." fullwidth="true"]
 <p>Contenido pendiente de importación del documento original.</p>'),
+    // Cap 09 children
+    array('title' => 'Juan Ruiz traspasa sus poderes', 'numero' => '', 'order' => 86, 'show_marker' => false, 'parent_ref' => 'cap09', 'content' => '<p>Contenido del subcapítulo próximamente.</p>'),
+    array('title' => 'La estabilidad imposible', 'numero' => '', 'order' => 87, 'show_marker' => false, 'parent_ref' => 'cap09', 'content' => '<p>Contenido del subcapítulo próximamente.</p>'),
+    array('title' => 'Camino del fatídico 2009', 'numero' => '', 'order' => 88, 'show_marker' => false, 'parent_ref' => 'cap09', 'content' => '<p>Contenido del subcapítulo próximamente.</p>'),
+    array('title' => 'El peor desenlace posible', 'numero' => '', 'order' => 89, 'show_marker' => false, 'parent_ref' => 'cap09', 'content' => '<p>Contenido del subcapítulo próximamente.</p>'),
+    array('title' => 'La cronología', 'numero' => '', 'order' => 90, 'show_marker' => false, 'parent_ref' => 'cap09', 'content' => '<p>Contenido del subcapítulo próximamente.</p>'),
+    array('title' => 'David Rodríguez', 'numero' => '', 'order' => 91, 'show_marker' => false, 'parent_ref' => 'cap09', 'content' => '<p>Contenido del subcapítulo próximamente.</p>'),
+    array('title' => 'Joel Sotelo', 'numero' => '', 'order' => 92, 'show_marker' => false, 'parent_ref' => 'cap09', 'content' => '<p>Contenido del subcapítulo próximamente.</p>'),
+    array('title' => 'Pedro Cuarental', 'numero' => '', 'order' => 93, 'show_marker' => false, 'parent_ref' => 'cap09', 'content' => '<p>Contenido del subcapítulo próximamente.</p>'),
+    array('title' => 'Marcos Dreyer', 'numero' => '', 'order' => 94, 'show_marker' => false, 'parent_ref' => 'cap09', 'content' => '<p>Contenido del subcapítulo próximamente.</p>'),
 
-    array('title' => 'Todos los títulos', 'numero' => '10', 'order' => 75, 'show_marker' => true,
+    array('title' => 'Todos los títulos', 'numero' => '10', 'order' => 100, 'show_marker' => true, 'ref_id' => 'cap10',
         'hero' => array('image' => libro_img('hero-trophies.jpg'), 'overlay' => 'rgba(212, 175, 55, 0.75)', 'icon' => 'custom', 'custom_icon' => $star, 'icon_width' => 80, 'icon_height' => 80, 'alignment' => 'center', 'vertical' => 'center', 'height' => '500px',
             'title_lines' => array(libro_hero_line('TODOS', '#1a237e', '#FFFFFF'), libro_hero_line('LOS TÍTULOS', '#1a237e', '#FFFFFF'))),
         'content' => '[capitular]El palmarés del CV Guaguas es el más brillante del voleibol español. Nueve Ligas, nueve Copas del Rey, cinco Supercopas y una Copa Ibérica conforman un historial de éxitos que ningún otro club del país ha igualado.[/capitular]
 [imagen_contenido src="' . libro_img('content/victoria-guaguas.png') . '" alt="El CV Guaguas celebra un título" caption="La celebración de los títulos ha sido una constante en la historia del club amarillo." fullwidth="true"]
 [imagen_contenido src="' . libro_img('content/partido-guaguas.jpg') . '" alt="Ambiente en un partido del CV Guaguas" caption="El Centro Insular de Deportes y el Gran Canaria Arena han sido testigos de las gestas del club."]
 <p>Contenido pendiente de importación del documento original.</p>'),
+    // Cap 10 child
+    array('title' => 'Joselu Sánchez', 'numero' => '', 'order' => 101, 'show_marker' => false, 'parent_ref' => 'cap10', 'content' => '<p>Contenido del subcapítulo próximamente.</p>'),
 
-    array('title' => 'Vuelve el gran Guaguas', 'numero' => '11', 'order' => 80, 'show_marker' => true,
+    array('title' => 'Vuelve el gran Guaguas', 'numero' => '11', 'order' => 105, 'show_marker' => true, 'ref_id' => 'cap11',
         'hero' => array('image' => libro_img('hero-celebracion.jpg'), 'overlay' => 'rgba(26, 35, 126, 0.75)', 'icon' => 'custom', 'custom_icon' => $star, 'icon_width' => 70, 'icon_height' => 70, 'alignment' => 'right', 'vertical' => 'center', 'height' => '500px',
             'title_lines' => array(libro_hero_line('VUELVE', '#D4AF37'), libro_hero_line('EL GRAN', '#FFFFFF'), libro_hero_line('GUAGUAS', '#D4AF37'))),
         'content' => '[capitular]En 2020, cuando el club se encontraba de nuevo al borde del abismo, Juan Ruiz regresó para devolver al Guaguas a la élite. Su vuelta fue recibida con esperanza y emoción por una afición que no había olvidado los años gloriosos.[/capitular]
 [imagen_contenido src="' . libro_img('content/remate-guaguas.png') . '" alt="Remate del CV Guaguas" caption="El regreso del Guaguas a los títulos confirmó que la leyenda no había terminado." fullwidth="true"]
 <p>Contenido pendiente de importación del documento original.</p>'),
+    // Cap 11 children
+    array('title' => 'Un paso por aclamación', 'numero' => '', 'order' => 106, 'show_marker' => false, 'parent_ref' => 'cap11', 'content' => '<p>Contenido del subcapítulo próximamente.</p>'),
+    array('title' => 'Presidentes', 'numero' => '', 'order' => 107, 'show_marker' => false, 'parent_ref' => 'cap11', 'content' => '<p>Contenido del subcapítulo próximamente.</p>'),
+    array('title' => 'Entrenadores', 'numero' => '', 'order' => 108, 'show_marker' => false, 'parent_ref' => 'cap11', 'content' => '<p>Contenido del subcapítulo próximamente.</p>'),
 
-    array('title' => 'Del CID al Arenas', 'numero' => '12', 'order' => 85, 'show_marker' => true,
+    array('title' => 'Del CID al Arenas', 'numero' => '12', 'order' => 110, 'show_marker' => true,
         'hero' => array('image' => libro_img('hero-stadium.jpg'), 'overlay' => 'rgba(26, 35, 126, 0.82)', 'icon' => 'custom', 'custom_icon' => $star, 'icon_width' => 60, 'icon_height' => 60, 'alignment' => 'left', 'vertical' => 'center', 'height' => '450px',
             'title_lines' => array(libro_hero_line('DEL CID', '#D4AF37'), libro_hero_line('AL ARENAS', '#FFFFFF'))),
         'content' => '[capitular]Del Centro Insular de Deportes al Gran Canaria Arena: la evolución de la casa del voleibol grancanario. El CID fue durante décadas la catedral del voleibol en Canarias, un pabellón cuyo ambiente era temido por todos los rivales.[/capitular]
 [imagen_contenido src="' . libro_img('content/banner-entradas.png') . '" alt="Cartelería del CV Guaguas en el Gran Canaria Arena" caption="El Gran Canaria Arena acoge hoy los grandes eventos del voleibol canario." fullwidth="true"]
 <p>Contenido pendiente de importación del documento original.</p>'),
 
-    array('title' => 'Los nuevos ídolos', 'numero' => '13', 'order' => 90, 'show_marker' => true,
+    array('title' => 'Los nuevos ídolos', 'numero' => '13', 'order' => 115, 'show_marker' => true, 'ref_id' => 'cap13',
         'hero' => array('image' => libro_img('hero-volleyball-match.jpg'), 'overlay' => 'rgba(212, 175, 55, 0.82)', 'icon' => 'custom', 'custom_icon' => $star, 'icon_width' => 70, 'icon_height' => 70, 'alignment' => 'right', 'vertical' => 'center', 'height' => '480px',
             'title_lines' => array(libro_hero_line('LOS NUEVOS', '#1a237e', '#FFFFFF'), libro_hero_line('ÍDOLOS', '#1a237e', '#FFFFFF'))),
         'content' => '[capitular]Una nueva generación de estrellas ha tomado el relevo en el Gran Canaria Arena. Los nuevos ídolos del Guaguas combinan talento internacional con la pasión local para escribir nuevos capítulos en la historia del club.[/capitular]
 [imagen_contenido src="' . libro_img('content/walla-souza.png') . '" alt="Walla Souza" caption="Walla Souza, uno de los jugadores más determinantes del Guaguas actual."]
 [imagen_contenido src="' . libro_img('content/augusto-colito-perfil.png') . '" alt="Augusto Colito" caption="Augusto Colito, internacional español y pilar del proyecto deportivo del Guaguas."]
 <p>Contenido pendiente de importación del documento original.</p>'),
+    // Cap 13 children
+    array('title' => 'Pablo Kukartsev', 'numero' => '', 'order' => 116, 'show_marker' => false, 'parent_ref' => 'cap13', 'content' => '<p>Contenido del subcapítulo próximamente.</p>'),
+    array('title' => 'Moisés Cézar', 'numero' => '', 'order' => 117, 'show_marker' => false, 'parent_ref' => 'cap13', 'content' => '<p>Contenido del subcapítulo próximamente.</p>'),
 
     array('title' => 'El impacto del escudo', 'numero' => '14', 'order' => 95, 'show_marker' => true,
         'hero' => array('image' => libro_img('hero-stadium.jpg'), 'overlay' => 'rgba(212, 175, 55, 0.88)', 'icon' => 'custom', 'custom_icon' => $star, 'icon_width' => 90, 'icon_height' => 90, 'alignment' => 'center', 'vertical' => 'center', 'height' => '450px',
