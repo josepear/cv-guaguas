@@ -25,6 +25,7 @@ $hero_alignment = get_post_meta(get_the_ID(), '_hero_alignment', true) ?: 'cente
 $hero_vertical = get_post_meta(get_the_ID(), '_hero_vertical', true) ?: 'center';
 $hero_title_lines = get_post_meta(get_the_ID(), '_hero_title_lines', true);
 $hero_border_color = get_post_meta(get_the_ID(), '_hero_border_color', true);
+$hero_bg_position = get_post_meta(get_the_ID(), '_hero_background_position', true) ?: 'center top';
 
 // Navegación depth-first (idéntica a React getAllChapters())
 // Parent → Child1 → Child2 → ... → Next Parent
