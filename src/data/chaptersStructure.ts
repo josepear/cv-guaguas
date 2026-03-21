@@ -12,6 +12,7 @@ import heroCantera from "@/assets/hero-cantera.jpg";
 import heroTransicion from "@/assets/hero-transicion.jpg";
 import heroCelebracion from "@/assets/hero-celebracion.jpg";
 import imgJoseMillanHero from "@/assets/1cap_pati_photo_24.jpg";
+import imgPericlesHero from "@/assets/cap1_pericles_hero.jpg";
 
 // Prologue photos
 import imgClavijo from "@/assets/prologues/fernando-clavijo.jpg";
@@ -95,7 +96,20 @@ export const chaptersData: ChapterItemWithHero[] = [
       { id: "cap02-florencio-tejera", slug: "cap02-florencio-tejera", title: "Florencio Tejera" },
       { id: "cap02-tony-vazquez", slug: "cap02-tony-vazquez", title: "Tony Vázquez" },
       { id: "cap02-isidro-quintana", slug: "cap02-isidro-quintana", title: "Isidro Quintana" },
-      { id: "cap02-pericles", slug: "cap02-pericles", title: "Pericles" },
+      { id: "cap02-pericles", slug: "cap02-pericles", title: "Pericles",
+        hero: {
+          backgroundImage: imgPericlesHero,
+          backgroundOverlay: "rgba(0, 0, 0, 0.4)",
+          icon: "none",
+          alignment: "center",
+          verticalPosition: "bottom",
+          height: "500px",
+          titleFontWeight: "black",
+          titleLines: [
+            { text: "PERICLES", color: "hsl(220 50% 12%)", highlightColor: "hsl(45 100% 50%)", fontWeight: "black" },
+          ],
+        },
+      },
       { id: "cap02-jose-millan", slug: "cap02-jose-millan", title: "José Millán",
         hero: {
           backgroundImage: imgJoseMillanHero,
