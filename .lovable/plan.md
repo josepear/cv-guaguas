@@ -1,29 +1,28 @@
 
 
-# Implementar Hero con foto para José Millán
-
-## Enfoque
-
-Usar el mismo sistema de `ChapterHero` que ya existe en los Estatutos Fundacionales, pero con la foto de José Millán como imagen de fondo y su nombre como título superpuesto.
+# Añadir `backgroundPosition` configurable al Hero
 
 ## Cambios
 
-### 1. `src/data/chaptersStructure.ts`
+### 1. `src/components/ChapterHero.tsx`
+- Añadir prop `backgroundPosition?: string` (default: `"center top"`).
+- En el `<motion.div>` del background (línea 227), reemplazar la clase `bg-center` y añadir `backgroundPosition` al style inline.
 
-Modificar la entrada de `cap02-jose-millan` para añadir configuración `hero`:
+### 2. `src/data/chaptersStructure.ts`
+- Añadir `backgroundPosition` como campo opcional en la interfaz del hero.
+- Pasar el valor en las entradas que lo necesiten (por defecto `"center top"`).
+- Actualizar `Chapter.tsx` para pasar la prop.
 
-- `backgroundImage`: la foto ya importada (`1cap_pati_photo_24.jpg`)
-- `backgroundOverlay`: overlay oscuro semitransparente para legibilidad del texto (similar al de Estatutos pero más oscuro, ~0.4, dado que la foto es un retrato)
-- `titleLines`: "JOSÉ MILLÁN" con highlight dorado (como Estatutos)
-- `icon`: "none" (sin icono para este subcapítulo)
-- `alignment`: "left" o "center" según preferencia
-- `height`: similar a los otros heroes
+### 3. `src/pages/Chapter.tsx`
+- Pasar `backgroundPosition` del hero config al componente `ChapterHero`.
 
-### 2. `src/data/chapterContent.tsx`
+### 4. `wordpress-theme/single-capitulo.php`
+- Leer un nuevo meta field `_hero_background_position` (default: `center top`).
+- Aplicarlo como `background-position` inline en el div del hero.
 
-Eliminar el `<ContentImage>` que se añadió previamente al inicio del contenido de José Millán, ya que la foto ahora estará en el Hero.
+### 5. `wordpress-theme/inc/meta-boxes.php`
+- Añadir campo de texto `_hero_background_position` al meta-box del capítulo con placeholder "center top".
 
-### 3. `wordpress-theme/inc/sample-content.php`
-
-Actualizar la entrada de José Millán para reflejar que la imagen se usa como hero en lugar de como imagen de contenido inline.
+### 6. `wordpress-theme/functions.php`
+- Actualizar el shortcode `[chapter_hero]` para soportar atributo `bg_position`.
 
