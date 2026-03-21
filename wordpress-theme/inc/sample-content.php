@@ -322,13 +322,23 @@ function libro_get_sample_chapters() {
 '),
 
     // ═══════════════════════════════════════════════
-    // CAPÍTULO 02: ESTATUTOS FUNDACIONALES
+    // CAPÍTULO 02: LOS ESTATUTOS FUNDACIONALES (padre)
     // ═══════════════════════════════════════════════
     array(
-        'title' => 'Estatutos Fundacionales',
+        'title' => 'Los Estatutos Fundacionales',
         'numero' => '02',
         'order' => 25,
-        'show_marker' => true,
+        'ref_id' => 'cap02',
+        'is_parent' => true,
+    ),
+
+    // --- Subcapítulos del Cap. 02 ---
+    array(
+        'title' => 'Constitución, fines y domicilio',
+        'numero' => 'I',
+        'order' => 26,
+        'parent_ref' => 'cap02',
+        'subtitulo' => 'Capítulo I',
         'hero' => array(
             'image' => libro_img('hero-estatutos.jpg'),
             'overlay' => 'rgba(62, 39, 15, 0.75)',
@@ -342,33 +352,85 @@ function libro_get_sample_chapters() {
             ),
         ),
         'content' => '
-[seccion_header]Capítulo I. Constitución, fines y domicilio[/seccion_header]
-
 [articulo numero="1º"]El nombre que adoptará la nueva entidad será el de Club Voleibol Calvo Sotelo.[/articulo]
 [articulo numero="2º"]El objeto de la presente entidad es el fomento y práctica del deporte entre los asociados y, en especial, el Voleibol.[/articulo]
 [articulo numero="3º"]Podrá asimismo la presente entidad ampliar sus funciones deportivas con otras secciones secundarias, recreativas o de otros deportes, siempre que lo acuerden la junta directiva.[/articulo]
 [articulo numero="4º"]La entidad, que con todos sus socios y componentes quedan sujetos a la jurisdicción de la Delegación Nacional de Deportes, Comité Olímpico Español, Federación Española de Voleibol.[/articulo]
 [articulo numero="5º"]Se fija el domicilio de la entidad en Las Palmas, calle Montejurra, número 1.[/articulo]
 [articulo numero="6º"]La duración de la entidad es por tiempo indefinido.[/articulo]
-
-[seccion_header]Capítulo II. De los socios[/seccion_header]
-
+',
+    ),
+    array(
+        'title' => 'De los socios',
+        'numero' => 'II',
+        'order' => 27,
+        'parent_ref' => 'cap02',
+        'subtitulo' => 'Capítulo II',
+        'hero' => array(
+            'image' => libro_img('hero-estatutos.jpg'),
+            'overlay' => 'rgba(62, 39, 15, 0.75)',
+            'icon' => 'custom', 'custom_icon' => $star,
+            'icon_width' => 50, 'icon_height' => 50,
+            'alignment' => 'left', 'vertical' => 'center',
+            'height' => '420px',
+            'title_lines' => array(
+                libro_hero_line('ESTATUTOS', '#D4AF37'),
+                libro_hero_line('FUNDACIONALES', '#FFFFFF'),
+            ),
+        ),
+        'content' => '
 [articulo numero="7º"]La entidad Club Voleibol Calvo Sotelo se compondrá de las siguientes clases de socios: de HONOR y ACTIVOS.[/articulo]
 [articulo numero="8º"]Todos los socios, sea cual fuese su categoría, tendrán el libre acceso a los locales y campos de la entidad.[/articulo]
 [articulo numero="9º"]Todo socio viene obligado a comunicar por escrito a la directiva las deficiencias que observe en las instalaciones.[/articulo]
 [articulo numero="10º"]De acuerdo con las asambleas, la junta directiva impondrá una cuota de entrada a los socios, según las necesidades de la entidad.[/articulo]
 [articulo numero="11º"]Podrá nombrarse presidente de la entidad a quien por su relevante personalidad y especiales condiciones sea propuesto y elegido.[/articulo]
-
-[seccion_header]Capítulo III. Del Gobierno de la Sociedad[/seccion_header]
-
+',
+    ),
+    array(
+        'title' => 'Del Gobierno de la Sociedad',
+        'numero' => 'III',
+        'order' => 28,
+        'parent_ref' => 'cap02',
+        'subtitulo' => 'Capítulo III',
+        'hero' => array(
+            'image' => libro_img('hero-estatutos.jpg'),
+            'overlay' => 'rgba(62, 39, 15, 0.75)',
+            'icon' => 'custom', 'custom_icon' => $star,
+            'icon_width' => 50, 'icon_height' => 50,
+            'alignment' => 'left', 'vertical' => 'center',
+            'height' => '420px',
+            'title_lines' => array(
+                libro_hero_line('ESTATUTOS', '#D4AF37'),
+                libro_hero_line('FUNDACIONALES', '#FFFFFF'),
+            ),
+        ),
+        'content' => '
 [articulo numero="20º"]La entidad estará dirigida, regida y administrada de conformidad con los presentes estatutos por la junta directiva.[/articulo]
 [articulo numero="21º"]La junta directiva se compondrá: presidente, uno o dos vicepresidentes, secretario, tesorero contador y el número de vocales que se estime conveniente.[/articulo]
 [articulo numero="23º"]El presidente convocará junta directiva todas las veces que estime necesario y, al menos, una vez cada mes.[/articulo]
 [articulo numero="24º"]Los acuerdos de la junta directiva se tomarán por mayoría de votación, teniendo cada componente un voto y, en caso de empate, decidirá el voto del presidente.[/articulo]
 [articulo numero="25º"]El presidente tendrá la representación legal y jurídica de la entidad, dirigirá los debates y discusiones y velará para que se cumplan los acuerdos.[/articulo]
-
-[seccion_header]Capítulo IV. De la administración de la Entidad[/seccion_header]
-
+',
+    ),
+    array(
+        'title' => 'De la administración de la Entidad',
+        'numero' => 'IV',
+        'order' => 29,
+        'parent_ref' => 'cap02',
+        'subtitulo' => 'Capítulo IV',
+        'hero' => array(
+            'image' => libro_img('hero-estatutos.jpg'),
+            'overlay' => 'rgba(62, 39, 15, 0.75)',
+            'icon' => 'custom', 'custom_icon' => $star,
+            'icon_width' => 50, 'icon_height' => 50,
+            'alignment' => 'left', 'vertical' => 'center',
+            'height' => '420px',
+            'title_lines' => array(
+                libro_hero_line('ESTATUTOS', '#D4AF37'),
+                libro_hero_line('FUNDACIONALES', '#FFFFFF'),
+            ),
+        ),
+        'content' => '
 [articulo numero="44º"]De conformidad con los artículos 27 y 28 de los presentes estatutos, llevarán la administración y contabilidad de la entidad el tesorero y contador.[/articulo]
 [articulo numero="45º"]La entidad dará cuenta a sus socios, una vez al año por lo menos, en una memoria presentada a la asamblea general ordinaria, de su gestión deportiva y económica y de sus proyectos para el futuro.[/articulo]
 ',
