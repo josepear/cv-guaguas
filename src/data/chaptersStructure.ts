@@ -11,6 +11,7 @@ import heroEuropa from "@/assets/hero-europa.jpg";
 import heroCantera from "@/assets/hero-cantera.jpg";
 import heroTransicion from "@/assets/hero-transicion.jpg";
 import heroCelebracion from "@/assets/hero-celebracion.jpg";
+import imgJoseMillanHero from "@/assets/1cap_pati_photo_24.jpg";
 
 // Prologue photos
 import imgClavijo from "@/assets/prologues/fernando-clavijo.jpg";
@@ -95,7 +96,21 @@ export const chaptersData: ChapterItemWithHero[] = [
       { id: "cap02-tony-vazquez", slug: "cap02-tony-vazquez", title: "Tony Vázquez" },
       { id: "cap02-isidro-quintana", slug: "cap02-isidro-quintana", title: "Isidro Quintana" },
       { id: "cap02-pericles", slug: "cap02-pericles", title: "Pericles" },
-      { id: "cap02-jose-millan", slug: "cap02-jose-millan", title: "José Millán" },
+      { id: "cap02-jose-millan", slug: "cap02-jose-millan", title: "José Millán",
+        hero: {
+          backgroundImage: imgJoseMillanHero,
+          backgroundOverlay: "rgba(0, 0, 0, 0.4)",
+          icon: "none",
+          alignment: "center",
+          verticalPosition: "bottom",
+          height: "500px",
+          titleFontWeight: "black",
+          titleLines: [
+            { text: "JOSÉ", color: "#1a1a1a", highlightColor: "hsl(45 100% 50%)", fontWeight: "black" },
+            { text: "MILLÁN", color: "#1a1a1a", highlightColor: "hsl(45 100% 50%)", fontWeight: "black" },
+          ],
+        },
+      },
       { id: "cap02-miriam-quiroga", slug: "cap02-miriam-quiroga", title: "Miriam Quiroga" },
     ]
   },

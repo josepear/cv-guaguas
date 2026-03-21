@@ -13,7 +13,7 @@ import imgEquipoChampions from "@/assets/content/equipo-champions.jpg";
 import imgPartidoGuaguas from "@/assets/content/partido-guaguas.jpg";
 import imgCopaDelRey from "@/assets/content/copa-del-rey.jpg";
 import imgVictoriaGuaguas from "@/assets/content/victoria-guaguas.png";
-import imgJoseMillan from "@/assets/1cap_pati_photo_24.jpg";
+
 import imgJugadorAccion from "@/assets/content/jugador-accion.png";
 import imgJorgeAlmansa from "@/assets/content/jorge-almansa.png";
 import imgOsmanyJuantorena from "@/assets/content/osmany-juantorena.png";
@@ -416,7 +416,6 @@ export const chapterContent: Record<string, React.ReactNode> = {
 
   "cap02-jose-millan": (
     <>
-      <ContentImage src={imgJoseMillan} alt="José Millán, dirigente histórico de la Federación Canaria de Voleibol" caption="José Millán, más de tres décadas al frente de la Federación Canaria de Voleibol" />
 
       <DropCap>Si la figura de Silvestre Cabrera fue de trascendencia capital para auspiciar el voleibol durante su mandato como presidente de la Federación de Las Palmas (1973-1985), no es menos relevante la influencia, también de enorme impacto, de José Millán, quien en diciembre de 1976 asumió el cargo de secretario del ente presidido por Cabrera, tomó su relevo a la conclusión de su ciclo como máximo mandatario y terminó encabezando la Federación Canaria de Voleibol hasta 2008. Más de tres décadas de contribución y entrega que le hicieron tener una atalaya privilegiada de los acontecimientos, al tiempo de otorgarle un lugar preferencial en la historia de esta disciplina.</DropCap>
 
