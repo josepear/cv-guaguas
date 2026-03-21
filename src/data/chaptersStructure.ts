@@ -12,12 +12,17 @@ import heroCantera from "@/assets/hero-cantera.jpg";
 import heroTransicion from "@/assets/hero-transicion.jpg";
 import heroCelebracion from "@/assets/hero-celebracion.jpg";
 
+// Prologue photos
+import imgClavijo from "@/assets/prologues/fernando-clavijo.jpg";
+
 export interface ChapterItemWithHero extends Omit<ChapterItem, 'children'> {
   hero?: Omit<ChapterHeroProps, 'titleLines'> & {
     titleLines: TitleLine[];
     customIconColor?: string;
   };
   isPrologue?: boolean;
+  prologueImage?: string;
+  prologueImagePosition?: string;
   children?: ChapterItemWithHero[];
 }
 
@@ -42,7 +47,7 @@ export const chaptersData: ChapterItemWithHero[] = [
       ],
     },
     children: [
-      { id: "prologo-01", slug: "prologo-fernando-clavijo", title: "Fernando Clavijo", subtitle: "Presidente del Gobierno de Canarias", isPrologue: true },
+      { id: "prologo-01", slug: "prologo-fernando-clavijo", title: "Fernando Clavijo", subtitle: "Presidente del Gobierno de Canarias", isPrologue: true, prologueImage: imgClavijo, prologueImagePosition: "center 15%" },
       { id: "prologo-02", slug: "prologo-antonio-morales", title: "Antonio Morales", subtitle: "Presidente del Cabildo de Gran Canaria", isPrologue: true },
       { id: "prologo-03", slug: "prologo-juan-ruiz", title: "Juan Ruiz", subtitle: "Presidente del CV Guaguas", isPrologue: true },
       { id: "prologo-04", slug: "prologo-poli-suarez", title: "Poli Suárez", subtitle: "Consejero de Deportes del Gobierno de Canarias", isPrologue: true },
