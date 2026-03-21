@@ -708,6 +708,10 @@ function libro_save_capitulo_meta($post_id) {
         update_post_meta($post_id, '_hero_border_color', sanitize_text_field($_POST['libro_hero_border_color']));
     }
     
+    if (isset($_POST['libro_hero_bg_position'])) {
+        update_post_meta($post_id, '_hero_background_position', sanitize_text_field($_POST['libro_hero_bg_position']));
+    }
+    
     if (isset($_POST['libro_hero_icon'])) {
         update_post_meta($post_id, '_hero_icon', sanitize_text_field($_POST['libro_hero_icon']));
     }

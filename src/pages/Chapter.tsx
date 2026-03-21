@@ -80,6 +80,7 @@ const Chapter = () => {
             height={chapter.hero.height}
             minHeight={chapter.hero.minHeight}
             aspectRatio={chapter.hero.aspectRatio}
+            backgroundPosition={chapter.hero.backgroundPosition}
           />
         )}
         

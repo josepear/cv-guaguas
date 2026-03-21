@@ -226,8 +226,8 @@ const ChapterHero = ({
       {/* Background Image with Parallax */}
       {backgroundImage && (
         <motion.div 
-          className="absolute inset-0 bg-cover bg-center bg-no-repeat will-change-transform"
-          style={{ backgroundImage: `url(${backgroundImage})`, y: bgY, scale: 1.1 }}
+          className="absolute inset-0 bg-cover bg-no-repeat will-change-transform"
+          style={{ backgroundImage: `url(${backgroundImage})`, backgroundPosition, y: bgY, scale: 1.1 }}
         />
       )}
 

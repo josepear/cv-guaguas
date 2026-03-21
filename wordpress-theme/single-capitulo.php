@@ -134,7 +134,7 @@ if ($hero_icon === 'custom' && $hero_custom_icon) {
     <?php if ($hero_enabled === '1' && $hero_image) : ?>
     <!-- Chapter Hero -->
     <div class="chapter-hero relative overflow-hidden w-full" style="<?php echo esc_attr($hero_height_style); ?>">
-        <div class="absolute inset-0 bg-cover bg-center bg-no-repeat hero-bg-parallax" style="background-image: url('<?php echo esc_url($hero_image); ?>');"></div>
+        <div class="absolute inset-0 bg-cover bg-no-repeat hero-bg-parallax" style="background-image: url('<?php echo esc_url($hero_image); ?>'); background-position: <?php echo esc_attr($hero_bg_position); ?>;"></div>
         
         <?php if ($hero_overlay) : ?>
         <div class="absolute inset-0" style="background-color: <?php echo esc_attr($hero_overlay); ?>;"></div>
