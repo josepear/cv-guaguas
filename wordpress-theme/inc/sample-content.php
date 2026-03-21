@@ -482,7 +482,7 @@ function libro_get_sample_chapters() {
 '),
     array('title' => 'José Millán', 'numero' => '', 'order' => 19, 'show_marker' => false, 'parent_ref' => 'cap01',
         'hero' => array(
-            'image' => get_template_directory_uri() . '/assets/images/content/1cap_pati_photo_24.jpg',
+            'image' => libro_img('content/1cap_pati_photo_24.jpg'),
             'height' => '500px',
             'overlay' => 'rgba(0, 0, 0, 0.4)',
             'icon' => 'none',
