@@ -13,6 +13,7 @@ export interface TitleLine {
 export interface ChapterHeroProps {
   backgroundImage?: string;
   backgroundOverlay?: string; // Overlay color with opacity (e.g., "rgba(0,0,0,0.5)" or "hsl(45 100% 50% / 0.8)")
+  backgroundPosition?: string; // CSS background-position (default: "center top")
   icon?: "star" | "star-outline" | "none" | ReactNode;
   customIconSrc?: string; // URL to custom icon image (supports SVG, PNG, etc.)
   customIconColor?: string; // Color to apply to SVG icons (only works with SVG files)
@@ -34,6 +35,7 @@ export interface ChapterHeroProps {
 const ChapterHero = ({
   backgroundImage,
   backgroundOverlay,
+  backgroundPosition = "center top",
   icon = "star",
   customIconSrc,
   customIconColor,
@@ -224,8 +226,8 @@ const ChapterHero = ({
       {/* Background Image with Parallax */}
       {backgroundImage && (
         <motion.div 
-          className="absolute inset-0 bg-cover bg-center bg-no-repeat will-change-transform"
-          style={{ backgroundImage: `url(${backgroundImage})`, y: bgY, scale: 1.1 }}
+          className="absolute inset-0 bg-cover bg-no-repeat will-change-transform"
+          style={{ backgroundImage: `url(${backgroundImage})`, backgroundPosition, y: bgY, scale: 1.1 }}
         />
       )}
 
