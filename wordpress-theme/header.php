@@ -161,7 +161,7 @@
         .light .drop-cap { color: var(--lm-gold); }
         .light .btn-download-primary { background-color: var(--lm-gold); border-color: var(--lm-gold); color: hsl(0 0% 100%); }
         .light .btn-download-primary:hover { background-color: transparent; color: var(--lm-gold); }
-        .light .btn-download-outline { color: var(--lm-fg); border-color: var(--lm-border); }
+        .light .btn-download-outline { color: var(--lm-fg); border-color: hsl(220 15% 45% / 0.5); }
         .light .btn-download-outline:hover { border-color: var(--lm-gold); color: var(--lm-gold); }
 
         /* Light mode hover overrides - match React Tailwind behavior */
