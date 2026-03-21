@@ -93,10 +93,19 @@ const Chapter = () => {
             id={chapter.id} 
             number={chapter.number} 
             title={chapter.title}
-            showChapterMarker={!chapter.hero && !!chapter.number}
-            showTitle={!chapter.hero}
+            showChapterMarker={!chapter.hero && !!chapter.number && !chapter.isPrologue}
+            showTitle={!chapter.hero && !chapter.isPrologue}
           >
-            {content || <p>Contenido del capítulo próximamente.</p>}
+            {chapter.isPrologue ? (
+              <PrologueLayout
+                name={chapter.title}
+                role={chapter.subtitle || ""}
+              >
+                {content || <p>Texto del prólogo pendiente de redacción.</p>}
+              </PrologueLayout>
+            ) : (
+              content || <p>Contenido del capítulo próximamente.</p>
+            )}
           </ChapterSection>
 
           <ChapterNavigation 
