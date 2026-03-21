@@ -279,8 +279,6 @@ if ($hero_icon === 'custom' && $hero_custom_icon) {
                 if ($is_prologue) :
                     $scale_style = ($prologo_escala && floatval($prologo_escala) != 1) ? 'transform: scale(' . floatval($prologo_escala) . ');' : '';
                 ?>
-                    $scale_style = ($prologo_escala && floatval($prologo_escala) != 1) ? 'transform: scale(' . floatval($prologo_escala) . ');' : '';
-                ?>
                 <div class="prologue-layout mb-12">
                     <!-- Centered photo - identical to React PrologueLayout.tsx -->
                     <div class="flex justify-center mb-8">
