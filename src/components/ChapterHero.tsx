@@ -13,6 +13,7 @@ export interface TitleLine {
 export interface ChapterHeroProps {
   backgroundImage?: string;
   backgroundOverlay?: string; // Overlay color with opacity (e.g., "rgba(0,0,0,0.5)" or "hsl(45 100% 50% / 0.8)")
+  backgroundPosition?: string; // CSS background-position (default: "center top")
   icon?: "star" | "star-outline" | "none" | ReactNode;
   customIconSrc?: string; // URL to custom icon image (supports SVG, PNG, etc.)
   customIconColor?: string; // Color to apply to SVG icons (only works with SVG files)
