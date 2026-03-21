@@ -77,7 +77,7 @@ $current_slug = is_singular('capitulo') ? get_post_field('post_name', get_the_ID
                        class="sidebar-parent-toggle sidebar-active-indicator flex-1 text-left py-2.5 px-3 rounded-sm transition-all duration-200 font-sans text-sm font-medium hover:bg-sidebar-accent hover:text-gold <?php echo $has_active_child ? 'text-gold/80' : 'text-sidebar-foreground'; ?>"
                        data-target="subcapitulos-<?php echo $cap->ID; ?>">
                         <span class="flex items-center gap-2.5">
-                            <?php if ($numero && !$ocultar_numero) : ?>
+                            <?php if (strlen($numero) > 0 && !$ocultar_numero) : ?>
                                 <span class="chapter-number chapter-number--main"><?php echo esc_html($numero); ?></span>
                             <?php endif; ?>
                             <span><?php echo esc_html($cap->post_title); ?></span>
