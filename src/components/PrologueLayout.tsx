@@ -30,7 +30,7 @@ const PrologueLayout = ({ name, role, imageSrc, imageAlt, objectPosition = "cent
               src={imageSrc}
               alt={imageAlt || name}
               className="w-full h-full object-cover"
-              style={{ objectPosition }}
+              style={{ objectPosition, transform: `scale(${imageScale})` }}
               loading="lazy"
             />
           </div>
