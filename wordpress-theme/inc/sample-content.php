@@ -314,7 +314,35 @@ function libro_get_sample_chapters() {
 ',
     ),
 
-    // Cap 02 children
+    // Cap 01 children — idéntico a React chaptersStructure.ts
+    array('title' => 'Los orígenes', 'numero' => '', 'order' => 12, 'show_marker' => false, 'parent_ref' => 'cap01',
+        'content' => '
+[seccion_header]Las horas extraescolares con Francisco Rodríguez[/seccion_header]
+
+[capitular]Antes que el club fue el colegio. Porque el Calvo Sotelo nació del centro educativo del mismo nombre que se inauguró para el curso escolar 1967-68 en el barrio de Las Rehoyas, en la época punto de convergencia de la zona alta de Las Palmas de Gran Canaria y con familias de extracción social y economías precarias.[/capitular]
+
+<p>Con todo, y según ha dejado documentado Miriam Quiroga en su libro \'Génesis y evolución del voleibol en Gran Canaria 1934/78\', las primeras influencias para introducir el juego del voleibol en el Calvo Sotelo corresponden a Francisco Rodríguez, profesor que, de manera experimental, fomenta su práctica en las horas extraescolares. La aceptación de su propuesta lúdica es inmediata, lo que permite crear, de modo informal, los primeros equipos para competir de manera interna y, con el tiempo, concurrir a competencias de ámbito local.</p>
+
+[seccion_header]Silvestre Cabrera y el salto cualitativo[/seccion_header]
+
+<p>Un acontecimiento externo va a suponer el definitivo impulso para el desarrollo y crecimiento de la disciplina, tanto en el propio Calvo Sotelo como en los otros caladeros de la cantera grancanaria de mitad de los setenta: la llegada a la presidencia de la Federación de Las Palmas de Voleibol de Silvestre Cabrera, a instancias de Manuel Hernández, director técnico de la Federación Española y que permite recuperar el voleibol federado en la provincia de Las Palmas. Cabrera, que era instructor de Educación Física y profesor del Instituto de Enseñanza Media de Escaleritas, toma posesión de su cargo el 19 de septiembre de 1973.</p>
+
+[seccion_header]La selección cadete con Felipe Nuez como germen[/seccion_header]
+
+<p>La temporada 1974-75, ya con los primeros resultados de la gestión de Cabrera al frente del voleibol provincial, resulta crucial en el desarrollo del Calvo Sotelo, pues se materializa la creación de la selección cadete de Las Palmas, que estará a cargo de Felipe Nuez.</p>
+
+[seccion_header]Estatutos fundacionales y despegue[/seccion_header]
+
+<p>En noviembre de 1976, concretamente el día 6, se redactan los estatutos de fundación del Club Voleibol Calvo Sotelo, lo que ya supone, formalmente, el avance que se demandaba para que el proyecto deportivo se oficializara a todos los niveles y adquiriera una consistencia definitiva.</p>
+
+[seccion_header]El ascenso a Segunda División de 1979[/seccion_header]
+
+<p>Lo que había quedado pendiente del año anterior, el ascenso a Segunda División, sí se materializó en 1979, en la fase decisiva que se libró en Málaga los días 9, 10 y 11 de marzo.</p>
+
+[seccion_header]El acceso a la élite y su conflicto burocrático[/seccion_header]
+
+<p>Es en la temporada 1983-84 cuando se va a producir un conflicto burocrático que impidió el sueño de estar entre los mejores del país. La temporada 1984-85 arranca condicionada por este frente. El Lucky Calvo Sotelo competiría finalmente en la División de Honor tras una posterior ampliación a doce equipos aprobada por la Federación Española el 17 de mayo de 1985.</p>
+'),
     array('title' => 'Felipe Nuez', 'numero' => '', 'order' => 13, 'show_marker' => false, 'parent_ref' => 'cap01',
         'content' => '
 [perfil_jugador nombre="Felipe Nuez"]
