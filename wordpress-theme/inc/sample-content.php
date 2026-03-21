@@ -393,7 +393,18 @@ function libro_get_sample_chapters() {
 <p>"Dejaron morir injustamente un equipo que lo ha significado todo para el deporte en Canarias. Eso me produjo un disgusto enorme. Por suerte, ahora se ha recuperado la entidad, aunque preferiría que se apostara más por jóvenes de la tierra aunque eso supusiera no ganar títulos. Eso sí, hay que felicitar a Juan Ruiz por el trabajo que ha hecho para que no cayera en el olvido esta institución tan querida", subraya.</p>
 '),
     array('title' => 'José Millán', 'numero' => '', 'order' => 19, 'show_marker' => false, 'parent_ref' => 'cap01',
-        'hero_image' => get_template_directory_uri() . '/assets/images/content/1cap_pati_photo_24.jpg',
+        'hero' => array(
+            'image' => get_template_directory_uri() . '/assets/images/content/1cap_pati_photo_24.jpg',
+            'height' => '500px',
+            'overlay' => 'rgba(0, 0, 0, 0.4)',
+            'icon' => 'none',
+            'alignment' => 'center',
+            'vertical' => 'bottom',
+            'title_lines' => array(
+                array('text' => 'JOSÉ', 'color' => '#0a1628', 'highlight' => '#fbbf24', 'use_highlight' => '1', 'font_weight' => 'black'),
+                array('text' => 'MILLÁN', 'color' => '#0a1628', 'highlight' => '#fbbf24', 'use_highlight' => '1', 'font_weight' => 'black'),
+            ),
+        ),
         'content' => '
 [capitular]Si la figura de Silvestre Cabrera fue de trascendencia capital para auspiciar el voleibol durante su mandato como presidente de la Federación de Las Palmas (1973-1985), no es menos relevante la influencia, también de enorme impacto, de José Millán, quien en diciembre de 1976 asumió el cargo de secretario del ente presidido por Cabrera, tomó su relevo a la conclusión de su ciclo como máximo mandatario y terminó encabezando la Federación Canaria de Voleibol hasta 2008. Más de tres décadas de contribución y entrega que le hicieron tener una atalaya privilegiada de los acontecimientos, al tiempo de otorgarle un lugar preferencial en la historia de esta disciplina.[/capitular]
 
