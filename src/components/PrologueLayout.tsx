@@ -36,7 +36,7 @@ const PrologueLayout = ({ name, role, imageSrc, imageAlt, objectPosition = "cent
             />
           </div>
         ) : (
-          <div className="w-32 h-32 md:w-40 md:h-40 rounded-3xl bg-muted flex items-center justify-center">
+          <div className="w-32 h-32 md:w-40 md:h-40 rounded-[2rem] bg-muted flex items-center justify-center">
             <span className="font-serif text-4xl font-bold text-muted-foreground">
               {name.split(" ").map(w => w[0]).join("")}
             </span>
