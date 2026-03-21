@@ -1,42 +1,64 @@
 
 
-# Fix: WordPress light/dark mode parity issues
+# Fix: Badge "0" dorado en sidebar + Redirección de capítulos padre en WordPress
 
-## Problem Found
-**Critical CSS load order bug**: `main.css` is loaded via `wp_enqueue_style()` inside `wp_head()`, which runs AFTER the inline `<style>` in `header.php`. This means `main.css` rules override the light mode fixes in header.php.
+## Problemas identificados
 
-Specifically, `main.css` line 581-583:
-```css
-.light .btn-download-outline {
-    border-color: hsl(var(--muted-foreground) / 0.5); /* uses dark-mode variable = too light */
-    color: hsl(var(--foreground));  /* = hsl(0 0% 98%) = WHITE text on light bg! */
+1. **Sin redirección para capítulos padre**: En React, `Chapter.tsx` redirige automáticamente capítulos con hijos a su primer subcapítulo (`Navigate to={children[0].slug}`). WordPress no tiene esta lógica — acceder a "Prólogos" muestra su contenido propio en vez de redirigir a Fernando Clavijo.
+
+2. **Badge "0" posiblemente ausente**: Si el contenido fue importado antes de añadir el soporte para `strlen('0')`, el meta `_numero_capitulo` puede no existir en la base de datos. El código PHP actual (`strlen($numero) > 0`) es correcto, pero el dato podría faltar.
+
+## Plan de implementación
+
+### 1. Añadir redirección de capítulos padre (`functions.php`)
+
+Añadir un hook `template_redirect` que detecte capítulos con hijos y redirija al primer subcapítulo, idéntico al comportamiento de React:
+
+```php
+function libro_redirect_parent_chapters() {
+    if (!is_singular('capitulo')) return;
+    
+    $children = get_posts(array(
+        'post_type'      => 'capitulo',
+        'posts_per_page' => 1,
+        'orderby'        => 'menu_order',
+        'order'          => 'ASC',
+        'post_parent'    => get_the_ID(),
+    ));
+    
+    if (!empty($children)) {
+        wp_redirect(get_permalink($children[0]->ID), 301);
+        exit;
+    }
 }
+add_action('template_redirect', 'libro_redirect_parent_chapters');
 ```
-This overrides the correct fix in header.php, making buttons invisible in light mode.
 
-Additionally, `main.css` defines utility classes (`.text-foreground`, `.bg-background`, etc.) using dark-mode CSS variables with no light mode variants, potentially conflicting with Tailwind CDN's light mode behavior.
+### 2. Forzar meta `_numero_capitulo = '0'` para Prólogos (`sample-content.php`)
 
-## Fix (2 files)
+Añadir una función de reparación que se ejecute al activar el tema para asegurar que el capítulo "Prólogos" siempre tenga el meta `_numero_capitulo` con valor `'0'`, incluso si fue importado en una versión anterior:
 
-### 1. `wordpress-theme/assets/css/main.css` — Update light mode button rule (line 581-584)
-```css
-.light .btn-download-outline {
-    border-color: hsl(220 15% 45% / 0.5);
-    color: hsl(220 50% 12%);
+```php
+function libro_fix_prologos_numero() {
+    $prologos = get_posts(array(
+        'post_type' => 'capitulo',
+        'title'     => 'Prólogos',
+        'posts_per_page' => 1,
+    ));
+    if (!empty($prologos)) {
+        $existing = get_post_meta($prologos[0]->ID, '_numero_capitulo', true);
+        if (strlen($existing) === 0) {
+            update_post_meta($prologos[0]->ID, '_numero_capitulo', '0');
+        }
+    }
 }
+add_action('after_switch_theme', 'libro_fix_prologos_numero');
 ```
-Use hardcoded light-mode values instead of CSS variables that resolve to dark-mode colors.
 
-### 2. `wordpress-theme/header.php` — Move inline `<style>` AFTER `wp_head()` (structural fix)
-Move the entire inline `<style>` block (lines 98-360) to after `<?php wp_head(); ?>` (currently line 362). This ensures the light mode overrides in header.php always win over main.css, preventing future conflicts.
+### Archivos a modificar
 
-This is a one-time structural fix that eliminates the class of bugs where main.css overrides inline light-mode fixes.
-
-## Verification Checklist
-After fix:
-- **Prologue name**: Gold bg + dark text (dark), Navy bg + white text (light) ✓ (already correct in both files)
-- **Hero overlays**: Dark gradient (dark), lighter gradient (light) ✓ (header.php rules now win)
-- **Sidebar**: Dark navy (dark), warm cream (light) ✓
-- **Download buttons**: Visible borders + correct text color in both modes ✓
-- **All text/bg utilities**: Tailwind CDN handles most; header.php overrides handle the rest ✓
+| Archivo | Cambio |
+|---------|--------|
+| `wordpress-theme/functions.php` | Añadir hook `template_redirect` para redirigir capítulos padre al primer hijo |
+| `wordpress-theme/inc/sample-content.php` | Añadir función `libro_fix_prologos_numero()` con hook `after_switch_theme` |
 
