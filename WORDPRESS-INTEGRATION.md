@@ -950,11 +950,24 @@ Igual que `[imagen_contenido]` pero usando el ID de la biblioteca de WordPress.
 Crea una cabecera visual personalizada. Equivalente a `<ChapterHero>`.
 
 ```
-[hero_capitulo background="url" overlay="rgba(212,175,55,0.85)" icon="custom" custom_icon="url" alignment="right" height="500px"]
+[hero_capitulo background="url" overlay="rgba(212,175,55,0.85)" icon="custom" custom_icon="url" alignment="right" height="500px" bg_position="center top"]
   [hero_linea color="#1a237e" highlight="#FFFFFF"]DEL PATIO[/hero_linea]
   [hero_linea color="#1a237e" highlight="#FFFFFF"]DEL COLEGIO[/hero_linea]
 [/hero_capitulo]
 ```
+
+**Atributos del shortcode:**
+
+| Atributo | Descripción | Default |
+|----------|-------------|---------|
+| `background` | URL de la imagen de fondo | — |
+| `overlay` | Color de overlay con transparencia | — |
+| `icon` | Tipo de icono: `star`, `star-outline`, `custom`, `none` | `star` |
+| `custom_icon` | URL del icono personalizado (SVG/PNG) | — |
+| `alignment` | Alineación horizontal: `left`, `center`, `right` | `center` |
+| `height` | Altura del hero (px, vh) | `400px` |
+| `bg_position` | CSS background-position | `center top` |
+| `border_color` | Color del borde decorativo | — |
 
 ---
 

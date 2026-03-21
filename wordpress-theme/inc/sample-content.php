@@ -77,6 +77,7 @@ function libro_import_sample_content() {
                 if (!empty($hero['vertical'])) update_post_meta($post_id, '_hero_vertical', $hero['vertical']);
                 if (!empty($hero['border_color'])) update_post_meta($post_id, '_hero_border_color', $hero['border_color']);
                 if (!empty($hero['title_lines'])) update_post_meta($post_id, '_hero_title_lines', $hero['title_lines']);
+                if (!empty($hero['background_position'])) update_post_meta($post_id, '_hero_background_position', $hero['background_position']);
             }
             
             // Track ID for children
@@ -357,6 +358,17 @@ function libro_get_sample_chapters() {
 <p>Se congratula de que Juan Ruiz, "acompañado de otros históricos de talla inigualable como Sánchez Jover, Nuez o Camarero", haya podido rescatar un proyecto que parecía ya enterrado: "Fundé un club como el Cantur y terminó desapareciendo pese a los éxitos que logró. En el Vecindario sé que Sánchez Jover se dejó un dineral de su bolsillo y acabó quemado. De ahí que la jugada de coger esta plaza, con derecho a jugar en Europa como premio añadido, haya sido otro acierto más de Juan, capaz de reinventarse de nuevo en favor de un club que es patrimonio de nuestra tierra por trayectoria, historia e importancia".</p>
 '),
     array('title' => 'Pericles', 'numero' => '', 'order' => 18, 'show_marker' => false, 'parent_ref' => 'cap01',
+        'hero' => array(
+            'image' => get_template_directory_uri() . '/assets/images/content/cap1_pericles_hero.jpg',
+            'height' => '500px',
+            'overlay' => 'rgba(0, 0, 0, 0.4)',
+            'icon' => 'none',
+            'alignment' => 'center',
+            'vertical' => 'bottom',
+            'title_lines' => array(
+                array('text' => 'PERICLES', 'color' => '#0a1628', 'highlight' => '#fbbf24', 'use_highlight' => '1', 'font_weight' => 'black'),
+            ),
+        ),
         'content' => '
 [capitular]Un pelo abundante y la barba que le daba aires intelectuales le valieron el apodo, Pericles, con el que se incrustaría, por derecho propio, en el listado de imprescindibles del Calvo Sotelo. "Me dijeron, medio en serio medio en broma, que me parecía a Pericles. No me lo tomé mal y así me quedé", admite. Pedro Román Rosario (Las Palmas de Gran Canaria, 1958) no fue uno más. Durante muchos años capitán y guía del resto, añadió a sus grandes dotes para el voleibol ("como receptor formé con Tony Vázquez una línea fabulosa en esa función") una lección de compromiso y entrega de impresión, ya que, pese a su condición de asmático, perteneció durante largo periplo al equipo y con un rendimiento ejemplar. "Salía a la cancha con mi Ventolín para poder resistir los esfuerzos. En los tiempos muertos y descansos casi prefería el fuelle que me daba el medicamento al agua. Y alguna vez me pincharon por las asfixias que me entraban. Que se lo pregunten a Alfredo Padrón, que iba para doctor, como ejerció posteriormente, y en más de una ocasión fue mi practicante en el vestuario", rememora. Así, venciendo a una patología tan severa ("hoy en día, jugar en esas condiciones sería impensable por todos los exámenes médicos que se hacen, pero en esa época no teníamos controles de este tipo, no había tanta vigilancia para preservar la salud de los miembros de los equipos"), adquirió galones y ascendente hasta situarse en un estatus que ya siempre le correspondería. De la primera época del Calvo Sotelo no hay miembro que pase por alto la influencia ejercida por Pericles y su aura de liderazgo única.[/capitular]
 
@@ -381,7 +393,18 @@ function libro_get_sample_chapters() {
 <p>"Dejaron morir injustamente un equipo que lo ha significado todo para el deporte en Canarias. Eso me produjo un disgusto enorme. Por suerte, ahora se ha recuperado la entidad, aunque preferiría que se apostara más por jóvenes de la tierra aunque eso supusiera no ganar títulos. Eso sí, hay que felicitar a Juan Ruiz por el trabajo que ha hecho para que no cayera en el olvido esta institución tan querida", subraya.</p>
 '),
     array('title' => 'José Millán', 'numero' => '', 'order' => 19, 'show_marker' => false, 'parent_ref' => 'cap01',
-        'hero_image' => get_template_directory_uri() . '/assets/images/content/1cap_pati_photo_24.jpg',
+        'hero' => array(
+            'image' => get_template_directory_uri() . '/assets/images/content/1cap_pati_photo_24.jpg',
+            'height' => '500px',
+            'overlay' => 'rgba(0, 0, 0, 0.4)',
+            'icon' => 'none',
+            'alignment' => 'center',
+            'vertical' => 'bottom',
+            'title_lines' => array(
+                array('text' => 'JOSÉ', 'color' => '#0a1628', 'highlight' => '#fbbf24', 'use_highlight' => '1', 'font_weight' => 'black'),
+                array('text' => 'MILLÁN', 'color' => '#0a1628', 'highlight' => '#fbbf24', 'use_highlight' => '1', 'font_weight' => 'black'),
+            ),
+        ),
         'content' => '
 [capitular]Si la figura de Silvestre Cabrera fue de trascendencia capital para auspiciar el voleibol durante su mandato como presidente de la Federación de Las Palmas (1973-1985), no es menos relevante la influencia, también de enorme impacto, de José Millán, quien en diciembre de 1976 asumió el cargo de secretario del ente presidido por Cabrera, tomó su relevo a la conclusión de su ciclo como máximo mandatario y terminó encabezando la Federación Canaria de Voleibol hasta 2008. Más de tres décadas de contribución y entrega que le hicieron tener una atalaya privilegiada de los acontecimientos, al tiempo de otorgarle un lugar preferencial en la historia de esta disciplina.[/capitular]
 
