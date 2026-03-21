@@ -550,12 +550,12 @@ function libro_get_sample_chapters() {
         'hero' => array(
             'image' => libro_img('hero-estatutos.jpg'),
             'overlay' => 'rgba(0, 0, 0, 0.15)',
-            'icon' => 'custom', 'custom_icon' => $star,
+            'icon' => 'custom', 'custom_icon' => libro_img('estrella-icon.svg'),
+            'custom_icon_color' => 'hsl(45 100% 50%)',
             'icon_width' => 40, 'icon_height' => 40,
             'alignment' => 'center', 'vertical' => 'center',
             'height' => '500px',
             'border_color' => 'hsl(45 100% 50%)',
-            'icon_color' => 'hsl(45 100% 50%)',
             'title_lines' => array(
                 libro_hero_line('ESTATUTOS', 'hsl(220, 50%, 12%)', 'hsl(45, 100%, 50%)'),
                 libro_hero_line('FUNDACIONALES', 'hsl(220, 50%, 12%)', 'hsl(45, 100%, 50%)'),
