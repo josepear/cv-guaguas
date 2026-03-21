@@ -276,13 +276,9 @@ if ($hero_icon === 'custom' && $hero_custom_icon) {
                 <?php endif; ?>
                 
                 <?php
-                // Prologue layout (matching React PrologueLayout)
-                $prologo_imagen = get_post_meta(get_the_ID(), '_prologo_imagen', true);
-                $prologo_posicion = get_post_meta(get_the_ID(), '_prologo_posicion', true) ?: 'center 20%';
-                $prologo_escala = get_post_meta(get_the_ID(), '_prologo_escala', true);
-                $subtitulo_prologo = get_post_meta(get_the_ID(), '_subtitulo', true);
-
-                if ($prologo_imagen && $subtitulo_prologo) :
+                if ($is_prologue) :
+                    $scale_style = ($prologo_escala && floatval($prologo_escala) != 1) ? 'transform: scale(' . floatval($prologo_escala) . ');' : '';
+                ?>
                     $scale_style = ($prologo_escala && floatval($prologo_escala) != 1) ? 'transform: scale(' . floatval($prologo_escala) . ');' : '';
                 ?>
                 <div class="prologue-layout mb-12">
