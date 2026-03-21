@@ -237,8 +237,12 @@ if ($hero_icon === 'custom' && $hero_custom_icon) {
         </nav>
         
         <!-- Chapter Section - igual que ChapterSection.tsx -->
+        <?php
+        // Detect prologue: has prologo_imagen AND subtitulo
+        $is_prologue = !empty($prologo_imagen) && !empty($subtitulo_prologo);
+        ?>
         <section class="scroll-mt-24 py-16 md:py-24 border-b border-border/30 last:border-b-0">
-            <?php if ($hero_enabled !== '1') : ?>
+            <?php if ($hero_enabled !== '1' && !$is_prologue) : ?>
             <header class="mb-8 md:mb-12">
                 <?php if ($capitulo_numero) : ?>
                 <span class="chapter-marker block mb-4">
