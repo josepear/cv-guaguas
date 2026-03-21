@@ -132,8 +132,8 @@ export const chaptersData: ChapterItemWithHero[] = [
       borderColor: "hsl(45 100% 50%)",
       titleFontWeight: "black",
       titleLines: [
-        { text: "ESTATUTOS", color: "#1a1a1a", highlightColor: "hsl(45 100% 50%)", fontWeight: "black" },
-        { text: "FUNDACIONALES", color: "#1a1a1a", highlightColor: "hsl(45 100% 50%)", fontWeight: "black" },
+        { text: "ESTATUTOS", color: "hsl(220 50% 12%)", highlightColor: "hsl(45 100% 50%)", fontWeight: "black" },
+        { text: "FUNDACIONALES", color: "hsl(220 50% 12%)", highlightColor: "hsl(45 100% 50%)", fontWeight: "black" },
       ],
     },
   },
