@@ -819,6 +819,16 @@ function libro_save_capitulo_meta($post_id) {
     } else {
         delete_post_meta($post_id, '_hero_title_lines');
     }
+    // Guardar campos de prólogo
+    if (isset($_POST['libro_prologo_imagen'])) {
+        update_post_meta($post_id, '_prologo_imagen', esc_url_raw($_POST['libro_prologo_imagen']));
+    }
+    if (isset($_POST['libro_prologo_posicion'])) {
+        update_post_meta($post_id, '_prologo_posicion', sanitize_text_field($_POST['libro_prologo_posicion']));
+    }
+    if (isset($_POST['libro_prologo_escala'])) {
+        update_post_meta($post_id, '_prologo_escala', sanitize_text_field($_POST['libro_prologo_escala']));
+    }
 }
 add_action('save_post_capitulo', 'libro_save_capitulo_meta');
 
