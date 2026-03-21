@@ -352,6 +352,19 @@ function libro_capitulo_meta_box_html($post) {
             </div>
             
             <div class="libro-meta-field">
+                <label for="libro_hero_bg_position">Posición del fondo</label>
+                <input 
+                    type="text" 
+                    id="libro_hero_bg_position" 
+                    name="libro_hero_bg_position" 
+                    value="<?php echo esc_attr(get_post_meta($post->ID, '_hero_background_position', true)); ?>" 
+                    placeholder="center top"
+                    style="max-width: 200px;"
+                >
+                <p class="description">CSS background-position. Ej: center top, center center, left center. Por defecto: center top.</p>
+            </div>
+            
+            <div class="libro-meta-field">
                 <label for="libro_hero_overlay">Color de overlay (opcional)</label>
                 <input 
                     type="text" 
