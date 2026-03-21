@@ -17,6 +17,7 @@ import imgClavijo from "@/assets/prologues/fernando-clavijo.jpg";
 import imgMorales from "@/assets/prologues/antonio-morales.jpg";
 import imgRuiz from "@/assets/prologues/juan-ruiz.jpg";
 import imgSuarez from "@/assets/prologues/poli-suarez.jpg";
+import imgRomero from "@/assets/prologues/aridany-romero.jpg";
 
 export interface ChapterItemWithHero extends Omit<ChapterItem, 'children'> {
   hero?: Omit<ChapterHeroProps, 'titleLines'> & {
