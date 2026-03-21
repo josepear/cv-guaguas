@@ -12,7 +12,7 @@ interface PrologueLayoutProps {
   children: ReactNode;
 }
 
-const PrologueLayout = ({ name, role, imageSrc, imageAlt, objectPosition = "center 20%", children }: PrologueLayoutProps) => {
+const PrologueLayout = ({ name, role, imageSrc, imageAlt, objectPosition = "center 20%", imageScale = 1, children }: PrologueLayoutProps) => {
   const reveal = useScrollReveal({ direction: "up", distance: 40, duration: 0.7 });
 
   return (
