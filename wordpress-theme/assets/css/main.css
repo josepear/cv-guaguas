@@ -579,8 +579,8 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .light .btn-download-outline {
-    border-color: hsl(var(--muted-foreground) / 0.5);
-    color: hsl(var(--foreground));
+    border-color: hsl(220 15% 45% / 0.5);
+    color: hsl(220 50% 12%);
 }
 
 .btn-download-outline:hover {
