@@ -529,8 +529,8 @@ function libro_get_sample_chapters() {
             'border_color' => 'hsl(45 100% 50%)',
             'icon_color' => 'hsl(45 100% 50%)',
             'title_lines' => array(
-                libro_hero_line('ESTATUTOS', '#1a1a1a', 'hsl(45, 100%, 50%)'),
-                libro_hero_line('FUNDACIONALES', '#1a1a1a', 'hsl(45, 100%, 50%)'),
+                libro_hero_line('ESTATUTOS', 'hsl(220, 50%, 12%)', 'hsl(45, 100%, 50%)'),
+                libro_hero_line('FUNDACIONALES', 'hsl(220, 50%, 12%)', 'hsl(45, 100%, 50%)'),
             ),
         ),
         'content' => '
