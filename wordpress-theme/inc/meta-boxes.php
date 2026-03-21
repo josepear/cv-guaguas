@@ -264,6 +264,60 @@ function libro_capitulo_meta_box_html($post) {
         <p class="description">Se mostrará debajo del título en el menú lateral, en texto pequeño y mayúsculas. Útil para cargos en prólogos.</p>
     </div>
     
+    <!-- Prologue Fields -->
+    <div class="libro-meta-section">
+        <h3>📷 Prólogo (foto y cargo del autor)</h3>
+        <p class="description" style="margin-top: -5px; margin-bottom: 15px;">
+            Para prólogos: foto cuadrada del autor con esquinas redondeadas y su cargo debajo del nombre.
+        </p>
+        
+        <?php
+        $prologo_imagen = get_post_meta($post->ID, '_prologo_imagen', true);
+        $prologo_posicion = get_post_meta($post->ID, '_prologo_posicion', true) ?: 'center 20%';
+        $prologo_escala = get_post_meta($post->ID, '_prologo_escala', true) ?: '1';
+        ?>
+        
+        <div class="libro-meta-field">
+            <label for="libro_prologo_imagen">Foto del autor</label>
+            <input 
+                type="url" 
+                id="libro_prologo_imagen" 
+                name="libro_prologo_imagen" 
+                value="<?php echo esc_attr($prologo_imagen); ?>" 
+                placeholder="https://..."
+                style="max-width: 70%; display: inline-block;"
+            >
+            <button type="button" class="button libro-upload-hero-image">Seleccionar imagen</button>
+            <p class="description">Foto cuadrada del autor. Se mostrará con esquinas redondeadas.</p>
+        </div>
+        
+        <div class="libro-meta-field">
+            <label for="libro_prologo_posicion">Posición de la imagen</label>
+            <input 
+                type="text" 
+                id="libro_prologo_posicion" 
+                name="libro_prologo_posicion" 
+                value="<?php echo esc_attr($prologo_posicion); ?>" 
+                placeholder="center 20%"
+                style="max-width: 200px;"
+            >
+            <p class="description">CSS object-position. Ej: center 20%, center 15%, 70% 25px</p>
+        </div>
+        
+        <div class="libro-meta-field">
+            <label for="libro_prologo_escala">Escala de la imagen</label>
+            <input 
+                type="text" 
+                id="libro_prologo_escala" 
+                name="libro_prologo_escala" 
+                value="<?php echo esc_attr($prologo_escala); ?>" 
+                placeholder="1"
+                style="max-width: 100px;"
+            >
+            <p class="description">Factor de escala. 1 = normal, 2 = doble zoom. Útil para fotos con mucho fondo.</p>
+        </div>
+    </div>
+    
     <div class="libro-meta-field">
         <div class="libro-meta-field-inline">
             <input 
@@ -764,6 +818,16 @@ function libro_save_capitulo_meta($post_id) {
         update_post_meta($post_id, '_hero_title_lines', $title_lines);
     } else {
         delete_post_meta($post_id, '_hero_title_lines');
+    }
+    // Guardar campos de prólogo
+    if (isset($_POST['libro_prologo_imagen'])) {
+        update_post_meta($post_id, '_prologo_imagen', esc_url_raw($_POST['libro_prologo_imagen']));
+    }
+    if (isset($_POST['libro_prologo_posicion'])) {
+        update_post_meta($post_id, '_prologo_posicion', sanitize_text_field($_POST['libro_prologo_posicion']));
+    }
+    if (isset($_POST['libro_prologo_escala'])) {
+        update_post_meta($post_id, '_prologo_escala', sanitize_text_field($_POST['libro_prologo_escala']));
     }
 }
 add_action('save_post_capitulo', 'libro_save_capitulo_meta');

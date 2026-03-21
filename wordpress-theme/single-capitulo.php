@@ -277,18 +277,23 @@ if ($hero_icon === 'custom' && $hero_custom_icon) {
                 if ($prologo_imagen && $subtitulo_prologo) :
                     $scale_style = ($prologo_escala && floatval($prologo_escala) != 1) ? 'transform: scale(' . floatval($prologo_escala) . ');' : '';
                 ?>
-                <div class="mb-12 flex flex-col items-center gap-6 sm:flex-row sm:items-start sm:gap-8">
-                    <div class="w-40 h-40 flex-shrink-0 overflow-hidden rounded-[2rem] border border-border/50 dark:border-gray-600">
-                        <img src="<?php echo esc_url($prologo_imagen); ?>" alt="<?php the_title(); ?>" class="w-full h-full object-cover" style="object-position: <?php echo esc_attr($prologo_posicion); ?>; <?php echo $scale_style; ?>">
+                <div class="prologue-layout mb-12">
+                    <!-- Centered photo - identical to React PrologueLayout.tsx -->
+                    <div class="flex justify-center mb-8">
+                        <div class="w-32 h-32 md:w-40 md:h-40 rounded-[2rem] overflow-hidden shadow-lg border border-border/50">
+                            <img src="<?php echo esc_url($prologo_imagen); ?>" alt="<?php the_title(); ?>" class="w-full h-full object-cover" style="object-position: <?php echo esc_attr($prologo_posicion); ?>; <?php echo $scale_style; ?>" loading="lazy">
+                        </div>
                     </div>
-                    <div class="text-center sm:text-left pt-2">
-                        <h3 class="font-display text-2xl font-bold">
-                            <span class="inline-block px-3 py-1.5 rounded bg-[hsl(220,50%,12%)] text-white dark:bg-[hsl(45,100%,50%)] dark:text-[hsl(220,50%,12%)]">
-                                <?php the_title(); ?>
-                            </span>
+                    <!-- Name with highlighted background -->
+                    <div class="text-center mb-2">
+                        <h3 class="prologue-name" style="box-decoration-break: clone; -webkit-box-decoration-break: clone;">
+                            <?php the_title(); ?>
                         </h3>
-                        <p class="mt-2 text-[9px] uppercase tracking-[0.15em] text-muted-foreground font-medium"><?php echo esc_html($subtitulo_prologo); ?></p>
                     </div>
+                    <!-- Role subtitle -->
+                    <p class="text-center text-xs md:text-sm font-sans font-semibold uppercase tracking-[0.15em] text-muted-foreground mb-10">
+                        <?php echo esc_html($subtitulo_prologo); ?>
+                    </p>
                 </div>
                 <?php endif; ?>
 
