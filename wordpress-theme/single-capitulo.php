@@ -8,7 +8,7 @@ get_header();
 
 // Obtener datos del capítulo actual
 $capitulo_numero = get_post_meta(get_the_ID(), '_numero_capitulo', true);
-$capitulo_subtitulo = get_post_meta(get_the_ID(), '_capitulo_subtitulo', true);
+$capitulo_subtitulo = get_post_meta(get_the_ID(), '_subtitulo', true);
 
 // Hero fields
 $hero_enabled = get_post_meta(get_the_ID(), '_hero_enabled', true);
