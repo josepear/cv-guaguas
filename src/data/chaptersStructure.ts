@@ -88,6 +88,7 @@ export const chaptersData: ChapterItemWithHero[] = [
       ],
     },
     children: [
+      { id: "cap01-los-origenes", slug: "cap01-los-origenes", title: "Los orígenes" },
       { id: "cap02-felipe-nuez", slug: "cap02-felipe-nuez", title: "Felipe Nuez" },
       { id: "cap02-jose-miguel-santana", slug: "cap02-jose-miguel-santana", title: "José Miguel Santana" },
       { id: "cap02-florencio-tejera", slug: "cap02-florencio-tejera", title: "Florencio Tejera" },
