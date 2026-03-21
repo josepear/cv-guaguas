@@ -11,11 +11,12 @@ import heroCantera from "@/assets/hero-cantera.jpg";
 import heroTransicion from "@/assets/hero-transicion.jpg";
 import heroCelebracion from "@/assets/hero-celebracion.jpg";
 
-export interface ChapterItemWithHero extends ChapterItem {
+export interface ChapterItemWithHero extends Omit<ChapterItem, 'children'> {
   hero?: Omit<ChapterHeroProps, 'titleLines'> & {
     titleLines: TitleLine[];
     customIconColor?: string;
   };
+  children?: ChapterItemWithHero[];
 }
 
 export const chaptersData: ChapterItemWithHero[] = [
