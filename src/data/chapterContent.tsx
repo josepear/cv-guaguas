@@ -596,7 +596,7 @@ export const chapterContent: Record<string, React.ReactNode> = {
   // ═══════════════════════════════════════════════
   // El proyecto visionario de Juan Ruiz (subcapítulo de Cap. 4)
   // ═══════════════════════════════════════════════
-  "cap04-proyecto-juan-ruiz": (
+  "capitulo-04": (
     <>
       <DropCap>Nacido en La Aldea de San Nicolás en 1953, emigrante con su familia a Tenerife durante gran parte su adolescencia (1960-1969), en la que hizo sus pinitos en la lucha canaria o el fútbol ("con 16 años llegué a jugar en Tercera División en las filas del Adeje"), Juan Ruiz estaba llamado, sin saberlo, a escribir una historia sin parangón en el deporte canario y al frente del Calvo Sotelo.</DropCap>
 
@@ -842,7 +842,7 @@ export const chapterContent: Record<string, React.ReactNode> = {
   // ═══════════════════════════════════════════════
   // CAPÍTULO 1: Iconos y estrellas del Guaguas (COMPLETO)
   // ═══════════════════════════════════════════════
-  "capitulo-04": (
+  "capitulo-05": (
     <>
       <DropCap>Los grandes nombres que han escrito la historia del CV Guaguas. Jugadores que dejaron su huella en el voleibol español y que convirtieron al club en leyenda. Desde los canteranos que crecieron en el patio del Calvo Sotelo hasta las estrellas internacionales que llegaron para elevar el proyecto a cotas inimaginables, todos contribuyeron a forjar un legado deportivo sin parangón en Canarias.</DropCap>
 
@@ -855,7 +855,7 @@ export const chapterContent: Record<string, React.ReactNode> = {
     </>
   ),
 
-  "cap05-camarero": (
+  "cap06-camarero": (
     <PlayerProfile name="Sergio Miguel Camarero">
       <DropCap>Cuando Sergio Miguel Camarero (Las Palmas de Gran Canaria, 1967) destacaba en el fútbol y como prometedor jugador del San Antonio, el equipo de su barrio, ya soñaba con hacer historia en el deporte. Su aspiración se iba a cumplir, aunque de manera insospechada porque, efectivamente, haría carrera pero en otra disciplina que tardó en practicar y a la que llegó de rebote. "Empecé a jugar al voleibol porque, al regreso de unas vacaciones en el sur de la isla, ya no tenía posibilidad de inscribirme en el equipo de fútbol. Se había acabado el plazo. Y me apunté en la Escuela de Voleibol del San Román. Mis primeros entrenadores fueron Félix Rodríguez, Joselu Sánchez e Ignacio Brito. Tendría 14 o 15 años. Y me enganché."</DropCap>
       <ContentImage 
@@ -894,7 +894,7 @@ export const chapterContent: Record<string, React.ReactNode> = {
     </PlayerProfile>
   ),
 
-  "cap05-sanchez-jover": (
+  "cap06-sanchez-jover": (
     <PlayerProfile name="Paco Sánchez Jover">
       <DropCap>Paco Sánchez Jover es, junto a Camarero, el otro gran pilar sobre el que se construyó la leyenda del Guaguas. Llegado en el verano de 1987 como el gran fichaje estrella de Juan Ruiz, el mejor jugador de España en aquel momento, vino para no irse jamás y liderar los años dorados que ya estaban incubándose.</DropCap>
 
@@ -916,7 +916,7 @@ export const chapterContent: Record<string, React.ReactNode> = {
     </PlayerProfile>
   ),
 
-  "cap05-golec": (
+  "cap06-golec": (
     <PlayerProfile name="Waclaw Golec">
       <DropCap>En el verano de 1989, Juan Ruiz une a su elenco de estrellas a los internacionales polacos Ireneusz Klos y Waclaw Golec, llamados a ser ídolos y figuras diferenciales. Golec, gran rematador de potente salto, especialista en remates de zona cuatro y zagueros, con gran recepción, fue considerado un jugador muy completo.</DropCap>
 
@@ -930,7 +930,7 @@ export const chapterContent: Record<string, React.ReactNode> = {
     </PlayerProfile>
   ),
 
-  "cap05-klos": (
+  "cap06-klos": (
     <PlayerProfile name="Ireneusz Klos">
       <DropCap>Ireneusz Klos aterrizó en Gran Canaria junto a su compatriota Golec en 1989 y rápidamente se convirtió en una de las piezas fundamentales del engranaje del Guaguas campeón. Considerado uno de los cinco mejores colocadores del mundo, "no sabías si iba a rematar o a colocar", como recordaba Isidro Quintana.</DropCap>
 
@@ -952,7 +952,7 @@ export const chapterContent: Record<string, React.ReactNode> = {
   // ═══════════════════════════════════════════════
   // CAPÍTULO 1: Ignacio Brito y Tributo a los Salesianos
   // ═══════════════════════════════════════════════
-  "capitulo-05": (
+  "capitulo-06": (
     <>
       <DropCap>La historia del voleibol en Gran Canaria no puede entenderse sin la contribución de los Salesianos. Ignacio Brito, formado en las instalaciones del colegio salesiano, fue uno de los primeros técnicos que comprendió que la cantera era el verdadero tesoro del club.</DropCap>
 
@@ -970,7 +970,7 @@ export const chapterContent: Record<string, React.ReactNode> = {
   // ═══════════════════════════════════════════════
   // CAPÍTULO 1: Marek
   // ═══════════════════════════════════════════════
-  "capitulo-06": (
+  "capitulo-07": (
     <>
       <DropCap>Marek llegó a Gran Canaria como una estrella internacional y se marchó convertido en leyenda. Su impacto en el Guaguas trascendió lo deportivo para convertirse en un referente cultural del voleibol en las islas.</DropCap>
 
@@ -987,7 +987,7 @@ export const chapterContent: Record<string, React.ReactNode> = {
   // ═══════════════════════════════════════════════
   // CAPÍTULO 1: Embajadores por Europa
   // ═══════════════════════════════════════════════
-  "capitulo-07": (
+  "capitulo-08": (
     <>
       <DropCap>La aventura europea del CV Guaguas es una de las páginas más brillantes de su historia. Desde la primera participación en la Copa de Europa hasta las campañas recientes en la Champions League, el club ha sido embajador del voleibol canario en los más prestigiosos escenarios del continente.</DropCap>
 
@@ -1011,7 +1011,7 @@ export const chapterContent: Record<string, React.ReactNode> = {
   // ═══════════════════════════════════════════════
   // CAPÍTULO 1: Relevo generacional
   // ═══════════════════════════════════════════════
-  "capitulo-08": (
+  "capitulo-09": (
     <>
       <DropCap>Cada generación del Guaguas ha sido el eslabón de una cadena ininterrumpida de talento canario. El relevo generacional ha sido una constante en la vida del club, desde los pioneros del Calvo Sotelo hasta los actuales jugadores de la cantera que sueñan con vestir la camiseta amarilla.</DropCap>
 
@@ -1034,7 +1034,7 @@ export const chapterContent: Record<string, React.ReactNode> = {
   // ═══════════════════════════════════════════════
   // CAPÍTULO 1: Una transición dolorosa
   // ═══════════════════════════════════════════════
-  "capitulo-09": (
+  "capitulo-10": (
     <>
       <DropCap>Los años posteriores a la marcha de Juan Ruiz fueron los más convulsos en la historia del club. La inestabilidad directiva, los problemas económicos y la pérdida progresiva de competitividad culminaron en el peor desenlace posible: la desaparición temporal del equipo en 2009.</DropCap>
 
@@ -1052,7 +1052,7 @@ export const chapterContent: Record<string, React.ReactNode> = {
   // ═══════════════════════════════════════════════
   // CAPÍTULO 1: Todos los títulos
   // ═══════════════════════════════════════════════
-  "capitulo-10": (
+  "capitulo-11": (
     <>
       <DropCap>El palmarés del CV Guaguas es el más brillante del voleibol español. Nueve Ligas, nueve Copas del Rey, cinco Supercopas y una Copa Ibérica conforman un historial de éxitos que ningún otro club del país ha igualado.</DropCap>
 
@@ -1076,7 +1076,7 @@ export const chapterContent: Record<string, React.ReactNode> = {
   // ═══════════════════════════════════════════════
   // CAPÍTULO 1: Vuelve el gran Guaguas
   // ═══════════════════════════════════════════════
-  "capitulo-11": (
+  "capitulo-12": (
     <>
       <DropCap>En 2020, cuando el club se encontraba de nuevo al borde del abismo, Juan Ruiz regresó para devolver al Guaguas a la élite. Su vuelta fue recibida con esperanza y emoción por una afición que no había olvidado los años gloriosos.</DropCap>
 
@@ -1094,7 +1094,7 @@ export const chapterContent: Record<string, React.ReactNode> = {
   // ═══════════════════════════════════════════════
   // CAPÍTULO 1: Del CID al Arenas
   // ═══════════════════════════════════════════════
-  "capitulo-12": (
+  "capitulo-13": (
     <>
       <DropCap>Del Centro Insular de Deportes al Gran Canaria Arena: la evolución de la casa del voleibol grancanario. El CID fue durante décadas la catedral del voleibol en Canarias, un pabellón cuyo ambiente era temido por todos los rivales.</DropCap>
 
@@ -1112,7 +1112,7 @@ export const chapterContent: Record<string, React.ReactNode> = {
   // ═══════════════════════════════════════════════
   // CAPÍTULO 1: Los nuevos ídolos
   // ═══════════════════════════════════════════════
-  "capitulo-13": (
+  "capitulo-14": (
     <>
       <DropCap>Una nueva generación de estrellas ha tomado el relevo en el Gran Canaria Arena. Los nuevos ídolos del Guaguas combinan talento internacional con la pasión local para escribir nuevos capítulos en la historia del club.</DropCap>
 
@@ -1135,7 +1135,7 @@ export const chapterContent: Record<string, React.ReactNode> = {
   // ═══════════════════════════════════════════════
   // CAPÍTULO 1: El impacto del escudo
   // ═══════════════════════════════════════════════
-  "capitulo-14": (
+  "capitulo-15": (
     <>
       <DropCap>El escudo del CV Guaguas es mucho más que un símbolo deportivo. Representa la identidad de un club que ha trascendido el voleibol para convertirse en un referente cultural de Gran Canaria y del deporte canario.</DropCap>
 
@@ -1152,7 +1152,7 @@ export const chapterContent: Record<string, React.ReactNode> = {
   // ═══════════════════════════════════════════════
   // CAPÍTULO 1: La directiva
   // ═══════════════════════════════════════════════
-  "capitulo-15": (
+  "capitulo-16": (
     <>
       <DropCap>Detrás de cada título y cada logro deportivo hay una estructura directiva que ha trabajado incansablemente por el bien del club. Desde los fundadores del Calvo Sotelo hasta la actual junta directiva, la gestión del Guaguas ha sido un ejemplo de compromiso y sacrificio.</DropCap>
 
@@ -1169,7 +1169,7 @@ export const chapterContent: Record<string, React.ReactNode> = {
   // ═══════════════════════════════════════════════
   // CAPÍTULO 1: El Guaguas que viene
   // ═══════════════════════════════════════════════
-  "capitulo-16": (
+  "capitulo-17": (
     <>
       <DropCap>El futuro del Guaguas se construye en la cantera. Los equipos de categorías inferiores trabajan cada día para formar a los jugadores que, algún día, defenderán los colores amarillos en la máxima competición.</DropCap>
 
@@ -1187,7 +1187,7 @@ export const chapterContent: Record<string, React.ReactNode> = {
   // ═══════════════════════════════════════════════
   // CAPÍTULO 1: Empleados y técnicos
   // ═══════════════════════════════════════════════
-  "capitulo-17": (
+  "capitulo-18": (
     <>
       <DropCap>Un club no funciona solo con jugadores. Detrás de cada partido, cada entrenamiento y cada evento hay un equipo de profesionales que hace posible la maquinaria del CV Guaguas: empleados, técnicos, fisioterapeutas, utilleros y tantos otros nombres sin los cuales nada sería posible.</DropCap>
 
@@ -1204,7 +1204,7 @@ export const chapterContent: Record<string, React.ReactNode> = {
   // ═══════════════════════════════════════════════
   // CAPÍTULO 1: La plantilla del cincuentenario
   // ═══════════════════════════════════════════════
-  "capitulo-18": (
+  "capitulo-19": (
     <>
       <DropCap>La temporada 2025-2026 marca el cincuentenario del Club Voleibol Guaguas. Una plantilla competitiva en cuatro frentes —Liga, Copa, Supercopa y Champions League— escribe las últimas líneas de esta historia de medio siglo de pasión por el voleibol.</DropCap>
 
@@ -1228,7 +1228,7 @@ export const chapterContent: Record<string, React.ReactNode> = {
   // ═══════════════════════════════════════════════
   // CAPÍTULO 1: Miguel Ángel Ramírez
   // ═══════════════════════════════════════════════
-  "capitulo-19": (
+  "capitulo-20": (
     <>
       <DropCap>Miguel Ángel Ramírez, presidente de la UD Las Palmas, ha sido una figura clave en el apoyo institucional al CV Guaguas. Su visión del deporte como motor de la sociedad canaria ha permitido que el club cuente con los recursos necesarios para competir al máximo nivel.</DropCap>
 
@@ -1245,7 +1245,7 @@ export const chapterContent: Record<string, React.ReactNode> = {
   // ═══════════════════════════════════════════════
   // CAPÍTULO 1: Comunicación digital
   // ═══════════════════════════════════════════════
-  "capitulo-20": (
+  "capitulo-21": (
     <>
       <DropCap>El CV Guaguas ha sido pionero en la comunicación digital dentro del deporte español. Su presencia en redes sociales, la producción de contenidos audiovisuales y la cobertura periodística propia han creado un modelo de referencia para otros clubes.</DropCap>
 
@@ -1263,7 +1263,7 @@ export const chapterContent: Record<string, React.ReactNode> = {
   // ═══════════════════════════════════════════════
   // CAPÍTULO 1: Socios y abonados
   // ═══════════════════════════════════════════════
-  "capitulo-21": (
+  "capitulo-22": (
     <>
       <DropCap>La afición del Guaguas es el motor del club. Desde aquellos primeros espectadores en el patio del colegio hasta los miles de abonados que llenan el Gran Canaria Arena, los socios han sido el alma del proyecto deportivo más exitoso del voleibol español.</DropCap>
 
@@ -1281,7 +1281,7 @@ export const chapterContent: Record<string, React.ReactNode> = {
   // ═══════════════════════════════════════════════
   // CAPÍTULO 1: Empresarios de la tierra
   // ═══════════════════════════════════════════════
-  "capitulo-22": (
+  "capitulo-23": (
     <>
       <DropCap>El CV Guaguas ha contado siempre con el apoyo de empresarios canarios que creyeron en el proyecto. Desde Guaguas Municipales, el primer gran patrocinador, hasta las empresas que hoy respaldan al club, el tejido empresarial de la tierra ha sido pilar fundamental de la entidad.</DropCap>
 
