@@ -144,10 +144,7 @@
         .light .hero-overlay {
             background: linear-gradient(135deg, hsl(220 30% 15% / 0.75) 0%, hsl(42 30% 25% / 0.6) 50%, hsl(220 30% 15% / 0.8) 100%);
         }
-        .light .text-gold-gradient {
-            background: linear-gradient(135deg, hsl(45 100% 50%) 0%, hsl(45 100% 42%) 50%, hsl(45 100% 32%) 100%);
-            -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text;
-        }
+        /* text-gold-gradient: same bright gradient for both modes (matches React) */
         .light ::-webkit-scrollbar-track { background: var(--lm-bg); }
         .light ::-webkit-scrollbar-thumb { background: hsl(220 15% 82%); }
         .light ::-webkit-scrollbar-thumb:hover { background: hsl(45 50% 38%); }
