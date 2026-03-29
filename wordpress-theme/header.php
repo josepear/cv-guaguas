@@ -9,7 +9,7 @@
     <meta property="og:title" content="<?php wp_title('|', true, 'right'); ?><?php bloginfo('name'); ?>">
     <meta property="og:description" content="<?php bloginfo('description'); ?>">
     <meta property="og:type" content="website">
-    <meta property="og:image" content="<?php echo LIBRO_URI; ?>/assets/images/hero-stadium.jpg">
+    <meta property="og:image" content="<?php echo LIBRO_URI; ?>/assets/images/hero-home.jpg">
     
     <!-- Preconnect para performance -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
