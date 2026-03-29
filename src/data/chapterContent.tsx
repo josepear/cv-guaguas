@@ -594,9 +594,78 @@ export const chapterContent: Record<string, React.ReactNode> = {
   ),
 
   // ═══════════════════════════════════════════════
-  // El proyecto visionario de Juan Ruiz (subcapítulo de Cap. 4)
+  // Subcapítulos del Cap. 03: Así se forjó una leyenda
   // ═══════════════════════════════════════════════
-  "cap04-proyecto-juan-ruiz": (
+  "cap04-elite": (
+    <>
+      <DropCap>La temporada 1985-86 fue la del estreno del Calvo Sotelo en la División de Honor y se afrontó bajo las mismas líneas maestras que habían marcado su trayecto, desde las consideraciones de Felipe Nuez, aunque con la importante novedad del fichaje del yugoslavo Ivo Martinovic, primer extranjero en la historia del club que, con 30 años y amplio bagaje profesional e internacional, venía a darle a la plantilla la cuota de veteranía que se requería para competir a escala máxima. Jorge Ramón, Juanma Martín, Alfredo Padrón, Miguel Mendaño, Óscar Campos, Francisco Reyes, Sergio Miguel Camarero, Martín Medina, el mencionado Ivo Martinovic, Enrique González Silva y José Ramón, más los juveniles Javier Ulacia, Alejandro Menéndez, Roberto Padrón y Alejandro Gil eran los componentes de aquel histórico equipo que se adentró entre los grandes y lo hizo con relativo éxito. Pese a los condicionantes económicos derivados de no tener un patrocinador (tras dos años con las denominaciones Reales y Lucky, relacionadas con el tabaco, Tabacanarias no renovó su compromiso), lo que supuso un hándicap sustancial, se logró eludir con solvencia el riesgo de descenso y hasta quedar encuadrado en la entonces denominada Serie A1, en la que competían los primeros clasificados de cada grupo. Martinovic, elegido capitán en su primera campaña, y un Camarero que ya demostraba que iba para jugador de época, fueron los sostenes de un grupo que rindió por encima de lo esperado. Para el recuerdo queda aquel 2 de noviembre de 1985, fecha del debut del Calvo Sotelo en la División de Honor con triunfo en Cáceres ante el Licenciados Reunidos por 0-3. Jorge Ramón, Juanma Martín, Campos, Camarero, Martinovic y González fueron los jugadores alineados en el inicio de un trayecto que iba a conducir a la gloria.</DropCap>
+
+      <p>El 21 de octubre de 1986 se celebra en el salón de la Boutique del Jamón, sita en Mesa y López, la asamblea general extraordinaria del club motivada por la salida del anterior presidente, José María Rodríguez, y la transición que comanda como coordinador Gustavo Rodríguez. Se anuncia en los medios de comunicación la posibilidad de que entre una plancha que "pueda llevar al Calvo Sotelo por buen camino y consolidarlo como un club grande dentro del voleibol español". Ahí arranca la etapa de Juan Ruiz en el alto mando y que se prolongaría, de manera ininterrumpida, hasta 1998. El déficit heredado es de "aproximadamente seis millones de pesetas". En realidad la mala situación financiera que atravesaba el Calvo Sotelo ya era de sobra conocida y publicitada. Y el papel de los medios de comunicación pidiendo una alternativa para evitar la desaparición fue lo que atrajo el interés de Juan Ruiz, hasta entonces un neófito en el voleibol y que, alertado por las informaciones que le llegaban a través de su periodista de cabecera, el que escuchaba a diario a través de las ondas de Antena 3: Paco García Caridad.</p>
+
+      <EditorialQuote author="Paco García Caridad">
+        "Fue un ejercicio de responsabilidad con la sociedad canaria lanzar desde las ondas un mensaje de auxilio en favor del Calvo Sotelo. No podíamos dejar que un proyecto de cantera tan serio y valioso se viniera abajo. Más que un club, el Calvo Sotelo era un modelo educativo, un espejo en el que mirarse por sus orígenes y crecimiento. Actué conmovido por una situación límite. Defender al Calvo Sotelo y su supervivencia era un acto de justicia social, un alegato por el patrimonio deportivo del momento. Saber que Juan Ruiz dio el paso al frente tras hablar conmigo y tener referencia de mis informaciones me lo tomo como el resultado de mi labor profesional."
+      </EditorialQuote>
+
+      <p>Siguen los movimientos en ese periodo, ya con el equipo iniciando su segundo año en la División de Honor: el 23 de octubre de 1986, Gustavo Rodríguez, coordinador de la junta gestora, informa de que "hay una nefasta gestión de la directiva anterior". Ismael Chinea, Fidel Morales, Felipe Nuez, Juan M. Martín e Ivo Martinovic son los miembros del equipo de trabajo designado para pilotar el cambio necesario en la gestión y el gobierno de la institución. Aunque no se menciona expresamente, Juan Ruiz ya está integrado en el mismo, como bien se certificaría días después anunciando, de su mano, la llegada del ansiado patrocinador. Se detalla, además, un presupuesto para la temporada 1986-87 de 13.500.000 de pesetas y que, a la espera de un anunciante, el equipo se denomine Club Voleibol Las Palmas, propuesta que había correspondido, originalmente a Juan José Apolinario, anterior gerente del Calvo Sotelo. Una semana después, Juan Ruiz Ramos es oficializado como presidente de la junta gestora en sustitución de Gustavo Rodríguez.</p>
+
+      <p>Y la noticia más esperada desde hacía meses, la de la aparición de un patrocinador que otorgara la estabilidad perdida y permitiera cuadrar números, se anunció el 5 de noviembre de ese mismo 1986. Juan Ruiz, que ya ejerce como miembro visible de la junta gestora del Club Voleibol Las Palmas, confirma que, "después de varias conversaciones con Juan Rodríguez Doreste", alcalde de Las Palmas de Gran Canaria, Guaguas Municipales patrocinará a la entidad, que, desde entonces pasará a denominarse Guaguas Las Palmas. Su primer partido con este nombre lo disputó el 15 de noviembre ante el Cisneros y en Tenerife. La consecución de este patrocinador, con el que el club ganaría títulos y adquiriría fama internacional, es el primer golpe de efecto de Ruiz en la historia de su mandato. Él mismo aparecería firmando el histórico contrato de vinculación con la compañía de transporte público.</p>
+
+      <p>En el plano deportivo, el equipo, con las grandes novedades del regreso de Pericles y Batista, mantiene su buen tono. El 19 de enero de 1987 queda tercero en la Copa del Rey celebrada en Sa Pobla, Mallorca, tras imponerse por 3-1 al Cisneros de Tenerife, consiguiendo, de esta manera, su clasificación para la Copa Confederación. Jorge Ramón, Ivo Martinovic, Sergio Camarero, Juanma Martín, Óscar Campos y Eduardo Macías integraron un equipo inicial al que luego se sumó Alejandro Gil. El quinto puesto logrado, posteriormente, en la Liga redondeó una campaña de sobresaliente considerando la naturaleza advenediza del Guaguas.</p>
+    </>
+  ),
+
+  "cap04-fichajes": (
+    <>
+      <DropCap>El verano de 1987, ya con dos años de experiencia en la élite, marca el escalón cualitativo que instala al Guaguas en la excelencia. El fichaje de Paco Sánchez Jover, figura indiscutible del voleibol nacional, fue una auténtica jugada maestra de Juan Ruiz al captar al jugador del momento. Por si fuera poco, con Sánchez Jover llegan su hermano Jesús, Venancio Costa, Antonio Miralles. Todos darían excelentes réditos al escudo. Y Paco vino para no irse jamás y liderar los años dorados que ya estaban incubándose. Los resultados se disparan y son un aviso al resto de que Gran Canaria exhibe proyecto ganador. Además del bautizo europeo frente al Knack de Bélgica, en una eliminatoria saldada con derrota pero cuya importancia trascendió al resultado por su valor simbólico, los subcampeonatos de Liga y Copa del Rey suponen la antesala de los éxitos que ya eran inminentes. El relevo en el banquillo de Felipe Nuez en 1988, el técnico de toda la vida y que tras más de quince años ininterrumpidos en su cargo se despedía de la entidad que vio nacer, fue la nota discordante en la crecida colectiva que cogió una velocidad imparable en esta campaña.</DropCap>
+
+      <p>El aterrizaje de los mexicanos Sergio Hernández, para el banquillo, y Chava González, así como la apuesta por el canadiense Brad Willock terminan por ensamblar un Guaguas ya de valores consolidados de los años anteriores y que, como fruta madura, inaugura su palmarés con la Copa del Rey conquistada el 9 de abril de 1989 ante el Palma en el Centro Insular. El recinto capitalino ya era la nueva casa del club después de haber estado desde siempre, tras su ingreso en las competiciones estatales, como anfitrión en el García San Román.</p>
+
+      <p>La mudanza a la nueva instalación generó ciertas controversias, pues había dudas de que se ajustara a las necesidades de un club todavía con una afición fiel pero minoritaria. Los éxitos trajeron las muchedumbres desde que un 22 de octubre de 1988 se disputara el primer partido del Guaguas en el CID con motivo de su inauguración. Fue en el Torneo Internacional Isla de Gran Canaria, integrando cartel con el Seven Up Santa Catalina, Cisneros de Tenerife y Slavia de Sofía. El Guaguas ganó 3-0 al Seven Up. Sergio Hernández, entrenador del equipo entonces, alineó a Venancio Costa, Juanma Martín, Chava, Jorge Ramón, Sánchez Jover y Camarero en el sexteto inicial y, además, utilizó a Óscar Campos, Antonio, Felipe, David y Jesús. El Seven Up estaba dirigido por Felipe Nuez.</p>
+
+      <p>Esa Copa, que abría las vitrinas del Guaguas, no hizo más que multiplicar las ambiciones de Juan Ruiz, quien une a su elenco de estrellas, en el verano de 1989, a los internacionales polacos Ireneusz Klos y Waclaw Golec, llamados a ser ídolos y figuras diferenciales. Esa primera Liga que se resistía sería una realidad el 1 de mayo de 1990 con la inolvidable final ante el Bomberos de Barcelona, bajo la denominación comercial de Constructora Atlántica Canaria, y con Sánchez Jover ejerciendo de jugador-entrenador y luego de ocupar la vacante en el banquillo que dejó a mitad del calendario el americano Robert Croteau.</p>
+
+      <p>A esa primera Liga le sucederían otras cuatro consecutivas hasta 1994, estableciendo una hegemonía nacional inédita en los representativos canarios y que, además, estuvo aderezada con tres dobletes por las Copas del Rey también conquistadas en los años 1991, 1992 y 1993. Son campañas en la Copa de Europa, con cruces ante los mejores del continente, llenos a reventar en el Centro Insular, máximo esplendor dentro y fuera de España y un desfile de nombres que se hicieron un sitio en el corazón de todos los aficionados. A los ya conocidos de Camarero, Juanma Martín, Jorge Ramón, Sánchez Jover, Miralles, Costa, Klos o Golec, se unieron los Sharma, Falasca o Wiernes.</p>
+
+      <p>Particular mención merecen Sánchez Jover y Juanma Martín, consagrados al simultanear sus labores de jugador con las de técnicos y de igual fertilidad para los éxitos de la entidad, poniendo, también, el foco en el cuidado de la cantera. Ya entonces, en ese inicio de la década de los noventa, se reclutan por los colegios (y hasta por la calle, a golpe de intuición) a jóvenes de la tierra para que garanticen el relevo generacional y revaliden el espíritu primigenio del Calvo Sotelo, creado en torno al jugador isleño. Antonio Sánchez es uno de los canteranos criados en esta fase y que tendría larga continuidad en los Alexis Valido, Juan Carlos Vega, los hermanos Cabrera, Raúl Dávila o Níchel Gómez, entre otros.</p>
+
+      <p>Fueron doce los títulos que se atraparon desde 1989 a 1997, etapa de concentración luminosa, y que granjeó la leyenda de un Guaguas que, por momentos, llevó la bandera del deporte en Gran Canaria, al coincidir sus hitos con momentos menos pujantes de UD Las Palmas o CB Gran Canaria, los símbolos más tradicionales de las disciplinas por equipos de la isla. Iniciativas pioneras como lucir publicidad en contra de las drogas, abrir las puertas del pabellón a todos los que quisieran entrar sin pagar precio alguno, como sucedió ante el PSG, o democratizar la práctica del voleibol creando alianzas y convenios con clubes de la geografía local impulsaron, más si cabe, la fama y prestigio de un club también profesionalizado y gestionado por un modelo administrativo riguroso y que en los años de presidencia de Juan Ruiz siempre arrojó balances favorables, con niveles de endeudamiento asumible y un apoyo unánime del sector empresarial. Los llenos habituales en el Centro Insular, a la par que las más que frecuentes retransmisiones en directo por la televisión, convirtieron las vallas publicitarias en soportes codiciados y que redundaron, para bien, en los dineros del Guaguas. Eso permitió mantener una base de primera categoría cada temporada y unir, cuando procedía, a refuerzos de contrastada calidad.</p>
+
+      <p>La creación de una cultura ganadora, que convertía en noticia y crisis cada título que se escapaba, habla a las claras del listón en el que se movió el club, siempre orientado a construir plantillas que aspiraran a todo y sin eludir la presión que aparejaba tener el balance de galardones que se exhibía.</p>
+    </>
+  ),
+
+  "cap04-salida-ruiz": (
+    <>
+      <DropCap>Tras doce años en la presidencia y algún amago de abandono prematuro, tal y como reconoció a cuenta de críticas que consideraba desproporcionadas, Juan Ruiz quiso respetar lo reflejado en los estatutos y ceñirse a lo establecido con la máxima durabilidad de su cargo. A la conclusión de la temporada 1997-98, saldada con la Supercopa de España, dio el relevo en la cúpula a Mario Hugendubel. Fue algo más que un traspaso de poderes para alguien que dedicó su vida al servicio de un club que heredó en ruinas y legó en una posición de privilegio. Títulos (doce en total), cantera (ya con internacionales absolutos salidos de las categorías inferiores), superávit, crédito en entidades privadas y credibilidad a ojos de los organismos públicos. Un Guaguas respetado en España y en Europa (con participaciones en competiciones continentales de manera ininterrumpida desde 1987) y con las bases para continuar su expansión, dada la estructura existente y el nivel de profesionalización instaurado. Fueron muchas las voces que trataron de disuadir a Juan Ruiz del paso que iba a dar, quizás intuyendo que sin él nada sería igual, como así ocurriría.</DropCap>
+
+      <p>De repente, ya con el presidente histórico fuera, el sentimiento de orfandad fue inmediato, por muchos esfuerzos que pusiera Hugendubel, quien trató de ilusionar desde sus primeras manifestaciones. "Todo cambió y para peor", admite Sánchez Jover, que permanecería en el club hasta el verano de 1999. Su presencia se consideraba de especial valor estratégico para la pervivencia del proyecto, tanto en la rama sénior como en las categorías de base. Y, tras dos años como testigo de "la deriva", según sus palabras, que fue cogiendo el club bajo otros parámetros directivos. El cambio de siglo deparaba la marcha del último gran símbolo del Calvo Sotelo. Tras Felipe Nuez (1988), Sergio Miguel Camarero (1996) y Juan Ruiz (1998), el gigante que hizo feliz al Centro Insular clausuraba un ciclo de doce años con otros tantos títulos y episodios únicos y que le ligaron por siempre a esta tierra.</p>
+    </>
+  ),
+
+  "cap04-cronologia": (
+    <Timeline title="La cronología">
+      <TimelineEvent year="1985">El 2 de noviembre, y ante el Licenciados Reunidos en Cáceres, el Calvo Sotelo disputa su primer encuentro en la División de Honor con victoria (0-3).</TimelineEvent>
+      <TimelineEvent year="1986">El 21 de octubre se celebra la asamblea general extraordinaria del club en la que Juan Ruiz tiene su primera toma de contacto formal con la junta gestora. Días después anunciaría el histórico acuerdo con Guaguas Municipales para que patrocinase y diera su nomenclatura al equipo, gestión exitosa que le terminaría catapultando a la presidencia.</TimelineEvent>
+      <TimelineEvent year="1987">Tercera posición en la Copa del Rey (enero), fichajes de Paco Sánchez Jover, Venancio Costa y Antonio Miralles (julio) y estreno en competiciones europeas ante el Knack de Bélgica (noviembre).</TimelineEvent>
+      <TimelineEvent year="1988">Subcampeonatos de Liga y Copa del Rey y salida del club del histórico preparador Felipe Nuez tras más de quince años.</TimelineEvent>
+      <TimelineEvent year="1989">El 9 de abril se conquista el primer título, con la Copa del Rey ganada al Palma en el Centro Insular (3-0). En verano se producen los fichajes de los polacos Ireneusz Klos y Waclaw Golec.</TimelineEvent>
+      <TimelineEvent year="1990">El 1 de mayo se gana la primera Liga, con Paco Sánchez Jover como jugador-entrenador, con un rotundo 3-0 al Bomberos de Barcelona en el Centro Insular.</TimelineEvent>
+      <TimelineEvent year="1991">Año con un mes de abril mágico con el primer doblete: Liga el día 13 ante el Orisba Palma (3-0) y la Copa, el 28 frente al Construcciones Alcalá de Tenerife por idéntico tanteador.</TimelineEvent>
+      <TimelineEvent year="1992">Se repite la gesta con los dos torneos nacionales: Liga el 4 de abril ante el Andorra (3-1) y Copa, el 25 del mismo mes y repitiendo rival por 3-0.</TimelineEvent>
+      <TimelineEvent year="1993">La supremacía nacional del equipo se constata por tercera campaña consecutiva y alzando los dos trofeos lejos de Gran Canaria: Liga en Soria ante el Caja Duero (2-3) y Copa del Rey en Murcia sometiendo al Almería por 2-3.</TimelineEvent>
+      <TimelineEvent year="1994">Continúa el reinado en la Liga con un triunfo en Soria ante el Grupo Duero por 1-3, acaecido el 27 de marzo, que vale el quinto campeonato consecutivo.</TimelineEvent>
+      <TimelineEvent year="1995">El 8 de septiembre, en un amistoso ante el conjunto brasileño del Banca Suzano, se rindió homenaje en el Centro Insular a Paco Sánchez Jover tras su retirada como jugador.</TimelineEvent>
+      <TimelineEvent year="1996">Nueva Copa del Rey: llega el 13 de abril, ante el Soria, en el Centro Insular (3-2), un partido emotivo, pues sería el último de leyendas como Klos, Golec o Camarero. También se logra la primera Supercopa de España, el 16 de septiembre, igualmente en el Centro Insular y repitiendo adversario (3-1).</TimelineEvent>
+      <TimelineEvent year="1997">Con una remontada memorable, el 5 de abril en el Centro Insular, el Gran Canaria Arehucas se apunta otra Copa frente al Unicaja Almería (3-2).</TimelineEvent>
+      <TimelineEvent year="1998">Tres hechos trascendentales marcan el año: el homenaje a Sergio Miguel Camarero (7 de enero, con un amistoso ante el Zonhoven belga), la participación en la Final Four de la Recopa en Cuneo (Italia), el mayor hito en Europa alcanzado por el equipo, y Juan Ruiz pone fin a su presidencia tras doce años de sobresaliente gestión deportiva y empresarial.</TimelineEvent>
+      <TimelineEvent year="1999">En el verano de ese año, finalizada la campaña 1998-99, Paco Sánchez Jover, hasta ese momento entrenador, abandona el club.</TimelineEvent>
+    </Timeline>
+  ),
+
+  // ═══════════════════════════════════════════════
+  // CAPÍTULO 04: El proyecto visionario de Juan Ruiz
+  // ═══════════════════════════════════════════════
+  "capitulo-04": (
     <>
       <DropCap>Nacido en La Aldea de San Nicolás en 1953, emigrante con su familia a Tenerife durante gran parte su adolescencia (1960-1969), en la que hizo sus pinitos en la lucha canaria o el fútbol ("con 16 años llegué a jugar en Tercera División en las filas del Adeje"), Juan Ruiz estaba llamado, sin saberlo, a escribir una historia sin parangón en el deporte canario y al frente del Calvo Sotelo.</DropCap>
 
@@ -842,7 +911,7 @@ export const chapterContent: Record<string, React.ReactNode> = {
   // ═══════════════════════════════════════════════
   // CAPÍTULO 1: Iconos y estrellas del Guaguas (COMPLETO)
   // ═══════════════════════════════════════════════
-  "capitulo-04": (
+  "capitulo-05": (
     <>
       <DropCap>Los grandes nombres que han escrito la historia del CV Guaguas. Jugadores que dejaron su huella en el voleibol español y que convirtieron al club en leyenda. Desde los canteranos que crecieron en el patio del Calvo Sotelo hasta las estrellas internacionales que llegaron para elevar el proyecto a cotas inimaginables, todos contribuyeron a forjar un legado deportivo sin parangón en Canarias.</DropCap>
 
@@ -855,7 +924,7 @@ export const chapterContent: Record<string, React.ReactNode> = {
     </>
   ),
 
-  "cap05-camarero": (
+  "cap06-camarero": (
     <PlayerProfile name="Sergio Miguel Camarero">
       <DropCap>Cuando Sergio Miguel Camarero (Las Palmas de Gran Canaria, 1967) destacaba en el fútbol y como prometedor jugador del San Antonio, el equipo de su barrio, ya soñaba con hacer historia en el deporte. Su aspiración se iba a cumplir, aunque de manera insospechada porque, efectivamente, haría carrera pero en otra disciplina que tardó en practicar y a la que llegó de rebote. "Empecé a jugar al voleibol porque, al regreso de unas vacaciones en el sur de la isla, ya no tenía posibilidad de inscribirme en el equipo de fútbol. Se había acabado el plazo. Y me apunté en la Escuela de Voleibol del San Román. Mis primeros entrenadores fueron Félix Rodríguez, Joselu Sánchez e Ignacio Brito. Tendría 14 o 15 años. Y me enganché."</DropCap>
       <ContentImage 
@@ -894,7 +963,7 @@ export const chapterContent: Record<string, React.ReactNode> = {
     </PlayerProfile>
   ),
 
-  "cap05-sanchez-jover": (
+  "cap06-sanchez-jover": (
     <PlayerProfile name="Paco Sánchez Jover">
       <DropCap>Paco Sánchez Jover es, junto a Camarero, el otro gran pilar sobre el que se construyó la leyenda del Guaguas. Llegado en el verano de 1987 como el gran fichaje estrella de Juan Ruiz, el mejor jugador de España en aquel momento, vino para no irse jamás y liderar los años dorados que ya estaban incubándose.</DropCap>
 
@@ -916,7 +985,7 @@ export const chapterContent: Record<string, React.ReactNode> = {
     </PlayerProfile>
   ),
 
-  "cap05-golec": (
+  "cap06-golec": (
     <PlayerProfile name="Waclaw Golec">
       <DropCap>En el verano de 1989, Juan Ruiz une a su elenco de estrellas a los internacionales polacos Ireneusz Klos y Waclaw Golec, llamados a ser ídolos y figuras diferenciales. Golec, gran rematador de potente salto, especialista en remates de zona cuatro y zagueros, con gran recepción, fue considerado un jugador muy completo.</DropCap>
 
@@ -930,7 +999,7 @@ export const chapterContent: Record<string, React.ReactNode> = {
     </PlayerProfile>
   ),
 
-  "cap05-klos": (
+  "cap06-klos": (
     <PlayerProfile name="Ireneusz Klos">
       <DropCap>Ireneusz Klos aterrizó en Gran Canaria junto a su compatriota Golec en 1989 y rápidamente se convirtió en una de las piezas fundamentales del engranaje del Guaguas campeón. Considerado uno de los cinco mejores colocadores del mundo, "no sabías si iba a rematar o a colocar", como recordaba Isidro Quintana.</DropCap>
 
@@ -952,7 +1021,7 @@ export const chapterContent: Record<string, React.ReactNode> = {
   // ═══════════════════════════════════════════════
   // CAPÍTULO 1: Ignacio Brito y Tributo a los Salesianos
   // ═══════════════════════════════════════════════
-  "capitulo-05": (
+  "capitulo-06": (
     <>
       <DropCap>La historia del voleibol en Gran Canaria no puede entenderse sin la contribución de los Salesianos. Ignacio Brito, formado en las instalaciones del colegio salesiano, fue uno de los primeros técnicos que comprendió que la cantera era el verdadero tesoro del club.</DropCap>
 
@@ -970,7 +1039,7 @@ export const chapterContent: Record<string, React.ReactNode> = {
   // ═══════════════════════════════════════════════
   // CAPÍTULO 1: Marek
   // ═══════════════════════════════════════════════
-  "capitulo-06": (
+  "capitulo-07": (
     <>
       <DropCap>Marek llegó a Gran Canaria como una estrella internacional y se marchó convertido en leyenda. Su impacto en el Guaguas trascendió lo deportivo para convertirse en un referente cultural del voleibol en las islas.</DropCap>
 
@@ -987,7 +1056,7 @@ export const chapterContent: Record<string, React.ReactNode> = {
   // ═══════════════════════════════════════════════
   // CAPÍTULO 1: Embajadores por Europa
   // ═══════════════════════════════════════════════
-  "capitulo-07": (
+  "capitulo-08": (
     <>
       <DropCap>La aventura europea del CV Guaguas es una de las páginas más brillantes de su historia. Desde la primera participación en la Copa de Europa hasta las campañas recientes en la Champions League, el club ha sido embajador del voleibol canario en los más prestigiosos escenarios del continente.</DropCap>
 
@@ -1011,7 +1080,7 @@ export const chapterContent: Record<string, React.ReactNode> = {
   // ═══════════════════════════════════════════════
   // CAPÍTULO 1: Relevo generacional
   // ═══════════════════════════════════════════════
-  "capitulo-08": (
+  "capitulo-09": (
     <>
       <DropCap>Cada generación del Guaguas ha sido el eslabón de una cadena ininterrumpida de talento canario. El relevo generacional ha sido una constante en la vida del club, desde los pioneros del Calvo Sotelo hasta los actuales jugadores de la cantera que sueñan con vestir la camiseta amarilla.</DropCap>
 
@@ -1034,7 +1103,7 @@ export const chapterContent: Record<string, React.ReactNode> = {
   // ═══════════════════════════════════════════════
   // CAPÍTULO 1: Una transición dolorosa
   // ═══════════════════════════════════════════════
-  "capitulo-09": (
+  "capitulo-10": (
     <>
       <DropCap>Los años posteriores a la marcha de Juan Ruiz fueron los más convulsos en la historia del club. La inestabilidad directiva, los problemas económicos y la pérdida progresiva de competitividad culminaron en el peor desenlace posible: la desaparición temporal del equipo en 2009.</DropCap>
 
@@ -1052,7 +1121,7 @@ export const chapterContent: Record<string, React.ReactNode> = {
   // ═══════════════════════════════════════════════
   // CAPÍTULO 1: Todos los títulos
   // ═══════════════════════════════════════════════
-  "capitulo-10": (
+  "capitulo-11": (
     <>
       <DropCap>El palmarés del CV Guaguas es el más brillante del voleibol español. Nueve Ligas, nueve Copas del Rey, cinco Supercopas y una Copa Ibérica conforman un historial de éxitos que ningún otro club del país ha igualado.</DropCap>
 
@@ -1076,7 +1145,7 @@ export const chapterContent: Record<string, React.ReactNode> = {
   // ═══════════════════════════════════════════════
   // CAPÍTULO 1: Vuelve el gran Guaguas
   // ═══════════════════════════════════════════════
-  "capitulo-11": (
+  "capitulo-12": (
     <>
       <DropCap>En 2020, cuando el club se encontraba de nuevo al borde del abismo, Juan Ruiz regresó para devolver al Guaguas a la élite. Su vuelta fue recibida con esperanza y emoción por una afición que no había olvidado los años gloriosos.</DropCap>
 
@@ -1094,7 +1163,7 @@ export const chapterContent: Record<string, React.ReactNode> = {
   // ═══════════════════════════════════════════════
   // CAPÍTULO 1: Del CID al Arenas
   // ═══════════════════════════════════════════════
-  "capitulo-12": (
+  "capitulo-13": (
     <>
       <DropCap>Del Centro Insular de Deportes al Gran Canaria Arena: la evolución de la casa del voleibol grancanario. El CID fue durante décadas la catedral del voleibol en Canarias, un pabellón cuyo ambiente era temido por todos los rivales.</DropCap>
 
@@ -1112,7 +1181,7 @@ export const chapterContent: Record<string, React.ReactNode> = {
   // ═══════════════════════════════════════════════
   // CAPÍTULO 1: Los nuevos ídolos
   // ═══════════════════════════════════════════════
-  "capitulo-13": (
+  "capitulo-14": (
     <>
       <DropCap>Una nueva generación de estrellas ha tomado el relevo en el Gran Canaria Arena. Los nuevos ídolos del Guaguas combinan talento internacional con la pasión local para escribir nuevos capítulos en la historia del club.</DropCap>
 
@@ -1135,7 +1204,7 @@ export const chapterContent: Record<string, React.ReactNode> = {
   // ═══════════════════════════════════════════════
   // CAPÍTULO 1: El impacto del escudo
   // ═══════════════════════════════════════════════
-  "capitulo-14": (
+  "capitulo-15": (
     <>
       <DropCap>El escudo del CV Guaguas es mucho más que un símbolo deportivo. Representa la identidad de un club que ha trascendido el voleibol para convertirse en un referente cultural de Gran Canaria y del deporte canario.</DropCap>
 
@@ -1152,7 +1221,7 @@ export const chapterContent: Record<string, React.ReactNode> = {
   // ═══════════════════════════════════════════════
   // CAPÍTULO 1: La directiva
   // ═══════════════════════════════════════════════
-  "capitulo-15": (
+  "capitulo-16": (
     <>
       <DropCap>Detrás de cada título y cada logro deportivo hay una estructura directiva que ha trabajado incansablemente por el bien del club. Desde los fundadores del Calvo Sotelo hasta la actual junta directiva, la gestión del Guaguas ha sido un ejemplo de compromiso y sacrificio.</DropCap>
 
@@ -1169,7 +1238,7 @@ export const chapterContent: Record<string, React.ReactNode> = {
   // ═══════════════════════════════════════════════
   // CAPÍTULO 1: El Guaguas que viene
   // ═══════════════════════════════════════════════
-  "capitulo-16": (
+  "capitulo-17": (
     <>
       <DropCap>El futuro del Guaguas se construye en la cantera. Los equipos de categorías inferiores trabajan cada día para formar a los jugadores que, algún día, defenderán los colores amarillos en la máxima competición.</DropCap>
 
@@ -1187,7 +1256,7 @@ export const chapterContent: Record<string, React.ReactNode> = {
   // ═══════════════════════════════════════════════
   // CAPÍTULO 1: Empleados y técnicos
   // ═══════════════════════════════════════════════
-  "capitulo-17": (
+  "capitulo-18": (
     <>
       <DropCap>Un club no funciona solo con jugadores. Detrás de cada partido, cada entrenamiento y cada evento hay un equipo de profesionales que hace posible la maquinaria del CV Guaguas: empleados, técnicos, fisioterapeutas, utilleros y tantos otros nombres sin los cuales nada sería posible.</DropCap>
 
@@ -1204,7 +1273,7 @@ export const chapterContent: Record<string, React.ReactNode> = {
   // ═══════════════════════════════════════════════
   // CAPÍTULO 1: La plantilla del cincuentenario
   // ═══════════════════════════════════════════════
-  "capitulo-18": (
+  "capitulo-19": (
     <>
       <DropCap>La temporada 2025-2026 marca el cincuentenario del Club Voleibol Guaguas. Una plantilla competitiva en cuatro frentes —Liga, Copa, Supercopa y Champions League— escribe las últimas líneas de esta historia de medio siglo de pasión por el voleibol.</DropCap>
 
@@ -1228,7 +1297,7 @@ export const chapterContent: Record<string, React.ReactNode> = {
   // ═══════════════════════════════════════════════
   // CAPÍTULO 1: Miguel Ángel Ramírez
   // ═══════════════════════════════════════════════
-  "capitulo-19": (
+  "capitulo-20": (
     <>
       <DropCap>Miguel Ángel Ramírez, presidente de la UD Las Palmas, ha sido una figura clave en el apoyo institucional al CV Guaguas. Su visión del deporte como motor de la sociedad canaria ha permitido que el club cuente con los recursos necesarios para competir al máximo nivel.</DropCap>
 
@@ -1245,7 +1314,7 @@ export const chapterContent: Record<string, React.ReactNode> = {
   // ═══════════════════════════════════════════════
   // CAPÍTULO 1: Comunicación digital
   // ═══════════════════════════════════════════════
-  "capitulo-20": (
+  "capitulo-21": (
     <>
       <DropCap>El CV Guaguas ha sido pionero en la comunicación digital dentro del deporte español. Su presencia en redes sociales, la producción de contenidos audiovisuales y la cobertura periodística propia han creado un modelo de referencia para otros clubes.</DropCap>
 
@@ -1263,7 +1332,7 @@ export const chapterContent: Record<string, React.ReactNode> = {
   // ═══════════════════════════════════════════════
   // CAPÍTULO 1: Socios y abonados
   // ═══════════════════════════════════════════════
-  "capitulo-21": (
+  "capitulo-22": (
     <>
       <DropCap>La afición del Guaguas es el motor del club. Desde aquellos primeros espectadores en el patio del colegio hasta los miles de abonados que llenan el Gran Canaria Arena, los socios han sido el alma del proyecto deportivo más exitoso del voleibol español.</DropCap>
 
@@ -1281,7 +1350,7 @@ export const chapterContent: Record<string, React.ReactNode> = {
   // ═══════════════════════════════════════════════
   // CAPÍTULO 1: Empresarios de la tierra
   // ═══════════════════════════════════════════════
-  "capitulo-22": (
+  "capitulo-23": (
     <>
       <DropCap>El CV Guaguas ha contado siempre con el apoyo de empresarios canarios que creyeron en el proyecto. Desde Guaguas Municipales, el primer gran patrocinador, hasta las empresas que hoy respaldan al club, el tejido empresarial de la tierra ha sido pilar fundamental de la entidad.</DropCap>
 
