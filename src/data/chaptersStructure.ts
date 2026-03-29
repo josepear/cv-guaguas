@@ -175,14 +175,36 @@ export const chaptersData: ChapterItemWithHero[] = [
       { id: "cap04-elite", slug: "cap04-elite", title: "Llegar a la élite para quedarse" },
       { id: "cap04-fichajes", slug: "cap04-fichajes", title: "Fichajes de impacto y hegemonía" },
       { id: "cap04-salida-ruiz", slug: "cap04-salida-ruiz", title: "La salida de Juan Ruiz, principio del fin" },
-      { id: "cap04-proyecto-juan-ruiz", slug: "cap04-proyecto-juan-ruiz", title: "El proyecto visionario de Juan Ruiz" },
+      { id: "cap04-cronologia", slug: "cap04-cronologia", title: "La cronología" },
     ]
   },
   { 
     id: "capitulo-04", 
     slug: "capitulo-04", 
-    title: "Iconos y estrellas del Guaguas", 
+    title: "El proyecto visionario de Juan Ruiz", 
     number: "04",
+    hero: {
+      backgroundImage: heroMatch,
+      backgroundOverlay: "rgba(26, 35, 126, 0.85)",
+      customIconSrc: starGold,
+      iconWidth: 60,
+      iconHeight: 60,
+      alignment: "center",
+      verticalPosition: "center",
+      height: "450px",
+      titleFontWeight: "black",
+      titleLines: [
+        { text: "EL PROYECTO", color: "#D4AF37", highlightColor: "transparent", fontWeight: "black" },
+        { text: "VISIONARIO", color: "#FFFFFF", highlightColor: "transparent" },
+        { text: "DE JUAN RUIZ", color: "#D4AF37", highlightColor: "transparent" },
+      ],
+    },
+  },
+  { 
+    id: "capitulo-05", 
+    slug: "capitulo-05", 
+    title: "Iconos y estrellas del Guaguas", 
+    number: "05",
     hero: {
       backgroundImage: heroMatch,
       backgroundOverlay: "rgba(212, 175, 55, 0.85)",
