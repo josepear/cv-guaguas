@@ -25,11 +25,14 @@ $primer_capitulo_url = !empty($primer_capitulo) ? get_permalink($primer_capitulo
 
 <!-- Hero Section - IDENTICAL to React HeroSection.tsx -->
 <section id="hero" class="relative min-h-screen flex items-center justify-center overflow-hidden">
-    <!-- Background Image -->
-    <div 
-        class="absolute inset-0 bg-cover bg-center bg-no-repeat"
-        style="background-image: url('<?php echo LIBRO_URI; ?>/assets/images/hero-stadium.jpg');"
-    ></div>
+    <!-- Background Image - identical to React <img> tag -->
+    <img 
+        src="<?php echo LIBRO_URI; ?>/assets/images/hero-home.jpg" 
+        alt="" 
+        fetchpriority="high" 
+        decoding="async" 
+        class="absolute inset-0 w-full h-full object-cover object-center"
+    >
     
     <!-- Overlay - identical to React -->
     <div class="hero-overlay absolute inset-0"></div>
