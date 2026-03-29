@@ -7,8 +7,8 @@
 get_header();
 
 // Obtener opciones del tema
-$hero_title = get_option('libro_hero_title', '50 Años de Historia');
-$hero_subtitle = get_option('libro_hero_subtitle', 'Cinco décadas de pasión, títulos y leyendas del voleibol canario');
+$hero_title = get_option('libro_hero_title', 'Historia del CV Guaguas');
+$hero_subtitle = get_option('libro_hero_subtitle', 'Un recorrido por la trayectoria del club que ha conquistado el voleibol español');
 $pdf_url = get_option('libro_pdf_url', '#');
 $epub_url = get_option('libro_epub_url', '#');
 
