@@ -222,10 +222,10 @@ export const chaptersData: ChapterItemWithHero[] = [
       ],
     },
     children: [
-      { id: "cap05-camarero", slug: "cap05-camarero", title: "Sergio Miguel Camarero" },
-      { id: "cap05-sanchez-jover", slug: "cap05-sanchez-jover", title: "Paco Sánchez Jover" },
-      { id: "cap05-golec", slug: "cap05-golec", title: "Waclaw Golec" },
-      { id: "cap05-klos", slug: "cap05-klos", title: "Ireneusz Klos" },
+      { id: "cap06-camarero", slug: "cap06-camarero", title: "Sergio Miguel Camarero" },
+      { id: "cap06-sanchez-jover", slug: "cap06-sanchez-jover", title: "Paco Sánchez Jover" },
+      { id: "cap06-golec", slug: "cap06-golec", title: "Waclaw Golec" },
+      { id: "cap06-klos", slug: "cap06-klos", title: "Ireneusz Klos" },
     ]
   },
   { 
