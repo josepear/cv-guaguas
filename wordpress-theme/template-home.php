@@ -59,7 +59,7 @@ $primer_capitulo_url = !empty($primer_capitulo) ? get_permalink($primer_capitulo
         </h1>
         
         <!-- Subtitle -->
-        <p class="font-sans text-lg md:text-xl text-foreground/80 max-w-2xl mx-auto mb-12 opacity-0 animate-fade-in-up [animation-delay:400ms]">
+        <p class="font-sans text-lg md:text-xl text-white/80 max-w-2xl mx-auto mb-12 opacity-0 animate-fade-in-up [animation-delay:400ms]">
             <?php echo esc_html($hero_subtitle); ?>
         </p>
         
