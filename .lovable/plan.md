@@ -1,30 +1,43 @@
 
 
-# Fix: Paridad Home entre React y WordPress
+# Fix: Hero button hover + light mode title gradient in WordPress
 
-## Diferencias encontradas
+## Problems
 
-| Elemento | React | WordPress | Fix |
-|----------|-------|-----------|-----|
-| **Imagen de fondo** | `hero-home.jpg` | `hero-stadium.jpg` | Cambiar a `hero-home.jpg` |
-| **Título por defecto** | `"Historia del CV Guaguas"` (desde Index.tsx) | `"50 Años de Historia"` | Cambiar default a `"Historia del CV Guaguas"` |
-| **Subtítulo por defecto** | `"Un recorrido por la trayectoria..."` | `"Cinco décadas de pasión..."` | Cambiar default |
-| **Color h1** | `text-white` | `text-foreground` | Cambiar a `text-white` |
-| **Color subtítulo** | `text-white/80` | `text-foreground/80` | Cambiar a `text-white/80` |
-| **Background como `<img>`** | Usa `<img>` tag con `object-cover` | Usa `<div>` con `background-image` | Cambiar a `<img>` tag (mejor rendimiento con `fetchPriority`) |
-| **Botón PDF style** | `!bg-gold !text-[hsl(220,50%,10%)] !border-gold` | Clase `btn-download-primary` | Verificar que la clase coincide |
-| **Botón EPUB style** | `!bg-transparent !text-white !border-white/30` | Clase `btn-download-outline` | Verificar que la clase coincide |
-| **og:image** | N/A | `hero-stadium.jpg` | Cambiar a `hero-home.jpg` |
+### 1. EPUB button has no hover effect
+The EPUB button in `template-home.php` (line 74) uses inline `style` for colors but has no class that provides hover states. React uses `hover:!border-gold hover:!text-gold` via Tailwind. Since inline styles override CSS `:hover` rules, the `btn-download-outline:hover` in `main.css` is blocked.
 
-## Cambios
+**Fix**: Remove the inline `style` attribute and use Tailwind classes directly on the EPUB button, matching React exactly:
+```html
+class="btn-download !bg-transparent !text-white !border-white/30 hover:!border-gold hover:!text-gold"
+```
+Same for PDF button — use Tailwind classes instead of inline styles:
+```html
+class="btn-download btn-download-primary !bg-gold !text-[hsl(220,50%,10%)] !border-gold hover:!bg-transparent hover:!text-gold"
+```
+Since WordPress uses Tailwind CDN, these exact classes will work.
 
-### 1. `wordpress-theme/template-home.php`
-- Cambiar imagen de `hero-stadium.jpg` a `hero-home.jpg`
-- Cambiar defaults del título y subtítulo para coincidir con React Index.tsx
-- Cambiar `<div>` background-image por `<img>` con `object-cover` (como React)
-- Cambiar `text-foreground` a `text-white` en h1 y `text-foreground/80` a `text-white/80` en subtítulo
-- Actualizar clases de botones para usar los mismos estilos inline que React
+### 2. Light mode title gradient too dark
+WordPress `header.php` defines a different, darker gradient for `.light .text-gold-gradient`:
+- **WordPress light**: `50%` → `42%` → `32%` (ends very dark)
+- **React (both modes)**: `60%` → `50%` → `40%` (brighter)
 
-### 2. `wordpress-theme/header.php`
-- Cambiar `og:image` de `hero-stadium.jpg` a `hero-home.jpg`
+React uses the same CSS variables for both modes — no light-mode override. So the WordPress `.light .text-gold-gradient` rule should be **removed** from `header.php`, letting the dark-mode default (which matches React) apply in both modes.
+
+## Changes
+
+### 1. `wordpress-theme/template-home.php` — Lines 67-79
+Replace inline-styled buttons with Tailwind classes identical to React:
+
+```html
+<a href="..." class="btn-download btn-download-primary !bg-gold !text-[hsl(220,50%,10%)] !border-gold hover:!bg-transparent hover:!text-gold">
+    ...Descargar PDF
+</a>
+<a href="..." class="btn-download !bg-transparent !text-white !border-white/30 hover:!border-gold hover:!text-gold">
+    ...Descargar EPUB
+</a>
+```
+
+### 2. `wordpress-theme/header.php` — Remove light mode gradient override
+Delete the `.light .text-gold-gradient` rule (lines 147-149) so both modes use the same bright gradient as React.
 
