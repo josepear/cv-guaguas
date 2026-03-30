@@ -232,6 +232,30 @@
      * Inline SVG Icon Loader with Color Support
      * Loads SVG files and applies custom colors
      */
+    function buildValidatedUrl(baseUrl) {
+        try {
+            // Minimal path validation
+            if (baseUrl.includes('/../') || /\/%2e%2e\//i.test(baseUrl)) {
+                throw new Error('Invalid path');
+            }
+            
+            const url = new URL(baseUrl);
+            
+            // Protocol + host checks
+            const allowedDomains = ['example.com']; // add your allowed domains here
+            if (!allowedDomains.includes(url.hostname)) {
+                throw new Error('Invalid host');
+            }
+            if (!['http:', 'https:'].includes(url.protocol)) {
+                throw new Error('Invalid protocol');
+            }
+            
+            return url.href;
+        } catch {
+            throw new Error('Invalid URL');
+        }
+    }
+
     function initInlineSvgIcons() {
         const svgContainers = document.querySelectorAll('.inline-svg-icon');
         
@@ -242,7 +266,8 @@
             if (!src) return;
             
             try {
-                const response = await fetch(src);
+                const validatedUrl = buildValidatedUrl(src);
+                const response = await fetch(validatedUrl);
                 if (!response.ok) throw new Error('Failed to load SVG');
                 
                 let svgText = await response.text();
