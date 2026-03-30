@@ -763,12 +763,41 @@ c) Examinar las liquidaciones y balances de la entidad.[/articulo]
 '),
 
     // ═══════════════════════════════════════════════
-    // CAPÍTULOS 04-22 (con hero y contenido)
+    // CAPÍTULO 04: EL PROYECTO VISIONARIO DE JUAN RUIZ (promovido)
+    // ═══════════════════════════════════════════════
+    array(
+        'title' => 'El proyecto visionario de Juan Ruiz', 'numero' => '04', 'order' => 35, 'show_marker' => true,
+        'hero' => array('image' => libro_img('hero-volleyball-match.jpg'), 'overlay' => 'rgba(26, 35, 126, 0.85)', 'icon' => 'custom', 'custom_icon' => $star, 'icon_width' => 60, 'icon_height' => 60, 'alignment' => 'center', 'vertical' => 'center', 'height' => '450px',
+            'title_lines' => array(libro_hero_line('EL PROYECTO', '#D4AF37'), libro_hero_line('VISIONARIO', '#FFFFFF'), libro_hero_line('DE JUAN RUIZ', '#D4AF37'))),
+        'content' => '
+[capitular]Nacido en La Aldea de San Nicolás en 1953, emigrante con su familia a Tenerife durante gran parte su adolescencia (1960-1969), en la que hizo sus pinitos en la lucha canaria o el fútbol ("con 16 años llegué a jugar en Tercera División en las filas del Adeje"), Juan Ruiz estaba llamado, sin saberlo, a escribir una historia sin parangón en el deporte canario y al frente del Calvo Sotelo.[/capitular]
+
+<p>No hay dirigente isleño con tal nómina de títulos en su poder, todos los conquistados por la entidad, y con el mérito añadido de haber armado un equipo campeón desde las cenizas. Tanto en 1987 como en 2020 acudió al rescate recogiendo una tesorería en ruinas y un porvenir tan comprometido que apuntaba a la desaparición.</p>
+
+<p>"El secreto es trabajo y pasión. Constancia y ambición. No rendirse jamás. Si para conseguir un patrocinador tengo que visitar veinte empresas, acabo entrando en cuarenta. Si para ser campeón me tengo que traer a una estrella, trato de que sean dos."</p>
+
+[cita_editorial]"Por lo que fuera, me sentí en la obligación de hacer algo. Me movió una motivación de responsabilidad. Le pregunté abiertamente a Nuez por el mejor jugador de España. Me dijo que era Paco Sánchez Jover. Le contesté que entonces habría que traerlo. Y me miró como si hubiese dicho un disparate."[/cita_editorial]
+
+[seccion_header]La génesis de su proyecto: patrocinios y fichas estelares[/seccion_header]
+
+[cita_prensa source="La Provincia, 17 de julio de 1987"]"Estamos en una nube con muchos cimientos. Aquí hay un club con cantera, con una estructura deportiva muy sólida basada en excelentes técnicos, y hay también unas buenas razones económicas que se gestan con una administración del club que considero muy responsables."[/cita_prensa]
+
+[seccion_header]El primer título como estímulo[/seccion_header]
+
+[cita_prensa source="Diario de Las Palmas, 10 de abril de 1989"]"Este es el triunfo del trabajo y del esfuerzo de muchos años, comenzado por otros, como José Luzardo, Antonio Trejo o Felipe Nuez, y rematado por nosotros y por nuestra afición."[/cita_prensa]
+
+[seccion_header]El sueño cumplido de jugar la Copa de Europa[/seccion_header]
+
+[cita_prensa source="Canarias7, 13 de septiembre de 1990"]"No gana el que más presupuesto tiene sino el que más trabajo derroche. Es un gran reto, asimismo, representar a Canarias por vez primera en la Copa de Europa."[/cita_prensa]
+'),
+
+    // ═══════════════════════════════════════════════
+    // CAPÍTULOS 05-23 (con hero y contenido)
     // ═══════════════════════════════════════════════
 
-    // Cap 05
+    // Cap 05 (antes 04)
     array(
-        'title' => 'Iconos y estrellas del Guaguas', 'numero' => '04', 'order' => 40, 'show_marker' => true, 'ref_id' => 'cap04',
+        'title' => 'Iconos y estrellas del Guaguas', 'numero' => '05', 'order' => 40, 'show_marker' => true, 'ref_id' => 'cap05',
         'hero' => array('image' => libro_img('hero-volleyball-match.jpg'), 'overlay' => 'rgba(212, 175, 55, 0.85)', 'icon' => 'custom', 'custom_icon' => $star, 'icon_width' => 80, 'icon_height' => 80, 'alignment' => 'center', 'vertical' => 'center', 'height' => '500px',
             'title_lines' => array(libro_hero_line('ICONOS Y', '#1a237e', '#FFFFFF'), libro_hero_line('ESTRELLAS', '#1a237e', '#FFFFFF'), libro_hero_line('DEL GUAGUAS', '#1a237e', '#FFFFFF'))),
         'content' => '[capitular]Los grandes nombres que han escrito la historia del CV Guaguas. Jugadores que dejaron su huella en el voleibol español y que convirtieron al club en leyenda. Desde los canteranos que crecieron en el patio del Calvo Sotelo hasta las estrellas internacionales que llegaron para elevar el proyecto a cotas inimaginables, todos contribuyeron a forjar un legado deportivo sin parangón en Canarias.[/capitular]
