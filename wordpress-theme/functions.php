@@ -969,6 +969,44 @@ function libro_shortcode_prologo($atts, $content = null) {
 add_shortcode('prologo', 'libro_shortcode_prologo');
 
 /**
+ * Shortcode: Cronología (Timeline)
+ * Uso: [cronologia titulo="La cronología"]...[/cronologia]
+ */
+function libro_shortcode_cronologia($atts, $content = null) {
+    $atts = shortcode_atts(array('titulo' => ''), $atts, 'cronologia');
+    ob_start();
+    ?>
+    <div class="timeline-container my-12" data-reveal="up">
+        <?php if ($atts['titulo']) : ?>
+        <h3 class="section-header-highlighted mb-8"><?php echo esc_html($atts['titulo']); ?></h3>
+        <?php endif; ?>
+        <div class="timeline-list">
+            <?php echo do_shortcode($content); ?>
+        </div>
+    </div>
+    <?php
+    return ob_get_clean();
+}
+add_shortcode('cronologia', 'libro_shortcode_cronologia');
+
+/**
+ * Shortcode: Evento de cronología (TimelineEvent)
+ * Uso: [evento_cronologia year="1985"]Texto del evento[/evento_cronologia]
+ */
+function libro_shortcode_evento_cronologia($atts, $content = null) {
+    $atts = shortcode_atts(array('year' => ''), $atts, 'evento_cronologia');
+    ob_start();
+    ?>
+    <div class="timeline-event" data-reveal="left">
+        <span class="timeline-year"><?php echo esc_html($atts['year']); ?></span>
+        <div class="timeline-content"><?php echo wp_kses_post($content); ?></div>
+    </div>
+    <?php
+    return ob_get_clean();
+}
+add_shortcode('evento_cronologia', 'libro_shortcode_evento_cronologia');
+
+/**
  * Redirigir capítulos padre al primer subcapítulo
  * Idéntico al comportamiento de React: Navigate to={children[0].slug}
  */
