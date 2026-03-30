@@ -1,7 +1,7 @@
 <?php
 /**
  * Contenido completo para el libro CV Guaguas
- * Se ejecuta al activar el tema - crea los 23 capítulos con todo su contenido,
+ * Se ejecuta al activar el tema - crea los 24 capítulos con todo su contenido,
  * configuración de heroes e imágenes.
  *
  * @package CV_Guaguas_Libro
