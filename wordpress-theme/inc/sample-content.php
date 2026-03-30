@@ -865,16 +865,16 @@ c) Examinar las liquidaciones y balances de la entidad.[/articulo]
 [imagen_contenido src="' . libro_img('content/augusto-colito.jpg') . '" alt="Augusto Colito en la Champions League" caption="Augusto Colito, pieza clave del Guaguas en la Champions League 2025-2026."]
 <p>Contenido pendiente de importación del documento original.</p>'),
     // Cap 07 children
-    array('title' => 'Manuel Palacios', 'numero' => '', 'order' => 61, 'show_marker' => false, 'parent_ref' => 'cap12', 'content' => '<p>Contenido del subcapítulo próximamente.</p>'),
-    array('title' => 'Antonio Benítez', 'numero' => '', 'order' => 62, 'show_marker' => false, 'parent_ref' => 'cap12', 'content' => '<p>Contenido del subcapítulo próximamente.</p>'),
-    array('title' => 'Jorge Ramón', 'numero' => '', 'order' => 63, 'show_marker' => false, 'parent_ref' => 'cap12', 'content' => '<p>Contenido del subcapítulo próximamente.</p>'),
-    array('title' => 'Juanma Martín', 'numero' => '', 'order' => 64, 'show_marker' => false, 'parent_ref' => 'cap12', 'content' => '<p>Contenido del subcapítulo próximamente.</p>'),
-    array('title' => 'Óscar Campos', 'numero' => '', 'order' => 65, 'show_marker' => false, 'parent_ref' => 'cap12', 'content' => '<p>Contenido del subcapítulo próximamente.</p>'),
-    array('title' => 'Venancio Acosta', 'numero' => '', 'order' => 66, 'show_marker' => false, 'parent_ref' => 'cap12', 'content' => '<p>Contenido del subcapítulo próximamente.</p>'),
-    array('title' => 'Antonio Miralles', 'numero' => '', 'order' => 67, 'show_marker' => false, 'parent_ref' => 'cap12', 'content' => '<p>Contenido del subcapítulo próximamente.</p>'),
-    array('title' => 'Chava González', 'numero' => '', 'order' => 68, 'show_marker' => false, 'parent_ref' => 'cap12', 'content' => '<p>Contenido del subcapítulo próximamente.</p>'),
-    array('title' => 'Sandeep Sharma', 'numero' => '', 'order' => 69, 'show_marker' => false, 'parent_ref' => 'cap12', 'content' => '<p>Contenido del subcapítulo próximamente.</p>'),
-    array('title' => 'Juan José Cardona', 'numero' => '', 'order' => 70, 'show_marker' => false, 'parent_ref' => 'cap12', 'content' => '<p>Contenido del subcapítulo próximamente.</p>'),
+    array('title' => 'Manuel Palacios', 'numero' => '', 'order' => 61, 'show_marker' => false, 'parent_ref' => 'cap08', 'content' => '<p>Contenido del subcapítulo próximamente.</p>'),
+    array('title' => 'Antonio Benítez', 'numero' => '', 'order' => 62, 'show_marker' => false, 'parent_ref' => 'cap08', 'content' => '<p>Contenido del subcapítulo próximamente.</p>'),
+    array('title' => 'Jorge Ramón', 'numero' => '', 'order' => 63, 'show_marker' => false, 'parent_ref' => 'cap08', 'content' => '<p>Contenido del subcapítulo próximamente.</p>'),
+    array('title' => 'Juanma Martín', 'numero' => '', 'order' => 64, 'show_marker' => false, 'parent_ref' => 'cap08', 'content' => '<p>Contenido del subcapítulo próximamente.</p>'),
+    array('title' => 'Óscar Campos', 'numero' => '', 'order' => 65, 'show_marker' => false, 'parent_ref' => 'cap08', 'content' => '<p>Contenido del subcapítulo próximamente.</p>'),
+    array('title' => 'Venancio Acosta', 'numero' => '', 'order' => 66, 'show_marker' => false, 'parent_ref' => 'cap08', 'content' => '<p>Contenido del subcapítulo próximamente.</p>'),
+    array('title' => 'Antonio Miralles', 'numero' => '', 'order' => 67, 'show_marker' => false, 'parent_ref' => 'cap08', 'content' => '<p>Contenido del subcapítulo próximamente.</p>'),
+    array('title' => 'Chava González', 'numero' => '', 'order' => 68, 'show_marker' => false, 'parent_ref' => 'cap08', 'content' => '<p>Contenido del subcapítulo próximamente.</p>'),
+    array('title' => 'Sandeep Sharma', 'numero' => '', 'order' => 69, 'show_marker' => false, 'parent_ref' => 'cap08', 'content' => '<p>Contenido del subcapítulo próximamente.</p>'),
+    array('title' => 'Juan José Cardona', 'numero' => '', 'order' => 70, 'show_marker' => false, 'parent_ref' => 'cap08', 'content' => '<p>Contenido del subcapítulo próximamente.</p>'),
 
     array('title' => 'Relevo generacional', 'numero' => '09', 'order' => 75, 'show_marker' => true, 'ref_id' => 'cap09',
         'hero' => array('image' => libro_img('hero-cantera.jpg'), 'overlay' => 'rgba(212, 175, 55, 0.80)', 'icon' => 'custom', 'custom_icon' => $star, 'icon_width' => 60, 'icon_height' => 60, 'alignment' => 'left', 'vertical' => 'center', 'height' => '480px',
@@ -884,13 +884,13 @@ c) Examinar las liquidaciones y balances de la entidad.[/articulo]
 [imagen_contenido src="' . libro_img('content/helder-spencer.png') . '" alt="Hélder Spencer" caption="Hélder Spencer, uno de los refuerzos internacionales que alimentan la competitividad del equipo."]
 <p>Contenido pendiente de importación del documento original.</p>'),
     // Cap 08 children
-    array('title' => 'Alexis Valido', 'numero' => '', 'order' => 76, 'show_marker' => false, 'parent_ref' => 'cap12', 'content' => '<p>Contenido del subcapítulo próximamente.</p>'),
-    array('title' => 'Antonio Sánchez', 'numero' => '', 'order' => 77, 'show_marker' => false, 'parent_ref' => 'cap12', 'content' => '<p>Contenido del subcapítulo próximamente.</p>'),
-    array('title' => 'Daniel Castañeda', 'numero' => '', 'order' => 78, 'show_marker' => false, 'parent_ref' => 'cap12', 'content' => '<p>Contenido del subcapítulo próximamente.</p>'),
-    array('title' => 'Juan Carlos Vega', 'numero' => '', 'order' => 79, 'show_marker' => false, 'parent_ref' => 'cap12', 'content' => '<p>Contenido del subcapítulo próximamente.</p>'),
-    array('title' => 'Hermanos Cabrera', 'numero' => '', 'order' => 80, 'show_marker' => false, 'parent_ref' => 'cap12', 'content' => '<p>Contenido del subcapítulo próximamente.</p>'),
-    array('title' => 'Níchel Gómez', 'numero' => '', 'order' => 81, 'show_marker' => false, 'parent_ref' => 'cap12', 'content' => '<p>Contenido del subcapítulo próximamente.</p>'),
-    array('title' => 'Raúl Dávila', 'numero' => '', 'order' => 82, 'show_marker' => false, 'parent_ref' => 'cap12', 'content' => '<p>Contenido del subcapítulo próximamente.</p>'),
+    array('title' => 'Alexis Valido', 'numero' => '', 'order' => 76, 'show_marker' => false, 'parent_ref' => 'cap09', 'content' => '<p>Contenido del subcapítulo próximamente.</p>'),
+    array('title' => 'Antonio Sánchez', 'numero' => '', 'order' => 77, 'show_marker' => false, 'parent_ref' => 'cap09', 'content' => '<p>Contenido del subcapítulo próximamente.</p>'),
+    array('title' => 'Daniel Castañeda', 'numero' => '', 'order' => 78, 'show_marker' => false, 'parent_ref' => 'cap09', 'content' => '<p>Contenido del subcapítulo próximamente.</p>'),
+    array('title' => 'Juan Carlos Vega', 'numero' => '', 'order' => 79, 'show_marker' => false, 'parent_ref' => 'cap09', 'content' => '<p>Contenido del subcapítulo próximamente.</p>'),
+    array('title' => 'Hermanos Cabrera', 'numero' => '', 'order' => 80, 'show_marker' => false, 'parent_ref' => 'cap09', 'content' => '<p>Contenido del subcapítulo próximamente.</p>'),
+    array('title' => 'Níchel Gómez', 'numero' => '', 'order' => 81, 'show_marker' => false, 'parent_ref' => 'cap09', 'content' => '<p>Contenido del subcapítulo próximamente.</p>'),
+    array('title' => 'Raúl Dávila', 'numero' => '', 'order' => 82, 'show_marker' => false, 'parent_ref' => 'cap09', 'content' => '<p>Contenido del subcapítulo próximamente.</p>'),
 
     array('title' => 'Una transición dolorosa', 'numero' => '10', 'order' => 85, 'show_marker' => true, 'ref_id' => 'cap10',
         'hero' => array('image' => libro_img('hero-transicion.jpg'), 'overlay' => 'rgba(0, 0, 0, 0.40)', 'icon' => 'custom', 'custom_icon' => $star, 'icon_width' => 50, 'icon_height' => 50, 'alignment' => 'center', 'vertical' => 'center', 'height' => '500px',
@@ -899,15 +899,15 @@ c) Examinar las liquidaciones y balances de la entidad.[/articulo]
 [imagen_contenido src="' . libro_img('content/equipo-liga.jpeg') . '" alt="El equipo del CV Guaguas" caption="A pesar de las dificultades, el espíritu del Guaguas nunca se extinguió completamente." fullwidth="true"]
 <p>Contenido pendiente de importación del documento original.</p>'),
     // Cap 09 children
-    array('title' => 'Juan Ruiz traspasa sus poderes', 'numero' => '', 'order' => 86, 'show_marker' => false, 'parent_ref' => 'cap12', 'content' => '<p>Contenido del subcapítulo próximamente.</p>'),
-    array('title' => 'La estabilidad imposible', 'numero' => '', 'order' => 87, 'show_marker' => false, 'parent_ref' => 'cap12', 'content' => '<p>Contenido del subcapítulo próximamente.</p>'),
-    array('title' => 'Camino del fatídico 2009', 'numero' => '', 'order' => 88, 'show_marker' => false, 'parent_ref' => 'cap12', 'content' => '<p>Contenido del subcapítulo próximamente.</p>'),
-    array('title' => 'El peor desenlace posible', 'numero' => '', 'order' => 89, 'show_marker' => false, 'parent_ref' => 'cap12', 'content' => '<p>Contenido del subcapítulo próximamente.</p>'),
-    array('title' => 'La cronología', 'numero' => '', 'order' => 90, 'show_marker' => false, 'parent_ref' => 'cap12', 'content' => '<p>Contenido del subcapítulo próximamente.</p>'),
-    array('title' => 'David Rodríguez', 'numero' => '', 'order' => 91, 'show_marker' => false, 'parent_ref' => 'cap12', 'content' => '<p>Contenido del subcapítulo próximamente.</p>'),
-    array('title' => 'Joel Sotelo', 'numero' => '', 'order' => 92, 'show_marker' => false, 'parent_ref' => 'cap12', 'content' => '<p>Contenido del subcapítulo próximamente.</p>'),
-    array('title' => 'Pedro Cuarental', 'numero' => '', 'order' => 93, 'show_marker' => false, 'parent_ref' => 'cap12', 'content' => '<p>Contenido del subcapítulo próximamente.</p>'),
-    array('title' => 'Marcos Dreyer', 'numero' => '', 'order' => 94, 'show_marker' => false, 'parent_ref' => 'cap12', 'content' => '<p>Contenido del subcapítulo próximamente.</p>'),
+    array('title' => 'Juan Ruiz traspasa sus poderes', 'numero' => '', 'order' => 86, 'show_marker' => false, 'parent_ref' => 'cap10', 'content' => '<p>Contenido del subcapítulo próximamente.</p>'),
+    array('title' => 'La estabilidad imposible', 'numero' => '', 'order' => 87, 'show_marker' => false, 'parent_ref' => 'cap10', 'content' => '<p>Contenido del subcapítulo próximamente.</p>'),
+    array('title' => 'Camino del fatídico 2009', 'numero' => '', 'order' => 88, 'show_marker' => false, 'parent_ref' => 'cap10', 'content' => '<p>Contenido del subcapítulo próximamente.</p>'),
+    array('title' => 'El peor desenlace posible', 'numero' => '', 'order' => 89, 'show_marker' => false, 'parent_ref' => 'cap10', 'content' => '<p>Contenido del subcapítulo próximamente.</p>'),
+    array('title' => 'La cronología', 'numero' => '', 'order' => 90, 'show_marker' => false, 'parent_ref' => 'cap10', 'content' => '<p>Contenido del subcapítulo próximamente.</p>'),
+    array('title' => 'David Rodríguez', 'numero' => '', 'order' => 91, 'show_marker' => false, 'parent_ref' => 'cap10', 'content' => '<p>Contenido del subcapítulo próximamente.</p>'),
+    array('title' => 'Joel Sotelo', 'numero' => '', 'order' => 92, 'show_marker' => false, 'parent_ref' => 'cap10', 'content' => '<p>Contenido del subcapítulo próximamente.</p>'),
+    array('title' => 'Pedro Cuarental', 'numero' => '', 'order' => 93, 'show_marker' => false, 'parent_ref' => 'cap10', 'content' => '<p>Contenido del subcapítulo próximamente.</p>'),
+    array('title' => 'Marcos Dreyer', 'numero' => '', 'order' => 94, 'show_marker' => false, 'parent_ref' => 'cap10', 'content' => '<p>Contenido del subcapítulo próximamente.</p>'),
 
     array('title' => 'Todos los títulos', 'numero' => '11', 'order' => 100, 'show_marker' => true, 'ref_id' => 'cap11',
         'hero' => array('image' => libro_img('hero-trophies.jpg'), 'overlay' => 'rgba(212, 175, 55, 0.75)', 'icon' => 'custom', 'custom_icon' => $star, 'icon_width' => 80, 'icon_height' => 80, 'alignment' => 'center', 'vertical' => 'center', 'height' => '500px',
@@ -917,7 +917,7 @@ c) Examinar las liquidaciones y balances de la entidad.[/articulo]
 [imagen_contenido src="' . libro_img('content/partido-guaguas.jpg') . '" alt="Ambiente en un partido del CV Guaguas" caption="El Centro Insular de Deportes y el Gran Canaria Arena han sido testigos de las gestas del club."]
 <p>Contenido pendiente de importación del documento original.</p>'),
     // Cap 10 child
-    array('title' => 'Joselu Sánchez', 'numero' => '', 'order' => 101, 'show_marker' => false, 'parent_ref' => 'cap12', 'content' => '<p>Contenido del subcapítulo próximamente.</p>'),
+    array('title' => 'Joselu Sánchez', 'numero' => '', 'order' => 101, 'show_marker' => false, 'parent_ref' => 'cap11', 'content' => '<p>Contenido del subcapítulo próximamente.</p>'),
 
     array('title' => 'Vuelve el gran Guaguas', 'numero' => '12', 'order' => 105, 'show_marker' => true, 'ref_id' => 'cap12',
         'hero' => array('image' => libro_img('hero-celebracion.jpg'), 'overlay' => 'rgba(26, 35, 126, 0.75)', 'icon' => 'custom', 'custom_icon' => $star, 'icon_width' => 70, 'icon_height' => 70, 'alignment' => 'right', 'vertical' => 'center', 'height' => '500px',
