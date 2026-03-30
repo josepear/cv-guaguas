@@ -857,7 +857,7 @@ c) Examinar las liquidaciones y balances de la entidad.[/articulo]
 [imagen_contenido src="' . libro_img('content/dobromir-saque.jpg') . '" alt="Momento de un saque" caption="El nivel técnico de los jugadores internacionales elevó la competitividad del Guaguas en todas las competiciones."]
 <p>Contenido pendiente de importación del documento original.</p>'),
 
-    array('title' => 'Embajadores por Europa', 'numero' => '08', 'order' => 60, 'show_marker' => true, 'ref_id' => 'cap12',
+    array('title' => 'Embajadores por Europa', 'numero' => '08', 'order' => 60, 'show_marker' => true, 'ref_id' => 'cap08',
         'hero' => array('image' => libro_img('hero-europa.jpg'), 'overlay' => 'rgba(26, 35, 126, 0.78)', 'icon' => 'custom', 'custom_icon' => $star, 'icon_width' => 70, 'icon_height' => 70, 'alignment' => 'center', 'vertical' => 'center', 'height' => '500px',
             'title_lines' => array(libro_hero_line('EMBAJADORES', '#D4AF37'), libro_hero_line('POR EUROPA', '#FFFFFF'))),
         'content' => '[capitular]La aventura europea del CV Guaguas es una de las páginas más brillantes de su historia. Desde la primera participación en la Copa de Europa hasta las campañas recientes en la Champions League, el club ha sido embajador del voleibol canario en los más prestigiosos escenarios del continente.[/capitular]
@@ -876,7 +876,7 @@ c) Examinar las liquidaciones y balances de la entidad.[/articulo]
     array('title' => 'Sandeep Sharma', 'numero' => '', 'order' => 69, 'show_marker' => false, 'parent_ref' => 'cap12', 'content' => '<p>Contenido del subcapítulo próximamente.</p>'),
     array('title' => 'Juan José Cardona', 'numero' => '', 'order' => 70, 'show_marker' => false, 'parent_ref' => 'cap12', 'content' => '<p>Contenido del subcapítulo próximamente.</p>'),
 
-    array('title' => 'Relevo generacional', 'numero' => '09', 'order' => 75, 'show_marker' => true, 'ref_id' => 'cap12',
+    array('title' => 'Relevo generacional', 'numero' => '09', 'order' => 75, 'show_marker' => true, 'ref_id' => 'cap09',
         'hero' => array('image' => libro_img('hero-cantera.jpg'), 'overlay' => 'rgba(212, 175, 55, 0.80)', 'icon' => 'custom', 'custom_icon' => $star, 'icon_width' => 60, 'icon_height' => 60, 'alignment' => 'left', 'vertical' => 'center', 'height' => '480px',
             'title_lines' => array(libro_hero_line('RELEVO', '#1a237e', '#FFFFFF'), libro_hero_line('GENERACIONAL', '#1a237e', '#FFFFFF'))),
         'content' => '[capitular]Cada generación del Guaguas ha sido el eslabón de una cadena ininterrumpida de talento canario. El relevo generacional ha sido una constante en la vida del club, desde los pioneros del Calvo Sotelo hasta los actuales jugadores de la cantera.[/capitular]
@@ -892,7 +892,7 @@ c) Examinar las liquidaciones y balances de la entidad.[/articulo]
     array('title' => 'Níchel Gómez', 'numero' => '', 'order' => 81, 'show_marker' => false, 'parent_ref' => 'cap12', 'content' => '<p>Contenido del subcapítulo próximamente.</p>'),
     array('title' => 'Raúl Dávila', 'numero' => '', 'order' => 82, 'show_marker' => false, 'parent_ref' => 'cap12', 'content' => '<p>Contenido del subcapítulo próximamente.</p>'),
 
-    array('title' => 'Una transición dolorosa', 'numero' => '10', 'order' => 85, 'show_marker' => true, 'ref_id' => 'cap12',
+    array('title' => 'Una transición dolorosa', 'numero' => '10', 'order' => 85, 'show_marker' => true, 'ref_id' => 'cap10',
         'hero' => array('image' => libro_img('hero-transicion.jpg'), 'overlay' => 'rgba(0, 0, 0, 0.40)', 'icon' => 'custom', 'custom_icon' => $star, 'icon_width' => 50, 'icon_height' => 50, 'alignment' => 'center', 'vertical' => 'center', 'height' => '500px',
             'title_lines' => array(libro_hero_line('UNA TRANSICIÓN', '#8faabe'), libro_hero_line('DOLOROSA', '#FFFFFF'))),
         'content' => '[capitular]Los años posteriores a la marcha de Juan Ruiz fueron los más convulsos en la historia del club. La inestabilidad directiva, los problemas económicos y la pérdida progresiva de competitividad culminaron en el peor desenlace posible: la desaparición temporal del equipo en 2009.[/capitular]
@@ -909,7 +909,7 @@ c) Examinar las liquidaciones y balances de la entidad.[/articulo]
     array('title' => 'Pedro Cuarental', 'numero' => '', 'order' => 93, 'show_marker' => false, 'parent_ref' => 'cap12', 'content' => '<p>Contenido del subcapítulo próximamente.</p>'),
     array('title' => 'Marcos Dreyer', 'numero' => '', 'order' => 94, 'show_marker' => false, 'parent_ref' => 'cap12', 'content' => '<p>Contenido del subcapítulo próximamente.</p>'),
 
-    array('title' => 'Todos los títulos', 'numero' => '11', 'order' => 100, 'show_marker' => true, 'ref_id' => 'cap12',
+    array('title' => 'Todos los títulos', 'numero' => '11', 'order' => 100, 'show_marker' => true, 'ref_id' => 'cap11',
         'hero' => array('image' => libro_img('hero-trophies.jpg'), 'overlay' => 'rgba(212, 175, 55, 0.75)', 'icon' => 'custom', 'custom_icon' => $star, 'icon_width' => 80, 'icon_height' => 80, 'alignment' => 'center', 'vertical' => 'center', 'height' => '500px',
             'title_lines' => array(libro_hero_line('TODOS', '#1a237e', '#FFFFFF'), libro_hero_line('LOS TÍTULOS', '#1a237e', '#FFFFFF'))),
         'content' => '[capitular]El palmarés del CV Guaguas es el más brillante del voleibol español. Nueve Ligas, nueve Copas del Rey, cinco Supercopas y una Copa Ibérica conforman un historial de éxitos que ningún otro club del país ha igualado.[/capitular]
