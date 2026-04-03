@@ -4,6 +4,19 @@
  * Diseño idéntico a React Chapter.tsx
  */
 
+// Si el capítulo tiene hijos, redirigir al primero (igual que React Chapter.tsx)
+$first_child = get_posts(array(
+    'post_type'      => 'capitulo',
+    'posts_per_page' => 1,
+    'orderby'        => 'menu_order',
+    'order'          => 'ASC',
+    'post_parent'    => get_the_ID(),
+));
+if (!empty($first_child)) {
+    wp_redirect(get_permalink($first_child[0]->ID), 301);
+    exit;
+}
+
 get_header();
 
 // Obtener datos del capítulo actual
@@ -254,7 +267,7 @@ if ($hero_icon === 'custom' && $hero_custom_icon) {
                 </span>
                 <?php endif; ?>
                 
-                <h2 class="font-serif text-3xl md:text-4xl lg:text-5xl text-foreground leading-tight">
+                <h2 class="font-display font-black uppercase tracking-tight text-2xl sm:text-3xl md:text-4xl lg:text-5xl text-foreground leading-tight">
                     <?php the_title(); ?>
                 </h2>
             </header>

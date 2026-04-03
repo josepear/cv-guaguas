@@ -1,7 +1,7 @@
 <?php
 /**
  * Contenido completo para el libro CV Guaguas
- * Se ejecuta al activar el tema - crea los 24 capítulos con todo su contenido,
+ * Se ejecuta al activar el tema - crea los 26 capítulos (0-25) con todo su contenido,
  * configuración de heroes e imágenes.
  *
  * @package CV_Guaguas_Libro
@@ -141,7 +141,7 @@ function libro_get_sample_chapters() {
     return array(
 
     // ═══════════════════════════════════════════════
-    // CAPÍTULO 0: PRÓLOGOS (PADRE)
+    // CAPÍTULO 0: PRÓLOGOS
     // ═══════════════════════════════════════════════
     array(
         'title' => 'Prólogos',
@@ -159,20 +159,12 @@ function libro_get_sample_chapters() {
             'alignment' => 'center',
             'vertical' => 'center',
             'height' => '400px',
-            'title_lines' => array(
-                libro_hero_line('PRÓLOGOS', '#D4AF37'),
-            ),
+            'title_lines' => array(libro_hero_line('PRÓLOGOS', '#D4AF37', '', 'black')),
         ),
         'content' => '
 <p>Este capítulo reúne las palabras de las personalidades más destacadas del ámbito deportivo, político e institucional que han acompañado al CV Guaguas en su extraordinaria trayectoria. Sus testimonios reflejan el impacto del club en la sociedad canaria y en el voleibol español.</p>
 
-[imagen_contenido src="' . libro_img('content/equipo-champions.jpg') . '" alt="El CV Guaguas en competición europea" caption="El CV Guaguas, embajador del voleibol canario en las competiciones europeas." fullwidth="true"]
-
-[cita_editorial]"Más que un club, una familia. Más que voleibol, pasión por nuestra tierra."[/cita_editorial]
-',
-    ),
-
-    // Prólogos individuales (hijos) — orden idéntico a React chaptersStructure.ts
+[imagen_contenido src="'),
     array('title' => 'Fernando Clavijo', 'numero' => '', 'order' => 2, 'show_marker' => false, 'parent_ref' => 'prologos',
         'subtitulo' => 'Presidente del Gobierno de Canarias',
         'prologo_imagen' => libro_img('prologues/fernando-clavijo.jpg'),
@@ -248,7 +240,7 @@ function libro_get_sample_chapters() {
         'content' => '<p>Texto del prólogo pendiente de redacción.</p>'),
 
     // ═══════════════════════════════════════════════
-    // CAPÍTULO 01: DEL PATIO DEL COLEGIO
+    // CAPÍTULO 01: DEL PATIO DEL COLEGIO A DIVISIÓN DE HONOR
     // ═══════════════════════════════════════════════
     array(
         'title' => 'Del patio del colegio a División de Honor',
@@ -266,12 +258,21 @@ function libro_get_sample_chapters() {
             'alignment' => 'right',
             'vertical' => 'center',
             'height' => '500px',
-            'title_lines' => array(
-                libro_hero_line('DEL PATIO', '#1a237e', '#FFFFFF'),
-                libro_hero_line('DEL COLEGIO', '#1a237e', '#FFFFFF'),
-                libro_hero_line('A LA DIVISIÓN', '#1a237e', '#FFFFFF'),
-                libro_hero_line('DE HONOR', '#1a237e', '#FFFFFF'),
-            ),
+            'title_lines' => array(libro_hero_line('DEL PATIO', '#1a237e', '#FFFFFF', 'black'), libro_hero_line('DEL COLEGIO', '#1a237e', '#FFFFFF', 'black'), libro_hero_line('A LA DIVISIÓN', '#1a237e', '#FFFFFF', 'black'), libro_hero_line('DE HONOR', '#1a237e', '#FFFFFF', 'black')),
+        ),
+        'content' => ''),
+    array('title' => 'Los orígenes', 'numero' => '', 'order' => 13, 'show_marker' => false, 'parent_ref' => 'cap01',
+        'hero' => array(
+            'image' => libro_img('hero-patio-colegio.jpg'),
+            'overlay' => 'rgba(212, 175, 55, 0.75)',
+            'icon' => 'custom',
+            'custom_icon' => $star,
+            'icon_width' => 0,
+            'icon_height' => 0,
+            'alignment' => 'center',
+            'vertical' => 'bottom',
+            'height' => '500px',
+            'title_lines' => array(libro_hero_line('LOS', 'hsl(220 50% 12%)', 'hsl(45 100% 50%)', 'black'), libro_hero_line('ORÍGENES', 'hsl(220 50% 12%)', 'hsl(45 100% 50%)', 'black')),
         ),
         'content' => '
 [seccion_header]Las horas extraescolares con Francisco Rodríguez[/seccion_header]
@@ -282,70 +283,104 @@ function libro_get_sample_chapters() {
 
 <p>A la espera de que cale en categoría masculina, donde su introducción es más paulatina, las niñas toman la bandera y es la sección femenina la que inicia los pasos del Calvo Sotelo en los primeros torneos rivalizando con otros equipos. Y con resultados de impresión. Así, en los III Juegos Escolares Femeninos de la Enseñanza General Básica (EGB), correspondientes al curso 1971-72, el equipo infantil del Colegio Nacional Calvo Sotelo se impone a nivel provincial y regional, desplazándose en junio de 1972 hasta Málaga para disputar la fase final en la que se proclama campeón de España.</p>
 
-[imagen_contenido src="' . libro_img('content/copa-del-rey.jpg') . '" alt="Jugadores del Calvo Sotelo en sus primeros años de competición" caption="Los primeros años del Calvo Sotelo en competición federada marcaron el inicio de una leyenda."]
+<p>Y, desde la temporada 1972-73, participa en categoría infantil masculina en los Campeonatos Escolares Provinciales por iniciativa y empeño de la Asociación de Padres de Alumnos, presidida por José Celestino Luzardo, y también representada por Antonio Trejo, encargado de la imprenta del colegio, Guillermo Gil, director del centro, y los profesores Pardo y Miguel Nieves. El crecimiento es sostenido, como queda documentado con otro logro: el 18 de febrero de 1973, el equipo femenino de 2ª categoría juvenil, entrenado por Francisco Rodríguez, se proclama campeón provincial escolar tras ganar, en la cancha Eliseo Ojeda, al Instituto Isabel de España. Un guiño del destino: el partido fue arbitrado por Felipe Nuez, quien ya ha orientado sus pasos al voleibol como actividad complementaria a la que ejercía de profesor. Apenas un año después sería pionero al frente de la selección cadete de Las Palmas, germen del equipo sénior que iniciaría la andadura del Calvo Sotelo ya a nivel federado.</p>
+
+<p>La creación, también en 1973, de un trofeo organizado por la propia escuela certifica la consolidación y crecimiento del voleibol en la rústica pista donde los alumnos ya se entregaban con entusiasmo y empeño en perfeccionar sus maneras y habilidades.</p>
 
 [seccion_header]Silvestre Cabrera y el salto cualitativo[/seccion_header]
 
-<p>Un acontecimiento externo va a suponer el definitivo impulso para el desarrollo y crecimiento de la disciplina, tanto en el propio Calvo Sotelo como en los otros caladeros de la cantera grancanaria de mitad de los setenta: la llegada a la presidencia de la Federación de Las Palmas de Voleibol de Silvestre Cabrera, a instancias de Manuel Hernández, director técnico de la Federación Española y que permite recuperar el voleibol federado en la provincia de Las Palmas. Cabrera, que era instructor de Educación Física y profesor del Instituto de Enseñanza Media de Escaleritas, toma posesión de su cargo el 19 de septiembre de 1973.</p>
+<p>Un acontecimiento externo va a suponer el definitivo impulso para el desarrollo y crecimiento de la disciplina, tanto en el propio Calvo Sotelo como en los otros caladeros de la cantera grancanaria de mitad de los setenta: la llegada a la presidencia de la Federación de Las Palmas de Voleibol de Silvestre Cabrera, a instancias de Manuel Hernández, director técnico de la Federación Española y que permite recuperar el voleibol federado en la provincia de Las Palmas. Cabrera, que era instructor de Educación Física y profesor del Instituto de Enseñanza Media de Escaleritas, toma posesión de su cargo el 19 de septiembre de 1973. Su equipo de gobierno lo conforman Ramón Limiñana, vicepresidente primero, Alberto Armas, vicepresidente segundo, Felipe Nuez, secretario, José Antonio Giráldez, director de la escuela de preparadores, y Leoncio Castellano, presidente del colegio de árbitros.</p>
 
-[cita_prensa source="Diario de Las Palmas, 26 de septiembre de 1973"]"El voleibol ya dejó de ser un deporte minoritario para convertirse en algo tremendamente atractivo. No es un deporte de patios o de recreos, aunque la labor escolar, que en este aspecto lleva la Delegación de la Juventud, es muy importante. Sus campañas están dando al voleibol el lugar que le corresponde."[/cita_prensa]
+[cita_prensa source="Diario de Las Palmas, 26 de septiembre de 1973"]La pasada temporada contamos con doscientos ochenta jugadores juveniles. Solo en esa categoría, porque no se trabajó con los séniors. Este año esperamos contar con muchos más, pues aparte de los dichos, se pondrá en marcha el campeonato femenino y el de los mayores. Habrá 10 equipos en la Segunda División Nacional, cuatro femeninos y todos los juveniles que hay actualmente.[/cita_prensa]
+
+<p>Sus esfuerzos se traducirían rápidamente en hechos, pues en 1974 ya detallaba que Canarias era "la quinta comunidad de España en cuanto a licencias de voleibol con un total de 1.057 fichas".</p>
+
+[cita_editorial author="Silvestre Cabrera"]El voleibol ya dejó de ser un deporte minoritario para convertirse en algo tremendamente atractivo. No es un deporte de patios o de recreos, aunque la labor escolar, que en este aspecto lleva la Delegación de la Juventud, es muy importante. Sus campañas están dando al voleibol el lugar que le corresponde.[/cita_editorial]
+
+<p>Y añadía el dirigente: "Dentro de la labor que desarrolla la Delegación Provincial de la Juventud es de destacar las competiciones de cadetes, infantiles y alevines, gestión tremendamente meritoria. Además, la Delegación Provincial de Educación Física y Deportes ha patrocinado este año cuatro escuelas, funcionando en centros de Educación General Básica, con más de doscientos participantes masculinos. La sección femenina, por su parte, también ha sobrepasado el número en este sentido".</p>
+
+<p>Y dos frentes más fueron los que vertebraron el fértil periodo de gobierno de Silvestre Cabrera, como lo ponderaba en una entrevista concedida a La Provincia y firmada por Santiago Betancor: el logístico y el competitivo a escala nacional.</p>
+
+[cita_prensa source="La Provincia"]Es otro de nuestros grandes problemas, la falta de una cancha cubierta que nos permita consolidar nuestra preparación para acceder a las fases de sector con ciertas garantías. Nuestros equipos fallan por circunstancias como estas, aunque, según tengo entendido, pronto contaremos con dos, que nos darán la oportunidad de preparar mejor a nuestros muchachos.[/cita_prensa]
+
+<p>Y sobre el otro reto, apuntaba: "Es fundamental que se acabe de una vez esa falta de contacto del voleibol canario con el nacional. El baloncesto y otros deportes han consolidado su afición por la competencia con los equipos nacionales, cosa que ahora le viene ocurriendo al balonmano. Esperamos que pronto le corresponda al voleibol. Si no visitamos y nos visitan equipos nacionales, que nos estimulen, no saldremos nunca del estancamiento".</p>
 
 [seccion_header]La selección cadete con Felipe Nuez como germen[/seccion_header]
 
-<p>La temporada 1974-75, ya con los primeros resultados de la gestión de Cabrera al frente del voleibol provincial, resulta crucial en el desarrollo del Calvo Sotelo, pues se materializa la creación de la selección cadete de Las Palmas, que estará a cargo de Felipe Nuez. "Nuestra intención es continuar con ellos para recoger el fruto de nuestra labor dentro de unos 3 o 4 años y poder presentar un gran equipo que destaque en la Liga Nacional", añadía, a modo de premonición, el técnico. De esta selección cadete saldría la base del primer Calvo Sotelo masculino, que, en esa misma campaña, debutaría en competición federada: el Campeonato Provincial de Segunda División Masculino.</p>
+<p>La temporada 1974-75, ya con los primeros resultados de la gestión de Cabrera al frente del voleibol provincial, resulta crucial en el desarrollo del Calvo Sotelo, pues se materializa la creación de la selección cadete de Las Palmas, que estará a cargo de Felipe Nuez ("con exactamente 15 jugadores y cuyos nombres son Mendaño, Araña, Padrón, Montelongo, Vázquez, José Luis, José Antonio, Juan, Navarro, L. Acosta, Willy, Ramón, Eugenio, T. Acosta y Juan Carlos", detallaba Nuez).</p>
 
-[imagen_contenido src="' . libro_img('content/partido-guaguas.jpg') . '" alt="Partido de voleibol en el Centro Insular de Deportes" caption="El Centro Insular de Deportes se convirtió en la casa del voleibol grancanario." fullwidth="true"]
+[cita_editorial author="Felipe Nuez"]Nuestra intención es continuar con ellos para recoger el fruto de nuestra labor dentro de unos 3 o 4 años y poder presentar un gran equipo que destaque en la Liga Nacional.[/cita_editorial]
+
+<p>De esta selección cadete saldría la base del primer Calvo Sotelo masculino, que, en esa misma campaña, debutaría en competición federada: el Campeonato Provincial de Segunda División Masculino. El equipo está dirigido por los entrenadores Félix Rodríguez y Felipe Nuez, ambos procedentes del Club Canteras UD. En 1975 ya inicia su carrera como entrenador titular Felipe Nuez, cuya estancia se prolongará hasta 1988. En este campeonato, el Calvo Sotelo queda subcampeón, por detrás del Salesianos, y completando el cuadro de participación los equipos Juventud de Gáldar, Juventud de Guía, Juventud de Telde, Juventud de Arucas, Bandera de Paracaidistas y Colegio Universitario de Medicina. El equipo del Calvo Sotelo lo configuraron los jugadores José Tirado, Falero, Ceferino, Fidel, José de la Cruz, Macías y Juan Ramón Dávila.</p>
+
+<p>En 1975 el equipo juvenil femenino se proclama campeón provincial escolar bajo la dirección técnica de Francisco Rodríguez. Y otro hecho relevante acaece como clausura de la temporada 1974-75: en agosto se organizan, en las canchas del Calvo Sotelo y las instalaciones municipales García San Román, las 12 horas de Voleibol, de 9.00 a 21.00 horas. Más de 200 participantes entre las categorías alevín masculina, juvenil masculina, absoluta femenina y Segunda División masculina.</p>
+
+<p>A propuesta de Silvestre Cabrera, se funda un equipo denominado "Calsa", fusión del Calvo Sotelo y del Salesianos, con vistas a formar un grupo de primer nivel para el futuro, algo que no tendría continuidad y acabaría derivando en el Juventud Las Palmas. El Calvo Sotelo aporta un equipo juvenil y dos femeninos (A y B). En la Segunda División masculina disputa la final ante el Calsa, cayendo por 3-1.</p>
+
+<p>Entre el 9 de septiembre y el 5 de octubre de 1975 tiene lugar la Copa Federación, o Torneo Apertura, que abre la temporada 1975-76. El Calvo Sotelo participa en las tres categorías, Segunda División masculina, Absoluta femenina y Juvenil masculina. Ya hay una estructura sólida, a juzgar por el número de conjuntos que gestiona y como fruto de una continuada labor siempre en auge y cada vez con mayor calado en resultados e impacto.</p>
+
+<p>Otro acontecimiento del momento digno de mención se desarrolló del 31 de octubre de 1975 al 29 de febrero de 1976 con el Campeonato Provincial de Segunda División Masculina en el que el Calvo Sotelo queda en segunda posición de una nómina de nueve equipos, con el Juventud como campeón y Arucas, Guía, Gáldar, Drago, Zona Aérea de Canarias, Paracaidistas y Filial Perojo como equipos restantes. El entrenador es Felipe Nuez y sus jugadores, Miguel Mendaño, Alfredo Padrón, Juan Carlos Ortega Araña, José Montelongo, Juan Carlos Rodríguez, Ramón Rodríguez, José Luis Alemán, William Caballero y Navarro. En el Campeonato Juvenil Provincial Federado de esa temporada también quedaría subcampeón el Calvo Sotelo.</p>
 
 [seccion_header]Estatutos fundacionales y despegue[/seccion_header]
 
 <p>En noviembre de 1976, concretamente el día 6, se redactan los estatutos de fundación del Club Voleibol Calvo Sotelo, lo que ya supone, formalmente, el avance que se demandaba para que el proyecto deportivo se oficializara a todos los niveles y adquiriera una consistencia definitiva, como así se demostraría con el transcurso de los años posteriores. Fue el punto de partida que permitía ir del deporte escolar propiamente dicho, y que había sustentado la naturaleza del Calvo Sotelo, al integrado en la competición federada.</p>
 
-[seccion_header]El ascenso a Segunda División de 1979[/seccion_header]
+[cita_prensa source="La Provincia, 1 de septiembre de 1976"]Junto al preparador técnico, Felipe Nuez, ha venido a incrementar el plantel de entrenadores Emilio Bonilla, conocido por todos dentro del ámbito del fútbol regional. De estos dos entrenadores, hay que decir que formarán un tándem que dará muchos frutos al equipo colegial y al voleibol canario en general.[/cita_prensa]
 
-<p>Lo que había quedado pendiente del año anterior, el ascenso a Segunda División, sí se materializó en 1979, en la fase decisiva que se libró en Málaga los días 9, 10 y 11 de marzo. En su primer partido, ganó con autoridad al Málaga por 3-0 (17-15, 15-10 y 15-4), luego se impuso por 3-1 al Dos Hermanas de Sevilla y completó la fase previa con otro triunfo, esta vez ante el Jaén y por 3-0. Y en la gran final disputada en el turno vespertino del domingo 11 de marzo, y de nuevo frente al Dos Hermanas, se consumó el gran éxito con un 3-0 (15-12, 15-11 y 15-2) para la historia.</p>
+<p>El artículo proseguía detallando las incorporaciones de jugadores procedentes del infantil —Manolo, Casiano, José Luis, Simón, Ramón, Octavio y Gavira— y el regreso de Falero y Déniz al equipo absoluto. Con el equipo de voleibol, las aspiraciones llegaban aún más lejos. Se tenía una base, que era el equipo juvenil, en él se habían puesto todas las ilusiones con vistas a un futuro.</p>
 
-[seccion_header]El acceso a la élite y su conflicto burocrático[/seccion_header]
+[cita_editorial]Es loable el comprobar cómo en este club todos están mentalizados con una meta fijada a cuatro años vista, nadie espera resultados inmediatos, todos están plenamente convencidos de que, dentro de tres temporadas, el Calvo Sotelo sonará fuerte dentro del ámbito nacional.[/cita_editorial]
 
-<p>Es en la temporada 1983-84 cuando se va a producir un conflicto burocrático ("una cacicada federativa", según Felipe Nuez) que impidió el sueño de estar entre los mejores del país. En marzo de 1984 tomó parte de la fase de ascenso a la División de Honor que se celebró en Valladolid. La tercera plaza obtenida, que en principio tenía un valor testimonial, terminó adquiriendo una importancia capital al renunciar el Son Amar balear a su plaza en la máxima categoría.</p>
+<p>Dicho y hecho. El Calvo Sotelo logró clasificarse para la fase de ascenso a Segunda División que se disputó en Cáceres en febrero de 1977. El Santa Ana, que ejercía de anfitrión, el Chamartín de Madrid, Camilo de Segovia, el Cisneros de Tenerife, la Universidad Laboral de Toledo y el Galerías Florita de Salamanca completaron el cartel de aspirantes que, divididos en dos grupos, buscaban el salto de categoría. No pudo ser en esta ocasión para el Calvo Sotelo, en el mapa nacional en todo caso y con los honores preceptivos por estar entre los mejores.</p>
 
-<p>Sin embargo, los clubes de la División de Honor se opusieron a una ampliación de la misma aludiendo a factores económicos. El asunto llegó a la Audiencia Nacional en octubre de 1984. Finalmente, todos los esfuerzos quedarían desestimados.</p>
+<p>El amplio eco de la eclosión del proyecto se ensalza en la prensa por su labor cuidada de la base, verdadero orgullo de los integrantes del club. Así se hablaba de las excelencias del Calvo Sotelo, resaltando que tenía "el futuro asegurado al disponer de 16 equipos repartidos en todas las categorías".</p>
 
-<p>Así, la temporada 1984-85 arranca condicionada por este frente. Vuelta a empezar con un equipo de nuevo llamado a aspirar a la élite y cuya principal novedad estuvo en Sergio Miguel Camarero, un prometedor juvenil de 17 años llamado, con el tiempo, a ser parte del escudo. El Lucky Calvo Sotelo competiría finalmente en la División de Honor tras una posterior ampliación a doce equipos aprobada por la Federación Española el 17 de mayo de 1985.</p>
-',
-    ),
-
-    // Cap 01 children — idéntico a React chaptersStructure.ts
-    array('title' => 'Los orígenes', 'numero' => '', 'order' => 12, 'show_marker' => false, 'parent_ref' => 'cap01',
-        'content' => '
-[seccion_header]Las horas extraescolares con Francisco Rodríguez[/seccion_header]
-
-[capitular]Antes que el club fue el colegio. Porque el Calvo Sotelo nació del centro educativo del mismo nombre que se inauguró para el curso escolar 1967-68 en el barrio de Las Rehoyas, en la época punto de convergencia de la zona alta de Las Palmas de Gran Canaria y con familias de extracción social y economías precarias.[/capitular]
-
-<p>Con todo, y según ha dejado documentado Miriam Quiroga en su libro \'Génesis y evolución del voleibol en Gran Canaria 1934/78\', las primeras influencias para introducir el juego del voleibol en el Calvo Sotelo corresponden a Francisco Rodríguez, profesor que, de manera experimental, fomenta su práctica en las horas extraescolares. La aceptación de su propuesta lúdica es inmediata, lo que permite crear, de modo informal, los primeros equipos para competir de manera interna y, con el tiempo, concurrir a competencias de ámbito local.</p>
-
-[seccion_header]Silvestre Cabrera y el salto cualitativo[/seccion_header]
-
-<p>Un acontecimiento externo va a suponer el definitivo impulso para el desarrollo y crecimiento de la disciplina, tanto en el propio Calvo Sotelo como en los otros caladeros de la cantera grancanaria de mitad de los setenta: la llegada a la presidencia de la Federación de Las Palmas de Voleibol de Silvestre Cabrera, a instancias de Manuel Hernández, director técnico de la Federación Española y que permite recuperar el voleibol federado en la provincia de Las Palmas. Cabrera, que era instructor de Educación Física y profesor del Instituto de Enseñanza Media de Escaleritas, toma posesión de su cargo el 19 de septiembre de 1973.</p>
-
-[seccion_header]La selección cadete con Felipe Nuez como germen[/seccion_header]
-
-<p>La temporada 1974-75, ya con los primeros resultados de la gestión de Cabrera al frente del voleibol provincial, resulta crucial en el desarrollo del Calvo Sotelo, pues se materializa la creación de la selección cadete de Las Palmas, que estará a cargo de Felipe Nuez.</p>
-
-[seccion_header]Estatutos fundacionales y despegue[/seccion_header]
-
-<p>En noviembre de 1976, concretamente el día 6, se redactan los estatutos de fundación del Club Voleibol Calvo Sotelo, lo que ya supone, formalmente, el avance que se demandaba para que el proyecto deportivo se oficializara a todos los niveles y adquiriera una consistencia definitiva.</p>
+[cita_prensa source="La Provincia, 16 de junio de 1977"]Todos los componentes de esta gran familia pasando desde el conserje del colegio, encargado de servicios, director, padres de jugadores, junta directiva y, cómo no, la totalidad de los jugadores han hecho posible todo esto. Son estos últimos los que merecen especial atención, sacrificando alrededor de catorce horas semanales de los ratos en que no estudian o trabajan, en los entrenamientos, no desperdiciando ningún sábado o domingo, ni días de fiestas, para entrenar.[/cita_prensa]
 
 [seccion_header]El ascenso a Segunda División de 1979[/seccion_header]
 
-<p>Lo que había quedado pendiente del año anterior, el ascenso a Segunda División, sí se materializó en 1979, en la fase decisiva que se libró en Málaga los días 9, 10 y 11 de marzo.</p>
+<p>Lo que había quedado pendiente del año anterior, el ascenso a Segunda División, sí se materializó en 1979, en la fase decisiva que se libró en Málaga los días 9, 10 y 11 de marzo. En su primer partido, ganó con autoridad al Málaga por 3-0 (17-15, 15-10 y 15-4), luego se impuso por 3-1 al Dos Hermanas de Sevilla (15-1, 3-15, 15-6 y 15-1) y completó la fase previa con otro triunfo, esta vez ante el Jaén y por 3-0 (15-4, 15-2 y 15-4). Y en la gran final disputada en el turno vespertino del domingo 11 de marzo, y de nuevo frente al Dos Hermanas, se consumó el gran éxito con un 3-0 (15-12, 15-11 y 15-2) para la historia.</p>
+
+<p>Con este ascenso al Grupo Sur de la Segunda División, el Calvo Sotelo se queda como representante en el voleibol nacional junto al Juventud Las Palmas de Isidro Quintana y Joselu Sánchez.</p>
+
+<p>En su estreno en Segunda, temporada 1979-80, el saldo no pudo ser mejor, toda vez que se logró un segundo puesto que dio derecho a disputar la fase de ascenso a Primera División gracias, fundamentalmente, a que se mantuvo invicto en su feudo. En Cáceres afrontó una fase decisiva en la que no pudo culminar la gesta de haber encadenado otro éxito. La coincidencia del ascenso del Juventud permitió que se viviera el derbi capitalino en Segunda durante la campaña 1981-82, algo que se calificó como otro hito del voleibol grancanario.</p>
+
+<p>La entrada en escena de patrocinios, como ya se imponía en la realidad del deporte de comienzo de los ochenta, también formó parte de la historia del Calvo Sotelo, que, en virtud de un acuerdo con Tabacanaria, adoptó, de manera sucesiva, las denominaciones Reales y Lucky, dos marcas de cigarros. Un impulso económico que demandaba su auge en el panorama deportivo español, ya con el listón de la División de Honor en mente.</p>
 
 [seccion_header]El acceso a la élite y su conflicto burocrático[/seccion_header]
 
-<p>Es en la temporada 1983-84 cuando se va a producir un conflicto burocrático que impidió el sueño de estar entre los mejores del país. La temporada 1984-85 arranca condicionada por este frente. El Lucky Calvo Sotelo competiría finalmente en la División de Honor tras una posterior ampliación a doce equipos aprobada por la Federación Española el 17 de mayo de 1985.</p>
+<p>Juan Carlos, Pericles, Isidro, Vázquez, Felo, Juani, José Luis, Silva, José, Ignacio, Valentín y Manolo integraron la plantilla que inició el curso 1983-84, si bien luego se añadieron nombres como Francés, Quique o José Ramón.</p>
+
+<p>Es en esta temporada cuando se va a producir un conflicto burocrático ("una cacicada federativa", según Felipe Nuez) que impidió el sueño de estar entre los mejores del país. A saber: en marzo de 1984 tomó parte de la fase de ascenso a la División de Honor que se celebró en Valladolid y junto a los equipos del Vigo, Gijón, Hellín, Veracruz de Huelva y Salesianos Atocha de Madrid. La tercera plaza obtenida, que en principio tenía un valor testimonial sin mayor trascendencia, pues solo subían los dos primeros, terminó adquiriendo una importancia capital al renunciar el Son Amar balear a su plaza en la máxima categoría. José María Rodríguez, presidente del Calvo Sotelo, elevó ante la Federación Española la intención de ocupar esa vacante, con el apoyo de Manuel Navarro, director general de Deportes del Gobierno de Canarias, e, incluso, contando con el beneplácito del Consejo Superior de Deportes en la figura de Antonio Abad, uno de sus delegados.</p>
+
+<p>Sin embargo, los clubes de la División de Honor se opusieron a una ampliación de la misma aludiendo a factores económicos relacionados con los desplazamientos, el Comité Superior de Disciplina Deportiva se declaró "manifiestamente incompetente", agotándose la vía administrativa, por lo que, ya habiendo arrancado la temporada oficial, y con el Calvo Sotelo compitiendo en Primera pero con la vía abierta de pasar a la División de Honor, el asunto llegó a la Audiencia Nacional en octubre de 1984.</p>
+
+[cita_prensa source="Comité Superior de Disciplina Deportiva, 8 de octubre de 1984"]En el día de la fecha por este Comité Superior de Disciplina Deportiva, se notifica lo siguiente a la Federación Española de Voleibol (...) Este Comité Superior de Disciplina Deportiva acuerda no admitir a trámite el recurso presentado por don José María Rodríguez Herrera por ser manifiestamente incompetente para conocer sobre el fondo del asunto.[/cita_prensa]
+
+<p>Finalmente, todos los esfuerzos quedarían desestimados. Así, la temporada 1984-85 arranca condicionada por este frente ajeno a lo deportivo pero que supuso una enorme decepción en el plano institucional, pues se contaba con que prosperaran unas alegaciones fundamentadas.</p>
+
+<p>Vuelta a empezar con un equipo de nuevo llamado a aspirar a la élite y cuya principal novedad estuvo en Sergio Miguel Camarero, un prometedor juvenil de 17 años llamado, con el tiempo, a ser parte del escudo por su impronta y ascendente. El calendario regular se desarrolla con los resultados esperados hasta desembocar, con un meritorio subcampeonato del grupo C, en la fase de ascenso que acogió Mallorca a mitad de marzo de 1985. Ya sería, felizmente, el intento definitivo. Los rivales que le tocaron en suerte esta vez fueron, por este orden, el Renfe de Lérida, el Son Amar de Mallorca, el Jovellanos de Gijón, el José María Pereda de Santander y, ya en la quinta ronda, el Orient Puerto de Málaga.</p>
+
+<p>No le fueron bien las cosas a los muchachos de Nuez en tierras baleares, pues concluyeron la liguilla en una cuarta plaza que no daba derecho a subir, ya que solo ascendían los tres primeros... Pero dos meses después, en concreto el 17 de mayo, la Comisión Ejecutiva de la Federación Española presidida por Feliciano Mayoral, aprobaba la propuesta de la Asociación de Clubes de ampliar a doce los componentes de la máxima categoría. Curiosidades del destino, el mismo colectivo que vetó al Reales en 1984 le dio vía libre un año después. Tal y como se anunció, el Lucky Calvo Sotelo competiría en el grupo par junto al Sanitas, Recuerdo, Biodrink Hispano Francés, Vigo Foqué y Orient Puerto de Málaga.</p>
+
+[seccion_header]La cronología[/seccion_header]
+
+<div class="timeline-container">
+<div class="timeline-event"><span class="timeline-year">1967</span><div class="timeline-content">Se inaugura el colegio Calvo Sotelo en el barrio de Las Rehoyas.</div></div>
+<div class="timeline-event"><span class="timeline-year">1968</span><div class="timeline-content">El profesor Francisco Rodríguez introduce el voleibol como actividad deportiva extraescolar.</div></div>
+<div class="timeline-event"><span class="timeline-year">1972</span><div class="timeline-content">Después de proclamarse campeón provincial, el equipo infantil femenino del Calvo Sotelo se alza con el título a nivel nacional en los II Juegos Escolares de su categoría.</div></div>
+<div class="timeline-event"><span class="timeline-year">1973</span><div class="timeline-content">El equipo femenino de 2ª categoría juvenil, entrenado por Francisco Rodríguez, se proclama campeón Provincial Escolar tras ganar, en la cancha Eliseo Ojeda, al Instituto Isabel de España. El partido fue arbitrado por Felipe Nuez. Ese mismo año el centro crea un torneo con su propio nombre.</div></div>
+<div class="timeline-event"><span class="timeline-year">1974</span><div class="timeline-content">Creación de la selección cadete de Las Palmas, a cargo de Felipe Nuez, que sería la base del posterior equipo juvenil masculino del Calvo Sotelo. También se produce el debut en competiciones federadas del equipo masculino en el Campeonato Provincial de Segunda División.</div></div>
+<div class="timeline-event"><span class="timeline-year">1975</span><div class="timeline-content">Entre el 9 de septiembre y el 5 de octubre tiene lugar la Copa Federación, o Torneo Apertura, que abre la temporada 1975-76. El Calvo Sotelo participa en las tres categorías, Segunda División masculina, Absoluta femenina y Juvenil masculina.</div></div>
+<div class="timeline-event"><span class="timeline-year">1976</span><div class="timeline-content">Redacción de los Estatutos Fundacionales del Club Voleibol Calvo Sotelo.</div></div>
+<div class="timeline-event"><span class="timeline-year">1977</span><div class="timeline-content">Primer intento del Calvo Sotelo por ascender a la Segunda División que no culmina en la fase decisiva celebrada en Cáceres.</div></div>
+<div class="timeline-event"><span class="timeline-year">1979</span><div class="timeline-content">Se consuma el ascenso a la Segunda División, tras saldar con éxito sus partidos definitorios en Málaga ante el anfitrión, el Dos Hermanas y el Jaén, quedando como representativo a escala nacional del voleibol grancanario junto al Juventud.</div></div>
+<div class="timeline-event"><span class="timeline-year">1984</span><div class="timeline-content">La Federación Española le niega al Reales, denominación comercial de entonces del equipo, el ascenso a la División de Honor a instancias de los clubes peninsulares, que no aceptan que la renuncia del Son Amar sea cubierta por el equipo grancanario que, en virtud de la tercera plaza obtenida en la fase de ascenso celebrada en Valladolid, estaba en el legítimo derecho de reclamar esa posición, llegando, incluso, a apelar a la Audiencia Nacional.</div></div>
+<div class="timeline-event"><span class="timeline-year">1985</span><div class="timeline-content">Ascenso a la División de Honor con una secuencia similar a la del año pasado pero con final en dirección feliz. El Calvo Sotelo, en el que ya sobresale un Sergio Miguel Camarero en edad juvenil, no logra subir en la cancha, tras quedar cuarto en la liguilla disputada en Mallorca, pero una posterior ampliación de la División de Honor a doce equipos le hace sitio entre los mejores del país, tal y como ratificó la Federación Española.</div></div>
+</div>
 '),
-    array('title' => 'Felipe Nuez', 'numero' => '', 'order' => 13, 'show_marker' => false, 'parent_ref' => 'cap01',
+    array('title' => 'Felipe Nuez', 'numero' => '', 'order' => 14, 'show_marker' => false, 'parent_ref' => 'cap01',
         'content' => '
-[perfil_jugador nombre="Felipe Nuez"]
 [capitular]Felipe Nuez (Moya, 1956) es la figura fundamental y maestra en la vida del club. Presente desde el mismo inicio de la actividad escolar que se dedicó al voleibol con especial ahínco, llegó como profesor en prácticas al colegio Calvo Sotelo en 1973 sin saber que, junto a otros precursores, iniciaría una historia de superación y éxitos que todavía perdura y que es, también, orgullo del deporte canario.[/capitular]
 
 <p>"Como todos los chicos de la época, empecé en el fútbol. Pero Giráldez me dijo que me veía condiciones mejores para el voleibol y le hice caso. Lo disfruté más en la faceta de entrenador, aunque hice alguna vez de árbitro y asumí otras responsabilidades. Como jugador no destacaba especialmente en nada y supe darme cuenta para volcarme en lo que siempre me gustó", incide.</p>
@@ -353,9 +388,8 @@ function libro_get_sample_chapters() {
 <p>"Fui autodidacta. Obtuve el título de entrenador nacional con 20 años y, en 1984, el de técnico internacional. En esos años de los comienzos, la única manera de ampliar conocimientos en el voleibol era explorando métodos de trabajo en otros países, como Japón, que era una potencia inalcanzable por su nivel de desarrollo."</p>
 
 [cita_editorial]"Entrenara a cadetes, juveniles o séniors. El trabajo, el compromiso y el sacrificio eran para mí innegociables. De lo contrario, prefería quedarme en mi casa."[/cita_editorial]
-[/perfil_jugador]
 '),
-    array('title' => 'José Miguel Santana', 'numero' => '', 'order' => 14, 'show_marker' => false, 'parent_ref' => 'cap01',
+    array('title' => 'José Miguel Santana', 'numero' => '', 'order' => 15, 'show_marker' => false, 'parent_ref' => 'cap01',
         'content' => '
 [capitular]Descubridor de Sergio Miguel Camarero "por un tirón de orejas" ("siendo un niño me robaba los balones que caían fuera de la cancha y terminé recomendándole que se pusiera a jugar, como así haría y no le fue nada mal"), fue testigo y partícipe de un fichaje de leyenda como resultó ser Paco Sánchez Jover, a mitad de los ochenta y en un hotel del Puerto de Santa María durante un Preeuropeo ("convencí al recepcionista para estar en la habitación de al lado para que, cuando hubo que negociar, pudiese colarse por el balcón y que nadie lo viera") y actor impulsor, desde la tribuna de prensa, del fortalecimiento del proyecto justo en la etapa anterior a la gloria de los títulos. Pero antes, mucho antes, José Miguel Santana (Las Palmas de Gran Canaria, 1958) también se significó por jugar un papel activo en los inicios del Calvo Sotelo, entusiasta como siempre fue del voleibol tras pasar por las aulas del Alonso Quesada, en las que era deporte predominante y predilecto. Fichado del Santa Teresa al término de la temporada 1976-77, donde ejercía como entrenador y tras una llamada de Felipe Nuez para que se hiciera cargo del juvenil B masculino y femenino, Santana también hizo una contribución altruista y entusiasta que le procura un sitio privilegiado en la historia.[/capitular]
 
@@ -371,7 +405,7 @@ function libro_get_sample_chapters() {
 
 <p>"Ver cómo se alcanzó la plenitud de las Ligas y las Copas, con protagonistas que uno conoció siendo niños como Camarero, el liderazgo de Sánchez Jover, la continuidad a la obra de Felipe, que puso los pilares de todo con su sabiduría, con su trabajo... Al final dices que sí, que todo se justifica, que lo que se hizo entonces debió estar bien por lo que vino después y por lo que pervive", concluye.</p>
 '),
-    array('title' => 'Florencio Tejera', 'numero' => '', 'order' => 15, 'show_marker' => false, 'parent_ref' => 'cap01',
+    array('title' => 'Florencio Tejera', 'numero' => '', 'order' => 16, 'show_marker' => false, 'parent_ref' => 'cap01',
         'content' => '
 [capitular]Jugador fundacional del Calvo Sotelo tras la redacción de los estatutos del club y presidente "casi por accidente" en la temporada 1983-84, el testimonio de Florencio Tejera (Las Palmas de Gran Canaria, 1956) también resulta de inestimable valor para conocer la naturaleza primigenia de la entidad en sus albores ya insertada en las exigencias de la alta competición. Porque ese Calvo Sotelo al que se enroló "para poder cumplir el cupo de dos fichas séniors junto a Alfonso Déniz" que se requería ya le impactó por "su nivel de organización, ambición y desarrollo".[/capitular]
 
@@ -393,7 +427,7 @@ function libro_get_sample_chapters() {
 
 <p>¿Esperaba que aquel equipo de colegio, que jugaba sobre un cemento "en el que destrozarse las rodillas o romperse la barbilla era lo común", fuese el germen de una referencia de leyenda en el voleibol nacional? "Nadie se podía hacer a la idea de lo que acabaría siendo un Guaguas campeón que fue cogiendo el testigo de un equipo de cantera, plagado de juveniles y chicos de barrio, que llegaron a lo más alto que pudieron. Yo, evidentemente, tampoco. Pero siento que todo lo que hicimos mereció la pena. Fuimos unos locos, por decirlo de alguna manera. Soñamos, competimos, ganamos, entendimos el deporte desde el lado más humano y comprometido. Con eso me quedo".</p>
 '),
-    array('title' => 'Tony Vázquez', 'numero' => '', 'order' => 16, 'show_marker' => false, 'parent_ref' => 'cap01',
+    array('title' => 'Tony Vázquez', 'numero' => '', 'order' => 17, 'show_marker' => false, 'parent_ref' => 'cap01',
         'content' => '
 [capitular]Andaluz de nacimiento (Cádiz, 1960), pero grancanario de pleno derecho ("me trajeron con tres años y esta es mi tierra"), sobre Tony Vázquez recae el privilegio de haber sido otro de los jugadores fundacionales del Calvo Sotelo. Tras sus inicios en los Salesianos ("iba para el atletismo, pero Silvestre Cabrera me dijo que tenía la altura apropiada y me metió en el voleibol"), la creación de la selección cadete de Las Palmas, a mediados de los setenta y bajo la dirección de Felipe Nuez, fue el impulso definitivo a su posterior trayectoria como receptor ("era un 4 de toda la vida, aunque acabé jugando en todas las posiciones").[/capitular]
 
@@ -423,7 +457,7 @@ function libro_get_sample_chapters() {
 
 <p>Espectador en el CID de las finales gloriosas ganadas ("siempre pagando mi entrada"), asistió "emocionado" a la consagración de un club que siempre lo consideró "de cantera y por la cantera", aunque los tiempos de élite y profesionalismo "marcaran otro camino".</p>
 '),
-    array('title' => 'Isidro Quintana', 'numero' => '', 'order' => 17, 'show_marker' => false, 'parent_ref' => 'cap01',
+    array('title' => 'Isidro Quintana', 'numero' => '', 'order' => 18, 'show_marker' => false, 'parent_ref' => 'cap01',
         'content' => '
 [capitular]A Isidro Quintana (Las Palmas de Gran Canaria, 1957) le metieron el voleibol en su vida "por obligación", como reconoce, porque, integrado en la sección de baloncesto de la UD Las Palmas durante su adolescencia ("llegué a jugar contra Domingo Díaz, que luego ha sido lo que ha sido"), iba para pívot con su imponente estatura en plena pubertad. "Pero se me cruzó en el camino Silvestre Cabrera, que me daba clases en los Salesianos, y me dijo, medio en serio, medio en broma, que o hacía voleibol o me suspendía. Me convenció prometiéndome que me llevaría directamente a la selección júnior. Empecé y ya no lo dejé. Fue tal mi interés que me saqué la titulación nacional de entrenador con 17 o 18 años para tener una formación más amplia y poder dirigir equipos, como luego haría con el Santa Teresa, y que, con Carlos Bermúdez como presidente, alcanzó enorme relevancia", añade.[/capitular]
 
@@ -445,18 +479,7 @@ function libro_get_sample_chapters() {
 
 <p>Se congratula de que Juan Ruiz, "acompañado de otros históricos de talla inigualable como Sánchez Jover, Nuez o Camarero", haya podido rescatar un proyecto que parecía ya enterrado: "Fundé un club como el Cantur y terminó desapareciendo pese a los éxitos que logró. En el Vecindario sé que Sánchez Jover se dejó un dineral de su bolsillo y acabó quemado. De ahí que la jugada de coger esta plaza, con derecho a jugar en Europa como premio añadido, haya sido otro acierto más de Juan, capaz de reinventarse de nuevo en favor de un club que es patrimonio de nuestra tierra por trayectoria, historia e importancia".</p>
 '),
-    array('title' => 'Pericles', 'numero' => '', 'order' => 18, 'show_marker' => false, 'parent_ref' => 'cap01',
-        'hero' => array(
-            'image' => libro_img('content/cap1_pericles_hero.jpg'),
-            'height' => '500px',
-            'overlay' => 'rgba(0, 0, 0, 0.4)',
-            'icon' => 'none',
-            'alignment' => 'center',
-            'vertical' => 'bottom',
-            'title_lines' => array(
-                array('text' => 'PERICLES', 'color' => '#0a1628', 'highlight' => '#fbbf24', 'use_highlight' => '1', 'font_weight' => 'black'),
-            ),
-        ),
+    array('title' => 'Pericles', 'numero' => '', 'order' => 19, 'show_marker' => false, 'parent_ref' => 'cap01',
         'content' => '
 [capitular]Un pelo abundante y la barba que le daba aires intelectuales le valieron el apodo, Pericles, con el que se incrustaría, por derecho propio, en el listado de imprescindibles del Calvo Sotelo. "Me dijeron, medio en serio medio en broma, que me parecía a Pericles. No me lo tomé mal y así me quedé", admite. Pedro Román Rosario (Las Palmas de Gran Canaria, 1958) no fue uno más. Durante muchos años capitán y guía del resto, añadió a sus grandes dotes para el voleibol ("como receptor formé con Tony Vázquez una línea fabulosa en esa función") una lección de compromiso y entrega de impresión, ya que, pese a su condición de asmático, perteneció durante largo periplo al equipo y con un rendimiento ejemplar. "Salía a la cancha con mi Ventolín para poder resistir los esfuerzos. En los tiempos muertos y descansos casi prefería el fuelle que me daba el medicamento al agua. Y alguna vez me pincharon por las asfixias que me entraban. Que se lo pregunten a Alfredo Padrón, que iba para doctor, como ejerció posteriormente, y en más de una ocasión fue mi practicante en el vestuario", rememora. Así, venciendo a una patología tan severa ("hoy en día, jugar en esas condiciones sería impensable por todos los exámenes médicos que se hacen, pero en esa época no teníamos controles de este tipo, no había tanta vigilancia para preservar la salud de los miembros de los equipos"), adquirió galones y ascendente hasta situarse en un estatus que ya siempre le correspondería. De la primera época del Calvo Sotelo no hay miembro que pase por alto la influencia ejercida por Pericles y su aura de liderazgo única.[/capitular]
 
@@ -480,19 +503,7 @@ function libro_get_sample_chapters() {
 
 <p>"Dejaron morir injustamente un equipo que lo ha significado todo para el deporte en Canarias. Eso me produjo un disgusto enorme. Por suerte, ahora se ha recuperado la entidad, aunque preferiría que se apostara más por jóvenes de la tierra aunque eso supusiera no ganar títulos. Eso sí, hay que felicitar a Juan Ruiz por el trabajo que ha hecho para que no cayera en el olvido esta institución tan querida", subraya.</p>
 '),
-    array('title' => 'José Millán', 'numero' => '', 'order' => 19, 'show_marker' => false, 'parent_ref' => 'cap01',
-        'hero' => array(
-            'image' => libro_img('content/1cap_pati_photo_24.jpg'),
-            'height' => '500px',
-            'overlay' => 'rgba(0, 0, 0, 0.4)',
-            'icon' => 'none',
-            'alignment' => 'center',
-            'vertical' => 'bottom',
-            'title_lines' => array(
-                array('text' => 'JOSÉ', 'color' => '#0a1628', 'highlight' => '#fbbf24', 'use_highlight' => '1', 'font_weight' => 'black'),
-                array('text' => 'MILLÁN', 'color' => '#0a1628', 'highlight' => '#fbbf24', 'use_highlight' => '1', 'font_weight' => 'black'),
-            ),
-        ),
+    array('title' => 'José Millán', 'numero' => '', 'order' => 20, 'show_marker' => false, 'parent_ref' => 'cap01',
         'content' => '
 [capitular]Si la figura de Silvestre Cabrera fue de trascendencia capital para auspiciar el voleibol durante su mandato como presidente de la Federación de Las Palmas (1973-1985), no es menos relevante la influencia, también de enorme impacto, de José Millán, quien en diciembre de 1976 asumió el cargo de secretario del ente presidido por Cabrera, tomó su relevo a la conclusión de su ciclo como máximo mandatario y terminó encabezando la Federación Canaria de Voleibol hasta 2008. Más de tres décadas de contribución y entrega que le hicieron tener una atalaya privilegiada de los acontecimientos, al tiempo de otorgarle un lugar preferencial en la historia de esta disciplina.[/capitular]
 
@@ -506,7 +517,7 @@ function libro_get_sample_chapters() {
 
 <p>Millán tampoco obvió el valor añadido que dio codearse con los mejores de Europa, otro de los hitos del Guaguas: "Colocaron en el mapa nuestro voleibol, nuestra tierra. Fueron embajadores de España. Faltó suerte para lograr un título continental, pero su contribución fue impresionante y digna de aplauso en todos los sentidos".</p>
 '),
-    array('title' => 'Miriam Quiroga', 'numero' => '', 'order' => 20, 'show_marker' => false, 'parent_ref' => 'cap01',
+    array('title' => 'Miriam Quiroga', 'numero' => '', 'order' => 21, 'show_marker' => false, 'parent_ref' => 'cap01',
         'content' => '
 [capitular]Miriam Quiroga, licenciada en Educación Física y profesora universitaria, publicó en el año 2010 el libro \'Génesis y evolución del voleibol en Gran Canaria 1934-1978\', editado por el Servicio de Publicaciones de la Universidad de Las Palmas de Gran Canaria, en el que se incluye amplia documentación escrita y gráfica del nacimiento y desarrollo del Club Voleibol Calvo Sotelo. Su testimonio es de indudable valor a la hora de analizar el surgimiento de la entidad y, a petición del autor de esta obra, además de mostrar una generosa colaboración bibliográfica, cediendo numeroso material que obraba en su poder, entre el que cabe destacar el documento original de los estatutos fundacionales que se reproduce en su integridad al final de este capítulo, accedió a responder este breve cuestionario y en el que aporta información alusiva a los primeros tiempos de la institución. Conste desde estas páginas el agradecimiento y reconocimiento de la directiva actual del Guaguas, presidida por Juan Ruiz, a su labor investigadora así como a su gesto de ayudar a este proyecto editorial.[/capitular]
 
@@ -546,20 +557,21 @@ function libro_get_sample_chapters() {
         'title' => 'Los Estatutos Fundacionales',
         'numero' => '02',
         'order' => 25,
+        'show_marker' => true,
         'ref_id' => 'cap02',
         'hero' => array(
             'image' => libro_img('hero-estatutos.jpg'),
             'overlay' => 'rgba(0, 0, 0, 0.15)',
-            'icon' => 'custom', 'custom_icon' => libro_img('estrella-icon.svg'),
+            'icon' => 'custom',
+            'custom_icon' => libro_img('estrella-icon.svg'),
             'custom_icon_color' => 'hsl(45 100% 50%)',
-            'icon_width' => 40, 'icon_height' => 40,
-            'alignment' => 'center', 'vertical' => 'center',
+            'icon_width' => 40,
+            'icon_height' => 40,
+            'alignment' => 'center',
+            'vertical' => 'center',
             'height' => '500px',
+            'title_lines' => array(libro_hero_line('ESTATUTOS', 'hsl(220 50% 12%)', 'hsl(45 100% 50%)', 'black'), libro_hero_line('FUNDACIONALES', 'hsl(220 50% 12%)', 'hsl(45 100% 50%)', 'black')),
             'border_color' => 'hsl(45 100% 50%)',
-            'title_lines' => array(
-                libro_hero_line('ESTATUTOS', 'hsl(220, 50%, 12%)', 'hsl(45, 100%, 50%)'),
-                libro_hero_line('FUNDACIONALES', 'hsl(220, 50%, 12%)', 'hsl(45, 100%, 50%)'),
-            ),
         ),
         'content' => '
 [encabezado_seccion]Aprobado en la Junta del día 6 de noviembre de 1976 a las 20.00 horas[/encabezado_seccion]
@@ -645,8 +657,7 @@ c) Examinar las liquidaciones y balances de la entidad.[/articulo]
 [encabezado_seccion]Capítulo IV — De la administración de la Entidad[/encabezado_seccion]
 [articulo numero="44º"]De conformidad con los artículos 27 y 28 de los presentes estatutos, llevarán la administración y contabilidad de la entidad el tesorero y contador con las facultades en dichos artículos expresadas y sujetas a los artículos 24 y 25.[/articulo]
 [articulo numero="45º"]La entidad dará cuenta a sus socios, una vez al año por lo menos, en una memoria presentada a la asamblea general ordinaria, de su gestión deportiva y económica y de sus proyectos para el futuro.[/articulo]
-',
-    ),
+'),
 
     // ═══════════════════════════════════════════════
     // CAPÍTULO 03: ASÍ SE FORJÓ UNA LEYENDA
@@ -660,14 +671,14 @@ c) Examinar las liquidaciones y balances de la entidad.[/articulo]
         'hero' => array(
             'image' => libro_img('hero-volleyball-match.jpg'),
             'overlay' => 'rgba(26, 35, 126, 0.80)',
-            'icon' => 'custom', 'custom_icon' => $star,
-            'icon_width' => 70, 'icon_height' => 70,
-            'alignment' => 'right', 'vertical' => 'center',
+            'icon' => 'custom',
+            'custom_icon' => $star,
+            'icon_width' => 70,
+            'icon_height' => 70,
+            'alignment' => 'right',
+            'vertical' => 'center',
             'height' => '500px',
-            'title_lines' => array(
-                libro_hero_line('ASÍ SE FORJÓ', '#D4AF37'),
-                libro_hero_line('UNA LEYENDA', '#FFFFFF'),
-            ),
+            'title_lines' => array(libro_hero_line('ASÍ SE FORJÓ', '#D4AF37', '', 'black'), libro_hero_line('UNA LEYENDA', '#FFFFFF', '', 'black')),
         ),
         'content' => '
 [seccion_header]Llegar a la élite para quedarse[/seccion_header]
@@ -678,97 +689,37 @@ c) Examinar las liquidaciones y balances de la entidad.[/articulo]
 
 <p>El 21 de octubre de 1986 se celebra la asamblea general extraordinaria del club. Ahí arranca la etapa de Juan Ruiz en el alto mando y que se prolongaría, de manera ininterrumpida, hasta 1998. Y la noticia más esperada desde hacía meses se anunció el 5 de noviembre: Juan Ruiz confirma que Guaguas Municipales patrocinará a la entidad, que, desde entonces pasará a denominarse Guaguas Las Palmas.</p>
 
-[imagen_contenido src="' . libro_img('content/equipo-champions.jpg') . '" alt="El CV Guaguas celebra una victoria en competición europea" caption="El Guaguas inauguró su palmarés con la Copa del Rey de 1989 y forjó una hegemonía de cinco Ligas consecutivas." fullwidth="true"]
-
-[seccion_header]Fichajes de impacto y hegemonía[/seccion_header]
-
-<p>El verano de 1987, ya con dos años de experiencia en la élite, marca el escalón cualitativo que instala al Guaguas en la excelencia. El fichaje de Paco Sánchez Jover, figura indiscutible del voleibol nacional, fue una auténtica jugada maestra de Juan Ruiz al captar al jugador del momento.</p>
-
-<p>Los resultados se disparan y son un aviso al resto de que Gran Canaria exhibe proyecto ganador. Los subcampeonatos de Liga y Copa del Rey suponen la antesala de los éxitos que ya eran inminentes. El aterrizaje de los mexicanos Sergio Hernández, para el banquillo, y Chava González, así como la apuesta por el canadiense Brad Willock terminan por ensamblar un Guaguas que inaugura su palmarés con la Copa del Rey conquistada el 9 de abril de 1989 ante el Palma en el Centro Insular.</p>
-
-<p>Esa Copa, que abría las vitrinas del Guaguas, no hizo más que multiplicar las ambiciones de Juan Ruiz, quien une a su elenco de estrellas, en el verano de 1989, a los internacionales polacos Ireneusz Klos y Waclaw Golec. Esa primera Liga sería una realidad el 1 de mayo de 1990 con la inolvidable final ante el Bomberos de Barcelona.</p>
-
-<p>A esa primera Liga le sucederían otras cuatro consecutivas hasta 1994, estableciendo una hegemonía nacional inédita. Además, estuvo aderezada con tres dobletes por las Copas del Rey también conquistadas en los años 1991, 1992 y 1993. Son campañas en la Copa de Europa, llenos a reventar en el Centro Insular, máximo esplendor dentro y fuera de España.</p>
-
-<p>Fueron doce los títulos que se atraparon desde 1989 a 1997, etapa de concentración luminosa, y que granjeó la leyenda de un Guaguas que, por momentos, llevó la bandera del deporte en Gran Canaria.</p>
-
-[imagen_contenido src="' . libro_img('content/victoria-guaguas.png') . '" alt="El CV Guaguas celebra un título de Liga" caption="Los años dorados del Guaguas: cinco Ligas consecutivas, Copas del Rey y presencia en Europa."]
-
-[seccion_header]La salida de Juan Ruiz, principio del fin[/seccion_header]
-
-<p>Tras doce años en la presidencia, Juan Ruiz quiso respetar lo reflejado en los estatutos y ceñirse a lo establecido con la máxima durabilidad de su cargo. A la conclusión de la temporada 1997-98, saldada con la Supercopa de España, dio el relevo en la cúpula a Mario Hugendubel.</p>
-
-<p>Fue algo más que un traspaso de poderes para alguien que dedicó su vida al servicio de un club que heredó en ruinas y legó en una posición de privilegio. Títulos (doce en total), cantera, superávit, crédito en entidades privadas y credibilidad a ojos de los organismos públicos. Un Guaguas respetado en España y en Europa.</p>
-
-[cita_editorial]"Todo cambió y para peor. Tras Felipe Nuez (1988), Sergio Miguel Camarero (1996) y Juan Ruiz (1998), el gigante que hizo feliz al Centro Insular clausuraba un ciclo de doce años con otros tantos títulos y episodios únicos."[/cita_editorial]
-',
-    ),
-
-    // Cap 03 children — idéntico a React chaptersStructure.ts
+[imagen_contenido src="'),
     array('title' => 'Llegar a la élite para quedarse', 'numero' => '', 'order' => 31, 'show_marker' => false, 'parent_ref' => 'cap03',
-        'content' => '
-[capitular]La temporada 1985-86 fue la del estreno del Calvo Sotelo en la División de Honor y se afrontó bajo las mismas líneas maestras que habían marcado su trayecto, desde las consideraciones de Felipe Nuez, aunque con la importante novedad del fichaje del yugoslavo Ivo Martinovic, primer extranjero en la historia del club que, con 30 años y amplio bagaje profesional e internacional, venía a darle a la plantilla la cuota de veteranía que se requería para competir a escala máxima. Jorge Ramón, Juanma Martín, Alfredo Padrón, Miguel Mendaño, Óscar Campos, Francisco Reyes, Sergio Miguel Camarero, Martín Medina, el mencionado Ivo Martinovic, Enrique González Silva y José Ramón, más los juveniles Javier Ulacia, Alejandro Menéndez, Roberto Padrón y Alejandro Gil eran los componentes de aquel histórico equipo que se adentró entre los grandes y lo hizo con relativo éxito. Pese a los condicionantes económicos derivados de no tener un patrocinador (tras dos años con las denominaciones Reales y Lucky, relacionadas con el tabaco, Tabacanarias no renovó su compromiso), lo que supuso un hándicap sustancial, se logró eludir con solvencia el riesgo de descenso y hasta quedar encuadrado en la entonces denominada Serie A1, en la que competían los primeros clasificados de cada grupo. Martinovic, elegido capitán en su primera campaña, y un Camarero que ya demostraba que iba para jugador de época, fueron los sostenes de un grupo que rindió por encima de lo esperado. Para el recuerdo queda aquel 2 de noviembre de 1985, fecha del debut del Calvo Sotelo en la División de Honor con triunfo en Cáceres ante el Licenciados Reunidos por 0-3. Jorge Ramón, Juanma Martín, Campos, Camarero, Martinovic y González fueron los jugadores alineados en el inicio de un trayecto que iba a conducir a la gloria.[/capitular]
-
-<p>El 21 de octubre de 1986 se celebra en el salón de la Boutique del Jamón, sita en Mesa y López, la asamblea general extraordinaria del club motivada por la salida del anterior presidente, José María Rodríguez, y la transición que comanda como coordinador Gustavo Rodríguez. Se anuncia en los medios de comunicación la posibilidad de que entre una plancha que "pueda llevar al Calvo Sotelo por buen camino y consolidarlo como un club grande dentro del voleibol español". Ahí arranca la etapa de Juan Ruiz en el alto mando y que se prolongaría, de manera ininterrumpida, hasta 1998. El déficit heredado es de "aproximadamente seis millones de pesetas". En realidad la mala situación financiera que atravesaba el Calvo Sotelo ya era de sobra conocida y publicitada. Y el papel de los medios de comunicación pidiendo una alternativa para evitar la desaparición fue lo que atrajo el interés de Juan Ruiz, hasta entonces un neófito en el voleibol y que, alertado por las informaciones que le llegaban a través de su periodista de cabecera, el que escuchaba a diario a través de las ondas de Antena 3: Paco García Caridad. García Caridad recuerda que "fue un ejercicio de responsabilidad con la sociedad canaria" lanzar desde las ondas un mensaje de auxilio en favor del Calvo Sotelo: "No podíamos dejar que un proyecto de cantera tan serio y valioso se viniera abajo. Más que un club, el Calvo Sotelo era un modelo educativo, un espejo en el que mirarse por sus orígenes y crecimiento. Actué conmovido por una situación límite. Igual que pedí ayudas para la UD, el baloncesto, el balonmano y hasta me impliqué activamente en la necesidad que se tenía de convertir un solar yermo que había en la Avenida Marítima en lo que iba a ser el flamante Centro Insular de Deportes. Defender al Calvo Sotelo y su supervivencia era un acto de justicia social, un alegato por el patrimonio deportivo del momento. Saber que Juan Ruiz dio el paso al frente tras hablar conmigo y tener referencia de mis informaciones me lo tomo como el resultado de mi labor profesional. Y no me añado méritos ni medallas. Lo de menos somos los personas, que estamos de paso. Lo que prevalece es que el club tuvo ese relevo en su cúpula que sirvió para rescatarlo de la quiebra".</p>
-
-<p>Siguen los movimientos en ese periodo, ya con el equipo iniciando su segundo año en la División de Honor: el 23 de octubre de 1986, Gustavo Rodríguez, coordinador de la junta gestora, informa de que "hay una nefasta gestión de la directiva anterior". Ismael Chinea, Fidel Morales, Felipe Nuez, Juan M. Martín e Ivo Martinovic son los miembros del equipo de trabajo designado para pilotar el cambio necesario en la gestión y el gobierno de la institución. Aunque no se menciona expresamente, Juan Ruiz ya está integrado en el mismo, como bien se certificaría días después anunciando, de su mano, la llegada del ansiado patrocinador. Se detalla, además, un presupuesto para la temporada 1986-87 de 13.500.000 de pesetas y que, a la espera de un anunciante, el equipo se denomine Club Voleibol Las Palmas, propuesta que había correspondido, originalmente a Juan José Apolinario, anterior gerente del Calvo Sotelo. Una semana después, Juan Ruiz Ramos es oficializado como presidente de la junta gestora en sustitución de Gustavo Rodríguez.</p>
-
-<p>Y la noticia más esperada desde hacía meses, la de la aparición de un patrocinador que otorgara la estabilidad perdida y permitiera cuadrar números, se anunció el 5 de noviembre de ese mismo 1986. Juan Ruiz, que ya ejerce como miembro visible de la junta gestora del Club Voleibol Las Palmas, confirma que, "después de varias conversaciones con Juan Rodríguez Doreste", alcalde de Las Palmas de Gran Canaria, Guaguas Municipales patrocinará a la entidad, que, desde entonces pasará a denominarse Guaguas Las Palmas. Su primer partido con este nombre lo disputó el 15 de noviembre ante el Cisneros y en Tenerife. La consecución de este patrocinador, con el que el club ganaría títulos y adquiriría fama internacional, es el primer golpe de efecto de Ruiz en la historia de su mandato. Él mismo aparecería firmando el histórico contrato de vinculación con la compañía de transporte público.</p>
-
-<p>En el plano deportivo, el equipo, con las grandes novedades del regreso de Pericles y Batista, mantiene su buen tono. El 19 de enero de 1987 queda tercero en la Copa del Rey celebrada en Sa Pobla, Mallorca, tras imponerse por 3-1 al Cisneros de Tenerife, consiguiendo, de esta manera, su clasificación para la Copa Confederación. Jorge Ramón, Ivo Martinovic, Sergio Camarero, Juanma Martín, Óscar Campos y Eduardo Macías integraron un equipo inicial al que luego se sumó Alejandro Gil. El quinto puesto logrado, posteriormente, en la Liga redondeó una campaña de sobresaliente considerando la naturaleza advenediza del Guaguas.</p>
-'),
+        'content' => '<p>Contenido del subcapítulo próximamente.</p>'),
     array('title' => 'Fichajes de impacto y hegemonía', 'numero' => '', 'order' => 32, 'show_marker' => false, 'parent_ref' => 'cap03',
-        'content' => '
-[capitular]El verano de 1987, ya con dos años de experiencia en la élite, marca el escalón cualitativo que instala al Guaguas en la excelencia. El fichaje de Paco Sánchez Jover, figura indiscutible del voleibol nacional, fue una auténtica jugada maestra de Juan Ruiz al captar al jugador del momento. Por si fuera poco, con Sánchez Jover llegan su hermano Jesús, Venancio Costa, Antonio Miralles. Todos darían excelentes réditos al escudo. Y Paco vino para no irse jamás y liderar los años dorados que ya estaban incubándose. Los resultados se disparan y son un aviso al resto de que Gran Canaria exhibe proyecto ganador. Además del bautizo europeo frente al Knack de Bélgica, en una eliminatoria saldada con derrota pero cuya importancia trascendió al resultado por su valor simbólico, los subcampeonatos de Liga y Copa del Rey suponen la antesala de los éxitos que ya eran inminentes. El relevo en el banquillo de Felipe Nuez en 1988, el técnico de toda la vida y que tras más de quince años ininterrumpidos en su cargo se despedía de la entidad que vio nacer, fue la nota discordante en la crecida colectiva que cogió una velocidad imparable en esta campaña.[/capitular]
-
-<p>El aterrizaje de los mexicanos Sergio Hernández, para el banquillo, y Chava González, así como la apuesta por el canadiense Brad Willock terminan por ensamblar un Guaguas ya de valores consolidados de los años anteriores y que, como fruta madura, inaugura su palmarés con la Copa del Rey conquistada el 9 de abril de 1989 ante el Palma en el Centro Insular. El recinto capitalino ya era la nueva casa del club después de haber estado desde siempre, tras su ingreso en las competiciones estatales, como anfitrión en el García San Román.</p>
-
-<p>La mudanza a la nueva instalación generó ciertas controversias, pues había dudas de que se ajustara a las necesidades de un club todavía con una afición fiel pero minoritaria. Los éxitos trajeron las muchedumbres desde que un 22 de octubre de 1988 se disputara el primer partido del Guaguas en el CID con motivo de su inauguración. Fue en el Torneo Internacional Isla de Gran Canaria, integrando cartel con el Seven Up Santa Catalina, Cisneros de Tenerife y Slavia de Sofía. El Guaguas ganó 3-0 al Seven Up. Sergio Hernández, entrenador del equipo entonces, alineó a Venancio Costa, Juanma Martín, Chava, Jorge Ramón, Sánchez Jover y Camarero en el sexteto inicial y, además, utilizó a Óscar Campos, Antonio, Felipe, David y Jesús. El Seven Up estaba dirigido por Felipe Nuez.</p>
-
-<p>Esa Copa, que abría las vitrinas del Guaguas, no hizo más que multiplicar las ambiciones de Juan Ruiz, quien une a su elenco de estrellas, en el verano de 1989, a los internacionales polacos Ireneusz Klos y Waclaw Golec, llamados a ser ídolos y figuras diferenciales. Esa primera Liga que se resistía sería una realidad el 1 de mayo de 1990 con la inolvidable final ante el Bomberos de Barcelona, bajo la denominación comercial de Constructora Atlántica Canaria, y con Sánchez Jover ejerciendo de jugador-entrenador y luego de ocupar la vacante en el banquillo que dejó a mitad del calendario el americano Robert Croteau.</p>
-
-<p>A esa primera Liga le sucederían otras cuatro consecutivas hasta 1994, estableciendo una hegemonía nacional inédita en los representativos canarios y que, además, estuvo aderezada con tres dobletes por las Copas del Rey también conquistadas en los años 1991, 1992 y 1993. Son campañas en la Copa de Europa, con cruces ante los mejores del continente, llenos a reventar en el Centro Insular, máximo esplendor dentro y fuera de España y un desfile de nombres que se hicieron un sitio en el corazón de todos los aficionados. A los ya conocidos de Camarero, Juanma Martín, Jorge Ramón, Sánchez Jover, Miralles, Costa, Klos o Golec, se unieron los Sharma, Falasca o Wiernes.</p>
-
-<p>Particular mención merecen Sánchez Jover y Juanma Martín, consagrados al simultanear sus labores de jugador con las de técnicos y de igual fertilidad para los éxitos de la entidad, poniendo, también, el foco en el cuidado de la cantera. Ya entonces, en ese inicio de la década de los noventa, se reclutan por los colegios (y hasta por la calle, a golpe de intuición) a jóvenes de la tierra para que garanticen el relevo generacional y revaliden el espíritu primigenio del Calvo Sotelo, creado en torno al jugador isleño. Antonio Sánchez es uno de los canteranos criados en esta fase y que tendría larga continuidad en los Alexis Valido, Juan Carlos Vega, los hermanos Cabrera, Raúl Dávila o Níchel Gómez, entre otros.</p>
-
-<p>Fueron doce los títulos que se atraparon desde 1989 a 1997, etapa de concentración luminosa, y que granjeó la leyenda de un Guaguas que, por momentos, llevó la bandera del deporte en Gran Canaria, al coincidir sus hitos con momentos menos pujantes de UD Las Palmas o CB Gran Canaria, los símbolos más tradicionales de las disciplinas por equipos de la isla. Iniciativas pioneras como lucir publicidad en contra de las drogas, abrir las puertas del pabellón a todos los que quisieran entrar sin pagar precio alguno, como sucedió ante el PSG, o democratizar la práctica del voleibol creando alianzas y convenios con clubes de la geografía local impulsaron, más si cabe, la fama y prestigio de un club también profesionalizado y gestionado por un modelo administrativo riguroso y que en los años de presidencia de Juan Ruiz siempre arrojó balances favorables, con niveles de endeudamiento asumible y un apoyo unánime del sector empresarial. Los llenos habituales en el Centro Insular, a la par que las más que frecuentes retransmisiones en directo por la televisión, convirtieron las vallas publicitarias en soportes codiciados y que redundaron, para bien, en los dineros del Guaguas. Eso permitió mantener una base de primera categoría cada temporada y unir, cuando procedía, a refuerzos de contrastada calidad.</p>
-
-<p>La creación de una cultura ganadora, que convertía en noticia y crisis cada título que se escapaba, habla a las claras del listón en el que se movió el club, siempre orientado a construir plantillas que aspiraran a todo y sin eludir la presión que aparejaba tener el balance de galardones que se exhibía.</p>
-'),
+        'content' => '<p>Contenido del subcapítulo próximamente.</p>'),
     array('title' => 'La salida de Juan Ruiz, principio del fin', 'numero' => '', 'order' => 33, 'show_marker' => false, 'parent_ref' => 'cap03',
-        'content' => '
-[capitular]Tras doce años en la presidencia y algún amago de abandono prematuro, tal y como reconoció a cuenta de críticas que consideraba desproporcionadas, Juan Ruiz quiso respetar lo reflejado en los estatutos y ceñirse a lo establecido con la máxima durabilidad de su cargo. A la conclusión de la temporada 1997-98, saldada con la Supercopa de España, dio el relevo en la cúpula a Mario Hugendubel. Fue algo más que un traspaso de poderes para alguien que dedicó su vida al servicio de un club que heredó en ruinas y legó en una posición de privilegio. Títulos (doce en total), cantera (ya con internacionales absolutos salidos de las categorías inferiores), superávit, crédito en entidades privadas y credibilidad a ojos de los organismos públicos. Un Guaguas respetado en España y en Europa (con participaciones en competiciones continentales de manera ininterrumpida desde 1987) y con las bases para continuar su expansión, dada la estructura existente y el nivel de profesionalización instaurado. Fueron muchas las voces que trataron de disuadir a Juan Ruiz del paso que iba a dar, quizás intuyendo que sin él nada sería igual, como así ocurriría.[/capitular]
-
-<p>De repente, ya con el presidente histórico fuera, el sentimiento de orfandad fue inmediato, por muchos esfuerzos que pusiera Hugendubel, quien trató de ilusionar desde sus primeras manifestaciones. "Todo cambió y para peor", admite Sánchez Jover, que permanecería en el club hasta el verano de 1999. Su presencia se consideraba de especial valor estratégico para la pervivencia del proyecto, tanto en la rama sénior como en las categorías de base. Y, tras dos años como testigo de "la deriva", según sus palabras, que fue cogiendo el club bajo otros parámetros directivos. El cambio de siglo deparaba la marcha del último gran símbolo del Calvo Sotelo. Tras Felipe Nuez (1988), Sergio Miguel Camarero (1996) y Juan Ruiz (1998), el gigante que hizo feliz al Centro Insular clausuraba un ciclo de doce años con otros tantos títulos y episodios únicos y que le ligaron por siempre a esta tierra.</p>
-'),
+        'content' => '<p>Contenido del subcapítulo próximamente.</p>'),
     array('title' => 'La cronología', 'numero' => '', 'order' => 34, 'show_marker' => false, 'parent_ref' => 'cap03',
-        'content' => '
-[cronologia titulo="La cronología"]
-[evento_cronologia year="1985"]El 2 de noviembre, y ante el Licenciados Reunidos en Cáceres, el Calvo Sotelo disputa su primer encuentro en la División de Honor con victoria (0-3).[/evento_cronologia]
-[evento_cronologia year="1986"]El 21 de octubre se celebra la asamblea general extraordinaria del club en la que Juan Ruiz tiene su primera toma de contacto formal con la junta gestora. Días después anunciaría el histórico acuerdo con Guaguas Municipales para que patrocinase y diera su nomenclatura al equipo, gestión exitosa que le terminaría catapultando a la presidencia.[/evento_cronologia]
-[evento_cronologia year="1987"]Tercera posición en la Copa del Rey (enero), fichajes de Paco Sánchez Jover, Venancio Costa y Antonio Miralles (julio) y estreno en competiciones europeas ante el Knack de Bélgica (noviembre).[/evento_cronologia]
-[evento_cronologia year="1988"]Subcampeonatos de Liga y Copa del Rey y salida del club del histórico preparador Felipe Nuez tras más de quince años.[/evento_cronologia]
-[evento_cronologia year="1989"]El 9 de abril se conquista el primer título, con la Copa del Rey ganada al Palma en el Centro Insular (3-0). En verano se producen los fichajes de los polacos Ireneusz Klos y Waclaw Golec.[/evento_cronologia]
-[evento_cronologia year="1990"]El 1 de mayo se gana la primera Liga, con Paco Sánchez Jover como jugador-entrenador, con un rotundo 3-0 al Bomberos de Barcelona en el Centro Insular.[/evento_cronologia]
-[evento_cronologia year="1991"]Año con un mes de abril mágico con el primer doblete: Liga el día 13 ante el Orisba Palma (3-0) y la Copa, el 28 frente al Construcciones Alcalá de Tenerife por idéntico tanteador.[/evento_cronologia]
-[evento_cronologia year="1992"]Se repite la gesta con los dos torneos nacionales: Liga el 4 de abril ante el Andorra (3-1) y Copa, el 25 del mismo mes y repitiendo rival por 3-0.[/evento_cronologia]
-[evento_cronologia year="1993"]La supremacía nacional del equipo se constata por tercera campaña consecutiva y alzando los dos trofeos lejos de Gran Canaria: Liga en Soria ante el Caja Duero (2-3) y Copa del Rey en Murcia sometiendo al Almería por 2-3.[/evento_cronologia]
-[evento_cronologia year="1994"]Continúa el reinado en la Liga con un triunfo en Soria ante el Grupo Duero por 1-3, acaecido el 27 de marzo, que vale el quinto campeonato consecutivo.[/evento_cronologia]
-[evento_cronologia year="1995"]El 8 de septiembre, en un amistoso ante el conjunto brasileño del Banca Suzano, se rindió homenaje en el Centro Insular a Paco Sánchez Jover tras su retirada como jugador.[/evento_cronologia]
-[evento_cronologia year="1996"]Nueva Copa del Rey: llega el 13 de abril, ante el Soria, en el Centro Insular (3-2), un partido emotivo, pues sería el último de leyendas como Klos, Golec o Camarero. También se logra la primera Supercopa de España, el 16 de septiembre, igualmente en el Centro Insular y repitiendo adversario (3-1).[/evento_cronologia]
-[evento_cronologia year="1997"]Con una remontada memorable, el 5 de abril en el Centro Insular, el Gran Canaria Arehucas se apunta otra Copa frente al Unicaja Almería (3-2).[/evento_cronologia]
-[evento_cronologia year="1998"]Tres hechos trascendentales marcan el año: el homenaje a Sergio Miguel Camarero (7 de enero, con un amistoso ante el Zonhoven belga), la participación en la Final Four de la Recopa en Cuneo (Italia), el mayor hito en Europa alcanzado por el equipo, y Juan Ruiz pone fin a su presidencia tras doce años de sobresaliente gestión deportiva y empresarial.[/evento_cronologia]
-[evento_cronologia year="1999"]En el verano de ese año, finalizada la campaña 1998-99, Paco Sánchez Jover, hasta ese momento entrenador, abandona el club.[/evento_cronologia]
-[/cronologia]
-'),
+        'content' => '<p>Contenido del subcapítulo próximamente.</p>'),
 
     // ═══════════════════════════════════════════════
-    // CAPÍTULO 04: EL PROYECTO VISIONARIO DE JUAN RUIZ (promovido)
+    // CAPÍTULO 04: EL PROYECTO VISIONARIO DE JUAN RUIZ
     // ═══════════════════════════════════════════════
     array(
-        'title' => 'El proyecto visionario de Juan Ruiz', 'numero' => '04', 'order' => 35, 'show_marker' => true,
-        'hero' => array('image' => libro_img('hero-volleyball-match.jpg'), 'overlay' => 'rgba(26, 35, 126, 0.85)', 'icon' => 'custom', 'custom_icon' => $star, 'icon_width' => 60, 'icon_height' => 60, 'alignment' => 'center', 'vertical' => 'center', 'height' => '450px',
-            'title_lines' => array(libro_hero_line('EL PROYECTO', '#D4AF37'), libro_hero_line('VISIONARIO', '#FFFFFF'), libro_hero_line('DE JUAN RUIZ', '#D4AF37'))),
+        'title' => 'El proyecto visionario de Juan Ruiz',
+        'numero' => '04',
+        'order' => 36,
+        'show_marker' => true,
+        'ref_id' => 'cap04',
+        'hero' => array(
+            'image' => libro_img('hero-volleyball-match.jpg'),
+            'overlay' => 'rgba(26, 35, 126, 0.85)',
+            'icon' => 'custom',
+            'custom_icon' => $star,
+            'icon_width' => 60,
+            'icon_height' => 60,
+            'alignment' => 'center',
+            'vertical' => 'center',
+            'height' => '450px',
+            'title_lines' => array(libro_hero_line('EL PROYECTO', '#D4AF37', '', 'black'), libro_hero_line('VISIONARIO', '#FFFFFF', '', 'black'), libro_hero_line('DE JUAN RUIZ', '#D4AF37', '', 'black')),
+        ),
         'content' => '
 [capitular]Nacido en La Aldea de San Nicolás en 1953, emigrante con su familia a Tenerife durante gran parte su adolescencia (1960-1969), en la que hizo sus pinitos en la lucha canaria o el fútbol ("con 16 años llegué a jugar en Tercera División en las filas del Adeje"), Juan Ruiz estaba llamado, sin saberlo, a escribir una historia sin parangón en el deporte canario y al frente del Calvo Sotelo.[/capitular]
 
@@ -790,33 +741,38 @@ c) Examinar las liquidaciones y balances de la entidad.[/articulo]
 
 [cita_prensa source="Canarias7, 13 de septiembre de 1990"]"No gana el que más presupuesto tiene sino el que más trabajo derroche. Es un gran reto, asimismo, representar a Canarias por vez primera en la Copa de Europa."[/cita_prensa]
 '),
+    array('title' => 'Cronología', 'numero' => '', 'order' => 37, 'show_marker' => false, 'parent_ref' => 'cap04',
+        'content' => '<p>Contenido del subcapítulo próximamente.</p>'),
 
     // ═══════════════════════════════════════════════
-    // CAPÍTULOS 05-23 (con hero y contenido)
+    // CAPÍTULO 05: ICONOS Y ESTRELLAS DEL CV GUAGUAS
     // ═══════════════════════════════════════════════
-
-    // Cap 05 (antes 04)
     array(
-        'title' => 'Iconos y estrellas del Guaguas', 'numero' => '05', 'order' => 40, 'show_marker' => true, 'ref_id' => 'cap05',
-        'hero' => array('image' => libro_img('hero-volleyball-match.jpg'), 'overlay' => 'rgba(212, 175, 55, 0.85)', 'icon' => 'custom', 'custom_icon' => $star, 'icon_width' => 80, 'icon_height' => 80, 'alignment' => 'center', 'vertical' => 'center', 'height' => '500px',
-            'title_lines' => array(libro_hero_line('ICONOS Y', '#1a237e', '#FFFFFF'), libro_hero_line('ESTRELLAS', '#1a237e', '#FFFFFF'), libro_hero_line('DEL GUAGUAS', '#1a237e', '#FFFFFF'))),
+        'title' => 'Iconos y estrellas del CV Guaguas',
+        'numero' => '05',
+        'order' => 40,
+        'show_marker' => true,
+        'ref_id' => 'cap05',
+        'hero' => array(
+            'image' => libro_img('hero-volleyball-match.jpg'),
+            'overlay' => 'rgba(212, 175, 55, 0.85)',
+            'icon' => 'custom',
+            'custom_icon' => $star,
+            'icon_width' => 80,
+            'icon_height' => 80,
+            'alignment' => 'center',
+            'vertical' => 'center',
+            'height' => '500px',
+            'title_lines' => array(libro_hero_line('ICONOS Y', '#1a237e', '#FFFFFF', 'black'), libro_hero_line('ESTRELLAS', '#1a237e', '#FFFFFF', 'black'), libro_hero_line('DEL GUAGUAS', '#1a237e', '#FFFFFF', 'black')),
+        ),
         'content' => '[capitular]Los grandes nombres que han escrito la historia del CV Guaguas. Jugadores que dejaron su huella en el voleibol español y que convirtieron al club en leyenda. Desde los canteranos que crecieron en el patio del Calvo Sotelo hasta las estrellas internacionales que llegaron para elevar el proyecto a cotas inimaginables, todos contribuyeron a forjar un legado deportivo sin parangón en Canarias.[/capitular]
-[imagen_contenido src="' . libro_img('content/jugador-accion.png') . '" alt="Jugador del CV Guaguas en acción" caption="El talento individual al servicio del colectivo: seña de identidad del Guaguas a lo largo de su historia." fullwidth="true"]'),
-
-    // Cap 05 children
+[imagen_contenido src="'),
     array('title' => 'Sergio Miguel Camarero', 'numero' => '', 'order' => 41, 'show_marker' => false, 'parent_ref' => 'cap05',
         'content' => '
 [perfil_jugador nombre="Sergio Miguel Camarero"]
 [capitular]Cuando Sergio Miguel Camarero (Las Palmas de Gran Canaria, 1967) destacaba en el fútbol y como prometedor jugador del San Antonio, el equipo de su barrio, ya soñaba con hacer historia en el deporte.[/capitular]
 
-[imagen_contenido src="' . libro_img('content/jorge-almansa.png') . '" alt="Jorge Almansa, capitán del CV Guaguas" caption="Jorge Almansa, actual capitán del CV Guaguas, heredero de una larga tradición de líderes en la cancha."]
-
-<p>"Era una época complicada en la calle, el riesgo de las malas influencias. Mi suerte fue que elegí el deporte, el voleibol, y conocí a una persona como Felipe Nuez con la que pude crecer y desarrollarme en el mejor ambiente posible."</p>
-
-[cita_editorial]"Pude irme en el inicio de mi carrera. Me llamó del Cisneros Miguel Ocón. Pero aposté por quedarme en mi tierra y no me equivoqué."[/cita_editorial]
-
-<p>Sergio Miguel Camarero acumuló 48 internacionalidades absolutas y 10 títulos oficiales (5 Ligas y 5 Copas).</p>
-[/perfil_jugador]'),
+[imagen_contenido src="'),
     array('title' => 'Paco Sánchez Jover', 'numero' => '', 'order' => 42, 'show_marker' => false, 'parent_ref' => 'cap05',
         'content' => '
 [perfil_jugador nombre="Paco Sánchez Jover"]
@@ -825,7 +781,7 @@ c) Examinar las liquidaciones y balances de la entidad.[/articulo]
 <p>Su fichaje fue una auténtica jugada maestra de Juan Ruiz. Con Sánchez Jover llegaron su hermano Jesús, Venancio Costa y Antonio Miralles.</p>
 
 [cita_editorial]"Todo cambió y para peor. Tras Felipe Nuez (1988), Sergio Miguel Camarero (1996) y Juan Ruiz (1998), el gigante que hizo feliz al Centro Insular clausuraba un ciclo de doce años con otros tantos títulos y episodios únicos."[/cita_editorial]
-[/perfil_jugador]'),
+'),
     array('title' => 'Waclaw Golec', 'numero' => '', 'order' => 43, 'show_marker' => false, 'parent_ref' => 'cap05',
         'content' => '
 [perfil_jugador nombre="Waclaw Golec"]
@@ -837,182 +793,625 @@ c) Examinar las liquidaciones y balances de la entidad.[/articulo]
 [perfil_jugador nombre="Ireneusz Klos"]
 [capitular]Ireneusz Klos aterrizó en Gran Canaria junto a su compatriota Golec en 1989 y rápidamente se convirtió en una de las piezas fundamentales del engranaje del Guaguas campeón.[/capitular]
 
-[imagen_contenido src="' . libro_img('content/osmany-juantorena.png') . '" alt="Osmany Juantorena" caption="El Guaguas siempre ha contado con estrellas internacionales que elevaron el nivel del equipo."]
+[imagen_contenido src="'),
 
-[cita_editorial]"Tener a un superclase como Golec, o Klos, que no sabías si iba a rematar o a colocar, considerado uno de los cinco mejores colocadores del mundo..."[/cita_editorial]
-[/perfil_jugador]'),
-
-    // Cap 06-23 with heroes and intro content
-    array('title' => 'Ignacio Brito y Tributo a los Salesianos', 'numero' => '06', 'order' => 50, 'show_marker' => true,
-        'hero' => array('image' => libro_img('hero-patio-colegio.jpg'), 'overlay' => 'rgba(26, 35, 126, 0.85)', 'icon' => 'custom', 'custom_icon' => $star, 'icon_width' => 50, 'icon_height' => 50, 'alignment' => 'left', 'vertical' => 'center', 'height' => '450px',
-            'title_lines' => array(libro_hero_line('IGNACIO BRITO', '#D4AF37'), libro_hero_line('Y TRIBUTO A', '#FFFFFF'), libro_hero_line('LOS SALESIANOS', '#FFFFFF'))),
+    // ═══════════════════════════════════════════════
+    // CAPÍTULO 06: IGNACIO BRITO / TRIBUTO A LOS SALESIANOS
+    // ═══════════════════════════════════════════════
+    array(
+        'title' => 'Ignacio Brito / Tributo a los Salesianos',
+        'numero' => '06',
+        'order' => 50,
+        'show_marker' => true,
+        'ref_id' => 'cap06',
+        'hero' => array(
+            'image' => libro_img('hero-patio-colegio.jpg'),
+            'overlay' => 'rgba(26, 35, 126, 0.85)',
+            'icon' => 'custom',
+            'custom_icon' => $star,
+            'icon_width' => 50,
+            'icon_height' => 50,
+            'alignment' => 'left',
+            'vertical' => 'center',
+            'height' => '450px',
+            'title_lines' => array(libro_hero_line('IGNACIO BRITO', '#D4AF37', '', 'black'), libro_hero_line('Y TRIBUTO A', '#FFFFFF', '', 'black'), libro_hero_line('LOS SALESIANOS', '#FFFFFF', '', 'black')),
+        ),
         'content' => '[capitular]La historia del voleibol en Gran Canaria no puede entenderse sin la contribución de los Salesianos. Ignacio Brito, formado en las instalaciones del colegio salesiano, fue uno de los primeros técnicos que comprendió que la cantera era el verdadero tesoro del club.[/capitular]
-[imagen_contenido src="' . libro_img('content/copa-del-rey.jpg') . '" alt="Los Salesianos, cuna del voleibol grancanario" caption="El colegio Salesiano fue uno de los principales viveros del voleibol en Las Palmas de Gran Canaria." fullwidth="true"]
-<p>Contenido pendiente de importación del documento original.</p>'),
+[imagen_contenido src="'),
 
-    array('title' => 'Marek', 'numero' => '07', 'order' => 55, 'show_marker' => true,
-        'hero' => array('image' => libro_img('hero-europa.jpg'), 'overlay' => 'rgba(180, 30, 30, 0.80)', 'icon' => 'custom', 'custom_icon' => $star, 'icon_width' => 60, 'icon_height' => 60, 'alignment' => 'right', 'vertical' => 'center', 'height' => '450px',
-            'title_lines' => array(libro_hero_line('MAREK', '#FFFFFF'))),
+    // ═══════════════════════════════════════════════
+    // CAPÍTULO 07: MAREK, AYER, HOY Y SIEMPRE
+    // ═══════════════════════════════════════════════
+    array(
+        'title' => 'Marek, ayer, hoy y siempre',
+        'numero' => '07',
+        'order' => 55,
+        'show_marker' => true,
+        'ref_id' => 'cap07',
+        'hero' => array(
+            'image' => libro_img('hero-europa.jpg'),
+            'overlay' => 'rgba(180, 30, 30, 0.80)',
+            'icon' => 'custom',
+            'custom_icon' => $star,
+            'icon_width' => 60,
+            'icon_height' => 60,
+            'alignment' => 'right',
+            'vertical' => 'center',
+            'height' => '450px',
+            'title_lines' => array(libro_hero_line('MAREK', '#FFFFFF', '', 'black'), libro_hero_line('AYER, HOY', '#D4AF37', '', 'black'), libro_hero_line('Y SIEMPRE', '#D4AF37', '', 'black')),
+        ),
         'content' => '[capitular]Marek llegó a Gran Canaria como una estrella internacional y se marchó convertido en leyenda. Su impacto en el Guaguas trascendió lo deportivo para convertirse en un referente cultural del voleibol en las islas.[/capitular]
-[imagen_contenido src="' . libro_img('content/dobromir-saque.jpg') . '" alt="Momento de un saque" caption="El nivel técnico de los jugadores internacionales elevó la competitividad del Guaguas en todas las competiciones."]
-<p>Contenido pendiente de importación del documento original.</p>'),
+[imagen_contenido src="'),
 
-    array('title' => 'Embajadores por Europa', 'numero' => '08', 'order' => 60, 'show_marker' => true, 'ref_id' => 'cap08',
-        'hero' => array('image' => libro_img('hero-europa.jpg'), 'overlay' => 'rgba(26, 35, 126, 0.78)', 'icon' => 'custom', 'custom_icon' => $star, 'icon_width' => 70, 'icon_height' => 70, 'alignment' => 'center', 'vertical' => 'center', 'height' => '500px',
-            'title_lines' => array(libro_hero_line('EMBAJADORES', '#D4AF37'), libro_hero_line('POR EUROPA', '#FFFFFF'))),
+    // ═══════════════════════════════════════════════
+    // CAPÍTULO 08: EMBAJADORES POR EUROPA
+    // ═══════════════════════════════════════════════
+    array(
+        'title' => 'Embajadores por Europa',
+        'numero' => '08',
+        'order' => 60,
+        'show_marker' => true,
+        'ref_id' => 'cap08',
+        'hero' => array(
+            'image' => libro_img('hero-europa.jpg'),
+            'overlay' => 'rgba(26, 35, 126, 0.78)',
+            'icon' => 'custom',
+            'custom_icon' => $star,
+            'icon_width' => 70,
+            'icon_height' => 70,
+            'alignment' => 'center',
+            'vertical' => 'center',
+            'height' => '500px',
+            'title_lines' => array(libro_hero_line('EMBAJADORES', '#D4AF37', '', 'black'), libro_hero_line('POR EUROPA', '#FFFFFF', '', 'black')),
+        ),
         'content' => '[capitular]La aventura europea del CV Guaguas es una de las páginas más brillantes de su historia. Desde la primera participación en la Copa de Europa hasta las campañas recientes en la Champions League, el club ha sido embajador del voleibol canario en los más prestigiosos escenarios del continente.[/capitular]
-[imagen_contenido src="' . libro_img('content/equipo-champions.jpg') . '" alt="El CV Guaguas en competición europea" caption="La expedición del CV Guaguas antes de un partido de Champions League." fullwidth="true"]
-[imagen_contenido src="' . libro_img('content/augusto-colito.jpg') . '" alt="Augusto Colito en la Champions League" caption="Augusto Colito, pieza clave del Guaguas en la Champions League 2025-2026."]
-<p>Contenido pendiente de importación del documento original.</p>'),
-    // Cap 07 children
-    array('title' => 'Manuel Palacios', 'numero' => '', 'order' => 61, 'show_marker' => false, 'parent_ref' => 'cap08', 'content' => '<p>Contenido del subcapítulo próximamente.</p>'),
-    array('title' => 'Antonio Benítez', 'numero' => '', 'order' => 62, 'show_marker' => false, 'parent_ref' => 'cap08', 'content' => '<p>Contenido del subcapítulo próximamente.</p>'),
-    array('title' => 'Jorge Ramón', 'numero' => '', 'order' => 63, 'show_marker' => false, 'parent_ref' => 'cap08', 'content' => '<p>Contenido del subcapítulo próximamente.</p>'),
-    array('title' => 'Juanma Martín', 'numero' => '', 'order' => 64, 'show_marker' => false, 'parent_ref' => 'cap08', 'content' => '<p>Contenido del subcapítulo próximamente.</p>'),
-    array('title' => 'Óscar Campos', 'numero' => '', 'order' => 65, 'show_marker' => false, 'parent_ref' => 'cap08', 'content' => '<p>Contenido del subcapítulo próximamente.</p>'),
-    array('title' => 'Venancio Acosta', 'numero' => '', 'order' => 66, 'show_marker' => false, 'parent_ref' => 'cap08', 'content' => '<p>Contenido del subcapítulo próximamente.</p>'),
-    array('title' => 'Antonio Miralles', 'numero' => '', 'order' => 67, 'show_marker' => false, 'parent_ref' => 'cap08', 'content' => '<p>Contenido del subcapítulo próximamente.</p>'),
-    array('title' => 'Chava González', 'numero' => '', 'order' => 68, 'show_marker' => false, 'parent_ref' => 'cap08', 'content' => '<p>Contenido del subcapítulo próximamente.</p>'),
-    array('title' => 'Sandeep Sharma', 'numero' => '', 'order' => 69, 'show_marker' => false, 'parent_ref' => 'cap08', 'content' => '<p>Contenido del subcapítulo próximamente.</p>'),
-    array('title' => 'Juan José Cardona', 'numero' => '', 'order' => 70, 'show_marker' => false, 'parent_ref' => 'cap08', 'content' => '<p>Contenido del subcapítulo próximamente.</p>'),
+[imagen_contenido src="'),
+    array('title' => 'Manuel Palacio', 'numero' => '', 'order' => 61, 'show_marker' => false, 'parent_ref' => 'cap08',
+        'content' => '<p>Contenido del subcapítulo próximamente.</p>'),
+    array('title' => 'Antonio Benítez', 'numero' => '', 'order' => 62, 'show_marker' => false, 'parent_ref' => 'cap08',
+        'content' => '<p>Contenido del subcapítulo próximamente.</p>'),
+    array('title' => 'Jorge Ramón', 'numero' => '', 'order' => 63, 'show_marker' => false, 'parent_ref' => 'cap08',
+        'content' => '<p>Contenido del subcapítulo próximamente.</p>'),
+    array('title' => 'Juanma Martín', 'numero' => '', 'order' => 64, 'show_marker' => false, 'parent_ref' => 'cap08',
+        'content' => '<p>Contenido del subcapítulo próximamente.</p>'),
+    array('title' => 'Óscar Campos', 'numero' => '', 'order' => 65, 'show_marker' => false, 'parent_ref' => 'cap08',
+        'content' => '<p>Contenido del subcapítulo próximamente.</p>'),
+    array('title' => 'Venancio Acosta', 'numero' => '', 'order' => 66, 'show_marker' => false, 'parent_ref' => 'cap08',
+        'content' => '<p>Contenido del subcapítulo próximamente.</p>'),
+    array('title' => 'Antonio Miralles', 'numero' => '', 'order' => 67, 'show_marker' => false, 'parent_ref' => 'cap08',
+        'content' => '<p>Contenido del subcapítulo próximamente.</p>'),
+    array('title' => 'Chava González', 'numero' => '', 'order' => 68, 'show_marker' => false, 'parent_ref' => 'cap08',
+        'content' => '<p>Contenido del subcapítulo próximamente.</p>'),
+    array('title' => 'Sandeep Sharma', 'numero' => '', 'order' => 69, 'show_marker' => false, 'parent_ref' => 'cap08',
+        'content' => '<p>Contenido del subcapítulo próximamente.</p>'),
+    array('title' => 'Juan José Cardona', 'numero' => '', 'order' => 70, 'show_marker' => false, 'parent_ref' => 'cap08',
+        'content' => '<p>Contenido del subcapítulo próximamente.</p>'),
 
-    array('title' => 'Relevo generacional', 'numero' => '09', 'order' => 75, 'show_marker' => true, 'ref_id' => 'cap09',
-        'hero' => array('image' => libro_img('hero-cantera.jpg'), 'overlay' => 'rgba(212, 175, 55, 0.80)', 'icon' => 'custom', 'custom_icon' => $star, 'icon_width' => 60, 'icon_height' => 60, 'alignment' => 'left', 'vertical' => 'center', 'height' => '480px',
-            'title_lines' => array(libro_hero_line('RELEVO', '#1a237e', '#FFFFFF'), libro_hero_line('GENERACIONAL', '#1a237e', '#FFFFFF'))),
+    // ═══════════════════════════════════════════════
+    // CAPÍTULO 09: EL RELEVO GENERACIONAL
+    // ═══════════════════════════════════════════════
+    array(
+        'title' => 'El relevo generacional',
+        'numero' => '09',
+        'order' => 75,
+        'show_marker' => true,
+        'ref_id' => 'cap09',
+        'hero' => array(
+            'image' => libro_img('hero-cantera.jpg'),
+            'overlay' => 'rgba(212, 175, 55, 0.80)',
+            'icon' => 'custom',
+            'custom_icon' => $star,
+            'icon_width' => 60,
+            'icon_height' => 60,
+            'alignment' => 'left',
+            'vertical' => 'center',
+            'height' => '480px',
+            'title_lines' => array(libro_hero_line('EL RELEVO', '#1a237e', '#FFFFFF', 'black'), libro_hero_line('GENERACIONAL', '#1a237e', '#FFFFFF', 'black')),
+        ),
         'content' => '[capitular]Cada generación del Guaguas ha sido el eslabón de una cadena ininterrumpida de talento canario. El relevo generacional ha sido una constante en la vida del club, desde los pioneros del Calvo Sotelo hasta los actuales jugadores de la cantera.[/capitular]
-[imagen_contenido src="' . libro_img('content/nico-bruno.png') . '" alt="Nico Bruno" caption="Nico Bruno representa la nueva generación de jugadores que llegan al Guaguas con hambre de títulos."]
-[imagen_contenido src="' . libro_img('content/helder-spencer.png') . '" alt="Hélder Spencer" caption="Hélder Spencer, uno de los refuerzos internacionales que alimentan la competitividad del equipo."]
-<p>Contenido pendiente de importación del documento original.</p>'),
-    // Cap 08 children
-    array('title' => 'Alexis Valido', 'numero' => '', 'order' => 76, 'show_marker' => false, 'parent_ref' => 'cap09', 'content' => '<p>Contenido del subcapítulo próximamente.</p>'),
-    array('title' => 'Antonio Sánchez', 'numero' => '', 'order' => 77, 'show_marker' => false, 'parent_ref' => 'cap09', 'content' => '<p>Contenido del subcapítulo próximamente.</p>'),
-    array('title' => 'Daniel Castañeda', 'numero' => '', 'order' => 78, 'show_marker' => false, 'parent_ref' => 'cap09', 'content' => '<p>Contenido del subcapítulo próximamente.</p>'),
-    array('title' => 'Juan Carlos Vega', 'numero' => '', 'order' => 79, 'show_marker' => false, 'parent_ref' => 'cap09', 'content' => '<p>Contenido del subcapítulo próximamente.</p>'),
-    array('title' => 'Hermanos Cabrera', 'numero' => '', 'order' => 80, 'show_marker' => false, 'parent_ref' => 'cap09', 'content' => '<p>Contenido del subcapítulo próximamente.</p>'),
-    array('title' => 'Níchel Gómez', 'numero' => '', 'order' => 81, 'show_marker' => false, 'parent_ref' => 'cap09', 'content' => '<p>Contenido del subcapítulo próximamente.</p>'),
-    array('title' => 'Raúl Dávila', 'numero' => '', 'order' => 82, 'show_marker' => false, 'parent_ref' => 'cap09', 'content' => '<p>Contenido del subcapítulo próximamente.</p>'),
+[imagen_contenido src="'),
+    array('title' => 'Alexis Valido', 'numero' => '', 'order' => 76, 'show_marker' => false, 'parent_ref' => 'cap09',
+        'content' => '<p>Contenido del subcapítulo próximamente.</p>'),
+    array('title' => 'Antonio Sánchez', 'numero' => '', 'order' => 77, 'show_marker' => false, 'parent_ref' => 'cap09',
+        'content' => '<p>Contenido del subcapítulo próximamente.</p>'),
+    array('title' => 'Daniel Castañeda', 'numero' => '', 'order' => 78, 'show_marker' => false, 'parent_ref' => 'cap09',
+        'content' => '<p>Contenido del subcapítulo próximamente.</p>'),
+    array('title' => 'Juan Carlos Vega', 'numero' => '', 'order' => 79, 'show_marker' => false, 'parent_ref' => 'cap09',
+        'content' => '<p>Contenido del subcapítulo próximamente.</p>'),
+    array('title' => 'Hermanos Cabrera', 'numero' => '', 'order' => 80, 'show_marker' => false, 'parent_ref' => 'cap09',
+        'content' => '<p>Contenido del subcapítulo próximamente.</p>'),
+    array('title' => 'Níchel Gómez', 'numero' => '', 'order' => 81, 'show_marker' => false, 'parent_ref' => 'cap09',
+        'content' => '<p>Contenido del subcapítulo próximamente.</p>'),
+    array('title' => 'Raúl Dávila', 'numero' => '', 'order' => 82, 'show_marker' => false, 'parent_ref' => 'cap09',
+        'content' => '<p>Contenido del subcapítulo próximamente.</p>'),
 
-    array('title' => 'Una transición dolorosa', 'numero' => '10', 'order' => 85, 'show_marker' => true, 'ref_id' => 'cap10',
-        'hero' => array('image' => libro_img('hero-transicion.jpg'), 'overlay' => 'rgba(0, 0, 0, 0.40)', 'icon' => 'custom', 'custom_icon' => $star, 'icon_width' => 50, 'icon_height' => 50, 'alignment' => 'center', 'vertical' => 'center', 'height' => '500px',
-            'title_lines' => array(libro_hero_line('UNA TRANSICIÓN', '#8faabe'), libro_hero_line('DOLOROSA', '#FFFFFF'))),
+    // ═══════════════════════════════════════════════
+    // CAPÍTULO 10: UNA TRANSICIÓN DOLOROSA
+    // ═══════════════════════════════════════════════
+    array(
+        'title' => 'Una transición dolorosa',
+        'numero' => '10',
+        'order' => 85,
+        'show_marker' => true,
+        'ref_id' => 'cap10',
+        'hero' => array(
+            'image' => libro_img('hero-transicion.jpg'),
+            'overlay' => 'rgba(0, 0, 0, 0.40)',
+            'icon' => 'custom',
+            'custom_icon' => $star,
+            'icon_width' => 50,
+            'icon_height' => 50,
+            'alignment' => 'center',
+            'vertical' => 'center',
+            'height' => '500px',
+            'title_lines' => array(libro_hero_line('UNA TRANSICIÓN', '#8faabe', '', 'black'), libro_hero_line('DOLOROSA', '#FFFFFF', '', 'black')),
+        ),
         'content' => '[capitular]Los años posteriores a la marcha de Juan Ruiz fueron los más convulsos en la historia del club. La inestabilidad directiva, los problemas económicos y la pérdida progresiva de competitividad culminaron en el peor desenlace posible: la desaparición temporal del equipo en 2009.[/capitular]
-[imagen_contenido src="' . libro_img('content/equipo-liga.jpeg') . '" alt="El equipo del CV Guaguas" caption="A pesar de las dificultades, el espíritu del Guaguas nunca se extinguió completamente." fullwidth="true"]
-<p>Contenido pendiente de importación del documento original.</p>'),
-    // Cap 09 children
-    array('title' => 'Juan Ruiz traspasa sus poderes', 'numero' => '', 'order' => 86, 'show_marker' => false, 'parent_ref' => 'cap10', 'content' => '<p>Contenido del subcapítulo próximamente.</p>'),
-    array('title' => 'La estabilidad imposible', 'numero' => '', 'order' => 87, 'show_marker' => false, 'parent_ref' => 'cap10', 'content' => '<p>Contenido del subcapítulo próximamente.</p>'),
-    array('title' => 'Camino del fatídico 2009', 'numero' => '', 'order' => 88, 'show_marker' => false, 'parent_ref' => 'cap10', 'content' => '<p>Contenido del subcapítulo próximamente.</p>'),
-    array('title' => 'El peor desenlace posible', 'numero' => '', 'order' => 89, 'show_marker' => false, 'parent_ref' => 'cap10', 'content' => '<p>Contenido del subcapítulo próximamente.</p>'),
-    array('title' => 'La cronología', 'numero' => '', 'order' => 90, 'show_marker' => false, 'parent_ref' => 'cap10', 'content' => '<p>Contenido del subcapítulo próximamente.</p>'),
-    array('title' => 'David Rodríguez', 'numero' => '', 'order' => 91, 'show_marker' => false, 'parent_ref' => 'cap10', 'content' => '<p>Contenido del subcapítulo próximamente.</p>'),
-    array('title' => 'Joel Sotelo', 'numero' => '', 'order' => 92, 'show_marker' => false, 'parent_ref' => 'cap10', 'content' => '<p>Contenido del subcapítulo próximamente.</p>'),
-    array('title' => 'Pedro Cuarental', 'numero' => '', 'order' => 93, 'show_marker' => false, 'parent_ref' => 'cap10', 'content' => '<p>Contenido del subcapítulo próximamente.</p>'),
-    array('title' => 'Marcos Dreyer', 'numero' => '', 'order' => 94, 'show_marker' => false, 'parent_ref' => 'cap10', 'content' => '<p>Contenido del subcapítulo próximamente.</p>'),
+[imagen_contenido src="'),
+    array('title' => 'Juan Ruiz traspasa sus poderes', 'numero' => '', 'order' => 86, 'show_marker' => false, 'parent_ref' => 'cap10',
+        'content' => '<p>Contenido del subcapítulo próximamente.</p>'),
+    array('title' => 'La estabilidad imposible', 'numero' => '', 'order' => 87, 'show_marker' => false, 'parent_ref' => 'cap10',
+        'content' => '<p>Contenido del subcapítulo próximamente.</p>'),
+    array('title' => 'Camino del fatídico 2009', 'numero' => '', 'order' => 88, 'show_marker' => false, 'parent_ref' => 'cap10',
+        'content' => '<p>Contenido del subcapítulo próximamente.</p>'),
+    array('title' => 'El peor desenlace posible', 'numero' => '', 'order' => 89, 'show_marker' => false, 'parent_ref' => 'cap10',
+        'content' => '<p>Contenido del subcapítulo próximamente.</p>'),
+    array('title' => 'La cronología', 'numero' => '', 'order' => 90, 'show_marker' => false, 'parent_ref' => 'cap10',
+        'content' => '<p>Contenido del subcapítulo próximamente.</p>'),
+    array('title' => 'David Rodríguez', 'numero' => '', 'order' => 91, 'show_marker' => false, 'parent_ref' => 'cap10',
+        'content' => '<p>Contenido del subcapítulo próximamente.</p>'),
+    array('title' => 'Joel Sotelo', 'numero' => '', 'order' => 92, 'show_marker' => false, 'parent_ref' => 'cap10',
+        'content' => '<p>Contenido del subcapítulo próximamente.</p>'),
+    array('title' => 'Pedro Cuarental', 'numero' => '', 'order' => 93, 'show_marker' => false, 'parent_ref' => 'cap10',
+        'content' => '<p>Contenido del subcapítulo próximamente.</p>'),
+    array('title' => 'Marcos Dreyer', 'numero' => '', 'order' => 94, 'show_marker' => false, 'parent_ref' => 'cap10',
+        'content' => '<p>Contenido del subcapítulo próximamente.</p>'),
 
-    array('title' => 'Todos los títulos', 'numero' => '11', 'order' => 100, 'show_marker' => true, 'ref_id' => 'cap11',
-        'hero' => array('image' => libro_img('hero-trophies.jpg'), 'overlay' => 'rgba(212, 175, 55, 0.75)', 'icon' => 'custom', 'custom_icon' => $star, 'icon_width' => 80, 'icon_height' => 80, 'alignment' => 'center', 'vertical' => 'center', 'height' => '500px',
-            'title_lines' => array(libro_hero_line('TODOS', '#1a237e', '#FFFFFF'), libro_hero_line('LOS TÍTULOS', '#1a237e', '#FFFFFF'))),
+    // ═══════════════════════════════════════════════
+    // CAPÍTULO 11: TÍTULOS PARA UNA GRAN HISTORIA
+    // ═══════════════════════════════════════════════
+    array(
+        'title' => 'Títulos para una gran historia',
+        'numero' => '11',
+        'order' => 100,
+        'show_marker' => true,
+        'ref_id' => 'cap11',
+        'hero' => array(
+            'image' => libro_img('hero-trophies.jpg'),
+            'overlay' => 'rgba(212, 175, 55, 0.75)',
+            'icon' => 'custom',
+            'custom_icon' => $star,
+            'icon_width' => 80,
+            'icon_height' => 80,
+            'alignment' => 'center',
+            'vertical' => 'center',
+            'height' => '500px',
+            'title_lines' => array(libro_hero_line('TÍTULOS PARA', '#1a237e', '#FFFFFF', 'black'), libro_hero_line('UNA GRAN', '#1a237e', '#FFFFFF', 'black'), libro_hero_line('HISTORIA', '#1a237e', '#FFFFFF', 'black')),
+        ),
         'content' => '[capitular]El palmarés del CV Guaguas es el más brillante del voleibol español. Nueve Ligas, nueve Copas del Rey, cinco Supercopas y una Copa Ibérica conforman un historial de éxitos que ningún otro club del país ha igualado.[/capitular]
-[imagen_contenido src="' . libro_img('content/victoria-guaguas.png') . '" alt="El CV Guaguas celebra un título" caption="La celebración de los títulos ha sido una constante en la historia del club amarillo." fullwidth="true"]
-[imagen_contenido src="' . libro_img('content/partido-guaguas.jpg') . '" alt="Ambiente en un partido del CV Guaguas" caption="El Centro Insular de Deportes y el Gran Canaria Arena han sido testigos de las gestas del club."]
-<p>Contenido pendiente de importación del documento original.</p>'),
-    // Cap 10 child
-    array('title' => 'Joselu Sánchez', 'numero' => '', 'order' => 101, 'show_marker' => false, 'parent_ref' => 'cap11', 'content' => '<p>Contenido del subcapítulo próximamente.</p>'),
+[imagen_contenido src="'),
+    array('title' => 'Copa del Rey 1989', 'numero' => '', 'order' => 101, 'show_marker' => false, 'parent_ref' => 'cap11',
+        'content' => '<p>Contenido del capítulo próximamente.</p>'),
+    array('title' => 'Liga 1989-90', 'numero' => '', 'order' => 102, 'show_marker' => false, 'parent_ref' => 'cap11',
+        'content' => '<p>Contenido del capítulo próximamente.</p>'),
+    array('title' => 'Liga 1990-91', 'numero' => '', 'order' => 103, 'show_marker' => false, 'parent_ref' => 'cap11',
+        'content' => '<p>Contenido del capítulo próximamente.</p>'),
+    array('title' => 'Copa del Rey 1991', 'numero' => '', 'order' => 104, 'show_marker' => false, 'parent_ref' => 'cap11',
+        'content' => '<p>Contenido del capítulo próximamente.</p>'),
+    array('title' => 'Liga 1991-92', 'numero' => '', 'order' => 105, 'show_marker' => false, 'parent_ref' => 'cap11',
+        'content' => '<p>Contenido del capítulo próximamente.</p>'),
+    array('title' => 'Copa del Rey 1992', 'numero' => '', 'order' => 106, 'show_marker' => false, 'parent_ref' => 'cap11',
+        'content' => '<p>Contenido del capítulo próximamente.</p>'),
+    array('title' => 'Liga 1992-93', 'numero' => '', 'order' => 107, 'show_marker' => false, 'parent_ref' => 'cap11',
+        'content' => '<p>Contenido del capítulo próximamente.</p>'),
+    array('title' => 'Copa del Rey 1993', 'numero' => '', 'order' => 108, 'show_marker' => false, 'parent_ref' => 'cap11',
+        'content' => '<p>Contenido del capítulo próximamente.</p>'),
+    array('title' => 'Liga 1993-94', 'numero' => '', 'order' => 109, 'show_marker' => false, 'parent_ref' => 'cap11',
+        'content' => '<p>Contenido del capítulo próximamente.</p>'),
+    array('title' => 'Copa del Rey 1996', 'numero' => '', 'order' => 110, 'show_marker' => false, 'parent_ref' => 'cap11',
+        'content' => '<p>Contenido del capítulo próximamente.</p>'),
+    array('title' => 'Supercopa de España 1993-94', 'numero' => '', 'order' => 111, 'show_marker' => false, 'parent_ref' => 'cap11',
+        'content' => '<p>Contenido del capítulo próximamente.</p>'),
+    array('title' => 'Copa del Rey 1997', 'numero' => '', 'order' => 112, 'show_marker' => false, 'parent_ref' => 'cap11',
+        'content' => '<p>Contenido del capítulo próximamente.</p>'),
+    array('title' => 'Copa del Rey 2021', 'numero' => '', 'order' => 113, 'show_marker' => false, 'parent_ref' => 'cap11',
+        'content' => '<p>Contenido del capítulo próximamente.</p>'),
+    array('title' => 'Liga 2020-21', 'numero' => '', 'order' => 114, 'show_marker' => false, 'parent_ref' => 'cap11',
+        'content' => '<p>Contenido del capítulo próximamente.</p>'),
+    array('title' => 'Supercopa de España 2021', 'numero' => '', 'order' => 115, 'show_marker' => false, 'parent_ref' => 'cap11',
+        'content' => '<p>Contenido del capítulo próximamente.</p>'),
+    array('title' => 'Liga 2023', 'numero' => '', 'order' => 116, 'show_marker' => false, 'parent_ref' => 'cap11',
+        'content' => '<p>Contenido del capítulo próximamente.</p>'),
+    array('title' => 'Copa Ibérica 2023', 'numero' => '', 'order' => 117, 'show_marker' => false, 'parent_ref' => 'cap11',
+        'content' => '<p>Contenido del capítulo próximamente.</p>'),
+    array('title' => 'Supercopa de España 2023', 'numero' => '', 'order' => 118, 'show_marker' => false, 'parent_ref' => 'cap11',
+        'content' => '<p>Contenido del capítulo próximamente.</p>'),
+    array('title' => 'Copa del Rey 2024', 'numero' => '', 'order' => 119, 'show_marker' => false, 'parent_ref' => 'cap11',
+        'content' => '<p>Contenido del capítulo próximamente.</p>'),
+    array('title' => 'Liga 2024', 'numero' => '', 'order' => 120, 'show_marker' => false, 'parent_ref' => 'cap11',
+        'content' => '<p>Contenido del capítulo próximamente.</p>'),
+    array('title' => 'Supercopa de España 2024', 'numero' => '', 'order' => 121, 'show_marker' => false, 'parent_ref' => 'cap11',
+        'content' => '<p>Contenido del capítulo próximamente.</p>'),
+    array('title' => 'Copa del Rey 2025', 'numero' => '', 'order' => 122, 'show_marker' => false, 'parent_ref' => 'cap11',
+        'content' => '<p>Contenido del capítulo próximamente.</p>'),
+    array('title' => 'Liga 2025', 'numero' => '', 'order' => 123, 'show_marker' => false, 'parent_ref' => 'cap11',
+        'content' => '<p>Contenido del capítulo próximamente.</p>'),
+    array('title' => 'Supercopa de España 2025', 'numero' => '', 'order' => 124, 'show_marker' => false, 'parent_ref' => 'cap11',
+        'content' => '<p>Contenido del capítulo próximamente.</p>'),
+    array('title' => 'Joselu Sánchez', 'numero' => '', 'order' => 125, 'show_marker' => false, 'parent_ref' => 'cap11',
+        'content' => '<p>Contenido del subcapítulo próximamente.</p>'),
 
-    array('title' => 'Vuelve el gran Guaguas', 'numero' => '12', 'order' => 105, 'show_marker' => true, 'ref_id' => 'cap12',
-        'hero' => array('image' => libro_img('hero-celebracion.jpg'), 'overlay' => 'rgba(26, 35, 126, 0.75)', 'icon' => 'custom', 'custom_icon' => $star, 'icon_width' => 70, 'icon_height' => 70, 'alignment' => 'right', 'vertical' => 'center', 'height' => '500px',
-            'title_lines' => array(libro_hero_line('VUELVE', '#D4AF37'), libro_hero_line('EL GRAN', '#FFFFFF'), libro_hero_line('GUAGUAS', '#D4AF37'))),
+    // ═══════════════════════════════════════════════
+    // CAPÍTULO 12: VUELVE EL GRAN GUAGUAS
+    // ═══════════════════════════════════════════════
+    array(
+        'title' => 'Vuelve el gran Guaguas',
+        'numero' => '12',
+        'order' => 130,
+        'show_marker' => true,
+        'ref_id' => 'cap12',
+        'hero' => array(
+            'image' => libro_img('hero-celebracion.jpg'),
+            'overlay' => 'rgba(26, 35, 126, 0.75)',
+            'icon' => 'custom',
+            'custom_icon' => $star,
+            'icon_width' => 70,
+            'icon_height' => 70,
+            'alignment' => 'right',
+            'vertical' => 'center',
+            'height' => '500px',
+            'title_lines' => array(libro_hero_line('VUELVE', '#D4AF37', '', 'black'), libro_hero_line('EL GRAN', '#FFFFFF', '', 'black'), libro_hero_line('GUAGUAS', '#D4AF37', '', 'black')),
+        ),
         'content' => '[capitular]En 2020, cuando el club se encontraba de nuevo al borde del abismo, Juan Ruiz regresó para devolver al Guaguas a la élite. Su vuelta fue recibida con esperanza y emoción por una afición que no había olvidado los años gloriosos.[/capitular]
-[imagen_contenido src="' . libro_img('content/remate-guaguas.png') . '" alt="Remate del CV Guaguas" caption="El regreso del Guaguas a los títulos confirmó que la leyenda no había terminado." fullwidth="true"]
-<p>Contenido pendiente de importación del documento original.</p>'),
-    // Cap 11 children
-    array('title' => 'Un paso por aclamación', 'numero' => '', 'order' => 106, 'show_marker' => false, 'parent_ref' => 'cap12', 'content' => '<p>Contenido del subcapítulo próximamente.</p>'),
-    array('title' => 'Presidentes', 'numero' => '', 'order' => 107, 'show_marker' => false, 'parent_ref' => 'cap12', 'content' => '<p>Contenido del subcapítulo próximamente.</p>'),
-    array('title' => 'Entrenadores', 'numero' => '', 'order' => 108, 'show_marker' => false, 'parent_ref' => 'cap12', 'content' => '<p>Contenido del subcapítulo próximamente.</p>'),
+[imagen_contenido src="'),
+    array('title' => 'Un paso por aclamación', 'numero' => '', 'order' => 131, 'show_marker' => false, 'parent_ref' => 'cap12',
+        'content' => '<p>Contenido del subcapítulo próximamente.</p>'),
+    array('title' => 'Presidentes', 'numero' => '', 'order' => 132, 'show_marker' => false, 'parent_ref' => 'cap12',
+        'content' => '<p>Contenido del subcapítulo próximamente.</p>'),
+    array('title' => 'Entrenadores', 'numero' => '', 'order' => 133, 'show_marker' => false, 'parent_ref' => 'cap12',
+        'content' => '<p>Contenido del subcapítulo próximamente.</p>'),
 
-    array('title' => 'Del CID al Arenas', 'numero' => '13', 'order' => 110, 'show_marker' => true,
-        'hero' => array('image' => libro_img('hero-stadium.jpg'), 'overlay' => 'rgba(26, 35, 126, 0.82)', 'icon' => 'custom', 'custom_icon' => $star, 'icon_width' => 60, 'icon_height' => 60, 'alignment' => 'left', 'vertical' => 'center', 'height' => '450px',
-            'title_lines' => array(libro_hero_line('DEL CID', '#D4AF37'), libro_hero_line('AL ARENAS', '#FFFFFF'))),
+    // ═══════════════════════════════════════════════
+    // CAPÍTULO 13: DEL CID AL ARENAS
+    // ═══════════════════════════════════════════════
+    array(
+        'title' => 'Del CID al Arenas',
+        'numero' => '13',
+        'order' => 140,
+        'show_marker' => true,
+        'ref_id' => 'cap13',
+        'hero' => array(
+            'image' => libro_img('hero-stadium.jpg'),
+            'overlay' => 'rgba(26, 35, 126, 0.82)',
+            'icon' => 'custom',
+            'custom_icon' => $star,
+            'icon_width' => 60,
+            'icon_height' => 60,
+            'alignment' => 'left',
+            'vertical' => 'center',
+            'height' => '450px',
+            'title_lines' => array(libro_hero_line('DEL CID', '#D4AF37', '', 'black'), libro_hero_line('AL ARENAS', '#FFFFFF', '', 'black')),
+        ),
         'content' => '[capitular]Del Centro Insular de Deportes al Gran Canaria Arena: la evolución de la casa del voleibol grancanario. El CID fue durante décadas la catedral del voleibol en Canarias, un pabellón cuyo ambiente era temido por todos los rivales.[/capitular]
-[imagen_contenido src="' . libro_img('content/banner-entradas.png') . '" alt="Cartelería del CV Guaguas en el Gran Canaria Arena" caption="El Gran Canaria Arena acoge hoy los grandes eventos del voleibol canario." fullwidth="true"]
-<p>Contenido pendiente de importación del documento original.</p>'),
+[imagen_contenido src="'),
 
-    array('title' => 'Los nuevos ídolos', 'numero' => '14', 'order' => 115, 'show_marker' => true, 'ref_id' => 'cap14',
-        'hero' => array('image' => libro_img('hero-volleyball-match.jpg'), 'overlay' => 'rgba(212, 175, 55, 0.82)', 'icon' => 'custom', 'custom_icon' => $star, 'icon_width' => 70, 'icon_height' => 70, 'alignment' => 'right', 'vertical' => 'center', 'height' => '480px',
-            'title_lines' => array(libro_hero_line('LOS NUEVOS', '#1a237e', '#FFFFFF'), libro_hero_line('ÍDOLOS', '#1a237e', '#FFFFFF'))),
+    // ═══════════════════════════════════════════════
+    // CAPÍTULO 14: LOS NUEVOS ÍDOLOS
+    // ═══════════════════════════════════════════════
+    array(
+        'title' => 'Los nuevos ídolos',
+        'numero' => '14',
+        'order' => 145,
+        'show_marker' => true,
+        'ref_id' => 'cap14',
+        'hero' => array(
+            'image' => libro_img('hero-volleyball-match.jpg'),
+            'overlay' => 'rgba(212, 175, 55, 0.82)',
+            'icon' => 'custom',
+            'custom_icon' => $star,
+            'icon_width' => 70,
+            'icon_height' => 70,
+            'alignment' => 'right',
+            'vertical' => 'center',
+            'height' => '480px',
+            'title_lines' => array(libro_hero_line('LOS NUEVOS', '#1a237e', '#FFFFFF', 'black'), libro_hero_line('ÍDOLOS', '#1a237e', '#FFFFFF', 'black')),
+        ),
         'content' => '[capitular]Una nueva generación de estrellas ha tomado el relevo en el Gran Canaria Arena. Los nuevos ídolos del Guaguas combinan talento internacional con la pasión local para escribir nuevos capítulos en la historia del club.[/capitular]
-[imagen_contenido src="' . libro_img('content/walla-souza.png') . '" alt="Walla Souza" caption="Walla Souza, uno de los jugadores más determinantes del Guaguas actual."]
-[imagen_contenido src="' . libro_img('content/augusto-colito-perfil.png') . '" alt="Augusto Colito" caption="Augusto Colito, internacional español y pilar del proyecto deportivo del Guaguas."]
-<p>Contenido pendiente de importación del documento original.</p>'),
-    // Cap 13 children
-    array('title' => 'Pablo Kukartsev', 'numero' => '', 'order' => 116, 'show_marker' => false, 'parent_ref' => 'cap14', 'content' => '<p>Contenido del subcapítulo próximamente.</p>'),
-    array('title' => 'Moisés Cézar', 'numero' => '', 'order' => 117, 'show_marker' => false, 'parent_ref' => 'cap14', 'content' => '<p>Contenido del subcapítulo próximamente.</p>'),
+[imagen_contenido src="'),
+    array('title' => 'Pablo Kukartsev', 'numero' => '', 'order' => 146, 'show_marker' => false, 'parent_ref' => 'cap14',
+        'content' => '<p>Contenido del subcapítulo próximamente.</p>'),
+    array('title' => 'Moisés Cézar', 'numero' => '', 'order' => 147, 'show_marker' => false, 'parent_ref' => 'cap14',
+        'content' => '<p>Contenido del subcapítulo próximamente.</p>'),
+    array('title' => 'Alejandro Fernández', 'numero' => '', 'order' => 148, 'show_marker' => false, 'parent_ref' => 'cap14',
+        'content' => '<p>Contenido del subcapítulo próximamente.</p>'),
+    array('title' => 'Guilherme Hage', 'numero' => '', 'order' => 149, 'show_marker' => false, 'parent_ref' => 'cap14',
+        'content' => '<p>Contenido del subcapítulo próximamente.</p>'),
+    array('title' => 'Jorge Almansa', 'numero' => '', 'order' => 150, 'show_marker' => false, 'parent_ref' => 'cap14',
+        'content' => '<p>Texto del prólogo pendiente de redacción.</p>'),
+    array('title' => 'Matt Knigge', 'numero' => '', 'order' => 151, 'show_marker' => false, 'parent_ref' => 'cap14',
+        'content' => '<p>Contenido del subcapítulo próximamente.</p>'),
+    array('title' => 'Paulo Renan', 'numero' => '', 'order' => 152, 'show_marker' => false, 'parent_ref' => 'cap14',
+        'content' => '<p>Contenido del subcapítulo próximamente.</p>'),
+    array('title' => 'Paolo Zonca', 'numero' => '', 'order' => 153, 'show_marker' => false, 'parent_ref' => 'cap14',
+        'content' => '<p>Contenido del subcapítulo próximamente.</p>'),
+    array('title' => 'Martín Ramos', 'numero' => '', 'order' => 154, 'show_marker' => false, 'parent_ref' => 'cap14',
+        'content' => '<p>Contenido del subcapítulo próximamente.</p>'),
+    array('title' => 'Io de Amo', 'numero' => '', 'order' => 155, 'show_marker' => false, 'parent_ref' => 'cap14',
+        'content' => '<p>Contenido del subcapítulo próximamente.</p>'),
+    array('title' => 'Nico Bruno', 'numero' => '', 'order' => 156, 'show_marker' => false, 'parent_ref' => 'cap14',
+        'content' => '<p>Contenido del subcapítulo próximamente.</p>'),
+    array('title' => 'Unai Larrañaga', 'numero' => '', 'order' => 157, 'show_marker' => false, 'parent_ref' => 'cap14',
+        'content' => '<p>Contenido del subcapítulo próximamente.</p>'),
+    array('title' => 'Walla Souza', 'numero' => '', 'order' => 158, 'show_marker' => false, 'parent_ref' => 'cap14',
+        'content' => '<p>Contenido del subcapítulo próximamente.</p>'),
+    array('title' => 'Jean Pascal', 'numero' => '', 'order' => 159, 'show_marker' => false, 'parent_ref' => 'cap14',
+        'content' => '<p>Contenido del subcapítulo próximamente.</p>'),
+    array('title' => 'Osmany Juantorena', 'numero' => '', 'order' => 160, 'show_marker' => false, 'parent_ref' => 'cap14',
+        'content' => '<p>Contenido del subcapítulo próximamente.</p>'),
 
-    array('title' => 'El impacto del escudo', 'numero' => '15', 'order' => 120, 'show_marker' => true,
-        'hero' => array('image' => libro_img('hero-stadium.jpg'), 'overlay' => 'rgba(212, 175, 55, 0.88)', 'icon' => 'custom', 'custom_icon' => $star, 'icon_width' => 90, 'icon_height' => 90, 'alignment' => 'center', 'vertical' => 'center', 'height' => '450px',
-            'title_lines' => array(libro_hero_line('EL IMPACTO', '#1a237e', '#FFFFFF'), libro_hero_line('DEL ESCUDO', '#1a237e', '#FFFFFF'))),
+    // ═══════════════════════════════════════════════
+    // CAPÍTULO 15: EL IMPACTO DEL ESCUDO
+    // ═══════════════════════════════════════════════
+    array(
+        'title' => 'El impacto del escudo',
+        'numero' => '15',
+        'order' => 165,
+        'show_marker' => true,
+        'ref_id' => 'cap15',
+        'hero' => array(
+            'image' => libro_img('hero-stadium.jpg'),
+            'overlay' => 'rgba(212, 175, 55, 0.88)',
+            'icon' => 'custom',
+            'custom_icon' => $star,
+            'icon_width' => 60,
+            'icon_height' => 60,
+            'alignment' => 'center',
+            'vertical' => 'center',
+            'height' => '450px',
+            'title_lines' => array(libro_hero_line('EL IMPACTO', '#1a237e', '#FFFFFF', 'black'), libro_hero_line('DEL ESCUDO', '#1a237e', '#FFFFFF', 'black')),
+        ),
         'content' => '[capitular]El escudo del CV Guaguas es mucho más que un símbolo deportivo. Representa la identidad de un club que ha trascendido el voleibol para convertirse en un referente cultural de Gran Canaria y del deporte canario.[/capitular]
-[imagen_contenido src="' . libro_img('content/jugador-accion.png') . '" alt="Jugador del CV Guaguas en acción" caption="El escudo del Guaguas, presente en cada camiseta que viste un jugador que sale a la cancha."]
-<p>Contenido pendiente de importación del documento original.</p>'),
+[imagen_contenido src="'),
 
-    array('title' => 'La directiva', 'numero' => '16', 'order' => 125, 'show_marker' => true,
-        'hero' => array('image' => libro_img('hero-estatutos.jpg'), 'overlay' => 'rgba(26, 35, 126, 0.85)', 'icon' => 'custom', 'custom_icon' => $star, 'icon_width' => 50, 'icon_height' => 50, 'alignment' => 'right', 'vertical' => 'center', 'height' => '420px',
-            'title_lines' => array(libro_hero_line('LA', '#FFFFFF'), libro_hero_line('DIRECTIVA', '#D4AF37'))),
+    // ═══════════════════════════════════════════════
+    // CAPÍTULO 16: LA DIRECTIVA Y EL FUTURO QUE VIENE
+    // ═══════════════════════════════════════════════
+    array(
+        'title' => 'La directiva y el futuro que viene',
+        'numero' => '16',
+        'order' => 170,
+        'show_marker' => true,
+        'ref_id' => 'cap16',
+        'hero' => array(
+            'image' => libro_img('hero-estatutos.jpg'),
+            'overlay' => 'rgba(26, 35, 126, 0.85)',
+            'icon' => 'custom',
+            'custom_icon' => $star,
+            'icon_width' => 60,
+            'icon_height' => 60,
+            'alignment' => 'right',
+            'vertical' => 'center',
+            'height' => '450px',
+            'title_lines' => array(libro_hero_line('LA DIRECTIVA', '#D4AF37', '', 'black'), libro_hero_line('Y EL FUTURO', '#FFFFFF', '', 'black'), libro_hero_line('QUE VIENE', '#FFFFFF', '', 'black')),
+        ),
         'content' => '[capitular]Detrás de cada título y cada logro deportivo hay una estructura directiva que ha trabajado incansablemente por el bien del club. Desde los fundadores del Calvo Sotelo hasta la actual junta directiva, la gestión del Guaguas ha sido un ejemplo de compromiso y sacrificio.[/capitular]
-[imagen_contenido src="' . libro_img('content/equipo-liga.jpeg') . '" alt="El equipo y cuerpo técnico del CV Guaguas" caption="La directiva y el cuerpo técnico, piezas fundamentales del engranaje del Guaguas."]
-<p>Contenido pendiente de importación del documento original.</p>'),
+[imagen_contenido src="'),
 
-    array('title' => 'El Guaguas que viene', 'numero' => '17', 'order' => 130, 'show_marker' => true,
-        'hero' => array('image' => libro_img('hero-cantera.jpg'), 'overlay' => 'rgba(26, 35, 126, 0.80)', 'icon' => 'custom', 'custom_icon' => $star, 'icon_width' => 60, 'icon_height' => 60, 'alignment' => 'left', 'vertical' => 'center', 'height' => '480px',
-            'title_lines' => array(libro_hero_line('EL GUAGUAS', '#D4AF37'), libro_hero_line('QUE VIENE', '#FFFFFF'))),
+    // ═══════════════════════════════════════════════
+    // CAPÍTULO 17: MÁS HONORES
+    // ═══════════════════════════════════════════════
+    array(
+        'title' => 'Más honores',
+        'numero' => '17',
+        'order' => 175,
+        'show_marker' => true,
+        'ref_id' => 'cap17',
+        'hero' => array(
+            'image' => libro_img('hero-trophies.jpg'),
+            'overlay' => 'rgba(26, 35, 126, 0.80)',
+            'icon' => 'custom',
+            'custom_icon' => $star,
+            'icon_width' => 60,
+            'icon_height' => 60,
+            'alignment' => 'center',
+            'vertical' => 'center',
+            'height' => '450px',
+            'title_lines' => array(libro_hero_line('MÁS', '#D4AF37', '', 'black'), libro_hero_line('HONORES', '#FFFFFF', '', 'black')),
+        ),
         'content' => '[capitular]El futuro del Guaguas se construye en la cantera. Los equipos de categorías inferiores trabajan cada día para formar a los jugadores que, algún día, defenderán los colores amarillos en la máxima competición.[/capitular]
-[imagen_contenido src="' . libro_img('content/nico-bruno.png') . '" alt="Jóvenes promesas del CV Guaguas" caption="La apuesta por la cantera es una seña de identidad del club desde sus orígenes en el Calvo Sotelo." fullwidth="true"]
-<p>Contenido pendiente de importación del documento original.</p>'),
+[imagen_contenido src="'),
 
-    array('title' => 'Empleados y técnicos', 'numero' => '18', 'order' => 135, 'show_marker' => true,
-        'hero' => array('image' => libro_img('hero-stadium.jpg'), 'overlay' => 'rgba(62, 39, 15, 0.82)', 'icon' => 'custom', 'custom_icon' => $star, 'icon_width' => 50, 'icon_height' => 50, 'alignment' => 'center', 'vertical' => 'center', 'height' => '420px',
-            'title_lines' => array(libro_hero_line('EMPLEADOS', '#D4AF37'), libro_hero_line('Y TÉCNICOS', '#FFFFFF'))),
+    // ═══════════════════════════════════════════════
+    // CAPÍTULO 18: EL GUAGUAS COMO EN LOS VIEJOS TIEMPOS
+    // ═══════════════════════════════════════════════
+    array(
+        'title' => 'El Guaguas como en los viejos tiempos',
+        'numero' => '18',
+        'order' => 180,
+        'show_marker' => true,
+        'ref_id' => 'cap18',
+        'hero' => array(
+            'image' => libro_img('hero-celebracion.jpg'),
+            'overlay' => 'rgba(212, 175, 55, 0.80)',
+            'icon' => 'custom',
+            'custom_icon' => $star,
+            'icon_width' => 60,
+            'icon_height' => 60,
+            'alignment' => 'left',
+            'vertical' => 'center',
+            'height' => '450px',
+            'title_lines' => array(libro_hero_line('EL GUAGUAS', '#1a237e', '#FFFFFF', 'black'), libro_hero_line('COMO EN LOS', '#1a237e', '#FFFFFF', 'black'), libro_hero_line('VIEJOS TIEMPOS', '#1a237e', '#FFFFFF', 'black')),
+        ),
+        'content' => '<p>Contenido del capítulo próximamente.</p>'),
+
+    // ═══════════════════════════════════════════════
+    // CAPÍTULO 19: EMPLEADOS Y TÉCNICOS
+    // ═══════════════════════════════════════════════
+    array(
+        'title' => 'Empleados y técnicos',
+        'numero' => '19',
+        'order' => 185,
+        'show_marker' => true,
+        'ref_id' => 'cap19',
+        'hero' => array(
+            'image' => libro_img('hero-stadium.jpg'),
+            'overlay' => 'rgba(62, 39, 15, 0.82)',
+            'icon' => 'custom',
+            'custom_icon' => $star,
+            'icon_width' => 60,
+            'icon_height' => 60,
+            'alignment' => 'center',
+            'vertical' => 'center',
+            'height' => '450px',
+            'title_lines' => array(libro_hero_line('EMPLEADOS', '#D4AF37', '', 'black'), libro_hero_line('Y TÉCNICOS', '#FFFFFF', '', 'black')),
+        ),
         'content' => '[capitular]Un club no funciona solo con jugadores. Detrás de cada partido, cada entrenamiento y cada evento hay un equipo de profesionales que hace posible la maquinaria del CV Guaguas.[/capitular]
-[imagen_contenido src="' . libro_img('content/io-de-amo.png') . '" alt="Io De Amo" caption="Io De Amo, uno de los jugadores del plantel actual bajo la dirección técnica de Sergio Miguel Camarero."]
-<p>Contenido pendiente de importación del documento original.</p>'),
+[imagen_contenido src="'),
 
-    array('title' => 'La plantilla del cincuentenario', 'numero' => '19', 'order' => 140, 'show_marker' => true,
-        'hero' => array('image' => libro_img('hero-celebracion.jpg'), 'overlay' => 'rgba(212, 175, 55, 0.82)', 'icon' => 'custom', 'custom_icon' => $star, 'icon_width' => 70, 'icon_height' => 70, 'alignment' => 'right', 'vertical' => 'center', 'height' => '500px',
-            'title_lines' => array(libro_hero_line('LA PLANTILLA', '#1a237e', '#FFFFFF'), libro_hero_line('DEL', '#1a237e', '#FFFFFF'), libro_hero_line('CINCUENTENARIO', '#1a237e', '#FFFFFF'))),
+    // ═══════════════════════════════════════════════
+    // CAPÍTULO 20: LA PLANTILLA DEL CINCUENTENARIO
+    // ═══════════════════════════════════════════════
+    array(
+        'title' => 'La plantilla del cincuentenario',
+        'numero' => '20',
+        'order' => 190,
+        'show_marker' => true,
+        'ref_id' => 'cap20',
+        'hero' => array(
+            'image' => libro_img('hero-celebracion.jpg'),
+            'overlay' => 'rgba(212, 175, 55, 0.82)',
+            'icon' => 'custom',
+            'custom_icon' => $star,
+            'icon_width' => 60,
+            'icon_height' => 60,
+            'alignment' => 'right',
+            'vertical' => 'center',
+            'height' => '450px',
+            'title_lines' => array(libro_hero_line('LA PLANTILLA', '#1a237e', '#FFFFFF', 'black'), libro_hero_line('DEL', '#1a237e', '#FFFFFF', 'black'), libro_hero_line('CINCUENTENARIO', '#1a237e', '#FFFFFF', 'black')),
+        ),
         'content' => '[capitular]La temporada 2025-2026 marca el cincuentenario del Club Voleibol Guaguas. Una plantilla competitiva en cuatro frentes —Liga, Copa, Supercopa y Champions League— escribe las últimas líneas de esta historia de medio siglo de pasión por el voleibol.[/capitular]
-[imagen_contenido src="' . libro_img('content/equipo-champions.jpg') . '" alt="La plantilla del CV Guaguas en la temporada del cincuentenario" caption="La plantilla del cincuentenario, competitiva en todas las competiciones nacionales y europeas." fullwidth="true"]
-[imagen_contenido src="' . libro_img('content/jorge-almansa.png') . '" alt="Jorge Almansa" caption="Jorge Almansa, capitán y símbolo de una generación que honra el legado del club."]
-<p>Contenido pendiente de importación del documento original.</p>'),
+[imagen_contenido src="'),
 
-    array('title' => 'Miguel Ángel Ramírez', 'numero' => '20', 'order' => 145, 'show_marker' => true,
-        'hero' => array('image' => libro_img('hero-stadium.jpg'), 'overlay' => 'rgba(26, 35, 126, 0.85)', 'icon' => 'custom', 'custom_icon' => $star, 'icon_width' => 60, 'icon_height' => 60, 'alignment' => 'left', 'vertical' => 'center', 'height' => '450px',
-            'title_lines' => array(libro_hero_line('MIGUEL ÁNGEL', '#D4AF37'), libro_hero_line('RAMÍREZ', '#FFFFFF'))),
+    // ═══════════════════════════════════════════════
+    // CAPÍTULO 21: RECONOCIMIENTO DEL COLECTIVO ARBITRAL
+    // ═══════════════════════════════════════════════
+    array(
+        'title' => 'Reconocimiento del colectivo arbitral',
+        'numero' => '21',
+        'order' => 195,
+        'show_marker' => true,
+        'ref_id' => 'cap21',
+        'hero' => array(
+            'image' => libro_img('hero-volleyball-match.jpg'),
+            'overlay' => 'rgba(26, 35, 126, 0.82)',
+            'icon' => 'custom',
+            'custom_icon' => $star,
+            'icon_width' => 60,
+            'icon_height' => 60,
+            'alignment' => 'left',
+            'vertical' => 'center',
+            'height' => '450px',
+            'title_lines' => array(libro_hero_line('RECONOCIMIENTO', '#D4AF37', '', 'black'), libro_hero_line('DEL COLECTIVO', '#FFFFFF', '', 'black'), libro_hero_line('ARBITRAL', '#FFFFFF', '', 'black')),
+        ),
+        'content' => '<p>Contenido del capítulo próximamente.</p>'),
+
+    // ═══════════════════════════════════════════════
+    // CAPÍTULO 22: MIGUEL ÁNGEL RAMÍREZ
+    // ═══════════════════════════════════════════════
+    array(
+        'title' => 'Miguel Ángel Ramírez',
+        'numero' => '22',
+        'order' => 200,
+        'show_marker' => true,
+        'ref_id' => 'cap22',
+        'hero' => array(
+            'image' => libro_img('hero-stadium.jpg'),
+            'overlay' => 'rgba(26, 35, 126, 0.85)',
+            'icon' => 'custom',
+            'custom_icon' => $star,
+            'icon_width' => 60,
+            'icon_height' => 60,
+            'alignment' => 'left',
+            'vertical' => 'center',
+            'height' => '450px',
+            'title_lines' => array(libro_hero_line('MIGUEL ÁNGEL', '#D4AF37', '', 'black'), libro_hero_line('RAMÍREZ', '#FFFFFF', '', 'black')),
+        ),
         'content' => '[capitular]Miguel Ángel Ramírez, presidente de la UD Las Palmas, ha sido una figura clave en el apoyo institucional al CV Guaguas. Su visión del deporte como motor de la sociedad canaria ha permitido que el club cuente con los recursos necesarios para competir al máximo nivel.[/capitular]
-[imagen_contenido src="' . libro_img('content/dobromir-saque.jpg') . '" alt="El CV Guaguas en competición" caption="El apoyo institucional ha sido fundamental para mantener la competitividad del club a nivel nacional y europeo."]
-<p>Contenido pendiente de importación del documento original.</p>'),
+[imagen_contenido src="'),
 
-    array('title' => 'Comunicación digital', 'numero' => '21', 'order' => 150, 'show_marker' => true,
-        'hero' => array('image' => libro_img('hero-volleyball-match.jpg'), 'overlay' => 'rgba(30, 30, 60, 0.85)', 'icon' => 'custom', 'custom_icon' => $star, 'icon_width' => 50, 'icon_height' => 50, 'alignment' => 'right', 'vertical' => 'center', 'height' => '420px',
-            'title_lines' => array(libro_hero_line('COMUNICACIÓN', '#D4AF37'), libro_hero_line('DIGITAL', '#FFFFFF'))),
+    // ═══════════════════════════════════════════════
+    // CAPÍTULO 23: A LA VANGUARDIA DE LA TECNOLOGÍA
+    // ═══════════════════════════════════════════════
+    array(
+        'title' => 'A la vanguardia de la tecnología',
+        'numero' => '23',
+        'order' => 205,
+        'show_marker' => true,
+        'ref_id' => 'cap23',
+        'hero' => array(
+            'image' => libro_img('hero-volleyball-match.jpg'),
+            'overlay' => 'rgba(30, 30, 60, 0.85)',
+            'icon' => 'custom',
+            'custom_icon' => $star,
+            'icon_width' => 60,
+            'icon_height' => 60,
+            'alignment' => 'right',
+            'vertical' => 'center',
+            'height' => '450px',
+            'title_lines' => array(libro_hero_line('A LA VANGUARDIA', '#D4AF37', '', 'black'), libro_hero_line('DE LA', '#FFFFFF', '', 'black'), libro_hero_line('TECNOLOGÍA', '#FFFFFF', '', 'black')),
+        ),
         'content' => '[capitular]El CV Guaguas ha sido pionero en la comunicación digital dentro del deporte español. Su presencia en redes sociales, la producción de contenidos audiovisuales y la cobertura periodística propia han creado un modelo de referencia para otros clubes.[/capitular]
-[imagen_contenido src="' . libro_img('content/banner-entradas.png') . '" alt="Comunicación digital del CV Guaguas" caption="La comunicación digital del Guaguas conecta al club con su afición en todos los rincones del mundo." fullwidth="true"]
-<p>Contenido pendiente de importación del documento original.</p>'),
+[imagen_contenido src="'),
 
-    array('title' => 'Socios y abonados', 'numero' => '22', 'order' => 155, 'show_marker' => true,
-        'hero' => array('image' => libro_img('hero-celebracion.jpg'), 'overlay' => 'rgba(26, 35, 126, 0.80)', 'icon' => 'custom', 'custom_icon' => $star, 'icon_width' => 60, 'icon_height' => 60, 'alignment' => 'center', 'vertical' => 'center', 'height' => '450px',
-            'title_lines' => array(libro_hero_line('SOCIOS Y', '#D4AF37'), libro_hero_line('ABONADOS', '#FFFFFF'))),
+    // ═══════════════════════════════════════════════
+    // CAPÍTULO 24: SOCIOS Y ABONADOS
+    // ═══════════════════════════════════════════════
+    array(
+        'title' => 'Socios y abonados',
+        'numero' => '24',
+        'order' => 210,
+        'show_marker' => true,
+        'ref_id' => 'cap24',
+        'hero' => array(
+            'image' => libro_img('hero-celebracion.jpg'),
+            'overlay' => 'rgba(26, 35, 126, 0.80)',
+            'icon' => 'custom',
+            'custom_icon' => $star,
+            'icon_width' => 60,
+            'icon_height' => 60,
+            'alignment' => 'center',
+            'vertical' => 'center',
+            'height' => '450px',
+            'title_lines' => array(libro_hero_line('SOCIOS Y', '#D4AF37', '', 'black'), libro_hero_line('ABONADOS', '#FFFFFF', '', 'black')),
+        ),
         'content' => '[capitular]La afición del Guaguas es el motor del club. Desde aquellos primeros espectadores en el patio del colegio hasta los miles de abonados que llenan el Gran Canaria Arena, los socios han sido el alma del proyecto deportivo más exitoso del voleibol español.[/capitular]
-[imagen_contenido src="' . libro_img('content/partido-guaguas.jpg') . '" alt="La afición del CV Guaguas en el Gran Canaria Arena" caption="La marea amarilla, incondicional con su equipo en cada partido, en cada competición." fullwidth="true"]
-<p>Contenido pendiente de importación del documento original.</p>'),
+[imagen_contenido src="'),
 
-    array('title' => 'Empresarios de la tierra', 'numero' => '23', 'order' => 160, 'show_marker' => true,
-        'hero' => array('image' => libro_img('hero-estatutos.jpg'), 'overlay' => 'rgba(212, 175, 55, 0.80)', 'icon' => 'custom', 'custom_icon' => $star, 'icon_width' => 60, 'icon_height' => 60, 'alignment' => 'left', 'vertical' => 'center', 'height' => '450px',
-            'title_lines' => array(libro_hero_line('EMPRESARIOS', '#1a237e', '#FFFFFF'), libro_hero_line('DE LA TIERRA', '#1a237e', '#FFFFFF'))),
+    // ═══════════════════════════════════════════════
+    // CAPÍTULO 25: EMPRESARIOS DE LA TIERRA
+    // ═══════════════════════════════════════════════
+    array(
+        'title' => 'Empresarios de la tierra',
+        'numero' => '25',
+        'order' => 215,
+        'show_marker' => true,
+        'ref_id' => 'cap25',
+        'hero' => array(
+            'image' => libro_img('hero-estatutos.jpg'),
+            'overlay' => 'rgba(212, 175, 55, 0.80)',
+            'icon' => 'custom',
+            'custom_icon' => $star,
+            'icon_width' => 60,
+            'icon_height' => 60,
+            'alignment' => 'left',
+            'vertical' => 'center',
+            'height' => '450px',
+            'title_lines' => array(libro_hero_line('EMPRESARIOS', '#1a237e', '#FFFFFF', 'black'), libro_hero_line('DE LA TIERRA', '#1a237e', '#FFFFFF', 'black')),
+        ),
         'content' => '[capitular]El CV Guaguas ha contado siempre con el apoyo de empresarios canarios que creyeron en el proyecto. Desde Guaguas Municipales, el primer gran patrocinador, hasta las empresas que hoy respaldan al club, el tejido empresarial de la tierra ha sido pilar fundamental de la entidad.[/capitular]
-[imagen_contenido src="' . libro_img('content/remate-guaguas.png') . '" alt="El CV Guaguas en acción con sus patrocinadores" caption="Los patrocinadores locales han sido parte esencial de la historia del club, acompañándolo en cada etapa."]
-<p>Contenido pendiente de importación del documento original.</p>'),
+[imagen_contenido src="'),
 
-    ); // end chapters array
+        ); // end chapters array
 }
 
 /**
