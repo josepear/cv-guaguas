@@ -1,0 +1,19 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 120 120" width="120" height="120">
+  <defs>
+    <path id="topArc" d="M 60,60 m -48,0 a 48,48 0 1,1 96,0" fill="none"/>
+    <path id="bottomArc" d="M 60,60 m 48,0 a 48,48 0 1,1 -96,0" fill="none"/>
+  </defs>
+  <!-- Outer circle -->
+  <circle cx="60" cy="60" r="52" fill="none" stroke="#D4AF37" stroke-width="1.5"/>
+  <circle cx="60" cy="60" r="48" fill="none" stroke="#D4AF37" stroke-width="0.5"/>
+  <!-- Star center -->
+  <polygon points="60,30 65.5,47.6 84,47.6 69.2,58.4 74.7,76 60,65.2 45.3,76 50.8,58.4 36,47.6 54.5,47.6" fill="#D4AF37"/>
+  <!-- Top text: ICONOS Y ESTRELLAS -->
+  <text fill="#D4AF37" font-family="Arial, Helvetica, sans-serif" font-size="7.5" font-weight="bold" letter-spacing="3">
+    <textPath href="#topArc" startOffset="50%" text-anchor="middle">• ICONOS Y ESTRELLAS •</textPath>
+  </text>
+  <!-- Bottom text: DEL GUAGUAS -->
+  <text fill="#D4AF37" font-family="Arial, Helvetica, sans-serif" font-size="7.5" font-weight="bold" letter-spacing="3.5">
+    <textPath href="#bottomArc" startOffset="50%" text-anchor="middle">DEL GUAGUAS</textPath>
+  </text>
+</svg>
