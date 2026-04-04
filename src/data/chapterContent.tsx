@@ -909,7 +909,7 @@ export const chapterContent: Record<string, React.ReactNode> = {
   ),
 
   // ═══════════════════════════════════════════════
-  // CAPÍTULO 1: Iconos y estrellas del Guaguas (COMPLETO)
+  // CAPÍTULO 05: Iconos y estrellas del CV Guaguas
   // ═══════════════════════════════════════════════
   "capitulo-05": (
     <>
@@ -1019,7 +1019,7 @@ export const chapterContent: Record<string, React.ReactNode> = {
   ),
 
   // ═══════════════════════════════════════════════
-  // CAPÍTULO 1: Ignacio Brito y Tributo a los Salesianos
+  // CAPÍTULO 06: Ignacio Brito / Tributo a los Salesianos
   // ═══════════════════════════════════════════════
   "capitulo-06": (
     <>
@@ -1037,7 +1037,7 @@ export const chapterContent: Record<string, React.ReactNode> = {
   ),
 
   // ═══════════════════════════════════════════════
-  // CAPÍTULO 1: Marek
+  // CAPÍTULO 07: Marek, ayer, hoy y siempre
   // ═══════════════════════════════════════════════
   "capitulo-07": (
     <>
@@ -1054,7 +1054,7 @@ export const chapterContent: Record<string, React.ReactNode> = {
   ),
 
   // ═══════════════════════════════════════════════
-  // CAPÍTULO 1: Embajadores por Europa
+  // CAPÍTULO 08: Embajadores por Europa
   // ═══════════════════════════════════════════════
   "capitulo-08": (
     <>
@@ -1078,7 +1078,7 @@ export const chapterContent: Record<string, React.ReactNode> = {
   ),
 
   // ═══════════════════════════════════════════════
-  // CAPÍTULO 1: Relevo generacional
+  // CAPÍTULO 09: El relevo generacional
   // ═══════════════════════════════════════════════
   "capitulo-09": (
     <>
@@ -1101,7 +1101,7 @@ export const chapterContent: Record<string, React.ReactNode> = {
   ),
 
   // ═══════════════════════════════════════════════
-  // CAPÍTULO 1: Una transición dolorosa
+  // CAPÍTULO 10: Una transición dolorosa
   // ═══════════════════════════════════════════════
   "capitulo-10": (
     <>
@@ -1119,7 +1119,7 @@ export const chapterContent: Record<string, React.ReactNode> = {
   ),
 
   // ═══════════════════════════════════════════════
-  // CAPÍTULO 1: Todos los títulos
+  // CAPÍTULO 11: Títulos para una gran historia
   // ═══════════════════════════════════════════════
   "capitulo-11": (
     <>
@@ -1143,7 +1143,7 @@ export const chapterContent: Record<string, React.ReactNode> = {
   ),
 
   // ═══════════════════════════════════════════════
-  // CAPÍTULO 1: Vuelve el gran Guaguas
+  // CAPÍTULO 12: Vuelve el gran Guaguas
   // ═══════════════════════════════════════════════
   "capitulo-12": (
     <>
@@ -1161,7 +1161,7 @@ export const chapterContent: Record<string, React.ReactNode> = {
   ),
 
   // ═══════════════════════════════════════════════
-  // CAPÍTULO 1: Del CID al Arenas
+  // CAPÍTULO 13: Del CID al Arenas
   // ═══════════════════════════════════════════════
   "capitulo-13": (
     <>
@@ -1179,7 +1179,7 @@ export const chapterContent: Record<string, React.ReactNode> = {
   ),
 
   // ═══════════════════════════════════════════════
-  // CAPÍTULO 1: Los nuevos ídolos
+  // CAPÍTULO 14: Los nuevos ídolos
   // ═══════════════════════════════════════════════
   "capitulo-14": (
     <>
@@ -1202,7 +1202,7 @@ export const chapterContent: Record<string, React.ReactNode> = {
   ),
 
   // ═══════════════════════════════════════════════
-  // CAPÍTULO 1: El impacto del escudo
+  // CAPÍTULO 15: El impacto del escudo
   // ═══════════════════════════════════════════════
   "capitulo-15": (
     <>
@@ -1219,7 +1219,7 @@ export const chapterContent: Record<string, React.ReactNode> = {
   ),
 
   // ═══════════════════════════════════════════════
-  // CAPÍTULO 1: La directiva
+  // CAPÍTULO 16: La directiva y el futuro que viene
   // ═══════════════════════════════════════════════
   "capitulo-16": (
     <>
@@ -1236,16 +1236,16 @@ export const chapterContent: Record<string, React.ReactNode> = {
   ),
 
   // ═══════════════════════════════════════════════
-  // CAPÍTULO 1: El Guaguas que viene
+  // CAPÍTULO 17: Más honores
   // ═══════════════════════════════════════════════
   "capitulo-17": (
     <>
-      <DropCap>El futuro del Guaguas se construye en la cantera. Los equipos de categorías inferiores trabajan cada día para formar a los jugadores que, algún día, defenderán los colores amarillos en la máxima competición.</DropCap>
+      <DropCap>Más allá de los títulos oficiales, el CV Guaguas ha recibido numerosos reconocimientos institucionales y deportivos que avalan su trayectoria como uno de los clubes más importantes del deporte canario.</DropCap>
 
       <ContentImage 
         src={imgNicoBruno} 
-        alt="Jóvenes promesas del CV Guaguas" 
-        caption="La apuesta por la cantera es una seña de identidad del club desde sus orígenes en el Calvo Sotelo." 
+        alt="Reconocimientos del CV Guaguas" 
+        caption="Los honores institucionales reconocen la contribución del Guaguas al deporte y la sociedad canaria." 
         fullWidth 
       />
 
@@ -1254,9 +1254,9 @@ export const chapterContent: Record<string, React.ReactNode> = {
   ),
 
   // ═══════════════════════════════════════════════
-  // CAPÍTULO 1: Empleados y técnicos
+  // CAPÍTULO 19: Empleados y técnicos
   // ═══════════════════════════════════════════════
-  "capitulo-18": (
+  "capitulo-19": (
     <>
       <DropCap>Un club no funciona solo con jugadores. Detrás de cada partido, cada entrenamiento y cada evento hay un equipo de profesionales que hace posible la maquinaria del CV Guaguas: empleados, técnicos, fisioterapeutas, utilleros y tantos otros nombres sin los cuales nada sería posible.</DropCap>
 
@@ -1271,9 +1271,9 @@ export const chapterContent: Record<string, React.ReactNode> = {
   ),
 
   // ═══════════════════════════════════════════════
-  // CAPÍTULO 1: La plantilla del cincuentenario
+  // CAPÍTULO 20: La plantilla del cincuentenario
   // ═══════════════════════════════════════════════
-  "capitulo-19": (
+  "capitulo-20": (
     <>
       <DropCap>La temporada 2025-2026 marca el cincuentenario del Club Voleibol Guaguas. Una plantilla competitiva en cuatro frentes —Liga, Copa, Supercopa y Champions League— escribe las últimas líneas de esta historia de medio siglo de pasión por el voleibol.</DropCap>
 
@@ -1295,9 +1295,9 @@ export const chapterContent: Record<string, React.ReactNode> = {
   ),
 
   // ═══════════════════════════════════════════════
-  // CAPÍTULO 1: Miguel Ángel Ramírez
+  // CAPÍTULO 22: Miguel Ángel Ramírez
   // ═══════════════════════════════════════════════
-  "capitulo-20": (
+  "capitulo-22": (
     <>
       <DropCap>Miguel Ángel Ramírez, presidente de la UD Las Palmas, ha sido una figura clave en el apoyo institucional al CV Guaguas. Su visión del deporte como motor de la sociedad canaria ha permitido que el club cuente con los recursos necesarios para competir al máximo nivel.</DropCap>
 
@@ -1312,9 +1312,9 @@ export const chapterContent: Record<string, React.ReactNode> = {
   ),
 
   // ═══════════════════════════════════════════════
-  // CAPÍTULO 1: Comunicación digital
+  // CAPÍTULO 23: A la vanguardia de la tecnología
   // ═══════════════════════════════════════════════
-  "capitulo-21": (
+  "capitulo-23": (
     <>
       <DropCap>El CV Guaguas ha sido pionero en la comunicación digital dentro del deporte español. Su presencia en redes sociales, la producción de contenidos audiovisuales y la cobertura periodística propia han creado un modelo de referencia para otros clubes.</DropCap>
 
@@ -1330,9 +1330,9 @@ export const chapterContent: Record<string, React.ReactNode> = {
   ),
 
   // ═══════════════════════════════════════════════
-  // CAPÍTULO 1: Socios y abonados
+  // CAPÍTULO 24: Socios y abonados
   // ═══════════════════════════════════════════════
-  "capitulo-22": (
+  "capitulo-24": (
     <>
       <DropCap>La afición del Guaguas es el motor del club. Desde aquellos primeros espectadores en el patio del colegio hasta los miles de abonados que llenan el Gran Canaria Arena, los socios han sido el alma del proyecto deportivo más exitoso del voleibol español.</DropCap>
 
@@ -1348,9 +1348,9 @@ export const chapterContent: Record<string, React.ReactNode> = {
   ),
 
   // ═══════════════════════════════════════════════
-  // CAPÍTULO 1: Empresarios de la tierra
+  // CAPÍTULO 25: Empresarios de la tierra
   // ═══════════════════════════════════════════════
-  "capitulo-23": (
+  "capitulo-25": (
     <>
       <DropCap>El CV Guaguas ha contado siempre con el apoyo de empresarios canarios que creyeron en el proyecto. Desde Guaguas Municipales, el primer gran patrocinador, hasta las empresas que hoy respaldan al club, el tejido empresarial de la tierra ha sido pilar fundamental de la entidad.</DropCap>
 
@@ -1361,6 +1361,161 @@ export const chapterContent: Record<string, React.ReactNode> = {
       />
 
       <p>Contenido pendiente de importación del documento original.</p>
+    </>
+  ),
+
+
+
+  // ═══════════════════════════════════════════════
+  // NEW: El hombre que lo cambió todo (Cap 04 child)
+  // ═══════════════════════════════════════════════
+  "cap05-el-hombre": (
+    <>
+      <DropCap>Nacido en La Aldea de San Nicolás en 1953, emigrante con su familia a Tenerife durante gran parte su adolescencia (1960-1969), en la que hizo sus pinitos en la lucha canaria o el fútbol ("con 16 años llegué a jugar en Tercera División en las filas del Adeje"), Juan Ruiz estaba llamado, sin saberlo, a escribir una historia sin parangón en el deporte canario y al frente del Calvo Sotelo. No hay dirigente isleño con tal nómina de títulos en su poder, todos los conquistados por la entidad, y con el mérito añadido de haber armado un equipo campeón desde las cenizas. Tanto en 1987 como en 2020 acudió al rescate recogiendo una tesorería en ruinas y un porvenir tan comprometido que apuntaba a la desaparición.</DropCap>
+
+      <EditorialQuote author="Juan Ruiz">
+        "El secreto es trabajo y pasión. Constancia y ambición. No rendirse jamás. Si para conseguir un patrocinador tengo que visitar veinte empresas, acabo entrando en cuarenta. Si para ser campeón me tengo que traer a una estrella, trato de que sean dos."
+      </EditorialQuote>
+
+      <p>El punto de partida de este fértil y exitoso ciclo en el palco, en un hombre "sin tradición alguna en el voleibol", arranca de manera "casi casual y del todo inesperada". Año 1986. Desde su estabilidad laboral como apoderado de la empresa Napesca, Juan Ruiz sigue a la distancia, "como un aficionado más", las evoluciones de los distintos clubes de Gran Canaria. "Siempre me ha gustado el deporte y estaba al día de todo", reconoce. Fiel a su costumbre de desayunar en la cafetería del periódico La Provincia en el polígono industrial de El Sebadal, allí coincidía cada mañana con informadores del medio. "Era habitual oyente de Paco García Caridad, que estaba en Antena 3 Radio. Nos saludábamos, hablábamos a menudo de manera desenfadada... Hasta que un día me comentó que un histórico, el Calvo Sotelo, estaba a punto de desaparecer. Que necesitaba alguien que echara una mano... O dos. Porque la situación era de extrema gravedad".</p>
+
+      <EditorialQuote author="Juan Ruiz">
+        "Por lo que fuera, me sentí en la obligación de hacer algo. Me movió una motivación de responsabilidad. Le pregunté abiertamente a Nuez por el mejor jugador de España. Me dijo que era Paco Sánchez Jover. Le contesté que entonces habría que traerlo. Y me miró como si hubiese dicho un disparate."
+      </EditorialQuote>
+
+      <p>"Me reuní con Felipe Nuez, estaba también Ivo Martinovic. Me explicaron la situación. Lo primero que hice fue hablar con el director de Cajacanarias de Tenerife. Buscaban ampliar su mercado e implantarse en Gran Canaria. Les dije que nada mejor para adquirir publicidad que invertir en un club de tradición y que le daría impacto. Aceptó y dieron 500.000 pesetas, un alivio para cómo estaba todo".</p>
+
+      <p>"Mantuve varias conversaciones luego con Gustavo Rodríguez, entonces presidente de la junta gestora, con Ismael Chinea, con Nuez. Le dije que yo podía entrar en la directiva. No pensaba ser presidente. No quería ni necesitaba notoriedad porque mi vida la tenía cubierta con mi trabajo. Pero resulta que ninguno podía asumir las funciones ejecutivas que se requerían para buscar fondos y anunciantes que le dieran músculo financiero al club. Total, vine para ayudar y me pusieron al frente de todo", sintetiza.</p>
+
+      <p>Pronto, recién aterrizado en la junta gestora, se apunta otro logro de capital importancia estratégica: la firma del patrocinio de Guaguas Municipales y que venía a solucionar una problemática que acuciaba la vida institucional con la falta de un sponsor.</p>
+
+      <SectionHeader>El fichaje de Sánchez Jover y la construcción del equipo campeón</SectionHeader>
+
+      <p>Tenía 33 años y, "desde el primer momento", tuvo claro el mandamiento que siempre regiría sus movimientos y gestiones: "Ganar, ganar y ganar". Ruiz orienta cada maniobra a buscar "el máximo" y no duda en explorar posibilidades que parecían prohibidas.</p>
+
+      <p>"Me planté en Palma, hablé con él. Y en el Puerto de Santa María, donde jugaba con la selección española un Preeuropeo, pude cerrar todo. Le convencí de que viniera con nosotros sin poder alcanzar o igualar el contrato que tenía en el Palma. Pero le hablé de liderar un proyecto que iba a ser el mejor del país, que sería nuestro líder, que iba a vivir en un sitio maravilloso, que la afición le haría sentirse único... Paco siempre ha sido una persona muy inteligente y entendió lo que yo quería decirle de manera instantánea. Nadie creía que el Calvo Sotelo podía fichar a la gran estrella de España. Pues nos los trajimos junto a Venancio Costa y Antonio Miralles, otros dos fenómenos".</p>
+
+      <p>El impacto mediático que tuvo esta operación rápidamente se tradujo en un mensaje al resto: "Habíamos llegado para ser los mejores". Y lo que parecía una jugada maestra aislada alcanzaría el grado superlativo cuando, también de una tacada, ya en 1989, son los polacos Ireneusz Klos y Waclaw Golec, también figuras mundiales, quienes aterrizan en Gran Canaria.</p>
+
+      <SectionHeader>Un modelo de gestión basado en la intuición y la constancia</SectionHeader>
+
+      <p>Su modelo presidencialista de entonces, como el de ahora, se basaba en "la intuición, la capacidad de anticipación y delegar, aunque la decisión de calidad corresponda siempre al que más manda".</p>
+
+      <p>"En la primera temporada completa en la que estuve de principio a fin, la 1987-88, quedamos subcampeones de Liga y de Copa. Y fue un hito. Jamás se había llegado a pelear por títulos de esa manera. La destitución de una figura de la relevancia de Felipe Nuez fue, de largo, el momento más crítico de esa campaña. No resultó fácil prescindir de él. Pero ese primer balance, salvando lo de Felipe, no pudo ser mejor. El club pasó de estar al borde de la desaparición a discutir títulos, regenerar una afición perdida, que acabó trasladándose con nosotros del San Román al Centro Insular, cuando abrió sus puertas en 1988, y tener en sus filas una mezcla de juventud, cantera y estrellas que terminaría, como no podía ser de otra manera, dando sus frutos. Y, lo que también me producía un orgullo especial: jugar y competir contra los mejores de Europa", reseña.</p>
+    </>
+  ),
+
+  // ═══════════════════════════════════════════════
+  // NEW: La génesis de su proyecto en cronología (Cap 04 child)
+  // ═══════════════════════════════════════════════
+  "cap05-cronologia-genesis": (
+    <>
+      <Timeline title="La génesis de su proyecto en cronología">
+        <TimelineEvent year="1987">"Estamos en una nube con muchos cimientos. Aquí hay un club con cantera, con una estructura deportiva muy sólida basada en excelentes técnicos, y hay también unas buenas razones económicas que se gestan con una administración del club que considero muy responsables. Felipe Nuez me facilitó a principios de temporada una lista de jugadores para hacer al equipo campeón de Liga. Hemos traído quizá a los mejores". <em>(La Provincia, 17 de julio de 1987)</em>.</TimelineEvent>
+        <TimelineEvent year="1989">"Este es el triunfo del trabajo y del esfuerzo de muchos años, comenzado por otros, como José Luzardo, Antonio Trejo o Felipe Nuez, y rematado por nosotros y por nuestra afición. Es el triunfo de todos y un gran día para el voleibol canario". <em>(Diario de Las Palmas, 10 de abril de 1989)</em>.</TimelineEvent>
+        <TimelineEvent year="1989">"Me gusta mucho el número 11 de la selección polaca, Golec, un gran rematador de potente salto, especialista en remates de zona cuatro y zagueros, con gran recepción. El objetivo que nos planteamos es la obtención de un título nacional como mínimo". <em>(Canarias7, 23 de agosto de 1989)</em>.</TimelineEvent>
+        <TimelineEvent year="1990">"Lo de la campaña pasada fue logrado con gran merecimiento. Después de cuatro años de gran trabajo, el título de Liga tenía que llegar. También entiendo que para nuestro equipo ha sido un triunfo ser la única entidad deportiva del país que ha abierto una brecha contra la droga". <em>(La Provincia, 6 de julio de 1990)</em>.</TimelineEvent>
+        <TimelineEvent year="1990">"No gana el que más presupuesto tiene sino el que más trabajo derroche. Es un gran reto, asimismo, representar a Canarias por vez primera en la Copa de Europa, un prestigio y orgullo que deseamos para el resto de los equipos de élite grancanarios". <em>(Canarias7, 13 de septiembre de 1990)</em>.</TimelineEvent>
+        <TimelineEvent year="1992">"El público ha estado maravilloso. Solo le faltó rematar los balones en la cancha. El Gran Canaria merece que se le apoye porque tenemos a la juventud con nosotros. Este club no va a quedar a la deriva". <em>(Canarias7, 5 de abril de 1992)</em>.</TimelineEvent>
+        <TimelineEvent year="1994">"Nuestra intención con la gratuidad de la entrada era la de ofrecer un homenaje a la afición y no creímos que fueran a venir más de 6.000 personas". <em>(Canarias7, 21 de enero de 1994)</em>.</TimelineEvent>
+        <TimelineEvent year="1996">"En dos ocasiones estuve tentado de abandonarlo todo. Pero si cuando pierdes te marchas es de cobardes, por eso continué, porque el día que me marche lo debo hacer con el equipo campeón". <em>(Canarias7, 7 de octubre de 1996)</em>.</TimelineEvent>
+        <TimelineEvent year="1998">"Ha sido un partido donde casi siempre hemos estado por debajo. El público, fundamental, me recordó al del día del Paris Saint Germain. La Final Four ya está conseguida, y ahora todo lo que venga será un premio añadido". <em>(Diario de Las Palmas, 26 de febrero de 1998)</em>.</TimelineEvent>
+        <TimelineEvent year="1998">"He visto a mucha gente llorar de emoción y tristeza en el Centro Insular de Deportes, y eso es imborrable. Ahora estamos en el momento de volver a empezar, pero que se recuerde que venimos de jugar una Final Four hace unos meses". <em>(Canarias7, 4 de diciembre de 1998)</em>.</TimelineEvent>
+        <TimelineEvent year="2020">"Vamos con la intención de ir a por todas y para ello tenemos todos que trabajar más que los demás y entrenar más que los demás". <em>(Canarias7, 18 de junio de 2020)</em>.</TimelineEvent>
+        <TimelineEvent year="2021">"No esperaba que fuese así. Ni en el mejor de los sueños esperaba que todo saliera tan redondo. Lo hemos cumplido. Nadie se puede sentir defraudado. El Guaguas tiene un gen ganador". <em>(Canarias7, 9 de febrero de 2021)</em>.</TimelineEvent>
+        <TimelineEvent year="2023">"Sergio Camarero es una persona muy especial para mí. Lo tengo conmigo desde los 17 años. Es una de las personas que más quiere al club, incluso más que yo". <em>(La Provincia, 7 de mayo de 2023)</em>.</TimelineEvent>
+        <TimelineEvent year="2024">"El Guaguas merece más ayuda por parte de los organismos oficiales. Un suplemento de un millón de euros serviría para progresar a nivel europeo". <em>(Canarias7, 25 de diciembre de 2024)</em>.</TimelineEvent>
+        <TimelineEvent year="2025">"Supone un orgullo ser el presidente de este grupo de deportistas y creo que mi satisfacción se extiende a la afición y a todos los que quieren y valoran el voleibol". <em>(Canarias7, 20 de noviembre de 2025)</em>.</TimelineEvent>
+        <TimelineEvent year="2026">"El éxito no es mío, sino de todos los que colaboran. La directiva y el presidente del Guaguas nunca ha cobrado en los doce años de la primera etapa ni en los seis años de esta segunda. El Guaguas es una gran familia". <em>(Sport, 12 de febrero de 2026)</em>.</TimelineEvent>
+      </Timeline>
+    </>
+  ),
+
+  // ═══════════════════════════════════════════════
+  // NEW: La aventura europea (Cap 08 child)
+  // ═══════════════════════════════════════════════
+  "cap09-aventura-europea": (
+    <>
+      <DropCap>Si brillantísima ha sido la trayectoria nacional del Guaguas, con dominio de las dos competiciones domésticas, reinado que ha logrado revalidar tras su refundación en 2020, su amplia presencia en competiciones europeas, con punto de inicio de 1987 ante el Knack de Bélgica en la emblemática pista del San Román, también es digna de valoración. Con un balance de más de cincuenta partidos oficiales frente a escudos de otros países, el Guaguas se ha convertido, por méritos propios, en uno de los mejores embajadores de Canarias por todo el mundo.</DropCap>
+
+      <p>Esa vocación sin fronteras a la hora de exportar los valores y potencialidades del club también ha llevado aparejada la bandera tricolor para mayor orgullo de aficionados e instituciones públicas, de alta sensibilidad siempre con la representatividad fuera de España.</p>
+
+      <EditorialQuote author="Juan Ruiz">
+        "Queremos ser alguien en Europa."
+      </EditorialQuote>
+
+      <p>Decía Juan Ruiz nada más llegar a la presidencia, a finales de los ochenta, evidenciando que el crecimiento de la entidad pasaba por hacerse un hueco entre los mejores del continente.</p>
+
+      <p>Un repaso a su camino rivalizando con equipos extranjeros deja momentos culminantes, como el histórico triunfo ante el PSG francés o la victoria ante el Lennick belga que, en 1998, abrió las puertas a la Final Four de la Recopa que se celebró en Cuneo (Italia), entre otras citas que ya tienen su relevancia en la historia. Y tal ha sido su calado, pasado y reciente, que en el ránking mundial de clubes de voleibol realizado en los últimos meses, el equipo grancanario ocupa uno de los lugares de privilegio.</p>
+
+      <p>Como precisa Antonio Benítez, sempiterno mánager y que ha encabezado casi todas las delegaciones del Guaguas en sus comparecencias por las capitales de varios países, esta presencia sostenida procuró una red de relaciones de alto prestigio, además de convertir al equipo en un atractivo para jugar torneos amistosos de primer nivel cada verano.</p>
+
+      <p>Así, el binomio Guaguas-Europa ya es un clásico en el calendario, con una relación ininterrumpida de trece años (1987-2000), y que ofrece el recorrido con los oponentes que a continuación se detalla.</p>
+    </>
+  ),
+
+  // ═══════════════════════════════════════════════
+  // NEW: Títulos individuales (Cap 11 children)
+  // ═══════════════════════════════════════════════
+  "cap12-copa-1989": (<p>Contenido del capítulo próximamente.</p>),
+  "cap12-liga-1990": (<p>Contenido del capítulo próximamente.</p>),
+  "cap12-liga-1991": (<p>Contenido del capítulo próximamente.</p>),
+  "cap12-copa-1991": (<p>Contenido del capítulo próximamente.</p>),
+  "cap12-liga-1992": (<p>Contenido del capítulo próximamente.</p>),
+  "cap12-copa-1992": (<p>Contenido del capítulo próximamente.</p>),
+  "cap12-liga-1993": (<p>Contenido del capítulo próximamente.</p>),
+  "cap12-copa-1993": (<p>Contenido del capítulo próximamente.</p>),
+  "cap12-liga-1994": (<p>Contenido del capítulo próximamente.</p>),
+  "cap12-copa-1996": (<p>Contenido del capítulo próximamente.</p>),
+  "cap12-supercopa-1994": (<p>Contenido del capítulo próximamente.</p>),
+  "cap12-copa-1997": (<p>Contenido del capítulo próximamente.</p>),
+  "cap12-copa-2021": (<p>Contenido del capítulo próximamente.</p>),
+  "cap12-liga-2021": (<p>Contenido del capítulo próximamente.</p>),
+  "cap12-supercopa-2021": (<p>Contenido del capítulo próximamente.</p>),
+  "cap12-liga-2023": (<p>Contenido del capítulo próximamente.</p>),
+  "cap12-copa-iberica-2023": (<p>Contenido del capítulo próximamente.</p>),
+  "cap12-supercopa-2023": (<p>Contenido del capítulo próximamente.</p>),
+  "cap12-copa-2024": (<p>Contenido del capítulo próximamente.</p>),
+  "cap12-liga-2024": (<p>Contenido del capítulo próximamente.</p>),
+  "cap12-supercopa-2024": (<p>Contenido del capítulo próximamente.</p>),
+  "cap12-copa-2025": (<p>Contenido del capítulo próximamente.</p>),
+  "cap12-liga-2025": (<p>Contenido del capítulo próximamente.</p>),
+  "cap12-supercopa-2025": (<p>Contenido del capítulo próximamente.</p>),
+
+  // ═══════════════════════════════════════════════
+  // NEW: Nuevos ídolos adicionales (Cap 14 children)
+  // ═══════════════════════════════════════════════
+  "cap15-alejandro-fernandez": (<p>Contenido del subcapítulo próximamente.</p>),
+  "cap15-guilherme-hage": (<p>Contenido del subcapítulo próximamente.</p>),
+  "cap15-jorge-almansa": (<p>Contenido del subcapítulo próximamente.</p>),
+  "cap15-matt-knigge": (<p>Contenido del subcapítulo próximamente.</p>),
+  "cap15-paulo-renan": (<p>Contenido del subcapítulo próximamente.</p>),
+  "cap15-paolo-zonca": (<p>Contenido del subcapítulo próximamente.</p>),
+  "cap15-martin-ramos": (<p>Contenido del subcapítulo próximamente.</p>),
+  "cap15-io-de-amo": (<p>Contenido del subcapítulo próximamente.</p>),
+  "cap15-nico-bruno": (<p>Contenido del subcapítulo próximamente.</p>),
+  "cap15-unai-larranaga": (<p>Contenido del subcapítulo próximamente.</p>),
+  "cap15-walla-souza": (<p>Contenido del subcapítulo próximamente.</p>),
+  "cap15-jean-pascal": (<p>Contenido del subcapítulo próximamente.</p>),
+  "cap15-osmany-juantorena": (<p>Contenido del subcapítulo próximamente.</p>),
+
+  // ═══════════════════════════════════════════════
+  // CAPÍTULO 18: El Guaguas como en los viejos tiempos
+  // ═══════════════════════════════════════════════
+  "capitulo-18": (
+    <>
+      <DropCap>El regreso del Guaguas a la máxima competición en 2020 fue más que un simple retorno deportivo. Fue la recuperación de un sentimiento, de una identidad que Gran Canaria nunca dejó de sentir como propia. Como en los viejos tiempos, el voleibol volvía a ser protagonista.</DropCap>
+      <p>Contenido pendiente de importación del documento original.</p>
+    </>
+  ),
+
+  // ═══════════════════════════════════════════════
+  // CAPÍTULO 21: Reconocimiento del colectivo arbitral
+  // ═══════════════════════════════════════════════
+  "capitulo-21": (
+    <>
+      <DropCap>El voleibol no se entiende sin la labor de los colegiados. El colectivo arbitral ha sido una pieza fundamental en el desarrollo y profesionalización de este deporte en Canarias, y su reconocimiento forma parte de la historia del CV Guaguas.</DropCap>
+      <p>Contenido del capítulo próximamente.</p>
     </>
   ),
 
