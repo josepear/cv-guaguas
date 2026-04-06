@@ -40,8 +40,8 @@ $hero_title_lines = get_post_meta(get_the_ID(), '_hero_title_lines', true);
 $hero_border_color = get_post_meta(get_the_ID(), '_hero_border_color', true);
 $hero_bg_position = get_post_meta(get_the_ID(), '_hero_background_position', true) ?: 'center top';
 
-// Navegación depth-first (idéntica a React getAllChapters())
-// Parent → Child1 → Child2 → ... → Next Parent
+// Navegación depth-first excluyendo padres con hijos (igual que React getAllChapters())
+// Solo incluimos páginas con contenido real (sin hijos)
 $top_chapters = get_posts(array(
     'post_type'      => 'capitulo',
     'posts_per_page' => -1,
@@ -50,9 +50,8 @@ $top_chapters = get_posts(array(
     'post_parent'    => 0,
 ));
 
-$all_chapters_flat = array(); // Flat depth-first list of IDs
+$all_chapters_flat = array();
 foreach ($top_chapters as $top) {
-    $all_chapters_flat[] = $top->ID;
     $children = get_posts(array(
         'post_type'      => 'capitulo',
         'posts_per_page' => -1,
@@ -60,8 +59,14 @@ foreach ($top_chapters as $top) {
         'order'          => 'ASC',
         'post_parent'    => $top->ID,
     ));
-    foreach ($children as $child) {
-        $all_chapters_flat[] = $child->ID;
+    if (!empty($children)) {
+        // Padre con hijos: añadir solo los hijos, no el padre
+        foreach ($children as $child) {
+            $all_chapters_flat[] = $child->ID;
+        }
+    } else {
+        // Página standalone sin hijos: añadirla directamente
+        $all_chapters_flat[] = $top->ID;
     }
 }
 
@@ -259,7 +264,15 @@ if ($hero_icon === 'custom' && $hero_custom_icon) {
         $is_prologue = !empty($prologo_imagen) && !empty($subtitulo_prologo);
         ?>
         <section class="scroll-mt-24 py-16 md:py-24 border-b border-border/30 last:border-b-0">
-            <?php if ($hero_enabled !== '1' && !$is_prologue) : ?>
+            <?php if ($hero_enabled !== '1' && !$is_prologue) :
+            // Suppress header when content uses [titulo_deportivo] shortcode
+            global $libro_has_titulo_deportivo;
+            $post_content = get_post_field('post_content', get_the_ID());
+            // Pre-check: run shortcode detection before the_content renders
+            if (!isset($libro_has_titulo_deportivo)) {
+                $libro_has_titulo_deportivo = (strpos($post_content, '[titulo_deportivo') !== false);
+            }
+            if (!$libro_has_titulo_deportivo) : ?>
             <header class="mb-8 md:mb-12">
                 <?php if ($capitulo_numero) : ?>
                 <span class="chapter-marker block mb-4">
@@ -271,7 +284,7 @@ if ($hero_icon === 'custom' && $hero_custom_icon) {
                     <?php the_title(); ?>
                 </h2>
             </header>
-            <?php endif; ?>
+            <?php endif; endif; ?>
             
             <div class="reading-content text-foreground/85">
                 <?php if (has_post_thumbnail()) : ?>

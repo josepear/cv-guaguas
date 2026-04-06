@@ -5,7 +5,7 @@
  * Colors: Navy Blue + Yellow/Gold (CV Guaguas branding)
  */
 
-@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800;900&family=Inter:wght@300;400;500;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap');
 
 /* ============================================
    CSS VARIABLES - Design System
@@ -64,9 +64,9 @@
     --sidebar-ring: 45 100% 50%;
 
     /* Typography */
-    --font-serif: 'Montserrat', -apple-system, BlinkMacSystemFont, sans-serif;
+    --font-serif: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
     --font-sans: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
-    --font-display: 'Montserrat', -apple-system, BlinkMacSystemFont, sans-serif;
+    --font-display: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
 
     /* Spacing for reading */
     --content-max-width: 70ch;
@@ -83,8 +83,69 @@
 }
 
 /* ============================================
-   BASE STYLES
+   LIGHT MODE — Variable overrides
+   body.light sobreescribe el esquema dark del :root
    ============================================ */
+
+body.light {
+    /* Backgrounds: crema/blanco cálido */
+    --background: 40 30% 96%;
+    --background-elevated: 40 20% 92%;
+    --background-card: 0 0% 100%;
+
+    /* Foreground: azul marino oscuro (mismo tono que el escudo) */
+    --foreground: 220 50% 12%;
+
+    /* Cards */
+    --card: 0 0% 100%;
+    --card-foreground: 220 50% 12%;
+
+    /* Popovers */
+    --popover: 0 0% 100%;
+    --popover-foreground: 220 50% 12%;
+
+    /* Primary: gold se mantiene */
+    --primary: 45 100% 50%;
+    --primary-foreground: 220 50% 10%;
+
+    /* Secondary */
+    --secondary: 220 20% 90%;
+    --secondary-foreground: 220 50% 12%;
+
+    /* Muted: gris muy suave */
+    --muted: 220 15% 92%;
+    --muted-foreground: 220 20% 40%;
+
+    /* Accent */
+    --accent: 45 100% 50%;
+    --accent-foreground: 220 50% 10%;
+
+    /* Destructive */
+    --destructive: 0 84% 60%;
+    --destructive-foreground: 0 0% 100%;
+
+    /* Border / Input */
+    --border: 220 20% 82%;
+    --input: 220 20% 88%;
+    --ring: 45 100% 50%;
+
+    /* Sidebar */
+    --sidebar: 220 30% 20%;
+    --sidebar-background: 220 30% 20%;
+    --sidebar-foreground: 0 0% 90%;
+    --sidebar-primary: 45 100% 50%;
+    --sidebar-primary-foreground: 220 50% 10%;
+    --sidebar-accent: 220 25% 28%;
+    --sidebar-accent-foreground: 0 0% 98%;
+    --sidebar-border: 220 25% 28%;
+    --sidebar-ring: 45 100% 50%;
+
+    /* Shadows */
+    --shadow-soft: 0 4px 20px hsl(220 30% 20% / 0.12);
+    --shadow-glow: 0 0 30px hsl(45 100% 50% / 0.15);
+}
+
+
 
 *, *::before, *::after {
     box-sizing: border-box;
@@ -1251,4 +1312,218 @@ h1, h2, h3, h4, h5, h6 {
     .content-image { break-inside: avoid; }
     .editorial-quote { break-inside: avoid; }
     .chapter-hero { display: none; }
+}
+
+/* ═══════════════════════════════════════════════
+   TÍTULO DEPORTIVO — Layout 2 columnas
+   ═══════════════════════════════════════════════ */
+
+.titulo-deportivo-wrapper {
+    display: grid;
+    grid-template-columns: 60fr 40fr;
+    gap: 0;
+    align-items: stretch;
+    margin: 0 0 3rem;
+    padding: 2rem 0;
+}
+
+/* ── Columna izquierda ── */
+.titulo-deportivo-main {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1.25rem;
+    padding-right: 2.5rem;
+    border-right: 1px solid hsl(var(--border));
+}
+
+.titulo-deportivo-foto {
+    width: 100%;
+    max-width: 280px;
+    margin: 0 auto;
+}
+
+.titulo-deportivo-foto img {
+    width: 100%;
+    height: auto;
+    object-fit: contain;
+    display: block;
+}
+
+.titulo-deportivo-encabezado {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.4rem;
+    text-align: center;
+}
+
+/* Estrella: usa foreground color (azul en light, blanco en dark) via CSS filter */
+.titulo-deportivo-estrella {
+    display: block;
+    width: 32px;
+    height: 32px;
+}
+
+/* Light mode: tint star with foreground color using CSS */
+.titulo-deportivo-estrella {
+    /* foreground in light is dark navy — replicate via filter */
+    filter: brightness(0) saturate(100%);
+    /* This makes it black; we then colorize it to match --foreground */
+    /* Since foreground is a dark navy we use: */
+    filter: brightness(0) saturate(100%) invert(13%) sepia(30%) saturate(800%) hue-rotate(185deg) brightness(90%) contrast(95%);
+}
+
+/* Dark mode: star should be white */
+body.dark .titulo-deportivo-estrella {
+    filter: brightness(0) invert(1);
+}
+
+.titulo-deportivo-nombre {
+    font-family: var(--font-display);
+    font-weight: 900;
+    font-size: clamp(1.5rem, 3.5vw, 2.25rem);
+    line-height: 1.1;
+    letter-spacing: -0.02em;
+    text-align: center;
+    margin: 0;
+    color: hsl(var(--foreground));
+}
+
+/* Dark mode: title white */
+body.dark .titulo-deportivo-nombre {
+    color: #ffffff;
+}
+
+.titulo-nombre-texto {
+    display: inline;
+}
+
+.titulo-nombre-anio {
+    display: inline;
+    font-weight: 400;
+    margin-left: 0.35em;
+}
+
+.titulo-deportivo-narrativa {
+    font-size: 0.9375rem;
+    line-height: 1.7;
+    color: hsl(var(--foreground));
+    width: 100%;
+}
+
+.titulo-deportivo-narrativa p {
+    margin-bottom: 0.875rem;
+}
+
+/* ── Columna derecha ── */
+.titulo-deportivo-ficha-col {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    padding-left: 2.5rem;
+}
+
+.titulo-deportivo-numero {
+    font-family: var(--font-display);
+    font-size: clamp(6rem, 12vw, 9rem);
+    font-weight: 900;
+    line-height: 1;
+    letter-spacing: -0.04em;
+    color: hsl(var(--foreground));
+}
+
+body.dark .titulo-deportivo-numero {
+    color: #ffffff;
+}
+
+.titulo-deportivo-ficha {
+    background: var(--muted);
+    padding: 1.25rem 1.5rem;
+}
+
+/* Uniform 0.8125rem across all right-column text — high specificity to override reading-content */
+.titulo-deportivo-ficha .ficha-tecnica-titulo,
+.titulo-deportivo-ficha .ficha-tecnica-contenido,
+.titulo-deportivo-ficha .ficha-tecnica-contenido p,
+.titulo-deportivo-ficha .ficha-equipo-cuerpo,
+.titulo-deportivo-ficha .ficha-equipo-nombre,
+.titulo-deportivo-ficha p,
+.titulo-deportivo-ficha div {
+    font-size: 0.8125rem !important;
+    line-height: 1.6;
+    color: hsl(var(--foreground));
+}
+
+.ficha-tecnica-titulo {
+    font-family: var(--font-display);
+    font-weight: 700;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    margin: 0 0 1rem;
+}
+
+.ficha-equipo-nombre {
+    font-weight: 700;
+    letter-spacing: 0.03em;
+    text-transform: uppercase;
+    margin-bottom: 0.2rem;
+}
+
+.ficha-tecnica-contenido p {
+    margin-bottom: 0.625rem;
+}
+
+.ficha-tecnica-equipo {
+    display: flex;
+    gap: 0.625rem;
+    align-items: baseline;
+    margin-bottom: 1rem;
+}
+
+/* Result number: larger and bold, keep prominent */
+.ficha-equipo-numero {
+    font-family: var(--font-display);
+    font-weight: 900;
+    font-size: 1.75rem !important;
+    line-height: 1;
+    color: hsl(var(--foreground));
+    flex-shrink: 0;
+}
+
+body.dark .ficha-equipo-numero {
+    color: #ffffff;
+}
+
+.ficha-tecnica-separador {
+    border: none;
+    border-top: 1px solid var(--border);
+    margin: 0.75rem 0;
+}
+
+/* ── Responsive ── */
+@media (max-width: 768px) {
+    .titulo-deportivo-wrapper {
+        grid-template-columns: 1fr;
+        gap: 2rem;
+    }
+    .titulo-deportivo-main {
+        order: 1;
+        padding-right: 0;
+        border-right: none;
+        border-bottom: 1px solid hsl(var(--border));
+        padding-bottom: 2rem;
+    }
+    .titulo-deportivo-ficha-col {
+        order: 2;
+        padding-left: 0;
+    }
+    .titulo-deportivo-numero {
+        font-size: clamp(4rem, 20vw, 6rem);
+    }
+}
+
+/* Print */
+@media print {
+    .titulo-deportivo-wrapper { break-inside: avoid; }
 }

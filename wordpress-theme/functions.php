@@ -376,7 +376,29 @@ function libro_options_page_html() {
     if (!current_user_can('manage_options')) {
         return;
     }
-    
+
+    // Handle regenerate content action
+    if (
+        isset($_POST['libro_action']) &&
+        $_POST['libro_action'] === 'regenerate_content' &&
+        isset($_POST['libro_regenerate_nonce_field']) &&
+        wp_verify_nonce($_POST['libro_regenerate_nonce_field'], 'libro_regenerate_nonce')
+    ) {
+        // Delete all existing capitulos
+        $existing = get_posts(array(
+            'post_type'      => 'capitulo',
+            'posts_per_page' => -1,
+            'post_status'    => 'any',
+            'fields'         => 'ids',
+        ));
+        foreach ($existing as $post_id) {
+            wp_delete_post($post_id, true);
+        }
+        // Re-run import
+        libro_import_sample_content();
+        echo '<div class="notice notice-success"><p><strong>✅ Contenido regenerado correctamente.</strong> Se han creado ' . count($existing) . ' capítulos eliminados y reemplazados.</p></div>';
+    }
+
     if (isset($_GET['settings-updated'])) {
         add_settings_error('libro_messages', 'libro_message', 'Configuración guardada', 'updated');
     }
@@ -446,6 +468,18 @@ function libro_options_page_html() {
             <p style="margin-top: 30px;">
                 <?php submit_button('Guardar cambios', 'primary', 'submit', false); ?>
             </p>
+        </form>
+        
+        <hr>
+        
+        <h2>Regenerar contenido</h2>
+        <p>Usa este botón para <strong>borrar y regenerar todos los capítulos</strong> con el contenido más reciente del tema. Útil cuando se actualiza el tema con nuevo contenido.</p>
+        <form method="post">
+            <?php wp_nonce_field('libro_regenerate_nonce', 'libro_regenerate_nonce_field'); ?>
+            <input type="hidden" name="libro_action" value="regenerate_content">
+            <button type="submit" class="button button-secondary" onclick="return confirm('¿Seguro? Esto borrará todos los capítulos existentes y los regenerará desde cero.');">
+                🔄 Regenerar todo el contenido
+            </button>
         </form>
         
         <hr>
@@ -967,6 +1001,116 @@ function libro_shortcode_prologo($atts, $content = null) {
     return ob_get_clean();
 }
 add_shortcode('prologo', 'libro_shortcode_prologo');
+
+/**
+ * Shortcode: [titulo_deportivo]
+ * Layout 2 columnas:
+ * - Izquierda: foto trofeo, estrella SVG + nombre título + año, texto narrativo
+ * - Derecha: número grande (arriba), ficha técnica
+ *
+ * Cuando este shortcode está presente, oculta el <header> con el título de la página
+ * en single-capitulo.php (via global $libro_has_titulo_deportivo).
+ */
+function libro_shortcode_titulo_deportivo($atts, $content = null) {
+    global $libro_has_titulo_deportivo;
+    $libro_has_titulo_deportivo = true;
+
+    $atts = shortcode_atts(array(
+        'numero'  => '',
+        'nombre'  => '',
+        'anio'    => '',
+        'foto'    => '',
+    ), $atts, 'titulo_deportivo');
+
+    // Extraer ficha_tecnica y narrativa
+    $ficha     = '';
+    $narrativa = '';
+    if (preg_match('/\[ficha_tecnica\](.*?)\[\/ficha_tecnica\]/s', $content, $m)) {
+        $ficha = do_shortcode($m[1]);
+    }
+    if (preg_match('/\[narrativa\](.*?)\[\/narrativa\]/s', $content, $m)) {
+        $narrativa = do_shortcode(wpautop($m[1]));
+    }
+
+    $foto_url    = $atts['foto'] ? libro_img($atts['foto']) : get_template_directory_uri() . '/assets/images/copa-default.jpg';
+    $estrella_url = get_template_directory_uri() . '/assets/images/estrella-icon.svg';
+
+    ob_start();
+    ?>
+    <div class="titulo-deportivo-wrapper" data-reveal="up">
+
+        <!-- Columna izquierda: foto, encabezado, narrativa -->
+        <div class="titulo-deportivo-main">
+            <?php if ($foto_url) : ?>
+            <div class="titulo-deportivo-foto">
+                <img src="<?php echo esc_url($foto_url); ?>" alt="<?php echo esc_attr($atts['nombre'] . ' ' . $atts['anio']); ?>">
+            </div>
+            <?php endif; ?>
+
+            <div class="titulo-deportivo-encabezado">
+                <img src="<?php echo esc_url($estrella_url); ?>" class="titulo-deportivo-estrella" alt="★" width="32" height="32">
+                <h2 class="titulo-deportivo-nombre">
+                    <span class="titulo-nombre-texto"><?php echo esc_html($atts['nombre']); ?></span>
+                    <?php if ($atts['anio']) : ?>
+                    <span class="titulo-nombre-anio"><?php echo esc_html($atts['anio']); ?></span>
+                    <?php endif; ?>
+                </h2>
+            </div>
+
+            <?php if ($narrativa) : ?>
+            <div class="titulo-deportivo-narrativa">
+                <?php echo $narrativa; ?>
+            </div>
+            <?php endif; ?>
+        </div>
+
+        <!-- Columna derecha: número grande + ficha técnica -->
+        <div class="titulo-deportivo-ficha-col">
+            <?php if ($atts['numero']) : ?>
+            <div class="titulo-deportivo-numero"><?php echo esc_html($atts['numero']); ?></div>
+            <?php endif; ?>
+
+            <?php if ($ficha) : ?>
+            <div class="titulo-deportivo-ficha">
+                <h3 class="ficha-tecnica-titulo">FICHA TÉCNICA:</h3>
+                <div class="ficha-tecnica-contenido">
+                    <?php echo $ficha; ?>
+                </div>
+            </div>
+            <?php endif; ?>
+        </div>
+
+    </div>
+    <?php
+    return ob_get_clean();
+}
+add_shortcode('titulo_deportivo', 'libro_shortcode_titulo_deportivo');
+
+// Shortcodes internos de titulo_deportivo (devuelven contenido crudo para ser procesado por el padre)
+add_shortcode('ficha_tecnica', function($atts, $content = null) { return $content ?? ''; });
+add_shortcode('narrativa',     function($atts, $content = null) { return $content ?? ''; });
+
+/**
+ * [equipo numero="3" nombre="GUAGUAS LAS PALMAS"]Jugadores...[/equipo]
+ * Renderiza un bloque de equipo dentro de la ficha técnica
+ */
+add_shortcode('equipo', function($atts, $content = null) {
+    $atts = shortcode_atts(array(
+        'numero' => '',
+        'nombre' => '',
+    ), $atts, 'equipo');
+    ob_start();
+    ?>
+    <div class="ficha-tecnica-equipo">
+        <span class="ficha-equipo-numero"><?php echo esc_html($atts['numero']); ?></span>
+        <div>
+            <div class="ficha-equipo-nombre"><?php echo esc_html($atts['nombre']); ?></div>
+            <div class="ficha-equipo-cuerpo"><?php echo wp_kses_post($content); ?></div>
+        </div>
+    </div>
+    <?php
+    return ob_get_clean();
+});
 
 /**
  * Redirigir capítulos padre al primer subcapítulo
