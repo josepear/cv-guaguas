@@ -1985,8 +1985,44 @@ export const chapterContent: Record<string, React.ReactNode> = {
   // ═══════════════════════════════════════════════
   // NEW: Títulos individuales (Cap 11 children)
   // ═══════════════════════════════════════════════
-  "cap12-copa-1989": (<p>Contenido del capítulo próximamente.</p>),
-  "cap12-liga-1990": (<p>Contenido del capítulo próximamente.</p>),
+  "cap12-copa-1989": (
+    <>
+      <TituloDeportivo numero={1} nombre="COPA DEL REY" anio="1989">
+        <FichaTecnica
+          parciales="15-10, 11-15, 15-5 y 15-8"
+          arbitros="Jiménez Callejón (Almería) y Antonio Morales (Gijón). Amonestaron a Camarero por los locales y a Martín y Saxton por los visitantes."
+          incidencias="Más de 5.000 espectadores en el Centro Insular de Deportes con pleno de autoridades políticas y deportivas en el palco y encabezadas por el presidente del Gobierno de Canarias, Lorenzo Olarte, que fue el encargado de entregar el trofeo de campeón a Paco Sánchez Jover como capitán del Guaguas. Carmelo Artiles, presidente del Cabildo de Gran Canaria, José Vicente de León, alcalde de Las Palmas de Gran Canaria, y Miguel Ángel Quintana, presidente de la Federación Española de Voleibol, fueron otras personalidades ilustres presentes."
+        >
+          <Equipo nombre="GUAGUAS LAS PALMAS" sets={3}>Chava, Willock, Paco Sánchez Jover, Miralles, Venancio Costa y Camarero. También jugó Juanma Martín. <strong>Entrenador:</strong> Sergio Hernández.</Equipo>
+          <Equipo nombre="C. V. PALMA" sets={1}>Fernández, Saxton, Jiménez, Vicedo, Martín Lobo y Ernesto. También jugaron Ortiz, Luiso y Calvo. <strong>Entrenador:</strong> Jaime Fernández Barros.</Equipo>
+        </FichaTecnica>
+        <Narrativa>
+          <p>La Copa del Rey conquistada el 9 de abril de 1989 inauguró el palmarés del Guaguas y, por extensión, el del voleibol canario. Una importancia histórica redoblada y de la que fueron testigos directos los más de 5.000 espectadores que abarrotaron hasta la bandera el Centro Insular de Deportes inaugurado meses antes, además de todos los que lo siguieron en directo por la segunda cadena de Televisión Española. El rival, el Palma, no traía buenos recuerdos porque, apenas una semana antes, le había arrebatado la Liga a los jugadores entonces dirigidos por Sergio Hernández. El deseo de revancha no escondía, sin embargo, el favoritismo que colgaba sobre el conjunto balear pese a su condición de visitante.</p>
+          <p>El partido respondió a las expectativas ya que aunó emoción y un altísimo nivel por parte de los contendientes. En las crónicas se destaca el papel coral de todo el Guaguas, motivadísimo para no fallar ante su afición, aunque dos fueron los nombres propios que emergieron sobre el resto, los integrantes de la pareja extranjera, el mexicano Chava González, que dio el punto del triunfo final con un saque desde el fondo, y el canadiense Brad Willock, magistral en la dirección que ejerció sobre el resto.</p>
+          <p>La invasión espontánea de la pista y la felicidad desatada, que obligó a los jugadores a salir de los vestuarios a saludar ante la insistencia de los incondicionales, condimentaron un día grande, el primero de todos los que quedaban por venir al abrir el ciclo exitoso.</p>
+        </Narrativa>
+      </TituloDeportivo>
+    </>
+  ),
+  "cap12-liga-1990": (
+    <>
+      <TituloDeportivo numero={2} nombre="LIGA" anio="1989-90">
+        <FichaTecnica
+          parciales="15-4, 15-5 y 15-9"
+          arbitros="Víctor Viña y Javier Aller, del comité asturiano. Sin amonestaciones."
+          incidencias="Más de 6.000 espectadores en el Centro Insular de Deportes, lo que constituyó un récord histórico de asistencia. Lorenzo Olarte, presidente del Gobierno de Canarias, entregó la copa de campeones a Paco Sánchez Jover."
+        >
+          <Equipo nombre="CONSTRUCTORA ATLÁNTICA CANARIA" sets={3}>Paco Sánchez Jover, Venancio Costa, Antonio Miralles, Ireneusz Klos, Sergio Camarero y Chava González. También jugaron Juanma Martín, Jesús Sánchez Jover, David Rodríguez, Jorge Ramón y Óscar Campos. <strong>Entrenador:</strong> Paco Sánchez Jover.</Equipo>
+          <Equipo nombre="BOMBEROS ONCE DE BARCELONA" sets={0}>Javier Rodríguez, Germán López, Antonio Alemany, Cosme Prenafeta, Rafa Pascual y Sergio Arregui. También jugó Javier Bosma. <strong>Entrenador:</strong> Vladimir Bogdevski.</Equipo>
+        </FichaTecnica>
+        <Narrativa>
+          <p>Vino a lo grande el segundo trofeo que ingresó en las vitrinas del Guaguas, en 1990 denominada Constructora Atlántica Canaria. Nada más y nada menos que la Liga, un escenario que parecía inalcanzable poco antes y por las diferencias de presupuesto y potencial que se daban con los adversarios por el cetro nacional. Fue en el cuarto partido del play-off, con una exhibición de suficiencia demoledora frente al Bomberos de Barcelona, y que encumbró a un equipo con la omnipresente figura de Paco Sánchez Jover, que a mitad de campaña se hizo con la dirección técnica del equipo y lo condujo a la gloria cumpliendo, además, con su rol de vital importancia dentro del funcionamiento colectivo.</p>
+          <p>El encuentro fue un monólogo amarillo y ratificó los buenos augurios de una plantilla conjurada y que nunca dudó en que culminaría con alegría una campaña en la que las exigencias ya eran totales y en virtud de un bloque reforzado con figuras de talla mundial como los polacos Golec o Klos. Una hora exacta duró la confrontación decisiva en la que Sánchez Jover tuvo un gesto inolvidable con la grada cuando quiso hacer coincidir en la cancha a cuatro grancanarios (David Rodríguez, Óscar Campos, Juanma Martín y Jorge Ramón) en el tramo final del choque y estando la fiesta ya montada a la luz de un marcador inapelable.</p>
+          <p>El Centro Insular entró en éxtasis en el momento en el que se le brindó la copa soñada.</p>
+        </Narrativa>
+      </TituloDeportivo>
+    </>
+  ),
   "cap12-liga-1991": (<p>Contenido del capítulo próximamente.</p>),
   "cap12-copa-1991": (<p>Contenido del capítulo próximamente.</p>),
   "cap12-liga-1992": (<p>Contenido del capítulo próximamente.</p>),
