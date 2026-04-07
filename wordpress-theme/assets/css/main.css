@@ -1315,19 +1315,65 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 /* ═══════════════════════════════════════════════
-   TÍTULO DEPORTIVO — Layout 2 columnas
+   TÍTULO DEPORTIVO — Layout 2 bloques
    ═══════════════════════════════════════════════ */
 
 .titulo-deportivo-wrapper {
-    display: grid;
-    grid-template-columns: 60fr 40fr;
-    gap: 0;
-    align-items: stretch;
     margin: 0 0 3rem;
     padding: 2rem 0;
 }
 
-/* ── Columna izquierda ── */
+/* ── Bloque superior: foto + número ── */
+.titulo-deportivo-top {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 0;
+    align-items: center;
+    margin-bottom: 2rem;
+}
+
+.titulo-deportivo-foto {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.titulo-deportivo-foto img {
+    max-width: 280px;
+    width: 100%;
+    height: auto;
+    object-fit: contain;
+    display: block;
+}
+
+.titulo-deportivo-numero-col {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.titulo-deportivo-numero {
+    font-family: var(--font-display);
+    font-size: 256px !important;
+    font-weight: 600;
+    line-height: 1;
+    letter-spacing: -0.04em;
+    color: hsl(var(--foreground));
+    text-align: center;
+}
+
+body.dark .titulo-deportivo-numero {
+    color: #ffffff;
+}
+
+/* ── Bloque inferior: encabezado+narrativa + ficha ── */
+.titulo-deportivo-bottom {
+    display: grid;
+    grid-template-columns: 60fr 40fr;
+    gap: 0;
+    align-items: stretch;
+}
+
 .titulo-deportivo-main {
     display: flex;
     flex-direction: column;
@@ -1335,19 +1381,6 @@ h1, h2, h3, h4, h5, h6 {
     gap: 1.25rem;
     padding-right: 2.5rem;
     border-right: 1px solid hsl(var(--border));
-}
-
-.titulo-deportivo-foto {
-    width: 100%;
-    max-width: 280px;
-    margin: 0 auto;
-}
-
-.titulo-deportivo-foto img {
-    width: 100%;
-    height: auto;
-    object-fit: contain;
-    display: block;
 }
 
 .titulo-deportivo-encabezado {
@@ -1358,23 +1391,13 @@ h1, h2, h3, h4, h5, h6 {
     text-align: center;
 }
 
-/* Estrella: usa foreground color (azul en light, blanco en dark) via CSS filter */
 .titulo-deportivo-estrella {
     display: block;
     width: 32px;
     height: 32px;
-}
-
-/* Light mode: tint star with foreground color using CSS */
-.titulo-deportivo-estrella {
-    /* foreground in light is dark navy — replicate via filter */
-    filter: brightness(0) saturate(100%);
-    /* This makes it black; we then colorize it to match --foreground */
-    /* Since foreground is a dark navy we use: */
     filter: brightness(0) saturate(100%) invert(13%) sepia(30%) saturate(800%) hue-rotate(185deg) brightness(90%) contrast(95%);
 }
 
-/* Dark mode: star should be white */
 body.dark .titulo-deportivo-estrella {
     filter: brightness(0) invert(1);
 }
@@ -1390,7 +1413,6 @@ body.dark .titulo-deportivo-estrella {
     color: hsl(var(--foreground));
 }
 
-/* Dark mode: title white */
 body.dark .titulo-deportivo-nombre {
     color: #ffffff;
 }
@@ -1416,7 +1438,7 @@ body.dark .titulo-deportivo-nombre {
     margin-bottom: 0.875rem;
 }
 
-/* ── Columna derecha ── */
+/* ── Columna derecha ficha ── */
 .titulo-deportivo-ficha-col {
     display: flex;
     flex-direction: column;
@@ -1424,25 +1446,12 @@ body.dark .titulo-deportivo-nombre {
     padding-left: 2.5rem;
 }
 
-.titulo-deportivo-numero {
-    font-family: var(--font-display);
-    font-size: clamp(6rem, 12vw, 9rem);
-    font-weight: 900;
-    line-height: 1;
-    letter-spacing: -0.04em;
-    color: hsl(var(--foreground));
-}
-
-body.dark .titulo-deportivo-numero {
-    color: #ffffff;
-}
-
 .titulo-deportivo-ficha {
     background: var(--muted);
     padding: 1.25rem 1.5rem;
 }
 
-/* Uniform 0.8125rem across all right-column text — high specificity to override reading-content */
+/* Uniform font size for all ficha content */
 .titulo-deportivo-ficha .ficha-tecnica-titulo,
 .titulo-deportivo-ficha .ficha-tecnica-contenido,
 .titulo-deportivo-ficha .ficha-tecnica-contenido p,
@@ -1481,7 +1490,6 @@ body.dark .titulo-deportivo-numero {
     margin-bottom: 1rem;
 }
 
-/* Result number: larger and bold, keep prominent */
 .ficha-equipo-numero {
     font-family: var(--font-display);
     font-weight: 900;
@@ -1497,33 +1505,140 @@ body.dark .ficha-equipo-numero {
 
 .ficha-tecnica-separador {
     border: none;
-    border-top: 1px solid var(--border);
+    border-top: 1px solid hsl(var(--border));
     margin: 0.75rem 0;
 }
 
 /* ── Responsive ── */
 @media (max-width: 768px) {
-    .titulo-deportivo-wrapper {
+    .titulo-deportivo-top {
+        grid-template-columns: 1fr;
+        gap: 1.5rem;
+    }
+    .titulo-deportivo-numero {
+        font-size: 128px !important;
+        text-align: center;
+    }
+    .titulo-deportivo-bottom {
         grid-template-columns: 1fr;
         gap: 2rem;
     }
     .titulo-deportivo-main {
-        order: 1;
         padding-right: 0;
         border-right: none;
         border-bottom: 1px solid hsl(var(--border));
         padding-bottom: 2rem;
     }
     .titulo-deportivo-ficha-col {
-        order: 2;
         padding-left: 0;
-    }
-    .titulo-deportivo-numero {
-        font-size: clamp(4rem, 20vw, 6rem);
     }
 }
 
 /* Print */
 @media print {
     .titulo-deportivo-wrapper { break-inside: avoid; }
+}
+
+/* ═══════════════════════════════════════════════
+   DOS COLUMNAS
+   ═══════════════════════════════════════════════ */
+
+.dos-columnas {
+    display: grid;
+    grid-template-columns: 40fr 60fr;
+    gap: 0;
+    margin: 1.5rem 0;
+    align-items: start;
+}
+
+.dos-columnas-col {
+    display: flex;
+    flex-direction: column;
+    gap: 0;
+    padding: 0 2.5rem;
+}
+
+.dos-columnas-col:first-child {
+    padding-left: 0;
+    border-right: 1px solid hsl(var(--border));
+}
+
+.dos-columnas-col:last-child {
+    padding-right: 0;
+}
+
+.dos-columnas-col p {
+    margin-bottom: 1rem;
+}
+
+.dos-columnas-col p:last-child {
+    margin-bottom: 0;
+}
+
+@media (max-width: 768px) {
+    .dos-columnas {
+        grid-template-columns: 1fr;
+        gap: 0;
+    }
+    .dos-columnas-col {
+        padding: 0;
+        border-right: none !important;
+        border-bottom: 1px solid hsl(var(--border));
+        padding-bottom: 2rem;
+        margin-bottom: 2rem;
+    }
+    .dos-columnas-col:last-child {
+        border-bottom: none;
+        padding-bottom: 0;
+        margin-bottom: 0;
+    }
+}
+
+/* ═══════════════════════════════════════════════
+   FICHA DEBUT
+   ═══════════════════════════════════════════════ */
+
+.ficha-debut-wrapper {
+    margin: 2.5rem 0;
+    max-width: 420px;
+}
+
+.ficha-debut-encabezado {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.5rem;
+    margin-bottom: 1.25rem;
+    text-align: center;
+}
+
+.ficha-debut-estrella {
+    display: block;
+    width: 40px;
+    height: 40px;
+    filter: brightness(0) saturate(100%) invert(13%) sepia(30%) saturate(800%) hue-rotate(185deg) brightness(90%) contrast(95%);
+}
+
+body.dark .ficha-debut-estrella {
+    filter: brightness(0) invert(1);
+}
+
+.ficha-debut-titulo {
+    font-family: var(--font-display);
+    font-weight: 900;
+    font-size: clamp(1.5rem, 3vw, 2rem);
+    line-height: 1.1;
+    letter-spacing: -0.02em;
+    text-transform: uppercase;
+    color: hsl(var(--foreground));
+    margin: 0;
+}
+
+body.dark .ficha-debut-titulo {
+    color: #ffffff;
+}
+
+.ficha-debut-wrapper .titulo-deportivo-ficha {
+    background: var(--muted);
+    padding: 1.25rem 1.5rem;
 }

@@ -1039,54 +1039,104 @@ function libro_shortcode_titulo_deportivo($atts, $content = null) {
     ?>
     <div class="titulo-deportivo-wrapper" data-reveal="up">
 
-        <!-- Columna izquierda: foto, encabezado, narrativa -->
-        <div class="titulo-deportivo-main">
-            <?php if ($foto_url) : ?>
+        <!-- Bloque superior: foto + número -->
+        <div class="titulo-deportivo-top">
             <div class="titulo-deportivo-foto">
+                <?php if ($foto_url) : ?>
                 <img src="<?php echo esc_url($foto_url); ?>" alt="<?php echo esc_attr($atts['nombre'] . ' ' . $atts['anio']); ?>">
+                <?php endif; ?>
             </div>
-            <?php endif; ?>
-
-            <div class="titulo-deportivo-encabezado">
-                <img src="<?php echo esc_url($estrella_url); ?>" class="titulo-deportivo-estrella" alt="★" width="32" height="32">
-                <h2 class="titulo-deportivo-nombre">
-                    <span class="titulo-nombre-texto"><?php echo esc_html($atts['nombre']); ?></span>
-                    <?php if ($atts['anio']) : ?>
-                    <span class="titulo-nombre-anio"><?php echo esc_html($atts['anio']); ?></span>
-                    <?php endif; ?>
-                </h2>
+            <div class="titulo-deportivo-numero-col">
+                <?php if ($atts['numero']) : ?>
+                <div class="titulo-deportivo-numero"><?php echo esc_html($atts['numero']); ?></div>
+                <?php endif; ?>
             </div>
-
-            <?php if ($narrativa) : ?>
-            <div class="titulo-deportivo-narrativa">
-                <?php echo $narrativa; ?>
-            </div>
-            <?php endif; ?>
         </div>
 
-        <!-- Columna derecha: número grande + ficha técnica -->
-        <div class="titulo-deportivo-ficha-col">
-            <?php if ($atts['numero']) : ?>
-            <div class="titulo-deportivo-numero"><?php echo esc_html($atts['numero']); ?></div>
-            <?php endif; ?>
+        <!-- Bloque inferior: encabezado+narrativa + ficha técnica -->
+        <div class="titulo-deportivo-bottom">
 
-            <?php if ($ficha) : ?>
-            <div class="titulo-deportivo-ficha">
-                <h3 class="ficha-tecnica-titulo">FICHA TÉCNICA:</h3>
-                <div class="ficha-tecnica-contenido">
-                    <?php echo $ficha; ?>
+            <div class="titulo-deportivo-main">
+                <div class="titulo-deportivo-encabezado">
+                    <img src="<?php echo esc_url($estrella_url); ?>" class="titulo-deportivo-estrella" alt="★" width="32" height="32">
+                    <h2 class="titulo-deportivo-nombre">
+                        <span class="titulo-nombre-texto"><?php echo esc_html($atts['nombre']); ?></span>
+                        <?php if ($atts['anio']) : ?>
+                        <span class="titulo-nombre-anio"><?php echo esc_html($atts['anio']); ?></span>
+                        <?php endif; ?>
+                    </h2>
                 </div>
-            </div>
-            <?php endif; ?>
-        </div>
 
-    </div>
+                <?php if ($narrativa) : ?>
+                <div class="titulo-deportivo-narrativa">
+                    <?php echo $narrativa; ?>
+                </div>
+                <?php endif; ?>
+            </div>
+
+            <div class="titulo-deportivo-ficha-col">
+                <?php if ($ficha) : ?>
+                <div class="titulo-deportivo-ficha">
+                    <h3 class="ficha-tecnica-titulo">FICHA TÉCNICA:</h3>
+                    <div class="ficha-tecnica-contenido">
+                        <?php echo $ficha; ?>
+                    </div>
+                </div>
+                <?php endif; ?>
+            </div>
+
+        </div><!-- fin titulo-deportivo-bottom -->
+
+    </div><!-- fin titulo-deportivo-wrapper -->
     <?php
     return ob_get_clean();
 }
 add_shortcode('titulo_deportivo', 'libro_shortcode_titulo_deportivo');
 
-// Shortcodes internos de titulo_deportivo (devuelven contenido crudo para ser procesado por el padre)
+/**
+ * Shortcode [dos_columnas] — divide contenido en dos columnas equilibradas
+ * Usa ||| como separador entre columna izquierda y derecha
+ * En mobile colapsa a una sola columna
+ */
+function libro_shortcode_dos_columnas($atts, $content = null) {
+    // Split on ||| delimiter
+    $parts = explode('|||', $content, 2);
+    $left  = isset($parts[0]) ? do_shortcode(trim($parts[0])) : '';
+    $right = isset($parts[1]) ? do_shortcode(trim($parts[1])) : '';
+    return '<div class="dos-columnas"><div class="dos-columnas-col">' . $left . '</div><div class="dos-columnas-col">' . $right . '</div></div>';
+}
+add_shortcode('dos_columnas', 'libro_shortcode_dos_columnas');
+
+/**
+ * Shortcode [ficha_debut titulo=""] — bloque de ficha de debut con estrella y título
+ * Reutiliza el mismo CSS de ficha_tecnica del titulo_deportivo
+ */
+function libro_shortcode_ficha_debut($atts, $content = null) {
+    $atts = shortcode_atts(array(
+        'titulo' => 'LA FICHA DEL DEBUT',
+    ), $atts, 'ficha_debut');
+
+    $estrella_url = get_template_directory_uri() . '/assets/images/estrella-icon.svg';
+
+    ob_start();
+    ?>
+    <div class="ficha-debut-wrapper" data-reveal="up">
+        <div class="ficha-debut-encabezado">
+            <img src="<?php echo esc_url($estrella_url); ?>" class="ficha-debut-estrella" alt="★" width="40" height="40">
+            <h2 class="ficha-debut-titulo"><?php echo esc_html($atts['titulo']); ?></h2>
+        </div>
+        <div class="titulo-deportivo-ficha">
+            <div class="ficha-tecnica-contenido">
+                <?php echo do_shortcode($content); ?>
+            </div>
+        </div>
+    </div>
+    <?php
+    return ob_get_clean();
+}
+add_shortcode('ficha_debut', 'libro_shortcode_ficha_debut');
+
+
 add_shortcode('ficha_tecnica', function($atts, $content = null) { return $content ?? ''; });
 add_shortcode('narrativa',     function($atts, $content = null) { return $content ?? ''; });
 
