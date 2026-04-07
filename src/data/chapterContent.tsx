@@ -6,6 +6,7 @@ import EditorialQuote from "@/components/EditorialQuote";
 import NewspaperQuote from "@/components/NewspaperQuote";
 import ArticleBlock from "@/components/ArticleBlock";
 import { Timeline, TimelineEvent } from "@/components/TimelineEvent";
+import { TituloDeportivo, FichaTecnica, Equipo, Narrativa } from "@/components/TituloDeportivo";
 import ContentImage from "@/components/ContentImage";
 
 // Content images
