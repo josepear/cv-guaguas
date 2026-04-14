@@ -602,6 +602,45 @@ export const chaptersData: ChapterItemWithHero[] = [
         { text: "QUE VIENE", color: "#FFFFFF", highlightColor: "transparent" },
       ],
     },
+    children: [
+      {
+        id: "cap16-directiva", slug: "cap16-directiva", title: "La directiva",
+        hero: {
+          backgroundImage: heroEstatutos,
+          backgroundOverlay: "rgba(0,0,0,0.15)",
+          customIconSrc: estrellaIcon,
+          customIconColor: "hsl(45 100% 50%)",
+          iconWidth: 40, iconHeight: 40,
+          alignment: "center", verticalPosition: "center",
+          height: "500px",
+          borderColor: "hsl(45 100% 50%)",
+          titleLines: [
+            { text: "LA DIRECTIVA", highlightColor: "hsl(220 50% 12%)", color: "hsl(45 100% 50%)", fontWeight: "black" },
+          ],
+        },
+      },
+      {
+        id: "cap16-futuro", slug: "cap16-futuro", title: "El futuro que viene",
+        hero: {
+          backgroundImage: heroEstatutos,
+          backgroundOverlay: "rgba(0,0,0,0.15)",
+          customIconSrc: estrellaIcon,
+          customIconColor: "hsl(45 100% 50%)",
+          iconWidth: 40, iconHeight: 40,
+          alignment: "center", verticalPosition: "center",
+          height: "500px",
+          borderColor: "hsl(45 100% 50%)",
+          titleLines: [
+            { text: "EL FUTURO", highlightColor: "hsl(220 50% 12%)", color: "hsl(45 100% 50%)", fontWeight: "black" },
+            { text: "QUE VIENE", highlightColor: "hsl(220 50% 12%)", color: "hsl(45 100% 50%)", fontWeight: "black" },
+          ],
+        },
+      },
+      { id: "cap16-ariel-ortega", slug: "cap16-ariel-ortega", title: "Ariel Ortega" },
+      { id: "cap16-laura-sanchez", slug: "cap16-laura-sanchez", title: "Laura Sánchez" },
+      { id: "cap16-lucia-ramon", slug: "cap16-lucia-ramon", title: "Lucía Ramón" },
+      { id: "cap16-david-ruiz", slug: "cap16-david-ruiz", title: "David Ruiz" },
+    ],
   },
   { 
     id: "capitulo-17", 
