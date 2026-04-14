@@ -1986,6 +1986,9 @@ export const chapterContent: Record<string, React.ReactNode> = {
   // ═══════════════════════════════════════════════
   // NEW: Títulos individuales (Cap 11 children)
   // ═══════════════════════════════════════════════
+  // ═══════════════════════════════════════════════
+  // Títulos individuales (Cap 11 children) + Joselu Sánchez
+  // ═══════════════════════════════════════════════
   "cap12-copa-1989": (
     <>
       <TituloDeportivo numero={1} nombre="COPA DEL REY" anio="1989">
@@ -1998,8 +2001,8 @@ export const chapterContent: Record<string, React.ReactNode> = {
           <Equipo nombre="C. V. PALMA" sets={1}>Fernández, Saxton, Jiménez, Vicedo, Martín Lobo y Ernesto. También jugaron Ortiz, Luiso y Calvo. <strong>Entrenador:</strong> Jaime Fernández Barros.</Equipo>
         </FichaTecnica>
         <Narrativa>
-          <p>La Copa del Rey conquistada el 9 de abril de 1989 inauguró el palmarés del Guaguas y, por extensión, el del voleibol canario. Una importancia histórica redoblada y de la que fueron testigos directos los más de 5.000 espectadores que abarrotaron hasta la bandera el Centro Insular de Deportes inaugurado meses antes, además de todos los que lo siguieron en directo por la segunda cadena de Televisión Española. El rival, el Palma, no traía buenos recuerdos porque, apenas una semana antes, le había arrebatado la Liga a los jugadores entonces dirigidos por Sergio Hernández. El deseo de revancha no escondía, sin embargo, el favoritismo que colgaba sobre el conjunto balear pese a su condición de visitante.</p>
-          <p>El partido respondió a las expectativas ya que aunó emoción y un altísimo nivel por parte de los contendientes. En las crónicas se destaca el papel coral de todo el Guaguas, motivadísimo para no fallar ante su afición, aunque dos fueron los nombres propios que emergieron sobre el resto, los integrantes de la pareja extranjera, el mexicano Chava González, que dio el punto del triunfo final con un saque desde el fondo, y el canadiense Brad Willock, magistral en la dirección que ejerció sobre el resto.</p>
+          <p>La Copa del Rey conquistada el 9 de abril de 1989 inauguró el palmarés del Guaguas y, por extensión, el del voleibol canario. Una importancia histórica redoblada y de la que fueron testigos directos los más de 5.000 espectadores que abarrotaron hasta la bandera el Centro Insular de Deportes inaugurado meses antes, además de todos los que lo siguieron en directo por la segunda cadena de Televisión Española. El rival, el Palma, no traía buenos recuerdos porque, apenas una semana antes, le había arrebatado la Liga a los jugadores entonces dirigidos por Sergio Hernández.</p>
+          <p>El deseo de revancha no escondía, sin embargo, el favoritismo que colgaba sobre el conjunto balear pese a su condición de visitante. El partido respondió a las expectativas ya que aunó emoción y un altísimo nivel por parte de los contendientes. En las crónicas se destaca el papel coral de todo el Guaguas, motivadísimo para no fallar ante su afición, aunque dos fueron los nombres propios que emergieron sobre el resto, los integrantes de la pareja extranjera, el mexicano Chava González, que dio el punto del triunfo final con un saque desde el fondo, y el canadiense Brad Willock, magistral en la dirección que ejerció sobre el resto.</p>
           <p>La invasión espontánea de la pista y la felicidad desatada, que obligó a los jugadores a salir de los vestuarios a saludar ante la insistencia de los incondicionales, condimentaron un día grande, el primero de todos los que quedaban por venir al abrir el ciclo exitoso.</p>
         </Narrativa>
       </TituloDeportivo>
@@ -2024,28 +2027,431 @@ export const chapterContent: Record<string, React.ReactNode> = {
       </TituloDeportivo>
     </>
   ),
-  "cap12-liga-1991": (<p>Contenido del capítulo próximamente.</p>),
-  "cap12-copa-1991": (<p>Contenido del capítulo próximamente.</p>),
-  "cap12-liga-1992": (<p>Contenido del capítulo próximamente.</p>),
-  "cap12-copa-1992": (<p>Contenido del capítulo próximamente.</p>),
-  "cap12-liga-1993": (<p>Contenido del capítulo próximamente.</p>),
-  "cap12-copa-1993": (<p>Contenido del capítulo próximamente.</p>),
-  "cap12-liga-1994": (<p>Contenido del capítulo próximamente.</p>),
-  "cap12-copa-1996": (<p>Contenido del capítulo próximamente.</p>),
-  "cap12-supercopa-1994": (<p>Contenido del capítulo próximamente.</p>),
-  "cap12-copa-1997": (<p>Contenido del capítulo próximamente.</p>),
-  "cap12-copa-2021": (<p>Contenido del capítulo próximamente.</p>),
-  "cap12-liga-2021": (<p>Contenido del capítulo próximamente.</p>),
-  "cap12-supercopa-2021": (<p>Contenido del capítulo próximamente.</p>),
-  "cap12-liga-2023": (<p>Contenido del capítulo próximamente.</p>),
-  "cap12-copa-iberica-2023": (<p>Contenido del capítulo próximamente.</p>),
-  "cap12-supercopa-2023": (<p>Contenido del capítulo próximamente.</p>),
-  "cap12-copa-2024": (<p>Contenido del capítulo próximamente.</p>),
-  "cap12-liga-2024": (<p>Contenido del capítulo próximamente.</p>),
-  "cap12-supercopa-2024": (<p>Contenido del capítulo próximamente.</p>),
-  "cap12-copa-2025": (<p>Contenido del capítulo próximamente.</p>),
-  "cap12-liga-2025": (<p>Contenido del capítulo próximamente.</p>),
-  "cap12-supercopa-2025": (<p>Contenido del capítulo próximamente.</p>),
+  "cap12-liga-1991": (
+    <>
+      <TituloDeportivo numero={3} nombre="LIGA" anio="1990-91">
+        <FichaTecnica
+          parciales="15-8, 15-3 y 15-3"
+          arbitros="Alfonso González y Alfonso Zuazua (comité asturiano). Amonestados los entrenadores de ambos equipos."
+          incidencias="Lleno total en el Centro Insular de Deportes, con casi 6.000 espectadores. Entre las autoridades destacó la asistencia del presidente y consejero de Deportes del Cabildo, Carmelo Artiles, que entregó la copa, y José Antonio Ruiz Caballero, el alcalde y concejal de Deportes del ayuntamiento capitalino, Emilio Mayoral y Sebastián Franquis, y el delegado del Gobierno en Canarias, Anastasio Travieso."
+        >
+          <Equipo nombre="CLUB VOLEIBOL GRAN CANARIA" sets={3}>Waclaw Golec, Sergio Camarero, Wlodzimierz Nalazek, Paco Sánchez Jover, Ireneusz Klos y Venancio Costa. También jugaron Juanma Martín y Antonio Miralles. <strong>Entrenador:</strong> Enrique Edelstein.</Equipo>
+          <Equipo nombre="ORISBA PALMA" sets={0}>Benjamín Vicedo, Pompiliu Dascalu, Ramón Martín Lobo, Ernesto Rodríguez, Rafa Pascual y Bradley Willock. También jugaron Sixto Jiménez, Vladimir Shkurikin y Guillermo Calvo. <strong>Entrenador:</strong> Corneliu Oros.</Equipo>
+        </FichaTecnica>
+        <Narrativa>
+          <p>Revalidar el reinado nacional con un partido para el recuerdo, sacando literalmente de la pista al Palma, que se presentaba como el claro candidato, luego de haberle ganado en los tres precedentes inmediatos y disponer de un presupuesto que doblaba al de la entidad de Juan Ruiz, fue una gesta que, directamente, elevó a la excelencia al Gran Canaria, en opinión unánime protagonista de una exhibición acaso irrepetible. Los jugadores dirigidos por Edelstein sentenciaron la final en el tercer encuentro y haciendo valer el factor cancha, un Centro Insular de nuevo convertido en una caldera de emociones y que catapultó a sus ídolos.</p>
+          <p>El partido no tuvo más historia que la que quiso el campeón, que no dio opción alguna al adversario y, por momentos, tal y como reflejan los parciales, bailó a un Palma desbordado y sin recursos ante el recital del anfitrión. Imposible destacar algún nombre porque el recital colectivo rozó la perfección, aunque la conexión que orquestó Camarero con las gradas, todo nervio y corazón el del emblema de la casa, fue uno de los factores determinantes en la espectacular versión de cada uno de sus compañeros, quienes demostraron de principio a fin que la hegemonía isleña no había hecho más que comenzar a lomos de un equipo de leyenda y que estaba tirando la puerta abajo para delirio de una isla entera.</p>
+        </Narrativa>
+      </TituloDeportivo>
+    </>
+  ),
+  "cap12-copa-1991": (
+    <>
+      <TituloDeportivo numero={4} nombre="COPA DEL REY" anio="1991">
+        <FichaTecnica
+          parciales="15-8, 15-8 y 15-10"
+          arbitros="Antonio Morales (Gijón) y González Alonso (Vigo). Amonestaron a los locales Paco Sánchez Jover y Venancio Costa y al visitante Pero Stanic."
+          incidencias="4.500 espectadores en el Centro Insular."
+        >
+          <Equipo nombre="CLUB VOLEIBOL GRAN CANARIA" sets={3}>Waclaw Golec, Sergio Camarero, Wlodzimierz Nalazek, Paco Sánchez Jover, Ireneusz Klos y Venancio Costa. También jugaron Juanma Martín y Antonio Miralles. <strong>Entrenador:</strong> Enrique Edelstein.</Equipo>
+          <Equipo nombre="CONSTRUCCIONES ALCALÁ DE TENERIFE" sets={0}>Héctor López, Paco Hervás, Sead Omeragic, Sandeep Sharma, Pero Stanic y Juan Carlos Robles. También jugaron Toño Jiménez y Pedro Bonache. <strong>Entrenador:</strong> Paco Hervás.</Equipo>
+        </FichaTecnica>
+        <Narrativa>
+          <p>La fiesta no paró en el Gran Canaria, que poco después de haberse hecho con el título de Liga añadía un nivel más en su crecimiento imparable con la consecución de una Copa que suponía su primer doblete de la historia. En realidad nadie dudaba de que, lanzado e imparable por su exhibición en el torneo de la regularidad, los Klos, Sánchez Jover y compañía iban a seguir acaparando todos los honores, como así fue. El aliciente venía por tratarse de un derbi frente al Construcciones Alcalá Cisneros de Tenerife y en cuyas filas militaba el hindú Sandeep Sharma, un jugador muy querido en el club y que con el tiempo regresaría a la disciplina grancanaria.</p>
+          <p>De nuevo con un Centro Insular engalanado para la ocasión y ya convertido en talismán, la hegemonía de Canarias se ratificó por la vía rápida, sin capacidad de respuesta del adversario y con Klos llevando el delirio a los aficionados con un saque chino que supuso el punto de partido. Antes, el internacional polaco, junto a sus compatriotas Nalazek y Golec, desarboló por completo a un Cisneros siempre por debajo del flamante ya bicampeón de Liga y de Copa, insaciable a la hora de ampliar sus vitrinas y cuyo idilio con la grada se fortificaba a base de gestas y partidos que entrarían en la hemeroteca por su resonancia única y valor especial.</p>
+        </Narrativa>
+      </TituloDeportivo>
+    </>
+  ),
+  "cap12-liga-1992": (
+    <>
+      <TituloDeportivo numero={5} nombre="LIGA" anio="1991-92">
+        <FichaTecnica
+          parciales="14-16, 15-11, 15-8 y 15-7"
+          arbitros="Francisco Manuel Fraile y José Fernández (comité andaluz). Amonestaron a los técnicos de ambos equipos, al local Juanma Martín y al visitante Genido da Silva."
+          incidencias="El Centro Insular de Deportes registró la mayor entrada de la temporada, unos 5.000 espectadores, en el último partido del play-off final al título de la Liga de la División de Honor masculina de voleibol. El presidente del Cabildo Insular de Gran Canaria, Pedro Lezcano, entregó al capitán Juanma Martín la copa de campeón de Liga ACEVOL."
+        >
+          <Equipo nombre="CALVO SOTELO GRAN CANARIA" sets={3}>Sergio Camarero, Paco Sánchez Jover, Waclaw Golec, Antonio Miralles, Lars Nilsson y Juanma Martín. También jugaron Jorge Ramón, Javi Dios, Sandeep Sharma y Emilio Agustí. <strong>Entrenador:</strong> Enrique Edelstein.</Equipo>
+          <Equipo nombre="ANDORRA" sets={1}>Adrián Garrido, Genido da Silva, Pascual Saurín, Angel Ortiz, Antonio Alemany y Leonardo Wiernes. También jugaron Javier Bosma, Cosme Prenafeta y Sergio Arregui. <strong>Entrenador:</strong> Luis Hillaire.</Equipo>
+        </FichaTecnica>
+        <Narrativa>
+          <p>Tercer título consecutivo de Liga, que se dice pronto y que venía a ampliar la marcha triunfal de un Calvo Sotelo ya en la cima y convertido en el enemigo a batir por todos. Esta vez le tocó al Andorra doblar la rodilla en el que era el último partido del play-off y que requirió la capacidad de reacción de los jugadores de Edelstein, por debajo tras ceder el primer set y artífices de una remontada que tuvo justa recompensa. En paralelismo con los anteriores, este campeonato se fraguó en la interacción mágica con un Centro Insular de nuevo escenario de una tarde llena de emociones y con el desenlace esperado.</p>
+          <p>Todos y cada uno de los protagonistas pusieron en valor el papel protagonista de la gente, animosa a más no poder en los primeros compases críticos, cuando el Gran Canaria desaprovechó hasta tres balones de set y perdió el primer juego, y cimentando la posterior exhibición de fuerza sincronizada y técnica para volver a llenar de orgullo y alegría a los presentes. Un &lsquo;penalti&rsquo; de Golec fue el punto que cerró una final ganada a pulso y que situaba a la entidad en otra dimensión por la complejidad, hecha realidad, de establecer una hegemonía clara e indiscutible.</p>
+          <p>En apenas siete años entre los grandes, ya sumaba casi la mitad de entorchados y al calor de un pabellón inexpugnable.</p>
+        </Narrativa>
+      </TituloDeportivo>
+    </>
+  ),
+  "cap12-copa-1992": (
+    <>
+      <TituloDeportivo numero={6} nombre="COPA DEL REY" anio="1992">
+        <FichaTecnica
+          parciales="15-6, 15-12 y 15-9"
+          arbitros="Inocencio Cean (Gijón) y Alfonso Alonso (Vigo). Expulsaron al técnico visitante en el segundo set y amonestaron al jugador del Andorra da Silva."
+          incidencias="El Centro Insular de Deportes registró una asistencia de aproximadamente 4.000 espectadores para presenciar la final de la XVII Copa del Rey. El presidente del Gobierno de Canarias, Jerónimo Saavedra, entregó el trofeo de campeón a Juanma Martín."
+        >
+          <Equipo nombre="CLUB VOLEIBOL GRAN CANARIA" sets={3}>Paco Sánchez Jover, Antonio Miralles, Waclaw Golec, Juanma Martín, Lars Nilsson y Sandeep Sharma. También jugaron Javi Dios, Jorge Ramón y Emilio Agustí. <strong>Entrenador:</strong> Marcelo Giovanacci.</Equipo>
+          <Equipo nombre="ANDORRA" sets={0}>Da Silva, Wiernes, Ortiz, Garrido, Alemany y Saurín. También jugaron Bosma y Prenafeta. <strong>Entrenador:</strong> Luis Hillaire.</Equipo>
+        </FichaTecnica>
+        <Narrativa>
+          <p>El título con el que se cerró la campaña 1991-92 tenía el premio añadido, como ocurrió una campaña antes, de revalidar el doblete nacional, una proeza al alcance de elegidos, los componentes del Club Voleibol Gran Canaria que, aquella tarde del 25 de abril de 1992, estaban dirigidos por el banquillo por Marcelo Giovanacci, dado que Enrique Edelstein, con el que se había ganado la Liga poco antes, había sido destituido por unas manifestaciones públicas que no iban en concordancia con los intereses de la entidad.</p>
+          <p>Pese a esta fulminante decisión, y que podría haber sido causa de desestabilización, el bloque mantuvo su inercia y despachó al Andorra con solvencia y empaque, ese aroma que tienen los campeones cuando llegaba el momento de pujar por este trofeo. Se mantenía, además, la tradición en casa, jugando y ganando ante la afición propia, que ya tenía somatizados todos los rituales del momento estelar de festejar alegrías de este calibre. Salvando el segundo set, en el que el oponente quiso rebelarse, el 3-0 final acreditó que solo hubo un dueño de las distintas situaciones del juego.</p>
+          <p>Juanma Martín, Nilsson, Paco Sánchez Jover y Golec eran entronizados por su papel decisivo, alternando sus recursos técnicos con el oficio y jerarquía que pusieron al servicio del resto de sus compañeros para provocar la invasión final del parqué.</p>
+        </Narrativa>
+      </TituloDeportivo>
+    </>
+  ),
+  "cap12-liga-1993": (
+    <>
+      <TituloDeportivo numero={7} nombre="LIGA" anio="1992-93">
+        <FichaTecnica
+          parciales="15-7, 11-15, 9-15, 15-8 y 11-15"
+          arbitros="León y Carreño."
+          incidencias="Partido disputado en el pabellón de La Juventud de Soria."
+        >
+          <Equipo nombre="GRUPO DUERO" sets={2}>Eduardo Macías, Roman Macek, Stand Pochop, Benjamín Vicedo, Ernesto Rodríguez y Antonio Alemany. También jugaron Juan Ignacio Osuna, Jordi Palencia, Raúl Palacios y David Díaz. <strong>Entrenador:</strong> Humberto Rodríguez.</Equipo>
+          <Equipo nombre="GRAN CANARIA" sets={3}>Paco Sánchez Jover, Waclaw Golec, Chiqui Wiernes, Venancio Costa, Sergio Miguel Camarero y Jorge Ramón. También jugaron Sandeep Sharma, Falasca y Juanma Martín. <strong>Entrenador:</strong> Juanma Martín.</Equipo>
+        </FichaTecnica>
+        <Narrativa>
+          <p>A las órdenes de Juanma Martín, en cancha contraria, con Soria como testigo, y en un partido disputadísimo, resuelto en el tie break del último set y a la heroica. Así llegó la cuarta Liga, consecutiva y revestida del mérito que comportó la prueba de resistencia en tierras castellanas. Porque, a estas alturas, derrocar al equipo isleño se había convertido en una cuestión compartida por el resto de integrantes de la División de Honor, lo que redoblaba la dificultad de mantener la posición de privilegio.</p>
+          <p>Fue esta Liga muy sudada y trabajada a cuenta de la resistencia que exhibió el Grupo Duero, que llevó al límite al vigente campeón pero que, a la hora de la verdad, no le alcanzó para que sus esfuerzos se tradujeran en lo que buscaba. La buena aportación del banquillo resultó clave para que las rotaciones dieran descanso a los jugadores más castigados físicamente al tiempo que se mantenía el nivel de los que estaban en la cancha. Esa profundidad de recursos marcó el diferencial, además de la perfecta compenetración que daba el disponer de jugadores que llevaban varias temporadas juntos y que, en momentos de máxima tensión, disponían de la capacidad de respuesta y eficiencia máxima.</p>
+          <p>Lo que se suele denominar en todas las disciplinas como &lsquo;la suerte del campeón&rsquo; y que radica en ese instinto de supervivencia.</p>
+        </Narrativa>
+      </TituloDeportivo>
+    </>
+  ),
+  "cap12-copa-1993": (
+    <>
+      <TituloDeportivo numero={8} nombre="COPA DEL REY" anio="1993">
+        <FichaTecnica
+          parciales="15-2, 11-15, 15-12, 5-15 y 18-20"
+          arbitros="José Antonio González (Vigo) y Víctor Viña (Gijón). Amonestaron a Rafa Pascual, Wiernes y Paco Sánchez Jover."
+          incidencias="Un millar de espectadores en el Polideportivo Municipal Príncipe de Asturias de Murcia."
+        >
+          <Equipo nombre="UNICAJA ALMERÍA" sets={2}>Yu Yiqing, Milanov, Rafa Pascual, Cosme Prenafeta, Joaquín Parrado y Jesús Sánchez Jover. También jugaron Fabio Díez, Carlos Carreño y Javi Dios. <strong>Entrenador:</strong> Axel Mondi.</Equipo>
+          <Equipo nombre="GRAN CANARIA" sets={3}>Paco Sánchez Jover, Waclaw Golec, Venancio Costa, Sergio Miguel Camarero, Chiqui Wiernes y Jorge Ramón. También jugaron Sandeep Sharma y Miguel Ángel Falasca. <strong>Entrenador:</strong> Juanma Martín.</Equipo>
+        </FichaTecnica>
+        <Narrativa>
+          <p>El suma y sigue en el reinado nacional del Gran Canaria, materializando su tercer doblete consecutivo con la Copa del Rey alzada en Murcia y con una sobresaliente actuación en la final frente a un Almería poderoso y que, por momentos, soñó con salir por la puerta grande. De hecho, inició el choque con un imponente 10-0 a favor, lo que le puso en bandeja un primer set que prácticamente tenía desde la salida de los vestuarios. Pero un entonado Falasca, señalado como el líder en la reacción posterior, así como la eficiente labor defensiva de Paco Sánchez Jover ante las acometidas de Rafa Pascual, canalizaron el camino para no bajarse del trono.</p>
+          <p>La afición grancanaria, que animó en minoría aunque haciéndose notar, pudo disfrutar de una actuación completísima, y de menos a más, de sus jugadores, también con la fortuna de cara ya que el Unicaja dispuso de hasta tres balones de partido que no aprovechó, a diferencia de los hombres de Juanma Martín, que no perdonaron cuando llegó el momento decisivo demostrando una casta y personalidad a prueba de circunstancias. En el club valoraron de la mejor manera esta Copa porque, además de prolongar una línea perfecta en las competencias domésticas, suponía una prueba más de la vena competitiva y ambiciosa de un grupo que no se cansaba de ganar y asumía cada desafío con la ilusión del principiante, que no era el caso precisamente por la trayectoria jalonada de éxitos y reconocimientos que ya se acumulaba y que diferenciaba al Gran Canaria del resto.</p>
+          <p>Encima, en la Copa de Europa se había materializado un quinto puesto que ayudaba a cerrar, con inmejorable balance, otra temporada de objetivos cumplidos y satisfacciones plenas.</p>
+        </Narrativa>
+      </TituloDeportivo>
+    </>
+  ),
+  "cap12-liga-1994": (
+    <>
+      <TituloDeportivo numero={9} nombre="LIGA" anio="1993-94">
+        <FichaTecnica
+          parciales="12-15, 15-5, 12-15 y 8-15"
+          arbitros="Andrés (Madrid) y Aller (Gijón)."
+          incidencias="Más de 1.500 espectadores en el pabellón de La Joventud de Soria."
+        >
+          <Equipo nombre="GRUPO DUERO" sets={1}>Macek, Macías, Vicedo, Pochop, Garrido y Rodríguez. También jugaron Palacios, Díaz, Palencia y Sharma. <strong>Entrenador:</strong> Paulo Sevciuc.</Equipo>
+          <Equipo nombre="GRAN CANARIA" sets={3}>Venancio Costa, Paco Sánchez Jover, Waclaw Golec, Milanov, Falasca y Sergio Miguel Camarero. También jugaron Colom, Sánchez y Jorge Ramón. <strong>Entrenador:</strong> Juanma Martín.</Equipo>
+        </FichaTecnica>
+        <Narrativa>
+          <p>Quinta Liga consecutiva, récord en el voleibol nacional que pertenecía a la extinta sección del Real Madrid, que lo logró entre 1976 y 1980, y que el Gran Canaria igualó con su sensacional actuación en Soria y en el cuarto partido de los play-offs de la temporada 1993-94. Imposible pedirle más al conjunto dirigido con maestría por Juanma Martín desde la banda y en el que, una vez más, emergió un Golec intratable que condujo a sus compañeros a este hito. Pese a los esfuerzos de Sharma, viejo conocido que ejerció de rival en el Grupo Duero, y a la presión ejercida por las 1.500 personas que empujaron a favor de los anfitriones, la enésima demostración de superioridad trajo el premio mayor de añadir un diamante más a la corona.</p>
+          <p>Especialmente emotivo fue el multitudinario recibimiento en el aeropuerto a los miembros de la expedición al grito de &lsquo;campeones&rsquo; y tal fue la emoción que Paco Sánchez Jover, ya convertido en una institución, optó, al calor de esta alegría, aplazar su retirada como jugador profesional. Seguía, pues, bien vigente y abrillantado el ciclo de un Gran Canaria convertido en rey nacional y ejemplificando un perfecto binomio ambición-compañerismo, señalado como la clave de esta cadena de gloria y triunfos trascendentes.</p>
+          <p>Esa nueva Liga venía a sublimar un proyecto sostenido en el tiempo y perfeccionado siempre.</p>
+        </Narrativa>
+      </TituloDeportivo>
+    </>
+  ),
+  "cap12-copa-1996": (
+    <>
+      <TituloDeportivo numero={10} nombre="COPA DEL REY" anio="1996">
+        <FichaTecnica
+          parciales="15-3, 15-13, 14-16, 13-15 y 15-11"
+          arbitros="Vicente Crespo (Valencia) y Andrés Tomás (Madrid)."
+          incidencias="Más de 3.000 espectadores asistieron a este encuentro disputado en el Centro Insular de Deportes."
+        >
+          <Equipo nombre="GRAN CANARIA" sets={3}>Sharma, Klos, Golec, Joel Sotelo, Rueda y Miralles. También jugaron Alexis Valido, Martín, Antonio Sánchez y Camarero. <strong>Entrenador:</strong> Paco Sánchez Jover.</Equipo>
+          <Equipo nombre="CAJA SALAMANCA Y SORIA" sets={2}>Pochop, Gallis, Hernández, Garrido, David Sánchez y Eduardo Sánchez. También jugaron Osuna, Saura y Díaz. <strong>Entrenador:</strong> Benjamín Vicedo.</Equipo>
+        </FichaTecnica>
+        <Narrativa>
+          <p>Dos años de sequía sin títulos, demasiado tiempo para un equipo cimentado a base de campeonatos y festejos, hicieron que la celebración de la Copa del Rey conquistada en 1996 se amplificara al máximo y en reconocimiento a unos jugadores que, como así se demostró, mantenían el orgullo intacto y el carácter ganador. Así se explica que volvieran a provocar un terremoto de felicidad en el Centro Insular con la final ganada al Soria, emotiva, también, por despedidas ilustres como la de los polacos Golec y Klos, emblemas en la cronología moderna de la entidad y que, entre lágrimas y emoción, pudieron poner el epílogo de oro a su maravillosa historia en el club.</p>
+          <p>Tampoco volvería a verse de corto a Camarero, desde los tiempos remotos del Lucky Calvo Sotelo en nómina y que también cerraba una etapa insuperable. Inevitable que tanto condicionante afectivo no marcara un partido en el que hubo que superar adversidades como la temprana lesión de Sandeep Sharma, lo que obligó a Sánchez Jover a retocar su plan inicial en un encuentro que se fue hasta los 155 minutos por la igualdad imperante. Eso sí, la justicia final brilló en lo más alto del electrónico porque las mejores acciones y la mayor intensidad correspondieron a un Gran Canaria mejor posicionado y en el que el mexicano Joel Sotelo fue un elemento destacado por sus acciones ganadoras.</p>
+        </Narrativa>
+      </TituloDeportivo>
+    </>
+  ),
+  "cap12-supercopa-1994": (
+    <>
+      <TituloDeportivo numero={11} nombre="SUPERCOPA DE ESPAÑA" anio="1993-94">
+        <FichaTecnica
+          parciales="10-15, 15-10, 15-4 y 15-12"
+          arbitros="Andrés Tomás (Madrid) y Miguel Ángel Santiago (Tenerife). Amonestaron al local Falasca y al técnico Paco Sánchez Jover por parte local y a Garrido del Soria."
+          incidencias="Unos 1.000 espectadores en el Centro Insular de Deportes. En la entrega de trofeos estuvieron presentes el director general de Deportes del Gobierno de Canarias, Díaz Almeida, y el vicepresidente del Ejecutivo autónomo, Lorenzo Olarte, así como el presidente de la Federación Canaria de Voleibol, José Millán, y el presidente del club grancanario Juan Ruiz."
+        >
+          <Equipo nombre="GRAN CANARIA AREHUCAS" sets={3}>Venancio Costa, Carlos Carreño, Antonio Sánchez, Miguel Ángel Falasca, Danny Pointe y Joel Sotelo. También jugaron Juan Carlos Robles, Antonio Miralles y Dani Castañeda. <strong>Entrenador:</strong> Paco Sánchez Jover.</Equipo>
+          <Equipo nombre="CAJA SALAMANCA Y SORIA" sets={1}>Ángel Alonso, Garrido, José Luis Moltó, Peter Gallis, Pochop y Saura. También jugaron Martínez, Sánchez y Parejo. <strong>Entrenador:</strong> Benjamín Vicedo.</Equipo>
+        </FichaTecnica>
+        <Narrativa>
+          <p>Era un título que faltaba en las vitrinas y que, tras dos intentonas anteriores y con su rango oficial, tenía un valor indudable en los intereses del Gran Canaria Arehucas, que abrió la temporada 1996-97 de la mejor manera. Derrotar al vigente campeón de Liga, por mucho que a mitad de septiembre el nivel de juego y rendimiento estuviese pendiente de mayor rodaje y perfeccionamiento, fue un empujón de optimismo y energía, como así se admitió de manera unánime por parte de los protagonistas. El papel jugado por Danny Pointe, una de las incorporaciones del nuevo proyecto, resultó de importancia fundamental para tumbar al equipo castellano, que obligó a remontar un 0-1 en contra, por los fallos cometidos en la recepción, pero que no pudo contener la oleada posterior de los amarillos, en la que la veteranía de Venancio Costa ejerció de correa transmisora para que el resto se aplicara con la suficiente contundencia y precisión para apuntarse las tres mangas posteriores.</p>
+          <p>Sánchez Jover, ya en plena gestión del relevo generacional y con una plantilla muy renovada, resaltaba que, en las aspiraciones futuras, contar con el respaldo de esta conquista iba a ser de enorme ayuda, más en el contexto de los cambios que estaban en camino en la entidad tras un inicio de década para enmarcar y que situó listones ya inalcanzables.</p>
+        </Narrativa>
+      </TituloDeportivo>
+    </>
+  ),
+  "cap12-copa-1997": (
+    <>
+      <TituloDeportivo numero={12} nombre="COPA DEL REY" anio="1997">
+        <FichaTecnica
+          parciales="3-15, 6-15, 15-8, 15-2 y 15-12"
+          arbitros="Diego León (Barcelona) y Andrés Tomás (Madrid). Tarjeta roja a Robles y Elgueta."
+          incidencias="El Centro Insular de Deportes reunió a más de 4.000 espectadores en la final de la XXII Copa de voleibol. Destacó la presencia del consejero de Cultura y Deportes y el director general de Deportes del Gobierno de Canarias, José Mendoza y Juan Antonio Díaz, respectivamente, y de los concejales del ayuntamiento de Las Palmas de Gran Canaria Juan José Cardona y Pascual Mota."
+        >
+          <Equipo nombre="GRAN CANARIA AREHUCAS" sets={3}>Joel Sotelo, Miguel Ángel Falasca, Venancio Costa, Robles, Vega y Carreño. También jugaron Miralles, Pointe, Castañeda, Antonio Sánchez y Andersson. <strong>Entrenador:</strong> Paco Sánchez Jover.</Equipo>
+          <Equipo nombre="UNICAJA ALMERÍA" sets={2}>Prenafeta, Elgueta, Rodríguez, Sánchez, Matheus y Parrado. También jugaron Prieto y Berenguel. <strong>Entrenador:</strong> Axel Mondi.</Equipo>
+        </FichaTecnica>
+        <Narrativa>
+          <p>En poco más de cuarenta minutos, la final parecía sentenciada con un 0-2 para el Almería y con parciales más que ilustrativos. El Centro Insular se resignaba al desmoronamiento de los suyos cuando Sánchez Jover movió fichas de manera providencial y, con un sexteto revolucionario, con especial influencia de Castañeda, Antonio Sánchez y un Miralles que, tras haber contado poco durante la campaña, revivió su mejor versión, el Gran Canaria obró una remontada soberbia y, en una hora justa de juego, justificó su fama de rey de Copas (era la décima final consecutiva de este torneo que disputaba).</p>
+          <p>Fue una exhibición como en los viejos tiempos, mezclando raza, talento, casta y ambición. Volvieron los abrazos y las caras iluminadas por la felicidad cuando se consumó un triunfo que, en palabras del técnico, “dejaba las cosas en su sitio”. Porque ni con todo en contra hubo amago alguno de rendición. Los más de 4.000 espectadores presentes hicieron el resto empujando a los suyos a medida que tomaba forma una rebelión que terminó de la mejor manera. Esta final se equiparó a la primera saldada con éxito, allá por 1989, por su nivel de dificultad y las complejidades que presentó en su arranque y así se saboreó, de una manera única y poniendo en justa medida el esfuerzo y tesón que implicó levantarse de la lona cuando el adversario tocaba con los dedos el trofeo.</p>
+        </Narrativa>
+      </TituloDeportivo>
+    </>
+  ),
+  "cap12-copa-2021": (
+    <>
+      <TituloDeportivo numero={13} nombre="COPA DEL REY" anio="2021">
+        <FichaTecnica
+          parciales="25-20, 25-15 y 25-14"
+          arbitros="Erce Álvarez y Correa Álvarez."
+          incidencias="Encuentro disputado en el Centro Insular."
+        >
+          <Equipo nombre="CLUB VOLEIBOL GUAGUAS" sets={3}>Paulo Bertassoni, Jorge Almansa, Matt Knigge, Pablo Kukartsev, Guilherme Hage, Moisés Cézar y Alejandro Fernández. También jugaron Javier Sánchez y Stéfano Nassini. <strong>Entrenador:</strong> Sergio Camarero.</Equipo>
+          <Equipo nombre="URBIA U ENERGIA PALMA" sets={0}>Ricardo Perini, Gabriel del Carmen, Elvis de Oliveira, Roberto de Melo, Juan Manuel González, Walter da Cruz y Daniel Ruiz. También jugaron Abel Bernal, De la Rosa, Pont, Renzo Cairus y Juan Lladó. <strong>Entrenador:</strong> Marcos Dreyer.</Equipo>
+        </FichaTecnica>
+        <Narrativa>
+          <p>En el proyecto de reconstrucción materializado en 2020 para que el Guaguas volviera a ser lo que fue, la conquista de títulos era una misión de obligado cumplimiento. La naturaleza ganadora jamás se había negociado en la historia de la entidad y por muy buenos propósitos que se pusieran, la vitrina esperaba. Y el 7 de febrero de 2021, en un Centro Insular vacío por imperativos sanitarios derivados de la pandemia de covid-19, el equipo dirigido por Sergio Miguel Camarero comenzaba a responder con hechos.</p>
+          <p>La Copa del Rey era el primer desafío, con el Palma como rival en el partido decisivo, y la respuesta de los jugadores fue impecable. Un claro 3-0, con protagonismo especial de un Pablo Kukartsev letal, designado como MVP del torneo tras anotar 20 puntos en la final, evidenció que, efectivamente, las líneas maestras trazadas para el retorno del escudo habían sido precisas. Apenas unos meses después de la puesta en funcionamiento del club, volver a levantar un trofeo oficial era la mejor manera de ratificar aspiraciones y premiar esfuerzos.</p>
+          <p>De ahí que la satisfacción en todos los jugadores, técnicos y dirigentes fuese palpable a la vista de una celebración merecida y oportuna que, sin que todavía no se supiera, abría un año en el que seguirían sucediéndose los éxitos para mayor gloria propia.</p>
+        </Narrativa>
+      </TituloDeportivo>
+    </>
+  ),
+  "cap12-liga-2021": (
+    <>
+      <TituloDeportivo numero={14} nombre="LIGA" anio="2020-21">
+        <FichaTecnica
+          parciales="26-24, 19-25, 19-25 y 20-25"
+          arbitros="Susana Rodríguez (Albacete) y Fernando Cerrato (Murcia). Amonestaron al local Iribarne y al jugador del Guaguas Hage."
+          incidencias="Partido disputado en el pabellón Moisés Ruiz de Almería a puerta cerrada."
+        >
+          <Equipo nombre="UNICAJA COSTA DE ALMERÍA" sets={1}>Javier Jiménez, Alejandro Vigil, Ignacio Sánchez, Fran Iribarne, Miki Fornés y Augusto Colito. También jugaron Mario Ferrera, Curro Sáez, Esteban Villarreal, Jean Pascal Diedhiou y Marlon Palharini. <strong>Entrenador:</strong> Manuel Berenguel.</Equipo>
+          <Equipo nombre="CLUB VOLEIBOL GUAGUAS" sets={3}>Paulo Renan, Jorge Almansa, Matthew Knigge, Pablo Kukartsev, Guilherme Hage y Moisés Cézar. También jugaron Álex Fernández, Nassini y Javier Sánchez. <strong>Entrenador:</strong> Sergio Camarero.</Equipo>
+        </FichaTecnica>
+        <Narrativa>
+          <p>No conseguía un doblete de Liga y Copa el Guaguas desde hacía casi 30 años. Y el sueño de coronarse de nuevo como dominador del panorama nacional acaparando los dos trofeos oficiales más importantes volvió a ser una realidad en 2021. Semanas después de apuntarse el torneo copero, el equipo afrontó el desafío de no fallar en la conquista que todos aguardaban con mayor expectación y cuyo último entorchado se remontaba a 1994, nada más y nada menos. La Liga era la razón de ser de todos los esfuerzos y Camarero mentalizó a sus hombres a conciencia y el resultado fue el esperado, alzando los brazos al cielo en el encuentro definitorio ante el Unicaja Almería, para el 3-0 final de la serie, pese a que tocó remontar un set en contra.</p>
+          <p>El excelente papel protagonizado por Kukartsev, autor de 25 puntos y guía del resto en su condición de jugador más valioso de la gran final, aupó al Guaguas a la cima que suponía su sexta Liga y que se recibía por todo lo alto, como era menester. Toda la expedición desplazada a tierras andaluzas, con el presidente Juan Ruiz al frente, explotó de alegría cuando el capitán, Moisés Cézar, recibió el trofeo acreditativo y que ratificaba un reinado indiscutible, guiño por los viejos tiempos y sustento del futuro que se sigue escribiendo en estos momentos.</p>
+        </Narrativa>
+      </TituloDeportivo>
+    </>
+  ),
+  "cap12-supercopa-2021": (
+    <>
+      <TituloDeportivo numero={15} nombre="SUPERCOPA DE ESPAÑA" anio="2021">
+        <FichaTecnica
+          parciales="25-22, 25-15 y 25-20"
+          arbitros="Rodríguez Machín y R. Sánchez."
+          incidencias="Partido disputado en el Centro Insular de Deportes con media entrada."
+        >
+          <Equipo nombre="CLUB VOLEIBOL GUAGUAS" sets={3}>Borja Ruiz, Paulo Renan, Jorge Almansa, Matt Knigge, Yosvany Hernández, Guilherme Hage y Alejandro Fernández. También jugaron Adrián Escobar, Moisés Cézar y César Martín. <strong>Entrenador:</strong> Sergio Camarero.</Equipo>
+          <Equipo nombre="URBIA U ENERGIA PALMA" sets={0}>Ignacio Sánchez, Chema Giménez, Sunny Wu, Rodrigo Pernambuco, Renzo Cairus, Manu Carvalho y Daniel Ruiz. También jugaron Guillem Pont y Juan Lladó. <strong>Entrenador:</strong> Abel Bernal.</Equipo>
+        </FichaTecnica>
+        <Narrativa>
+          <p>No podía darse mejor inicio de temporada 2021-22 que en el Centro Insular, ya con asistencia permitida de público, y un título oficial en juego, en este caso, la Supercopa de España, en la que comparecía como finalista invitado el Palma, luego del doblete nacional logrado en el curso 2020-21. Era el estreno, además, de un nuevo Guaguas, reforzado con fichajes de postín, como los cubanos Hernández y Escobar, y con un proyecto ya consolidado, tras un año de rodaje triunfal, y en búsqueda de más desafíos.</p>
+          <p>Y como lo inmediato siempre manda, Camarero, insaciable, le pidió a sus hombres que no dejaran de hacer lo que mejor sabían: ganar y ganar. Y así cayó la segunda Supercopa de la historia, en una final con un desarrollo lineal: dominio de principio a fin y con protagonismo estelar para Yosvany Hernández, MVP de la jornada merced a sus 24 puntos y una demostración magnífica de poderío y recursos. No tuvo opciones un adversario superado y que comprobó la potencia de un equipo cohesionado, con los automatismos del juego bien definidos, y que no dejó pasar la oportunidad de seguir dando brillo a su sala de trofeos.</p>
+          <p>Una segunda Supercopa en el historial que fue bien valorada y considerada por todos en un momento de especial emotividad en Canarias por la explosión volcánica en La Palma, acaecida una semana antes, y que motivó una sincera dedicatoria de este nuevo éxito.</p>
+        </Narrativa>
+      </TituloDeportivo>
+    </>
+  ),
+  "cap12-liga-2023": (
+    <>
+      <TituloDeportivo numero={16} nombre="LIGA" anio="2023">
+        <FichaTecnica
+          parciales="25-22, 25-15, 22-25 y 25-21"
+          arbitros="Juan Antonio Erce – Rafael González."
+          incidencias="Tercer encuentro de la final de la Superliga Masculina disputado en el Centro Insular de Deportes de Las Palmas de Gran Canaria ante 3.800 espectadores. El presidente de la RFEVB Agustín Martín Santos entregó a Alejandro Fernández, capitán de CV Guaguas, el trofeo de campeón. El receptor de CV Guaguas Paolo Zonca fue designado MVP de la final por su aportación a lo largo de la eliminatoria."
+        >
+          <Equipo nombre="CV GUAGUAS" sets={3}>Escobar, De Amo, Almansa, Zonca, Knigge, Ramos, Ruiz. También jugaron: Fernández, Olalla, Bertassoni, Rattray, Fernández, Ruiz, Conde. <strong>Entrenador:</strong> Sergio Miguel Camarero.</Equipo>
+          <Equipo nombre="RÍO DUERO SORIA" sets={1}>Lorente, Villalba, Moreno, Vargas, Dos Santos, Domenech, San Martín. También jugaron: Pérez, Salvador, Pyvovarenko, Jiménez, Tenorio. <strong>Entrenador:</strong> Alberto Toribio.</Equipo>
+        </FichaTecnica>
+        <Narrativa>
+          <p>Venía el Guaguas de un año 2022 seco de alegrías y con la necesidad imperiosa de sacudirse el vértigo heredado. Y la mejor medicina vino con la restitución de la hegemonía doméstica en el campeonato regular. Lo hizo de una manera abrumadora, ganando todos y cada uno de los partidos con una lección de eficacia y superioridad imbatible y ante la que los rivales no tuvieron capacidad alguna de contestación. El Río Duero Soria, en último término, y en la eliminatoria decisiva, no pudo más que someterse a la neta superioridad amarilla, rubricada con pleno de triunfos en el emparejamiento y fin de fiesta perfecto en el CID.</p>
+          <p>Pese los intentos de resistencia visitante, el festival de Zonca, a la sazón MVP, así como la maestría en la distribución de Miguel Ángel De Amo resultaron determinantes en el desenlace por todos esperado y que registraba en la historia una nueva conquista. Camarero pudo darse el lujo de otorgar minutos a todos sus jugadores a modo de homenaje y con el acompañamiento inigualable de un Centro Insular que registró un magnífico ambiente para la ocasión. La recogida del trofeo provocó una oleada de felicidad y alegría por parte del auditorio, entregado a un equipo que volvía por sus fueros ampliando su cosecha de entorchados.</p>
+          <p>Otra vez el Guaguas era motivo de orgullo y admiración por su genética ganadora y espíritu de superación.</p>
+        </Narrativa>
+      </TituloDeportivo>
+    </>
+  ),
+  "cap12-copa-iberica-2023": (
+    <>
+      <TituloDeportivo numero={17} nombre="COPA IBÉRICA" anio="2023">
+        <FichaTecnica
+          parciales="25-23, 25-22, 19-25 y 25-18"
+          arbitros="Juan Antonio Erce y Ricardo Ferreira."
+          incidencias="Partido disputado en el CID, que presentó media entrada."
+        >
+          <Equipo nombre="CV GUAGUAS" sets={3}>Nico Bruno, Vigrass, Furtado, Walla Souza, Io de Amo, Jorge Almansa, Juan Moreno, Jean Pascal, Maxi Cavanna, Unai Larrañaga, Hugo López y Ezequiel Pérez. <strong>Entrenador:</strong> Sergio Miguel Camarero.</Equipo>
+          <Equipo nombre="BENFICA" sets={1}>Thiago de Oliveira, Wohlfahrtsatatter, Seabra, Lucas Gaspar, Pablo Ventura, Felipe Airton, Lucas dos Santos, Eduardo da Cruz, Tiago da Silva, André Ryuma, Nuno Marques, Diodo Fernandes, Pontes Cabral e Ivo Correia. <strong>Entrenador:</strong> Marcel Eickhoff.</Equipo>
+        </FichaTecnica>
+        <Narrativa>
+          <p>El honor de adjudicarse la primera edición de este trofeo oficial correspondió al Guaguas que, además, lo hizo en su condición de anfitrión. El formato de la Copa Ibérica contemplaba una eliminatoria previa, saldada con triunfo ante el Sporting de Lisboa, y la correspondiente final, en la que tocó en suerte otro destacado representante luso, en este caso el Benfica, que había superado en su cruce al Soria. El encuentro pillaba al bloque en el inicio de un nuevo proyecto, con rodaje justo pero ambición siempre innegociable.</p>
+          <p>Con un título en juego, Camarero jamás negocia. Y bien que se aplicaron sus pupilos en dejar la copa en casa, con un inicio fulminante (2-0) que encarriló, definitivamente, la contienda. El argentino Cavanna, una de las grandes apuestas de entonces, se erigió en figura y referente, liderando al resto para desembocar en la foto triunfal. El mérito añadido vino con el arreón de orgullo de un Benfica que requirió un cuarto set en el que sí se dio la sentencia para reproducir la habitual foto final del Guaguas en lo alto del podio y presumiendo de una nueva adquisición para sus vitrinas.</p>
+          <p>En la entidad hizo especial ilusión ganar la Copa Ibérica inaugural por el componente histórico que implicaba, sin descuidar el impulso anímico que también implicó batirse, con excelente nota, a lo mejor del voleibol portugués.</p>
+        </Narrativa>
+      </TituloDeportivo>
+    </>
+  ),
+  "cap12-supercopa-2023": (
+    <>
+      <TituloDeportivo numero={18} nombre="SUPERCOPA DE ESPAÑA" anio="2023">
+        <FichaTecnica
+          parciales="23-25, 25-20, 25-19, 22-25 y 15-8"
+          arbitros="Hugo Suárez – Rafael González."
+          incidencias="Partido correspondiente a la Supercopa Masculina que abrió la temporada 2023-24 en la máxima categoría disputado en el Centro Insular de Deportes."
+        >
+          <Equipo nombre="CV GUAGUAS" sets={3}>Nicolás Bruno, Manu Furtado, Wallyson Bezerra Souza, Jean Pascal Diedhiou, Paolo Zonca, Maxi Cavanna, Unai Larrañaga. También jugaron: Graham Vigrass, de Amo, Jorge Almansa, Juan Pablo Moreno. <strong>Entrenador:</strong> Sergio Miguel Camarero.</Equipo>
+          <Equipo nombre="GRUPO HERCE SORIA" sets={2}>Lucas Lorente, Fabián Flores, Adrián Olalla, José Villalba, Bruno Cunha, Joan Domenech, Alejandro San Martín. También jugaron: Luke Belda, Santiago Aulisi. <strong>Entrenador:</strong> Luis Alberto Toribio.</Equipo>
+        </FichaTecnica>
+        <Narrativa>
+          <p>Con los ecos recientes de la Copa Ibérica, ganada pocos días antes, la sed de gloria del Guaguas escribió un capítulo más con motivo de la tradicional apertura de curso con la primera corona nacional en juego. Enfrente, un rival de sobra conocido y con numerosos antecedentes en duelos fratricidas, el Grupo Herce Soria, lo que garantizaba emociones fuertes sobre la pista del Centro Insular. Y todos los pronósticos se cumplieron porque el pleito tuvo que irse hasta el tie break (2-2). Había empezado todo con rebelión visitante para ponerse 0-1 y costó un esfuerzo titánico (y un Paolo Zonca sublime, autor de 23 puntos y apariciones oportunísimas).</p>
+          <p>Y en la manga decisiva, temple y madurez: el Guaguas abrió con seis puntos de ventaja el quinto y último set (9-3), alejándose lo suficiente del marcador para asegurar la tercera Supercopa de España en su palmarés hasta ese momento y alargaba una inercia triunfal de indudable impacto positivo para arrancar una campaña que depararía muchas más alegrías. El impulso que había dado la Copa Ibérica tuvo continuación en este frente abierto y terminó por propulsar a un equipo con automatismos marcados y capaz de lograr todo lo que se propusiera, ya fuera un pleno nacional, como así volvería a suceder.</p>
+          <p>Más leyenda con nombres propios.</p>
+        </Narrativa>
+      </TituloDeportivo>
+    </>
+  ),
+  "cap12-copa-2024": (
+    <>
+      <TituloDeportivo numero={19} nombre="COPA DEL REY" anio="2024">
+        <FichaTecnica
+          parciales="25-27, 17-25 y 20-25"
+          arbitros="Carlos Robles – David Fernández."
+          incidencias="Final de la XLIX Copa de SM El Rey celebrada en el Pabellón Europa de Leganés ante 4.000 espectadores (Lleno). El Presidente del Comité Olímpico Español Alejandro Blanco hizo entrega a Miguel Ángel de Amo el trofeo acreditativo como MVP de la XLIX Copa de SM el Rey. El alcalde de Leganés, Miguel Ángel Recuenco, y Agustín Martín Santos, presidente de la RFEVB, entregaron a Jorge Almansa, capitán de CV Guaguas, el trofeo de campeón de la XLIX Copa de SM El Rey."
+        >
+          <Equipo nombre="UNICAJA COSTA DE ALMERÍA" sets={0}>Rodríguez, Bertassoni, Fernández, Neaves, Ruiz, Ruiz, Fernández. También jugaron: Viera, Fernández, Vizcaino. <strong>Entrenador:</strong> Manuel Berenguel.</Equipo>
+          <Equipo nombre="CV GUAGUAS" sets={3}>Bruno, Saxton, Bezerra, De Amo, Diedhiou, Zonca, Larrañaga. También jugaron: Furtado, Almansa, Ramos. <strong>Entrenador:</strong> Sergio Miguel Camarero.</Equipo>
+        </FichaTecnica>
+        <Narrativa>
+          <p>Un pabellón Europa de Leganés abarrotado, rozando el techo de los 5.000 espectadores, contempló una nueva exhibición que valió otro título más y con absoluta justicia, dado un marcador inapelable que evidenció la superioridad manifiesta del campeón. La distribución de Miguel Ángel de Amo, elegido MVP del torneo, y las aportaciones mayúsculas de Walla Bezerra, Paolo Zonca y Nicolás Bruno anularon completamente al equipo andaluz, en el que los puntos de Neaves resultaron insuficientes en sus deseos de mantenerse en el partido.</p>
+          <p>Tras un primer set igualado, y que se decidió por pequeños detalles y con un punto de oro de Bruno, todo lo que vino después fue más concluyente para los intereses del Guaguas, favorecido, además, por los errores en el saque del oponente. Y sin perder la tensión, pese a que el marcador acompañó siempre, se fue cincelando la consecución de una Copa del Rey que engordaba todavía más un curso que había arrancado con el doblete Copa Ibérica-Supercopa de España. Jean Pascal Diedhiou, de menos a más a nivel individual en la gran final, fue el encargado de coronar la faena en Madrid con el remate ganador y que inició los festejos en un ambiente inmejorable y que aumentó, más si cabe, el impacto de un nuevo laurel añadido a la corona insuperable de la entidad.</p>
+        </Narrativa>
+      </TituloDeportivo>
+    </>
+  ),
+  "cap12-liga-2024": (
+    <>
+      <TituloDeportivo numero={20} nombre="LIGA" anio="2024">
+        <FichaTecnica
+          parciales="24-26, 22-25, 25-17 y 17-25"
+          incidencias="Partido disputado en el Pabellón Municipal Los Pajaritos de Soria con gran afluencia de público y seguidores del Guaguas en las gradas."
+        >
+          <Equipo nombre="GRUPO HERCE SORIA" sets={1}>Llorente, Pequeño, Olalla, San Martín, Flores, Tenorio, Santos, Aluisi, Villalba, Salvador, Zazo, Belda, Sanchís, Giménez y Doménech. <strong>Entrenador:</strong> Alberto Toribio.</Equipo>
+          <Equipo nombre="CV GUAGUAS" sets={3}>Pascal, Bruno, Walla, Zonca, Ramos, De Amo, Larrañaga, Moreno, Finoli, Vigrass, Pérez, Furtado, Almansa y López. <strong>Entrenador:</strong> Sergio Miguel Camarero.</Equipo>
+        </FichaTecnica>
+        <Narrativa>
+          <p>La octava Liga del Guaguas vino a poner el corolario de lujo a un curso en el que antes se habían levantado otros tres trofeos (Copa Ibérica, Supercopa de España y Copa del Rey). El festejo en Soria consagró a una plantilla que cumplió con nota sobresaliente con todos los objetivos propuestos y, por encima de todo, protegió esa hegemonía nacional que ha sido sello distintivo y una cuestión de orgullo. La conclusión favorable de la serie no estuvo exenta de algunas dificultades, como el hecho de que el Grupo Herce Soria rompiera el factor cacha ganando uno de los dos primeros encuentros celebrados en el CID.</p>
+          <p>Todo un órdago para los jugadores de Camarero, ya obligados a lidiar con ambiente adverso en lo que quedaba de la serie si no se llegaba al quinto encuentro. Y fue así, no se llegó al límite porque la respuesta en cancha castellana fue perfecta. Y en la primera ocasión que se pudo sentenciar la eliminatoria, a nadie le temblaron las piernas. Walla y Zonca fueron los actores más destacados en un esfuerzo coral y constante que neutralizó cualquier intento de los locales. Una nueva lección, y ya son incontables, del gen único de un equipo habituado a lo que en otros sitios resulta imposible e inalcanzable: encadenar victorias y campeonatos como rutina existencial.</p>
+        </Narrativa>
+      </TituloDeportivo>
+    </>
+  ),
+  "cap12-supercopa-2024": (
+    <>
+      <TituloDeportivo numero={21} nombre="SUPERCOPA DE ESPAÑA" anio="2024">
+        <FichaTecnica
+          parciales="25-18, 25-18 y 25-10"
+          arbitros="Fernández Fuentes y Sabroso Moratilla."
+          incidencias="Partido correspondiente a la XXVII Supercopa de España en la temporada 2024-25 disputado en el Gran Canaria Arena ante 2.700 espectadores."
+        >
+          <Equipo nombre="CV GUAGUAS" sets={3}>Pascal, Walla, Bruno, Ramos, De Amo, Rousseaux y Larrañaga. También jugaron: Trinidad, Moreno, Almansa, Nalobin y Pereira. <strong>Entrenador:</strong> Sergio Miguel Camarero.</Equipo>
+          <Equipo nombre="UNICAJA COSTA DE ALMERÍA" sets={0}>González, Ruiz, Bertassoni, J. Fernández, Tarrazo, Todd y F.J. Fernández. También jugaron: Filip. <strong>Entrenador:</strong> Pablo Ruiz.</Equipo>
+        </FichaTecnica>
+        <Narrativa>
+          <p>Todos los títulos son especiales “porque cuesta muchísimo ganarlos”, recuerda siempre que puede el presidente Juan Ruiz. Y debe ser verdad porque lleva unos cuantos bajo su mandato y nunca deja de enfatizar la importancia de valorarlos y saborearlos. La Supercopa del año 2024 tuvo la connotación distinguida de producirse en el estreno del equipo en el Gran Canaria Arena. El CID había sido el escenario de todos los sueños cumplidos y, por los trabajos de rehabilitación y modernización del emblemático recinto de la Avenida Marítima, ahora tocaba continuar la vida en Siete Palmas, sin rebajar lo más mínimo ambiciones y desafíos.</p>
+          <p>Y el debut en la nueva casa era ni más ni menos que una final y con el premio de seguir ampliando la leyenda. Un cartel imbatible que activó, como de costumbre, a los jugadores, hasta el punto de arrasar al Almería. Camarero no buscó excusas en que se estaba al inicio de una nueva temporada y que el nivel físico o la cohesión del grupo caminaban todavía por una estación experimental. Pidió que se ganara y pasó lo que tenía que pasar con Walla de nuevo en plan estelar y aportaciones también destacadas de Bruno, Ramos o Rousseaux, entre otros.</p>
+          <p>Inmejorable bautizo con delirio de la afición por seguir reconociendo a su Guaguas campeón pese a la inevitable mudanza.</p>
+        </Narrativa>
+      </TituloDeportivo>
+    </>
+  ),
+  "cap12-copa-2025": (
+    <>
+      <TituloDeportivo numero={22} nombre="COPA DEL REY" anio="2025">
+        <FichaTecnica
+          parciales="15-25, 18-25, 25-23 y 23-25"
+          arbitros="Rubén Sánchez y Carlos A. Robles."
+          incidencias="Final de la Copa de SM el Rey celebrada en el CDM Siglo XXI de Zaragoza ante 1.360 espectadores. Cristina García, directora general de Deportes del Gobierno de Aragón, hizo entrega del trofeo de MVP de la Copa al opuesto de CV Guaguas Wallyson Bezerra. Jorge Almansa, capitán de CV Guaguas, recogió el trofeo de campeón."
+        >
+          <Equipo nombre="CONECTABALEAR CV MANACOR" sets={1}>Ribas, Romaní, Lorente, Godbold, Calvo, Cairus, Marzo. También jugaron: Alomar, Vanco, Flequer. <strong>Entrenador:</strong> Alexis González.</Equipo>
+          <Equipo nombre="CV GUAGUAS" sets={3}>Bruno, Bezerra, De Amo, Diedhiou, Rousseaux, Ramos, Larrañaga. También jugaron: Pérez, Almansa, Trinidad. <strong>Entrenador:</strong> Sergio Miguel Camarero.</Equipo>
+        </FichaTecnica>
+        <Narrativa>
+          <p>Hacía más de diez años que un equipo no lograba encadenar dos títulos coperos seguidos y tuvo que ser el Guaguas, que en Zaragoza defendía trono, el que rompió esa mala tradición para el campeón. Frente a un debutante en la élite que jamás se rindió y trató de darle emoción al partido, el brazo ejecutor de Walla (¡28 puntos!) se elevó por encima de todos y terminó agarrando el trofeo con determinación, para bien de su equipo. El ambientazo en Zaragoza y el entusiasmo del oponente, muy por debajo del Guaguas pero que plantó batalla, condimentaron una actuación característica del Guaguas en cada final que ha jugado: intensidad, concentración y madurez.</p>
+          <p>Esa cualidad competitiva se valió para abrir brecha con dos sets a favor, disputar la tercera manga que se le fue por poco y, ya en el juego decisivo, exhibir artillería para aplacar al Manacor. Walla, apariciones puntuales pero valiosísimas de Martín Ramos, encargado de sellar el triunfo, o Diedhiou se encargaron de que Jorge Almansa, el gran capitán, alzara al cielo una Copa del Rey con sabor especial porque ratificaba aún más un reinado firme y brillante y que anticipaba más alegrías en camino.</p>
+          <p>De hecho, semanas después, volvería a darse una celebración con un nuevo campeonato liguero que conformó el siempre ansiado y tan complicado doblete.</p>
+        </Narrativa>
+      </TituloDeportivo>
+    </>
+  ),
+  "cap12-liga-2025": (
+    <>
+      <TituloDeportivo numero={23} nombre="LIGA" anio="2025">
+        <FichaTecnica
+          parciales="23-25, 21-25 y 20-25"
+          arbitros="María Gloria Souto – Juan Antonio Erce."
+          incidencias="Tercer partido correspondiente a la serie final de la Superliga Masculina de Voleibol 2024-25 disputado en el Pabellón de Los Pajaritos ante 2.600 espectadores."
+        >
+          <Equipo nombre="GRUPO HERCE SORIA" sets={0}>Arjones, Flores, Olalla, J. Villalba, Cunha, Domenech y Osado. También jugaron: Aulisi, A. Villalba. <strong>Entrenador:</strong> Alberto Toribio.</Equipo>
+          <Equipo nombre="CV GUAGUAS" sets={3}>Bruno, Walla Souza, Pascal, Rousseaux, Ramos, Trinidad y Larrañaga. También jugaron: De Amo. <strong>Entrenador:</strong> Sergio Miguel Camarero.</Equipo>
+        </FichaTecnica>
+        <Narrativa>
+          <p>Después de ganar los dos primeros partidos de la final, e inclinar de manera muy favorable el título del campeonato regular, el Guaguas no quiso esperar más y certificó en Soria, con un nuevo triunfo para el 3-0 de rigor. Pese a un 9-4 de entrada en contra, que encendió los ánimos de un rival que aspiraba a forzar un cuarto envite, Walla Souza, máximo anotador del encuentro junto al local Cunha con 14 puntos, tomó las riendas de la situación, secundado siempre por sus compañeros, y fue poniendo las cosas en su sitio.</p>
+          <p>La presión de ser el favorito ejerció el efecto pretendido de rendir a conciencia y, en las situaciones en las que el marcador ofrecía cierta emoción, instaurar de inmediato respeto y jerarquía. El saber estar del equipo, constante en su crecimiento hasta la victoria, y tirando de galones y madurez, cimentó un resultado más que merecido y que añadía a la cosecha otra copa más. Tomas Rousseaux finiquitaba el partido con una diagonal cerrada, ya cuando todo estaba visto para sentencia, y alargaba la dinastía ganadora del club.</p>
+          <p>El clásico de todos abrazados, gritando el nombre del Guaguas y como envidia del voleibol nacional, volvió a darse en Soria, ratificando que el rey de España en este deporte viste de amarillo y mantiene firmes sus pasos.</p>
+        </Narrativa>
+      </TituloDeportivo>
+    </>
+  ),
+  "cap12-supercopa-2025": (
+    <>
+      <TituloDeportivo numero={24} nombre="SUPERCOPA DE ESPAÑA" anio="2025">
+        <FichaTecnica
+          parciales="25-23, 25-23 y 25-23"
+          arbitros="Francisco Javier Pedrosa y Joaquín Ventura."
+          incidencias="Encuentro correspondiente a la final de la Supercopa de España, disputada en el Polideportivo Pisuerga de Valladolid."
+        >
+          <Equipo nombre="CV GUAGUAS" sets={3}>Nico Bruno, Ezequiel Pérez, Hélder Spencer, Osmany Juantorena, Walla Souza, Miguel Ángel de Amo, Unai Larrañaga, Jorge Almansa, Augusto Colito, Jean Pascal Diedhiou, Tomas Rousseaux, Martín Ramos y Dobromir Dimitrov. <strong>Entrenador:</strong> Sergio Miguel Camarero.</Equipo>
+          <Equipo nombre="GRUPO HERCE SORIA" sets={0}>Óscar Arnaiz, Carlos Montero, Lucas Lorente, Omar Hoyos, Diego Miguel, Moisés Rodrigo, Juan Pablo Moreno, Rodrigo Jiménez (líbero), Alejandro Villalba, Mikel Kalstad, Bernat Castella, Viktor Lindberg, Joan Domenech, Azddin Mimoun y Arnau Masià. <strong>Entrenador:</strong> Luis Alberto Toribio.</Equipo>
+        </FichaTecnica>
+        <Narrativa>
+          <p>El año 2025, con la Superliga y la Copa del Rey como bagaje anterior, merecía el corolario que trajo la conquista de la Supercopa de España, movida de fecha, del habitual inicio de calendario a uno de los últimos días del año y en sede neutral, en este caso, Valladolid. Y, como es habitual, al Guaguas, ante una final, con la posibilidad de seguir añadiendo títulos, se le abrió el hambre. Poco importó que el adversario, el Grupo Herce Soria, le hubiera ganado en los días previos a la cita en lo que se podía interpretar como un mal presagio.</p>
+          <p>En un partido de poder a poder, con tres sets disputadísimos, todos resueltos por el mismo 25-23, lo que evidencia la intensidad y emoción que hubo, el comportamiento maduro y constante del equipo tuvo su justa recompensa. A la habitual cohesión colectiva se sumaron las apariciones oportunas y decisivas de Walla, Bruno o Juantorena, contundentes en la red para que el 24.º título oficial de la historia cobrara cuerpo y se convirtiera en realidad. Pese a los intentos del contrario de revertir el orden, nada pudo frente a la contundencia amarilla, de principio a fin y sin dar opción a la rebelión soriana.</p>
+          <p>La versión más reconocible del campeón hegemónico permitió que la Supercopa volviera con el equipaje para Gran Canaria.</p>
+        </Narrativa>
+      </TituloDeportivo>
+    </>
+  ),
+  "cap12-joselu-sanchez": (
+    <>
+      <DropCap>Fue uno de los jugadores que estuvieron presentes en la pista del García San Román en el histórico partido disputado ante el Knack de Bélgica, correspondiente a la Recopa de Europa, el 7 de noviembre de 1987, bautizo continental de un Guaguas que luego se haría asiduo y respetado en competiciones internacionales.</DropCap>
+
+      <p>Y aunque su paso por la plantilla fue fugaz (“estuve entrenando, sin fichar, durante la campaña 1986-87 y luego, al tener el servicio militar, tuve que marcharme en enero de 1988, con lo que apenas fueron tres meses como miembro de la plantilla”), Joselu Sánchez (Ferrol, 1962) dejó tanta huella que, décadas después, cuando Juan Ruiz ideó la refundación, tuvo muy presente su nombre para integrarlo en el organigrama ejecutivo con las funciones de secretario.</p>
+
+      <EditorialQuote>Nací en Galicia por circunstancias laborales de mi padre. Pero llegué a Gran Canaria con apenas unos meses y mi condición de canario es algo que llevo con honra y orgullo. Estoy enamorado de mi isla. Por eso, recuperar una entidad que ha sido tan representativa para nuestra sociedad era para mí algo de obligado cumplimiento. Mi relación laboral con Juan Ruiz ha sido de toda la vida. Nos conocemos muy bien. Y recibí su ofrecimiento con muchísimo entusiasmo. Va más allá de lo deportivo. Para mí el Guaguas es un sentimiento.</EditorialQuote>
+
+      <p>En este sentido, destaca que “el trabajo ha sido considerable” desde que comenzaron las gestiones para que el club volviera al ámbito competitivo: “Captar patrocinios y apoyos en época de pandemia y crisis económica es algo que muy pocas personas pueden conseguir. Juan Ruiz lo ha vuelto a lograr. Ya hizo un proyecto sensacional a finales de los ochenta y ahora, de la nada, el Guaguas vuelve a ser campeón. Para todos los que sentimos muy adentro estos colores supone una emoción enorme”.</p>
+
+      <p>“Estoy convencido de que se están sentando las bases para que la entidad se vuelva a consolidar. En eso estamos todos los que formamos parte de esta familia. Sin duda, los éxitos deportivos que se han cosechado son un respaldo importante, pero queda mucho por hacer y seguimos con todo tipo de esfuerzos e ideas para permitir el crecimiento de nuestro escudo”, apostilla. Joselu, que guarda parentesco familiar con Jorge Ramón, insiste en que el Guaguas “es una seña de identidad” y que forma parte “del patrimonio deportivo y sentimental” de Gran Canaria.</p>
+
+      <EditorialQuote>Recuerdo mis comienzos en los Salesianos, Universidad Laboral, Gran Canaria y Juventud, a entrenar con el Guaguas en la temporada 1986-87 y mi ficha por ese equipo en la siguiente por invitación de Felipe Nuez. Mi posterior etapa en el Santa Catalina de Isidro Quintana en Tercera División, equipo con el que alcanzamos la Segunda y la División de Honor. Incluso cuando formé parte del Canteras de balonmano quedando campeón de Primera y alcanzando la División de Honor. El deporte siempre ha formado parte de mi vida y en estos últimos años incluso saqué un título de entrenador de voleibol para estar más cerca de mi hija Laura. Una de mis ilusiones es ayudar al Guaguas porque será bueno para nuestra tierra.</EditorialQuote>
+    </>
+  ),
+
 
   // ═══════════════════════════════════════════════
   // NEW: Nuevos ídolos adicionales (Cap 14 children)
