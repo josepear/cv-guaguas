@@ -272,7 +272,8 @@ if ($hero_icon === 'custom' && $hero_custom_icon) {
             if (!isset($libro_has_titulo_deportivo)) {
                 $libro_has_titulo_deportivo = (strpos($post_content, '[titulo_deportivo') !== false);
             }
-            if (!$libro_has_titulo_deportivo) : ?>
+            $is_patrocinador = ($post->post_parent && get_post_meta($post->post_parent, '_numero_capitulo', true) === '25');
+            if (!$libro_has_titulo_deportivo && !$is_patrocinador) : ?>
             <header class="mb-8 md:mb-12">
                 <?php if ($capitulo_numero) : ?>
                 <span class="chapter-marker block mb-4">
@@ -388,6 +389,7 @@ if ($hero_icon === 'custom' && $hero_custom_icon) {
                     $prev_numero = get_post_meta($prev_capitulo->ID, '_numero_capitulo', true);
                 ?>
                 <a 
+                    id="nav-prev"
                     href="<?php echo get_permalink($prev_capitulo->ID); ?>" 
                     class="flex-1 group flex items-center gap-4 p-4 rounded border border-border/50 bg-card/30 hover:border-gold/50 hover:bg-card/50 transition-all duration-300"
                 >
@@ -415,6 +417,7 @@ if ($hero_icon === 'custom' && $hero_custom_icon) {
                     $next_numero = get_post_meta($next_capitulo->ID, '_numero_capitulo', true);
                 ?>
                 <a 
+                    id="nav-next"
                     href="<?php echo get_permalink($next_capitulo->ID); ?>" 
                     class="flex-1 group flex items-center justify-end gap-4 p-4 rounded border border-border/50 bg-card/30 hover:border-gold/50 hover:bg-card/50 transition-all duration-300"
                 >
@@ -457,6 +460,67 @@ document.addEventListener('DOMContentLoaded', function() {
     
     window.addEventListener('scroll', updateProgress, { passive: true });
     updateProgress();
+});
+
+// Keyboard navigation — desktop only (← →)
+document.addEventListener('DOMContentLoaded', function() {
+    // Only activate on non-touch devices
+    if (window.matchMedia('(hover: none)').matches) return;
+
+    const prev = document.getElementById('nav-prev');
+    const next = document.getElementById('nav-next');
+
+    // Visual feedback: briefly highlight the nav button
+    function highlight(el) {
+        if (!el) return;
+        el.style.borderColor = 'hsl(45, 100%, 50%)';
+        el.style.backgroundColor = 'rgba(255, 193, 0, 0.12)';
+        setTimeout(function() {
+            el.style.borderColor = '';
+            el.style.backgroundColor = '';
+        }, 180);
+    }
+
+    document.addEventListener('keydown', function(e) {
+        // Ignore if user is typing in an input, textarea, select or contenteditable
+        const tag = document.activeElement && document.activeElement.tagName;
+        if (tag === 'INPUT' || tag === 'TEXTAREA' || tag === 'SELECT') return;
+        if (document.activeElement && document.activeElement.isContentEditable) return;
+        // Ignore if a modifier key is held
+        if (e.altKey || e.ctrlKey || e.metaKey) return;
+
+        if (e.key === 'ArrowLeft' && prev) {
+            e.preventDefault();
+            highlight(prev);
+            setTimeout(function() { window.location.href = prev.href; }, 160);
+        }
+
+        if (e.key === 'ArrowRight' && next) {
+            e.preventDefault();
+            highlight(next);
+            setTimeout(function() { window.location.href = next.href; }, 160);
+        }
+    });
+
+    // Show keyboard hint on first visit (once per session)
+    if (!sessionStorage.getItem('kb_hint_shown')) {
+        sessionStorage.setItem('kb_hint_shown', '1');
+        var hint = document.createElement('div');
+        hint.innerHTML = '&#8592; &#8594;&nbsp;&nbsp;Navega con las teclas';
+        hint.style.cssText = 'position:fixed;bottom:2rem;left:50%;transform:translateX(-50%) translateY(1rem);background:hsl(220,50%,12%);color:hsl(0,0%,90%);font-size:0.8125rem;font-family:sans-serif;padding:0.5rem 1.25rem;border-radius:2rem;border:1px solid hsl(220,25%,28%);opacity:0;transition:opacity 0.4s,transform 0.4s;pointer-events:none;z-index:9999';
+        document.body.appendChild(hint);
+        requestAnimationFrame(function() {
+            requestAnimationFrame(function() {
+                hint.style.opacity = '1';
+                hint.style.transform = 'translateX(-50%) translateY(0)';
+            });
+        });
+        setTimeout(function() {
+            hint.style.opacity = '0';
+            hint.style.transform = 'translateX(-50%) translateY(1rem)';
+            setTimeout(function() { hint.remove(); }, 400);
+        }, 3000);
+    }
 });
 </script>
 

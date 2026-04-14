@@ -2672,36 +2672,231 @@ c) Examinar las liquidaciones y balances de la entidad.[/articulo]
         ),
         'content' => '[capitular]Una nueva generación de estrellas ha tomado el relevo en el Gran Canaria Arena. Los nuevos ídolos del Guaguas combinan talento internacional con la pasión local para escribir nuevos capítulos en la historia del club.[/capitular]
 [imagen_contenido src="'),
-    array('title' => 'Pablo Kukartsev', 'numero' => '', 'order' => 146, 'show_marker' => false, 'parent_ref' => 'cap14',
-        'content' => '<p>Contenido del subcapítulo próximamente.</p>'),
-    array('title' => 'Moisés Cézar', 'numero' => '', 'order' => 147, 'show_marker' => false, 'parent_ref' => 'cap14',
-        'content' => '<p>Contenido del subcapítulo próximamente.</p>'),
-    array('title' => 'Alejandro Fernández', 'numero' => '', 'order' => 148, 'show_marker' => false, 'parent_ref' => 'cap14',
-        'content' => '<p>Contenido del subcapítulo próximamente.</p>'),
-    array('title' => 'Guilherme Hage', 'numero' => '', 'order' => 149, 'show_marker' => false, 'parent_ref' => 'cap14',
-        'content' => '<p>Contenido del subcapítulo próximamente.</p>'),
-    array('title' => 'Jorge Almansa', 'numero' => '', 'order' => 150, 'show_marker' => false, 'parent_ref' => 'cap14',
-        'content' => '<p>Texto del prólogo pendiente de redacción.</p>'),
-    array('title' => 'Matt Knigge', 'numero' => '', 'order' => 151, 'show_marker' => false, 'parent_ref' => 'cap14',
-        'content' => '<p>Contenido del subcapítulo próximamente.</p>'),
-    array('title' => 'Paulo Renan', 'numero' => '', 'order' => 152, 'show_marker' => false, 'parent_ref' => 'cap14',
-        'content' => '<p>Contenido del subcapítulo próximamente.</p>'),
-    array('title' => 'Paolo Zonca', 'numero' => '', 'order' => 153, 'show_marker' => false, 'parent_ref' => 'cap14',
-        'content' => '<p>Contenido del subcapítulo próximamente.</p>'),
-    array('title' => 'Martín Ramos', 'numero' => '', 'order' => 154, 'show_marker' => false, 'parent_ref' => 'cap14',
-        'content' => '<p>Contenido del subcapítulo próximamente.</p>'),
-    array('title' => 'Io de Amo', 'numero' => '', 'order' => 155, 'show_marker' => false, 'parent_ref' => 'cap14',
-        'content' => '<p>Contenido del subcapítulo próximamente.</p>'),
-    array('title' => 'Nico Bruno', 'numero' => '', 'order' => 156, 'show_marker' => false, 'parent_ref' => 'cap14',
-        'content' => '<p>Contenido del subcapítulo próximamente.</p>'),
-    array('title' => 'Unai Larrañaga', 'numero' => '', 'order' => 157, 'show_marker' => false, 'parent_ref' => 'cap14',
-        'content' => '<p>Contenido del subcapítulo próximamente.</p>'),
-    array('title' => 'Walla Souza', 'numero' => '', 'order' => 158, 'show_marker' => false, 'parent_ref' => 'cap14',
-        'content' => '<p>Contenido del subcapítulo próximamente.</p>'),
-    array('title' => 'Jean Pascal', 'numero' => '', 'order' => 159, 'show_marker' => false, 'parent_ref' => 'cap14',
-        'content' => '<p>Contenido del subcapítulo próximamente.</p>'),
-    array('title' => 'Osmany Juantorena', 'numero' => '', 'order' => 160, 'show_marker' => false, 'parent_ref' => 'cap14',
-        'content' => '<p>Contenido del subcapítulo próximamente.</p>'),
+    array('title' => 'Pablo Kukartsev', 'numero' => '', 'order' => 1461, 'show_marker' => false, 'parent_ref' => 'cap14',
+        'content' => '
+[capitular]En el doblete de 2021, con Liga y Copa del Rey que no se daba desde 1994, el opuesto Pablo Kukartsev (Buenos Aires, 1993) fue una de las figuras más indiscutibles como prueba su designación como jugador más valioso de la temporada.[/capitular]
+
+<p>&ldquo;Uno no busca distinciones individuales porque esto es un juego de equipo. Todo lo que conseguí en ese año se lo debo a mis compañeros, al trabajo que realizamos conjuntamente entre todos porque, aunque pudiera parecerlo, no fue nada fácil hacer lo que hicimos&rdquo;, apunta desde las filas del Almería, su destino profesional actual y del que, precisamente, llegó en el verano de 2020.</p>
+
+<p>&ldquo;Me ofrecieron la oportunidad de jugar competiciones europeas, algo que no todos los clubes en España pueden hacer, además de formar parte de un proyecto muy ilusionante. Es cierto que sobrevolaba la incertidumbre de qué respuesta podría darse al ser un club que regresaba tras una larga ausencia. Encima la pandemia tampoco ayudaba al optimismo. De hecho, fui el primero de la plantilla en contraer el virus, con la incertidumbre que eso conllevaba. Pero pusieron mucho interés en mí, me convencieron con unas ideas ambiciosas. Desde mi entorno me apoyaron cuando me decidí a aceptar la oferta y, la verdad, desde el primer momento todo fue rodado&rdquo;, consigna.</p>
+
+<p>Kukartsev opina que el grupo &ldquo;fue de diez a nivel profesional y humano&rdquo;, lo que terminó derivando en la cosecha de éxitos que se dio: &ldquo;No jugamos la Supercopa de España y en Europa caímos mucho antes de lo que merecíamos. Disputamos encuentros de máximo nivel, de los que a todo jugador le gusta tomar parte, llegamos a finales, las ganamos... No se puede pedir mucho más, la verdad. Disfruté, crecí, pude desarrollarme todo lo que esperaba. Merecimos lo logrado porque lo peleamos desde el primer entrenamiento y con toda la intensidad posible&rdquo;.</p>
+
+<p>Y bien presente, pese al paso del tiempo, dos momentos elegidos: &ldquo;Cuando Javi me la colocó para hacer el punto ganador ante el Almería en la Liga y la definición de Hage en la Copa, que también valió el trofeo que nos llevamos. Es imposible olvidar esa alegría, la satisfacción de ver premiado tanto trabajo&rdquo;.</p>
+
+<p>Además, se muestra como una persona agradecida al hacer balance de su única campaña, la 2020-21, defendiendo el escudo al que ayudó a volver a la cima: &ldquo;Al Guaguas siempre le voy a guardar cariño, respeto y admiración. Me trataron de maravilla y, a nivel personal, fue un tiempo de evolución constante. Mi balance es totalmente espectacular&rdquo;.</p>
+'),
+
+    array('title' => 'Moisés Cézar', 'numero' => '', 'order' => 1462, 'show_marker' => false, 'parent_ref' => 'cap14',
+        'content' => '
+[capitular]En su primer año como jugador del Guaguas, brazalete de capitán y levantando hasta tres títulos: Copa, Liga y Supercopa. Todo, con diferencia de unos meses. &ldquo;Cada vez que me tocó ir a recoger un trofeo, las emociones fueron increíbles, únicas&rdquo;.[/capitular]
+
+<p>El receptor brasileño Moisés Cézar (Belo Horizonte, 1983) ya había tenido una experiencia similar en el Almería, años atrás, acaparando todos los laureles nacionales. Pero hacerlo aquí, con la jerarquía que se le otorgó en virtud de su experiencia previa, tuvo &ldquo;un sabor especial&rdquo;, tal y como admite.</p>
+
+<p>Después de tres temporadas en el Vecindario, la consigna que le dio Paco Sánchez Jover, su técnico en el conjunto sureño, le marcó a fuego: &ldquo;Me habló del proyecto de recuperar el Guaguas y me dijo que yo tenía que estar, que me quería con él. A Paco es imposible decirle que no. Y tampoco me lo pensé. Seguía en Gran Canaria, que es una tierra a la que me adapté muy bien y, encima, ya en el final de mi carrera, iba a poder formar parte de un equipo histórico, con aspiraciones. Todo me motivó mucho&rdquo;.</p>
+
+<p>Cézar ya tenía referencias de lo que había significado el Guaguas décadas atrás, por lo que asumió con &ldquo;orgullo y responsabilidad&rdquo; la misión de liderar el grupo a las órdenes de Camarero, sabiendo que &ldquo;había que ir a por todas desde el primer momento&rdquo; para respetar, precisamente, la naturaleza de un proyecto diseñado para ganar.</p>
+
+<p>&ldquo;Vine con una edad ya importante y me produjo una gran satisfacción jugar todos los partidos y poder darle mi mejor nivel al servicio de los compañeros. Creo que no dejé ninguna duda sobre la pista y, encima, tuve el privilegio de jugar con grandes personas, de enorme calidad humana y profesional. Eso fue clave. Y también el míster, que es otro ganador y ha hecho grupo en los momentos más complicados. Fuimos un equipo con todas las letras y eso explica tanto éxito&rdquo;, opina.</p>
+
+<p>A nivel individual, no oculta que vestir el dorsal 5 también supone un guiño a la nostalgia: &ldquo;Fue el que llevó Paco y es un honor llevarlo en el Guaguas como hizo él. Me da un plus de fuerza, de energía. Otro motivo más para dar lo que llevo dentro en cada encuentro, en cada entrenamiento&rdquo;.</p>
+
+<p>Centrado en &ldquo;continuar dando alegrías&rdquo;, pondera que la presencia gradual de público &ldquo;lo ha hecho todo más fácil&rdquo; tras muchos meses de compromisos a puerta cerrada por la pandemia: &ldquo;Jugar y ganar finales sin gente fue duro, aunque no quedaba otra opción. Nos acordamos de todos y brindamos cada copa por ellos. Ahora es una alegría poder competir con la fuerza que nos dan desde la grada y ojalá que todo siga yendo tan bien como hasta el momento. Y con la ilusión de mejorar en Europa y poder realizar una buena campaña en general. Es la exigencia que asumimos con la máxima profesionalidad&rdquo;.</p>
+'),
+
+    array('title' => 'Alejandro Fernández', 'numero' => '', 'order' => 1463, 'show_marker' => false, 'parent_ref' => 'cap14',
+        'content' => '
+[capitular]Diez años fuera de Canarias y la oferta de regresar a una isla, Gran Canaria, que considera su casa, hicieron que Alejandro Fernández (La Laguna, 1987) sintiera un pellizco en el corazón al recibir la propuesta del Guaguas.[/capitular]
+
+<p>&ldquo;Estaba en el Almería, con Hage o Almansa, y no nos faltaban alicientes deportivos. Pero el Guaguas es el Guaguas. La única manera de mejorar lo que tenía era estar aquí. Y más al saber los fichajes que se iban a realizar para que el proyecto tuviese la importancia que se quería. Ni me lo pensé&rdquo;, aclara.</p>
+
+<p>El líbero tinerfeño, que se ha asentado como si llevara &ldquo;toda la vida&rdquo; a las órdenes de Camarero, opina que el actual Guaguas &ldquo;es la versión 2.0&rdquo; del legendario que se hizo un sitio en la leyenda con sus primeros títulos: &ldquo;Defendemos un escudo de un gran peso e importancia en el voleibol español y somos conscientes de esa gran responsabilidad. Particularmente, supone un privilegio estar aquí y dar continuidad a un legado tan importante. Cambian los tiempos, pero pervive el espíritu que hizo y hace a este club tan grande&rdquo;.</p>
+
+<p>&ldquo;Cada día aumentan las ganas de seguir creciendo y dando alegrías al club y a la afición. Lo noto en todos los que formamos esta gran familia, dándonos siempre toda la fuerza que podemos. A lo largo de una temporada hay momentos buenos y menos buenos, pero disponemos de un vestuario comprometido y de una enorme calidad humana y profesional&rdquo;, añade.</p>
+
+<p>Su condición de canario le añade &ldquo;un plus&rdquo;, tal y como confiesa, porque llevar a un equipo de la tierra a lo más alto, como ha podido experimentar, &ldquo;es algo inolvidable&rdquo;.</p>
+
+<p>&ldquo;Cuando acepté afrontar este reto sabía que había que dar el máximo y, en lo posible, ganarlo todo&rdquo;, una misión que se ha ido cumpliendo, salvo alguna excepción, pero que en su balance individual le llena &ldquo;de satisfacción&rdquo;.</p>
+
+<p>Para Alejandro, &ldquo;lo mejor está por venir&rdquo; porque, tras el triplete de 2021, &ldquo;se han sentado unas bases muy importantes con vistas a un futuro de igual competitividad, ambición y nivel&rdquo;.</p>
+
+<p>De ahí que piense que la afición &ldquo;seguirá teniendo motivos para la ilusión&rdquo;, ya que el proyecto deportivo &ldquo;no parará de asentarse&rdquo; para poder mantener el escalafón adquirido y que, dice, &ldquo;es el propio del Guaguas, siempre en lo más alto&rdquo;.</p>
+'),
+
+    array('title' => 'Guilherme Hage', 'numero' => '', 'order' => 1464, 'show_marker' => false, 'parent_ref' => 'cap14',
+        'content' => '
+[capitular]Cuando el Guaguas llamó a Guilherme Hage para incorporarlo a filas, en plena pandemia y tratándose de un jugador contrastado, sin necesidad de aventuras (&ldquo;en el Almería lo tenía todo&rdquo;), pocos creyeron en que tal gestión prosperaría.[/capitular]
+
+<p>Pero tal fue la insistencia, que el jugador nacido en Araquara (Sao Paulo, Brasil) en 1988 se vio en la isla &ldquo;mucho antes de esperarlo&rdquo;, como reconoce. Y fue un flechazo, ni más ni menos. &ldquo;Me enamoré de esta tierra y del club nada más llegar. La sensación que tuve desde el primer momento era de que estaba justo donde quería, en el lugar exacto para mí y mi familia. Y eso me ayudó, indudablemente, a rendir, a responder a la confianza que puso Juan Ruiz en traerme. Un deportista necesita estabilidad dentro y fuera de la cancha y en el Guaguas encontré un equilibrio perfecto&rdquo;, explica. Y, por si fuera poco, títulos y honor a las primeras de cambio, lo que ya supuso el corolario perfecto.</p>
+
+<p>&ldquo;Venía de un club ganador y, sinceramente, no esperaba que fuésemos a salir campeones de Liga y Copa en la primera campaña. Por supuesto que todos, y yo más que nadie, jugamos para ganar, para ser inconformistas y superarnos. Pero también hay que ser realistas. El Guaguas venía de muchos años sin competir al contrario que otros equipos que ya tenían una estructura mucho más consolidada y eso siempre da una ventaja. Ni eso nos pasó factura. Se juntó un grupo espectacular, los resultados acompañaron y fue muy especial culminar todo el trabajo y esfuerzo de esa manera, levantando trofeos... Demasiado especial diría yo&rdquo;, esgrime.</p>
+
+<p>Hage admite que su personalidad y manera de ver la competición, &ldquo;que es la que tiene Sergio Camarero&rdquo;, le permitió encajar en un proyecto también de naturaleza ambiciosa como es el actual y en el que no entra en previsiones perder. &ldquo;Más gano y más quiero ganar. He tenido la suerte en mi carrera de llevarme muchas alegrías, pero soy de los jugadores que se acuerdan de todo al detalle. En el caso del Guaguas, de mi equipo, me preguntan por la Liga, la Copa o la Supercopa de España, los tres títulos que nos llevamos en el año 2021, y soy capaz hasta de recordar los puntos, de qué manera transcurrieron las finales... Porque eso es lo que queda luego, con el paso del tiempo. Las vivencias felices&rdquo;.</p>
+
+<p>Y, aunque ha sido hasta la fecha año y medio de militancia, ni duda en expresar su &ldquo;enorme orgullo&rdquo; por haber dejado su nombre escrito en la historia del club. &ldquo;Me siento tan identificado con la institución, con los compañeros y con Gran Canaria que vivir este renacimiento del Guaguas y de esta manera tan bonita es algo que me completa a todos los niveles. Y quiero seguir escribiendo esta historia todo lo que pueda&rdquo;, finaliza.</p>
+'),
+
+    array('title' => 'Gustavo Delgado', 'numero' => '', 'order' => 1465, 'show_marker' => false, 'parent_ref' => 'cap14',
+        'content' => '
+[capitular]La historia del Guaguas, esa tradición de lustre y prestigio que estaba de vuelta en 2020, fue el imán que atrajo al madrileño Gustavo Delgado (Móstoles, 1986) a alistarse al proyecto de reconstrucción desde las filas del Rennes francés.[/capitular]
+
+<p>Una experiencia en sus inicios le ayudó a eliminar cualquier atisbo de dudas: &ldquo;Tendría 19 años cuando me enfrenté al Guaguas. Entonces el equipo no era el de los títulos de los noventa y estaba en un momento delicado, pero recuerdo que ya daba respeto tener enfrente a un club de tanto recorrido y éxitos. Y al llamarme Juan Ruiz para estar aquí, ese momento me vino a la cabeza. No podía dejar pasar la oportunidad de vestir esta camiseta&rdquo;.</p>
+
+<p>Pese a que las lesiones le impidieron coger vuelo en su primera temporada, Gustavo se hizo un hueco en el corazón del Guaguas por su manera de implicarse desde fuera, ganándose la consideración de todos con un ejemplo de constancia, compañerismo y optimismo que caló en el vestuario. Ese empeño le ha permitido regresar a las pistas reciclado como líbero y con &ldquo;todas las ganas del mundo&rdquo; de ayudar como más le gusta, participando y sintiéndose actor de pleno derecho. &ldquo;Verlo todo desde fuera no es fácil, pero a mí me tocó aportar cuando no estuve apto y, tanto cuando ganamos la Copa como la Liga, tengo que agradecer a compañeros, técnicos y dirigentes que me permitieran vivir esos triunfos con toda la intensidad posible. Fue muy especial&rdquo;, valora.</p>
+
+<p>Considera que el año y medio transcurrido tras la refundación &ldquo;ha sido espectacular&rdquo; desde el punto de vista competitivo porque, pondera, &ldquo;no es nada fácil ganar tres títulos en un año, como se hizo en 2021&rdquo;, logro que, según su opinión, &ldquo;terminará valorándose como se debe con el paso del tiempo&rdquo;.</p>
+
+<p>&ldquo;Creo que todo ha ido más rápido de lo que podíamos esperar. Nos queda llegar lejos en Europa, que son palabras mayores porque hablamos de un escenario en el que hay clubes de un potencial bestial y, de momento, diría que inalcanzable para nosotros. Pero esto es el Guaguas y aquí vivimos de desafíos y tratar de superarnos en todo. Si ganamos, hay que seguir igual. Y si perdemos, porque no siempre todo son triunfos, estamos obligados a levantarnos de inmediato&rdquo;, matiza.</p>
+
+<p>Delgado no duda en asegurar que para él supone &ldquo;un orgullo&rdquo; poder decir, en un futuro, que durante su etapa profesional perteneció a esta entidad que califica como &ldquo;única en todos los sentidos&rdquo;.</p>
+'),
+
+    array('title' => 'Jorge Almansa', 'numero' => '', 'order' => 1466, 'show_marker' => false, 'parent_ref' => 'cap14',
+        'content' => '
+[capitular]Jorge Almansa (Cartagena, 1991) llevaba diez años en el Almería, era el capitán y emblema, tenía todas las consideraciones posibles como uno de los receptores de máximo nivel a escala nacional. Por si fuera poco, factores de índole personal, ya a punto de estrenar paternidad, le invitaban &ldquo;muy poco&rdquo; a cambiar de aires.[/capitular]
+
+<p>Le rompieron los esquemas &ldquo;para bien&rdquo; cuando, desde el Guaguas, le lanzaron el reto de unirse a Sergio Camarero y sus muchachos. &ldquo;Me supieron ilusionar, me hablaron de una manera que me conmovió y me llegó al fondo. Tanto es así que pasé de pensármelo a hacer las maletas en muy poco tiempo. Encima tuve la promesa, que se cumplió totalmente, de que tendría el apoyo que necesitaba para que mi familia pudiese estar bien en Gran Canaria. Y ahora, con el paso del tiempo, puedo decir que tomé la mejor decisión posible&rdquo;, argumenta.</p>
+
+<p>Su pasado laureado con otros colores lo ha actualizado ahora de amarillo y acumulando más títulos pese a que, advierte, &ldquo;si salir campeón una vez ya es complicado, hacerlo tres veces en el mismo año entra directamente en un nivel de dificultad tremendo&rdquo;.</p>
+
+<p>&ldquo;Fue duro, muy duro, no poder disfrutar de la afición cuando, por la pandemia, los partidos no admitían público. Uno no se acostumbra a pabellones vacíos, a levantar un título sin nadie en las gradas. Por suerte, todo ha ido evolucionando mejor, y, en este sentido, para los que venimos de fuera también ha resultado una experiencia muy bonita sentir la manera de animar y empujar de la afición del Guaguas. En muchos momentos nos ha ayudado y estamos muy responsabilizados en seguir dándoles las mayores satisfacciones posibles&rdquo;, dice.</p>
+
+<p>Almansa ve &ldquo;una base sólida y fuerte&rdquo; para que en el futuro se sigan sucediendo los éxitos y se percata de un factor esencial para dar continuidad a la buena línea exhibida: la implicación. &ldquo;Todos los que formamos parte del equipo tenemos muy claro lo que tenemos que dar, lo que debemos ofrecer, sin escatimar en ningún momento esfuerzo, sacrificio y trabajo. Hay una cultura muy definida en todos nosotros para entrenar a tope y tratar de competir siempre de la misma manera. No vas a ganar cada semana. Eso es imposible y menos con un calendario tan cargado como el que hemos tenido, con viajes complicados por la competición europea y sin apenas tiempo, muchas veces, para el descanso y la recuperación. Pero nunca hay excusas y perder siempre debe dolernos muchísimo. Nuestro entrenador así nos lo ha inculcado y así lo hemos asumido. Y no nos ha ido mal&rdquo;.</p>
+'),
+
+    array('title' => 'Matt Knigge', 'numero' => '', 'order' => 1467, 'show_marker' => false, 'parent_ref' => 'cap14',
+        'content' => '
+[capitular]&ldquo;Cuando pruebas el sabor de ganar, el sabor de ser campeón, no quieres otro. Y trabajas y haces todo lo posible para que no se acabe. En el Guaguas se sigue la misma filosofía y es la que se adapta a mi manera de vivir el deporte y el voleibol&rdquo;.[/capitular]
+
+<p>El central norteamericano Matt Knigge (Nueva Jersey, 1996) cambió el reconocimiento que tenía en Lugo, su anterior club en el campeonato español, por el órdago que se le abría en un equipo &ldquo;en el que no vale ser segundo&rdquo;. Y en el momento de repasar todo lo vivido aquí (&ldquo;la isla es increíble, me encanta la gente, me siento muy integrado y feliz en el equipo y se han conquistado, hasta la fecha, tres títulos de cinco posibles&rdquo;), el balance le hace esbozar una sonrisa. &ldquo;No puedo pedir más&rdquo;, sintetiza.</p>
+
+<p>Knigge pronto percibió que el Guaguas era &ldquo;el sitio perfecto&rdquo; para que pudiera alcanzar la plenitud con su fortaleza física y disfrutar, como no ha parado de hacer, en compañía del resto. &ldquo;Encontré un equipo increíble y no puedo dejar de tener ganas siempre de venir al pabellón a entrenar y a jugar. Es un privilegio tener la oportunidad de estar con este grupo porque sientes que hay una calidad superior&rdquo;, matiza.</p>
+
+<p>Guarda un recuerdo &ldquo;impresionante&rdquo; de cada uno de los títulos que ganó con la camiseta amarilla, si bien la Copa de 2021, la que inició el ciclo actual, tiene un lugar especial en su memoria. &ldquo;El formato de la Copa, con todo concentrado en tres días, mucha adrenalina y sabiendo que si pierdes quedas eliminado, le da un valor tremendo a la Copa. La que ganamos al Palma fue un partidazo y nos dio un subidón tremendo que, luego, también ayudó a que nos lleváramos la Liga. Fue el principio de todo y hay que reconocerlo así&rdquo;, valora.</p>
+
+<p>Para lo que viene, lo tiene claro: mantener la filosofía que persigue la excelencia. &ldquo;Levantas un trofeo y ya piensas en el próximo. Vienes a un entrenamiento y sabes que o das todo o no juegas. Ganas un partido y sabes que tienes la obligación de volver a ganar el próximo. Pero eso es lo que queremos todos los que estamos aquí, no nos quedamos sentados a mirar lo que hemos hecho. Si no fuera así, no seríamos el Guaguas. Siempre nos pedimos más y más. Y pensamos continuar de la misma manera&rdquo;. Y todo porque, como Matt recalca, &ldquo;es muy fácil sentirse comprometido con estos colores&rdquo;. En su caso, además, &ldquo;en cada día y en cada partido&rdquo;.</p>
+'),
+
+    array('title' => 'Paulo Renan', 'numero' => '', 'order' => 1468, 'show_marker' => false, 'parent_ref' => 'cap14',
+        'content' => '
+[capitular]Portugal, Grecia, Italia y, claro está, su Brasil natal. Nunca había podido jugar en un club español Paulo Renan (Curitiba, 1985) hasta que desde Gran Canaria le echaron el lazo.[/capitular]
+
+<p>&ldquo;Siempre tuve ganas de competir aquí y no me lo pensé mucho. Estaba en mi país y me gustó el reto de volver a salir al extranjero y demostrar mis condiciones como colocador. El Guaguas me pareció un desafío perfecto y, después de todo lo que se ha hecho desde 2020, desde luego que me reafirmo en aquel pensamiento que tuve&rdquo;, reconoce.</p>
+
+<p>Fue llegar y darse cuenta de que aquí se daba la actitud con la que siempre se sintió identificado. Vio que, con la mano magistral de Sergio Camarero, &ldquo;hay un espíritu de lucha tremendo&rdquo;, lo que casa con la electricidad que siempre le ha sido característica.</p>
+
+<p>&ldquo;Vivo este deporte con muchísima pasión, con intensidad siempre, esté jugando o fuera esperando una oportunidad. Y me encanta sentir que esa manera de desarrollar mi profesión es la misma que quiere nuestro entrenador. No valgo para salir a ver qué pasa. Salgo a ganar, a dejarme todo lo que llevo dentro. Creo, además, que esa ha sido la clave de que hayamos ganado tantos títulos en este tiempo. Y, sin duda, será igualmente fundamental para que sigan llegando&rdquo;, opina.</p>
+
+<p>Renan se considera &ldquo;un jugador de equipo y para el equipo&rdquo; y que no tiene otro propósito que el de ser &ldquo;útil a los compañeros&rdquo;, al entender que en el voleibol &ldquo;debe primar el interés colectivo&rdquo;, y asegura &ldquo;ser feliz&rdquo; cuando un esfuerzo suyo &ldquo;se convierte en punto para todos&rdquo;.</p>
+
+<p>&ldquo;Quiero que se me relacione con ese tipo de jugador que está para servir y ayudar. Además, por mi función específica siempre tengo la prioridad de dejar al compañero la mejor disposición posible para su remate&rdquo;, añade.</p>
+
+<p>Que tenga varios compatriotas en la plantilla como Hage o Cézar lo celebra porque &ldquo;siempre es positivo&rdquo; a la hora de agilizar una integración que ha sido perfecta, ya que tanto su mujer e hija &ldquo;se han adaptado a las mil maravillas en el idioma, las costumbres y la vida en Gran Canaria, donde todo es muy sencillo para vivir bien&rdquo;.</p>
+
+<p>La Liga ganada en 2021 fue la primera de su palmarés (&ldquo;conquisté otros títulos, pero nunca un campeonato regular hasta llegar al Guaguas&rdquo;), por lo que elige esa final ganada al Almería como un momento &ldquo;de gran felicidad&rdquo; en su historia con el equipo grancanario. Aunque no se conforma con lo vivido. &ldquo;En el deporte siempre importa lo que viene. Y espero que sean más éxitos aquí&rdquo;, pide.</p>
+'),
+
+    array('title' => 'Paolo Zonca', 'numero' => '', 'order' => 1469, 'show_marker' => false, 'parent_ref' => 'cap14',
+        'content' => '
+[capitular]El receptor italiano Paolo Zonca (Gorizia, 1997) pasó como un trueno por el Guaguas. Decisivo en sus dos temporadas (2022-2024) en la consecución de cinco títulos, con dos Superligas, una Copa del Rey, una Supercopa de España y una Copa Ibérica como legado visible, su impacto resultó incuestionable en el ciclo reciente plagado de laureles.[/capitular]
+
+<p>Figura dentro de la cancha, con jerarquía, ambición y compromiso, su adaptación al club y a la vida en Gran Canaria resultó excepcional, lo que engrandeció más su figura si cabe. Le encantaba la vida en la isla, de hecho no dudaba en pasar sus vacaciones sin moverse de aquí, y presumía de ser el mejor embajador posible de cara al exterior al presumir de una tierra &ldquo;especial, preciosa y única&rdquo;, como repetía a modo de identificación plena.</p>
+
+[cita_editorial]Siempre he estado muy a gusto en la cancha, la gente lo ve y yo intento demostrar mis emociones con la afición en cada partido, y eso me permite subir el nivel. Noto como la gente me quiere, como celebra cada uno de mis puntos, eso me ayuda para estar focalizado en mi juego, con el fin de hacer más puntos y poder dedicarles la victoria en cada partido. No soy grancanario, ni español, pero lo que quiere lograr el Guaguas tanto en España como en Europa encaja a la perfección con mi pensamiento y con la forma que tengo de vivir el voleibol cada día.[/cita_editorial]
+
+<p>Cuando Juan Ruiz lo fichó desde el campeonato francés sabía que era una apuesta sobre seguro y que, como así pasó, resultaría muy complicado poder retenerle ante su magnitud y carisma, pero el tiempo de militancia en el Guaguas le hizo ganarse, por derecho propio, un lugar entre los grandes que han defendido su camiseta. Zonca consideró &ldquo;un honor&rdquo; su paso por el club por todo lo que significó en su vida deportiva y personal y, de igual manera, dejó un recuerdo imborrable por su contribución a la historia de la entidad y a enriquecer al vestuario a base de profesionalidad y valores de todo tipo.</p>
+'),
+
+    array('title' => 'Martín Ramos', 'numero' => '', 'order' => 1470, 'show_marker' => false, 'parent_ref' => 'cap14',
+        'content' => '
+[capitular]Pese a que tenía un palmarés envidiable, con una medalla olímpica en Río de Janeiro 2016 como guinda, Martín Ramos (Buenos Aires, 1991) sintió el deseo de unir su historia exitosa a la del Guaguas, otro paradigma de triunfos, y no dudó en aceptar el reto que le pusieron encima de la mesa en el verano de 2022.[/capitular]
+
+<p>Y la intuición que tuvo de que ese era el inicio de un ciclo de conquistas no ha parado de cumplirse desde entonces porque la cosecha de títulos y de alegrías se ha sucedido sin fin, consecuencia lógica de un binomio imparable, el que forma con el club y, también, de que haya podido encontrar un sitio ideal para, en la madurez de su carrera, sacar a relucir toda su potencia y poder en la pista.</p>
+
+<p>El central argentino, desde el comienzo adaptado al Guaguas &ldquo;como si llevara toda una vida&rdquo; en la disciplina isleña, ha sido parte activa de las campañas plagadas de logros que ha vivido en carne propia y con su compatriota Nico Bruno como uno de sus aliados infalibles. &ldquo;A los centrales nos pide que seamos muy protagonistas en el ataque, y estoy adaptándome a eso. Yo me siento un central atacante, por lo que me gusta que el entrenador piense así y que me pida eso&rdquo;. Así define su estilo y que encaja plenamente con lo que busca Camarero en sus jugadores: arrojo, valentía, sacrificio y orgullo además de la calidad que no se discute.</p>
+
+[cita_editorial]Me gusta formar parte del equipo al que todos quieren ganar. Voy a seguir en el club, he renovado por dos años más con la entidad. Me encuentro muy feliz en Gran Canaria, con su gente y con la política del equipo. Es un orgullo formar parte de esta familia, los compañeros de vestuario ya son parte de mi vida diaria.[/cita_editorial]
+
+<p>Feliz tras rubricar su contrato hasta 2027 y como muestra inequívoca de que, océano Atlántico de por medio del lugar que le vio nacer, aquí está su sitio. Y como estandarte del Guaguas, puntual a su cita en los momentos culminantes de las finales y partidos más importantes, va a continuar aportando su sello distinguido para que las victorias y los elogios marquen el paso y jalonen una senda en la que ha sido partícipe como el que más.</p>
+'),
+
+    array('title' => 'Io de Amo', 'numero' => '', 'order' => 1471, 'show_marker' => false, 'parent_ref' => 'cap14',
+        'content' => '
+[capitular]&ldquo;Mi padre fue jugador del Atlético de Madrid de voleibol y coincidió con este club en sus inicios. Soy consciente de todo lo que ha significado el Guaguas en el voleibol español y ese fue uno de los motivos que me hicieron regresar desde el extranjero&rdquo;.[/capitular]
+
+<p>Miguel Ángel de Amo, Io, (Madrid, 1985) sabía bien el destino que elegía para volver a España después de consagrarse en Eslovaquia y Chequia con experiencias que le apuntalaron más si cabe una hoja de servicios privilegiada, con infinidad de títulos y medallas tanto en la pista como sobre la arena en sus incursiones en el vóley-playa. Juan Ruiz llevaba tras su pista largo tiempo y fue en 2022 cuando, al fin, pudo captarlo para importar su sapiencia, destreza y maestría como colocador.</p>
+
+<p>&ldquo;Vine para unirme a un proyecto ganador y, también, para poner al servicio del vestuario mis vivencias, mis años de jugador en muchos clubes. Ayudar a unir a los compañeros, a generar el clima interno que siempre es fundamental, es una labor que asumí con naturalidad y en la que he tratado de aportar todo lo que sé&rdquo;, reconocía en sus inicios, asimilando con profesionalidad su rol de veterano.</p>
+
+<p>Pero esa tarea de ser el pegamento interno ha evolucionado hasta convertirle en un referente, a la altura de un grande como Jorge Almansa y recordando, por su influencia, carácter y prestaciones a otros capitanes históricos como Camarero o Sánchez Jover.</p>
+
+<p>Ganador nato y guía para sus compañeros, en el club lo tienen como una pieza esencial, consideración que comparte el cuerpo técnico por la ejemplaridad que ofrece en todo, ya sean entrenamientos, partidos o actos promocionales. Y todo, sin perder competitividad y manteniendo un listón de intensidad y exigencia que le hacen único, ya sobrepasados los 40 años pero con una manera de entender la profesión que explica la impresionante trayectoria que tiene a sus espaldas. Y siempre con la premisa de que continuará, porque cada título que logra con el Guaguas activa, para él, la cuenta atrás para el siguiente. Insaciable, Io de Amo representa como pocos los valores históricos de una camiseta que ha ayudado a seguir engrandeciendo.</p>
+'),
+
+    array('title' => 'Nico Bruno', 'numero' => '', 'order' => 1472, 'show_marker' => false, 'parent_ref' => 'cap14',
+        'content' => '
+[capitular]Otro exponente más de la raza argentina y de la pasión con la que entienden allí el deporte, convertido casi siempre en una cuestión de vida o muerte. Así se desempeña y juega Nico Bruno (Buenos Aires, 1989), receptor que recaló en el club en 2023.[/capitular]
+
+<p>Brasil, Italia, Bélgica y Turquía, además de su país natal, habían sido escenarios de su imparable ascensión y, tras ser proclamado cuatro veces mejor jugador del campeonato otomano, con lo que eso conlleva, su siguiente paso exigía más excelencia. &ldquo;El Guaguas es el mejor equipo de la liga española, el presidente me trasladó la idea de seguir cosechando títulos y dar un salto de calidad en Europa. Era una propuesta ambiciosa y me interesó sumarme al proyecto&rdquo;, explicaba al argumentar su dirección a Gran Canaria pese a disponer de propuestas que, en términos económicos, mejoraban la realizada por Juan Ruiz.</p>
+
+<p>No le importó ceder ahí al anteponer la exclusividad profesional que otorgaba unirse a un representativo único, anclado en la cima y que, temporada a temporada, va a por todas sin discriminar competición o adversarios. Competir y ganar como modus vivendi.</p>
+
+[cita_editorial]Tenemos una seña de identidad muy marcada, es la de siempre querer ganar. En lo personal, he tenido partidos en los que me he llevado más puntos y otros en los que he podido contribuir en defensa o en recepción. Lo principal es ganar como equipo, las actuaciones individuales quedan en segundo plano.[/cita_editorial]
+
+<p>Bruno es, además, un vínculo de unión reconocible con la grada por el desempeño que juega en conectar al equipo con el aficionado y, en efecto camaleónico, se crece en ambientes adversos. La cualidad de rendir con presión no abunda y en el caso de Nico Bruno constituye una de sus grandes divisas, lo que le hace indispensable a ojos de Camarero y ejerce de recurso infalible para sus compañeros. Vino para seguir haciendo historia y siempre pensando en lo que viene.</p>
+'),
+
+    array('title' => 'Unai Larrañaga', 'numero' => '', 'order' => 1473, 'show_marker' => false, 'parent_ref' => 'cap14',
+        'content' => '
+[capitular]Eficiencia silenciosa, no siempre espectacular pero, invariablemente, valiosísima para el rendimiento y los resultados del equipo. Es el perfil de Unai Larrañaga (Dumbría, La Coruña, 2000), desde 2023 componente esencial del mecanismo de funcionamiento pluscuamperfecto del Guaguas desde su posición estratégica e infalible.[/capitular]
+
+<p>Curtido en el voleibol nacional, con paso por Arenal Emeve, Santanderina y Melilla, y con la condición de fijo en la selección española, en el club hubo unanimidad a la hora de valorar su incorporación, con el añadido de aumentar la cuota española del plantel, aspecto siempre bienvenido y que no se descuida. Larrañaga encajó desde el primer momento con la naturalidad que tienen los grandes.</p>
+
+[cita_editorial]Soy un jugador muy tranquilo pero, a la vez, apasionado. En la pista lo doy todo y, en mi faceta defensiva, trato de poner al servicio de los compañeros lo mejor de mí. Me gusta competir, ganar, afrontar cada partido al máximo.[/cita_editorial]
+
+<p>Desde esa serenidad para leer todas las situaciones y aportar su riqueza táctica se hace omnipresente su figura para que todo funcione de manera armónica y precisa. &ldquo;Fue algo muy especial sentir el interés del Guaguas. Cuando te llama el Guaguas sabes que es un desafío que tienes que aceptar como sea. Reconozco que no esperaba que me llegara tan pronto esta oportunidad. Es verdad que llevo rindiendo a buen nivel varios años y que estar en la selección española siempre te da un valor especial. Pero me veía en el Guaguas en una o dos temporadas más&rdquo;, reconoce a propósito de esa llamada que le cambió la vida y le ha permitido levantar títulos, hacerse más visible a todas las escalas.</p>
+
+<p>Querido y respetado por su carácter cercano, poco a poco se ha labrado la relevancia que ahora nadie cuestiona dentro del grupo. Sergio Miguel Camarero ve en él, como en Io de Amo, una mente precisa para canalizar talento y fuerza, cualidades que abundan en la plantilla. &ldquo;Sé que pertenezco a un club en el que no hay excusas. Eso me gusta y me motiva&rdquo;, se congratula el líbero gallego que llegó para quedarse y construir, con el resto, un Guaguas más y más grande.</p>
+'),
+
+    array('title' => 'Walla Souza', 'numero' => '', 'order' => 1474, 'show_marker' => false, 'parent_ref' => 'cap14',
+        'content' => '
+[capitular]Fue en julio de 2023. Llegaba con 33 años y con la competencia abierta en la demarcación de opuesto con el colombiano Juan Pablo Moreno. Pocos preveían lo que venía en camino con el fichaje del brasileño Francisco Wallysson Souza, Walla (Jaguaribe, 1990).[/capitular]
+
+<p>&ldquo;Creo firmemente que estaremos enfocados en nuestro principal objetivo, que es conquistar títulos. No solo yo, sino todo el equipo estará entregado al 100% para brindar a nuestros aficionados una temporada memorable, culminando con más de un título para nuestro club&rdquo;, declaraba en sus primeras palabras como componente del equipo.</p>
+
+<p>Recuerdan en el club que desde sus primeros entrenamientos no solo confirmó las mejores referencias. También impresionó por su potencia y precisión en la ejecución de remates. Un espectáculo verlo reventar, literalmente, la pelota, práctica que le ha hecho célebre ya en la competición oficial convirtiéndole en una auténtica máquina de hacer puntos, promediando en algunos tramos del calendario más de veinte y llegando a picos de hasta 28 (sumó la friolera de 171 en los últimos ocho encuentros de la temporada 2024-2025 como ejemplo ilustrativo de su voracidad). Saques directos, diagonales, en bloqueos... Un repertorio infinito el suyo para convertirse en elemento indefendible para los contrarios y diferenciador y decisivo en los intereses propios.</p>
+
+[cita_editorial]Me gusta que se espere todo de mí. Sabes que en el Guaguas hay que ganarlo todo y eso hace que te exijas cada día para dar el máximo. A mí me gusta la presión, jugar para ganar, para conseguir cosas importantes. Todo jugador quiere estar siempre con metas importantes por cumplir y eso es lo que busco, por eso estoy tan contento y adaptado al Guaguas. La mentalidad de este club es la mentalidad que siempre he tenido yo. No hay día en el que no quiera ganar y dar lo mejor de mí en todos los partidos. Siempre trato de mantenerme enfocado en los entrenamientos y luego ponerlos en práctica de la mejor manera posible. El golpeo de balón que tengo es muy fuerte. Los potentes remates a campo rival podrían ser una de mis virtudes técnicas.[/cita_editorial]
+'),
+
+    array('title' => 'Tomas Rousseaux', 'numero' => '', 'order' => 1475, 'show_marker' => false, 'parent_ref' => 'cap14',
+        'content' => '
+[capitular]Un internacional belga procedente de Arabia Saudí, en la mejor etapa de su carrera y con disposición de dar lo mejor de su experiencia y valía en favor de la causa. Eso fue lo que se aseguró el Guaguas cuando en 2024, y tras la repentina marcha del italiano Paolo Zonca, analizó el mercado y se decantó por Tomas Rousseaux.[/capitular]
+
+[cita_editorial]El compromiso del club con la excelencia y su entorno de apoyo a los jugadores fueron factores clave. Además, la oportunidad de trabajar con su experimentado cuerpo técnico y unirme a un equipo con una cultura ganadora hizo que la decisión fuera fácil para mí.[/cita_editorial]
+
+<p>El receptor, ya con paso triunfal por campeonatos tan reputados como los de Italia, Alemania, Polonia o Grecia, no pudo tener una adaptación más satisfactoria porque en el primer año de militancia fue actor destacado del triplete de títulos nacionales (Superliga, Copa del Rey y Supercopa de España), dándole forma a su más que merecida renovación.</p>
+
+[cita_editorial]En cada partido intento dejar el ego de lado y evaluar lo que el juego me está ofreciendo, porque cada partido es diferente. Hago lo que sea necesario para ganar en grupo. También intento aportar mucha energía positiva y apoyo a mis compañeros, porque para mí es algo natural sonreír y disfrutar. Cada partido es estresante, pero no querríamos que fuera de otra manera porque ganar tiene su sacrificio.[/cita_editorial]
+
+<p>El saber estar que siempre luce, tenga mayor o menor protagonismo, y una concentración extrema que le hace aprovechar al máximo sus oportunidades siendo diferencial y dejando sello. Es lo que valora de manera especial Sergio Miguel Camarero a la hora de poder tirar de un jugador cerebral, con capacidad para decidir y que, acostumbrado a la presión, maneja como nadie los tiempos.</p>
+
+<p>Por eso y por mucho más se ha ganado Rousseaux un lugar en la galería de los mejores del Guaguas, siempre con una sonrisa contagiosa para hacer grupo, hombre de vestuario como es, pero sin renunciar nunca a esa ambición competitiva que le trajo a Gran Canaria desde el lejano Oriente y para seguir aumentando su figura e influencia.</p>
+'),
+
+    array('title' => 'Osmany Juantorena', 'numero' => '', 'order' => 1476, 'show_marker' => false, 'parent_ref' => 'cap14',
+        'content' => '
+[capitular]La noticia del fichaje de Osmany Juantorena (Santiago de Cuba, 1985) por el Guaguas en el verano de 2025 fue una bomba informativa en toda regla por lo que suponía unir a una plantilla que lo había ganado todo el curso anterior un campeón de primer calibre.[/capitular]
+
+<p>El receptor cubano, con un palmarés plagado de títulos y condecoraciones, incluyendo medallas en Olimpiadas, Europeos y Mundiales a nivel de selecciones, venía a apuntalar un proyecto estelar con su incuestionable liderazgo, calidad y experiencia. &ldquo;Es un milagro que hayamos podido traerlo&rdquo;, significaba el presidente Juan Ruiz tras certificar su incorporación y dar cuenta de la dimensión que implicaba.</p>
+
+[cita_editorial]Tuve varias ofertas y elegí al Guaguas con la idea de ganar nuevamente y seguir contribuyendo al éxito del equipo. No conozco la Superliga más allá de conocer al CV Guaguas por su participación en Europa, pero tengo curiosidad de saber el nivel que existe y competir al máximo.[/cita_editorial]
+
+<p>Muy pronto se encargó Osmany de justificar todos los esfuerzos realizados por él porque, a su inmediata adaptación al vestuario y a la vida en Gran Canaria, añadió en la cancha esa cuota diferencial que es exclusiva de su figura. Venía de un tiempo marcado por las lesiones y espantó a las primeras de cambio cualquier incógnita al respecto con una implicación ejemplar.</p>
+
+<p>Compañeros y cuerpo técnico se vieron enriquecidos por un aporte que iba más allá del rendimiento, pues carisma, personalidad y sentido de pertenencia ampliaban el catálogo de prestaciones. En la marcha triunfal del Guaguas 2025-26 ha tenido un papel indiscutible, con actuaciones sobresalientes en partidos señalados, léase la final de la Supercopa de España ganada en Valladolid a final de año o en citas de la Champions, con especial hincapié en la celebrada victoria frente al Berlín en el Arena, que puso los cimientos para la clasificación posterior a los octavos de final. Y, por si fuera poco, una conexión especial con la grada, sensible como es al factor ambiental. Sin duda, un acierto mayúsculo el de su ciclo de amarillo.</p>
+'),
 
     // ═══════════════════════════════════════════════
     // CAPÍTULO 15: EL IMPACTO DEL ESCUDO
@@ -2713,19 +2908,81 @@ c) Examinar las liquidaciones y balances de la entidad.[/articulo]
         'show_marker' => true,
         'ref_id' => 'cap15',
         'hero' => array(
-            'image' => libro_img('hero-stadium.jpg'),
-            'overlay' => 'rgba(212, 175, 55, 0.88)',
-            'icon' => 'custom',
-            'custom_icon' => $star,
-            'icon_width' => 60,
-            'icon_height' => 60,
-            'alignment' => 'center',
-            'vertical' => 'center',
-            'height' => '450px',
-            'title_lines' => array(libro_hero_line('EL IMPACTO', '#1a237e', '#FFFFFF', 'black'), libro_hero_line('DEL ESCUDO', '#1a237e', '#FFFFFF', 'black')),
+            'image'             => libro_img('hero-stadium.jpg'),
+            'overlay'           => 'rgba(0,0,0,0.15)',
+            'icon'              => 'custom',
+            'custom_icon'       => libro_img('estrella-icon.svg'),
+            'custom_icon_color' => 'hsl(45 100% 50%)',
+            'icon_width'        => 40,
+            'icon_height'       => 40,
+            'alignment'         => 'center',
+            'vertical'          => 'center',
+            'height'            => '500px',
+            'border_color'      => 'hsl(45 100% 50%)',
+            'title_lines'       => array(
+                libro_hero_line('EL IMPACTO', 'hsl(220 50% 12%)', 'hsl(45 100% 50%)', 'black'),
+                libro_hero_line('DEL ESCUDO', 'hsl(220 50% 12%)', 'hsl(45 100% 50%)', 'black'),
+            ),
         ),
-        'content' => '[capitular]El escudo del CV Guaguas es mucho más que un símbolo deportivo. Representa la identidad de un club que ha trascendido el voleibol para convertirse en un referente cultural de Gran Canaria y del deporte canario.[/capitular]
-[imagen_contenido src="'),
+        'content' => '
+[capitular]La relevancia social del CV Guaguas, proyecto deportivo en su génesis y actor ineludible de la vida global de Gran Canaria, no ha parado de crecer, consolidarse y enraizar. Es un logro añadido más, congraciando tradición, presente y alcance multidisciplinar.[/capitular]
+
+<p>Y es que el club ha sido puesto como ejemplo en diversos ámbitos, no todos relacionados de manera directa con el deporte, por lo que inspira en cuanto a su genética ganadora, ejemplo de continuidad en la cima y carácter representativo, con una gestión eficaz y autosuficiente y un compromiso rotundo con la tierra que representa.</p>
+
+[cita_editorial author="Juan Ruiz"]En los años en los que el Guaguas no compitió, tras su desaparición, y hasta que en 2020 retomamos el proyecto, la gente no paraba de preguntar y de desear que volviéramos. Eso habla del lugar que nos habíamos ganado y que no se resintió pese a una larga ausencia. Le faltaba algo al deporte canario y era el Guaguas.[/cita_editorial]
+
+<p>La presencia y eco del Guaguas, privilegio ganado a pulso por títulos, competitividad y arraigo, le han granjeado apoyos empresariales y de orden público, a través de las correspondientes subvenciones, para su sostenibilidad, si bien dos de estos pilares se destacan por su enjundia y valor histórico: la empresa municipal de transporte público de la ciudad de Las Palmas de Gran Canaria, Guaguas Municipales, cuyo vínculo con el club se remonta a la década de los ochenta y al que se debe la nomenclatura actual y más reconocible del equipo, y el Gobierno de Canarias, la máxima autoridad política en la región y que ha brindado, de igual manera, un apoyo valioso y decidido al proyecto.</p>
+
+[cita_editorial author="Juan Ruiz"]No tenemos ninguna queja de los organismos que nos dirigen. Todo lo contrario. Nos han brindado su colaboración, su reconocimiento y atención. Gobierno de Canarias, Cabildo de Gran Canaria y Ayuntamiento de Las Palmas de Gran Canaria. No me olvido de las federaciones, tanto de Canarias como la Nacional. Por nuestra parte, todo son agradecimientos por la sensibilidad que recibimos, pero en los casos de Guaguas Municipales y del Gobierno de Canarias consideramos que, por rango y antigüedad, un capítulo especial.[/cita_editorial]
+
+[seccion_header]José Eduardo Ramírez — Presidente de Guaguas Municipales[/seccion_header]
+
+<p>José Eduardo Ramírez, concejal de Movilidad, Empleo y Distrito Centro en el Ayuntamiento de Las Palmas de Gran Canaria y, a su vez, presidente de Guaguas Municipales, ofrece las siguientes reflexiones al respecto.</p>
+
+<p><strong>¿A qué atribuye esta simbiosis perfecta entre Guaguas Municipales y el CV Guaguas?</strong></p>
+
+<p>La unión entre Guaguas Municipales y el Club Voleibol Guaguas es mucho más que un acuerdo de patrocinio: es una relación de identidad compartida. Desde el principio hemos sentido que remamos en la misma dirección. Tanto la empresa pública de transportes como el club representamos valores muy similares: el servicio a la ciudadanía, la búsqueda de la excelencia, el trabajo en equipo y el orgullo de llevar el nombre de Las Palmas de Gran Canaria por todo el estado español e incluso fuera de nuestras fronteras. Gran parte del mérito de que esta simbiosis se haya consolidado con tanta fuerza hay que atribuírselo a Juan Ruiz, presidente del CV Guaguas. Él fue quien nos trasladó su visión de un proyecto sólido, con raíces en la historia dorada del voleibol grancanario, pero también con la mirada puesta en el futuro. Su pasión, su capacidad de gestión y su fe en que Guaguas Municipales debía ser parte de esta aventura fueron determinantes para que hoy podamos hablar de una alianza modélica. A lo largo de los años, esta relación se ha fortalecido porque ambas instituciones hemos sabido evolucionar sin perder nuestra esencia. El club ha crecido deportivamente, y nosotros hemos acompañado ese crecimiento convencidos de que el deporte es una herramienta poderosa para unir, inspirar y generar orgullo colectivo.</p>
+
+<p><strong>¿Qué signo distintivo resalta del Guaguas como club deportivo?</strong></p>
+
+<p>Hoy en día, en el deporte de élite, es relativamente sencillo tener un pico de éxitos con una gran inversión, pero es tremendamente difícil mantenerse en la cima y ser una referencia constante, compitiendo en Europa y dominando en España. Esa regularidad es la que convierte al club en una institución deportiva fiable y de prestigio. Nos da la seguridad de que estamos asociando nuestra marca a un proyecto serio, que invierte bien sus recursos y que tiene un compromiso no solo con el primer equipo, sino con la formación de base, algo esencial para el futuro de nuestro deporte en la ciudad. Si tuviera que destacar un rasgo del CV Guaguas, sería su capacidad para mantenerse fiel a su espíritu competitivo y a su profesionalidad. Es un club que no se conforma, que siempre busca superarse, que trabaja cada temporada con la misma ilusión del primer día. Esa mentalidad ganadora es, sin duda, el sello que lo distingue. El Guaguas no solo brilla por sus títulos, que son muchos y de enorme prestigio, sino por su estructura, su planificación y su seriedad. Detrás de cada éxito hay un modelo de gestión muy bien trabajado, impulsado por el propio Juan Ruiz y su equipo, que entienden el deporte como una escuela de valores. Desde Guaguas Municipales nos sentimos muy identificados con esa filosofía. En el transporte público, como en el deporte, la constancia, la disciplina y la calidad en el servicio son las claves para ganarse la confianza de la gente día a día. Por eso, cuando el Guaguas triunfa, sentimos que una parte de nosotros también lo hace.</p>
+
+<p><strong>Los mensajes de agradecimiento del club hacia Guaguas Municipales son frecuentes. ¿Cómo acogen esta correspondencia?</strong></p>
+
+<p>Con emoción y con mucho orgullo. El reconocimiento del club hacia Guaguas Municipales no es solo una muestra de cortesía, sino el reflejo de una relación auténtica y de respeto mutuo. Cuando los jugadores, el cuerpo técnico liderado por Sergio Miguel Camarero o el propio Juan Ruiz expresan su gratitud, sentimos que el esfuerzo realizado desde nuestra empresa pública tiene un impacto real y positivo. Nos emociona ver cómo el equipo defiende nuestros colores con tanto compromiso, llevando el nombre de Guaguas por toda España y Europa con dignidad, talento y espíritu competitivo. Esa visibilidad refuerza la imagen de nuestra compañía, pero, más importante aún, refuerza el vínculo con la ciudadanía. Para nosotros, el agradecimiento más grande es ver las gradas cada vez más llenas, sentir el entusiasmo de la afición y saber que el nombre de Guaguas Municipales se asocia a valores tan positivos como el esfuerzo, la unidad y el orgullo local. Al apoyar al CV Guaguas, estamos apoyando el deporte, la vida saludable, el sentimiento de pertenencia y la proyección de nuestra capital. Los mensajes de agradecimiento del club nos reafirman que nuestra inversión es catalizadora, que ayuda a crear estructuras de éxito y a que los jóvenes tengan referentes. No buscamos el aplauso, sino la legitimación de nuestra función social. Saber que somos un pilar para que un club con la trayectoria y ambición del Guaguas siga soñando, es la mejor recompensa.</p>
+
+<p><strong>Guaguas Municipales y CV Guaguas son dos sellos característicos de la capital grancanaria. ¿Cómo se mide el beneficio mutuo de esa publicidad bidireccional?</strong></p>
+
+<p>El beneficio es tangible y, al mismo tiempo, intangible. Por un lado, está la proyección de marca: el club da visibilidad a Guaguas Municipales en competiciones nacionales e internacionales, en retransmisiones televisivas, redes sociales y medios de comunicación. Eso nos posiciona como una empresa moderna, cercana y comprometida con el tejido social y deportivo de la isla. Por otro lado, el club también recibe el respaldo y la estabilidad de una entidad pública que cree firmemente en el proyecto. No es una relación unidireccional; es un intercambio de prestigio, de valores y de identidad compartida. Ambas marcas —Guaguas Municipales y CV Guaguas— son sinónimo de Las Palmas de Gran Canaria. Juntas, proyectamos una imagen cohesionada de ciudad: dinámica, competitiva, orgullosa de sus raíces y con la mirada puesta en el futuro. Y eso, en términos de comunicación y sentimiento ciudadano, es un beneficio incalculable.</p>
+
+<p><strong>¿Cuál es el mensaje desde Guaguas Municipales al club en su cincuentenario?</strong></p>
+
+<p>Nuestro mensaje es de felicitación sincera y de profundo reconocimiento. Cincuenta años de historia no se cumplen todos los días, y hacerlo al máximo nivel, con la fuerza y la ilusión con la que lo hace el CV Guaguas, es un motivo de orgullo para toda Gran Canaria. Desde Guaguas Municipales queremos agradecer al club y, especialmente, a Juan Ruiz y a su equipo, por haber sido los guardianes de una tradición deportiva que forma parte de la memoria colectiva de esta ciudad. Han sabido recuperar la esencia de aquel Guaguas legendario que hizo vibrar a toda una generación, y al mismo tiempo proyectar una nueva etapa de modernidad y éxito. Les deseamos que los próximos cincuenta años sean igual de fructíferos, llenos de títulos, de cantera, de ilusión y de compromiso con la sociedad grancanaria. Y pueden tener la certeza de que, mientras ellos sigan defendiendo con orgullo el nombre de Guaguas, nosotros seguiremos acompañándolos, apoyándolos y celebrando juntos cada punto, cada victoria y cada sueño cumplido.</p>
+
+[seccion_header]Ángel Sabroso — Viceconsejero de Deportes del Gobierno de Canarias[/seccion_header]
+
+<p>Por su parte, Ángel Sabroso, viceconsejero de Deportes del Gobierno de Canarias luego de una brillantísima carrera como árbitro internacional de balonmano, con presencia en Olimpiadas, Mundiales y Europeos, así valora esta alianza.</p>
+
+<p><strong>¿Qué calado tiene para el deporte y la sociedad canaria la catarata de éxitos deportivos del Guaguas según su óptica como viceconsejero de Deportes del Gobierno de Canarias?</strong></p>
+
+<p>El Guaguas es mucho más que un equipo que gana; es una declaración de intenciones del deporte canario. Sus triunfos nos recuerdan que, desde unas islas en medio del Atlántico, también se puede tocar el cielo si se trabaja con método, pasión y orgullo de pertenencia. Cada título del Guaguas es una bandera que ondea por todos los canarios, una prueba de que el talento, la organización y sobre todo la pasión, pueden vencer a cualquier frontera, incluida la geográfica. Lo que este club ha conseguido en los últimos años no solo dignifica a la Superliga o a Canarias, sino que inspira a cientos de jóvenes que encuentran en el deporte una escuela de vida y en su equipo un espejo donde mirarse.</p>
+
+<p><strong>Siempre fue un hombre de deporte. ¿Normalizar esta racha triunfal no es desmerecerla por la complejidad que tiene ganar títulos cada temporada?</strong></p>
+
+<p>Sin duda. Ganar una vez puede ser fruto de la inspiración; ganar siempre solo lo consigue quien convierte la excelencia en hábito. El Guaguas ha logrado algo que en el deporte es rarísimo: que el éxito parezca natural sin dejar de ser heroico. Porque detrás de cada copa hay horas de entrenamiento, planificación, humildad y un vestuario que funciona como familia. Normalizar sus victorias sería tan injusto como olvidar lo difícil que es mantenerse en la cima sin perder el alma. Y eso, precisamente, es lo que el Guaguas está consiguiendo; competir con grandeza y con valores.</p>
+
+<p><strong>El Guaguas es el club más laureado de Canarias y ejerce de embajador histórico por Europa. Ahora que se analizan los modelos de gestión, ¿hay aquí uno de referencia por la regularidad y solvencia del mismo?</strong></p>
+
+<p>Así lo creo, porque el Guaguas representa un modelo de gestión que combina raíces y modernidad. Una institución que aprendió a profesionalizarse sin perder su identidad canaria, que se financia con responsabilidad, que cuida a su masa social y que entiende que la comunicación y la marca también son parte del juego. Es, en definitiva, un ejemplo de que la gestión deportiva, cuando se hace bien, también es una forma de amor al territorio.</p>
+
+<p><strong>Juan Ruiz como sempiterno presidente. ¿Qué reflexión le merece su legado y labor al frente del club en el cincuentenario de su fundación que se cumple en 2026?</strong></p>
+
+<p>Juan Ruiz es, sencillamente, el alma del Guaguas. Un hombre que ha entregado su vida entera a un proyecto que ama como se ama a un hijo, con esa mezcla de orgullo y desvelo que solo entienden quienes sienten el deporte como vocación y no como cargo. Durante cinco décadas ha sabido mantener encendida la llama, incluso cuando el viento soplaba en contra. Ha visto caer y renacer al club, ha soñado con él cada noche y lo ha levantado cada mañana. Su legado no se mide solo en títulos, sino en la huella que deja en las personas: jugadores, técnicos, aficionados, generaciones enteras que crecieron bajo su ejemplo. El Guaguas es hoy lo que es porque tuvo a su lado a alguien que nunca se rindió, que creyó en la fuerza del trabajo y en el valor de la palabra dada. Alguien que se entrega de esta manera encarna una forma de entender la vida, la constancia y la pasión por Canarias a través del deporte, que es para agradecerle siempre como tiene que ser de justicia.</p>
+
+<p><strong>¿En qué grado se siente partícipe el Gobierno de Canarias de esta bandera, la del Guaguas, que ondea a nivel nacional y europeo con tanta fama y prestigio?</strong></p>
+
+<p>Intentamos estar cerca de todos, marca de la casa que el Consejero Poli Suárez ejerce en primera persona y, de ahí para abajo, todo su equipo. Eso nos hace sentirnos profundamente partícipes y orgullosos de los éxitos del deporte canario. El Guaguas representa lo que este Gobierno defiende: la seriedad en la gestión, la igualdad de oportunidades, la conexión entre deporte y sociedad. Cada vez que el Guaguas pisa una cancha europea, está representando al conjunto del archipiélago y ahí también está la mano de una administración que cree en su gente, que apuesta por el alto rendimiento y que entiende el deporte como política pública. El Guaguas no compite solo, lo hace en nombre de todos los canarios que creen en el esfuerzo, en la superación y en la capacidad de nuestra tierra para ganar. Y estar cerca de ellos, acompañarlos, no es protocolo: es una forma de agradecer lo que hacen por el nombre de Canarias.</p>
+'),
 
     // ═══════════════════════════════════════════════
     // CAPÍTULO 16: LA DIRECTIVA Y EL FUTURO QUE VIENE
@@ -2736,20 +2993,151 @@ c) Examinar las liquidaciones y balances de la entidad.[/articulo]
         'order' => 170,
         'show_marker' => true,
         'ref_id' => 'cap16',
+        'content' => '',
+    ),
+
+    array('title' => 'La directiva', 'numero' => '', 'order' => 1701, 'show_marker' => false, 'parent_ref' => 'cap16',
         'hero' => array(
-            'image' => libro_img('hero-estatutos.jpg'),
-            'overlay' => 'rgba(26, 35, 126, 0.85)',
-            'icon' => 'custom',
-            'custom_icon' => $star,
-            'icon_width' => 60,
-            'icon_height' => 60,
-            'alignment' => 'right',
-            'vertical' => 'center',
-            'height' => '450px',
-            'title_lines' => array(libro_hero_line('LA DIRECTIVA', '#D4AF37', '', 'black'), libro_hero_line('Y EL FUTURO', '#FFFFFF', '', 'black'), libro_hero_line('QUE VIENE', '#FFFFFF', '', 'black')),
+            'image'             => libro_img('hero-estatutos.jpg'),
+            'overlay'           => 'rgba(0,0,0,0.15)',
+            'icon'              => 'custom',
+            'custom_icon'       => libro_img('estrella-icon.svg'),
+            'custom_icon_color' => 'hsl(45 100% 50%)',
+            'icon_width'        => 40,
+            'icon_height'       => 40,
+            'alignment'         => 'center',
+            'vertical'          => 'center',
+            'height'            => '500px',
+            'border_color'      => 'hsl(45 100% 50%)',
+            'title_lines'       => array(
+                libro_hero_line('LA DIRECTIVA', 'hsl(220 50% 12%)', 'hsl(45 100% 50%)', 'black'),
+            ),
         ),
-        'content' => '[capitular]Detrás de cada título y cada logro deportivo hay una estructura directiva que ha trabajado incansablemente por el bien del club. Desde los fundadores del Calvo Sotelo hasta la actual junta directiva, la gestión del Guaguas ha sido un ejemplo de compromiso y sacrificio.[/capitular]
-[imagen_contenido src="'),
+        'content' => '
+[capitular]Un grupo directivo homogéneo, implicado, en el que la única fuerza motora es la estabilidad, el crecimiento y la funcionalidad del Guaguas. Nadie cobra un euro por sus funciones representativas, con Juan Ruiz como ejemplo histórico y vigente de la entrega altruista por el escudo.[/capitular]
+
+<p>El presidente ha sido testigo de todas las épocas del club, desde las más precarias hasta las que mejor representan la solidez del proyecto, y bajo su tutela se vertebra un equipo ejecutivo con representantes de todas las generaciones y en el que se salvaguarda la filosofía original de servicio y lealtad.</p>
+
+[cita_editorial author="Juan Ruiz"]Hay un compromiso decidido y firme en servir al escudo, en poner lo mejor que tenemos para procurar el crecimiento, la sostenibilidad y el porvenir de la entidad y el trabajo que se está realizando en los últimos años, desde la refundación en 2020, así lo evidencia. La generación de recursos, las relaciones institucionales con los estamentos públicos, la búsqueda de patrocinios, la consolidación de la marca, la transformación necesaria para los desafíos de los nuevos tiempos, la necesaria modernización y profesionalización... Vamos todos en la misma dirección con la responsabilidad que implican nuestros cargos.[/cita_editorial]
+
+<p>Ruiz diseñó un grupo de trabajo en la dirigencia con sumo cuidado y sensibilidad, con representantes de la primera etapa, como salvaguarda de las tradiciones y esencias, actores del mundo empresarial y de gestión actual y una importante cuota femenina. Roles definidos, compenetrados y que privilegian el consenso en la toma de decisiones, siempre vinculada al bien del Guaguas dentro de un modelo de gestión transparente.</p>
+
+[cita_editorial author="Juan Ruiz"]Con los medios que tenemos y las aspiraciones competitivas siempre máximas que hay en nuestros proyectos, es esencial una manera de dirigir y decidir desde la seriedad, desde el rigor que comporta estar donde estamos y con muchísimo tacto y firmeza en cada paso, en cada gestión, en cada determinación. Nos guía nuestro amor por el Guaguas y por el deporte, sabiendo que representamos a Canarias y que la ejemplaridad debe ser una constante en nuestro proceder.[/cita_editorial]
+
+<p>Joselu Sánchez, exjugador del Guaguas, que ejerce de secretario, junto a Antonio Benítez, asesor, y Marek Szczesnowicz, team mánager y vocal a la vez, fueron testigos del Guaguas que emergió en los ochenta para ya quedarse entre los grandes y ahora siguen vinculados al proyecto desde sus respectivas carteras y con el mismo ímpetu y pasión que no han perdido pese al paso del tiempo y del que es representante imbatible Juan Ruiz, enérgico y activo tal y como se le conoció en sus inicios en la presidencia en 1986.</p>
+
+<p>La vía de las segundas generaciones también está presente con David Ruiz, tesorero e hijo de Juan Ruiz, y las vocales Lucía Ramón y Laura Sánchez, hijas de Jorge Ramón y Joselu Sánchez respectivamente. Otra garantía de calidad.</p>
+
+<p>Y añadir a la dirigencia a Ariel Ortega como vicepresidente, con el aval de su trayectoria empresarial y tener a un exdirector de Deportes del Gobierno de Canarias como José Manuel Betancort, otro de los asesores, añade fortaleza y experiencia a una junta en la que Adolfo Rodríguez representa la continuidad y eficiencia.</p>
+'),
+
+    array('title' => 'El futuro que viene', 'numero' => '', 'order' => 1702, 'show_marker' => false, 'parent_ref' => 'cap16',
+        'hero' => array(
+            'image'             => libro_img('hero-estatutos.jpg'),
+            'overlay'           => 'rgba(0,0,0,0.15)',
+            'icon'              => 'custom',
+            'custom_icon'       => libro_img('estrella-icon.svg'),
+            'custom_icon_color' => 'hsl(45 100% 50%)',
+            'icon_width'        => 40,
+            'icon_height'       => 40,
+            'alignment'         => 'center',
+            'vertical'          => 'center',
+            'height'            => '500px',
+            'border_color'      => 'hsl(45 100% 50%)',
+            'title_lines'       => array(
+                libro_hero_line('EL FUTURO', 'hsl(220 50% 12%)', 'hsl(45 100% 50%)', 'black'),
+                libro_hero_line('QUE VIENE', 'hsl(220 50% 12%)', 'hsl(45 100% 50%)', 'black'),
+            ),
+        ),
+        'content' => '
+[capitular]Juan Ruiz ha ido modelando un equipo directivo adaptado a los nuevos tiempos y en el que la diversidad generacional y de perfiles, como reconoce, &ldquo;enriquece&rdquo; la gestión y toma de decisiones.[/capitular]
+
+<p>Pese a que el presidente mantiene una frenética actividad que le hace estar al tanto de todo tipo de gestiones y de cualquier naturaleza, pues en su modelo de dirección lleva implícita esa omnipresencia, el crecimiento de la entidad así como las obligaciones sobrevenidas han recomendado dotar a la entidad de un equipo administrativo perfectamente profesionalizado y, por encima, una cúpula ejecutiva jerarquizada pero en la que todos tienen voz y voto.</p>
+
+<p>Y en este elenco de personalidades próximas al máximo mandatario destacan, por edad y capacitación, cuatro nombres propios llamados a tener relevancia en la transición al futuro en la que ya se trabaja. Ariel Ortega, reconocido empresario grancanario, en las funciones de vicepresidente, David Ruiz, tesorero e hijo del factótum histórico y guía del resto, y las vocales Lucía Ramón y Laura Sánchez, también con reconocibles antecedentes familiares en la trayectoria de la entidad, personifican ese aire nuevo y renovado que, en conjunción con la mayor experiencia y antigüedad de los compañeros de la dirigencia, resulta el complemento perfecto.</p>
+
+<p>Un Guaguas en transformación, adaptado a la vanguardia del siglo XXI en su manera de desarrollarse y desplegarse a la sociedad y sin perder la esencia de su herencia triunfal, y bajo unos parámetros de sostenibilidad, compromiso social y alianza con el éxito deportivo, lo que aboca a una gestión impecable, son los cimientos en esta etapa.</p>
+'),
+
+    array('title' => 'Ariel Ortega', 'numero' => '', 'order' => 1703, 'show_marker' => false, 'parent_ref' => 'cap16',
+        'content' => '
+[capitular]Ariel Ortega (Las Palmas de Gran Canaria, 1972) fue una de las incorporaciones estratégicas de Juan Ruiz para su directiva en el verano de 2023. Licenciado en Empresariales por la Universidad de Salford (Mánchester) y Máster MBA en Dirección de Empresas por Esden (Madrid), a Ortega le avalaba su sólida experiencia al frente de Café Ortega, industria familiar de la que es director general, además de su pasión e inquietud por el deporte, faceta heredada de su padre, en tiempos enrolado en la directiva de la UD Las Palmas.[/capitular]
+
+[cita_editorial author="Ariel Ortega"]Cuando Juan Ruiz me llamó pensé que me iba a pedir dinero, porque él siempre está pensando en el crecimiento del club... Pero no, lo que me trasladó es que quería contar conmigo en virtud de mi trayectoria profesional y mi afición por el deporte. Y pensaba que podía prestigiar la directiva del Guaguas si yo me unía a ellos. No lo consulté a nadie y ni me lo pensé. Acepté al momento.[/cita_editorial]
+
+<p>&ldquo;A nivel empresa, Café Ortega colabora con el club desde el relanzamiento del Guaguas. Juan me pidió si podía implicarme más en el proyecto a nivel personal y acepté con la condición de que nunca me proponga para sustituirle como presidente porque para ser presidente hay que tener la cabeza 100% en el Guaguas como la tiene Juan. Mi cabeza está al 100% en Café Ortega. Hace tres años me encontré una junta directiva magnífica, unida, implicada y con una calidad humana extraordinaria… Entre ellos hay muchos que podrían ser futuros presidentes cuando llegue el momento del relevo&rdquo;, aclara.</p>
+
+<p>Ariel Ortega lleva con &ldquo;responsabilidad, humildad, temple y dedicación&rdquo; su agenda como vicepresidente del Guaguas: &ldquo;Estoy para cualquier cosa que me pida el club, pero mi gestión va más enfocada a lo económico que a lo deportivo. Somos un club humilde y me ha tocado desde estar en la puerta de entrada recogiendo entradas los días de partido a estar con autoridades en el palco, a viajar de directivo delegado con el equipo, a negociar con sponsors, a atender a los medios de comunicación, a recibir a jugadores nuevos… Todos los directivos estamos implicados al máximo&rdquo;.</p>
+
+<p>&ldquo;El voleibol es un deporte minoritario y da lo que da, tiene el recorrido que tiene. Cuesta muchísimo conseguir patrocinios privados, aún así casi un 40% de nuestros ingresos vienen de sponsors, publicidad, colaboradores, abonados y taquilla. Si el termómetro para cobrar fuera por títulos obtenidos, sin duda que seríamos los más ricos del deporte canario, pero hay equipos de otros deportes como fútbol y baloncesto que, sin obtener títulos, tienen más tirón popular. Ahí está nuestro reto, el de intentar atraer a la gente a que se enganche al Guaguas&rdquo;, asegura a propósito de las limitaciones financieras.</p>
+
+<p>Con todo, admite que encontró una estructura consolidada en la que &ldquo;todo se hace más fácil&rdquo; por el prestigio acumulado: &ldquo;Llegué en un buen momento y me subí a caballo ganador. Lo fácil es sumarse ahora. Lo difícil es llegar hasta aquí desde la fundación del club en 1976. De ahí el mérito de Juan Ruiz y de todos los que han hecho posible que el Guaguas haya escrito esta historia. Personalmente, es un halago que quieran contar conmigo. Y viendo el ADN del Guaguas, que siempre sale a ganar, creo que hay posibilidad de recorrido, de crecimiento, como se ha visto en todos estos años&rdquo;.</p>
+
+<p>En relación al apoyo recibido por parte del empresariado isleño, razona: &ldquo;Para nosotros es vital poder seguir contando con empresas privadas canarias para poder mantener el presupuesto. Aspiramos a conseguir nuevos y a intentar arañar más parte del presupuesto promocional que las empresas comparten con otros deportes. Aquí competimos con el fútbol, baloncesto, balonmano, lucha canaria, vela...&rdquo;</p>
+
+<p>&ldquo;Hay una consigna clara: no podemos gastar más de lo que ingresamos. Tenemos una virtud y es que la estructura es muy sencilla, los directivos nos implicamos en gestión y tareas y el costo de personal no deportivo es bajo porque son pocos. Peleamos mucho los costos de explotación, buscamos el último céntimo y resulta de todo ello un presupuesto para fichar buenos profesionales que nos hagan ser competitivos en la cancha&rdquo;, apunta a propósito de la sostenibilidad de un proyecto campeón temporada tras temporada y con recursos financieros más limitados que otros clubes.</p>
+
+<p>&ldquo;La recaudación por taquilla y abonados no suponen el gran grueso de ingresos, pero por supuesto que todo suma. Aquí lo más importante es el calor humano en la cancha, necesitamos a los seguidores para alentar al equipo porque su energía se transmite en positivo al equipo. Competir en el Arena es provisional hasta que se termine de renovar el CID, en febrero de 2027 si se cumplen los plazos. Aún así, estamos muy contentos con el apoyo de los aficionados y hemos notado un aumento de la asistencia. Somos un club saneado porque no gastamos más de lo que ingresamos, pero sí es cierto que sufrimos tensiones de tesorería por depender en un 60% de los ingresos de las instituciones públicas que llegan después de incurrido el gasto&rdquo;.</p>
+
+[cita_editorial author="Ariel Ortega"]Es un trabajo lento, pero aspiramos algún día a poder contar con un gran sponsor privado que pueda complementar a Guaguas Municipales y poder dar ese salto cualitativo en el presupuesto que nos permita aspirar a más en Europa. Sueño con volver al CID renovado y las gradas a tope animando al Guaguas.[/cita_editorial]
+'),
+
+    array('title' => 'Laura Sánchez', 'numero' => '', 'order' => 1704, 'show_marker' => false, 'parent_ref' => 'cap16',
+        'content' => '
+[capitular]Laura Sánchez (Las Palmas de Gran Canaria, 1999) entró a formar parte de la directiva en 2020 como vocal. Estudió Ingeniería en Organización Industrial y cursó el Máster habilitante de Ingeniería Industrial en la Universidad de Las Palmas de Gran Canaria y el Máster de Minería de Datos e Inteligencia de Negocios en la Universidad Complutense de Madrid. Actualmente ejerce de auditora interna en el Canal de Isabel II, la empresa que gestiona el agua en la Comunidad de Madrid.[/capitular]
+
+<p>Hija de Joselu Sánchez, admite que esa influencia le ha marcado: &ldquo;Mi padre, desde muy pequeña, me ha transmitido tan importantes valores como el amor por el deporte, la disciplina, el esfuerzo y el compromiso, que son exactamente los mismos que siempre han definido la historia del club. Un club que a lo largo de estos años ha conseguido grandes triunfos para el deporte grancanario y para su afición. El voleibol ha estado siempre presente en nuestra historia familiar, primero a través de sus logros como jugador de balonmano, luego del CV Guaguas y, más tarde, en mi trayectoria deportiva en el CV Claret y el JAV Olímpico, con mi padre como mejor apoyo y ejemplo&rdquo;.</p>
+
+<p>&ldquo;Desde pequeña estuve vinculada al voleibol como jugadora, un deporte que me enseñó valores fundamentales y que me permitió crecer tanto a nivel personal como deportivo, no solo por los entrenamientos y la competición, sino también por las relaciones personales tan enriquecedoras que vas haciendo en cada temporada deportiva y en cada categoría. Por todo ello, pertenecer a la directiva de un club con tanta historia y tan alto nivel deportivo es un honor. Me satisface enormemente saber que puedo contribuir a seguir consiguiendo triunfos, crear mayor afición y conseguir que el nombre de nuestra isla, Gran Canaria, esté asociado al voleibol con mayúsculas. El equipo tiene una trayectoria histórica extraordinaria y creo que es importante que las nuevas generaciones asumamos también la responsabilidad de trabajar por él, hacerlo crecer y adaptarlo a los nuevos tiempos, siempre desde el respeto a sus logros pasados&rdquo;, añade.</p>
+
+<p>Respecto a su cometido en el equipo ejecutivo, detalla: &ldquo;Mis funciones abarcan diferentes áreas de apoyo a la gestión del club, colaborando en la organización y también en el día a día del equipo, incluido el acompañamiento y el apoyo en los partidos. Es un trabajo cercano y comprometido. Me siento escuchada y valorada dentro de la directiva, y existe un clima de trabajo muy abierto en el que se fomenta el intercambio de ideas y la mejora continua, siempre con el objetivo común de fortalecer al Guaguas&rdquo;.</p>
+
+<p>&ldquo;Asumo con mucha responsabilidad todo, pero también con orgullo e ilusión. Representar a una nueva generación y aportar una visión femenina dentro de la directiva no es una carga, sino una oportunidad para enriquecer el proyecto. Creo firmemente que la diversidad de perfiles, experiencias e ideas fortalece a cualquier institución y permite afrontar los retos con una visión más amplia y actual. Soy consciente de la importancia de abrir camino y de servir de referencia, especialmente para las jóvenes que ven en el deporte un espacio en el que desarrollarse no solo como deportistas, sino también en ámbitos de gestión. Afronto esta responsabilidad con respeto al club, con ganas de aprender de quienes llevan más tiempo y con el compromiso de contribuir a que el Guaguas siga siendo una entidad moderna, inclusiva y fiel a sus valores&rdquo;, agrega.</p>
+
+<p>Laura Sánchez se congratula de formar parte de un emblema social de Gran Canaria y que va más allá de la red, como así lo percibe: &ldquo;La imagen del Guaguas en la calle es, en general, muy positiva. Es un club reconocido y respetado, con una historia y un palmarés que lo sitúan como una referencia del deporte canario. Mucha gente ya conocía al Guaguas y valoraba su trayectoria, pero es cierto que, desde que formo parte de la directiva, he podido comprobar cómo ese sentimiento se contagia aún más. En mi entorno personal, he conseguido motivar a muchos amigos y conocidos a acercarse al club, a asistir a los partidos y a enamorarse del Guaguas de la misma manera que lo estoy yo. Eso demuestra que el club tiene un enorme potencial social y emocional. Quizá a veces no somos del todo conscientes de la dimensión real de lo que representa, pero cuando se vive de cerca se entiende que el club no es solo tradición y títulos, sino identidad, orgullo y sentimiento de pertenencia&rdquo;.</p>
+
+[cita_editorial author="Laura Sánchez"]Al Guaguas lo veo como un proyecto ambicioso e ilusionante. Con todo el esfuerzo y el trabajo que está realizando el equipo directivo, estoy convencida de que el club seguirá creciendo y consolidándose tanto a nivel nacional como internacional. Además, en el ámbito competitivo, espero que continúe siendo un referente, manteniendo la ambición y el espíritu de superación que siempre lo han caracterizado. Pero, más allá de los resultados, confío en que el Guaguas siga teniendo un papel fundamental a nivel social, inspirando a muchos jóvenes a través del deporte, transmitiendo valores como el esfuerzo, la constancia y el trabajo en equipo, y demostrando que con compromiso y pasión se pueden construir proyectos sólidos y duraderos.[/cita_editorial]
+
+<p>E inevitable la referencia a Juan Ruiz: &ldquo;Juan Ruiz es una figura clave en la historia reciente del club. Destacaría su compromiso, su capacidad de liderazgo y su visión a largo plazo. Es un presidente cercano, que escucha a su equipo y que se apoya y confía plenamente en las personas que le rodean, fomentando un clima de trabajo basado en la colaboración y el respeto. Esa forma de dirigir ha sido fundamental para consolidar un proyecto sólido, ambicioso y con identidad propia, siempre con el Guaguas como prioridad&rdquo;.</p>
+'),
+
+    array('title' => 'Lucía Ramón', 'numero' => '', 'order' => 1705, 'show_marker' => false, 'parent_ref' => 'cap16',
+        'content' => '
+[capitular]Graduada en Fisioterapia, rama en la que ejerce, y estudiante del Grado en Educación Física, Lucía Ramón (Las Palmas de Gran Canaria, 1999) es vocal de la junta directiva desde el año 2024. Hija de un histórico como Jorge Ramón, reconoce que ese legado personal &ldquo;ayuda a valorar más el trabajo que se está realizando para mantener al Guaguas en lo más alto y seguir construyendo un futuro a la altura de su historia&rdquo;.[/capitular]
+
+<p>&ldquo;Desde muy pequeña he visto reflejada en los ojos de mi padre la pasión por el voleibol y, especialmente, por el Club Voleibol Guaguas. Conocer de primera mano la historia del club, sus orígenes y los logros alcanzados en el pasado gracias al esfuerzo, el sacrificio y la ilusión de tantas personas, me ha permitido comprender la verdadera grandeza de este club. El voleibol siempre ha formado parte de mi vida. Desde pequeña he estado en las gradas, viendo partidos y viviendo ese ambiente tan especial que se crea. Aunque nunca he jugado de manera oficial, siento el voleibol como algo muy mío, porque lo he vivido en casa y lo he sentido desde niña. Poder conocer el club desde dentro y participar activamente en su día a día es para mí una oportunidad muy ilusionante. Por eso, cuando Juan Ruiz me propuso formar parte de la directiva, sentí que era el momento de implicarme de una forma diferente y aceptar el reto con muchas ganas&rdquo;, admite.</p>
+
+<p>Dentro de la directiva, su papel &ldquo;es colaborar en todo lo que se necesite&rdquo;, aportando siempre &ldquo;ilusión y ganas de ayudar&rdquo;. &ldquo;Tengo la suerte de poder acompañar al equipo en algunos partidos fuera de la isla, una experiencia que me hace sentir aún más parte de este proyecto. Me siento escuchada y valorada, poder compartir ideas, proponer iniciativas y ver que se tienen en cuenta me llena de motivación y refuerza el cariño que siento por el CV Guaguas. Formar parte de la directiva me hace sentir que, pese a mi corta edad, puedo contribuir a seguir construyendo la historia del club. Ser una de las representantes de la cuota femenina y de la nueva generación en la directiva lo asumo con ilusión y responsabilidad. Para mí es un privilegio poder aportar nuevas ideas y energía joven al club, y al mismo tiempo sentirme parte de la historia que construyeron generaciones anteriores, incluida la de mi padre. Más que presión, lo veo como una oportunidad de contribuir y aprender, y considero muy importante que, en un deporte mayoritariamente masculino, también se tenga en cuenta la opinión de las mujeres. Poder formar parte de este equipo y aportar mi visión me hace sentir que ayudo a que el CV Guaguas siga creciendo y abriendo sus puertas a quienes quieran sumarse a este proyecto&rdquo;, enfatiza con evidente satisfacción.</p>
+
+<p>La excelencia en la que está instalado el club, con títulos y éxitos continuados temporada tras temporada, la valora Lucía Ramón con una mezcla de entusiasmo y admiración: &ldquo;Quienes hemos vivido la afición por el voleibol y conocemos tanto el pasado como el presente del Guaguas sabemos lo que cuesta mantener a un equipo en lo más alto. Por eso, sentimos una profunda admiración por un club humilde que, con esfuerzo y dedicación, sigue creciendo cada día. Intentamos aportar nuestro granito de arena para que cada vez más personas puedan compartir la pasión que nos une. Aun así, en la isla el voleibol sigue siendo un deporte discreto y todavía hay mucha gente que desconoce la grandeza de este club. Creo que es fundamental seguir trabajando para darle la visibilidad y el reconocimiento que merece, recordando siempre su historia, celebrando sus logros y mostrando a todos que el Guaguas es mucho más que un equipo: es una tradición, una familia y un orgullo para nuestra ciudad&rdquo;.</p>
+
+[cita_editorial author="Lucía Ramón"]Veo al Guaguas del futuro como un club que sigue creciendo, no solo en lo deportivo, sino también como un referente social y emocional de nuestra ciudad. Si seguimos trabajando en la línea que llevamos, estoy segura de que conseguiremos grandes logros y consolidaremos nuestra presencia en la élite del voleibol. Me emociona ver cómo cada vez más personas se acercan a los partidos y cómo los niños admiran a nuestros jugadores, soñando con seguir sus pasos y formar parte de este equipo algún día. Espero que en los próximos años el Guaguas siga siendo un lugar donde se fomente la pasión por el deporte y donde se transmitan valores que perduren más allá del juego.[/cita_editorial]
+
+<p>En sus reflexiones también cabe una personalizada en la figura del presidente: &ldquo;Para mí, Juan Ruiz es mucho más que el presidente del Guaguas. Lo conozco desde que era niña, porque ya estuvo al frente del club en la época en la que jugaba mi padre, y siempre lo he visto como alguien que ha dedicado su vida a que este club crezca y se mantenga en lo más alto. Es tenaz, apasionado y comprometido, capaz de enfrentar cualquier dificultad con determinación y de transmitir ilusión a todos los que formamos parte de este proyecto. Para mí, Juan Ruiz no es solo un presidente; es historia viva y una inspiración constante que une pasado, presente y futuro del Club Voleibol Guaguas&rdquo;.</p>
+'),
+
+    array('title' => 'David Ruiz', 'numero' => '', 'order' => 1706, 'show_marker' => false, 'parent_ref' => 'cap16',
+        'content' => '
+[capitular]David Ruiz (Las Palmas de Gran Canaria, 1977) supo desde niño, y por la vía directa de su padre, qué era el Guaguas y su significado en el deporte y la sociedad grancanaria. Creció siendo testigo directo del auge imparable en la década de los noventa y, conforme a su formación académica, diplomado en Turismo en la Escuela Oficial de Turismo, era inevitable que, en algún momento, trasladara la pasión heredada de su padre, el gran Juan Ruiz, a una función concreta y ejecutiva al servicio del escudo.[/capitular]
+
+<p>Y, con la refundación fechada en 2020, y avalado por su experiencia en el mundo de la banca, en el que ejerce, asumió la tarea de ser el tesorero y vigilar la salud de las cuentas del club que ha marcado su vida.</p>
+
+[cita_editorial author="David Ruiz"]La figura de mi padre lo ha sido todo en el sentimiento e implicación en el club. Desde siempre me recuerdo junto a él viviendo y sintiendo con toda la intensidad las vicisitudes del equipo, con momentos muy felices. También con la pena que nos dejó esa mala etapa en la que, tras dejar mi padre la presidencia, todo acabó de la peor manera con la desaparición de la entidad. Por eso cuando retomó el proyecto y me pidió que le ayudara, no lo dudé. Los directivos no cobramos sueldo ni dietas. Lo hacemos todo en nuestro tiempo libre y con la mayor dedicación posible. Pero es un esfuerzo que decidí asumir por una cuestión sentimental.[/cita_editorial]
+
+<p>David Ruiz se congratula de que el crecimiento que ha experimentado el Guaguas en los últimos años no le haya hecho perder &ldquo;el ambiente familiar y personal&rdquo; que le caracteriza y que, a su juicio, &ldquo;es algo que debe mantenerse&rdquo;.</p>
+
+<p>&ldquo;La profesionalización y modernización que perseguimos, y que es una obligación en los tiempos que vivimos, no tiene que estar reñida con las relaciones de respeto, amistad, colaboración y aprecio que mantenemos todos los que formamos parte de la estructura, tanto administrativa como deportiva. Vamos en la misma dirección y es una de las claves del compromiso que impera&rdquo;, considera.</p>
+
+<p>&ldquo;En un club de voleibol la gestión de recursos es lo más importante. La premisa principal es que el Guaguas es un club campeón y eso es lo que intentamos vender y promocionar para que tanto las instituciones como patrocinadores privados inviertan en el club, para alimentar el presente y, cómo no, el futuro. Ofrecemos lo que no cualquiera puede: títulos, prestigio internacional, seriedad en nuestro modelo de gestión, representatividad de la tierra y defensa de unos valores que, a lo largo de cincuenta años de historia, siempre nos han acompañado&rdquo;, añade.</p>
+
+<p>Consciente de que &ldquo;la marca es conocida y ayuda a conseguir recursos, aparte de las aportaciones de los organismos públicos&rdquo;, insiste en sacar el valor justo a lo que representa el club en Canarias, prestigiado en sus vitrinas y, también, con reconocimientos oficiales que respaldan sus éxitos continuados. En este sentido, otorga &ldquo;una importancia esencial&rdquo; a la captación de recursos del gremio del empresariado de la tierra: &ldquo;Para nosotros es un orgullo que las empresas isleñas aporten su granito de arena y apoyen al club. Son bastante fieles y eso tiene muchísimo mérito. Ven en el Guaguas una entidad que siempre ofrece unos resultados brillantes y, además, saben que cada euro que depositan se va a fiscalizar al detalle para sacarle el máximo partido. Esa combinación de competitividad en la pista y gestión responsable es la que hace que, temporada tras temporada, nos acompañen con sus apoyos&rdquo;.</p>
+
+<p>&ldquo;La salud económica del club es positiva, cumpliendo con los compromisos de pago y lo presupuestado por temporada. No renunciamos a subir el presupuesto en la medida de lo posible, algo normal porque los costes siempre incrementan. Pero en este apartado estamos satisfechos porque es un crecimiento sostenido, un crecimiento en el que mantenemos el control de todo sin perder la perspectiva de lo que somos, lo que queremos y lo que pretendemos&rdquo;, expone.</p>
+
+<p>En alusión a esa capacidad de sostener al Guaguas en la cima del voleibol, vertebra la receta mágica en cuatro términos: &ldquo;Esfuerzo, trabajo, perseverancia e ilusión&rdquo;.</p>
+
+[cita_editorial author="David Ruiz"]No veo otra opción que la de seguir ganando títulos y disponer de un grupo de jugadores que sean campeones, que lo lleven en la sangre y defiendan de esa manera la camiseta del Guaguas. Y con Juan Ruiz al frente, sin duda que será nuestra tarjeta de presentación tanto en España como en Europa.[/cita_editorial]
+'),
 
     // ═══════════════════════════════════════════════
     // CAPÍTULO 17: MÁS HONORES
@@ -2761,19 +3149,55 @@ c) Examinar las liquidaciones y balances de la entidad.[/articulo]
         'show_marker' => true,
         'ref_id' => 'cap17',
         'hero' => array(
-            'image' => libro_img('hero-trophies.jpg'),
-            'overlay' => 'rgba(26, 35, 126, 0.80)',
-            'icon' => 'custom',
-            'custom_icon' => $star,
-            'icon_width' => 60,
-            'icon_height' => 60,
-            'alignment' => 'center',
-            'vertical' => 'center',
-            'height' => '450px',
-            'title_lines' => array(libro_hero_line('MÁS', '#D4AF37', '', 'black'), libro_hero_line('HONORES', '#FFFFFF', '', 'black')),
+            'image'             => libro_img('hero-trophies.jpg'),
+            'overlay'           => 'rgba(0,0,0,0.15)',
+            'icon'              => 'custom',
+            'custom_icon'       => libro_img('estrella-icon.svg'),
+            'custom_icon_color' => 'hsl(45 100% 50%)',
+            'icon_width'        => 40,
+            'icon_height'       => 40,
+            'alignment'         => 'center',
+            'vertical'          => 'center',
+            'height'            => '500px',
+            'border_color'      => 'hsl(45 100% 50%)',
+            'title_lines'       => array(
+                libro_hero_line('MÁS', 'hsl(220 50% 12%)', 'hsl(45 100% 50%)', 'black'),
+                libro_hero_line('HONORES', 'hsl(220 50% 12%)', 'hsl(45 100% 50%)', 'black'),
+            ),
         ),
-        'content' => '[capitular]El futuro del Guaguas se construye en la cantera. Los equipos de categorías inferiores trabajan cada día para formar a los jugadores que, algún día, defenderán los colores amarillos en la máxima competición.[/capitular]
-[imagen_contenido src="'),
+        'content' => '
+[capitular]El prestigio de la entidad ha trascendido al ámbito del voleibol y le ha permitido alzarse con galardones de máxima relevancia provincial y regional, en reconocimiento a sus méritos deportivos y, también, representativos a niveles globales.[/capitular]
+
+<p>Porque la nominación a condecoraciones como las acumuladas en los últimos tiempos y casi de manera consecutiva, Premio Roque Nublo Deportivo por parte del Cabildo de Gran Canaria (2023), Medalla de Oro de la Ciudad de Las Palmas de Gran Canaria (2023) y Premio al Deporte Canario del Gobierno de Canarias (2024), responde, precisamente, a su indudable calado, de manera unánime valorado por las autoridades correspondientes en su baremación objetiva a la hora de las correspondientes designaciones. Para un club como el Guaguas, abanderado de su tierra por toda Europa, y con una historia de éxitos y superaciones, el significado de estos laureles supone el espaldarazo perfecto y preciso a esa constancia en la cima competitiva, a esa aureola de éxito sostenido, de vitrinas sin comparación. También a la consagración en la que se ha instalado bajo el liderazgo de Juan Ruiz en el palco y Sergio Miguel Camarero a pie de pista, representantes de la vieja guardia, la inolvidable de una hegemonía que todavía perdura, y líderes de la nueva era también jalonada de conquistas.</p>
+
+<p>Tener el elogio y tributo de las instituciones más representativas de Canarias, desde el Gobierno al Cabildo de Gran Canaria, pasando por el Ayuntamiento capitalino, siempre ha tenido un valor superlativo para el club, por tanto en cuanto su naturaleza deportiva, al que le sustancia, siempre ha contemplado un sustrato social ineludible.</p>
+
+[cita_editorial author="Juan Ruiz"]Son muchos años llevando la canariedad por toda España e infinidad de países, el orgullo de pertenencia, el talento que nos pertenece, esa singularidad que nos caracteriza y nos hace únicos. He vivido los recibimientos que nos han brindado, la admiración que hemos despertado, la expectación generada... Y sentir que en tu lugar de origen así lo consideran y te lo admiten de la mejor manera posible, con un tributo público que queda para siempre, sin duda que es motivo de una satisfacción muy especial.[/cita_editorial]
+
+<p>Entre los trofeos y recuerdos que forman parte del patrimonio vital del Guaguas, las menciones detalladas ocupan, por su dimensión tan preciada, un lugar privilegiado.</p>
+
+[seccion_header]Premio Roque Nublo Deportivo del Cabildo de Gran Canaria (2023)[/seccion_header]
+
+<p>El 17 de marzo de 2023 recogió Juan Ruiz, visiblemente emocionado, y ante una ovación clamorosa, la placa y diploma acreditativos &ldquo;por su contribución de manera decisiva al crecimiento y la práctica del voleibol entre los jóvenes grancanarios, situando de nuevo a Gran Canaria como referente del voleibol nacional y potenciando, además, los valores y promoción turística de la isla en el exterior, siendo el club deportivo más laureado de Canarias&rdquo;. Antonio Morales encabezó en su condición de máximo dirigente cabildicio este evento.</p>
+
+[cita_editorial author="Juan Ruiz"]Es la culminación de muchísimos años de trabajo, de todos los que apostaron por este club en 1976. Es un premio para todos los jugadores, entrenadores, dirigentes y técnicos, que han colaborado en estos 45 años de historia que tiene el club. Este reconocimiento de prestigio también es de los aficionados, patrocinadores y todos los que siguen haciendo grande esta entidad.[/cita_editorial]
+
+[cita_editorial author="Juan Ruiz"]Es un premio de toda la familia del Guaguas. Siendo el club más laureado de Canarias tras la desaparición del Marichal, mucha gente me decía que no comprendía que el Guaguas no tuviese un premio del Gobierno de Canarias, del Cabildo de Gran Canaria o del Ayuntamiento de Las Palmas de Gran Canaria. Hablamos de un premio honorífico, de prestigio, sin connotaciones económicas. Ya se ha hecho justicia.[/cita_editorial]
+
+[seccion_header]Medalla de Oro de la Ciudad de Las Palmas de Gran Canaria (2023)[/seccion_header]
+
+<p>El 23 de junio de 2023, en una gala celebrada en el teatro Pérez Galdós, la ciudad de Las Palmas de Gran Canaria destacó la labor de 25 personalidades e instituciones en el acto de honores y distinciones relacionadas con la ciudad y fueron reconocidos con los correspondientes títulos de Hijos e Hijas Predilectos, Hijos e Hijas Adoptivos y Medallas de Oro de la ciudad. El acto institucional de entrega de reconocimientos se celebró en el marco de las Fiestas Fundacionales y el Guaguas, representado por su presidente, obtuvo este galardón por haberse hecho sitio, con todos los honores, en la historia deportiva capitalina.</p>
+
+[cita_editorial author="Juan Ruiz"]Valoraron nuestros títulos, nuestro apoyo a la base, nuestra predisposición siempre a ayudar, promocionar e impulsar las virtudes de nuestra ciudad. Fue otro acto para el recuerdo, muy emotivo, muy brillante y que engrandeció más aún nuestro camino y escudo.[/cita_editorial]
+
+[seccion_header]Premio al Deporte Canario del Gobierno de Canarias (2024)[/seccion_header]
+
+<p>El 15 de noviembre de 2024, y en reconocimiento a su brillante temporada 2023-2024, en la que conquistó cuatro títulos (Superliga, Copa de SM El Rey, Supercopa y Copa Ibérica), además de una sobresaliente participación en la Champions League, principal competición de clubes de Europa, donde alcanzó los cuartos de final, codeándose con los equipos más potentes del Viejo Continente, el club recibió este premio en el transcurso de la feria ExpoDeca, celebrada en Infecar.</p>
+
+<p>La consejería de Educación, Formación Profesional, Actividad Física y Deportes del Gobierno de Canarias quiso, con ello, reconocer la excelencia deportiva y el talento de deportistas, clubes y organizaciones canarias destacados durante la temporada, elevando el nombre del CV Guaguas.</p>
+
+[cita_editorial author="Juan Ruiz"]Nos han votado los 27 periodistas de las Islas Canarias y me alegra mucho como nuestra familia ve recompensado este trabajo en equipo que iniciamos en una época tan dura como fue la pandemia del Covid-19. Y supimos resistir, aguantar y superarlo. Tanto en los primeros años del club como en esta etapa reciente, muchas personas tienen que sentirse partícipes de los éxitos deportivos y también de los buenos momentos que estamos viviendo ahora, con aficionados veteranos y muchos jóvenes que acuden al Gran Canaria Arena.[/cita_editorial]
+'),
 
     // ═══════════════════════════════════════════════
     // CAPÍTULO 18: EL GUAGUAS COMO EN LOS VIEJOS TIEMPOS
@@ -2808,19 +3232,39 @@ c) Examinar las liquidaciones y balances de la entidad.[/articulo]
         'show_marker' => true,
         'ref_id' => 'cap19',
         'hero' => array(
-            'image' => libro_img('hero-stadium.jpg'),
-            'overlay' => 'rgba(62, 39, 15, 0.82)',
-            'icon' => 'custom',
-            'custom_icon' => $star,
-            'icon_width' => 60,
-            'icon_height' => 60,
-            'alignment' => 'center',
-            'vertical' => 'center',
-            'height' => '450px',
-            'title_lines' => array(libro_hero_line('EMPLEADOS', '#D4AF37', '', 'black'), libro_hero_line('Y TÉCNICOS', '#FFFFFF', '', 'black')),
+            'image'             => libro_img('hero-stadium.jpg'),
+            'overlay'           => 'rgba(0,0,0,0.15)',
+            'icon'              => 'custom',
+            'custom_icon'       => libro_img('estrella-icon.svg'),
+            'custom_icon_color' => 'hsl(45 100% 50%)',
+            'icon_width'        => 40,
+            'icon_height'       => 40,
+            'alignment'         => 'center',
+            'vertical'          => 'center',
+            'height'            => '500px',
+            'border_color'      => 'hsl(45 100% 50%)',
+            'title_lines'       => array(
+                libro_hero_line('EMPLEADOS', 'hsl(220 50% 12%)', 'hsl(45 100% 50%)', 'black'),
+                libro_hero_line('Y TÉCNICOS', 'hsl(220 50% 12%)', 'hsl(45 100% 50%)', 'black'),
+            ),
         ),
-        'content' => '[capitular]Un club no funciona solo con jugadores. Detrás de cada partido, cada entrenamiento y cada evento hay un equipo de profesionales que hace posible la maquinaria del CV Guaguas.[/capitular]
-[imagen_contenido src="'),
+        'content' => '
+[capitular]El proceso de profesionalización de las estructuras del club ha sido una tarea ineludible en el Guaguas contemporáneo y en consonancia con los nuevos tiempos que se imponen en el ámbito deportivo.[/capitular]
+
+<p>Aunque el modelo de gobierno presidencialista se mantiene, con la omnipresencia de Juan Ruiz en gestiones de todo tipo, desde la directiva se ha entendido la conveniencia de disponer de un andamiaje de orden administrativo para atender frentes diarios y de obligado cumplimiento tanto en relación directa con el equipo como en otros frentes. Ir reduciendo la dependencia directa del presidente se entiende como un símbolo de modernidad y funcionalidad sin menoscabo alguno de la jerarquía establecida en el organigrama.</p>
+
+[cita_editorial author="Juan Ruiz"]El personal no deportivo tiene una importancia fundamental en nuestro funcionamiento por la valiosa labor que desempeña, así como su dedicación, esmero y compromiso en cada uno de sus cometidos. No salen en la foto como los jugadores, pero sí marcan, para bien, el rendimiento, porque facilitan todo y posibilitan que la vida diaria del club se desarrolle con normalidad y sin incidencias.[/cita_editorial]
+
+<p>Ruiz no solo ha rearmado su junta directiva, también ha puesto cuidado y énfasis en dotar de equipo humano especializado al ámbito comercial y administrativo, empleados a tiempo completo que, antes en las dependencias de la entidad en el Centro Insular y ahora en la sede habilitada en el Gran Canaria Arena, se aplican en superar adversidades y los contratiempos propios de una entidad deportiva de alto nivel.</p>
+
+<p>Así, para la parcela comercial, en la búsqueda de anunciantes, cobro de facturas, atención a proveedores y renovación de contratos, así como de actividades promocionales de tipo con colectivos de aficionados, ejerce como directora comercial Eva Ruiz. Este cargo no se le exime de asumir funciones sobrevenidas si así lo marca la agenda institucional y se requiere su presencia.</p>
+
+<p>De igual manera, Adolfo Rodríguez, responsable de administración, tiene bajo su potestad &ldquo;todo el papeleo derivado de la actividad del club&rdquo;, según sus impresiones, y auxilia a Eva Ruiz en lo que se presente. Cuenta siempre con la voz sabia de Marek Szczesnowicz, el emblemático Team Mánager, en relación a la organización de viajes y trámites que tengan que ver con las licencias, nacionales e internacionales de los jugadores.</p>
+
+<p>Eva Ruiz y Adolfo Rodríguez reportan al presidente de todos los efectos que tienen sus acciones, también a los miembros de la junta directiva que así lo solicitan, y, aunque en comparación con los medios de otros clubes ambos son una minoría, el sentimiento que desprenden por los colores, así como la tradición heredada en sus propias casas, son el mejor motor para que se multipliquen y abarquen más si cabe.</p>
+
+<p>En lo que se refiere al mapa de técnicos, con Sergio Camarero como el cabeza visible de todos por sus atribuciones en el equipo profesional, Facundo Leal, Rubén Carreño, Rafa Sosa y Giovanni de Vincentis completan su cuerpo técnico, mientras que Manuel Santana, Tobías Cabrera y Margarita Georgieva ejercen en filiales.</p>
+'),
 
     // ═══════════════════════════════════════════════
     // CAPÍTULO 20: LA PLANTILLA DEL CINCUENTENARIO
@@ -2832,19 +3276,39 @@ c) Examinar las liquidaciones y balances de la entidad.[/articulo]
         'show_marker' => true,
         'ref_id' => 'cap20',
         'hero' => array(
-            'image' => libro_img('hero-celebracion.jpg'),
-            'overlay' => 'rgba(212, 175, 55, 0.82)',
-            'icon' => 'custom',
-            'custom_icon' => $star,
-            'icon_width' => 60,
-            'icon_height' => 60,
-            'alignment' => 'right',
-            'vertical' => 'center',
-            'height' => '450px',
-            'title_lines' => array(libro_hero_line('LA PLANTILLA', '#1a237e', '#FFFFFF', 'black'), libro_hero_line('DEL', '#1a237e', '#FFFFFF', 'black'), libro_hero_line('CINCUENTENARIO', '#1a237e', '#FFFFFF', 'black')),
+            'image'             => libro_img('hero-celebracion.jpg'),
+            'overlay'           => 'rgba(0,0,0,0.15)',
+            'icon'              => 'custom',
+            'custom_icon'       => libro_img('estrella-icon.svg'),
+            'custom_icon_color' => 'hsl(45 100% 50%)',
+            'icon_width'        => 40,
+            'icon_height'       => 40,
+            'alignment'         => 'center',
+            'vertical'          => 'center',
+            'height'            => '500px',
+            'border_color'      => 'hsl(45 100% 50%)',
+            'title_lines'       => array(
+                libro_hero_line('LA PLANTILLA', 'hsl(220 50% 12%)', 'hsl(45 100% 50%)', 'black'),
+                libro_hero_line('DEL CINCUENTENARIO', 'hsl(220 50% 12%)', 'hsl(45 100% 50%)', 'black'),
+            ),
         ),
-        'content' => '[capitular]La temporada 2025-2026 marca el cincuentenario del Club Voleibol Guaguas. Una plantilla competitiva en cuatro frentes —Liga, Copa, Supercopa y Champions League— escribe las últimas líneas de esta historia de medio siglo de pasión por el voleibol.[/capitular]
-[imagen_contenido src="'),
+        'content' => '
+<div class="plantilla-cincuentenario">
+    <div class="plantilla-jugador"><span class="plantilla-numero">1</span><div class="plantilla-info"><span class="plantilla-nombre">Osmany Juantorena</span><span class="plantilla-posicion">Receptor</span></div></div>
+    <div class="plantilla-jugador"><span class="plantilla-numero">2</span><div class="plantilla-info"><span class="plantilla-nombre">Jorge Almansa</span><span class="plantilla-posicion">Receptor</span></div></div>
+    <div class="plantilla-jugador"><span class="plantilla-numero">3</span><div class="plantilla-info"><span class="plantilla-nombre">Jean Pascal Diedhiou</span><span class="plantilla-posicion">Central</span></div></div>
+    <div class="plantilla-jugador"><span class="plantilla-numero">4</span><div class="plantilla-info"><span class="plantilla-nombre">Hélder Spencer</span><span class="plantilla-posicion">Central</span></div></div>
+    <div class="plantilla-jugador"><span class="plantilla-numero">5</span><div class="plantilla-info"><span class="plantilla-nombre">Martín Ramos</span><span class="plantilla-posicion">Central</span></div></div>
+    <div class="plantilla-jugador"><span class="plantilla-numero">6</span><div class="plantilla-info"><span class="plantilla-nombre">Augusto Colito</span><span class="plantilla-posicion">Opuesto</span></div></div>
+    <div class="plantilla-jugador"><span class="plantilla-numero">7</span><div class="plantilla-info"><span class="plantilla-nombre">Dobromir Dimitrov</span><span class="plantilla-posicion">Colocador</span></div></div>
+    <div class="plantilla-jugador"><span class="plantilla-numero">8</span><div class="plantilla-info"><span class="plantilla-nombre">Unai Larrañaga</span><span class="plantilla-posicion">Líbero</span></div></div>
+    <div class="plantilla-jugador"><span class="plantilla-numero">9</span><div class="plantilla-info"><span class="plantilla-nombre">Tomas Rousseaux</span><span class="plantilla-posicion">Receptor-Atacante</span></div></div>
+    <div class="plantilla-jugador"><span class="plantilla-numero">10</span><div class="plantilla-info"><span class="plantilla-nombre">Io de Amo</span><span class="plantilla-posicion">Colocador</span></div></div>
+    <div class="plantilla-jugador"><span class="plantilla-numero">12</span><div class="plantilla-info"><span class="plantilla-nombre">Nico Bruno</span><span class="plantilla-posicion">Receptor</span></div></div>
+    <div class="plantilla-jugador"><span class="plantilla-numero">13</span><div class="plantilla-info"><span class="plantilla-nombre">Elio Montesdeoca</span><span class="plantilla-posicion">Central</span></div></div>
+    <div class="plantilla-jugador"><span class="plantilla-numero">14</span><div class="plantilla-info"><span class="plantilla-nombre">Ezequiel Figueroa</span><span class="plantilla-posicion">Líbero</span></div></div>
+</div>
+'),
 
     // ═══════════════════════════════════════════════
     // CAPÍTULO 21: RECONOCIMIENTO DEL COLECTIVO ARBITRAL
@@ -2856,18 +3320,56 @@ c) Examinar las liquidaciones y balances de la entidad.[/articulo]
         'show_marker' => true,
         'ref_id' => 'cap21',
         'hero' => array(
-            'image' => libro_img('hero-volleyball-match.jpg'),
-            'overlay' => 'rgba(26, 35, 126, 0.82)',
-            'icon' => 'custom',
-            'custom_icon' => $star,
-            'icon_width' => 60,
-            'icon_height' => 60,
-            'alignment' => 'left',
-            'vertical' => 'center',
-            'height' => '450px',
-            'title_lines' => array(libro_hero_line('RECONOCIMIENTO', '#D4AF37', '', 'black'), libro_hero_line('DEL COLECTIVO', '#FFFFFF', '', 'black'), libro_hero_line('ARBITRAL', '#FFFFFF', '', 'black')),
+            'image'             => libro_img('hero-volleyball-match.jpg'),
+            'overlay'           => 'rgba(0,0,0,0.15)',
+            'icon'              => 'custom',
+            'custom_icon'       => libro_img('estrella-icon.svg'),
+            'custom_icon_color' => 'hsl(45 100% 50%)',
+            'icon_width'        => 40,
+            'icon_height'       => 40,
+            'alignment'         => 'center',
+            'vertical'          => 'center',
+            'height'            => '500px',
+            'border_color'      => 'hsl(45 100% 50%)',
+            'title_lines'       => array(
+                libro_hero_line('RECONOCIMIENTO', 'hsl(220 50% 12%)', 'hsl(45 100% 50%)', 'black'),
+                libro_hero_line('DEL COLECTIVO', 'hsl(220 50% 12%)', 'hsl(45 100% 50%)', 'black'),
+                libro_hero_line('ARBITRAL', 'hsl(220 50% 12%)', 'hsl(45 100% 50%)', 'black'),
+            ),
         ),
-        'content' => '<p>Contenido del capítulo próximamente.</p>'),
+        'content' => '
+[capitular]José Antonio Santana Andueza, Alexis Fuentes y Mariola Rodríguez integran la santísima trinidad del arbitraje canario de élite, con décadas de experiencia y sabiduría en el gremio y distinguidos por un prestigio sin igual. Voces ineludibles, sus testimonios, a propósito del medio siglo de vida del club proceden y con todos los honores.[/capitular]
+
+[seccion_header]José Antonio Santana Andueza[/seccion_header]
+
+<p>Santana Andueza (Las Palmas de Gran Canaria, 1959), de 1990 a 2014 ininterrumpidamente como colegiado en la máxima categoría, considera que el club &ldquo;ha tenido un papel fundamental en la historia deportiva de la edad contemporánea de Canarias&rdquo;, además de una faceta educativa indudable: &ldquo;Ejercí de profesor de Educación Física y viví en primera persona el furor que se estableció en la juventud por este deporte, superando al fútbol, por las acciones promocionales del club, regalando entradas y fomentando el voleibol de manera continuada&rdquo;.</p>
+
+<p>&ldquo;Aquel CID lleno a reventar y aquellos jugadores que fueron ídolos de toda Gran Canaria están para siempre en la memoria, igual que la nueva etapa con la refundación y nuevos éxitos de la mano de Juan Ruiz. Por eso resulta indudable su trascendencia y huella, con una contribución única y respetada en toda España. De hecho, el Guaguas desbancó a los grandes clubes del país para situarse en lo más alto y ser la referencia indiscutible&rdquo;, razona.</p>
+
+<p>Antes de que la reglamentación estableciera el sistema de parejas cerradas para dirigir partidos, Andueza pudo, como asistente, ejercer en encuentros oficiales del Guaguas (&ldquo;recuerdo un partido ante el Unicaja en el que estaba Rafa Pascual&rdquo;) y sentir, a pie de pista, &ldquo;ambientes irrepetibles&rdquo;.</p>
+
+<p>El homenaje que le brindó el club el pasado 25 de octubre de 2025 en reconocimiento a su trayectoria le llegó &ldquo;al fondo del corazón&rdquo; por lo que supone disfrutar de un tributo &ldquo;en casa&rdquo;.</p>
+
+[seccion_header]Alexis Fuentes[/seccion_header]
+
+<p>Alexis Fuentes (Las Palmas de Gran Canaria, 1974), con más de dos décadas en la Superliga e internacional desde 2006, valora la capacidad que ha tenido Juan Ruiz, &ldquo;al igual que el desaparecido Quico Cabrera&rdquo;, de poder &ldquo;traer a unas islas del Atlántico una cantidad de títulos que causa impresión y admiración&rdquo;.</p>
+
+<p>&ldquo;Debe suponer un lujo para todos los canarios, amantes o no del voleibol, disponer de esta representación absolutamente increíble. Hay un mérito y un trabajo sensacional detrás de tantos años de conquistas, de competitividad, de vivir en lo más alto. Tiene que ser valorado en su justa medida y creo que es así&rdquo;, argumenta.</p>
+
+<p>Todavía en activo y pudiendo impartir justicia, además, en los derbis isleños con el equipo de Camarero en acción, se considera &ldquo;un privilegiado&rdquo; por haber sido testigo directo del progreso y consolidación de este proyecto deportivo: &ldquo;Maestro Gumersindo, recordado empleado de la UD que vivía en el Estadio Insular, era uno de mis abuelos y, aunque me transmitió la pasión por el fútbol y por la UD, no pudo con mi vocación de ser colegiado de voleibol, en gran parte por el impacto que tuvo en mí todo lo que hizo el Guaguas. Recuerdo con cariño como él y Merino González trataban de convencerme para que me decantara por el fútbol y yo, nada, convencido de lo que hoy soy&rdquo;.</p>
+
+[cita_editorial author="Alexis Fuentes"]La felicitación al Guaguas por su cincuentenario es, conociendo a Juan Ruiz, el principio de otro medio siglo que, con personas diferentes por ley de vida, deben mantener al Guaguas en el sitio que heredan, que es el mejor.[/cita_editorial]
+
+[seccion_header]Mariola Rodríguez[/seccion_header]
+
+<p>Mariola Rodríguez (Santa Cruz de Tenerife, 1974), otra leyenda del arbitraje, internacional desde 2011 y de Superliga desde 2004, tampoco escatima elogios a la institución: &ldquo;El CV Guaguas es historia viva del voleibol español. Cuando empecé a arbitrar, en los años noventa, pude disfrutar de ese Guaguas irrepetible, con Juan Ruiz, junto al CV Tenerife, con Quico Cabrera al frente, que dominaban la división de honor. Dos grandes y que durante muchos años se llevaban todos los títulos&rdquo;.</p>
+
+<p>&ldquo;Siempre recordaré mi primer partido de la Superliga, que coincidió con los últimos años de Juan Ruiz en su primera etapa. Ir a pitar al CID un Guaguas-Sonamar Palma era como ir a pitar un Real Madrid-Barcelona en fútbol. Imaginen la dimensión. Y ese Guaguas que dominó ha vuelto, con la mente privilegiada de Juan Ruiz detrás&rdquo;, enfatiza.</p>
+
+<p>La árbitra tinerfeña siempre ha tenido un lema sagrado (&ldquo;en España, el vóley donde se juega es en Canarias&rdquo;) por la tradición de, entre otros, el Guaguas, y presume de que, cuando viaja a otros países por compromisos de Champions, &ldquo;la gente siempre tiene presente al Guaguas&rdquo; porque, insiste, su presencia dentro y fuera de España &ldquo;es continua&rdquo;.</p>
+
+[cita_editorial author="Mariola Rodríguez"]Nunca debió desaparecer el club como ocurrió por desgracia y por todo lo que representa. Pero lo importante es que volvió, sigue y va a continuar. Es lo que deseo como canaria y amante del deporte y del voleibol.[/cita_editorial]
+'),
 
     // ═══════════════════════════════════════════════
     // CAPÍTULO 22: MIGUEL ÁNGEL RAMÍREZ
@@ -2879,19 +3381,33 @@ c) Examinar las liquidaciones y balances de la entidad.[/articulo]
         'show_marker' => true,
         'ref_id' => 'cap22',
         'hero' => array(
-            'image' => libro_img('hero-stadium.jpg'),
-            'overlay' => 'rgba(26, 35, 126, 0.85)',
-            'icon' => 'custom',
-            'custom_icon' => $star,
-            'icon_width' => 60,
-            'icon_height' => 60,
-            'alignment' => 'left',
-            'vertical' => 'center',
-            'height' => '450px',
-            'title_lines' => array(libro_hero_line('MIGUEL ÁNGEL', '#D4AF37', '', 'black'), libro_hero_line('RAMÍREZ', '#FFFFFF', '', 'black')),
+            'image'             => libro_img('hero-stadium.jpg'),
+            'overlay'           => 'rgba(0,0,0,0.15)',
+            'icon'              => 'custom',
+            'custom_icon'       => libro_img('estrella-icon.svg'),
+            'custom_icon_color' => 'hsl(45 100% 50%)',
+            'icon_width'        => 40,
+            'icon_height'       => 40,
+            'alignment'         => 'center',
+            'vertical'          => 'center',
+            'height'            => '500px',
+            'border_color'      => 'hsl(45 100% 50%)',
+            'title_lines'       => array(
+                libro_hero_line('MIGUEL ÁNGEL', 'hsl(220 50% 12%)', 'hsl(45 100% 50%)', 'black'),
+                libro_hero_line('RAMÍREZ', 'hsl(220 50% 12%)', 'hsl(45 100% 50%)', 'black'),
+            ),
         ),
-        'content' => '[capitular]Miguel Ángel Ramírez, presidente de la UD Las Palmas, ha sido una figura clave en el apoyo institucional al CV Guaguas. Su visión del deporte como motor de la sociedad canaria ha permitido que el club cuente con los recursos necesarios para competir al máximo nivel.[/capitular]
-[imagen_contenido src="'),
+        'content' => '
+[capitular]La historia y representatividad de la UD Las Palmas, bandera de Gran Canaria desde 1949, trasciende al deporte en la sociedad isleña y es símbolo unificador y sinónimo de prestigio. Desde la entidad amarilla, en voz de Miguel Ángel Ramírez, su presidente, hay un reconocimiento sincero y elogioso de lo que significa el CV Guaguas con su medio siglo de existencia y un palmarés que le diferencia.[/capitular]
+
+[cita_editorial author="Miguel Ángel Ramírez"]Todos conocemos la trayectoria de superaciones y éxitos del Guaguas, que ha permitido a nuestra tierra tener un papel hegemónico en el voleibol español, con gestas y triunfos de enorme mérito y brillo. Aquellos tiempos en el CID lleno con los Camarero, Klos, Golec, Sánchez Jover... Y ahora, también, después de su refundación. En el deporte no es fácil ganar y, frecuentemente, son más habituales las derrotas. Con el Guaguas no ha sido así. Hay que valorar todo lo que ha ido logrando con el paso de los años, siempre con una exigencia máxima y compitiendo con clubes que manejaban mayores presupuestos. Repasar su colección de títulos es motivo de orgullo y satisfacción para todos los grancanarios y ahora que cumple 50 años desde la UD Las Palmas le trasladamos nuestro aprecio, admiración y felicitación.[/cita_editorial]
+
+<p>El dirigente no obvia una mención especial a la figura de Juan Ruiz, &ldquo;el auténtico artífice de que el Guaguas sea lo que es&rdquo;.</p>
+
+<p>&ldquo;Juan Ruiz se ha destacado por ser una persona muy importante para nuestro deporte, pues además de su labor titánica al frente del Guaguas, también brindó sus servicios a la UD en una etapa en la que fue consejero y de la que me consta su sensibilidad, compromiso y diligencia en todo lo que hace. Le conozco desde hace muchos años y, sin duda, es un referente por la entrega altruista y ejemplar que ha puesto al servicio de su club. Sigue construyendo día a día una obra que va a dejar un legado impresionante y es de justicia ponerlo en el lugar que se merece&rdquo;, argumenta.</p>
+
+<p>Ramírez recuerda que la UD Las Palmas &ldquo;siempre estará al lado de todos los clubes, de la modalidad que sea, que dan visibilidad y reputación a Gran Canaria&rdquo; y, en este sentido, sitúa al Guaguas &ldquo;en una posición de privilegio porque así se lo ha ganado&rdquo;.</p>
+'),
 
     // ═══════════════════════════════════════════════
     // CAPÍTULO 23: A LA VANGUARDIA DE LA TECNOLOGÍA
@@ -2903,19 +3419,60 @@ c) Examinar las liquidaciones y balances de la entidad.[/articulo]
         'show_marker' => true,
         'ref_id' => 'cap23',
         'hero' => array(
-            'image' => libro_img('hero-volleyball-match.jpg'),
-            'overlay' => 'rgba(30, 30, 60, 0.85)',
-            'icon' => 'custom',
-            'custom_icon' => $star,
-            'icon_width' => 60,
-            'icon_height' => 60,
-            'alignment' => 'right',
-            'vertical' => 'center',
-            'height' => '450px',
-            'title_lines' => array(libro_hero_line('A LA VANGUARDIA', '#D4AF37', '', 'black'), libro_hero_line('DE LA', '#FFFFFF', '', 'black'), libro_hero_line('TECNOLOGÍA', '#FFFFFF', '', 'black')),
+            'image'             => libro_img('hero-volleyball-match.jpg'),
+            'overlay'           => 'rgba(0,0,0,0.15)',
+            'icon'              => 'custom',
+            'custom_icon'       => libro_img('estrella-icon.svg'),
+            'custom_icon_color' => 'hsl(45 100% 50%)',
+            'icon_width'        => 40,
+            'icon_height'       => 40,
+            'alignment'         => 'center',
+            'vertical'          => 'center',
+            'height'            => '500px',
+            'border_color'      => 'hsl(45 100% 50%)',
+            'title_lines'       => array(
+                libro_hero_line('A LA VANGUARDIA', 'hsl(220 50% 12%)', 'hsl(45 100% 50%)', 'black'),
+                libro_hero_line('DE LA TECNOLOGÍA', 'hsl(220 50% 12%)', 'hsl(45 100% 50%)', 'black'),
+            ),
         ),
-        'content' => '[capitular]El CV Guaguas ha sido pionero en la comunicación digital dentro del deporte español. Su presencia en redes sociales, la producción de contenidos audiovisuales y la cobertura periodística propia han creado un modelo de referencia para otros clubes.[/capitular]
-[imagen_contenido src="'),
+        'content' => '
+[capitular]El CV Guaguas cabalga a buen ritmo en los nuevos tiempos y con las vías de comunicación que se imponen a la hora de interactuar con aficionados, medios de comunicación y público en general. Las redes sociales y la fidelización de la comunidad propia de seguidores juegan un papel esencial en este ámbito.[/capitular]
+
+<p>Y el club, sensible a esta tendencia, cuida de manera especial sus cuentas oficiales, consciente del alcance que tienen, además de aportar una ayuda incalculable en la internacionalización de la marca, otro de los grandes retos en los que se trabaja de una manera específica.</p>
+
+[cita_editorial author="Juan Ruiz"]A estas alturas del siglo XXI se demanda otra manera de captar información. Todo ha de ser instantáneo, en la medida de lo posible personalizado y cuidado, que tenga impacto en el destinatario y que, además, genere un vínculo que le haga volver a ese canal. En el Guaguas no solo queremos prestar atención al seguidor de la tierra que puede venir al pabellón a animarnos. También al que vive aquí y, por lo que sea, no puede estar en directo con el equipo y, por supuesto, los que no residen en Gran Canaria. Y qué mejor manera que mantenerlos al día de la actualidad competitiva y con contenidos propios en torno a la plantilla y el club.[/cita_editorial]
+
+<p>Las actualizaciones diarias, así como la elaboración de reportajes, stories y vídeos monográficos mantienen con vida y vigencia las cuentas de la entidad, con espacios exclusivos y que combinan información con entretenimiento, la fórmula que ahora se impone. &ldquo;Para llegar a un público joven, que ha institucionalizado esta vía para interaccionar, es básico ofrecer un servicio ágil, dinámico y atractivo. Sin descuidar promociones y ventajas&rdquo;, añaden desde el departamento de prensa, orientado, además, a dar a los medios de comunicación convencionales todos los datos y novedades para facilitar su difusión.</p>
+
+<p>Aunque la masa social sostenida en las redes es fluctuante, hay una base de unos 5.000 fieles que integran la gran familia del Guaguas en el espacio digital y que es, como no podía ser menos, reclamo para anunciantes y patrocinadores ligados al escudo. En base a los impactos, algunas de las tarifas pueden tener más valor. Es la ley ahora imperante en el mundo empresarial y que tiene su extensión en el deporte, ya entendido como una industria de entretenimiento que ha de manejar audiencias e incentivarlas.</p>
+
+<div class="redes-sociales">
+<a href="https://clubvoleibolguaguas.com" target="_blank" rel="noopener" class="redes-sociales-item">
+  <span class="redes-sociales-icono"><svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-1 17.93c-3.95-.49-7-3.85-7-7.93 0-.62.08-1.21.21-1.79L9 15v1c0 1.1.9 2 2 2v1.93zm6.9-2.54c-.26-.81-1-1.39-1.9-1.39h-1v-3c0-.55-.45-1-1-1H8v-2h2c.55 0 1-.45 1-1V7h2c1.1 0 2-.9 2-2v-.41c2.93 1.19 5 4.06 5 7.41 0 2.08-.8 3.97-2.1 5.39z"/></svg></span>
+  <span class="redes-sociales-info"><span class="redes-sociales-nombre">Web</span><span class="redes-sociales-handle">clubvoleibolguaguas.com</span></span>
+</a>
+<a href="https://x.com/cvguaguas" target="_blank" rel="noopener" class="redes-sociales-item">
+  <span class="redes-sociales-icono"><svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-4.714-6.231-5.401 6.231H2.745l7.737-8.835L1.254 2.25H8.08l4.253 5.622zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg></span>
+  <span class="redes-sociales-info"><span class="redes-sociales-nombre">X (Twitter)</span><span class="redes-sociales-handle">@cvguaguas</span></span>
+</a>
+<a href="https://instagram.com/cvguaguas" target="_blank" rel="noopener" class="redes-sociales-item">
+  <span class="redes-sociales-icono"><svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z"/></svg></span>
+  <span class="redes-sociales-info"><span class="redes-sociales-nombre">Instagram</span><span class="redes-sociales-handle">@cvguaguas/</span></span>
+</a>
+<a href="https://www.ivoox.com/cv-guaguas" target="_blank" rel="noopener" class="redes-sociales-item">
+  <span class="redes-sociales-icono"><svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 14.5v-9l6 4.5-6 4.5z"/></svg></span>
+  <span class="redes-sociales-info"><span class="redes-sociales-nombre">Ivoox</span><span class="redes-sociales-handle">/cv guaguas</span></span>
+</a>
+<a href="https://youtube.com/@clubvoleibolguaguas" target="_blank" rel="noopener" class="redes-sociales-item">
+  <span class="redes-sociales-icono"><svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M23.498 6.186a3.016 3.016 0 00-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 00.502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 002.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 002.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/></svg></span>
+  <span class="redes-sociales-info"><span class="redes-sociales-nombre">YouTube</span><span class="redes-sociales-handle">@clubvoleibolguaguas</span></span>
+</a>
+<a href="https://facebook.com/cvguaguas" target="_blank" rel="noopener" class="redes-sociales-item">
+  <span class="redes-sociales-icono"><svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg></span>
+  <span class="redes-sociales-info"><span class="redes-sociales-nombre">Facebook</span><span class="redes-sociales-handle">@cvguaguas</span></span>
+</a>
+</div>
+'),
 
     // ═══════════════════════════════════════════════
     // CAPÍTULO 24: SOCIOS Y ABONADOS
@@ -2951,19 +3508,249 @@ c) Examinar las liquidaciones y balances de la entidad.[/articulo]
         'show_marker' => true,
         'ref_id' => 'cap25',
         'hero' => array(
-            'image' => libro_img('hero-estatutos.jpg'),
-            'overlay' => 'rgba(212, 175, 55, 0.80)',
-            'icon' => 'custom',
-            'custom_icon' => $star,
-            'icon_width' => 60,
-            'icon_height' => 60,
-            'alignment' => 'left',
-            'vertical' => 'center',
-            'height' => '450px',
-            'title_lines' => array(libro_hero_line('EMPRESARIOS', '#1a237e', '#FFFFFF', 'black'), libro_hero_line('DE LA TIERRA', '#1a237e', '#FFFFFF', 'black')),
+            'image'             => libro_img('hero-estatutos.jpg'),
+            'overlay'           => 'rgba(212, 175, 55, 0.80)',
+            'icon'              => 'custom',
+            'custom_icon'       => $star,
+            'icon_width'        => 60,
+            'icon_height'       => 60,
+            'alignment'         => 'left',
+            'vertical'          => 'center',
+            'height'            => '450px',
+            'title_lines'       => array(libro_hero_line('EMPRESARIOS', '#1a237e', '#FFFFFF', 'black'), libro_hero_line('DE LA TIERRA', '#1a237e', '#FFFFFF', 'black')),
         ),
-        'content' => '[capitular]El CV Guaguas ha contado siempre con el apoyo de empresarios canarios que creyeron en el proyecto. Desde Guaguas Municipales, el primer gran patrocinador, hasta las empresas que hoy respaldan al club, el tejido empresarial de la tierra ha sido pilar fundamental de la entidad.[/capitular]
-[imagen_contenido src="'),
+        'content' => '',
+    ),
+
+    array('title' => 'El tejido empresarial canario', 'numero' => '', 'order' => 2151, 'show_marker' => false, 'parent_ref' => 'cap25',
+        'hero' => array(
+            'image'             => libro_img('hero-estatutos.jpg'),
+            'overlay'           => 'rgba(0,0,0,0.15)',
+            'icon'              => 'custom',
+            'custom_icon'       => libro_img('estrella-icon.svg'),
+            'custom_icon_color' => 'hsl(45 100% 50%)',
+            'icon_width'        => 40,
+            'icon_height'       => 40,
+            'alignment'         => 'center',
+            'vertical'          => 'center',
+            'height'            => '500px',
+            'border_color'      => 'hsl(45 100% 50%)',
+            'title_lines'       => array(
+                libro_hero_line('EL TEJIDO', 'hsl(220 50% 12%)', 'hsl(45 100% 50%)', 'black'),
+                libro_hero_line('EMPRESARIAL', 'hsl(220 50% 12%)', 'hsl(45 100% 50%)', 'black'),
+                libro_hero_line('CANARIO', 'hsl(220 50% 12%)', 'hsl(45 100% 50%)', 'black'),
+            ),
+        ),
+        'content' => '
+[capitular]Además de las subvenciones públicas del Cabildo de Gran Canaria, del Ayuntamiento de Las Palmas de Gran Canaria y del Gobierno de Canarias, ayudas a las que tiene derecho el Guaguas por su condición de club de élite y representativo, con el añadido de ganar títulos y disfrutar de un prestigio histórico fuera de debates, Juan Ruiz y toda su junta directiva han dado un paso más en la viabilidad y sostenibilidad del proyecto esmerándose en la captación de apoyos por parte del empresariado de la tierra.[/capitular]
+
+<p>Y se lleva con mucho orgullo la consecución de una amplia cobertura en este apartado, sin tener nada que envidiar a otras instituciones porque, como admite el presidente, &ldquo;el apoyo es masivo, decidido y con reciprocidad&rdquo;. Como advierte el mandatario, las marcas que se asocian a las siglas corporativas ven un retorno en términos relacionados con el espíritu ganador, la representatividad y la fama que van implícitas al escudo.</p>
+
+[cita_editorial author="Juan Ruiz"]El Guaguas lleva en su esencia expandir Canarias, ser embajador de su tierra, llevar más allá de nuestras islas los símbolos y siglas que ayudan al desarrollo de nuestra región. Y captar la confianza y patrocinio de empresas que aportan empleo, riqueza y ejemplaridad a Gran Canaria es una manera perfecta de hacerlo.[/cita_editorial]
+
+<p>El Guaguas se ha ganado un nicho de mercado &ldquo;indiscutible y apreciado&rdquo; en el empresariado local por su política competente de tarifas brindando la aureola única que posee atendiendo a su palmarés. Y gestos como el de dedicar cada trofeo a sus patrocinadores, cuidando al máximo los detalles, colaboran en una sinergia establecida que permite, temporada tras temporada, asegurar una vía de ingresos fundamental para vertebrar cada proyecto.</p>
+
+[cita_editorial author="Juan Ruiz"]Nunca nos hemos abandonado al dinero público. Y nuestro método de trabajo contempla explorar continuamente financiación extra. Nos hemos acostumbrado a ser competitivos como el que más tanto en España como en Europa con presupuestos ajustados pero en los que el cumplimiento de todas las obligaciones es sagrado y además por parte de unos directivos que no cobran un céntimo por los servicios que prestan.[/cita_editorial]
+
+<p>El presidente ya fue pionero, a mitad de los años ochenta, y como tarjeta de presentación en su recién estrenado mandato, en privilegiar la independencia económica del club. Por aquel entonces causó elogio generalizado su contrato con Guaguas Municipales, que terminaría dando la denominación al equipo. Y, ya desde esa época, y bajo su dirección, jamás faltaron los ingresos derivados de la pequeña y mediana empresa para apuntalar a la gran marca predominante.</p>
+
+<p>Décadas después, hoy se mantiene ese modelo que combina diferentes escalones en cuanto a participaciones económicas &ldquo;pero todas necesarias, fundamentales y valoradas&rdquo;.</p>
+'),
+
+    array('title' => 'Agua Firgas', 'numero' => '', 'order' => 2152, 'show_marker' => false, 'parent_ref' => 'cap25',
+        'content' => '
+<div class="patrocinador-page">
+<div class="patrocinador-logo"><img src="' . libro_img('firgas.svg') . '" alt="Firgas Aquavia"></div>
+<div class="patrocinador-texto">
+<p>Para Aguas de Firgas vincular la marca al Guaguas es una apuesta por lo nuestro, por los deportistas que representan nuestra tierra aquí y fuera de Canarias y además son los números uno. Supone un refuerzo, además, para nuestra marca porque el Guaguas es un equipo campeón, un emblema de Canarias, como Aguas de Firgas como compañía 100% canaria y líder del mercado regional.</p>
+<p>La lucha, la capacidad ganadora, los valores como equipo y la cultura del esfuerzo son las características del Guaguas con las que nos sentimos más identificados.</p>
+</div>
+<div class="patrocinador-ficha">
+<p class="patrocinador-ficha-titulo">Ficha técnica de la empresa</p>
+<p><strong>Nombre completo:</strong> Aguas Minerales de Firgas S.A. &bull; <strong>Año de fundación:</strong> 1930 &bull; <strong>Dirección:</strong> Autovía GC-2, Km.3, Túnel Aguas de Firgas – 35010, Las Palmas de Gran Canaria &bull; <strong>Número de empleados:</strong> Más de 400 &bull; <strong>Naturaleza:</strong> Embotellado y distribución de aguas y bebidas refrescantes.</p>
+</div>
+<div class="patrocinador-redes">
+<p class="patrocinador-redes-titulo">Redes sociales</p>
+<p><strong>Instagram:</strong> <a href="https://instagram.com/aguasdefirgas.oficial" target="_blank" rel="noopener">@aguasdefirgas.oficial</a></p>
+</div>
+</div>
+'),
+
+    array('title' => 'Icare', 'numero' => '', 'order' => 2153, 'show_marker' => false, 'parent_ref' => 'cap25',
+        'content' => '
+<div class="patrocinador-page">
+<div class="patrocinador-logo"><img src="' . libro_img('icare.svg') . '" alt="Icare"></div>
+<div class="patrocinador-texto">
+<p>Para Icare la unión con el CV Guaguas representa un compromiso con nuestras señas de identidad y un apoyo a un proyecto deportivo basado en el compromiso y el esfuerzo y que nos representa los logros y valores de nuestra comunidad. Y por supuesto que nos refuerza. Es un orgullo colaborar con el equipo deportivo más laureado de Canarias y uno de los mejores equipos de voleibol de España de todos los tiempos, y sin duda el mejor de los últimos años.</p>
+<p>Apoyamos al club desde septiembre del año 2020. Las señas de identidad de la empresa que vemos reflejadas en el Guaguas son las del esfuerzo, compromiso y defensa de nuestros valores como comunidad.</p>
+</div>
+<div class="patrocinador-ficha">
+<p class="patrocinador-ficha-titulo">Ficha técnica de la empresa</p>
+<p><strong>Nombre completo:</strong> Instituto Canario de Retina (Icare) &bull; <strong>Año de fundación:</strong> 2013 &bull; <strong>Dirección:</strong> León y Castillo, 75, bajo. 35003, Las Palmas de Gran Canaria &bull; <strong>Número de empleados:</strong> 11 &bull; <strong>Naturaleza:</strong> Clínica oftalmológica.</p>
+</div>
+<div class="patrocinador-redes">
+<p class="patrocinador-redes-titulo">Web y redes sociales</p>
+<p><strong>Web:</strong> <a href="https://www.retinacanarias.com" target="_blank" rel="noopener">www.retinacanarias.com</a> &bull; <strong>Instagram:</strong> <a href="https://instagram.com/icare.oftalmologia" target="_blank" rel="noopener">@icare.oftalmologia</a></p>
+</div>
+</div>
+'),
+
+    array('title' => 'R2 Hotels', 'numero' => '', 'order' => 2154, 'show_marker' => false, 'parent_ref' => 'cap25',
+        'content' => '
+<div class="patrocinador-page">
+<div class="patrocinador-logo"><img src="' . libro_img('r2hotels.svg') . '" alt="R2 Hotels"></div>
+<div class="patrocinador-texto">
+<p>Para R2 Hotels, patrocinar al Club Voleibol Guaguas va mucho más allá de poner nuestro logotipo en una camiseta. Supone apoyar a un proyecto deportivo referente en Canarias, que representa esfuerzo, disciplina y trabajo en equipo, valores que también forman parte de nuestro día a día en los hoteles.</p>
+<p>Además, este patrocinio nos permite conectar de una forma muy auténtica con nuestra tierra y con las personas que nos visitan: muchos de nuestros clientes descubren el Guaguas a través de nosotros, y nosotros sentimos sus triunfos como propios, como un aficionado más. En cierto modo, compartir este camino con el club es también una forma de devolver a Canarias parte de todo lo que nos ha dado.</p>
+<p>Apoyamos al Club Voleibol Guaguas desde 2023, un punto de partida que para nosotros no es una simple fecha, sino el inicio de una relación que queremos que sea duradera. Nos vemos reflejados en el Guaguas en su espíritu ganador, su constancia y su capacidad para reinventarse sin perder sus raíces. También compartimos una profunda pasión por Canarias.</p>
+</div>
+<div class="patrocinador-ficha">
+<p class="patrocinador-ficha-titulo">Ficha técnica de la empresa</p>
+<p><strong>Nombre completo:</strong> SLR Turismo España S.L. (nombre comercial R2 Hotels) &bull; <strong>Año de fundación:</strong> 2015 &bull; <strong>Dirección:</strong> Calle Artistas Canarios, 8. 35627 Costa Calma Las Palmas &bull; <strong>Número de empleados:</strong> 750 &bull; <strong>Naturaleza:</strong> Cadena hotelera.</p>
+</div>
+<div class="patrocinador-redes">
+<p class="patrocinador-redes-titulo">Redes sociales</p>
+<p><strong>Instagram:</strong> <a href="https://instagram.com/r2hotelsofficial" target="_blank" rel="noopener">r2hotelsofficial</a> &bull; <strong>Facebook:</strong> <a href="https://facebook.com/r2hotels" target="_blank" rel="noopener">r2hotels</a> &bull; <strong>LinkedIn:</strong> <a href="https://linkedin.com/company/r2-hotels" target="_blank" rel="noopener">r2-hotels</a> &bull; <strong>TikTok:</strong> <a href="https://tiktok.com/@r2hotels" target="_blank" rel="noopener">@r2hotels</a></p>
+</div>
+</div>
+'),
+
+    array('title' => 'Hoteles Vistaflor', 'numero' => '', 'order' => 2155, 'show_marker' => false, 'parent_ref' => 'cap25',
+        'content' => '
+<div class="patrocinador-page">
+<div class="patrocinador-logo"><img src="' . libro_img('vistaflor.svg') . '" alt="Hoteles Vistaflor"></div>
+<div class="patrocinador-texto">
+<p>Cuando comenzamos este patrocinio, el club nos pidió apoyo en un momento muy complicado tras la pandemia y las dificultades económicas que atravesaba. Decidimos apostar por la historia de un equipo con los mayores éxitos de Canarias, un referente del deporte regional, y entendimos que era importante respaldar esos valores que, con tan pocos recursos, siguen sacando adelante un proyecto tan significativo. Por ello apoyamos al club desde 2021.</p>
+<p>La identidad del Guaguas conecta de manera muy especial con la de Hoteles Vistaflor: ambos somos organizaciones que han crecido desde el esfuerzo diario, con una filosofía humilde, familiar y luchadora. Somos una empresa pequeña, pero con una gran dedicación, igual que el espíritu del equipo. Trabajamos como una gran familia para ofrecer siempre a nuestros clientes una atención cercana y una gran sonrisa.</p>
+</div>
+<div class="patrocinador-ficha">
+<p class="patrocinador-ficha-titulo">Ficha técnica de la empresa</p>
+<p><strong>Nombre completo:</strong> Bungalows Vistaflor &bull; <strong>Año de fundación:</strong> 1987 &bull; <strong>Dirección:</strong> Av. Touroperador Neckermann, 1A. 35100, Maspalomas, Las Palmas &bull; <strong>Número de empleados:</strong> 88 &bull; <strong>Naturaleza:</strong> Actividad hotelera, promotores y colaboradores de numerosos eventos deportivos y sociales.</p>
+</div>
+<div class="patrocinador-redes">
+<p class="patrocinador-redes-titulo">Web y redes sociales</p>
+<p><strong>Web:</strong> <a href="https://www.bungalowsvistaflor.com" target="_blank" rel="noopener">www.bungalowsvistaflor.com</a> &bull; <strong>Instagram:</strong> <a href="https://instagram.com/vistaflorbungalows" target="_blank" rel="noopener">@vistaflorbungalows</a></p>
+</div>
+</div>
+'),
+
+    array('title' => 'El Extinguidor', 'numero' => '', 'order' => 2156, 'show_marker' => false, 'parent_ref' => 'cap25',
+        'content' => '
+<div class="patrocinador-page">
+<div class="patrocinador-logo"><img src="' . libro_img('elextinguidor.svg') . '" alt="El Extinguidor"></div>
+<div class="patrocinador-texto">
+<p>Para El Extinguidor el patrocinio al CV Guaguas supone más visibilidad de cara al público local, al estar en el mercado con un equipo representativo como el que más a nivel insular. Nuestro patrocinio al club surgió en el año 2020.</p>
+<p>Seriedad, esfuerzo y transparencia son los valores del CV Guaguas con los que nos sentimos identificados y representados.</p>
+</div>
+<div class="patrocinador-ficha">
+<p class="patrocinador-ficha-titulo">Ficha técnica de la empresa</p>
+<p><strong>Nombre completo:</strong> El Extinguidor, S.A. &bull; <strong>Año de fundación:</strong> 1983 &bull; <strong>Dirección:</strong> C/ Dr. Juan Domínguez Pérez, nº 7 – 35008 Polígono Industrial El Sebadal, Las Palmas de Gran Canaria &bull; <strong>Número de empleados:</strong> 26 &bull; <strong>Naturaleza:</strong> Mantenimientos de Sistemas contra incendios, Robo y CCTV.</p>
+</div>
+<div class="patrocinador-redes">
+<p class="patrocinador-redes-titulo">Web</p>
+<p><strong>Web:</strong> <a href="https://elextinguidor.com" target="_blank" rel="noopener">elextinguidor.com</a></p>
+</div>
+</div>
+'),
+
+    array('title' => 'AFS Formación', 'numero' => '', 'order' => 2157, 'show_marker' => false, 'parent_ref' => 'cap25',
+        'content' => '
+<div class="patrocinador-page">
+<div class="patrocinador-logo"><img src="' . libro_img('afs.svg') . '" alt="AFS Formación"></div>
+<div class="patrocinador-texto">
+<p>Para AFS Formación y Aula de Formación Superior, el patrocinio es una declaración de principios: apostar por el esfuerzo, la excelencia y el trabajo en equipo. Un escudo ganador no solo refuerza la marca; nos obliga a estar a la altura. Cuando te alineas con un club que compite para ganar, también tú entrenas mejor, aunque sea fuera de la pista.</p>
+<p>Además, este patrocinio es una forma de impulsar el talento deportivo canario y de acercar esos ejemplos de compromiso y superación a nuestro alumnado. Queremos que nuestros estudiantes vean en el deporte una fuente de inspiración, un espejo de los valores que promovemos en el aula: disciplina, trabajo en equipo y pasión por alcanzar metas ambiciosas.</p>
+<p>Apoyamos al CV Guaguas desde 2020 y nos reconocemos en la cultura del Guaguas: disciplina, mejora continua, constancia y ambición con los pies en la tierra.</p>
+</div>
+<div class="patrocinador-ficha">
+<p class="patrocinador-ficha-titulo">Ficha técnica de la empresa</p>
+<p><strong>Nombre completo:</strong> Aula de Formación Superior, S.L. y Centro de Formación AFS &bull; <strong>Fundación:</strong> 15 enero 1996 &bull; <strong>Dirección:</strong> Avda. Carlos V, 110 Ingenio, Las Palmas – 35240 &bull; <strong>Número de empleados:</strong> 50 &bull; <strong>Naturaleza:</strong> Centro de formación especializado en certificados de profesionalidad y programas de formación para el empleo.</p>
+</div>
+<div class="patrocinador-redes">
+<p class="patrocinador-redes-titulo">Web y redes sociales</p>
+<p><strong>Web:</strong> <a href="https://grupoafs.com" target="_blank" rel="noopener">grupoafs.com</a> &bull; <a href="https://afsformacion.com" target="_blank" rel="noopener">afsformacion.com</a> &bull; <a href="https://aulaformacionsuperior.com" target="_blank" rel="noopener">aulaformacionsuperior.com</a> &bull; <strong>LinkedIn:</strong> <a href="https://linkedin.com/company/grupoafs" target="_blank" rel="noopener">@grupoafs</a> &bull; <strong>Instagram:</strong> <a href="https://instagram.com/grupoafs" target="_blank" rel="noopener">@grupoafs</a> &bull; <strong>Facebook:</strong> <a href="https://facebook.com/grupoafs" target="_blank" rel="noopener">grupoafs</a></p>
+</div>
+</div>
+'),
+
+    array('title' => 'Universidad del Atlántico Medio', 'numero' => '', 'order' => 2158, 'show_marker' => false, 'parent_ref' => 'cap25',
+        'content' => '
+<div class="patrocinador-page">
+<div class="patrocinador-logo"><img src="' . libro_img('universidad.svg') . '" alt="Universidad del Atlántico Medio"></div>
+<div class="patrocinador-texto">
+<p>Desde un principio entendimos que los valores de esfuerzo, compromiso, dedicación y generosidad que desprende el CV Guaguas y su directiva, así como los resultados que éstos valores han generado en lo deportivo, significaban para la Universidad del Atlántico Medio una suma con nuestros propios valores, visión y misión como institución que forma personas en valores.</p>
+<p>La trayectoria de ambas instituciones y la suma de los valores, sin lugar a dudas refuerza la marca de ambas. Arrancamos de la mano del presidente Juan Ruiz, a partir de 2020, nuestro patrocinio. Los valores de compromiso y generosidad en el esfuerzo y la imagen que ello transmite son los que nos identifican con el CV Guaguas.</p>
+</div>
+<div class="patrocinador-ficha">
+<p class="patrocinador-ficha-titulo">Ficha técnica de la empresa</p>
+<p><strong>Nombre completo:</strong> Universidad del Atlántico Medio &bull; <strong>Año de fundación:</strong> Desde 1988, con reconocimiento del Parlamento de Canarias en 2015 &bull; <strong>Dirección:</strong> Campus en carretera de Quilmes, nº 37 (Tafira Baja) &bull; <strong>Número de empleados:</strong> 295 &bull; <strong>Naturaleza:</strong> Formación universitaria y programas directivos.</p>
+</div>
+<div class="patrocinador-redes">
+<p class="patrocinador-redes-titulo">Canales de comunicación</p>
+<p><a href="https://linktr.ee/atlanticomedio" target="_blank" rel="noopener">linktr.ee/atlanticomedio</a></p>
+</div>
+</div>
+'),
+
+    array('title' => 'HiperDino', 'numero' => '', 'order' => 2159, 'show_marker' => false, 'parent_ref' => 'cap25',
+        'content' => '
+<div class="patrocinador-page">
+<div class="patrocinador-logo"><img src="' . libro_img('hiperdino.svg') . '" alt="HiperDino"></div>
+<div class="patrocinador-texto">
+<p>Para HiperDino, cadena de supermercados 100% canaria, apoyar al Club de Voleibol Guaguas Municipales simboliza nuestro compromiso de confianza, de apoyo y de vocación al deporte, especialmente a esta práctica deportiva tan arraigada en nuestras islas y que inculca valores claves para nuestra empresa como es el trabajo en equipo y la importancia de la preparación física y mental para alcanzar unos objetivos planificados.</p>
+<p>Este año apoyamos la cuarta temporada y han sido cuatro años de grandes logros y de consolidar el reconocimiento deportivo y social que los canarios tienen hacia el club, un club que forma parte de la esencia de nuestras islas y que refleja los valores que nos representan.</p>
+<p>El trabajo en equipo, en coordinación y con la definición planificada de los roles que cada jugador tiene asignados y ese espíritu competitivo pero asertivo, reflejan perfectamente la filosofía de nuestra cadena de supermercados en donde trabajan 10.000 personas.</p>
+</div>
+<div class="patrocinador-ficha">
+<p class="patrocinador-ficha-titulo">Ficha técnica de la empresa</p>
+<p><strong>Nombre completo:</strong> HiperDino &bull; <strong>Fundación:</strong> 28 de octubre de 1985 &bull; <strong>Dirección:</strong> Calle Luis Correa Medina 9, 35013 Las Palmas de Gran Canaria &bull; <strong>Número de empleados:</strong> 9.963 (a octubre de 2025) &bull; <strong>Naturaleza:</strong> Sector de la alimentación.</p>
+</div>
+<div class="patrocinador-redes">
+<p class="patrocinador-redes-titulo">Web y redes sociales</p>
+<p><strong>Web:</strong> <a href="https://hiperdino.es" target="_blank" rel="noopener">hiperdino.es</a> &bull; <strong>Facebook:</strong> <a href="https://facebook.com/HiperdinoSupermercados.es" target="_blank" rel="noopener">HiperdinoSupermercados.es</a> &bull; <strong>Twitter:</strong> <a href="https://x.com/HiperDino_" target="_blank" rel="noopener">@HiperDino_</a> &bull; <strong>Instagram:</strong> <a href="https://instagram.com/hiperdino_" target="_blank" rel="noopener">@hiperdino_</a> &bull; <strong>TikTok:</strong> <a href="https://tiktok.com/@hiperdino_" target="_blank" rel="noopener">@hiperdino_</a> &bull; <strong>YouTube:</strong> <a href="https://youtube.com/@HiperDinoSupermercadosCanarias" target="_blank" rel="noopener">@HiperDinoSupermercadosCanarias</a> &bull; <strong>LinkedIn:</strong> <a href="https://linkedin.com/company/hiperdino-supermercados" target="_blank" rel="noopener">hiperdino-supermercados</a></p>
+</div>
+</div>
+'),
+
+    array('title' => 'Toyota Canarias', 'numero' => '', 'order' => 2160, 'show_marker' => false, 'parent_ref' => 'cap25',
+        'content' => '
+<div class="patrocinador-page">
+<div class="patrocinador-logo"><img src="' . libro_img('toyota.svg') . '" alt="Toyota Canarias"></div>
+<div class="patrocinador-texto">
+<p>Para Toyota Canarias, el patrocinio de este equipo de la máxima división de voleibol masculino representa mucho más que un acuerdo comercial. En este caso, el patrocinio del Club Voleibol Guaguas es una oportunidad para impulsar valores compartidos, como el trabajo en equipo, el esfuerzo constante y poder trasladar un mensaje a los más jóvenes sobre la importancia de una vida activa y saludable.</p>
+<p>Sin duda hay una transferencia de atributos. Guaguas probablemente posee el mayor palmarés deportivo de Canarias pero no solo son sus éxitos en la cancha lo importante. Estamos vinculando nuestra imagen a valores positivos como la dedicación, la superación, el espíritu competitivo, la tolerancia y el trabajo en equipo.</p>
+<p>Nos acabamos de incorporar este año al proyecto del Guaguas. Llevamos décadas vinculados al baloncesto y desde 2019 al fútbol femenino. La pasión por el trabajo en equipo, con la idea de que sin esfuerzo, dedicación y determinación no se alcanzan los resultados y la humildad con la que se debe abordar el éxito son los valores del Guaguas con los que nos sentimos plenamente identificados.</p>
+</div>
+<div class="patrocinador-ficha">
+<p class="patrocinador-ficha-titulo">Ficha técnica de la empresa</p>
+<p><strong>Nombre completo:</strong> Toyota Canarias &bull; <strong>Año de fundación:</strong> 1973 &bull; <strong>Dirección:</strong> Diego Vega Sarmiento, 5 – 35004, Las Palmas de Gran Canaria &bull; <strong>Naturaleza:</strong> Toyota Canarias distribuye y comercializa los vehículos de las marcas Toyota y Lexus en las Islas Canarias y presta servicios de posventa y venta de recambios y accesorios.</p>
+</div>
+<div class="patrocinador-redes">
+<p class="patrocinador-redes-titulo">Web y redes sociales</p>
+<p><strong>Web:</strong> <a href="https://toyota-canarias.es" target="_blank" rel="noopener">toyota-canarias.es</a> &bull; <strong>X:</strong> <a href="https://x.com/toyotacanarias" target="_blank" rel="noopener">@toyotacanarias</a> &bull; <strong>Instagram:</strong> <a href="https://instagram.com/toyotacanarias" target="_blank" rel="noopener">@toyotacanarias</a> &bull; <a href="https://linktr.ee/toyotacanarias" target="_blank" rel="noopener">linktr.ee/toyotacanarias</a></p>
+</div>
+</div>
+'),
+
+    array('title' => 'Acerbis', 'numero' => '', 'order' => 2161, 'show_marker' => false, 'parent_ref' => 'cap25',
+        'content' => '
+<div class="patrocinador-page">
+<div class="patrocinador-logo"><img src="' . libro_img('acerbis.svg') . '" alt="Acerbis"></div>
+<div class="patrocinador-texto">
+<p>Para Acerbis, el patrocinio del CV Guaguas va más allá de la simple visibilidad y representa una elección de valores. Nos identificamos con un proyecto que trabaja con integridad, construyendo una identidad sólida a través de la organización, el respeto y las personas.</p>
+<p>Apoyar a un equipo ganador refuerza nuestra credibilidad, especialmente cuando la victoria nace de la simplicidad operativa, el espíritu de equipo y la evolución continua, principios que Acerbis reconoce y comparte. Por eso, el patrocinio no es solo una alianza deportiva, sino un camino común basado en la responsabilidad y el crecimiento constante. Este es nuestro tercer año apoyando al equipo, y con nuestra equipación el club ha ganado varios títulos, proporcionándonos muchas satisfacciones.</p>
+<p>En el CV Guaguas encontramos muchos elementos de nuestro ADN: el espíritu de equipo, la integridad, la responsabilidad, la sencillez como concreción y la evolución continua. Por eso, el CV Guaguas no es solo un socio deportivo, sino una realidad con la que Acerbis se identifica plenamente.</p>
+</div>
+<div class="patrocinador-ficha">
+<p class="patrocinador-ficha-titulo">Ficha técnica de la empresa</p>
+<p><strong>Nombre completo:</strong> Acerbis S.p.A &bull; <strong>Año de fundación:</strong> 1973 &bull; <strong>Dirección:</strong> Via Serio 37 – 24021 Albino (BG) Italy &bull; <strong>Número de empleados:</strong> 450 &bull; <strong>Naturaleza:</strong> Empresa industrial italiana fabricante de componentes plásticos para motocicletas y ropa deportiva técnica.</p>
+</div>
+<div class="patrocinador-redes">
+<p class="patrocinador-redes-titulo">Web y redes sociales</p>
+<p><strong>Web:</strong> <a href="https://acerbiscentralsport.com" target="_blank" rel="noopener">acerbiscentralsport.com</a> &bull; <strong>Facebook:</strong> <a href="https://facebook.com/AcerbisSport" target="_blank" rel="noopener">AcerbisSport</a> &bull; <strong>Instagram:</strong> <a href="https://instagram.com/acerbissport" target="_blank" rel="noopener">@acerbissport</a> &bull; <strong>YouTube:</strong> <a href="https://youtube.com/@ACERBIS1973" target="_blank" rel="noopener">@ACERBIS1973</a> &bull; <strong>LinkedIn:</strong> <a href="https://linkedin.com/company/acerbis-italia-spa" target="_blank" rel="noopener">acerbis-italia-spa</a></p>
+</div>
+</div>
+'),
 
         ); // end chapters array
 }

@@ -440,7 +440,7 @@ h1, h2, h3, h4, h5, h6 {
     box-decoration-break: clone;
 }
 
-.light .prologue-name {
+body.light .prologue-name {
     color: #FFFFFF;
     background-color: hsl(220 50% 20%);
 }
@@ -1447,7 +1447,7 @@ body.dark .titulo-deportivo-nombre {
 }
 
 .titulo-deportivo-ficha {
-    background: var(--muted);
+    background: hsl(var(--muted));
     padding: 1.25rem 1.5rem;
 }
 
@@ -1639,6 +1639,240 @@ body.dark .ficha-debut-titulo {
 }
 
 .ficha-debut-wrapper .titulo-deportivo-ficha {
-    background: var(--muted);
+    background: hsl(var(--muted));
     padding: 1.25rem 1.5rem;
+}
+
+
+/* ─── Plantilla del cincuentenario ─────────────────────── */
+.plantilla-cincuentenario {
+    display: flex;
+    flex-direction: column;
+    gap: 0;
+    margin: 2rem 0;
+}
+
+.plantilla-jugador {
+    display: flex;
+    align-items: center;
+    gap: 1.5rem;
+    padding: 1rem 0;
+    border-bottom: 1px solid hsl(var(--border));
+}
+
+.plantilla-jugador:last-child {
+    border-bottom: none;
+}
+
+.plantilla-numero {
+    font-size: 2.5rem;
+    font-weight: 700;
+    color: hsl(var(--gold));
+    min-width: 3rem;
+    text-align: right;
+    line-height: 1;
+    font-family: var(--font-display);
+}
+
+.plantilla-info {
+    display: flex;
+    flex-direction: column;
+    gap: 0.2rem;
+}
+
+.plantilla-nombre {
+    font-size: 1.25rem;
+    font-weight: 700;
+    color: hsl(var(--foreground));
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    font-family: var(--font-display);
+}
+
+.plantilla-posicion {
+    font-size: 0.8125rem;
+    font-weight: 500;
+    color: hsl(var(--muted-foreground));
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+}
+
+/* ============================================
+   REDES SOCIALES
+   ============================================ */
+
+.redes-sociales {
+    display: flex;
+    flex-direction: column;
+    gap: 0;
+    margin: 2rem 0;
+}
+
+.redes-sociales-item {
+    display: flex;
+    align-items: center;
+    gap: 1.25rem;
+    padding: 1rem 0;
+    border-bottom: 1px solid hsl(var(--border));
+    text-decoration: none;
+    color: hsl(var(--foreground));
+    transition: color 0.2s;
+}
+
+.redes-sociales-item:last-child {
+    border-bottom: none;
+}
+
+.redes-sociales-item:hover {
+    color: hsl(var(--gold));
+}
+
+.redes-sociales-icono {
+    width: 2.5rem;
+    height: 2.5rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+    color: hsl(var(--gold));
+}
+
+.redes-sociales-icono svg {
+    width: 1.75rem;
+    height: 1.75rem;
+    fill: currentColor;
+}
+
+.redes-sociales-info {
+    display: flex;
+    flex-direction: column;
+    gap: 0.1rem;
+}
+
+.redes-sociales-nombre {
+    font-size: 0.75rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.12em;
+    color: hsl(var(--muted-foreground));
+}
+
+.redes-sociales-handle {
+    font-size: 1.1rem;
+    font-weight: 600;
+    font-family: var(--font-display);
+    color: hsl(var(--foreground));
+}
+
+/* ============================================
+   PATROCINADORES — Layout fondo dorado
+   ============================================ */
+
+.patrocinador-page {
+    background-color: hsl(var(--gold));
+    color: hsl(220 50% 8%);
+    margin: 0 calc(-1 * var(--content-padding, 2rem));
+    padding: 3rem var(--content-padding, 2rem) 4rem;
+    min-height: 60vh;
+    border-radius: 1rem;
+}
+
+.patrocinador-logo {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 2.5rem;
+    min-height: 160px;
+}
+
+.patrocinador-logo img,
+.patrocinador-logo svg {
+    width: 100%;
+    max-width: 520px;
+    height: auto;
+    /* Force black on gold background */
+    filter: brightness(0);
+}
+
+@media (min-width: 768px) {
+    .patrocinador-logo {
+        min-height: 300px;
+    }
+    .patrocinador-logo img,
+    .patrocinador-logo svg {
+        min-height: 300px;
+        object-fit: contain;
+    }
+}
+
+.patrocinador-texto {
+    font-size: 0.9375rem;
+    line-height: 1.75;
+    color: hsl(220 50% 8%);
+    margin-bottom: 2rem;
+}
+
+.patrocinador-texto p {
+    margin-bottom: 1rem;
+}
+
+.patrocinador-ficha {
+    margin-top: 2rem;
+    padding-top: 1.5rem;
+    border-top: 1px solid hsl(220 50% 20% / 0.25);
+}
+
+.patrocinador-ficha-titulo {
+    font-family: var(--font-display);
+    font-weight: 700;
+    font-size: 0.8125rem;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: hsl(220 50% 8%);
+    margin-bottom: 0.75rem;
+}
+
+.patrocinador-ficha p {
+    font-size: 0.875rem;
+    line-height: 1.65;
+    color: hsl(220 50% 8%);
+    margin-bottom: 0.5rem;
+}
+
+.patrocinador-redes {
+    margin-top: 1.5rem;
+    padding-top: 1.25rem;
+    border-top: 1px solid hsl(220 50% 20% / 0.25);
+}
+
+.patrocinador-redes-titulo {
+    font-family: var(--font-display);
+    font-weight: 700;
+    font-size: 0.8125rem;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: hsl(220 50% 8%);
+    margin-bottom: 0.6rem;
+}
+
+.patrocinador-redes p {
+    font-size: 0.875rem;
+    line-height: 1.65;
+    color: hsl(220 50% 8%);
+    margin: 0;
+}
+
+.patrocinador-redes a {
+    color: hsl(220 50% 8%);
+    font-weight: 600;
+    text-decoration: underline;
+    text-underline-offset: 2px;
+}
+
+/* Override article prose styles inside patrocinador */
+.patrocinador-page .cita-editorial,
+.patrocinador-page blockquote {
+    border-left-color: hsl(220 50% 20% / 0.4);
+    background: hsl(220 50% 8% / 0.06);
+    color: hsl(220 50% 8%);
 }
