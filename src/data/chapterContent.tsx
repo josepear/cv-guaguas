@@ -1366,14 +1366,6 @@ export const chapterContent: Record<string, React.ReactNode> = {
     </>
   ),
 
-  // ═══════════════════════════════════════════════
-  // CAPÍTULO 21: Reconocimiento del colectivo arbitral
-  // ═══════════════════════════════════════════════
-  "capitulo-21": (
-    <>
-      <DropCap>El voleibol no se entiende sin la labor de los colegiados. El colectivo arbitral ha sido una pieza fundamental en el desarrollo y profesionalización de este deporte en Canarias, y su reconocimiento forma parte de la historia del CV Guaguas.</DropCap>
-      <p>Contenido del capítulo próximamente.</p>
-    </>
-  ),
+
 
 };
