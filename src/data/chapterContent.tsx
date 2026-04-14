@@ -423,65 +423,29 @@ export const chapterContent: Record<string, React.ReactNode> = {
   "capitulo-24": (
     <>
       <DropCap>La afición del Guaguas es el motor del club. Desde aquellos primeros espectadores en el patio del colegio hasta los miles de abonados que llenan el Gran Canaria Arena, los socios han sido el alma del proyecto deportivo más exitoso del voleibol español.</DropCap>
-[imagen_contenido src="'),
 
-    // ═══════════════════════════════════════════════
-    // CAPÍTULO 25: EMPRESARIOS DE LA TIERRA
-    // ═══════════════════════════════════════════════
-    array(
-        'title' => 'Empresarios de la tierra',
-        'numero' => '25',
-        'order' => 215,
-        'show_marker' => true,
-        'ref_id' => 'cap25',
-        'hero' => array(
-            'image'             => libro_img('hero-estatutos.jpg'),
-            'overlay'           => 'rgba(212, 175, 55, 0.80)',
-            'icon'              => 'custom',
-            'custom_icon'       => $star,
-            'icon_width'        => 60,
-            'icon_height'       => 60,
-            'alignment'         => 'left',
-            'vertical'          => 'center',
-            'height'            => '450px',
-            'title_lines'       => array(libro_hero_line('EMPRESARIOS', '#1a237e', '#FFFFFF', 'black'), libro_hero_line('DE LA TIERRA', '#1a237e', '#FFFFFF', 'black')),
-        ),
-        'content' => '',
-    ),
+      <p>Y se lleva con mucho orgullo la consecución de una amplia cobertura en este apartado, sin tener nada que envidiar a otras instituciones porque, como admite el presidente, «el apoyo es masivo, decidido y con reciprocidad». Como advierte el mandatario, las marcas que se asocian a las siglas corporativas ven un retorno en términos relacionados con el espíritu ganador, la representatividad y la fama que van implícitas al escudo.</p>
+    </>
+  ),
 
-    array('title' => 'El tejido empresarial canario', 'numero' => '', 'order' => 2151, 'show_marker' => false, 'parent_ref' => 'cap25',
-        'hero' => array(
-            'image'             => libro_img('hero-estatutos.jpg'),
-            'overlay'           => 'rgba(0,0,0,0.15)',
-            'icon'              => 'custom',
-            'custom_icon'       => libro_img('estrella-icon.svg'),
-            'custom_icon_color' => 'hsl(45 100% 50%)',
-            'icon_width'        => 40,
-            'icon_height'       => 40,
-            'alignment'         => 'center',
-            'vertical'          => 'center',
-            'height'            => '500px',
-            'border_color'      => 'hsl(45 100% 50%)',
-            'title_lines'       => array(
-                libro_hero_line('EL TEJIDO', 'hsl(220 50% 12%)', 'hsl(45 100% 50%)', 'black'),
-                libro_hero_line('EMPRESARIAL', 'hsl(220 50% 12%)', 'hsl(45 100% 50%)', 'black'),
-                libro_hero_line('CANARIO', 'hsl(220 50% 12%)', 'hsl(45 100% 50%)', 'black'),
-            ),
-        ),
-        'content' => '
-<DropCap>Además de las subvenciones públicas del Cabildo de Gran Canaria, del Ayuntamiento de Las Palmas de Gran Canaria y del Gobierno de Canarias, ayudas a las que tiene derecho el Guaguas por su condición de club de élite y representativo, con el añadido de ganar títulos y disfrutar de un prestigio histórico fuera de debates, Juan Ruiz y toda su junta directiva han dado un paso más en la viabilidad y sostenibilidad del proyecto esmerándose en la captación de apoyos por parte del empresariado de la tierra.</DropCap>
+  // ═══════════════════════════════════════════════
+  // CAP 25 sub: El tejido empresarial canario
+  // ═══════════════════════════════════════════════
+  "cap25-tejido-empresarial": (
+    <>
+      <DropCap>Además de las subvenciones públicas del Cabildo de Gran Canaria, del Ayuntamiento de Las Palmas de Gran Canaria y del Gobierno de Canarias, ayudas a las que tiene derecho el Guaguas por su condición de club de élite y representativo, con el añadido de ganar títulos y disfrutar de un prestigio histórico fuera de debates, Juan Ruiz y toda su junta directiva han dado un paso más en la viabilidad y sostenibilidad del proyecto esmerándose en la captación de apoyos por parte del empresariado de la tierra.</DropCap>
 
-<p>Y se lleva con mucho orgullo la consecución de una amplia cobertura en este apartado, sin tener nada que envidiar a otras instituciones porque, como admite el presidente, &ldquo;el apoyo es masivo, decidido y con reciprocidad&rdquo;. Como advierte el mandatario, las marcas que se asocian a las siglas corporativas ven un retorno en términos relacionados con el espíritu ganador, la representatividad y la fama que van implícitas al escudo.</p>
+      <p>Y se lleva con mucho orgullo la consecución de una amplia cobertura en este apartado, sin tener nada que envidiar a otras instituciones porque, como admite el presidente, «el apoyo es masivo, decidido y con reciprocidad». Como advierte el mandatario, las marcas que se asocian a las siglas corporativas ven un retorno en términos relacionados con el espíritu ganador, la representatividad y la fama que van implícitas al escudo.</p>
 
-<EditorialQuote author="Juan Ruiz">El Guaguas lleva en su esencia expandir Canarias, ser embajador de su tierra, llevar más allá de nuestras islas los símbolos y siglas que ayudan al desarrollo de nuestra región. Y captar la confianza y patrocinio de empresas que aportan empleo, riqueza y ejemplaridad a Gran Canaria es una manera perfecta de hacerlo.</EditorialQuote>
+      <EditorialQuote author="Juan Ruiz">El Guaguas lleva en su esencia expandir Canarias, ser embajador de su tierra, llevar más allá de nuestras islas los símbolos y siglas que ayudan al desarrollo de nuestra región. Y captar la confianza y patrocinio de empresas que aportan empleo, riqueza y ejemplaridad a Gran Canaria es una manera perfecta de hacerlo.</EditorialQuote>
 
-<p>El Guaguas se ha ganado un nicho de mercado &ldquo;indiscutible y apreciado&rdquo; en el empresariado local por su política competente de tarifas brindando la aureola única que posee atendiendo a su palmarés. Y gestos como el de dedicar cada trofeo a sus patrocinadores, cuidando al máximo los detalles, colaboran en una sinergia establecida que permite, temporada tras temporada, asegurar una vía de ingresos fundamental para vertebrar cada proyecto.</p>
+      <p>El Guaguas se ha ganado un nicho de mercado «indiscutible y apreciado» en el empresariado local por su política competente de tarifas brindando la aureola única que posee atendiendo a su palmarés. Y gestos como el de dedicar cada trofeo a sus patrocinadores, cuidando al máximo los detalles, colaboran en una sinergia establecida que permite, temporada tras temporada, asegurar una vía de ingresos fundamental para vertebrar cada proyecto.</p>
 
-<EditorialQuote author="Juan Ruiz">Nunca nos hemos abandonado al dinero público. Y nuestro método de trabajo contempla explorar continuamente financiación extra. Nos hemos acostumbrado a ser competitivos como el que más tanto en España como en Europa con presupuestos ajustados pero en los que el cumplimiento de todas las obligaciones es sagrado y además por parte de unos directivos que no cobran un céntimo por los servicios que prestan.</EditorialQuote>
+      <EditorialQuote author="Juan Ruiz">Nunca nos hemos abandonado al dinero público. Y nuestro método de trabajo contempla explorar continuamente financiación extra. Nos hemos acostumbrado a ser competitivos como el que más tanto en España como en Europa con presupuestos ajustados pero en los que el cumplimiento de todas las obligaciones es sagrado y además por parte de unos directivos que no cobran un céntimo por los servicios que prestan.</EditorialQuote>
 
-<p>El presidente ya fue pionero, a mitad de los años ochenta, y como tarjeta de presentación en su recién estrenado mandato, en privilegiar la independencia económica del club. Por aquel entonces causó elogio generalizado su contrato con Guaguas Municipales, que terminaría dando la denominación al equipo. Y, ya desde esa época, y bajo su dirección, jamás faltaron los ingresos derivados de la pequeña y mediana empresa para apuntalar a la gran marca predominante.</p>
+      <p>El presidente ya fue pionero, a mitad de los años ochenta, y como tarjeta de presentación en su recién estrenado mandato, en privilegiar la independencia económica del club. Por aquel entonces causó elogio generalizado su contrato con Guaguas Municipales, que terminaría dando la denominación al equipo. Y, ya desde esa época, y bajo su dirección, jamás faltaron los ingresos derivados de la pequeña y mediana empresa para apuntalar a la gran marca predominante.</p>
 
-<p>Décadas después, hoy se mantiene ese modelo que combina diferentes escalones en cuanto a participaciones económicas &ldquo;pero todas necesarias, fundamentales y valoradas&rdquo;.</p>
+      <p>Décadas después, hoy se mantiene ese modelo que combina diferentes escalones en cuanto a participaciones económicas «pero todas necesarias, fundamentales y valoradas».</p>
     </>
   ),
 
