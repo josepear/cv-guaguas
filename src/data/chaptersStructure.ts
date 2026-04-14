@@ -546,6 +546,7 @@ export const chaptersData: ChapterItemWithHero[] = [
       { id: "cap15-moises-cezar", slug: "cap15-moises-cezar", title: "Moisés Cézar" },
       { id: "cap15-alejandro-fernandez", slug: "cap15-alejandro-fernandez", title: "Alejandro Fernández" },
       { id: "cap15-guilherme-hage", slug: "cap15-guilherme-hage", title: "Guilherme Hage" },
+      { id: "cap15-gustavo-delgado", slug: "cap15-gustavo-delgado", title: "Gustavo Delgado" },
       { id: "cap15-jorge-almansa", slug: "cap15-jorge-almansa", title: "Jorge Almansa" },
       { id: "cap15-matt-knigge", slug: "cap15-matt-knigge", title: "Matt Knigge" },
       { id: "cap15-paulo-renan", slug: "cap15-paulo-renan", title: "Paulo Renan" },
@@ -555,7 +556,7 @@ export const chaptersData: ChapterItemWithHero[] = [
       { id: "cap15-nico-bruno", slug: "cap15-nico-bruno", title: "Nico Bruno" },
       { id: "cap15-unai-larranaga", slug: "cap15-unai-larranaga", title: "Unai Larrañaga" },
       { id: "cap15-walla-souza", slug: "cap15-walla-souza", title: "Walla Souza" },
-      { id: "cap15-jean-pascal", slug: "cap15-jean-pascal", title: "Jean Pascal" },
+      { id: "cap15-tomas-rousseaux", slug: "cap15-tomas-rousseaux", title: "Tomas Rousseaux" },
       { id: "cap15-osmany-juantorena", slug: "cap15-osmany-juantorena", title: "Osmany Juantorena" },
     ]
   },

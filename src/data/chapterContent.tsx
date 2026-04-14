@@ -2578,19 +2578,213 @@ export const chapterContent: Record<string, React.ReactNode> = {
   // ═══════════════════════════════════════════════
   // NEW: Nuevos ídolos adicionales (Cap 14 children)
   // ═══════════════════════════════════════════════
-  "cap15-alejandro-fernandez": (<p>Contenido del subcapítulo próximamente.</p>),
-  "cap15-guilherme-hage": (<p>Contenido del subcapítulo próximamente.</p>),
-  "cap15-jorge-almansa": (<p>Contenido del subcapítulo próximamente.</p>),
-  "cap15-matt-knigge": (<p>Contenido del subcapítulo próximamente.</p>),
-  "cap15-paulo-renan": (<p>Contenido del subcapítulo próximamente.</p>),
-  "cap15-paolo-zonca": (<p>Contenido del subcapítulo próximamente.</p>),
-  "cap15-martin-ramos": (<p>Contenido del subcapítulo próximamente.</p>),
-  "cap15-io-de-amo": (<p>Contenido del subcapítulo próximamente.</p>),
-  "cap15-nico-bruno": (<p>Contenido del subcapítulo próximamente.</p>),
-  "cap15-unai-larranaga": (<p>Contenido del subcapítulo próximamente.</p>),
-  "cap15-walla-souza": (<p>Contenido del subcapítulo próximamente.</p>),
-  "cap15-jean-pascal": (<p>Contenido del subcapítulo próximamente.</p>),
-  "cap15-osmany-juantorena": (<p>Contenido del subcapítulo próximamente.</p>),
+  "cap15-alejandro-fernandez": (
+    <>
+      <DropCap>Diez años fuera de Canarias y la oferta de regresar a una isla, Gran Canaria, que considera su casa, hicieron que Alejandro Fernández (La Laguna, 1987) sintiera un pellizco en el corazón al recibir la propuesta del Guaguas.</DropCap>
+
+      <p>&ldquo;Estaba en el Almería, con Hage o Almansa, y no nos faltaban alicientes deportivos. Pero el Guaguas es el Guaguas. La única manera de mejorar lo que tenía era estar aquí. Y más al saber los fichajes que se iban a realizar para que el proyecto tuviese la importancia que se quería. Ni me lo pensé&rdquo;, aclara.</p>
+
+      <p>El líbero tinerfeño, que se ha asentado como si llevara &ldquo;toda la vida&rdquo; a las órdenes de Camarero, opina que el actual Guaguas &ldquo;es la versión 2.0&rdquo; del legendario que se hizo un sitio en la leyenda con sus primeros títulos: &ldquo;Defendemos un escudo de un gran peso e importancia en el voleibol español y somos conscientes de esa gran responsabilidad. Particularmente, supone un privilegio estar aquí y dar continuidad a un legado tan importante. Cambian los tiempos, pero pervive el espíritu que hizo y hace a este club tan grande&rdquo;.</p>
+
+      <p>&ldquo;Cada día aumentan las ganas de seguir creciendo y dando alegrías al club y a la afición. Lo noto en todos los que formamos esta gran familia, dándonos siempre toda la fuerza que podemos. A lo largo de una temporada hay momentos buenos y menos buenos, pero disponemos de un vestuario comprometido y de una enorme calidad humana y profesional&rdquo;, añade.</p>
+
+      <p>Su condición de canario le añade &ldquo;un plus&rdquo;, tal y como confiesa, porque llevar a un equipo de la tierra a lo más alto, como ha podido experimentar, &ldquo;es algo inolvidable&rdquo;.</p>
+
+      <p>&ldquo;Cuando acepté afrontar este reto sabía que había que dar el máximo y, en lo posible, ganarlo todo&rdquo;, una misión que se ha ido cumpliendo, salvo alguna excepción, pero que en su balance individual le llena &ldquo;de satisfacción&rdquo;.</p>
+
+      <p>Para Alejandro, &ldquo;lo mejor está por venir&rdquo; porque, tras el triplete de 2021, &ldquo;se han sentado unas bases muy importantes con vistas a un futuro de igual competitividad, ambición y nivel&rdquo;.</p>
+
+      <p>De ahí que piense que la afición &ldquo;seguirá teniendo motivos para la ilusión&rdquo;, ya que el proyecto deportivo &ldquo;no parará de asentarse&rdquo; para poder mantener el escalafón adquirido y que, dice, &ldquo;es el propio del Guaguas, siempre en lo más alto&rdquo;.</p>
+    </>
+  ),
+
+  "cap15-guilherme-hage": (
+    <>
+      <DropCap>Cuando el Guaguas llamó a Guilherme Hage para incorporarlo a filas, en plena pandemia y tratándose de un jugador contrastado, sin necesidad de aventuras (&ldquo;en el Almería lo tenía todo&rdquo;), pocos creyeron en que tal gestión prosperaría.</DropCap>
+
+      <p>Pero tal fue la insistencia, que el jugador nacido en Araquara (Sao Paulo, Brasil) en 1988 se vio en la isla &ldquo;mucho antes de esperarlo&rdquo;, como reconoce. Y fue un flechazo, ni más ni menos. &ldquo;Me enamoré de esta tierra y del club nada más llegar. La sensación que tuve desde el primer momento era de que estaba justo donde quería, en el lugar exacto para mí y mi familia. Y eso me ayudó, indudablemente, a rendir, a responder a la confianza que puso Juan Ruiz en traerme. Un deportista necesita estabilidad dentro y fuera de la cancha y en el Guaguas encontré un equilibrio perfecto&rdquo;, explica. Y, por si fuera poco, títulos y honor a las primeras de cambio, lo que ya supuso el corolario perfecto.</p>
+
+      <p>&ldquo;Venía de un club ganador y, sinceramente, no esperaba que fuésemos a salir campeones de Liga y Copa en la primera campaña. Por supuesto que todos, y yo más que nadie, jugamos para ganar, para ser inconformistas y superarnos. Pero también hay que ser realistas. El Guaguas venía de muchos años sin competir al contrario que otros equipos que ya tenían una estructura mucho más consolidada y eso siempre da una ventaja. Ni eso nos pasó factura. Se juntó un grupo espectacular, los resultados acompañaron y fue muy especial culminar todo el trabajo y esfuerzo de esa manera, levantando trofeos... Demasiado especial diría yo&rdquo;, esgrime.</p>
+
+      <p>Hage admite que su personalidad y manera de ver la competición, &ldquo;que es la que tiene Sergio Camarero&rdquo;, le permitió encajar en un proyecto también de naturaleza ambiciosa como es el actual y en el que no entra en previsiones perder. &ldquo;Más gano y más quiero ganar. He tenido la suerte en mi carrera de llevarme muchas alegrías, pero soy de los jugadores que se acuerdan de todo al detalle. En el caso del Guaguas, de mi equipo, me preguntan por la Liga, la Copa o la Supercopa de España, los tres títulos que nos llevamos en el año 2021, y soy capaz hasta de recordar los puntos, de qué manera transcurrieron las finales... Porque eso es lo que queda luego, con el paso del tiempo. Las vivencias felices&rdquo;.</p>
+
+      <p>Y, aunque ha sido hasta la fecha año y medio de militancia, ni duda en expresar su &ldquo;enorme orgullo&rdquo; por haber dejado su nombre escrito en la historia del club. &ldquo;Me siento tan identificado con la institución, con los compañeros y con Gran Canaria que vivir este renacimiento del Guaguas y de esta manera tan bonita es algo que me completa a todos los niveles. Y quiero seguir escribiendo esta historia todo lo que pueda&rdquo;, finaliza.</p>
+    </>
+  ),
+
+  "cap15-gustavo-delgado": (
+    <>
+      <DropCap>La historia del Guaguas, esa tradición de lustre y prestigio que estaba de vuelta en 2020, fue el imán que atrajo al madrileño Gustavo Delgado (Móstoles, 1986) a alistarse al proyecto de reconstrucción desde las filas del Rennes francés.</DropCap>
+
+      <p>Una experiencia en sus inicios le ayudó a eliminar cualquier atisbo de dudas: &ldquo;Tendría 19 años cuando me enfrenté al Guaguas. Entonces el equipo no era el de los títulos de los noventa y estaba en un momento delicado, pero recuerdo que ya daba respeto tener enfrente a un club de tanto recorrido y éxitos. Y al llamarme Juan Ruiz para estar aquí, ese momento me vino a la cabeza. No podía dejar pasar la oportunidad de vestir esta camiseta&rdquo;.</p>
+
+      <p>Pese a que las lesiones le impidieron coger vuelo en su primera temporada, Gustavo se hizo un hueco en el corazón del Guaguas por su manera de implicarse desde fuera, ganándose la consideración de todos con un ejemplo de constancia, compañerismo y optimismo que caló en el vestuario. Ese empeño le ha permitido regresar a las pistas reciclado como líbero y con &ldquo;todas las ganas del mundo&rdquo; de ayudar como más le gusta, participando y sintiéndose actor de pleno derecho. &ldquo;Verlo todo desde fuera no es fácil, pero a mí me tocó aportar cuando no estuve apto y, tanto cuando ganamos la Copa como la Liga, tengo que agradecer a compañeros, técnicos y dirigentes que me permitieran vivir esos triunfos con toda la intensidad posible. Fue muy especial&rdquo;, valora.</p>
+
+      <p>Considera que el año y medio transcurrido tras la refundación &ldquo;ha sido espectacular&rdquo; desde el punto de vista competitivo porque, pondera, &ldquo;no es nada fácil ganar tres títulos en un año, como se hizo en 2021&rdquo;, logro que, según su opinión, &ldquo;terminará valorándose como se debe con el paso del tiempo&rdquo;.</p>
+
+      <p>&ldquo;Creo que todo ha ido más rápido de lo que podíamos esperar. Nos queda llegar lejos en Europa, que son palabras mayores porque hablamos de un escenario en el que hay clubes de un potencial bestial y, de momento, diría que inalcanzable para nosotros. Pero esto es el Guaguas y aquí vivimos de desafíos y tratar de superarnos en todo. Si ganamos, hay que seguir igual. Y si perdemos, porque no siempre todo son triunfos, estamos obligados a levantarnos de inmediato&rdquo;, matiza.</p>
+
+      <p>Delgado no duda en asegurar que para él supone &ldquo;un orgullo&rdquo; poder decir, en un futuro, que durante su etapa profesional perteneció a esta entidad que califica como &ldquo;única en todos los sentidos&rdquo;.</p>
+    </>
+  ),
+
+  "cap15-jorge-almansa": (
+    <>
+      <DropCap>Jorge Almansa (Cartagena, 1991) llevaba diez años en el Almería, era el capitán y emblema, tenía todas las consideraciones posibles como uno de los receptores de máximo nivel a escala nacional. Por si fuera poco, factores de índole personal, ya a punto de estrenar paternidad, le invitaban &ldquo;muy poco&rdquo; a cambiar de aires.</DropCap>
+
+      <p>Le rompieron los esquemas &ldquo;para bien&rdquo; cuando, desde el Guaguas, le lanzaron el reto de unirse a Sergio Camarero y sus muchachos. &ldquo;Me supieron ilusionar, me hablaron de una manera que me conmovió y me llegó al fondo. Tanto es así que pasé de pensármelo a hacer las maletas en muy poco tiempo. Encima tuve la promesa, que se cumplió totalmente, de que tendría el apoyo que necesitaba para que mi familia pudiese estar bien en Gran Canaria. Y ahora, con el paso del tiempo, puedo decir que tomé la mejor decisión posible&rdquo;, argumenta.</p>
+
+      <p>Su pasado laureado con otros colores lo ha actualizado ahora de amarillo y acumulando más títulos pese a que, advierte, &ldquo;si salir campeón una vez ya es complicado, hacerlo tres veces en el mismo año entra directamente en un nivel de dificultad tremendo&rdquo;.</p>
+
+      <p>&ldquo;Fue duro, muy duro, no poder disfrutar de la afición cuando, por la pandemia, los partidos no admitían público. Uno no se acostumbra a pabellones vacíos ni te tiene que parecer normal algo tan triste y complicado, por más que las circunstancias obligaran a ese mal menor. Y que las cosas hayan ido normalizándose hasta el punto de que ahora jugamos con llenos en el Arena ha sido un soplo de aire fresco, la inyección más grande de motivación. Ver y sentir la energía de nuestra gente siempre será el mejor apoyo. Eso que aquí se vive, la conexión tan especial entre equipo y grada, que dicen que es histórica, es algo extraordinario y que necesitamos para ser los que somos&rdquo;.</p>
+
+      <EditorialQuote>Recibí una llamada del Guaguas... Un club enorme que no tenía ninguna duda que iba a volver a estar arriba porque tengo referencias de todo lo que consiguió en los noventa y sabía que era un club que no iba a rendirse en su idea de volver a ganar. Pasé de un equipo grande, el Almería, a otro equipo grande, el Guaguas, y fue la mejor decisión porque me siento extremadamente feliz por todo lo que estoy viviendo aquí.</EditorialQuote>
+    </>
+  ),
+
+  "cap15-matt-knigge": (
+    <>
+      <DropCap>&ldquo;Cuando pruebas el sabor de ganar, el sabor de ser campeón, no quieres otro. Y trabajas y haces todo lo posible para que no se acabe. En el Guaguas se sigue la misma filosofía y es la que se adapta a mi manera de vivir el deporte y el voleibol&rdquo;.</DropCap>
+
+      <p>El central norteamericano Matt Knigge (Nueva Jersey, 1996) cambió el reconocimiento que tenía en Lugo, su anterior club en el campeonato español, por el órdago que se le abría en un equipo &ldquo;en el que no vale ser segundo&rdquo;. Y en el momento de repasar todo lo vivido aquí (&ldquo;la isla es increíble, me encanta la gente, me siento muy integrado y feliz en el equipo y se han conquistado, hasta la fecha, tres títulos de cinco posibles&rdquo;), el balance le hace esbozar una sonrisa. &ldquo;No puedo pedir más&rdquo;, sintetiza.</p>
+
+      <p>Knigge pronto percibió que el Guaguas era &ldquo;el sitio perfecto&rdquo; para que pudiera alcanzar la plenitud con su fortaleza física y disfrutar, como no ha parado de hacer, en compañía del resto. &ldquo;Encontré un equipo increíble y no puedo dejar de tener ganas siempre de venir al pabellón a entrenar y a jugar. Es un privilegio tener la oportunidad de estar con este grupo porque sientes que hay una calidad superior&rdquo;, matiza.</p>
+
+      <p>Guarda un recuerdo &ldquo;impresionante&rdquo; de cada uno de los títulos que ganó con la camiseta amarilla, si bien la Copa de 2021, la que inició el ciclo actual, tiene un lugar especial en su memoria. &ldquo;El formato de la Copa, con todo concentrado en tres días, mucha adrenalina y sabiendo que si pierdes quedas eliminado, le da un valor tremendo a la Copa. La que ganamos al Palma fue un partidazo y nos dio un subidón tremendo que, luego, también ayudó a que nos lleváramos la Liga. Fue el principio de todo y hay que reconocerlo así&rdquo;, valora.</p>
+
+      <p>Para lo que viene, lo tiene claro: mantener la filosofía que persigue la excelencia. &ldquo;Levantas un trofeo y ya piensas en el próximo. Vienes a un entrenamiento y sabes que o das todo o no juegas. Ganas un partido y sabes que tienes la obligación de volver a ganar el próximo. Pero eso es lo que queremos todos los que estamos aquí, no nos quedamos sentados a mirar lo que hemos hecho. Si no fuera así, no seríamos el Guaguas. Siempre nos pedimos más y más. Y pensamos continuar de la misma manera&rdquo;. Y todo porque, como Matt recalca, &ldquo;es muy fácil sentirse comprometido con estos colores&rdquo;. En su caso, además, &ldquo;en cada día y en cada partido&rdquo;.</p>
+    </>
+  ),
+
+  "cap15-paulo-renan": (
+    <>
+      <DropCap>Portugal, Grecia, Italia y, claro está, su Brasil natal. Nunca había podido jugar en un club español Paulo Renan (Curitiba, 1985) hasta que desde Gran Canaria le echaron el lazo.</DropCap>
+
+      <p>&ldquo;Siempre tuve ganas de competir aquí y no me lo pensé mucho. Estaba en mi país y me gustó el reto de volver a salir al extranjero y demostrar mis condiciones como colocador. El Guaguas me pareció un desafío perfecto y, después de todo lo que se ha hecho desde 2020, desde luego que me reafirmo en aquel pensamiento que tuve&rdquo;, reconoce.</p>
+
+      <p>Fue llegar y darse cuenta de que aquí se daba la actitud con la que siempre se sintió identificado. Vio que, con la mano magistral de Sergio Camarero, &ldquo;hay un espíritu de lucha tremendo&rdquo;, lo que casa con la electricidad que siempre le ha sido característica.</p>
+
+      <p>&ldquo;Vivo este deporte con muchísima pasión, con intensidad siempre, esté jugando o fuera esperando una oportunidad. Y me encanta sentir que esa manera de desarrollar mi profesión es la misma que quiere nuestro entrenador. No valgo para salir a ver qué pasa. Salgo a ganar, a dejarme todo lo que llevo dentro. Creo, además, que esa ha sido la clave de que hayamos ganado tantos títulos en este tiempo. Y, sin duda, será igualmente fundamental para que sigan llegando&rdquo;, opina.</p>
+
+      <p>Renan se considera &ldquo;un jugador de equipo y para el equipo&rdquo; y que no tiene otro propósito que el de ser &ldquo;útil a los compañeros&rdquo;, al entender que en el voleibol &ldquo;debe primar el interés colectivo&rdquo;, y asegura &ldquo;ser feliz&rdquo; cuando un esfuerzo suyo &ldquo;se convierte en punto para todos&rdquo;.</p>
+
+      <p>&ldquo;Quiero que se me relacione con ese tipo de jugador que está para servir y ayudar. Además, por mi función específica siempre tengo la prioridad de dejar al compañero la mejor disposición posible para su remate&rdquo;, añade.</p>
+
+      <p>Que tenga varios compatriotas en la plantilla como Hage o Cézar lo celebra porque &ldquo;siempre es positivo&rdquo; a la hora de agilizar una integración que ha sido perfecta, ya que tanto su mujer e hija &ldquo;se han adaptado a las mil maravillas en el idioma, las costumbres y la vida en Gran Canaria, donde todo es muy sencillo para vivir bien&rdquo;.</p>
+
+      <p>La Liga ganada en 2021 fue la primera de su palmarés (&ldquo;conquisté otros títulos, pero nunca un campeonato regular hasta llegar al Guaguas&rdquo;), por lo que elige esa final ganada al Almería como un momento &ldquo;de gran felicidad&rdquo; en su historia con el equipo grancanario. Aunque no se conforma con lo vivido. &ldquo;En el deporte siempre importa lo que viene. Y espero que sean más éxitos aquí&rdquo;, pide.</p>
+    </>
+  ),
+
+  "cap15-paolo-zonca": (
+    <>
+      <DropCap>El receptor italiano Paolo Zonca (Gorizia, 1997) pasó como un trueno por el Guaguas. Decisivo en sus dos temporadas (2022-2024) en la consecución de cinco títulos, con dos Superligas, una Copa del Rey, una Supercopa de España y una Copa Ibérica como legado visible, su impacto resultó incuestionable en el ciclo reciente plagado de laureles.</DropCap>
+
+      <p>Figura dentro de la cancha, con jerarquía, ambición y compromiso, su adaptación al club y a la vida en Gran Canaria resultó excepcional, lo que engrandeció más su figura si cabe. Le encantaba la vida en la isla, de hecho no dudaba en pasar sus vacaciones sin moverse de aquí, y presumía de ser el mejor embajador posible de cara al exterior al presumir de una tierra &ldquo;especial, preciosa y única&rdquo;, como repetía a modo de identificación plena.</p>
+
+      <EditorialQuote>Siempre he estado muy a gusto en la cancha, la gente lo ve y yo intento demostrar mis emociones con la afición en cada partido, y eso me permite subir el nivel. Noto como la gente me quiere, como celebra cada uno de mis puntos, eso me ayuda para estar focalizado en mi juego, con el fin de hacer más puntos y poder dedicarles la victoria en cada partido. No soy grancanario, ni español, pero lo que quiere lograr el Guaguas tanto en España como en Europa encaja a la perfección con mi pensamiento y con la forma que tengo de vivir el voleibol cada día.</EditorialQuote>
+
+      <p>Cuando Juan Ruiz lo fichó desde el campeonato francés sabía que era una apuesta sobre seguro y que, como así pasó, resultaría muy complicado poder retenerle ante su magnitud y carisma, pero el tiempo de militancia en el Guaguas le hizo ganarse, por derecho propio, un lugar entre los grandes que han defendido su camiseta. Zonca consideró &ldquo;un honor&rdquo; su paso por el club por todo lo que significó en su vida deportiva y personal y, de igual manera, dejó un recuerdo imborrable por su contribución a la historia de la entidad y a enriquecer al vestuario a base de profesionalidad y valores de todo tipo.</p>
+    </>
+  ),
+
+  "cap15-martin-ramos": (
+    <>
+      <DropCap>Pese a que tenía un palmarés envidiable, con una medalla olímpica en Río de Janeiro 2016 como guinda, Martín Ramos (Buenos Aires, 1991) sintió el deseo de unir su historia exitosa a la del Guaguas, otro paradigma de triunfos, y no dudó en aceptar el reto que le pusieron encima de la mesa en el verano de 2022.</DropCap>
+
+      <p>Y la intuición que tuvo de que ese era el inicio de un ciclo de conquistas no ha parado de cumplirse desde entonces porque la cosecha de títulos y de alegrías se ha sucedido sin fin, consecuencia lógica de un binomio imparable, el que forma con el club y, también, de que haya podido encontrar un sitio ideal para, en la madurez de su carrera, sacar a relucir toda su potencia y poder en la pista.</p>
+
+      <p>El central argentino, desde el comienzo adaptado al Guaguas &ldquo;como si llevara toda una vida&rdquo; en la disciplina isleña, ha sido parte activa de las campañas plagadas de logros que ha vivido en carne propia y con su compatriota Nico Bruno como uno de sus aliados infalibles. &ldquo;A los centrales nos pide que seamos muy protagonistas en el ataque, y estoy adaptándome a eso. Yo me siento un central atacante, por lo que me gusta que el entrenador piense así y que me pida eso&rdquo;. Así define su estilo y que encaja plenamente con lo que busca Camarero en sus jugadores: arrojo, valentía, sacrificio y orgullo además de la calidad que no se discute.</p>
+
+      <EditorialQuote>Me gusta formar parte del equipo al que todos quieren ganar. Voy a seguir en el club, he renovado por dos años más con la entidad. Me encuentro muy feliz en Gran Canaria, con su gente y con la política del equipo. Es un orgullo formar parte de esta familia, los compañeros de vestuario ya son parte de mi vida diaria.</EditorialQuote>
+
+      <p>Feliz tras rubricar su contrato hasta 2027 y como muestra inequívoca de que, océano Atlántico de por medio del lugar que le vio nacer, aquí está su sitio. Y como estandarte del Guaguas, puntual a su cita en los momentos culminantes de las finales y partidos más importantes, va a continuar aportando su sello distinguido para que las victorias y los elogios marquen el paso y jalonen una senda en la que ha sido partícipe como el que más.</p>
+    </>
+  ),
+
+  "cap15-io-de-amo": (
+    <>
+      <DropCap>&ldquo;Mi padre fue jugador del Atlético de Madrid de voleibol y coincidió con este club en sus inicios. Soy consciente de todo lo que ha significado el Guaguas en el voleibol español y ese fue uno de los motivos que me hicieron regresar desde el extranjero&rdquo;.</DropCap>
+
+      <p>Miguel Ángel de Amo, Io, (Madrid, 1985) sabía bien el destino que elegía para volver a España después de consagrarse en Eslovaquia y Chequia con experiencias que le apuntalaron más si cabe una hoja de servicios privilegiada, con infinidad de títulos y medallas tanto en la pista como sobre la arena en sus incursiones en el vóley-playa. Juan Ruiz llevaba tras su pista largo tiempo y fue en 2022 cuando, al fin, pudo captarlo para importar su sapiencia, destreza y maestría como colocador.</p>
+
+      <p>&ldquo;Vine para unirme a un proyecto ganador y, también, para poner al servicio del vestuario mis vivencias, mis años de jugador en muchos clubes. Ayudar a unir a los compañeros, a generar el clima interno que siempre es fundamental, es una labor que asumí con naturalidad y en la que he tratado de aportar todo lo que sé&rdquo;, reconocía en sus inicios, asimilando con profesionalidad su rol de veterano.</p>
+
+      <p>Pero esa tarea de ser el pegamento interno ha evolucionado hasta convertirle en un referente, a la altura de un grande como Jorge Almansa y recordando, por su influencia, carácter y prestaciones a otros capitanes históricos como Camarero o Sánchez Jover.</p>
+
+      <p>Ganador nato y guía para sus compañeros, en el club lo tienen como una pieza esencial, consideración que comparte el cuerpo técnico por la ejemplaridad que ofrece en todo, ya sean entrenamientos, partidos o actos promocionales. Y todo, sin perder competitividad y manteniendo un listón de intensidad y exigencia que le hacen único, ya sobrepasados los 40 años pero con una manera de entender la profesión que explica la impresionante trayectoria que tiene a sus espaldas. Y siempre con la premisa de que continuará, porque cada título que logra con el Guaguas activa, para él, la cuenta atrás para el siguiente. Insaciable, Io de Amo representa como pocos los valores históricos de una camiseta que ha ayudado a seguir engrandeciendo.</p>
+    </>
+  ),
+
+  "cap15-nico-bruno": (
+    <>
+      <DropCap>Otro exponente más de la raza argentina y de la pasión con la que entienden allí el deporte, convertido casi siempre en una cuestión de vida o muerte. Así se desempeña y juega Nico Bruno (Buenos Aires, 1989), receptor que recaló en el club en 2023.</DropCap>
+
+      <p>Brasil, Italia, Bélgica y Turquía, además de su país natal, habían sido escenarios de su imparable ascensión y, tras ser proclamado cuatro veces mejor jugador del campeonato otomano, con lo que eso conlleva, su siguiente paso exigía más excelencia. &ldquo;El Guaguas es el mejor equipo de la liga española, el presidente me trasladó la idea de seguir cosechando títulos y dar un salto de calidad en Europa. Era una propuesta ambiciosa y me interesó sumarme al proyecto&rdquo;, explicaba al argumentar su dirección a Gran Canaria pese a disponer de propuestas que, en términos económicos, mejoraban la realizada por Juan Ruiz.</p>
+
+      <p>No le importó ceder ahí al anteponer la exclusividad profesional que otorgaba unirse a un representativo único, anclado en la cima y que, temporada a temporada, va a por todas sin discriminar competición o adversarios. Competir y ganar como modus vivendi.</p>
+
+      <EditorialQuote>Tenemos una seña de identidad muy marcada, es la de siempre querer ganar. En lo personal, he tenido partidos en los que me he llevado más puntos y otros en los que he podido contribuir en defensa o en recepción. Lo principal es ganar como equipo, las actuaciones individuales quedan en segundo plano.</EditorialQuote>
+
+      <p>Bruno es, además, un vínculo de unión reconocible con la grada por el desempeño que juega en conectar al equipo con el aficionado y, en efecto camaleónico, se crece en ambientes adversos. La cualidad de rendir con presión no abunda y en el caso de Nico Bruno constituye una de sus grandes divisas, lo que le hace indispensable a ojos de Camarero y ejerce de recurso infalible para sus compañeros. Vino para seguir haciendo historia y siempre pensando en lo que viene.</p>
+    </>
+  ),
+
+  "cap15-unai-larranaga": (
+    <>
+      <DropCap>Eficiencia silenciosa, no siempre espectacular pero, invariablemente, valiosísima para el rendimiento y los resultados del equipo. Es el perfil de Unai Larrañaga (Dumbría, La Coruña, 2000), desde 2023 componente esencial del mecanismo de funcionamiento pluscuamperfecto del Guaguas desde su posición estratégica e infalible.</DropCap>
+
+      <p>Curtido en el voleibol nacional, con paso por Arenal Emeve, Santanderina y Melilla, y con la condición de fijo en la selección española, en el club hubo unanimidad a la hora de valorar su incorporación, con el añadido de aumentar la cuota española del plantel, aspecto siempre bienvenido y que no se descuida. Larrañaga encajó desde el primer momento con la naturalidad que tienen los grandes.</p>
+
+      <EditorialQuote>Soy un jugador muy tranquilo pero, a la vez, apasionado. En la pista lo doy todo y, en mi faceta defensiva, trato de poner al servicio de los compañeros lo mejor de mí. Me gusta competir, ganar, afrontar cada partido al máximo.</EditorialQuote>
+
+      <p>Desde esa serenidad para leer todas las situaciones y aportar su riqueza táctica se hace omnipresente su figura para que todo funcione de manera armónica y precisa. &ldquo;Fue algo muy especial sentir el interés del Guaguas. Cuando te llama el Guaguas sabes que es un desafío que tienes que aceptar como sea. Reconozco que no esperaba que me llegara tan pronto esta oportunidad. Es verdad que llevo rindiendo a buen nivel varios años y que estar en la selección española siempre te da un valor especial. Pero me veía en el Guaguas en una o dos temporadas más&rdquo;, reconoce a propósito de esa llamada que le cambió la vida y le ha permitido levantar títulos, hacerse más visible a todas las escalas.</p>
+
+      <p>Querido y respetado por su carácter cercano, poco a poco se ha labrado la relevancia que ahora nadie cuestiona dentro del grupo. Sergio Miguel Camarero ve en él, como en Io de Amo, una mente precisa para canalizar talento y fuerza, cualidades que abundan en la plantilla. &ldquo;Sé que pertenezco a un club en el que no hay excusas. Eso me gusta y me motiva&rdquo;, se congratula el líbero gallego que llegó para quedarse y construir, con el resto, un Guaguas más y más grande.</p>
+    </>
+  ),
+
+  "cap15-walla-souza": (
+    <>
+      <DropCap>Fue en julio de 2023. Llegaba con 33 años y con la competencia abierta en la demarcación de opuesto con el colombiano Juan Pablo Moreno. Pocos preveían lo que venía en camino con el fichaje del brasileño Francisco Wallysson Souza, Walla (Jaguaribe, 1990).</DropCap>
+
+      <p>&ldquo;Creo firmemente que estaremos enfocados en nuestro principal objetivo, que es conquistar títulos. No solo yo, sino todo el equipo estará entregado al 100% para brindar a nuestros aficionados una temporada memorable, culminando con más de un título para nuestro club&rdquo;, declaraba en sus primeras palabras como componente del equipo.</p>
+
+      <p>Recuerdan en el club que desde sus primeros entrenamientos no solo confirmó las mejores referencias. También impresionó por su potencia y precisión en la ejecución de remates. Un espectáculo verlo reventar, literalmente, la pelota, práctica que le ha hecho célebre ya en la competición oficial convirtiéndole en una auténtica máquina de hacer puntos, promediando en algunos tramos del calendario más de veinte y llegando a picos de hasta 28 (sumó la friolera de 171 en los últimos ocho encuentros de la temporada 2024-2025 como ejemplo ilustrativo de su voracidad). Saques directos, diagonales, en bloqueos... Un repertorio infinito el suyo para convertirse en elemento indefendible para los contrarios y diferenciador y decisivo en los intereses propios.</p>
+
+      <EditorialQuote>Me gusta que se espere todo de mí. Sabes que en el Guaguas hay que ganarlo todo y eso hace que te exijas cada día para dar el máximo. A mí me gusta la presión, jugar para ganar, para conseguir cosas importantes. Todo jugador quiere estar siempre con metas importantes por cumplir y eso es lo que busco, por eso estoy tan contento y adaptado al Guaguas. La mentalidad de este club es la mentalidad que siempre he tenido yo. No hay día en el que no quiera ganar y dar lo mejor de mí en todos los partidos. Siempre trato de mantenerme enfocado en los entrenamientos y luego ponerlos en práctica de la mejor manera posible. El golpeo de balón que tengo es muy fuerte. Los potentes remates a campo rival podrían ser una de mis virtudes técnicas.</EditorialQuote>
+    </>
+  ),
+
+  "cap15-tomas-rousseaux": (
+    <>
+      <DropCap>Un internacional belga procedente de Arabia Saudí, en la mejor etapa de su carrera y con disposición de dar lo mejor de su experiencia y valía en favor de la causa. Eso fue lo que se aseguró el Guaguas cuando en 2024, y tras la repentina marcha del italiano Paolo Zonca, analizó el mercado y se decantó por Tomas Rousseaux.</DropCap>
+
+      <EditorialQuote>El compromiso del club con la excelencia y su entorno de apoyo a los jugadores fueron factores clave. Además, la oportunidad de trabajar con su experimentado cuerpo técnico y unirme a un equipo con una cultura ganadora hizo que la decisión fuera fácil para mí.</EditorialQuote>
+
+      <p>El receptor, ya con paso triunfal por campeonatos tan reputados como los de Italia, Alemania, Polonia o Grecia, no pudo tener una adaptación más satisfactoria porque en el primer año de militancia fue actor destacado del triplete de títulos nacionales (Superliga, Copa del Rey y Supercopa de España), dándole forma a su más que merecida renovación.</p>
+
+      <EditorialQuote>En cada partido intento dejar el ego de lado y evaluar lo que el juego me está ofreciendo, porque cada partido es diferente. Hago lo que sea necesario para ganar en grupo. También intento aportar mucha energía positiva y apoyo a mis compañeros, porque para mí es algo natural sonreír y disfrutar. Cada partido es estresante, pero no querríamos que fuera de otra manera porque ganar tiene su sacrificio.</EditorialQuote>
+
+      <p>El saber estar que siempre luce, tenga mayor o menor protagonismo, y una concentración extrema que le hace aprovechar al máximo sus oportunidades siendo diferencial y dejando sello. Es lo que valora de manera especial Sergio Miguel Camarero a la hora de poder tirar de un jugador cerebral, con capacidad para decidir y que, acostumbrado a la presión, maneja como nadie los tiempos.</p>
+
+      <p>Por eso y por mucho más se ha ganado Rousseaux un lugar en la galería de los mejores del Guaguas, siempre con una sonrisa contagiosa para hacer grupo, hombre de vestuario como es, pero sin renunciar nunca a esa ambición competitiva que le trajo a Gran Canaria desde el lejano Oriente y para seguir aumentando su figura e influencia.</p>
+    </>
+  ),
+
+  "cap15-osmany-juantorena": (
+    <>
+      <DropCap>La noticia del fichaje de Osmany Juantorena (Santiago de Cuba, 1985) por el Guaguas en el verano de 2025 fue una bomba informativa en toda regla por lo que suponía unir a una plantilla que lo había ganado todo el curso anterior un campeón de primer calibre.</DropCap>
+
+      <p>El receptor cubano, con un palmarés plagado de títulos y condecoraciones, incluyendo medallas en Olimpiadas, Europeos y Mundiales a nivel de selecciones, venía a apuntalar un proyecto estelar con su incuestionable liderazgo, calidad y experiencia. &ldquo;Es un milagro que hayamos podido traerlo&rdquo;, significaba el presidente Juan Ruiz tras certificar su incorporación y dar cuenta de la dimensión que implicaba.</p>
+
+      <EditorialQuote>Tuve varias ofertas y elegí al Guaguas con la idea de ganar nuevamente y seguir contribuyendo al éxito del equipo. No conozco la Superliga más allá de conocer al CV Guaguas por su participación en Europa, pero tengo curiosidad de saber el nivel que existe y competir al máximo.</EditorialQuote>
+
+      <p>Muy pronto se encargó Osmany de justificar todos los esfuerzos realizados por él porque, a su inmediata adaptación al vestuario y a la vida en Gran Canaria, añadió en la cancha esa cuota diferencial que es exclusiva de su figura. Venía de un tiempo marcado por las lesiones y espantó a las primeras de cambio cualquier incógnita al respecto con una implicación ejemplar.</p>
+
+      <p>Compañeros y cuerpo técnico se vieron enriquecidos por un aporte que iba más allá del rendimiento, pues carisma, personalidad y sentido de pertenencia ampliaban el catálogo de prestaciones. En la marcha triunfal del Guaguas 2025-26 ha tenido un papel indiscutible, con actuaciones sobresalientes en partidos señalados, léase la final de la Supercopa de España ganada en Valladolid a final de año o en citas de la Champions, con especial hincapié en la celebrada victoria frente al Berlín en el Arena, que puso los cimientos para la clasificación posterior a los octavos de final. Y, por si fuera poco, una conexión especial con la grada, sensible como es al factor ambiental. Sin duda, un acierto mayúsculo el de su ciclo de amarillo.</p>
+    </>
+  ),
 
   // ═══════════════════════════════════════════════
   // CAPÍTULO 18: El Guaguas como en los viejos tiempos
