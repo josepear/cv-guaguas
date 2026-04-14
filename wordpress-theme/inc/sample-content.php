@@ -2618,7 +2618,6 @@ c) Examinar las liquidaciones y balances de la entidad.[/articulo]
         'content' => '
 [capitular]Primero fue en la cancha del colegio Calvo Sotelo de Las Rehoyas. Años setenta y transición a los ochenta. De ahí, al pabellón García San Román, enclavado en el mismo barrio y entonces la mejor instalación cubierta de la capital hasta la inauguración, en 1988, del Centro Insular de Deportes (CID) de la Avenida Marítima.[/capitular]
 
-[dos_columnas]
 [ficha_debut titulo="LA FICHA DEL DEBUT"]
 [equipo numero="3" nombre="CV GUAGUAS"]Pascal, Walla, Bruno, Ramos, De Amo, Rousseaux y Larrañaga. También jugaron: Trinidad, Moreno, Almansa, Nalobin y Pereira. <strong>Entrenador:</strong> Sergio Miguel Camarero.[/equipo]
 [equipo numero="0" nombre="UNICAJA COSTA DE ALMERÍA"]González, Ruiz, Bertassoni, J. Fernández, Tarrazo, Todd y F.J. Fernández. También jugaron: Filip. <strong>Entrenador:</strong> Pablo Ruiz.[/equipo]
@@ -2628,12 +2627,9 @@ c) Examinar las liquidaciones y balances de la entidad.[/articulo]
 <p><strong>Incidencias:</strong> Partido correspondiente a la XXVII Supercopa de España en la temporada 2024-25 disputado en el Gran Canaria Arena ante 2.700 espectadores.</p>
 [/ficha_debut]
 
-|||
-
 <p>El Guaguas fue adecuándose a exigencias y nuevos tiempos en lo que se refiere a sus objetivos competitivos y, también, a los escenarios de sus partidos como anfitrión. A la par que su crecimiento, canchas más equipadas, con capacidad superior y aumento notorio de su visibilidad. De un enclave periférico en sus inicios, a establecer su casa en el corazón de la urbe con todo el impacto que eso conllevó. Y sin dejar, jamás, de prestigiar la apuesta municipal por buscarle un enclave que cubriera sus necesidades y merecimientos.</p>
 
 [cita_editorial]Desde el Guaguas siempre hemos agradecido los esfuerzos de Ayuntamiento y Cabildo por brindarnos el mejor escenario posible para nuestras competiciones. Nunca hemos tenido queja alguna y así lo hemos reconocido, sabiendo convivir, además, con otros clubes en la misma instalación y en un clima de absoluta colaboración.[/cita_editorial]
-[/dos_columnas]
 
 <p>El asentamiento prolongado y jalonado de triunfos, épica y títulos, en el año 2024 se produce un nuevo traslado y de un nivel superlativo: el Gran Canaria Arena. Las obras de remodelación en el Centro Insular obligaron a mudar todas las actividades que acogía a otros pabellones y ubicaciones. Y al Guaguas, como a otros equipos de la elite que allí tenían su punto neurálgico, le correspondió establecerse en el grandioso complejo del barrio de Siete Palmas, estrenado en 2014 y con unas condiciones logísticas incomparables. Gimnasio, vestuarios confortables, canchas auxiliares, salas multidisciplinares, amplios espacios para actos promocionales y comparecencias públicas... Otra dimensión, en suma, que redundaba, de manera directa, en la mejor preparación y rendimiento de los profesionales al disponer de todo lo necesario y más para el ejercicio de sus labores.</p>
 

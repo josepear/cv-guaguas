@@ -1053,37 +1053,35 @@ function libro_shortcode_titulo_deportivo($atts, $content = null) {
             </div>
         </div>
 
-        <!-- Bloque inferior: encabezado+narrativa + ficha técnica -->
+        <!-- Bloque inferior: una columna — título, ficha, narrativa -->
         <div class="titulo-deportivo-bottom">
 
-            <div class="titulo-deportivo-main">
-                <div class="titulo-deportivo-encabezado">
-                    <img src="<?php echo esc_url($estrella_url); ?>" class="titulo-deportivo-estrella" alt="★" width="32" height="32">
-                    <h2 class="titulo-deportivo-nombre">
-                        <span class="titulo-nombre-texto"><?php echo esc_html($atts['nombre']); ?></span>
-                        <?php if ($atts['anio']) : ?>
-                        <span class="titulo-nombre-anio"><?php echo esc_html($atts['anio']); ?></span>
-                        <?php endif; ?>
-                    </h2>
-                </div>
-
-                <?php if ($narrativa) : ?>
-                <div class="titulo-deportivo-narrativa">
-                    <?php echo $narrativa; ?>
-                </div>
-                <?php endif; ?>
+            <!-- Encabezado: estrella + nombre + año -->
+            <div class="titulo-deportivo-encabezado">
+                <img src="<?php echo esc_url($estrella_url); ?>" class="titulo-deportivo-estrella" alt="★" width="32" height="32">
+                <h2 class="titulo-deportivo-nombre">
+                    <span class="titulo-nombre-texto"><?php echo esc_html($atts['nombre']); ?></span>
+                    <?php if ($atts['anio']) : ?>
+                    <span class="titulo-nombre-anio"><?php echo esc_html($atts['anio']); ?></span>
+                    <?php endif; ?>
+                </h2>
             </div>
 
-            <div class="titulo-deportivo-ficha-col">
-                <?php if ($ficha) : ?>
-                <div class="titulo-deportivo-ficha">
-                    <h3 class="ficha-tecnica-titulo">FICHA TÉCNICA:</h3>
-                    <div class="ficha-tecnica-contenido">
-                        <?php echo $ficha; ?>
-                    </div>
+            <!-- Ficha técnica debajo del título -->
+            <?php if ($ficha) : ?>
+            <div class="titulo-deportivo-ficha">
+                <div class="ficha-tecnica-contenido">
+                    <?php echo $ficha; ?>
                 </div>
-                <?php endif; ?>
             </div>
+            <?php endif; ?>
+
+            <!-- Narrativa al final -->
+            <?php if ($narrativa) : ?>
+            <div class="titulo-deportivo-narrativa">
+                <?php echo $narrativa; ?>
+            </div>
+            <?php endif; ?>
 
         </div><!-- fin titulo-deportivo-bottom -->
 
