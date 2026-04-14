@@ -580,20 +580,133 @@ export const chapterContent: Record<string, React.ReactNode> = {
   ),
 
   // ═══════════════════════════════════════════════
-  // CAPÍTULO 25: Empresarios de la tierra
+  // CAPÍTULO 25: Empresarios de la tierra (hijos)
   // ═══════════════════════════════════════════════
-  "capitulo-25": (
+  "cap25-tejido-empresarial": (
     <>
-      <DropCap>El CV Guaguas ha contado siempre con el apoyo de empresarios canarios que creyeron en el proyecto. Desde Guaguas Municipales, el primer gran patrocinador, hasta las empresas que hoy respaldan al club, el tejido empresarial de la tierra ha sido pilar fundamental de la entidad.</DropCap>
+      <DropCap>Además de las subvenciones públicas del Cabildo de Gran Canaria, del Ayuntamiento de Las Palmas de Gran Canaria y del Gobierno de Canarias, ayudas a las que tiene derecho el Guaguas por su condición de club de élite y representativo, con el añadido de ganar títulos y disfrutar de un prestigio histórico fuera de debates, Juan Ruiz y toda su junta directiva han dado un paso más en la viabilidad y sostenibilidad del proyecto esmerándose en la captación de apoyos por parte del empresariado de la tierra.</DropCap>
 
-      <ContentImage 
-        src={imgRemateGuaguas} 
-        alt="El CV Guaguas en acción con sus patrocinadores" 
-        caption="Los patrocinadores locales han sido parte esencial de la historia del club, acompañándolo en cada etapa." 
-      />
+      <p>Y se lleva con mucho orgullo la consecución de una amplia cobertura en este apartado, sin tener nada que envidiar a otras instituciones porque, como admite el presidente, &ldquo;el apoyo es masivo, decidido y con reciprocidad&rdquo;. Como advierte el mandatario, las marcas que se asocian a las siglas corporativas ven un retorno en términos relacionados con el espíritu ganador, la representatividad y la fama que van implícitas al escudo.</p>
 
-      <p>Contenido pendiente de importación del documento original.</p>
+      <EditorialQuote author="Juan Ruiz">El Guaguas lleva en su esencia expandir Canarias, ser embajador de su tierra, llevar más allá de nuestras islas los símbolos y siglas que ayudan al desarrollo de nuestra región. Y captar la confianza y patrocinio de empresas que aportan empleo, riqueza y ejemplaridad a Gran Canaria es una manera perfecta de hacerlo.</EditorialQuote>
+
+      <p>El Guaguas se ha ganado un nicho de mercado &ldquo;indiscutible y apreciado&rdquo; en el empresariado local por su política competente de tarifas brindando la aureola única que posee atendiendo a su palmarés. Y gestos como el de dedicar cada trofeo a sus patrocinadores, cuidando al máximo los detalles, colaboran en una sinergia establecida que permite, temporada tras temporada, asegurar una vía de ingresos fundamental para vertebrar cada proyecto.</p>
+
+      <EditorialQuote author="Juan Ruiz">Nunca nos hemos abandonado al dinero público. Y nuestro método de trabajo contempla explorar continuamente financiación extra. Nos hemos acostumbrado a ser competitivos como el que más tanto en España como en Europa con presupuestos ajustados pero en los que el cumplimiento de todas las obligaciones es sagrado y además por parte de unos directivos que no cobran un céntimo por los servicios que prestan.</EditorialQuote>
+
+      <p>El presidente ya fue pionero, a mitad de los años ochenta, y como tarjeta de presentación en su recién estrenado mandato, en privilegiar la independencia económica del club. Por aquel entonces causó elogio generalizado su contrato con Guaguas Municipales, que terminaría dando la denominación al equipo. Y, ya desde esa época, y bajo su dirección, jamás faltaron los ingresos derivados de la pequeña y mediana empresa para apuntalar a la gran marca predominante.</p>
+
+      <p>Décadas después, hoy se mantiene ese modelo que combina diferentes escalones en cuanto a participaciones económicas &ldquo;pero todas necesarias, fundamentales y valoradas&rdquo;.</p>
     </>
+  ),
+
+  "cap25-firgas": (
+    <SponsorPage logoSrc={logoFirgas} logoAlt="Firgas Aquavia"
+      ficha={<p><strong>Nombre completo:</strong> Aguas Minerales de Firgas S.A. &bull; <strong>Año de fundación:</strong> 1930 &bull; <strong>Dirección:</strong> Autovía GC-2, Km.3, Túnel Aguas de Firgas – 35010, Las Palmas de Gran Canaria &bull; <strong>Número de empleados:</strong> Más de 400 &bull; <strong>Naturaleza:</strong> Embotellado y distribución de aguas y bebidas refrescantes.</p>}
+      redes={<p><strong>Instagram:</strong> <a href="https://instagram.com/aguasdefirgas.oficial" target="_blank" rel="noopener noreferrer">@aguasdefirgas.oficial</a></p>}
+      redesTitle="Redes sociales"
+    >
+      <p>Para Aguas de Firgas vincular la marca al Guaguas es una apuesta por lo nuestro, por los deportistas que representan nuestra tierra aquí y fuera de Canarias y además son los números uno. Supone un refuerzo, además, para nuestra marca porque el Guaguas es un equipo campeón, un emblema de Canarias, como Aguas de Firgas como compañía 100% canaria y líder del mercado regional.</p>
+      <p>La lucha, la capacidad ganadora, los valores como equipo y la cultura del esfuerzo son las características del Guaguas con las que nos sentimos más identificados.</p>
+    </SponsorPage>
+  ),
+
+  "cap25-icare": (
+    <SponsorPage logoSrc={logoIcare} logoAlt="Icare"
+      ficha={<p><strong>Nombre completo:</strong> Instituto Canario de Retina (Icare) &bull; <strong>Año de fundación:</strong> 2013 &bull; <strong>Dirección:</strong> León y Castillo, 75, bajo. 35003, Las Palmas de Gran Canaria &bull; <strong>Número de empleados:</strong> 11 &bull; <strong>Naturaleza:</strong> Clínica oftalmológica.</p>}
+      redes={<p><strong>Web:</strong> <a href="https://www.retinacanarias.com" target="_blank" rel="noopener noreferrer">www.retinacanarias.com</a> &bull; <strong>Instagram:</strong> <a href="https://instagram.com/icare.oftalmologia" target="_blank" rel="noopener noreferrer">@icare.oftalmologia</a></p>}
+    >
+      <p>Para Icare la unión con el CV Guaguas representa un compromiso con nuestras señas de identidad y un apoyo a un proyecto deportivo basado en el compromiso y el esfuerzo y que nos representa los logros y valores de nuestra comunidad. Y por supuesto que nos refuerza. Es un orgullo colaborar con el equipo deportivo más laureado de Canarias y uno de los mejores equipos de voleibol de España de todos los tiempos, y sin duda el mejor de los últimos años.</p>
+      <p>Apoyamos al club desde septiembre del año 2020. Las señas de identidad de la empresa que vemos reflejadas en el Guaguas son las del esfuerzo, compromiso y defensa de nuestros valores como comunidad.</p>
+    </SponsorPage>
+  ),
+
+  "cap25-r2hotels": (
+    <SponsorPage logoSrc={logoR2Hotels} logoAlt="R2 Hotels"
+      ficha={<p><strong>Nombre completo:</strong> SLR Turismo España S.L. (nombre comercial R2 Hotels) &bull; <strong>Año de fundación:</strong> 2015 &bull; <strong>Dirección:</strong> Calle Artistas Canarios, 8. 35627 Costa Calma Las Palmas &bull; <strong>Número de empleados:</strong> 750 &bull; <strong>Naturaleza:</strong> Cadena hotelera.</p>}
+      redes={<p><strong>Instagram:</strong> <a href="https://instagram.com/r2hotelsofficial" target="_blank" rel="noopener noreferrer">r2hotelsofficial</a> &bull; <strong>Facebook:</strong> <a href="https://facebook.com/r2hotels" target="_blank" rel="noopener noreferrer">r2hotels</a> &bull; <strong>LinkedIn:</strong> <a href="https://linkedin.com/company/r2-hotels" target="_blank" rel="noopener noreferrer">r2-hotels</a> &bull; <strong>TikTok:</strong> <a href="https://tiktok.com/@r2hotels" target="_blank" rel="noopener noreferrer">@r2hotels</a></p>}
+      redesTitle="Redes sociales"
+    >
+      <p>Para R2 Hotels, patrocinar al Club Voleibol Guaguas va mucho más allá de poner nuestro logotipo en una camiseta. Supone apoyar a un proyecto deportivo referente en Canarias, que representa esfuerzo, disciplina y trabajo en equipo, valores que también forman parte de nuestro día a día en los hoteles.</p>
+      <p>Además, este patrocinio nos permite conectar de una forma muy auténtica con nuestra tierra y con las personas que nos visitan: muchos de nuestros clientes descubren el Guaguas a través de nosotros, y nosotros sentimos sus triunfos como propios, como un aficionado más. En cierto modo, compartir este camino con el club es también una forma de devolver a Canarias parte de todo lo que nos ha dado.</p>
+      <p>Apoyamos al Club Voleibol Guaguas desde 2023, un punto de partida que para nosotros no es una simple fecha, sino el inicio de una relación que queremos que sea duradera. Nos vemos reflejados en el Guaguas en su espíritu ganador, su constancia y su capacidad para reinventarse sin perder sus raíces. También compartimos una profunda pasión por Canarias.</p>
+    </SponsorPage>
+  ),
+
+  "cap25-vistaflor": (
+    <SponsorPage logoSrc={logoVistaflor} logoAlt="Hoteles Vistaflor"
+      ficha={<p><strong>Nombre completo:</strong> Bungalows Vistaflor &bull; <strong>Año de fundación:</strong> 1987 &bull; <strong>Dirección:</strong> Av. Touroperador Neckermann, 1A. 35100, Maspalomas, Las Palmas &bull; <strong>Número de empleados:</strong> 88 &bull; <strong>Naturaleza:</strong> Actividad hotelera, promotores y colaboradores de numerosos eventos deportivos y sociales.</p>}
+      redes={<p><strong>Web:</strong> <a href="https://www.bungalowsvistaflor.com" target="_blank" rel="noopener noreferrer">www.bungalowsvistaflor.com</a> &bull; <strong>Instagram:</strong> <a href="https://instagram.com/vistaflorbungalows" target="_blank" rel="noopener noreferrer">@vistaflorbungalows</a></p>}
+    >
+      <p>Cuando comenzamos este patrocinio, el club nos pidió apoyo en un momento muy complicado tras la pandemia y las dificultades económicas que atravesaba. Decidimos apostar por la historia de un equipo con los mayores éxitos de Canarias, un referente del deporte regional, y entendimos que era importante respaldar esos valores que, con tan pocos recursos, siguen sacando adelante un proyecto tan significativo. Por ello apoyamos al club desde 2021.</p>
+      <p>La identidad del Guaguas conecta de manera muy especial con la de Hoteles Vistaflor: ambos somos organizaciones que han crecido desde el esfuerzo diario, con una filosofía humilde, familiar y luchadora. Somos una empresa pequeña, pero con una gran dedicación, igual que el espíritu del equipo. Trabajamos como una gran familia para ofrecer siempre a nuestros clientes una atención cercana y una gran sonrisa.</p>
+    </SponsorPage>
+  ),
+
+  "cap25-elextinguidor": (
+    <SponsorPage logoSrc={logoElExtinguidor} logoAlt="El Extinguidor"
+      ficha={<p><strong>Nombre completo:</strong> El Extinguidor, S.A. &bull; <strong>Año de fundación:</strong> 1983 &bull; <strong>Dirección:</strong> C/ Dr. Juan Domínguez Pérez, nº 7 – 35008 Polígono Industrial El Sebadal, Las Palmas de Gran Canaria &bull; <strong>Número de empleados:</strong> 26 &bull; <strong>Naturaleza:</strong> Mantenimientos de Sistemas contra incendios, Robo y CCTV.</p>}
+      redes={<p><strong>Web:</strong> <a href="https://elextinguidor.com" target="_blank" rel="noopener noreferrer">elextinguidor.com</a></p>}
+      redesTitle="Web"
+    >
+      <p>Para El Extinguidor el patrocinio al CV Guaguas supone más visibilidad de cara al público local, al estar en el mercado con un equipo representativo como el que más a nivel insular. Nuestro patrocinio al club surgió en el año 2020.</p>
+      <p>Seriedad, esfuerzo y transparencia son los valores del CV Guaguas con los que nos sentimos identificados y representados.</p>
+    </SponsorPage>
+  ),
+
+  "cap25-afs": (
+    <SponsorPage logoSrc={logoAFS} logoAlt="AFS Formación"
+      ficha={<p><strong>Nombre completo:</strong> Aula de Formación Superior, S.L. y Centro de Formación AFS &bull; <strong>Fundación:</strong> 15 enero 1996 &bull; <strong>Dirección:</strong> Avda. Carlos V, 110 Ingenio, Las Palmas – 35240 &bull; <strong>Número de empleados:</strong> 50 &bull; <strong>Naturaleza:</strong> Centro de formación especializado en certificados de profesionalidad y programas de formación para el empleo.</p>}
+      redes={<p><strong>Web:</strong> <a href="https://grupoafs.com" target="_blank" rel="noopener noreferrer">grupoafs.com</a> &bull; <a href="https://afsformacion.com" target="_blank" rel="noopener noreferrer">afsformacion.com</a> &bull; <a href="https://aulaformacionsuperior.com" target="_blank" rel="noopener noreferrer">aulaformacionsuperior.com</a> &bull; <strong>LinkedIn:</strong> <a href="https://linkedin.com/company/grupoafs" target="_blank" rel="noopener noreferrer">@grupoafs</a> &bull; <strong>Instagram:</strong> <a href="https://instagram.com/grupoafs" target="_blank" rel="noopener noreferrer">@grupoafs</a> &bull; <strong>Facebook:</strong> <a href="https://facebook.com/grupoafs" target="_blank" rel="noopener noreferrer">grupoafs</a></p>}
+    >
+      <p>Para AFS Formación y Aula de Formación Superior, el patrocinio es una declaración de principios: apostar por el esfuerzo, la excelencia y el trabajo en equipo. Un escudo ganador no solo refuerza la marca; nos obliga a estar a la altura. Cuando te alineas con un club que compite para ganar, también tú entrenas mejor, aunque sea fuera de la pista.</p>
+      <p>Además, este patrocinio es una forma de impulsar el talento deportivo canario y de acercar esos ejemplos de compromiso y superación a nuestro alumnado. Queremos que nuestros estudiantes vean en el deporte una fuente de inspiración, un espejo de los valores que promovemos en el aula: disciplina, trabajo en equipo y pasión por alcanzar metas ambiciosas.</p>
+      <p>Apoyamos al CV Guaguas desde 2020 y nos reconocemos en la cultura del Guaguas: disciplina, mejora continua, constancia y ambición con los pies en la tierra.</p>
+    </SponsorPage>
+  ),
+
+  "cap25-universidad": (
+    <SponsorPage logoSrc={logoUniversidad} logoAlt="Universidad del Atlántico Medio"
+      ficha={<p><strong>Nombre completo:</strong> Universidad del Atlántico Medio &bull; <strong>Año de fundación:</strong> Desde 1988, con reconocimiento del Parlamento de Canarias en 2015 &bull; <strong>Dirección:</strong> Campus en carretera de Quilmes, nº 37 (Tafira Baja) &bull; <strong>Número de empleados:</strong> 295 &bull; <strong>Naturaleza:</strong> Formación universitaria y programas directivos.</p>}
+      redes={<p><a href="https://linktr.ee/atlanticomedio" target="_blank" rel="noopener noreferrer">linktr.ee/atlanticomedio</a></p>}
+      redesTitle="Canales de comunicación"
+    >
+      <p>Desde un principio entendimos que los valores de esfuerzo, compromiso, dedicación y generosidad que desprende el CV Guaguas y su directiva, así como los resultados que éstos valores han generado en lo deportivo, significaban para la Universidad del Atlántico Medio una suma con nuestros propios valores, visión y misión como institución que forma personas en valores.</p>
+      <p>La trayectoria de ambas instituciones y la suma de los valores, sin lugar a dudas refuerza la marca de ambas. Arrancamos de la mano del presidente Juan Ruiz, a partir de 2020, nuestro patrocinio. Los valores de compromiso y generosidad en el esfuerzo y la imagen que ello transmite son los que nos identifican con el CV Guaguas.</p>
+    </SponsorPage>
+  ),
+
+  "cap25-hiperdino": (
+    <SponsorPage logoSrc={logoHiperDino} logoAlt="HiperDino"
+      ficha={<p><strong>Nombre completo:</strong> HiperDino &bull; <strong>Fundación:</strong> 28 de octubre de 1985 &bull; <strong>Dirección:</strong> Calle Luis Correa Medina 9, 35013 Las Palmas de Gran Canaria &bull; <strong>Número de empleados:</strong> 9.963 (a octubre de 2025) &bull; <strong>Naturaleza:</strong> Sector de la alimentación.</p>}
+      redes={<p><strong>Web:</strong> <a href="https://hiperdino.es" target="_blank" rel="noopener noreferrer">hiperdino.es</a> &bull; <strong>Facebook:</strong> <a href="https://facebook.com/HiperdinoSupermercados.es" target="_blank" rel="noopener noreferrer">HiperdinoSupermercados.es</a> &bull; <strong>Twitter:</strong> <a href="https://x.com/HiperDino_" target="_blank" rel="noopener noreferrer">@HiperDino_</a> &bull; <strong>Instagram:</strong> <a href="https://instagram.com/hiperdino_" target="_blank" rel="noopener noreferrer">@hiperdino_</a> &bull; <strong>TikTok:</strong> <a href="https://tiktok.com/@hiperdino_" target="_blank" rel="noopener noreferrer">@hiperdino_</a> &bull; <strong>YouTube:</strong> <a href="https://youtube.com/@HiperDinoSupermercadosCanarias" target="_blank" rel="noopener noreferrer">@HiperDinoSupermercadosCanarias</a> &bull; <strong>LinkedIn:</strong> <a href="https://linkedin.com/company/hiperdino-supermercados" target="_blank" rel="noopener noreferrer">hiperdino-supermercados</a></p>}
+    >
+      <p>Para HiperDino, cadena de supermercados 100% canaria, apoyar al Club de Voleibol Guaguas Municipales simboliza nuestro compromiso de confianza, de apoyo y de vocación al deporte, especialmente a esta práctica deportiva tan arraigada en nuestras islas y que inculca valores claves para nuestra empresa como es el trabajo en equipo y la importancia de la preparación física y mental para alcanzar unos objetivos planificados.</p>
+      <p>Este año apoyamos la cuarta temporada y han sido cuatro años de grandes logros y de consolidar el reconocimiento deportivo y social que los canarios tienen hacia el club, un club que forma parte de la esencia de nuestras islas y que refleja los valores que nos representan.</p>
+      <p>El trabajo en equipo, en coordinación y con la definición planificada de los roles que cada jugador tiene asignados y ese espíritu competitivo pero asertivo, reflejan perfectamente la filosofía de nuestra cadena de supermercados en donde trabajan 10.000 personas.</p>
+    </SponsorPage>
+  ),
+
+  "cap25-toyota": (
+    <SponsorPage logoSrc={logoToyota} logoAlt="Toyota Canarias"
+      ficha={<p><strong>Nombre completo:</strong> Toyota Canarias &bull; <strong>Año de fundación:</strong> 1973 &bull; <strong>Dirección:</strong> Diego Vega Sarmiento, 5 – 35004, Las Palmas de Gran Canaria &bull; <strong>Naturaleza:</strong> Toyota Canarias distribuye y comercializa los vehículos de las marcas Toyota y Lexus en las Islas Canarias y presta servicios de posventa y venta de recambios y accesorios.</p>}
+      redes={<p><strong>Web:</strong> <a href="https://toyota-canarias.es" target="_blank" rel="noopener noreferrer">toyota-canarias.es</a> &bull; <strong>X:</strong> <a href="https://x.com/toyotacanarias" target="_blank" rel="noopener noreferrer">@toyotacanarias</a> &bull; <strong>Instagram:</strong> <a href="https://instagram.com/toyotacanarias" target="_blank" rel="noopener noreferrer">@toyotacanarias</a> &bull; <a href="https://linktr.ee/toyotacanarias" target="_blank" rel="noopener noreferrer">linktr.ee/toyotacanarias</a></p>}
+    >
+      <p>Para Toyota Canarias, el patrocinio de este equipo de la máxima división de voleibol masculino representa mucho más que un acuerdo comercial. En este caso, el patrocinio del Club Voleibol Guaguas es una oportunidad para impulsar valores compartidos, como el trabajo en equipo, el esfuerzo constante y poder trasladar un mensaje a los más jóvenes sobre la importancia de una vida activa y saludable.</p>
+      <p>Sin duda hay una transferencia de atributos. Guaguas probablemente posee el mayor palmarés deportivo de Canarias pero no solo son sus éxitos en la cancha lo importante. Estamos vinculando nuestra imagen a valores positivos como la dedicación, la superación, el espíritu competitivo, la tolerancia y el trabajo en equipo.</p>
+      <p>Nos acabamos de incorporar este año al proyecto del Guaguas. Llevamos décadas vinculados al baloncesto y desde 2019 al fútbol femenino. La pasión por el trabajo en equipo, con la idea de que sin esfuerzo, dedicación y determinación no se alcanzan los resultados y la humildad con la que se debe abordar el éxito son los valores del Guaguas con los que nos sentimos plenamente identificados.</p>
+    </SponsorPage>
+  ),
+
+  "cap25-acerbis": (
+    <SponsorPage logoSrc={logoAcerbis} logoAlt="Acerbis"
+      ficha={<p><strong>Nombre completo:</strong> Acerbis S.p.A &bull; <strong>Año de fundación:</strong> 1973 &bull; <strong>Dirección:</strong> Via Serio 37 – 24021 Albino (BG) Italy &bull; <strong>Número de empleados:</strong> 450 &bull; <strong>Naturaleza:</strong> Empresa industrial italiana fabricante de componentes plásticos para motocicletas y ropa deportiva técnica.</p>}
+      redes={<p><strong>Web:</strong> <a href="https://acerbiscentralsport.com" target="_blank" rel="noopener noreferrer">acerbiscentralsport.com</a> &bull; <strong>Facebook:</strong> <a href="https://facebook.com/AcerbisSport" target="_blank" rel="noopener noreferrer">AcerbisSport</a> &bull; <strong>Instagram:</strong> <a href="https://instagram.com/acerbissport" target="_blank" rel="noopener noreferrer">@acerbissport</a> &bull; <strong>YouTube:</strong> <a href="https://youtube.com/@ACERBIS1973" target="_blank" rel="noopener noreferrer">@ACERBIS1973</a> &bull; <strong>LinkedIn:</strong> <a href="https://linkedin.com/company/acerbis-italia-spa" target="_blank" rel="noopener noreferrer">acerbis-italia-spa</a></p>}
+    >
+      <p>Para Acerbis, el patrocinio del CV Guaguas va más allá de la simple visibilidad y representa una elección de valores. Nos identificamos con un proyecto que trabaja con integridad, construyendo una identidad sólida a través de la organización, el respeto y las personas.</p>
+      <p>Apoyar a un equipo ganador refuerza nuestra credibilidad, especialmente cuando la victoria nace de la simplicidad operativa, el espíritu de equipo y la evolución continua, principios que Acerbis reconoce y comparte. Por eso, el patrocinio no es solo una alianza deportiva, sino un camino común basado en la responsabilidad y el crecimiento constante. Este es nuestro tercer año apoyando al equipo, y con nuestra equipación el club ha ganado varios títulos, proporcionándonos muchas satisfacciones.</p>
+      <p>En el CV Guaguas encontramos muchos elementos de nuestro ADN: el espíritu de equipo, la integridad, la responsabilidad, la sencillez como concreción y la evolución continua. Por eso, el CV Guaguas no es solo un socio deportivo, sino una realidad con la que Acerbis se identifica plenamente.</p>
+    </SponsorPage>
   ),
 
 
