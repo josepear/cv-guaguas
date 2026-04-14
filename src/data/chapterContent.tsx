@@ -5,6 +5,9 @@ import PlayerProfile from "@/components/PlayerProfile";
 import EditorialQuote from "@/components/EditorialQuote";
 import NewspaperQuote from "@/components/NewspaperQuote";
 import ArticleBlock from "@/components/ArticleBlock";
+import HighlightText from "@/components/HighlightText";
+import TwoColumns from "@/components/TwoColumns";
+import FichaDebut from "@/components/FichaDebut";
 import { Timeline, TimelineEvent } from "@/components/TimelineEvent";
 import { TituloDeportivo, FichaTecnica, Equipo, Narrativa } from "@/components/TituloDeportivo";
 import ContentImage from "@/components/ContentImage";
@@ -2452,6 +2455,125 @@ export const chapterContent: Record<string, React.ReactNode> = {
     </>
   ),
 
+
+  // ═══════════════════════════════════════════════
+  // CAPÍTULO 12: Vuelve el gran Guaguas — Un paso por aclamación
+  // ═══════════════════════════════════════════════
+  "cap13-aclamacion": (
+    <>
+      <DropCap>No fue una opinión aislada, tampoco la petición de algún nostálgico suelto, ni siquiera una suma de sugerencias. A Juan Ruiz llevaban parándole por la calle &ldquo;años y años&rdquo;, como significa, multitud de aficionados que, directamente, no terminaban de digerir que un emblema del deporte y de la sociedad grancanaria contemporánea hubiese desaparecido.</DropCap>
+
+      <p>Y el histórico presidente, siempre receptivo a la voz de la gente, fue aparcando el escepticismo inicial para ir modelando un regreso que, sabía, iba a implicar serias complejidades. La refundación de una entidad deportiva, y diez años después de su liquidación como era el caso del Guaguas, obligaba a un proyecto de cimientos estables, de garantías plenas. &ldquo;Estaba prohibido dar un paso en falso&rdquo;, resume Ruiz, quien durante muchos meses fue gestando de qué manera y con qué apoyos iba a rescatar del olvido un escudo que, por historia, apego popular y prestigio jamás mereció caer en el olvido. Ya jubilado y liberado de servidumbres horarias, con una familia &ldquo;que estaba encaminada y siempre se mostró comprensiva&rdquo; con su motivación sentimental de rescatar a la entidad de su vida, inició las maniobras desde la discreción necesaria. Cualquier tipo de publicidad antes de consolidar las estructuras y el andamiaje de patrocinadores podría resultar contraproducente, lo que motivó que esas rondas de contactos y consultas no pasaran del ámbito privado.</p>
+
+      <p>Paco Sánchez Jover y Sergio Miguel Camarero, los símbolos de la época de esplendor, fueron de los primeros en conocer sus intenciones. Había que acudir a las raíces y en la estructura y tradición del Calvo Sotelo esos dos nombres eran irrenunciables. Como también el de Felipe Nuez, el entrenador fundacional y referente obligado en esa reconstrucción en ciernes. En todos encontró receptividad y predisposición. Pese al paso del tiempo y a las incertidumbres inevitables, Juan Ruiz supo que la vieja guardia estaba con él. Y ejecutivos que le acompañaron antes de su marcha en 1998, tales como Antonio Benítez o Miguel Ángel Hernández, también le tendieron la mano, prestos a colaborar en lo necesario sin más interés que el de revivir un emblema como el que, en tiempos, llenó hasta la bandera el Centro Insular y campeonó por España.</p>
+
+      <p>La decisión ya era firme. El consenso deseado para emprender el nuevo Guaguas, el paso necesario que tantas meditaciones había alimentado en la mente de Juan Ruiz... Todo encajaba y ya a finales de 2019, pese a los rigores de la pandemia, el sueño de restituir una entidad con cinco Ligas, seis Copas del Rey, una Supercopa de España, ídolos inolvidables en su camino y más de cincuenta partidos oficiales en competiciones europeas, comenzaba a cristalizar. Un legado inigualable.</p>
+
+      <p>El 11 de mayo de 2020 quedó constancia en el Registro de Entidades Deportivas de Canarias de la entrada de toda la documentación pertinente del nuevo Guaguas con la intención de entrar en el ámbito competitivo y, menos de dos meses después, el 2 de julio, tenía lugar en el Cabildo de Gran Canaria la presentación institucional de un proyecto incubado con mimo, paciencia y entusiasmo.</p>
+
+      <p>Juan Ruiz volvía para ganar. No se conformaba con un Guaguas de transición y así lo demostró con arduas y hábiles gestiones para poner a disposición de Sergio Miguel Camarero una plantilla de calidad y experiencia. Entre las novedades más destacadas, Sánchez Jover se trajo del Vecindario al central brasileño Moisés Cézar, toda una garantía por su amplio recorrido profesional, y también sobresalió la llegada del opuesto argentino Pablo Kukartsev quien, a la postre, sería la pieza más decisiva para la consecución de los títulos que venían en camino.</p>
+
+      <p>Alejandro Fernández Rojas, Guilherme Magnani Hage, Carlos Manuel de Carvalho Furtado, Moisés Dos Santos Cézar, Javier Sánchez Carreres, Paulo Renán Bertassoni, Jorge Almansa Martínez, Luca Biliato, Ruiman David Artiles Sosa, Matthew Lambert Knigge, Stefano Nassini Hidalgo, Pablo Sergio Kukartsev y Gustavo Delgado Escribano fueron los integrantes de la plantilla de la campaña 2020-21 y cuyo primer partido oficial fue como visitante, contra el Rotogal Boiro en el pabellón A Cachada de Galicia, el 3 de octubre de 2020, ganando 0-3. Punto de partida de la nueva era en la que el Guaguas vuelve a ser protagonista por su presente de éxito y horizonte de ilusiones.</p>
+    </>
+  ),
+
+  // ═══════════════════════════════════════════════
+  // CAPÍTULO 12: Vuelve el gran Guaguas — Presidentes
+  // ═══════════════════════════════════════════════
+  "cap13-presidentes": (
+    <>
+      <DropCap>Juan Ruiz ocupa un lugar preeminente e indiscutible en este capítulo de dirigentes por la vigencia, bagaje y trascendencia de su mandato, dividido en dos partes, la inicial entre 1986 y 1998, y la actual, nacida en plena pandemia, año 2020 y todavía en curso.</DropCap>
+
+      <p>Es el presidente por antonomasia del Guaguas. Todos los títulos del palmarés han llegado bajo sus directrices, también las contrataciones más exitosas y recordadas, así como los ciclos de mayor calado social y repercusión, tanto a nivel regional como nacional y más allá de las fronteras. El escudo va asociado a su figura y no se entiende la trayectoria sin igual del club sin su referencia. A ese servicio continuado, estelar y que ha entrado por derecho propio en la historia del deporte canario por ser un modelo de eficiencia integral, con solvencia económica, sostenibilidad institucional y voracidad en la cancha.</p>
+
+      <p>En su haber también figura, como dato inmaculado, no haber percibido remuneración alguna por su dedicación, tiempo y gestiones en aras de procurar al Guaguas un presente y un futuro. El perfil de ejecutivo remunerado se ha normalizado en los últimos tiempos e incluso hay una legitimización de esa contraprestación económica. Pero Juan Ruiz, que no ha escatimado en sacrificios, renuncias personales y todo tipo de iniciativas desde el altruismo, entiende que su representatividad ya tiene suficiente retorno como para cuantificarla o monetizarla. Ahí también se diferencia de la mayoría de sus homólogos. Esa concepción romántica de dar sin pedir a cambio, la que le llevó a adentrarse en aquel Guaguas de los ochenta que estaba a punto desaparecer guiado por su vocación de ayudar, la mantiene blindada al tiempo como ejemplo y emblema.</p>
+
+      <p>Si sobre Guillermo Gil recae el honor de haber sido el presidente fundacional, allá por 1976, en Juan Ruiz reposan los laureles del club con mayor número de títulos de Canarias y el despegue hacia el infinito de un Guaguas instalado en la excelencia.</p>
+
+      <HighlightText>Guillermo Gil</HighlightText>
+      <HighlightText>José Luzardo</HighlightText>
+      <HighlightText>Arturo Sureda</HighlightText>
+      <HighlightText>Florencio Tejera</HighlightText>
+      <HighlightText>José María Rodríguez</HighlightText>
+      <HighlightText>Gustavo Rodríguez</HighlightText>
+      <HighlightText>Juan Ruiz</HighlightText>
+      <HighlightText>Mario Hugendubel</HighlightText>
+      <HighlightText>José Luis Cano</HighlightText>
+      <HighlightText>Pedro Cuarental</HighlightText>
+      <HighlightText>Samuel Díaz</HighlightText>
+      <HighlightText>David Rodríguez</HighlightText>
+    </>
+  ),
+
+  // ═══════════════════════════════════════════════
+  // CAPÍTULO 12: Vuelve el gran Guaguas — Entrenadores
+  // ═══════════════════════════════════════════════
+  "cap13-entrenadores": (
+    <>
+      <DropCap>De Felipe Nuez, el precursor y con el que empezó todo, pasando por Sánchez Jover, la escuela argentina en los noventa con Quique Edelstein o Marcelo Giovanacci, el sello de la casa como Juanma Martín, siempre con nuevos logros para las vitrinas, hasta el desembarco absolutamente insuperable de Sergio Miguel Camarero, en tiempos estrella en la cancha y reciclado, de igual manera, a entrenador de aureola.</DropCap>
+
+      <p>Con él en el banquillo, ya desde la refundación en 2020, la lluvia de títulos ha sido incesante. Representante en su máxima expresión de los valores del Guaguas, implicación, compromiso, ambición y sacrificio como señas de identidad, a lo que Camarero añade de su cosecha el orgullo de pertenencia, algo que ya le caracterizó cuando incendiaba de pasión el Centro Insular con su conexión única con la grada.</p>
+
+      <p>Lo cierto es que la galería de preparadores en el medio siglo de vida del club luce ilustres que son inolvidables y de una contribución diferencial para que el equipo se haya convertido en un icono del voleibol español. Esta catarata de conquistas consagra unas líneas maestras en las que un denominador común salta a la vista: el perfil de hombre de la casa siempre se ha elevado y distinguido. Los mencionados ejemplos de Nuez, Sánchez Jover y Camarero constituyen un trío ineludible y que perdurará sin caducidad. Lo que significaron (y en el caso de Camarero todavía se conjuga en presente) ha marcado un camino de exigencia, profesionalidad y maestría sin igual, a la altura de la genética ganadora de la entidad. Si resultó irrepetible aquel tránsito de los ochenta a los noventa jalonada de épica y proezas, ya adentrados en el siglo XXI es Camarero, representante de la vieja guardia, el encargado de mantener la esencia y contagiarla a las nuevas generaciones. Y promete seguir, inasequible al desaliento y con la ambición por bandera.</p>
+
+      <HighlightText>Felipe Nuez</HighlightText>
+      <HighlightText>Fidel Morales</HighlightText>
+      <HighlightText>Sergio Hernández</HighlightText>
+      <HighlightText>Paco Sánchez Jover</HighlightText>
+      <HighlightText>Chava González (interino en el verano de 1989)</HighlightText>
+      <HighlightText>Robert Croteau</HighlightText>
+      <HighlightText>Quique Edelstein</HighlightText>
+      <HighlightText>Marcelo Giovanacci</HighlightText>
+      <HighlightText>Juanma Martín</HighlightText>
+      <HighlightText>Benjamín Vicedo</HighlightText>
+      <HighlightText>David Rodríguez</HighlightText>
+      <HighlightText>Ángel Alonso</HighlightText>
+      <HighlightText>Álvaro Bourousouzian</HighlightText>
+      <HighlightText>Chema Sánchez</HighlightText>
+      <HighlightText>Samuel Díaz</HighlightText>
+      <HighlightText>Sergio Miguel Camarero</HighlightText>
+    </>
+  ),
+
+  // ═══════════════════════════════════════════════
+  // CAPÍTULO 14: Los nuevos ídolos — Pablo Kukartsev
+  // ═══════════════════════════════════════════════
+  "cap15-kukartsev": (
+    <>
+      <DropCap>En el doblete de 2021, con Liga y Copa del Rey que no se daba desde 1994, el opuesto Pablo Kukartsev (Buenos Aires, 1993) fue una de las figuras más indiscutibles como prueba su designación como jugador más valioso de la temporada.</DropCap>
+
+      <p>&ldquo;Uno no busca distinciones individuales porque esto es un juego de equipo. Todo lo que conseguí en ese año se lo debo a mis compañeros, al trabajo que realizamos conjuntamente entre todos porque, aunque pudiera parecerlo, no fue nada fácil hacer lo que hicimos&rdquo;, apunta desde las filas del Almería, su destino profesional actual y del que, precisamente, llegó en el verano de 2020.</p>
+
+      <p>&ldquo;Me ofrecieron la oportunidad de jugar competiciones europeas, algo que no todos los clubes en España pueden hacer, además de formar parte de un proyecto muy ilusionante. Es cierto que sobrevolaba la incertidumbre de qué respuesta podría darse al ser un club que regresaba tras una larga ausencia. Encima la pandemia tampoco ayudaba al optimismo. De hecho, fui el primero de la plantilla en contraer el virus, con la incertidumbre que eso conllevaba. Pero pusieron mucho interés en mí, me convencieron con unas ideas ambiciosas. Desde mi entorno me apoyaron cuando me decidí a aceptar la oferta y, la verdad, desde el primer momento todo fue rodado&rdquo;, consigna.</p>
+
+      <p>Kukartsev opina que el grupo &ldquo;fue de diez a nivel profesional y humano&rdquo;, lo que terminó derivando en la cosecha de éxitos que se dio: &ldquo;No jugamos la Supercopa de España y en Europa caímos mucho antes de lo que merecíamos. Disputamos encuentros de máximo nivel, de los que a todo jugador le gusta tomar parte, llegamos a finales, las ganamos... No se puede pedir mucho más, la verdad. Disfruté, crecí, pude desarrollarme todo lo que esperaba. Merecimos lo logrado porque lo peleamos desde el primer entrenamiento y con toda la intensidad posible&rdquo;.</p>
+
+      <p>Y bien presente, pese al paso del tiempo, dos momentos elegidos: &ldquo;Cuando Javi me la colocó para hacer el punto ganador ante el Almería en la Liga y la definición de Hage en la Copa, que también valió el trofeo que nos llevamos. Es imposible olvidar esa alegría, la satisfacción de ver premiado tanto trabajo&rdquo;.</p>
+
+      <p>Además, se muestra como una persona agradecida al hacer balance de su única campaña, la 2020-21, defendiendo el escudo al que ayudó a volver a la cima: &ldquo;Al Guaguas siempre le voy a guardar cariño, respeto y admiración. Me trataron de maravilla y, a nivel personal, fue un tiempo de evolución constante. Mi balance es totalmente espectacular&rdquo;.</p>
+    </>
+  ),
+
+  // ═══════════════════════════════════════════════
+  // CAPÍTULO 14: Los nuevos ídolos — Moisés Cézar
+  // ═══════════════════════════════════════════════
+  "cap15-moises-cezar": (
+    <>
+      <DropCap>En su primer año como jugador del Guaguas, brazalete de capitán y levantando hasta tres títulos: Copa, Liga y Supercopa. Todo, con diferencia de unos meses. &ldquo;Cada vez que me tocó ir a recoger un trofeo, las emociones fueron increíbles, únicas&rdquo;.</DropCap>
+
+      <p>El receptor brasileño Moisés Cézar (Belo Horizonte, 1983) ya había tenido una experiencia similar en el Almería, años atrás, acaparando todos los laureles nacionales. Pero hacerlo aquí, con la jerarquía que se le otorgó en virtud de su experiencia previa, tuvo &ldquo;un sabor especial&rdquo;, tal y como admite.</p>
+
+      <p>Después de tres temporadas en el Vecindario, la consigna que le dio Paco Sánchez Jover, su técnico en el conjunto sureño, le marcó a fuego: &ldquo;Me habló del proyecto de recuperar el Guaguas y me dijo que yo tenía que estar, que me quería con él. A Paco es imposible decirle que no. Y tampoco me lo pensé. Seguía en Gran Canaria, que es una tierra a la que me adapté muy bien y, encima, ya en el final de mi carrera, iba a poder formar parte de un equipo histórico, con aspiraciones. Todo me motivó mucho&rdquo;.</p>
+
+      <p>Cézar ya tenía referencias de lo que había significado el Guaguas décadas atrás, por lo que asumió con &ldquo;orgullo y responsabilidad&rdquo; la misión de liderar el grupo a las órdenes de Camarero, sabiendo que &ldquo;había que ir a por todas desde el primer momento&rdquo; para respetar, precisamente, la naturaleza de un proyecto diseñado para ganar.</p>
+
+      <p>&ldquo;Vine con una edad ya importante y me produjo una gran satisfacción jugar todos los partidos y poder darle mi mejor nivel al servicio de los compañeros. Creo que no dejé ninguna duda sobre la pista y, encima, tuve el privilegio de jugar con grandes personas, de enorme calidad humana y profesional. Eso fue clave. Y también el míster, que es otro ganador y ha hecho grupo en los momentos más complicados. Fuimos un equipo con todas las letras y eso explica tanto éxito&rdquo;, opina.</p>
+
+      <p>A nivel individual, no oculta que vestir el dorsal 5 también supone un guiño a la nostalgia: &ldquo;Fue el que llevó Paco y es un honor llevarlo en el Guaguas como hizo él. Me da un plus de fuerza, de energía. Otro motivo más para dar lo que llevo dentro en cada encuentro, en cada entrenamiento&rdquo;.</p>
+
+      <p>Centrado en &ldquo;continuar dando alegrías&rdquo;, pondera que la presencia gradual de público &ldquo;lo ha hecho todo más fácil&rdquo; tras muchos meses de compromisos a puerta cerrada por la pandemia: &ldquo;Jugar y ganar finales sin gente fue duro, aunque no quedaba otra opción. Nos acordamos de todos y brindamos cada copa por ellos. Ahora es una alegría poder competir con la fuerza que nos dan desde la grada y ojalá que todo siga yendo tan bien como hasta el momento. Y con la ilusión de mejorar en Europa y poder realizar una buena campaña en general. Es la exigencia que asumimos con la máxima profesionalidad&rdquo;.</p>
+    </>
+  ),
 
   // ═══════════════════════════════════════════════
   // NEW: Nuevos ídolos adicionales (Cap 14 children)
