@@ -558,26 +558,6 @@ export const chapterContent: Record<string, React.ReactNode> = {
     </>
   ),
 
-  // ═══════════════════════════════════════════════
-  // CAP 25 sub: El tejido empresarial canario
-  // ═══════════════════════════════════════════════
-  "cap25-tejido-empresarial": (
-    <>
-      <DropCap>Además de las subvenciones públicas del Cabildo de Gran Canaria, del Ayuntamiento de Las Palmas de Gran Canaria y del Gobierno de Canarias, ayudas a las que tiene derecho el Guaguas por su condición de club de élite y representativo, con el añadido de ganar títulos y disfrutar de un prestigio histórico fuera de debates, Juan Ruiz y toda su junta directiva han dado un paso más en la viabilidad y sostenibilidad del proyecto esmerándose en la captación de apoyos por parte del empresariado de la tierra.</DropCap>
-
-      <p>Y se lleva con mucho orgullo la consecución de una amplia cobertura en este apartado, sin tener nada que envidiar a otras instituciones porque, como admite el presidente, «el apoyo es masivo, decidido y con reciprocidad». Como advierte el mandatario, las marcas que se asocian a las siglas corporativas ven un retorno en términos relacionados con el espíritu ganador, la representatividad y la fama que van implícitas al escudo.</p>
-
-      <EditorialQuote author="Juan Ruiz">El Guaguas lleva en su esencia expandir Canarias, ser embajador de su tierra, llevar más allá de nuestras islas los símbolos y siglas que ayudan al desarrollo de nuestra región. Y captar la confianza y patrocinio de empresas que aportan empleo, riqueza y ejemplaridad a Gran Canaria es una manera perfecta de hacerlo.</EditorialQuote>
-
-      <p>El Guaguas se ha ganado un nicho de mercado «indiscutible y apreciado» en el empresariado local por su política competente de tarifas brindando la aureola única que posee atendiendo a su palmarés. Y gestos como el de dedicar cada trofeo a sus patrocinadores, cuidando al máximo los detalles, colaboran en una sinergia establecida que permite, temporada tras temporada, asegurar una vía de ingresos fundamental para vertebrar cada proyecto.</p>
-
-      <EditorialQuote author="Juan Ruiz">Nunca nos hemos abandonado al dinero público. Y nuestro método de trabajo contempla explorar continuamente financiación extra. Nos hemos acostumbrado a ser competitivos como el que más tanto en España como en Europa con presupuestos ajustados pero en los que el cumplimiento de todas las obligaciones es sagrado y además por parte de unos directivos que no cobran un céntimo por los servicios que prestan.</EditorialQuote>
-
-      <p>El presidente ya fue pionero, a mitad de los años ochenta, y como tarjeta de presentación en su recién estrenado mandato, en privilegiar la independencia económica del club. Por aquel entonces causó elogio generalizado su contrato con Guaguas Municipales, que terminaría dando la denominación al equipo. Y, ya desde esa época, y bajo su dirección, jamás faltaron los ingresos derivados de la pequeña y mediana empresa para apuntalar a la gran marca predominante.</p>
-
-      <p>Décadas después, hoy se mantiene ese modelo que combina diferentes escalones en cuanto a participaciones económicas «pero todas necesarias, fundamentales y valoradas».</p>
-    </>
-  ),
 
   // ═══════════════════════════════════════════════
   // CAPÍTULO 25: Empresarios de la tierra (hijos)
