@@ -59,6 +59,11 @@ function libro_import_sample_content() {
             
             // Save marker visibility
             update_post_meta($post_id, '_mostrar_marcador', isset($cap['show_marker']) ? ($cap['show_marker'] ? '1' : '0') : '1');
+
+            // Save ocultar_titulo flag
+            if (!empty($cap['ocultar_titulo'])) {
+                update_post_meta($post_id, '_ocultar_titulo', '1');
+            }
             
             // Save hero configuration
             if (!empty($cap['hero'])) {
@@ -78,6 +83,7 @@ function libro_import_sample_content() {
                 if (!empty($hero['border_color'])) update_post_meta($post_id, '_hero_border_color', $hero['border_color']);
                 if (!empty($hero['title_lines'])) update_post_meta($post_id, '_hero_title_lines', $hero['title_lines']);
                 if (!empty($hero['background_position'])) update_post_meta($post_id, '_hero_background_position', $hero['background_position']);
+                if (!empty($hero['background_color'])) update_post_meta($post_id, '_hero_background_color', $hero['background_color']);
             }
             
             // Save prologue image fields
@@ -163,8 +169,7 @@ function libro_get_sample_chapters() {
         ),
         'content' => '
 <p>Este capítulo reúne las palabras de las personalidades más destacadas del ámbito deportivo, político e institucional que han acompañado al CV Guaguas en su extraordinaria trayectoria. Sus testimonios reflejan el impacto del club en la sociedad canaria y en el voleibol español.</p>
-
-[imagen_contenido src="'),
+'),
     array('title' => 'Fernando Clavijo', 'numero' => '', 'order' => 2, 'show_marker' => false, 'parent_ref' => 'prologos',
         'subtitulo' => 'Presidente del Gobierno de Canarias',
         'prologo_imagen' => libro_img('prologues/fernando-clavijo.jpg'),
@@ -243,7 +248,7 @@ function libro_get_sample_chapters() {
     // CAPÍTULO 01: DEL PATIO DEL COLEGIO A DIVISIÓN DE HONOR
     // ═══════════════════════════════════════════════
     array(
-        'title' => 'Del patio del colegio a División de Honor',
+        'title' => 'Del patio del colegio a la División de Honor',
         'numero' => '01',
         'order' => 12,
         'show_marker' => true,
@@ -261,20 +266,20 @@ function libro_get_sample_chapters() {
             'title_lines' => array(libro_hero_line('DEL PATIO', '#1a237e', '#FFFFFF', 'black'), libro_hero_line('DEL COLEGIO', '#1a237e', '#FFFFFF', 'black'), libro_hero_line('A LA DIVISIÓN', '#1a237e', '#FFFFFF', 'black'), libro_hero_line('DE HONOR', '#1a237e', '#FFFFFF', 'black')),
         ),
         'content' => ''),
-    array('title' => 'Los orígenes', 'numero' => '', 'order' => 13, 'show_marker' => false, 'parent_ref' => 'cap01',
+    array('title' => 'Del patio del colegio a la División de Honor', 'numero' => '', 'order' => 13, 'show_marker' => false, 'parent_ref' => 'cap01',
         'hero' => array(
-            'image' => libro_img('hero-patio-colegio.jpg'),
+            'image' => libro_img('1cap_pati_foto15.jpg'),
             'overlay' => 'rgba(0, 0, 0, 0.15)',
             'icon' => 'custom',
             'custom_icon' => libro_img('estrella-icon.svg'),
-            'custom_icon_color' => 'hsl(45 100% 50%)',
+            'custom_icon_color' => 'hsl(220 50% 12%)',
             'icon_width' => 40,
             'icon_height' => 40,
             'alignment' => 'center',
             'vertical' => 'center',
             'height' => '500px',
-            'title_lines' => array(libro_hero_line('LOS', 'hsl(220 50% 12%)', 'hsl(45 100% 50%)', 'black'), libro_hero_line('ORÍGENES', 'hsl(220 50% 12%)', 'hsl(45 100% 50%)', 'black')),
-            'border_color' => 'hsl(45 100% 50%)',
+            'title_lines' => array(libro_hero_line('DEL PATIO DEL COLEGIO', '#FFFFFF', 'hsl(220 50% 12%)', 'none'), libro_hero_line('A LA DIVISIÓN DE HONOR', '#FFFFFF', 'hsl(220 50% 12%)', 'none')),
+            'border_color' => 'hsl(220 50% 12%)',
         ),
         'content' => '
 [seccion_header]Las horas extraescolares con Francisco Rodríguez[/seccion_header]
@@ -288,6 +293,8 @@ function libro_get_sample_chapters() {
 <p>Y, desde la temporada 1972-73, participa en categoría infantil masculina en los Campeonatos Escolares Provinciales por iniciativa y empeño de la Asociación de Padres de Alumnos, presidida por José Celestino Luzardo, y también representada por Antonio Trejo, encargado de la imprenta del colegio, Guillermo Gil, director del centro, y los profesores Pardo y Miguel Nieves. El crecimiento es sostenido, como queda documentado con otro logro: el 18 de febrero de 1973, el equipo femenino de 2ª categoría juvenil, entrenado por Francisco Rodríguez, se proclama campeón provincial escolar tras ganar, en la cancha Eliseo Ojeda, al Instituto Isabel de España. Un guiño del destino: el partido fue arbitrado por Felipe Nuez, quien ya ha orientado sus pasos al voleibol como actividad complementaria a la que ejercía de profesor. Apenas un año después sería pionero al frente de la selección cadete de Las Palmas, germen del equipo sénior que iniciaría la andadura del Calvo Sotelo ya a nivel federado.</p>
 
 <p>La creación, también en 1973, de un trofeo organizado por la propia escuela certifica la consolidación y crecimiento del voleibol en la rústica pista donde los alumnos ya se entregaban con entusiasmo y empeño en perfeccionar sus maneras y habilidades.</p>
+
+[imagen_contenido file="1cap_pati_foto15.jpg" caption="Equipo B masculino de la clase 20ª del Colegio Nacional Calvo Sotelo que quedó campeón del Torneo Interior organizado por el mismo centro educativo en el curso 1968-69. El profesor Francisco Rodríguez, pionero en la enseñanza del voleibol ese mismo año, aparece junto a los jóvenes aprendices. (Foto cortesía de Miriam Quiroga)."]
 
 [seccion_header]Silvestre Cabrera y el salto cualitativo[/seccion_header]
 
@@ -323,6 +330,8 @@ function libro_get_sample_chapters() {
 
 <p>Otro acontecimiento del momento digno de mención se desarrolló del 31 de octubre de 1975 al 29 de febrero de 1976 con el Campeonato Provincial de Segunda División Masculina en el que el Calvo Sotelo queda en segunda posición de una nómina de nueve equipos, con el Juventud como campeón y Arucas, Guía, Gáldar, Drago, Zona Aérea de Canarias, Paracaidistas y Filial Perojo como equipos restantes. El entrenador es Felipe Nuez y sus jugadores, Miguel Mendaño, Alfredo Padrón, Juan Carlos Ortega Araña, José Montelongo, Juan Carlos Rodríguez, Ramón Rodríguez, José Luis Alemán, William Caballero y Navarro. En el Campeonato Juvenil Provincial Federado de esa temporada también quedaría subcampeón el Calvo Sotelo.</p>
 
+[imagen_contenido file="1cap_pati_foto10.jpg" caption="Equipo infantil femenino del Calvo Sotelo, que se proclamó campeón de los III Juegos Deportivos de la Enseñanza General Básica en el curso 1971/72. (Foto cortesía de Miriam Quiroga)."]
+
 [seccion_header]Estatutos fundacionales y despegue[/seccion_header]
 
 <p>En noviembre de 1976, concretamente el día 6, se redactan los estatutos de fundación del Club Voleibol Calvo Sotelo, lo que ya supone, formalmente, el avance que se demandaba para que el proyecto deportivo se oficializara a todos los niveles y adquiriera una consistencia definitiva, como así se demostraría con el transcurso de los años posteriores. Fue el punto de partida que permitía ir del deporte escolar propiamente dicho, y que había sustentado la naturaleza del Calvo Sotelo, al integrado en la competición federada.</p>
@@ -331,6 +340,8 @@ function libro_get_sample_chapters() {
 
 <p>El artículo proseguía detallando las incorporaciones de jugadores procedentes del infantil —Manolo, Casiano, José Luis, Simón, Ramón, Octavio y Gavira— y el regreso de Falero y Déniz al equipo absoluto. Con el equipo de voleibol, las aspiraciones llegaban aún más lejos. Se tenía una base, que era el equipo juvenil, en él se habían puesto todas las ilusiones con vistas a un futuro.</p>
 
+[imagen_contenido file="1cap_pati_foto18.jpg" caption="Calvo Sotelo masculino de la temporada 1976/77. De pie, de izquierda a derecha, Ramón, Leandro, Juan Carlos, Felipe Nuez (entrenador), José, Acosta y Silva. Agachados, en el mismo orden, José Antonio, Araña, Mendaño, Padrón y Tony Vázquez."]
+
 [cita_editorial]Es loable el comprobar cómo en este club todos están mentalizados con una meta fijada a cuatro años vista, nadie espera resultados inmediatos, todos están plenamente convencidos de que, dentro de tres temporadas, el Calvo Sotelo sonará fuerte dentro del ámbito nacional.[/cita_editorial]
 
 <p>Dicho y hecho. El Calvo Sotelo logró clasificarse para la fase de ascenso a Segunda División que se disputó en Cáceres en febrero de 1977. El Santa Ana, que ejercía de anfitrión, el Chamartín de Madrid, Camilo de Segovia, el Cisneros de Tenerife, la Universidad Laboral de Toledo y el Galerías Florita de Salamanca completaron el cartel de aspirantes que, divididos en dos grupos, buscaban el salto de categoría. No pudo ser en esta ocasión para el Calvo Sotelo, en el mapa nacional en todo caso y con los honores preceptivos por estar entre los mejores.</p>
@@ -338,6 +349,8 @@ function libro_get_sample_chapters() {
 <p>El amplio eco de la eclosión del proyecto se ensalza en la prensa por su labor cuidada de la base, verdadero orgullo de los integrantes del club. Así se hablaba de las excelencias del Calvo Sotelo, resaltando que tenía "el futuro asegurado al disponer de 16 equipos repartidos en todas las categorías".</p>
 
 [cita_prensa source="La Provincia, 16 de junio de 1977"]Todos los componentes de esta gran familia pasando desde el conserje del colegio, encargado de servicios, director, padres de jugadores, junta directiva y, cómo no, la totalidad de los jugadores han hecho posible todo esto. Son estos últimos los que merecen especial atención, sacrificando alrededor de catorce horas semanales de los ratos en que no estudian o trabajan, en los entrenamientos, no desperdiciando ningún sábado o domingo, ni días de fiestas, para entrenar.[/cita_prensa]
+
+[imagen_contenido file="1cap_pati_foto22.jpg" caption="El Calvo Sotelo en sus primeros tiempos. De pie, de izquierda a derecha, Ramón Rodríguez, Padín, Alfredo, Pericles y Juan Carlos. Agachados, en el mismo orden, Tony Vázquez, Chago, Martín y Mendaño."]
 
 [seccion_header]El ascenso a Segunda División de 1979[/seccion_header]
 
@@ -348,6 +361,8 @@ function libro_get_sample_chapters() {
 <p>En su estreno en Segunda, temporada 1979-80, el saldo no pudo ser mejor, toda vez que se logró un segundo puesto que dio derecho a disputar la fase de ascenso a Primera División gracias, fundamentalmente, a que se mantuvo invicto en su feudo. En Cáceres afrontó una fase decisiva en la que no pudo culminar la gesta de haber encadenado otro éxito. La coincidencia del ascenso del Juventud permitió que se viviera el derbi capitalino en Segunda durante la campaña 1981-82, algo que se calificó como otro hito del voleibol grancanario.</p>
 
 <p>La entrada en escena de patrocinios, como ya se imponía en la realidad del deporte de comienzo de los ochenta, también formó parte de la historia del Calvo Sotelo, que, en virtud de un acuerdo con Tabacanaria, adoptó, de manera sucesiva, las denominaciones Reales y Lucky, dos marcas de cigarros. Un impulso económico que demandaba su auge en el panorama deportivo español, ya con el listón de la División de Honor en mente.</p>
+
+[imagen_contenido file="1cap_pati_foto20.jpg" caption="Fase de sector del Campeonato de España Juvenil. Calvo Sotelo-Atlético de Madrid. Mayo de 1978."]
 
 [seccion_header]El acceso a la élite y su conflicto burocrático[/seccion_header]
 
@@ -361,9 +376,13 @@ function libro_get_sample_chapters() {
 
 <p>Finalmente, todos los esfuerzos quedarían desestimados. Así, la temporada 1984-85 arranca condicionada por este frente ajeno a lo deportivo pero que supuso una enorme decepción en el plano institucional, pues se contaba con que prosperaran unas alegaciones fundamentadas.</p>
 
+[imagen_contenido file="1cap_pati_foto13.jpg" caption="Partido de la época en el Obispo Frías. Tony Vázquez se dispone a ejecutar un remate."]
+
 <p>Vuelta a empezar con un equipo de nuevo llamado a aspirar a la élite y cuya principal novedad estuvo en Sergio Miguel Camarero, un prometedor juvenil de 17 años llamado, con el tiempo, a ser parte del escudo por su impronta y ascendente. El calendario regular se desarrolla con los resultados esperados hasta desembocar, con un meritorio subcampeonato del grupo C, en la fase de ascenso que acogió Mallorca a mitad de marzo de 1985. Ya sería, felizmente, el intento definitivo. Los rivales que le tocaron en suerte esta vez fueron, por este orden, el Renfe de Lérida, el Son Amar de Mallorca, el Jovellanos de Gijón, el José María Pereda de Santander y, ya en la quinta ronda, el Orient Puerto de Málaga.</p>
 
 <p>No le fueron bien las cosas a los muchachos de Nuez en tierras baleares, pues concluyeron la liguilla en una cuarta plaza que no daba derecho a subir, ya que solo ascendían los tres primeros... Pero dos meses después, en concreto el 17 de mayo, la Comisión Ejecutiva de la Federación Española presidida por Feliciano Mayoral, aprobaba la propuesta de la Asociación de Clubes de ampliar a doce los componentes de la máxima categoría. Curiosidades del destino, el mismo colectivo que vetó al Reales en 1984 le dio vía libre un año después. Tal y como se anunció, el Lucky Calvo Sotelo competiría en el grupo par junto al Sanitas, Recuerdo, Biodrink Hispano Francés, Vigo Foqué y Orient Puerto de Málaga.</p>
+
+[imagen_contenido file="1cap_pati_foto28.jpg" caption="Primeros tiempos del histórico Sergio Miguel Camarero en el Calvo Sotelo. En la imagen aparece el sexto por la derecha en el viaje a Mallorca de 1985 para disputar la fase de ascenso a la División de Honor."]
 
 [seccion_header]La cronología[/seccion_header]
 
@@ -382,6 +401,16 @@ function libro_get_sample_chapters() {
 </div>
 '),
     array('title' => 'Felipe Nuez', 'numero' => '', 'order' => 14, 'show_marker' => false, 'parent_ref' => 'cap01',
+        'hero' => array(
+            'image' => libro_img('1cap_pati_foto21.jpg'),
+            'overlay' => 'rgba(0,0,0,0.35)',
+            'icon' => 'none',
+            'alignment' => 'center',
+            'vertical' => 'center',
+            'height' => '500px',
+            'title_lines' => array(libro_hero_line('FELIPE', 'hsl(220 50% 12%)', 'hsl(45 100% 50%)', 'black'), libro_hero_line('NUEZ', 'hsl(220 50% 12%)', 'hsl(45 100% 50%)', 'black'), libro_hero_line('1956–2024', 'hsl(220 50% 12%)', 'hsl(45 100% 50%)', 'black')),
+            'border_color' => 'hsl(45 100% 50%)',
+        ),
         'content' => '
 [capitular]Felipe Nuez (Moya, 1956-Las Palmas de Gran Canaria, 2024) fue la figura fundamental y maestra en la vida del club. Presente desde el mismo inicio de la actividad escolar que se dedicó al voleibol con especial ahínco, llegó como profesor en prácticas al colegio Calvo Sotelo en 1973 sin saber que, junto a otros precursores, iniciaría una historia de superación y éxitos que todavía perdura y que fue, también, orgullo del deporte canario. Su pasión por la disciplina que le dio fama y prestigio vino por consejo de José Antonio Giráldez, quien fue uno de sus maestros más respetados. "Como todos los chicos de la época, empecé en el fútbol. Pero Giráldez me dijo que me veía condiciones mejores para el voleibol y le hice caso. Lo disfruté más en la faceta de entrenador, aunque hice alguna vez de árbitro y asumí otras responsabilidades. Como jugador no destacaba especialmente en nada y supe darme cuenta para volcarme en lo que siempre me gustó", indicó.[/capitular]
 
@@ -389,9 +418,13 @@ function libro_get_sample_chapters() {
 
 <p>Porque, como bien resaltaba, el programa de actividades extraescolares contemplaba otras modalidades como baloncesto o lucha canaria... "Pero el voleibol acabó llevándose toda la atención por el nivel de preparación, organización y crecimiento que fuimos teniendo desde los inicios, aunque ya con una importante base heredada por el trabajo de Francisco Rodríguez, quien acabaría siendo destinado a Arinaga pero que, a finales de los sesenta y comienzos de los setenta, sembró una semilla muy valiosa a la que se dio continuidad".</p>
 
+[imagen_contenido file="1cap_pati_foto17.jpg" caption="18 de febrero de 1973. Felipe Nuez aparece al fondo de la imagen, junto al poste de la red, realizando labores de árbitro, en un partido disputado por el equipo juvenil femenino del Colegio Nacional Calvo Sotelo frente al Instituto Isabel de España en la cancha Eliseo Ojeda. (Foto cortesía de Miriam Quiroga)."]
+
 [cita_editorial author="Felipe Nuez"]Fui autodidacta. Obtuve el título de entrenador nacional con 20 años y, en 1984, el de técnico internacional. En esos años de los comienzos, la única manera de ampliar conocimientos en el voleibol era explorando métodos de trabajo en otros países, como Japón, que era una potencia inalcanzable por su nivel de desarrollo.[/cita_editorial]
 
 <p>"Y cada vez que podía viajar, ya fuera con el equipo o en los cursos formativos, pasaba por la librería deportiva Esteban Sanz de Madrid y me compraba unos tomos fantásticos que solo podían encontrarse allí. Y de vez en cuando conseguía las cintas de vídeo super-8 para empaparme de lo que se hacía en otros países. Uno de mis ejercicios que llamó más la atención, el de agresividad, consistente en dar balonazos a un jugador que se cubre la cara y sus partes para que se acostumbre al impacto del balón, lo saqué de lo que se hacía en Japón. Siempre entendí el deporte de manera perfeccionista y ganadora. Entrenara a cadetes, juveniles o séniors. El trabajo, el compromiso y el sacrificio eran para mí innegociables. De lo contrario, prefería quedarme en mi casa", dijo.</p>
+
+[imagen_contenido file="1cap_pati_foto16.jpg" caption="Año 1976. Imagen del equipo del Calvo Sotelo que se proclamó campeón del I Trofeo Armería Perojo. Felipe Nuez aparece de pie, el cuarto por la izquierda, flanqueado por Juan el Zurdo y Alfredo Padrón. (Foto cortesía de Miriam Quiroga)."]
 
 <p>Y así lo cumplió. Sus pupilos de entonces recordaban una metodología que rozaba la exigencia profesional. Sesiones físicas de hasta cinco horas diarias ("veía lo que hacían otros equipos y doblaba en tiempo e intensidad mi programa de trabajo para superarlos; que corrían dos horas, pues nosotros cuatro"), ejercicios en el gimnasio antes de que amaneciera, concentraciones en Navidad o Semana Santa, prohibición de ir a la playa durante el calendario...</p>
 
@@ -415,28 +448,34 @@ function libro_get_sample_chapters() {
 
 <p>"La entrada de Juan Ruiz en el club, ya entonces con denominaciones de patrocinadores como Reales, Lucky, Guaguas, luego Constructora para de nuevo ser el Guaguas de toda la vida, supuso un paso a la modernidad. Desde el primer momento, no hubo imposibles para él. Fichó de una tacada a Sánchez Jover o Venancio Costa y dejó apalabrados, ya para el año siguiente, a Klos o Golec, figuras mundiales. Lo que se le metía en la cabeza lo conseguía. Ya no hablo de patrocinadores. Nos llegaron a multar por exceso de publicidad estática en el pabellón. Había un límite y se sobrepasó con la cantidad de anunciantes que consiguió... Era todo surrealista en el buen sentido de la palabra".</p>
 
+[imagen_contenido file="1cap_pati_foto11.png" caption="La recordada pegatina que se repartió a los aficionados del Calvo Sotelo."]
+
 [seccion_header]La cronología[/seccion_header]
 
 <div class="timeline-container">
-<div class="timeline-event"><span class="timeline-year">1975</span><div class="timeline-content"><strong>La selección cadete</strong> — "Nuestra intención con la selección cadete de Las Palmas es continuar con ellos para recoger el fruto de nuestra labor dentro de unos 3 o 4 años y poder presentar un gran equipo que destaque en la Liga Nacional". <em>(El Eco de Canarias, 16 de octubre de 1975)</em>.</div></div>
-<div class="timeline-event"><span class="timeline-year">1976</span><div class="timeline-content"><strong>Un primer diagnóstico</strong> — "El futuro de nuestro voleibol lo veo, según las últimas competiciones que he visto de las categorías infantil, cadete y juvenil, muy negro, debido a que se le da poca importancia a la preparación de las categorías de base y, en cambio, se preocupan mucho por su equipo representativo en categoría absoluta". <em>(El Eco de Canarias, 12 de junio de 1976)</em>.</div></div>
-<div class="timeline-event"><span class="timeline-year">1976</span><div class="timeline-content"><strong>La estructura primigenia</strong> — "Nuestras plantillas absolutas y juveniles entrenan los lunes, miércoles y viernes, con doble sesión el miércoles. La preparación física la realizamos en el Gimnasio Falla y la técnica en nuestra cancha Calvo Sotelo. Actualmente, solo hay dos técnicos, que son insuficientes, si tenemos en cuenta el número de equipos". <em>(La Provincia, 18 de noviembre de 1976)</em>.</div></div>
-<div class="timeline-event"><span class="timeline-year">1978</span><div class="timeline-content"><strong>El sueño emergente de la Primera</strong> — "A nivel nacional, estamos entre los dos primeros. Si no fuera por la lejanía, hay algunos jugadores que en la selección española no desentonarían lo más mínimo. Muchos técnicos me han dicho que el Calvo Sotelo si sigue su trayectoria subirá a Primera". <em>(El Eco de Canarias, 18 de febrero de 1978)</em>.</div></div>
-<div class="timeline-event"><span class="timeline-year">1978</span><div class="timeline-content"><strong>Naturaleza del proyecto y una afición única</strong> — "Somos un club de voleibol cuyo único fin es el intentar llegar a conseguir los objetivos máximos del deporte, así como la formación integral del deportista dentro de la faceta de aficionados. En ningún otro lado de la geografía hispana he tenido ocasión de ver algo igual en cuanto a afición. La nuestra es muy numerosa, pero, además, entendida y sin fanatismos". <em>(La Provincia, 18 de febrero de 1978)</em>.</div></div>
-<div class="timeline-event"><span class="timeline-year">1979</span><div class="timeline-content"><strong>Sin límites a la hora de progresar</strong> — "La directiva me ha dicho que lleve al equipo hasta donde pueda rendir, y no me han puesto trabas de ninguna especie económica. El único fichaje procedente del exterior es el gaditano Vélez, que llega del Avante". <em>(Diario de Las Palmas, 30 de agosto de 1979)</em>.</div></div>
-<div class="timeline-event"><span class="timeline-year">1980</span><div class="timeline-content"><strong>Seguridad en el éxito</strong> — "El Calvo Sotelo tiene una excelente plantilla como para colocarse entre los dos primeros puestos de ambas series y ascender a la Primera División. Si no ocurre una desgracia, conseguiremos el ascenso". <em>(Diario de Las Palmas, 7 de marzo de 1980)</em>.</div></div>
-<div class="timeline-event"><span class="timeline-year">1980</span><div class="timeline-content"><strong>Afán innegociable de superación</strong> — "Nuestra meta, por supuesto, es superar la campaña anterior, incluso mejorarla. Las dificultades son los pocos jugadores de la temporada anterior y los varios juveniles que quiero adaptar al primer equipo". <em>(El Eco de Canarias, 17 de agosto de 1980)</em>.</div></div>
-<div class="timeline-event"><span class="timeline-year">1983</span><div class="timeline-content"><strong>Al rescate</strong> — "Mi vuelta al equipo de Segunda División, tras la dimisión de Fidel Morales, es provisional. Para estar a gusto me gustaría estar con infantiles futuribles y con todos los medios disponibles para hacer una buena labor". <em>(Canarias7, 10 de marzo de 1983)</em>.</div></div>
-<div class="timeline-event"><span class="timeline-year">1985</span><div class="timeline-content"><strong>Cantera, cantera y cantera</strong> — "El tiempo ha sido el verdadero juez. Se nos tachaba de que nos nutríamos poco de la cantera propia. El 80% del primer equipo ha sido formado en nuestros filiales. Estoy plenamente convencido de que, de subir de categoría, y trayendo uno o dos jugadores, con el futuro de los nuestros, podemos llegar a metas antes insospechadas en nuestro voleibol". <em>(Canarias7, 1 de marzo de 1985)</em>.</div></div>
-<div class="timeline-event"><span class="timeline-year">1985</span><div class="timeline-content"><strong>La profesionalización necesaria y la predicción sobre Camarero</strong> — "Los equipos que no se profesionalicen o semiprofesionalicen prácticamente no tienen nada que hacer. Nosotros confiamos en que con la incorporación de Ortiz y Martinovic, más la aportación de jugadores de la cantera, como es el caso de Sergio Camarero, pese a sus 17 años sin duda el mejor del Archipiélago, el éxito está garantizado". <em>(La Provincia, 15 de junio de 1985)</em>.</div></div>
-<div class="timeline-event"><span class="timeline-year">1985</span><div class="timeline-content"><strong>Un adiós que no lo fue</strong> — "A principios de junio dejé el club por no estar de acuerdo con las directrices que se estaban llevando a cabo. A partir de la segunda quincena de julio mantuve unas conversaciones con el presidente del club y le expuse mi esquema de trabajo deportivo, con unos presupuestos mínimos para la ejecución de un plan a ocho años". <em>(Diario de Las Palmas, 15 de agosto de 1985)</em>.</div></div>
-<div class="timeline-event"><span class="timeline-year">1988</span><div class="timeline-content"><strong>El subcampeonato más dulce</strong> — "Este subcampeonato de Copa del Rey sabe a mucho a pesar de que hay personas que piensan que pudimos dar la sorpresa en la final y ganarle al todopoderoso e invencible CV Palma. Quiero felicitar a la junta directiva, jugadores, técnicos de la cantera, socios, aficionados... A todos los que se han desvivido para que esto sea una realidad". <em>(Canarias7, 26 de enero de 1988)</em>.</div></div>
-<div class="timeline-event"><span class="timeline-year">1988</span><div class="timeline-content"><strong>El mérito del colectivo</strong> — "La trayectoria ascendente del Guaguas Las Palmas no se logra con un entrenador que no conoce profundamente este deporte. Sobre Sánchez Jover diré que es un gran líder, sin lugar a dudas, el mejor jugador de España". <em>(Canarias7, 8 de agosto de 1988)</em>.</div></div>
+<div class="timeline-event"><span class="timeline-year">1975</span><div class="timeline-content"><strong>La selección cadete</strong>“Nuestra intención con la selección cadete de Las Palmas es continuar con ellos para recoger el fruto de nuestra labor dentro de unos 3 o 4 años y poder presentar un gran equipo que destaque en la Liga Nacional”. <em>(El Eco de Canarias, 16 de octubre de 1975)</em>.</div></div>
+<div class="timeline-event"><span class="timeline-year">1976</span><div class="timeline-content"><strong>Un primer diagnóstico</strong>“El futuro de nuestro voleibol lo veo, según las últimas competiciones que he visto de las categorías infantil, cadete y juvenil, muy negro, debido a que se le da poca importancia a la preparación de las categorías de base y, en cambio, se preocupan mucho por su equipo representativo en categoría absoluta”. <em>(El Eco de Canarias, 12 de junio de 1976)</em>.</div></div>
+<div class="timeline-event"><span class="timeline-year">1976</span><div class="timeline-content"><strong>La estructura primigenia</strong>“Nuestras plantillas absolutas y juveniles entrenan los lunes, miércoles y viernes, con doble sesión el miércoles. La preparación física la realizamos en el Gimnasio Falla y la técnica en nuestra cancha Calvo Sotelo. Actualmente, solo hay dos técnicos, que son insuficientes, si tenemos en cuenta el número de equipos”. <em>(La Provincia, 18 de noviembre de 1976)</em>.</div></div>
+<div class="timeline-event"><span class="timeline-year">1978</span><div class="timeline-content"><strong>El sueño emergente de la Primera</strong>“A nivel nacional, estamos entre los dos primeros. Si no fuera por la lejanía, hay algunos jugadores que en la selección española no desentonarían lo más mínimo. Muchos técnicos me han dicho que el Calvo Sotelo si sigue su trayectoria subirá a Primera”. <em>(El Eco de Canarias, 18 de febrero de 1978)</em>.</div></div>
+<div class="timeline-event"><span class="timeline-year">1978</span><div class="timeline-content"><strong>Naturaleza del proyecto y una afición única</strong>“Somos un club de voleibol cuyo único fin es el intentar llegar a conseguir los objetivos máximos del deporte, así como la formación integral del deportista dentro de la faceta de aficionados. En ningún otro lado de la geografía hispana he tenido ocasión de ver algo igual en cuanto a afición. La nuestra es muy numerosa, pero, además, entendida y sin fanatismos”. <em>(La Provincia, 18 de febrero de 1978)</em>.</div></div>
+<div class="timeline-event"><span class="timeline-year">1979</span><div class="timeline-content"><strong>Sin límites a la hora de progresar</strong>“La directiva me ha dicho que lleve al equipo hasta donde pueda rendir, y no me han puesto trabas de ninguna especie económica. El único fichaje procedente del exterior es el gaditano Vélez, que llega del Avante”. <em>(Diario de Las Palmas, 30 de agosto de 1979)</em>.</div></div>
+<div class="timeline-event"><span class="timeline-year">1980</span><div class="timeline-content"><strong>Seguridad en el éxito</strong>“El Calvo Sotelo tiene una excelente plantilla como para colocarse entre los dos primeros puestos de ambas series y ascender a la Primera División. Si no ocurre una desgracia, conseguiremos el ascenso”. <em>(Diario de Las Palmas, 7 de marzo de 1980)</em>.</div></div>
+<div class="timeline-event"><span class="timeline-year">1980</span><div class="timeline-content"><strong>Afán innegociable de superación</strong>“Nuestra meta, por supuesto, es superar la campaña anterior, incluso mejorarla. Las dificultades son los pocos jugadores de la temporada anterior y los varios juveniles que quiero adaptar al primer equipo”. <em>(El Eco de Canarias, 17 de agosto de 1980)</em>.</div></div>
+<div class="timeline-event"><span class="timeline-year">1983</span><div class="timeline-content"><strong>Al rescate</strong>“Mi vuelta al equipo de Segunda División, tras la dimisión de Fidel Morales, es provisional. Para estar a gusto me gustaría estar con infantiles futuribles y con todos los medios disponibles para hacer una buena labor”. <em>(Canarias7, 10 de marzo de 1983)</em>.</div></div>
+<div class="timeline-event"><span class="timeline-year">1985</span><div class="timeline-content"><strong>Cantera, cantera y cantera</strong>“El tiempo ha sido el verdadero juez. Se nos tachaba de que nos nutríamos poco de la cantera propia. El 80% del primer equipo ha sido formado en nuestros filiales. Estoy plenamente convencido de que, de subir de categoría, y trayendo uno o dos jugadores, con el futuro de los nuestros, podemos llegar a metas antes insospechadas en nuestro voleibol”. <em>(Canarias7, 1 de marzo de 1985)</em>.</div></div>
+<div class="timeline-event"><span class="timeline-year">1985</span><div class="timeline-content"><strong>La profesionalización necesaria y la predicción sobre Camarero</strong>“Los equipos que no se profesionalicen o semiprofesionalicen prácticamente no tienen nada que hacer. Nosotros confiamos en que con la incorporación de Ortiz y Martinovic, más la aportación de jugadores de la cantera, como es el caso de Sergio Camarero, pese a sus 17 años sin duda el mejor del Archipiélago, el éxito está garantizado”. <em>(La Provincia, 15 de junio de 1985)</em>.</div></div>
+<div class="timeline-event"><span class="timeline-year">1985</span><div class="timeline-content"><strong>Un adiós que no lo fue</strong>“A principios de junio dejé el club por no estar de acuerdo con las directrices que se estaban llevando a cabo. A partir de la segunda quincena de julio mantuve unas conversaciones con el presidente del club y le expuse mi esquema de trabajo deportivo, con unos presupuestos mínimos para la ejecución de un plan a ocho años”. <em>(Diario de Las Palmas, 15 de agosto de 1985)</em>.</div></div>
+<div class="timeline-event"><span class="timeline-year">1988</span><div class="timeline-content"><strong>El subcampeonato más dulce</strong>“Este subcampeonato de Copa del Rey sabe a mucho a pesar de que hay personas que piensan que pudimos dar la sorpresa en la final y ganarle al todopoderoso e invencible CV Palma. Quiero felicitar a la junta directiva, jugadores, técnicos de la cantera, socios, aficionados... A todos los que se han desvivido para que esto sea una realidad”. <em>(Canarias7, 26 de enero de 1988)</em>.</div></div>
+<div class="timeline-event"><span class="timeline-year">1988</span><div class="timeline-content"><strong>El mérito del colectivo</strong>“La trayectoria ascendente del Guaguas Las Palmas no se logra con un entrenador que no conoce profundamente este deporte. Sobre Sánchez Jover diré que es un gran líder, sin lugar a dudas, el mejor jugador de España”. <em>(Canarias7, 8 de agosto de 1988)</em>.</div></div>
 </div>
 '),
     array('title' => 'José Miguel Santana', 'numero' => '', 'order' => 15, 'show_marker' => false, 'parent_ref' => 'cap01',
         'content' => '
+[imagen_contenido file="1cap_pati_foto29.jpg" caption="Almuerzo con varios compañeros de profesión periodística y con miembros del Guaguas como Felipe Nuez, entre otros."]
+
 [capitular]Descubridor de Sergio Miguel Camarero "por un tirón de orejas" ("siendo un niño me robaba los balones que caían fuera de la cancha y terminé recomendándole que se pusiera a jugar, como así haría y no le fue nada mal"), fue testigo y partícipe de un fichaje de leyenda como resultó ser Paco Sánchez Jover, a mitad de los ochenta y en un hotel del Puerto de Santa María durante un Preeuropeo ("convencí al recepcionista para estar en la habitación de al lado para que, cuando hubo que negociar, pudiese colarse por el balcón y que nadie lo viera") y actor impulsor, desde la tribuna de prensa, del fortalecimiento del proyecto justo en la etapa anterior a la gloria de los títulos. Pero antes, mucho antes, José Miguel Santana (Las Palmas de Gran Canaria, 1958) también se significó por jugar un papel activo en los inicios del Calvo Sotelo, entusiasta como siempre fue del voleibol tras pasar por las aulas del Alonso Quesada, en las que era deporte predominante y predilecto. Fichado del Santa Teresa al término de la temporada 1976-77, donde ejercía como entrenador y tras una llamada de Felipe Nuez para que se hiciera cargo del juvenil B masculino y femenino, Santana también hizo una contribución altruista y entusiasta que le procura un sitio privilegiado en la historia.[/capitular]
+
+[imagen_contenido file="1cap_pati_foto27.jpg" caption="Expedición del Calvo Sotelo en uno de sus viajes en los setenta."]
 
 [cita_editorial author="José Miguel Santana"]Fueron años increíbles que uno recuerda con mucha emoción. Éramos jóvenes, atrevidos, soñábamos con todo y el voleibol fue el vehículo para cumplir con esas ilusiones. Lo hicimos desde la base de un compañerismo ejemplar. Nunca me cansaré de repetir que más que un club, éramos un grupo de amigos, una familia.[/cita_editorial]
 
@@ -451,9 +490,15 @@ function libro_get_sample_chapters() {
 <p>"Fue una implicación total de todos los que formábamos parte del Calvo Sotelo, creando un vínculo especial que, en mi caso, me llevó a conocer a mi mujer o a tener amistades para toda la vida dentro de la misma disciplina del club. Nos marcó la vida porque, además nos cogió en una etapa especial, la que va de los 18-20 años en adelante", incide. Una llamada para entrar a formar parte de la redacción de Diario de Las Palmas, en 1982 y estando estudiando en Madrid, clausura su militancia en el club como miembro del organigrama y activo en todas las funciones que se le requirieran, si bien jamás dejó de "echar una mano en todo lo posible".</p>
 
 <p>"Ver cómo se alcanzó la plenitud de las Ligas y las Copas, con protagonistas que uno conoció siendo niños como Camarero, el liderazgo de Sánchez Jover, la continuidad a la obra de Felipe, que puso los pilares de todo con su sabiduría, con su trabajo... Al final dices que sí, que todo se justifica, que lo que se hizo entonces debió estar bien por lo que vino después y por lo que pervive", concluye.</p>
+
+[imagen_contenido file="1cap_pati_foto1.jpg" caption="Febrero de 1977. Fase de ascenso a Segunda División disputada en Cáceres. De pie, de izquierda a derecha, Ramón Rodríguez, Juan Carlos Rodríguez, Florencio Tejera, Alfredo Padrón, Juan el Zurdo, José Luis Alemán y Tony Vázquez. Agachados, en el mismo orden, Toni Acosta, Miguel Mendaño, José Díaz, Alfonso Déniz, Paco Santana y Pericles."]
+
+[imagen_contenido file="1cap_pati_foto14.jpg" caption="Imagen de un partido a inicios de la década de los ochenta, con remate de Tony Vázquez."]
 '),
     array('title' => 'Florencio Tejera', 'numero' => '', 'order' => 16, 'show_marker' => false, 'parent_ref' => 'cap01',
         'content' => '
+[imagen_contenido file="1cap_pati_foto19.jpg" caption="Receso en un partido con conjura de los jóvenes jugadores del Calvo Sotelo."]
+
 [capitular]Jugador fundacional del Calvo Sotelo tras la redacción de los estatutos del club y presidente "casi por accidente" en la temporada 1983-84, el testimonio de Florencio Tejera (Las Palmas de Gran Canaria, 1956) también resulta de inestimable valor para conocer la naturaleza primigenia de la entidad en sus albores ya insertada en las exigencias de la alta competición. Porque ese Calvo Sotelo al que se enroló "para poder cumplir el cupo de dos fichas séniors junto a Alfonso Déniz" que se requería ya le impactó por "su nivel de organización, ambición y desarrollo".[/capitular]
 
 <p>"Yo jugaba en el equipo de Magisterio mientras hacía la carrera y Felipe Nuez me invitó a formar parte del Calvo Sotelo por mi edad, ya que entonces había sobrepasado la categoría juvenil y le venía bien para el reglamento, que obligaba a combinar juveniles con, al menos, dos fichas de mayores, aunque yo tenía 20 años. Fue una etapa en la que disfruté del deporte, del espíritu de equipo y en la que me impliqué al máximo porque, más que un equipo, era una manera de vivir".</p>
@@ -478,6 +523,8 @@ function libro_get_sample_chapters() {
 '),
     array('title' => 'Tony Vázquez', 'numero' => '', 'order' => 17, 'show_marker' => false, 'parent_ref' => 'cap01',
         'content' => '
+[imagen_contenido file="1cap_pati_foto26.png"]
+
 [capitular]Andaluz de nacimiento (Cádiz, 1960), pero grancanario de pleno derecho ("me trajeron con tres años y esta es mi tierra"), sobre Tony Vázquez recae el privilegio de haber sido otro de los jugadores fundacionales del Calvo Sotelo. Tras sus inicios en los Salesianos ("iba para el atletismo, pero Silvestre Cabrera me dijo que tenía la altura apropiada y me metió en el voleibol"), la creación de la selección cadete de Las Palmas, a mediados de los setenta y bajo la dirección de Felipe Nuez, fue el impulso definitivo a su posterior trayectoria como receptor ("era un 4 de toda la vida, aunque acabé jugando en todas las posiciones").[/capitular]
 
 <p>Vázquez tiene muy nítidos aquellos momentos en los que tomó la decisión de enrolarse en las filas del equipo que marcaría su porvenir: "Después de terminar la experiencia en la selección cadete, en la que recuerdo que intervenimos en unos Campeonatos de España tras eliminar al Tenerife, el camino para aquellos jugadores era ir al Juventud o al Calvo Sotelo. Tenía muy buena relación con Felipe, había estado con él y no me costó decidir. Para nada me arrepiento porque todo lo que vendría después fueron tiempos muy felices, tanto dentro como fuera de la cancha".</p>
@@ -530,6 +577,8 @@ function libro_get_sample_chapters() {
 '),
     array('title' => 'Pericles', 'numero' => '', 'order' => 19, 'show_marker' => false, 'parent_ref' => 'cap01',
         'content' => '
+[imagen_contenido file="1cap_pati_foto25.jpg"]
+
 [capitular]Un pelo abundante y la barba que le daba aires intelectuales le valieron el apodo, Pericles, con el que se incrustaría, por derecho propio, en el listado de imprescindibles del Calvo Sotelo. "Me dijeron, medio en serio medio en broma, que me parecía a Pericles. No me lo tomé mal y así me quedé", admite. Pedro Román Rosario (Las Palmas de Gran Canaria, 1958) no fue uno más. Durante muchos años capitán y guía del resto, añadió a sus grandes dotes para el voleibol ("como receptor formé con Tony Vázquez una línea fabulosa en esa función") una lección de compromiso y entrega de impresión, ya que, pese a su condición de asmático, perteneció durante largo periplo al equipo y con un rendimiento ejemplar. "Salía a la cancha con mi Ventolín para poder resistir los esfuerzos. En los tiempos muertos y descansos casi prefería el fuelle que me daba el medicamento al agua. Y alguna vez me pincharon por las asfixias que me entraban. Que se lo pregunten a Alfredo Padrón, que iba para doctor, como ejerció posteriormente, y en más de una ocasión fue mi practicante en el vestuario", rememora.[/capitular]
 
 <p>Así, venciendo a una patología tan severa ("hoy en día, jugar en esas condiciones sería impensable por todos los exámenes médicos que se hacen, pero en esa época no teníamos controles de este tipo, no había tanta vigilancia para preservar la salud de los miembros de los equipos"), adquirió galones y ascendente hasta situarse en un estatus que ya siempre le correspondería. De la primera época del Calvo Sotelo no hay miembro que pase por alto la influencia ejercida por Pericles y su aura de liderazgo única.</p>
@@ -558,6 +607,8 @@ function libro_get_sample_chapters() {
 '),
     array('title' => 'José Millán', 'numero' => '', 'order' => 20, 'show_marker' => false, 'parent_ref' => 'cap01',
         'content' => '
+[imagen_contenido file="1cap_pati_foto24.jpg"]
+
 [capitular]Si la figura de Silvestre Cabrera fue de trascendencia capital para auspiciar el voleibol durante su mandato como presidente de la Federación de Las Palmas (1973-1985), no es menos relevante la influencia, también de enorme impacto, de José Millán, quien en diciembre de 1976 asumió el cargo de secretario del ente presidido por Cabrera, tomó su relevo a la conclusión de su ciclo como máximo mandatario y terminó encabezando la Federación Canaria de Voleibol hasta 2008. Más de tres décadas de contribución y entrega que le hicieron tener una atalaya privilegiada de los acontecimientos, al tiempo de otorgarle un lugar preferencial en la historia de esta disciplina.[/capitular]
 
 <p>Millán (Sevilla, 1933-Las Palmas de Gran Canaria, 2023) fue otro de los testigos que vivió, desde los inicios hasta su desarrollo, pasando por la eclosión de los títulos, la vida del Calvo Sotelo, una entidad a la que reconoció tener "mucho cariño y respeto" por la contribución que hizo en la historia del deporte en Canarias.</p>
@@ -571,6 +622,8 @@ function libro_get_sample_chapters() {
 <p>"Hay que valorar lo que hicieron, saliendo de un colegio y con muy pocos medios. Fueron superándose, nunca se rindieron ante las dificultades. Como dirigente que era en esos años, contemplé con mucha satisfacción su labor formativa, su salto al profesionalismo, los fichajes de grandes jugadores... Fue una evolución preciosa y que, pienso, hizo muy feliz a los aficionados. Irrepetible, diría yo", añadió.</p>
 
 <p>Millán tampoco obvió el valor añadido que dio codearse con los mejores de Europa, otro de los hitos del Guaguas: "Colocaron en el mapa nuestro voleibol, nuestra tierra. Fueron embajadores de España. Faltó suerte para lograr un título continental, pero su contribución fue impresionante y digna de aplauso en todos los sentidos".</p>
+
+[imagen_contenido file="1cap_pati_foto23.jpg" caption="José Millán, sentado el segundo por la derecha, durante un agasajo al Guaguas en el transcurso de la temporada 1987-88 y con motivo del celebrado subcampeonato de la Copa del Rey. Millán ocupaba, entonces, la presidencia de la Federación de Voleibol de Gran Canaria."]
 '),
     array('title' => 'Miriam Quiroga', 'numero' => '', 'order' => 21, 'show_marker' => false, 'parent_ref' => 'cap01',
         'content' => '
@@ -615,8 +668,8 @@ function libro_get_sample_chapters() {
         'show_marker' => true,
         'ref_id' => 'cap02',
         'hero' => array(
-            'image' => libro_img('hero-estatutos.jpg'),
-            'overlay' => 'rgba(0, 0, 0, 0.15)',
+            'image' => libro_img('2cap_esta_foto1.jpg'),
+            'overlay' => 'rgba(0, 0, 0, 0.55)',
             'icon' => 'custom',
             'custom_icon' => libro_img('estrella-icon.svg'),
             'custom_icon_color' => 'hsl(45 100% 50%)',
@@ -724,34 +777,25 @@ c) Examinar las liquidaciones y balances de la entidad.[/articulo]
         'show_marker' => true,
         'ref_id' => 'cap03',
         'hero' => array(
-            'image' => libro_img('hero-volleyball-match.jpg'),
-            'overlay' => 'rgba(26, 35, 126, 0.80)',
-            'icon' => 'custom',
-            'custom_icon' => $star,
-            'icon_width' => 70,
-            'icon_height' => 70,
-            'alignment' => 'right',
-            'vertical' => 'center',
-            'height' => '500px',
-            'title_lines' => array(libro_hero_line('ASÍ SE FORJÓ', '#D4AF37', '', 'black'), libro_hero_line('UNA LEYENDA', '#FFFFFF', '', 'black')),
-        ),
-        'content' => ''),
-    array('title' => 'Llegar a la élite para quedarse', 'numero' => '', 'order' => 31, 'show_marker' => false, 'parent_ref' => 'cap03',
-        'hero' => array(
-            'image' => libro_img('hero-volleyball-match.jpg'),
-            'overlay' => 'rgba(0, 0, 0, 0.15)',
+            'image' => '',
+            'overlay' => 'rgba(0,0,0,0)',
+            'background_color' => 'hsl(2 82% 30%)',
             'icon' => 'custom',
             'custom_icon' => libro_img('estrella-icon.svg'),
-            'custom_icon_color' => 'hsl(45 100% 50%)',
+            'custom_icon_color' => '#FFFFFF',
             'icon_width' => 40,
             'icon_height' => 40,
             'alignment' => 'center',
             'vertical' => 'center',
             'height' => '500px',
-            'title_lines' => array(libro_hero_line('LLEGAR A LA ÉLITE', 'hsl(220 50% 12%)', 'hsl(45 100% 50%)', 'black'), libro_hero_line('PARA QUEDARSE', 'hsl(220 50% 12%)', 'hsl(45 100% 50%)', 'black')),
-            'border_color' => 'hsl(45 100% 50%)',
+            'title_lines' => array(libro_hero_line('ASÍ SE FORJÓ', '#FFFFFF', 'hsl(2 82% 30%)', 'none'), libro_hero_line('UNA LEYENDA', '#FFFFFF', 'hsl(2 82% 30%)', 'none')),
+            'border_color' => 'hsl(2 82% 30%)',
         ),
         'content' => '
+[seccion_header color="hsl(2 82% 30%)"]I. Llegar a la élite para quedarse[/seccion_header]
+
+[imagen_contenido file="3cap_asi_foto16.jpg" caption="Guaguas de la temporada 1986-87. De pie, de izquierda a derecha, Pericles, Jorge Ramón, Camarero, Óscar Campos, Martinovic, Macías y Juan Ruiz. Agachados, en el mismo orden, Juanma Martín, Batista, David Rodríguez, Domingo, Carlos y Felipe."]
+
 [capitular]La temporada 1985-86 fue la del estreno del Calvo Sotelo en la División de Honor y se afrontó bajo las mismas líneas maestras que habían marcado su trayecto, desde las consideraciones de Felipe Nuez, aunque con la importante novedad del fichaje del yugoslavo Ivo Martinovic, primer extranjero en la historia del club que, con 30 años y amplio bagaje profesional e internacional, venía a darle a la plantilla la cuota de veteranía que se requería para competir a escala máxima. Jorge Ramón, Juanma Martín, Alfredo Padrón, Miguel Mendaño, Óscar Campos, Francisco Reyes, Sergio Miguel Camarero, Martín Medina, el mencionado Ivo Martinovic, Enrique González Silva y José Ramón, más los juveniles Javier Ulacia, Alejandro Menéndez, Roberto Padrón y Alejandro Gil eran los componentes de aquel histórico equipo que se adentró entre los grandes y lo hizo con relativo éxito.[/capitular]
 
 <p>Pese a los condicionantes económicos derivados de no tener un patrocinador (tras dos años con las denominaciones Reales y Lucky, relacionadas con el tabaco, Tabacanarias no renovó su compromiso), lo que supuso un hándicap sustancial, se logró eludir con solvencia el riesgo de descenso y hasta quedar encuadrado en la entonces denominada Serie A1, en la que competían los primeros clasificados de cada grupo. Martinovic, elegido capitán en su primera campaña, y un Camarero que ya demostraba que iba para jugador de época, fueron los sostenes de un grupo que rindió por encima de lo esperado. Para el recuerdo queda aquel 2 de noviembre de 1985, fecha del debut del Calvo Sotelo en la División de Honor con triunfo en Cáceres ante el Licenciados Reunidos por 0-3. Jorge Ramón, Juanma Martín, Campos, Camarero, Martinovic y González fueron los jugadores alineados en el inicio de un trayecto que iba a conducir a la gloria.</p>
@@ -762,43 +806,35 @@ c) Examinar las liquidaciones y balances de la entidad.[/articulo]
 
 [cita_editorial author="Paco García Caridad"]Fue un ejercicio de responsabilidad con la sociedad canaria lanzar desde las ondas un mensaje de auxilio en favor del Calvo Sotelo. No podíamos dejar que un proyecto de cantera tan serio y valioso se viniera abajo. Más que un club, el Calvo Sotelo era un modelo educativo, un espejo en el que mirarse por sus orígenes y crecimiento. Defender al Calvo Sotelo y su supervivencia era un acto de justicia social, un alegato por el patrimonio deportivo del momento.[/cita_editorial]
 
+[imagen_contenido file="3cap_asi_foto17.jpg" caption="Temporada 1991-92. De pie, de izquierda a derecha, Enrique Edelstein (primer entrenador), Esteban Paganini (técnico ayudante), Jorge Ramón, Antonio Miralles, Waclaw Golec, Sandeep Sharma, Lars Nilsson, Marcelo Giovannacci (segundo entrenador), Ismael Chinea (delegado). De rodilla, en el mismo orden, David Rodríguez, Emilio Agustí, Pablo Bautista, Javi Dios, Sergio Miguel Camarero y Juanma Martín."]
+
 <p>Siguen los movimientos en ese periodo, ya con el equipo iniciando su segundo año en la División de Honor: el 23 de octubre de 1986, Gustavo Rodríguez, coordinador de la junta gestora, informa de que "hay una nefasta gestión de la directiva anterior". Ismael Chinea, Fidel Morales, Felipe Nuez, Juan M. Martín e Ivo Martinovic son los miembros del equipo de trabajo designado para pilotar el cambio necesario en la gestión y el gobierno de la institución. Aunque no se menciona expresamente, Juan Ruiz ya está integrado en el mismo, como bien se certificaría días después anunciando, de su mano, la llegada del ansiado patrocinador.</p>
 
 <p>Y la noticia más esperada desde hacía meses, la de la aparición de un patrocinador que otorgara la estabilidad perdida y permitiera cuadrar números, se anunció el 5 de noviembre de ese mismo 1986. Juan Ruiz, que ya ejerce como miembro visible de la junta gestora del Club Voleibol Las Palmas, confirma que, "después de varias conversaciones con Juan Rodríguez Doreste", alcalde de Las Palmas de Gran Canaria, Guaguas Municipales patrocinará a la entidad, que, desde entonces pasará a denominarse Guaguas Las Palmas. Su primer partido con este nombre lo disputó el 15 de noviembre ante el Cisneros y en Tenerife. La consecución de este patrocinador, con el que el club ganaría títulos y adquiriría fama internacional, es el primer golpe de efecto de Ruiz en la historia de su mandato.</p>
 
 <p>En el plano deportivo, el equipo, con las grandes novedades del regreso de Pericles y Batista, mantiene su buen tono. El 19 de enero de 1987 queda tercero en la Copa del Rey celebrada en Sa Pobla, Mallorca, tras imponerse por 3-1 al Cisneros de Tenerife, consiguiendo, de esta manera, su clasificación para la Copa Confederación. Jorge Ramón, Ivo Martinovic, Sergio Camarero, Juanma Martín, Óscar Campos y Eduardo Macías integraron un equipo inicial al que luego se sumó Alejandro Gil. El quinto puesto logrado, posteriormente, en la Liga redondeó una campaña de sobresaliente considerando la naturaleza advenediza del Guaguas.</p>
-'),
-    array('title' => 'Fichajes de impacto y hegemonía', 'numero' => '', 'order' => 32, 'show_marker' => false, 'parent_ref' => 'cap03',
-        'hero' => array(
-            'image' => libro_img('hero-volleyball-match.jpg'),
-            'overlay' => 'rgba(0, 0, 0, 0.15)',
-            'icon' => 'custom',
-            'custom_icon' => libro_img('estrella-icon.svg'),
-            'custom_icon_color' => 'hsl(45 100% 50%)',
-            'icon_width' => 40,
-            'icon_height' => 40,
-            'alignment' => 'center',
-            'vertical' => 'center',
-            'height' => '500px',
-            'title_lines' => array(libro_hero_line('FICHAJES DE IMPACTO', 'hsl(220 50% 12%)', 'hsl(45 100% 50%)', 'black'), libro_hero_line('Y HEGEMONÍA', 'hsl(220 50% 12%)', 'hsl(45 100% 50%)', 'black')),
-            'border_color' => 'hsl(45 100% 50%)',
-        ),
-        'content' => '
+
+[seccion_header color="hsl(2 82% 30%)"]II. Fichajes de impacto y hegemonía[/seccion_header]
+
 [capitular]El verano de 1987, ya con dos años de experiencia en la élite, marca el escalón cualitativo que instala al Guaguas en la excelencia. El fichaje de Paco Sánchez Jover, figura indiscutible del voleibol nacional, fue una auténtica jugada maestra de Juan Ruiz al captar al jugador del momento. Por si fuera poco, con Sánchez Jover llegan su hermano Jesús, Venancio Costa, Antonio Miralles. Todos darían excelentes réditos al escudo. Y Paco vino para no irse jamás y liderar los años dorados que ya estaban incubándose.[/capitular]
 
 <p>Los resultados se disparan y son un aviso al resto de que Gran Canaria exhibe proyecto ganador. Además del bautizo europeo frente al Knack de Bélgica, en una eliminatoria saldada con derrota pero cuya importancia trascendió al resultado por su valor simbólico, los subcampeonatos de Liga y Copa del Rey suponen la antesala de los éxitos que ya eran inminentes. El relevo en el banquillo de Felipe Nuez en 1988, el técnico de toda la vida y que tras más de quince años ininterrumpidos en su cargo se despedía de la entidad que vio nacer, fue la nota discordante en la crecida colectiva que cogió una velocidad imparable en esta campaña.</p>
 
 <p>El aterrizaje de los mexicanos Sergio Hernández, para el banquillo, y Chava González, así como la apuesta por el canadiense Brad Willock terminan por ensamblar un Guaguas ya de valores consolidados de los años anteriores y que, como fruta madura, inaugura su palmarés con la Copa del Rey conquistada el 9 de abril de 1989 ante el Palma en el Centro Insular.</p>
 
+[imagen_contenido file="3cap_asi_foto15.jpg" caption="Camarero y Juanma Martín, en el festejo de un título."]
+
 <p>El recinto capitalino ya era la nueva casa del club después de haber estado desde siempre, tras su ingreso en las competiciones estatales, como anfitrión en el García San Román. La mudanza a la nueva instalación generó ciertas controversias, pues había dudas de que se ajustara a las necesidades de un club todavía con una afición fiel pero minoritaria. Los éxitos trajeron las muchedumbres desde que un 22 de octubre de 1988 se disputara el primer partido del Guaguas en el CID con motivo de su inauguración. Fue en el Torneo Internacional Isla de Gran Canaria, integrando cartel con el Seven Up Santa Catalina, Cisneros de Tenerife y Slavia de Sofía. El Guaguas ganó 3-0 al Seven Up.</p>
 
 <p>Esa Copa, que abría las vitrinas del Guaguas, no hizo más que multiplicar las ambiciones de Juan Ruiz, quien une a su elenco de estrellas, en el verano de 1989, a los internacionales polacos Ireneusz Klos y Waclaw Golec, llamados a ser ídolos y figuras diferenciales. Esa primera Liga que se resistía sería una realidad el 1 de mayo de 1990 con la inolvidable final ante el Bomberos de Barcelona, bajo la denominación comercial de Constructora Atlántica Canaria, y con Sánchez Jover ejerciendo de jugador-entrenador y luego de ocupar la vacante en el banquillo que dejó a mitad del calendario el americano Robert Croteau.</p>
 
-[resaltado]A esa primera Liga le sucederían otras cuatro consecutivas hasta 1994, estableciendo una hegemonía nacional inédita en los representativos canarios y que, además, estuvo aderezada con tres dobletes por las Copas del Rey también conquistadas en los años 1991, 1992 y 1993.[/resaltado]
+<p>A esa primera Liga le sucederían otras cuatro consecutivas hasta 1994, estableciendo una hegemonía nacional inédita en los representativos canarios y que, además, estuvo aderezada con tres dobletes por las Copas del Rey también conquistadas en los años 1991, 1992 y 1993.</p>
 
 <p>Son campañas en la Copa de Europa, con cruces ante los mejores del continente, llenos a reventar en el Centro Insular, máximo esplendor dentro y fuera de España y un desfile de nombres que se hicieron un sitio en el corazón de todos los aficionados. A los ya conocidos de Camarero, Juanma Martín, Jorge Ramón, Sánchez Jover, Miralles, Costa, Klos o Golec, se unieron los Sharma, Falasca o Wiernes.</p>
 
 <p>Particular mención merecen Sánchez Jover y Juanma Martín, consagrados al simultanear sus labores de jugador con las de técnicos y de igual fertilidad para los éxitos de la entidad, poniendo, también, el foco en el cuidado de la cantera. Ya entonces, en ese inicio de la década de los noventa, se reclutan por los colegios (y hasta por la calle, a golpe de intuición) a jóvenes de la tierra para que garanticen el relevo generacional y revaliden el espíritu primigenio del Calvo Sotelo, creado en torno al jugador isleño. Antonio Sánchez es uno de los canteranos criados en esta fase y que tendría larga continuidad en los Alexis Valido, Juan Carlos Vega, los hermanos Cabrera, Raúl Dávila o Níchel Gómez, entre otros.</p>
+
+[imagen_contenido file="3cap_asi_foto10.jpg" caption="Los técnicos argentinos Marcelo Giovanacci y Quique Edelstein, figuras de importancia a comienzos de los noventa por los títulos logrados bajo sus ciclos."]
 
 <p>Fueron doce los títulos que se atraparon desde 1989 a 1997, etapa de concentración luminosa, y que granjeó la leyenda de un Guaguas que, por momentos, llevó la bandera del deporte en Gran Canaria, al coincidir sus hitos con momentos menos pujantes de UD Las Palmas o CB Gran Canaria, los símbolos más tradicionales de las disciplinas por equipos de la isla.</p>
 
@@ -807,49 +843,25 @@ c) Examinar las liquidaciones y balances de la entidad.[/articulo]
 <p>Los llenos habituales en el Centro Insular, a la par que las más que frecuentes retransmisiones en directo por la televisión, convirtieron las vallas publicitarias en soportes codiciados y que redundaron, para bien, en los dineros del Guaguas. Eso permitió mantener una base de primera categoría cada temporada y unir, cuando procedía, a refuerzos de contrastada calidad.</p>
 
 <p>La creación de una cultura ganadora, que convertía en noticia y crisis cada título que se escapaba, habla a las claras del listón en el que se movió el club, siempre orientado a construir plantillas que aspiraran a todo y sin eludir la presión que aparejaba tener el balance de galardones que se exhibía.</p>
-'),
-    array('title' => 'La salida de Juan Ruiz, principio del fin', 'numero' => '', 'order' => 33, 'show_marker' => false, 'parent_ref' => 'cap03',
-        'hero' => array(
-            'image' => libro_img('hero-volleyball-match.jpg'),
-            'overlay' => 'rgba(0, 0, 0, 0.15)',
-            'icon' => 'custom',
-            'custom_icon' => libro_img('estrella-icon.svg'),
-            'custom_icon_color' => 'hsl(45 100% 50%)',
-            'icon_width' => 40,
-            'icon_height' => 40,
-            'alignment' => 'center',
-            'vertical' => 'center',
-            'height' => '500px',
-            'title_lines' => array(libro_hero_line('LA SALIDA DE', 'hsl(220 50% 12%)', 'hsl(45 100% 50%)', 'black'), libro_hero_line('JUAN RUIZ', 'hsl(220 50% 12%)', 'hsl(45 100% 50%)', 'black')),
-            'border_color' => 'hsl(45 100% 50%)',
-        ),
-        'content' => '
+
+[seccion_header color="hsl(2 82% 30%)"]III. La salida de Juan Ruiz, principio del fin[/seccion_header]
+
 [capitular]Tras doce años en la presidencia y algún amago de abandono prematuro, tal y como reconoció a cuenta de críticas que consideraba desproporcionadas, Juan Ruiz quiso respetar lo reflejado en los estatutos y ceñirse a lo establecido con la máxima durabilidad de su cargo. A la conclusión de la temporada 1997-98, saldada con la Supercopa de España, dio el relevo en la cúpula a Mario Hugendubel. Fue algo más que un traspaso de poderes para alguien que dedicó su vida al servicio de un club que heredó en ruinas y legó en una posición de privilegio.[/capitular]
 
 <p>Títulos (doce en total), cantera (ya con internacionales absolutos salidos de las categorías inferiores), superávit, crédito en entidades privadas y credibilidad a ojos de los organismos públicos. Un Guaguas respetado en España y en Europa (con participaciones en competiciones continentales de manera ininterrumpida desde 1987) y con las bases para continuar su expansión, dada la estructura existente y el nivel de profesionalización instaurado. Fueron muchas las voces que trataron de disuadir a Juan Ruiz del paso que iba a dar, quizás intuyendo que sin él nada sería igual, como así ocurriría.</p>
+
+[imagen_contenido file="3cap_asi_foto1.jpg" caption="Ofrenda de la Liga 1993-94 a la Virgen del Pino. Sánchez Jover, Jorge Ramón, Milanov, Golec, Falasca, Colom, Antonio Sánchez, Valido, Campos, Juan Ruiz y Costa."]
+
+[imagen_contenido file="3cap_asi_foto12.jpg" caption="Alegría con los éxitos que se iban cosechando a finales de los ochenta."]
 
 [cita_editorial author="Paco Sánchez Jover"]Todo cambió y para peor.[/cita_editorial]
 
 <p>De repente, ya con el presidente histórico fuera, el sentimiento de orfandad fue inmediato, por muchos esfuerzos que pusiera Hugendubel, quien trató de ilusionar desde sus primeras manifestaciones. Sánchez Jover permanecería en el club hasta el verano de 1999. Su presencia se consideraba de especial valor estratégico para la pervivencia del proyecto, tanto en la rama sénior como en las categorías de base. Y, tras dos años como testigo de "la deriva", según sus palabras, que fue cogiendo el club bajo otros parámetros directivos. El cambio de siglo deparaba la marcha del último gran símbolo del Calvo Sotelo.</p>
 
 <p>Tras Felipe Nuez (1988), Sergio Miguel Camarero (1996) y Juan Ruiz (1998), el gigante que hizo feliz al Centro Insular clausuraba un ciclo de doce años con otros tantos títulos y episodios únicos y que le ligaron por siempre a esta tierra.</p>
-'),
-    array('title' => 'La cronología', 'numero' => '', 'order' => 34, 'show_marker' => false, 'parent_ref' => 'cap03',
-        'hero' => array(
-            'image' => libro_img('hero-volleyball-match.jpg'),
-            'overlay' => 'rgba(0, 0, 0, 0.15)',
-            'icon' => 'custom',
-            'custom_icon' => libro_img('estrella-icon.svg'),
-            'custom_icon_color' => 'hsl(45 100% 50%)',
-            'icon_width' => 40,
-            'icon_height' => 40,
-            'alignment' => 'center',
-            'vertical' => 'center',
-            'height' => '500px',
-            'title_lines' => array(libro_hero_line('LA', 'hsl(220 50% 12%)', 'hsl(45 100% 50%)', 'black'), libro_hero_line('CRONOLOGÍA', 'hsl(220 50% 12%)', 'hsl(45 100% 50%)', 'black')),
-            'border_color' => 'hsl(45 100% 50%)',
-        ),
-        'content' => '
+
+[seccion_header color="hsl(2 82% 30%)"]La cronología[/seccion_header]
+
 <div class="timeline-container">
 <div class="timeline-event"><span class="timeline-year">1985</span><div class="timeline-content">El 2 de noviembre, y ante el Licenciados Reunidos en Cáceres, el Calvo Sotelo disputa su primer encuentro en la División de Honor con victoria (0-3).</div></div>
 <div class="timeline-event"><span class="timeline-year">1986</span><div class="timeline-content">El 21 de octubre se celebra la asamblea general extraordinaria del club en la que Juan Ruiz tiene su primera toma de contacto formal con la junta gestora. Días después anunciaría el histórico acuerdo con Guaguas Municipales para que patrocinase y diera su nomenclatura al equipo.</div></div>
@@ -891,25 +903,30 @@ c) Examinar las liquidaciones y balances de la entidad.[/articulo]
             'title_lines' => array(libro_hero_line('EL PROYECTO', '#D4AF37', '', 'black'), libro_hero_line('VISIONARIO', '#FFFFFF', '', 'black'), libro_hero_line('DE JUAN RUIZ', '#D4AF37', '', 'black')),
         ),
         'content' => ''),
-    array('title' => 'El hombre que lo cambió todo', 'numero' => '', 'order' => 37, 'show_marker' => false, 'parent_ref' => 'cap04',
+    array('title' => 'El proyecto visionario de Juan Ruiz', 'numero' => '', 'order' => 37, 'show_marker' => false, 'parent_ref' => 'cap04',
         'hero' => array(
-            'image' => libro_img('hero-volleyball-match.jpg'),
-            'overlay' => 'rgba(0, 0, 0, 0.15)',
+            'image' => '',
+            'background_color' => '#000000',
+            'overlay' => 'rgba(0,0,0,0)',
             'icon' => 'custom',
             'custom_icon' => libro_img('estrella-icon.svg'),
-            'custom_icon_color' => 'hsl(45 100% 50%)',
+            'custom_icon_color' => '#000000',
             'icon_width' => 40,
             'icon_height' => 40,
             'alignment' => 'center',
             'vertical' => 'center',
             'height' => '500px',
-            'title_lines' => array(libro_hero_line('EL HOMBRE QUE LO', 'hsl(220 50% 12%)', 'hsl(45 100% 50%)', 'black'), libro_hero_line('CAMBIÓ TODO', 'hsl(220 50% 12%)', 'hsl(45 100% 50%)', 'black')),
-            'border_color' => 'hsl(45 100% 50%)',
+            'title_lines' => array(libro_hero_line('EL PROYECTO VISIONARIO', '#FFFFFF', '#000000', 'none'), libro_hero_line('DE JUAN RUIZ', '#FFFFFF', '#000000', 'none')),
+            'border_color' => '#000000',
         ),
         'content' => '
+[imagen_contenido file="4cap_proy_foto3.jpg" caption="Festejando el histórico subcampeonato de Copa de 1988 en sus tiempos iniciales como presidente. Juan Ruiz es el primero en la fila inferior por la derecha y está abrazado por Jorge Ramón."]
+
 [capitular]Nacido en La Aldea de San Nicolás en 1953, emigrante con su familia a Tenerife durante gran parte su adolescencia (1960-1969), en la que hizo sus pinitos en la lucha canaria o el fútbol ("con 16 años llegué a jugar en Tercera División en las filas del Adeje"), Juan Ruiz estaba llamado, sin saberlo, a escribir una historia sin parangón en el deporte canario y al frente del Calvo Sotelo. No hay dirigente isleño con tal nómina de títulos en su poder, todos los conquistados por la entidad, y con el mérito añadido de haber armado un equipo campeón desde las cenizas. Tanto en 1987 como en 2020 acudió al rescate recogiendo una tesorería en ruinas y un porvenir tan comprometido que apuntaba a la desaparición.[/capitular]
 
 [cita_editorial author="Juan Ruiz"]El secreto es trabajo y pasión. Constancia y ambición. No rendirse jamás. Si para conseguir un patrocinador tengo que visitar veinte empresas, acabo entrando en cuarenta. Si para ser campeón me tengo que traer a una estrella, trato de que sean dos.[/cita_editorial]
+
+[imagen_contenido file="4cap_proy_foto9.jpg" caption="Junto a Antonio Benítez, su hombre de confianza en la gerencia del Guaguas, en la sede de la entidad, a inicios de los noventa."]
 
 <p>El punto de partida de este fértil y exitoso ciclo en el palco, en un hombre "sin tradición alguna en el voleibol", arranca de manera "casi casual y del todo inesperada". Año 1986. Desde su estabilidad laboral como apoderado de la empresa Napesca, Juan Ruiz sigue a la distancia, "como un aficionado más", las evoluciones de los distintos clubes de Gran Canaria. "Siempre me ha gustado el deporte y estaba al día de todo", reconoce. Fiel a su costumbre de desayunar en la cafetería del periódico La Provincia en el polígono industrial de El Sebadal, allí coincidía cada mañana con informadores del medio. "Era habitual oyente de Paco García Caridad, que estaba en Antena 3 Radio. Nos saludábamos, hablábamos a menudo de manera desenfadada... Hasta que un día me comentó que un histórico, el Calvo Sotelo, estaba a punto de desaparecer. Que necesitaba alguien que echara una mano... O dos. Porque la situación era de extrema gravedad".</p>
 
@@ -921,7 +938,13 @@ c) Examinar las liquidaciones y balances de la entidad.[/articulo]
 
 <p>Pronto, recién aterrizado en la junta gestora, se apunta otro logro de capital importancia estratégica: la firma del patrocinio de Guaguas Municipales y que venía a solucionar una problemática que acuciaba la vida institucional con la falta de un sponsor.</p>
 
-[seccion_header]El fichaje de Sánchez Jover y la construcción del equipo campeón[/seccion_header]
+[imagen_contenido file="4cap_proy_foto7.jpg" caption="Nervios en el palco durante un partido disputado en el Centro Insular."]
+
+[imagen_contenido file="4cap_proy_foto4.jpg" caption="Visita a la redacción del periódico La Provincia, que fue uno de los primeros patrocinadores en los primeros años de la presidencia de Juan Ruiz, tras la conquista de la Copa del Rey de 1989."]
+
+[imagen_contenido file="4cap_proy_foto8.jpg" caption="Recepción oficial en el Cabildo de Gran Canaria presidido por Carmelo Artiles y con motivo de la Liga conquistada en 1991."]
+
+[seccion_header color="inverted"]El fichaje de Sánchez Jover y la construcción del equipo campeón[/seccion_header]
 
 <p>Tenía 33 años y, "desde el primer momento", tuvo claro el mandamiento que siempre regiría sus movimientos y gestiones: "Ganar, ganar y ganar". Ruiz orienta cada maniobra a buscar "el máximo" y no duda en explorar posibilidades que parecían prohibidas.</p>
 
@@ -931,7 +954,11 @@ c) Examinar las liquidaciones y balances de la entidad.[/articulo]
 
 <p>"En la primera temporada completa en la que estuve de principio a fin, la 1987-88, quedamos subcampeones de Liga y de Copa. Y fue un hito. Jamás se había llegado a pelear por títulos de esa manera. La destitución de una figura de la relevancia de Felipe Nuez fue, de largo, el momento más crítico de esa campaña. No resultó fácil prescindir de él. Pero ese primer balance, salvando lo de Felipe, no pudo ser mejor. El club pasó de estar al borde de la desaparición a discutir títulos, regenerar una afición perdida, que acabó trasladándose con nosotros del San Román al Centro Insular, cuando abrió sus puertas en 1988, y tener en sus filas una mezcla de juventud, cantera y estrellas que terminaría, como no podía ser de otra manera, dando sus frutos. Y, lo que también me producía un orgullo especial: jugar y competir contra los mejores de Europa", reseña.</p>
 
-[seccion_header]Un modelo de gestión basado en la intuición y la constancia[/seccion_header]
+[seccion_header color="inverted"]Un modelo de gestión basado en la intuición y la constancia[/seccion_header]
+
+[imagen_contenido file="4cap_proy_foto5.jpg" caption="Arriba, a pie de pista y festejando, con emoción, un triunfo."]
+
+[imagen_contenido file="4cap_proy_foto6.jpg" caption="Comparecencia pública en una presentación del equipo."]
 
 <p>Su modelo presidencialista de entonces, como el de ahora, se basaba en "la intuición, la capacidad de anticipación y delegar, aunque la decisión de calidad corresponda siempre al que más manda".</p>
 
@@ -947,13 +974,15 @@ c) Examinar las liquidaciones y balances de la entidad.[/articulo]
 
 <p>La primera Copa del Rey, aquella Liga inaugural frente al Bomberos de Barcelona, la fiebre que despertó el equipo colmando cada pabellón que pisaba... "Elegir momentos es complicado. Son muchísimos y muy buenos, inesperados en muchos de los casos. Recuerdo a mi padre decirme que qué necesidad tenía yo, sin cobrar un duro, de estar siempre al pie del cañón y recibir, en momentos puntuales, críticas que fueron dolorosas. Pero la voluntad de servicio todo lo puede y puedo presumir de haber tenido el apoyo de fieles compañeros de viaje, leales a la causa, de jugadores que se dejaron la vida en la pista, ganaran o no".</p>
 
-[seccion_header]Sánchez Jover y Camarero, los nombres por encima de todos[/seccion_header]
+[seccion_header color="inverted"]Sánchez Jover y Camarero, los nombres por encima de todos[/seccion_header]
 
 <p>Paco Sánchez Jover y Sergio Miguel Camarero son los nombres que pone por encima de todos: "Para muchos jugadores era como un padre y, reconozco, a muchos los quise como a hijos. Pero Paco, que vino de fuera pero se hizo de los nuestros nada más pisar Gran Canaria, y Sergio, que salió de nuestra cantera y es parte del escudo por su recorrido, me marcaron. Años y años de convivencia y siempre coincidiendo en lo esencial, en la defensa del club. Con momentos tensos, mejores y peores, como pasa en la vida, como pasa en el deporte".</p>
 
 <p>"Fueron jugadores y ejercieron como entrenadores ganando títulos, dando un ejemplo de lealtad y de compromiso. En su día renunciaron a más dinero por seguir aquí y, sin desmerecer a otros compañeros que también fueron grandes figuras, no me equivoco si digo que mucho del respeto que nos ganamos se debía a ellos. No entiendo el Guaguas sin Paco ni Sergio. Ni yo ni nadie. Hoy en día siguen con nosotros porque es un acto de justicia que aquí estén después de que, obligados por las circunstancias, tuvieran que irse. Ya los considero de mi familia".</p>
 
-[seccion_header]La marcha, la desaparición y el regreso[/seccion_header]
+[seccion_header color="inverted"]La marcha, la desaparición y el regreso[/seccion_header]
+
+[imagen_contenido file="4cap_proy_foto2.jpg" caption="La entrada de Guaguas Municipales como patrocinador del club fue uno de los primeros logros de Juan Ruiz."]
 
 <p>De 1986 a 1998, año en el que decide dejarlo "porque ya tocaba y, además, así lo establecían unos estatutos que se respetaron", Juan Ruiz se siente particularmente realizado por "contribuir a la felicidad de la gente", al considerar que el Guaguas "cumplió con su rol de dar a la sociedad alegrías, sentimiento de pertenencia y unión y el premio de los campeonatos".</p>
 
@@ -973,45 +1002,41 @@ c) Examinar las liquidaciones y balances de la entidad.[/articulo]
 '),
     array('title' => 'La génesis de su proyecto en cronología', 'numero' => '', 'order' => 38, 'show_marker' => false, 'parent_ref' => 'cap04',
         'hero' => array(
-            'image' => libro_img('hero-volleyball-match.jpg'),
-            'overlay' => 'rgba(0, 0, 0, 0.15)',
-            'icon' => 'custom',
-            'custom_icon' => libro_img('estrella-icon.svg'),
-            'custom_icon_color' => 'hsl(45 100% 50%)',
-            'icon_width' => 40,
-            'icon_height' => 40,
+            'background_color' => '#000000',
+            'icon' => 'none',
             'alignment' => 'center',
             'vertical' => 'center',
             'height' => '500px',
-            'title_lines' => array(libro_hero_line('LA GÉNESIS DE', 'hsl(220 50% 12%)', 'hsl(45 100% 50%)', 'black'), libro_hero_line('SU PROYECTO', 'hsl(220 50% 12%)', 'hsl(45 100% 50%)', 'black')),
-            'border_color' => 'hsl(45 100% 50%)',
+            'title_lines' => array(libro_hero_line('LA GÉNESIS DE', '#FFFFFF', '#000000', 'none'), libro_hero_line('SU PROYECTO', '#FFFFFF', '#000000', 'none')),
         ),
         'content' => '
 <div class="timeline-container">
-<div class="timeline-event"><span class="timeline-year">1987</span><div class="timeline-content"><strong>Patrocinios y fichas estelares</strong> — "Estamos en una nube con muchos cimientos. Aquí hay un club con cantera, con una estructura deportiva muy sólida basada en excelentes técnicos, y hay también unas buenas razones económicas que se gestan con una administración del club que considero muy responsables. Felipe Nuez me facilitó a principios de temporada una lista de jugadores para hacer al equipo campeón de Liga. Hemos traído quizá a los mejores". <em>(La Provincia, 17 de julio de 1987)</em>.</div></div>
-<div class="timeline-event"><span class="timeline-year">1989</span><div class="timeline-content"><strong>El primer título como estímulo</strong> — "Este es el triunfo del trabajo y del esfuerzo de muchos años, comenzado por otros, como José Luzardo, Antonio Trejo o Felipe Nuez, y rematado por nosotros y por nuestra afición. Es el triunfo de todos y un gran día para el voleibol canario". <em>(Diario de Las Palmas, 10 de abril de 1989)</em>.</div></div>
-<div class="timeline-event"><span class="timeline-year">1989</span><div class="timeline-content"><strong>El hallazgo de Golec y la defensa de Camarero</strong> — "Me gusta mucho el número 11 de la selección polaca, Golec, un gran rematador de potente salto, especialista en remates de zona cuatro y zagueros, con gran recepción. El objetivo que nos planteamos es la obtención de un título nacional como mínimo". <em>(Canarias7, 23 de agosto de 1989)</em>.</div></div>
-<div class="timeline-event"><span class="timeline-year">1990</span><div class="timeline-content"><strong>Éxito deportivo y compromiso social</strong> — "Lo de la campaña pasada fue logrado con gran merecimiento. Después de cuatro años de gran trabajo, el título de Liga tenía que llegar. También entiendo que para nuestro equipo ha sido un triunfo ser la única entidad deportiva del país que ha abierto una brecha contra la droga". <em>(La Provincia, 6 de julio de 1990)</em>.</div></div>
-<div class="timeline-event"><span class="timeline-year">1990</span><div class="timeline-content"><strong>El sueño cumplido de jugar la Copa de Europa</strong> — "No gana el que más presupuesto tiene sino el que más trabajo derroche. Es un gran reto, asimismo, representar a Canarias por vez primera en la Copa de Europa, un prestigio y orgullo que deseamos para el resto de los equipos de élite grancanarios". <em>(Canarias7, 13 de septiembre de 1990)</em>.</div></div>
-<div class="timeline-event"><span class="timeline-year">1992</span><div class="timeline-content"><strong>Elogio de la afición</strong> — "El público ha estado maravilloso. Solo le faltó rematar los balones en la cancha. El Gran Canaria merece que se le apoye porque tenemos a la juventud con nosotros. Este club no va a quedar a la deriva". <em>(Canarias7, 5 de abril de 1992)</em>.</div></div>
-<div class="timeline-event"><span class="timeline-year">1992</span><div class="timeline-content"><strong>La responsabilidad directiva</strong> — "Debemos tener en cuenta que este es el único conjunto canario al que le han televisado varios partidos en Europa, damos una gran difusión a esta tierra, y por contra recibimos poco". <em>(Diario de Las Palmas, 27 de abril de 1992)</em>.</div></div>
-<div class="timeline-event"><span class="timeline-year">1992</span><div class="timeline-content"><strong>Una representatividad única</strong> — "No creo que después del esfuerzo que hemos realizado todos los componentes del Gran Canaria, el Ejecutivo canario pueda abandonarnos a la buena de Dios, cuando nuestro equipo promocionará el nombre del Archipiélago por toda Europa". <em>(Canarias7, 14 de diciembre de 1992)</em>.</div></div>
-<div class="timeline-event"><span class="timeline-year">1994</span><div class="timeline-content"><strong>6.000 aficionados en el CID</strong> — "Nuestra intención con la gratuidad de la entrada era la de ofrecer un homenaje a la afición y no creímos que fueran a venir más de 6.000 personas". <em>(Canarias7, 21 de enero de 1994)</em>.</div></div>
-<div class="timeline-event"><span class="timeline-year">1995</span><div class="timeline-content"><strong>Reinvención, nunca rendición</strong> — "Los jugadores han perdido la erótica de la ilusión y eso es fundamental para ser campeones. Un paso atrás invita a reflexionar para luego dar muchos hacia adelante. Queremos en el equipo jugadores con hambre de títulos y también en las gradas una afición que vuelva a hacer de Las Palmas el centro del voleibol nacional". <em>(La Provincia, 30 de abril de 1995)</em>.</div></div>
-<div class="timeline-event"><span class="timeline-year">1996</span><div class="timeline-content"><strong>Continuidad necesaria</strong> — "En dos ocasiones estuve tentado de abandonarlo todo. Pero si cuando pierdes te marchas es de cobardes, por eso continué, porque el día que me marche lo debo hacer con el equipo campeón". <em>(Canarias7, 7 de octubre de 1996)</em>.</div></div>
-<div class="timeline-event"><span class="timeline-year">1997</span><div class="timeline-content"><strong>El apoyo definitivo</strong> — "Guaguas ha hecho una gran inversión y, además, con ellos finalizaré mi mandato el año que viene". <em>(Canarias7, 21 de junio de 1997)</em>.</div></div>
-<div class="timeline-event"><span class="timeline-year">1998</span><div class="timeline-content"><strong>Aunque el corazón no aguante</strong> — "A pesar de los problemas de corazón que sufrí tras los partidos de Eslovenia y frente al Olympiakos, yo decidí acompañar al equipo y me han dado una gran alegría". <em>(Diario de Las Palmas, 18 de febrero de 1998)</em>.</div></div>
-<div class="timeline-event"><span class="timeline-year">1998</span><div class="timeline-content"><strong>La culminación de la Final Four</strong> — "Ha sido un partido donde casi siempre hemos estado por debajo. El público, fundamental, me recordó al del día del Paris Saint Germain. La Final Four ya está conseguida, y ahora todo lo que venga será un premio añadido". <em>(Diario de Las Palmas, 26 de febrero de 1998)</em>.</div></div>
-<div class="timeline-event"><span class="timeline-year">1998</span><div class="timeline-content"><strong>Una despedida con legado</strong> — "He visto a mucha gente llorar de emoción y tristeza en el Centro Insular de Deportes, y eso es imborrable. Ahora estamos en el momento de volver a empezar, pero que se recuerde que venimos de jugar una Final Four hace unos meses". <em>(Canarias7, 4 de diciembre de 1998)</em>.</div></div>
-<div class="timeline-event"><span class="timeline-year">2020</span><div class="timeline-content"><strong>La repercusión del regreso</strong> — "Vamos con la intención de ir a por todas y para ello tenemos todos que trabajar más que los demás y entrenar más que los demás. Cada día estamos más contentos. Estamos muy satisfechos de las expectativas que está generando el poder volver a ver al Guaguas competir a nivel nacional y europeo". <em>(Canarias7, 18 de junio de 2020)</em>.</div></div>
-<div class="timeline-event"><span class="timeline-year">2020</span><div class="timeline-content"><strong>Una historia que respetar y dignificar</strong> — "Con casi 70 años no estoy para aventuras, esto es un equipo ganador. Cuando fuimos a París para jugar contra el PSG nos acompañó Aniceto Rodríguez. Cuando llegamos al aeropuerto nos llevaron a una sala de prensa y ellos nos dijeron que éramos el Real Madrid del voleibol". <em>(La Provincia, 9 de septiembre de 2020)</em>.</div></div>
-<div class="timeline-event"><span class="timeline-year">2021</span><div class="timeline-content"><strong>Laureles renovados</strong> — "No esperaba que fuese así. Ni en el mejor de los sueños esperaba que todo saliera tan redondo. Lo hemos cumplido. Nadie se puede sentir defraudado. El Guaguas tiene un gen ganador y nuestra obligación es siempre ir a ganar". <em>(Canarias7, 9 de febrero de 2021)</em>.</div></div>
-<div class="timeline-event"><span class="timeline-year">2022</span><div class="timeline-content"><strong>ADN ganador</strong> — "El Guaguas tiene el ADN de Real Madrid o Barcelona. Sale a ganar siempre. Cada vez que llega un jugador nuevo le pregunto si sabe qué escudo va a defender porque nuestra historia ha sido y es grande. Estamos entre los mejores cincuenta clubes del mundo". <em>(Canarias7, 23 de agosto de 2022)</em>.</div></div>
-<div class="timeline-event"><span class="timeline-year">2023</span><div class="timeline-content"><strong>Dedicatoria especial</strong> — "Sergio Camarero es una persona muy especial para mí. Lo tengo conmigo desde los 17 años. Es una de las personas que más quiere al club, incluso más que yo. Desde la directiva queremos además dedicarle especialmente este título a la madre de Sergio Camarero". <em>(La Provincia, 7 de mayo de 2023)</em>.</div></div>
-<div class="timeline-event"><span class="timeline-year">2024</span><div class="timeline-content"><strong>Reivindicación institucional</strong> — "El Guaguas merece más ayuda por parte de los organismos oficiales. Un suplemento de un millón de euros serviría para progresar a nivel europeo. A día de hoy peleamos con los mejores de Europa en inferioridad de condiciones". <em>(Canarias7, 25 de diciembre de 2024)</em>.</div></div>
-<div class="timeline-event"><span class="timeline-year">2025</span><div class="timeline-content"><strong>Orgullo de equipo</strong> — "Supone un orgullo ser el presidente de este grupo de deportistas y creo que mi satisfacción se extiende a la afición y a todos los que quieren y valoran el voleibol y el espíritu de superación". <em>(Canarias7, 20 de noviembre de 2025)</em>.</div></div>
-<div class="timeline-event"><span class="timeline-year">2026</span><div class="timeline-content"><strong>El éxito colectivo</strong> — "El éxito no es mío, sino de todos los que colaboran. La directiva y el presidente del Guaguas nunca ha cobrado en los doce años de la primera etapa ni en los seis años de esta segunda. El Guaguas es una gran familia. Estar entre los diez mejores equipos del mundo es para nosotros fundamental". <em>(Sport, 12 de febrero de 2026)</em>.</div></div>
+<div class="timeline-event"><span class="timeline-year">1987</span><div class="timeline-content"><strong>Patrocinios y fichas estelares</strong>“Estamos en una nube con muchos cimientos. Aquí hay un club con cantera, con una estructura deportiva muy sólida basada en excelentes técnicos, y hay también unas buenas razones económicas que se gestan con una administración del club que considero muy responsables. Felipe Nuez me facilitó a principios de temporada una lista de jugadores para hacer al equipo campeón de Liga. Hemos traído quizá a los mejores”. <em>(La Provincia, 17 de julio de 1987)</em>.</div></div>
+<div class="timeline-event"><span class="timeline-year">1989</span><div class="timeline-content"><strong>El primer título como estímulo</strong>“Este es el triunfo del trabajo y del esfuerzo de muchos años, comenzado por otros, como José Luzardo, Antonio Trejo o Felipe Nuez, y rematado por nosotros y por nuestra afición. Es el triunfo de todos y un gran día para el voleibol canario”. <em>(Diario de Las Palmas, 10 de abril de 1989)</em>.</div></div>
+<div class="timeline-event"><span class="timeline-year">1989</span><div class="timeline-content"><strong>El hallazgo de Golec y la defensa de Camarero</strong>“Me gusta mucho el número 11 de la selección polaca, Golec, un gran rematador de potente salto, especialista en remates de zona cuatro y zagueros, con gran recepción. El objetivo que nos planteamos es la obtención de un título nacional como mínimo”. <em>(Canarias7, 23 de agosto de 1989)</em>.</div></div>
+<div class="timeline-event"><span class="timeline-year">1990</span><div class="timeline-content"><strong>Éxito deportivo y compromiso social</strong>“Lo de la campaña pasada fue logrado con gran merecimiento. Después de cuatro años de gran trabajo, el título de Liga tenía que llegar. También entiendo que para nuestro equipo ha sido un triunfo ser la única entidad deportiva del país que ha abierto una brecha contra la droga”. <em>(La Provincia, 6 de julio de 1990)</em>.</div></div>
+<div class="timeline-event"><span class="timeline-year">1990</span><div class="timeline-content"><strong>El sueño cumplido de jugar la Copa de Europa</strong>“No gana el que más presupuesto tiene sino el que más trabajo derroche. Es un gran reto, asimismo, representar a Canarias por vez primera en la Copa de Europa, un prestigio y orgullo que deseamos para el resto de los equipos de élite grancanarios”. <em>(Canarias7, 13 de septiembre de 1990)</em>.</div></div>
+<div class="timeline-event"><span class="timeline-year">1992</span><div class="timeline-content"><strong>Elogio de la afición</strong>“El público ha estado maravilloso. Solo le faltó rematar los balones en la cancha. El Gran Canaria merece que se le apoye porque tenemos a la juventud con nosotros. Este club no va a quedar a la deriva”. <em>(Canarias7, 5 de abril de 1992)</em>.</div></div>
+<div class="timeline-event"><span class="timeline-year">1992</span><div class="timeline-content"><strong>La responsabilidad directiva</strong>“Debemos tener en cuenta que este es el único conjunto canario al que le han televisado varios partidos en Europa, damos una gran difusión a esta tierra, y por contra recibimos poco”. <em>(Diario de Las Palmas, 27 de abril de 1992)</em>.</div></div>
+<div class="timeline-event"><span class="timeline-year">1992</span><div class="timeline-content"><strong>Una representatividad única</strong>“No creo que después del esfuerzo que hemos realizado todos los componentes del Gran Canaria, el Ejecutivo canario pueda abandonarnos a la buena de Dios, cuando nuestro equipo promocionará el nombre del Archipiélago por toda Europa”. <em>(Canarias7, 14 de diciembre de 1992)</em>.</div></div>
+<div class="timeline-event"><span class="timeline-year">1994</span><div class="timeline-content"><strong>6.000 aficionados en el CID</strong>“Nuestra intención con la gratuidad de la entrada era la de ofrecer un homenaje a la afición y no creímos que fueran a venir más de 6.000 personas”. <em>(Canarias7, 21 de enero de 1994)</em>.</div></div>
+<div class="timeline-event"><span class="timeline-year">1995</span><div class="timeline-content"><strong>Reinvención, nunca rendición</strong>“Los jugadores han perdido la erótica de la ilusión y eso es fundamental para ser campeones. Un paso atrás invita a reflexionar para luego dar muchos hacia adelante. Queremos en el equipo jugadores con hambre de títulos y también en las gradas una afición que vuelva a hacer de Las Palmas el centro del voleibol nacional”. <em>(La Provincia, 30 de abril de 1995)</em>.</div></div>
+<div class="timeline-event"><span class="timeline-year">1996</span><div class="timeline-content"><strong>Continuidad necesaria</strong>“En dos ocasiones estuve tentado de abandonarlo todo. Pero si cuando pierdes te marchas es de cobardes, por eso continué, porque el día que me marche lo debo hacer con el equipo campeón”. <em>(Canarias7, 7 de octubre de 1996)</em>.</div></div>
+<div class="timeline-event"><span class="timeline-year">1997</span><div class="timeline-content"><strong>El apoyo definitivo</strong>“Guaguas ha hecho una gran inversión y, además, con ellos finalizaré mi mandato el año que viene”. <em>(Canarias7, 21 de junio de 1997)</em>.</div></div>
+<div class="timeline-event"><span class="timeline-year">1998</span><div class="timeline-content"><strong>Aunque el corazón no aguante</strong>“A pesar de los problemas de corazón que sufrí tras los partidos de Eslovenia y frente al Olympiakos, yo decidí acompañar al equipo y me han dado una gran alegría”. <em>(Diario de Las Palmas, 18 de febrero de 1998)</em>.</div></div>
+<div class="timeline-event"><span class="timeline-year">1998</span><div class="timeline-content"><strong>La culminación de la Final Four</strong>“Ha sido un partido donde casi siempre hemos estado por debajo. El público, fundamental, me recordó al del día del Paris Saint Germain. La Final Four ya está conseguida, y ahora todo lo que venga será un premio añadido”. <em>(Diario de Las Palmas, 26 de febrero de 1998)</em>.</div></div>
+<div class="timeline-event"><span class="timeline-year">1998</span><div class="timeline-content"><strong>Una despedida con legado</strong>“He visto a mucha gente llorar de emoción y tristeza en el Centro Insular de Deportes, y eso es imborrable. Ahora estamos en el momento de volver a empezar, pero que se recuerde que venimos de jugar una Final Four hace unos meses”. <em>(Canarias7, 4 de diciembre de 1998)</em>.</div></div>
+<div class="timeline-event"><span class="timeline-year">2020</span><div class="timeline-content"><strong>La repercusión del regreso</strong>“Vamos con la intención de ir a por todas y para ello tenemos todos que trabajar más que los demás y entrenar más que los demás. Cada día estamos más contentos. Estamos muy satisfechos de las expectativas que está generando el poder volver a ver al Guaguas competir a nivel nacional y europeo”. <em>(Canarias7, 18 de junio de 2020)</em>.</div></div>
+<div class="timeline-event"><span class="timeline-year">2020</span><div class="timeline-content"><strong>Una historia que respetar y dignificar</strong>“Con casi 70 años no estoy para aventuras, esto es un equipo ganador. Cuando fuimos a París para jugar contra el PSG nos acompañó Aniceto Rodríguez. Cuando llegamos al aeropuerto nos llevaron a una sala de prensa y ellos nos dijeron que éramos el Real Madrid del voleibol”. <em>(La Provincia, 9 de septiembre de 2020)</em>.</div></div>
+<div class="timeline-event"><span class="timeline-year">2021</span><div class="timeline-content"><strong>Laureles renovados</strong>“No esperaba que fuese así. Ni en el mejor de los sueños esperaba que todo saliera tan redondo. Lo hemos cumplido. Nadie se puede sentir defraudado. El Guaguas tiene un gen ganador y nuestra obligación es siempre ir a ganar”. <em>(Canarias7, 9 de febrero de 2021)</em>.</div></div>
+<div class="timeline-event"><span class="timeline-year">2022</span><div class="timeline-content"><strong>ADN ganador</strong>“El Guaguas tiene el ADN de Real Madrid o Barcelona. Sale a ganar siempre. Cada vez que llega un jugador nuevo le pregunto si sabe qué escudo va a defender porque nuestra historia ha sido y es grande. Estamos entre los mejores cincuenta clubes del mundo”. <em>(Canarias7, 23 de agosto de 2022)</em>.</div></div>
+<div class="timeline-event"><span class="timeline-year">2023</span><div class="timeline-content"><strong>Dedicatoria especial</strong>“Sergio Camarero es una persona muy especial para mí. Lo tengo conmigo desde los 17 años. Es una de las personas que más quiere al club, incluso más que yo. Desde la directiva queremos además dedicarle especialmente este título a la madre de Sergio Camarero”. <em>(La Provincia, 7 de mayo de 2023)</em>.</div></div>
+<div class="timeline-event"><span class="timeline-year">2024</span><div class="timeline-content"><strong>Reivindicación institucional</strong>“El Guaguas merece más ayuda por parte de los organismos oficiales. Un suplemento de un millón de euros serviría para progresar a nivel europeo. A día de hoy peleamos con los mejores de Europa en inferioridad de condiciones”. <em>(Canarias7, 25 de diciembre de 2024)</em>.</div></div>
+<div class="timeline-event"><span class="timeline-year">2025</span><div class="timeline-content"><strong>Orgullo de equipo</strong>“Supone un orgullo ser el presidente de este grupo de deportistas y creo que mi satisfacción se extiende a la afición y a todos los que quieren y valoran el voleibol y el espíritu de superación”. <em>(Canarias7, 20 de noviembre de 2025)</em>.</div></div>
+<div class="timeline-event"><span class="timeline-year">2026</span><div class="timeline-content"><strong>El éxito colectivo</strong>“El éxito no es mío, sino de todos los que colaboran. La directiva y el presidente del Guaguas nunca ha cobrado en los doce años de la primera etapa ni en los seis años de esta segunda. El Guaguas es una gran familia. Estar entre los diez mejores equipos del mundo es para nosotros fundamental”. <em>(Sport, 12 de febrero de 2026)</em>.</div></div>
 </div>
+
+[imagen_contenido file="4cap_proy_foto1.jpg" caption="Día de partido en el palco del Gran Canaria Arena. De izquierda a derecha, Ángel Sabroso, Carolina Darias, Antonio Morales, Juan Ruiz y Poli Suárez, entre otras autoridades."]
 '),
 
     // ═══════════════════════════════════════════════
@@ -1038,26 +1063,31 @@ c) Examinar las liquidaciones y balances de la entidad.[/articulo]
         'content' => ''),
     array('title' => 'Sergio Miguel Camarero', 'numero' => '', 'order' => 41, 'show_marker' => false, 'parent_ref' => 'cap05',
         'hero' => array(
-            'image' => libro_img('hero-volleyball-match.jpg'),
-            'overlay' => 'rgba(0, 0, 0, 0.15)',
+            'image' => libro_img('5cap_camarero_foto3_bw.jpg'),
+            'overlay' => 'rgba(0, 0, 0, 0.25)',
             'icon' => 'custom',
             'custom_icon' => libro_img('estrella-iconos.svg'),
+            'custom_icon_color' => '#a6a6a6',
             'icon_width' => 80,
             'icon_height' => 80,
             'alignment' => 'center',
             'vertical' => 'center',
             'height' => '500px',
-            'title_lines' => array(libro_hero_line('SERGIO MIGUEL', 'hsl(220 50% 12%)', 'hsl(45 100% 50%)', 'black'), libro_hero_line('CAMARERO', 'hsl(220 50% 12%)', 'hsl(45 100% 50%)', 'black')),
-            'border_color' => 'hsl(45 100% 50%)',
+            'background_position' => 'center 20%',
+            'title_lines' => array(libro_hero_line('SERGIO MIGUEL', '#FFFFFF', '#a6a6a6', 'none'), libro_hero_line('CAMARERO', '#FFFFFF', '#a6a6a6', 'none')),
         ),
         'content' => '
 [capitular]Cuando Sergio Miguel Camarero (Las Palmas de Gran Canaria, 1967) destacaba en el fútbol y como prometedor jugador del San Antonio, el equipo de su barrio, ya soñaba con hacer historia en el deporte. Su aspiración se iba a cumplir, aunque de manera insospechada porque, efectivamente, haría carrera pero en otra disciplina que tardó en practicar y a la que llegó de rebote. "Empecé a jugar al voleibol porque, al regreso de unas vacaciones en el sur de la isla, ya no tenía posibilidad de inscribirme en el equipo de fútbol. Se había acabado el plazo. Y me apunté en la Escuela de Voleibol del San Román. Mis primeros entrenadores fueron Félix Rodríguez, Joselu Sánchez e Ignacio Brito. Tendría 14 o 15 años. Y me enganché", concreta.[/capitular]
+
+[imagen_contenido file="5cap_camarero_foto2.jpg" caption="Con Marcelo Giovanacci, que tomaría el relevo en el banquillo en sustitución de Edelstein."]
 
 <p>Así fue su punto de partida y siempre a una velocidad vertiginosa porque, ya en sus tiempos en el Juventud, dibujó una progresión descomunal, convirtiéndose en el primer jugador canario en ser llamado por la selección española en categoría juvenil y júnior. Y mantendría su exclusividad con el representativo nacional, al ser, igualmente, pionero en las citaciones de máximo nivel internacional. "Era una época complicada en la calle, el riesgo de las malas influencias, las amistades que en esa etapa de la vida te pueden llevar por el mal camino. Mi suerte fue que elegí el deporte, el voleibol, y conocí a una persona como Felipe Nuez con la que pude crecer y desarrollarme en el mejor ambiente posible. Ya integrado en el Calvo Sotelo se puede decir que empecé a ver que esta iba a ser mi vida, que quería dedicarme a esto pese a ser muy joven", afirma.</p>
 
 <p>Camarero incide en la influencia capital de Nuez en sus inicios y, también, en la consolidación del proyecto del club, aspirante entonces a entrar en la élite nacional. "Detrás del ascenso a la División de Honor de 1985 hay muchísimo trabajo, sacrificio y un grupo de compañeros, de amigos, que supimos plasmar en la pista todas las enseñanzas y conceptos que nos inculcó un entrenador que fue figura fundamental en esos inicios y en el desarrollo posterior. Fue una labor colectiva muy meritoria porque no todos creían en nosotros, en que podíamos conseguir eso".</p>
 
 [cita_editorial author="Sergio Miguel Camarero"]Pude irme en el inicio de mi carrera. Me llamó del Cisneros Miguel Ocón, que luego, como seleccionador, confió muchísimo en mí. Pero aposté por quedarme en mi tierra y no me equivoqué. Por encima del dinero siempre antepuse el orgullo de defender los colores del Guaguas, que ha sido mi club siempre.[/cita_editorial]
+
+[imagen_contenido file="5cap_camarero_foto3.jpg" caption="Imagen icónica de Camarero en el CID."]
 
 <p>Camarero se erige desde el principio, y con el núcleo de canteranos que viven ese despegue ("Jorge Ramón, Juanma, David Rodríguez..."), en uno de los referentes del equipo con su manera pasional de competir y de entender el deporte. Porque sus imágenes icónicas pidiendo, brazos abiertos, el apoyo del Centro Insular en partidos memorables ya se daban en los tiempos iniciáticos en el García San Román. "Nunca he cambiado y, aunque hay que reconocer que todo lo que vino después tuvo mayor repercusión con el traslado al CID, los títulos y miles de espectadores viéndonos en directo, cuando todavía no nos habíamos mudado y jugábamos en ambientes más modestos también era el Camarero que quería comerse la pista, contagiar a los compañeros, tirar para arriba cuando el equipo estaba en momentos complicados, pedir a los seguidores que se metieran en el partido... Es implicarse al máximo en todos los sentidos".</p>
 
@@ -1081,39 +1111,42 @@ c) Examinar las liquidaciones y balances de la entidad.[/articulo]
 
 <p>"A nivel afectivo y emocional, regresar al Guaguas como entrenador para iniciar una nueva etapa fue algo que me motivó desde el primer momento. Y que en el club estén Juan, Paco Sánchez Jover o Felipe Nuez supuso un aliciente enorme. Volvernos a encontrar, después de tantos años, y por y para el club que tanta felicidad nos dio. He trabajado y sentido los triunfos como cuando estaba en la cancha. Como entrenador mantengo la misma filosofía de jugador, esto es, luchar cada punto, ir a ganar siempre, cada partido tomárselo como una final... Y estoy muy contento con la respuesta que he venido teniendo de mis jugadores. La directiva no ha parado de mejorar el equipo y los resultados son los que son, con varios títulos ya en este año largo desde que volvimos y la pretensión de seguir creciendo, sin escatimar en ambiciones y sueños. Es el ADN del Guaguas", finaliza.</p>
 
+[imagen_contenido file="5cap_camarero_foto1.jpg" caption="Gestos pasionales y triunfadores, los que siempre le caracterizaron en la cancha."]
+
 [seccion_header]La cronología[/seccion_header]
 
 <div class="timeline-container">
-<div class="timeline-event"><span class="timeline-year">1987</span><div class="timeline-content"><strong>Cotizado desde sus inicios</strong> — "Yo ahora mismo me debo al Guaguas Las Palmas, donde estoy muy a gusto, con grandes compañeros, entrenador, directiva, en fin, que es mi club. He tenido propuestas de la vecina isla y de la Península, que serán estudiadas en su momento". <em>(Diario de Las Palmas, 27 de febrero de 1982)</em>.</div></div>
-<div class="timeline-event"><span class="timeline-year">1990</span><div class="timeline-content"><strong>Rompiendo pronósticos con los títulos</strong> — "Realmente ha sido una sorpresa para todos que juguemos con el Bomberos. Pienso que en los dos próximos encuentros podremos dar el título a Canarias". <em>(Diario de Las Palmas, 15 de marzo de 1990)</em>.</div></div>
-<div class="timeline-event"><span class="timeline-year">1991</span><div class="timeline-content"><strong>El poder de la afición del CID</strong> — "Todos los equipos que pasan por aquí en las grandes ocasiones terminan asombrados de cómo chilla esta afición. Sin ellos no estaríamos disputando esta final con todo a favor. Si no soy agresivo no sé jugar, es mi estilo". <em>(La Provincia, 12 de abril de 1991)</em>.</div></div>
-<div class="timeline-event"><span class="timeline-year">1994</span><div class="timeline-content"><strong>Ni el PSG pudo</strong> — "Ya he dicho que necesitábamos el calor de la gente para superar a los franceses y esta batalla la hemos ganado con el apoyo de todos, pero esta guerra aún no ha acabado y volvemos a estar en la lucha". <em>(La Provincia, 20 de enero de 1994)</em>.</div></div>
-<div class="timeline-event"><span class="timeline-year">1994</span><div class="timeline-content"><strong>En defensa de su honorabilidad</strong> — "En este mundo hay pocos amigos. La Federación Española cada vez que puede poner una zancadilla a nuestro club lo hace. Lo más importante es lograr estar en la Final Four europea". <em>(Diario de Las Palmas, 12 de septiembre de 1994)</em>.</div></div>
-<div class="timeline-event"><span class="timeline-year">1997</span><div class="timeline-content"><strong>Acordes de despedida</strong> — "Ha sido un año sabático. Psicológicamente es importante recuperarse, porque yo soy un jugador que necesita estar bien de mente para poder jugar bien, porque siempre me empleo al cien por cien". <em>(Diario de Las Palmas, 4 de agosto de 1997)</em>.</div></div>
-<div class="timeline-event"><span class="timeline-year">2001</span><div class="timeline-content"><strong>De su vida</strong> — "Es una zona complicada, ya que la droga está muy cerca. Gracias a mis abuelos y a la educación que me dieron mi madre y mis dos hermanos mayores pude escapar a las drogas. El deporte me ha ayudado mucho a llevar una vida sana". <em>(La Provincia, 8 de diciembre de 2001)</em>.</div></div>
-<div class="timeline-event"><span class="timeline-year">2003</span><div class="timeline-content"><strong>Dolor a la distancia</strong> — "Me duele muchísimo ver al Guaguas tan abajo. Siempre será mi casa. Ahora es cuando más hay que arrimar el hombro por todas las satisfacciones que nos dio. Es cuestión de ciclos y volverá al lugar que tuvo". <em>(Canarias7, 3 de marzo de 2003)</em>.</div></div>
-<div class="timeline-event"><span class="timeline-year">2020</span><div class="timeline-content"><strong>El regreso soñado</strong> — "Creo que esto ha demostrado la ambición y las ganas que hay en las personas que están detrás de este renacimiento del club. Juan Ruiz me sorprende. Quiero darle las gracias por la fuerza que ha demostrado en este proyecto. Es capaz de convencer a todo el mundo a que crea en el Guaguas Las Palmas". <em>(La Provincia, 28 de mayo de 2020)</em>.</div></div>
-<div class="timeline-event"><span class="timeline-year">2021</span><div class="timeline-content"><strong>Con el espíritu de siempre</strong> — "Hemos recuperado el espíritu del Guaguas y logrado que mucha gente se vuelva a enganchar. Juan ha trabajado una barbaridad y en plena pandemia. Él es el que ha sacado todo este proyecto adelante". <em>(Canarias7, 24 de abril de 2021)</em>.</div></div>
-<div class="timeline-event"><span class="timeline-year">2022</span><div class="timeline-content"><strong>Unión como clave</strong> — "Si el vestuario funciona y la directiva y técnicos van en la misma dirección, esa unión hace que vaya todo bien. Estoy muy orgulloso de todos los jugadores". <em>(Mundo Deportivo, 26 de diciembre de 2022)</em>.</div></div>
-<div class="timeline-event"><span class="timeline-year">2023</span><div class="timeline-content"><strong>Champions</strong> — "Es un orgullo y también una responsabilidad representar a nuestro país, sería histórico meter a un equipo español en este nuevo formato de Champions. Tenemos que ir con la mentalidad de jugar y ganar cada punto". <em>(Web del club, 8 de noviembre de 2023)</em>.</div></div>
-<div class="timeline-event"><span class="timeline-year">2024</span><div class="timeline-content"><strong>Reconocimiento europeo</strong> — "Hemos conseguido cosas antes de tiempo y estamos haciendo logros importantes, ahora los jugadores quieren venir aquí. El Guaguas ahora es considerado por toda Europa y nuestra afición es gran parte de nuestro éxito". <em>(Canarias7, 26 de julio de 2024)</em>.</div></div>
-<div class="timeline-event"><span class="timeline-year">2025</span><div class="timeline-content"><strong>Agradecimiento colectivo</strong> — "Otra vez hemos tenido la suerte de poder trabajar con grupo de jugadores increíbles. Nuestro cuerpo técnico se ha mostrado incansable, y tenemos mucho que agradecer al presidente Juan Ruiz". <em>(Web del club, 2 de mayo de 2025)</em>.</div></div>
-<div class="timeline-event"><span class="timeline-year">2026</span><div class="timeline-content"><strong>Pasión como motor</strong> — "El Guaguas lo es todo, es mi vida. Llevo muchos años aquí metido y sobre todo es mi pasión. Creo que lo hago por pasión, no lo hago por otra cosa. Cuando se me quite esa pasión, que no creo, pues me iré a otra cosa. Pero por ahora lo vivo todo como si fuese el primer día". <em>(8sports, 25 de febrero de 2026)</em>.</div></div>
+<div class="timeline-event"><span class="timeline-year">1987</span><div class="timeline-content"><strong>Cotizado desde sus inicios</strong>“Yo ahora mismo me debo al Guaguas Las Palmas, donde estoy muy a gusto, con grandes compañeros, entrenador, directiva, en fin, que es mi club. He tenido propuestas de la vecina isla y de la Península, que serán estudiadas en su momento”. <em>(Diario de Las Palmas, 27 de febrero de 1982)</em>.</div></div>
+<div class="timeline-event"><span class="timeline-year">1990</span><div class="timeline-content"><strong>Rompiendo pronósticos con los títulos</strong>“Realmente ha sido una sorpresa para todos que juguemos con el Bomberos. Pienso que en los dos próximos encuentros podremos dar el título a Canarias”. <em>(Diario de Las Palmas, 15 de marzo de 1990)</em>.</div></div>
+<div class="timeline-event"><span class="timeline-year">1991</span><div class="timeline-content"><strong>El poder de la afición del CID</strong>“Todos los equipos que pasan por aquí en las grandes ocasiones terminan asombrados de cómo chilla esta afición. Sin ellos no estaríamos disputando esta final con todo a favor. Si no soy agresivo no sé jugar, es mi estilo”. <em>(La Provincia, 12 de abril de 1991)</em>.</div></div>
+<div class="timeline-event"><span class="timeline-year">1994</span><div class="timeline-content"><strong>Ni el PSG pudo</strong>“Ya he dicho que necesitábamos el calor de la gente para superar a los franceses y esta batalla la hemos ganado con el apoyo de todos, pero esta guerra aún no ha acabado y volvemos a estar en la lucha”. <em>(La Provincia, 20 de enero de 1994)</em>.</div></div>
+<div class="timeline-event"><span class="timeline-year">1994</span><div class="timeline-content"><strong>En defensa de su honorabilidad</strong>“En este mundo hay pocos amigos. La Federación Española cada vez que puede poner una zancadilla a nuestro club lo hace. Lo más importante es lograr estar en la Final Four europea”. <em>(Diario de Las Palmas, 12 de septiembre de 1994)</em>.</div></div>
+<div class="timeline-event"><span class="timeline-year">1997</span><div class="timeline-content"><strong>Acordes de despedida</strong>“Ha sido un año sabático. Psicológicamente es importante recuperarse, porque yo soy un jugador que necesita estar bien de mente para poder jugar bien, porque siempre me empleo al cien por cien”. <em>(Diario de Las Palmas, 4 de agosto de 1997)</em>.</div></div>
+<div class="timeline-event"><span class="timeline-year">2001</span><div class="timeline-content"><strong>De su vida</strong>“Es una zona complicada, ya que la droga está muy cerca. Gracias a mis abuelos y a la educación que me dieron mi madre y mis dos hermanos mayores pude escapar a las drogas. El deporte me ha ayudado mucho a llevar una vida sana”. <em>(La Provincia, 8 de diciembre de 2001)</em>.</div></div>
+<div class="timeline-event"><span class="timeline-year">2003</span><div class="timeline-content"><strong>Dolor a la distancia</strong>“Me duele muchísimo ver al Guaguas tan abajo. Siempre será mi casa. Ahora es cuando más hay que arrimar el hombro por todas las satisfacciones que nos dio. Es cuestión de ciclos y volverá al lugar que tuvo”. <em>(Canarias7, 3 de marzo de 2003)</em>.</div></div>
+<div class="timeline-event"><span class="timeline-year">2020</span><div class="timeline-content"><strong>El regreso soñado</strong>“Creo que esto ha demostrado la ambición y las ganas que hay en las personas que están detrás de este renacimiento del club. Juan Ruiz me sorprende. Quiero darle las gracias por la fuerza que ha demostrado en este proyecto. Es capaz de convencer a todo el mundo a que crea en el Guaguas Las Palmas”. <em>(La Provincia, 28 de mayo de 2020)</em>.</div></div>
+<div class="timeline-event"><span class="timeline-year">2021</span><div class="timeline-content"><strong>Con el espíritu de siempre</strong>“Hemos recuperado el espíritu del Guaguas y logrado que mucha gente se vuelva a enganchar. Juan ha trabajado una barbaridad y en plena pandemia. Él es el que ha sacado todo este proyecto adelante”. <em>(Canarias7, 24 de abril de 2021)</em>.</div></div>
+<div class="timeline-event"><span class="timeline-year">2022</span><div class="timeline-content"><strong>Unión como clave</strong>“Si el vestuario funciona y la directiva y técnicos van en la misma dirección, esa unión hace que vaya todo bien. Estoy muy orgulloso de todos los jugadores”. <em>(Mundo Deportivo, 26 de diciembre de 2022)</em>.</div></div>
+<div class="timeline-event"><span class="timeline-year">2023</span><div class="timeline-content"><strong>Champions</strong>“Es un orgullo y también una responsabilidad representar a nuestro país, sería histórico meter a un equipo español en este nuevo formato de Champions. Tenemos que ir con la mentalidad de jugar y ganar cada punto”. <em>(Web del club, 8 de noviembre de 2023)</em>.</div></div>
+<div class="timeline-event"><span class="timeline-year">2024</span><div class="timeline-content"><strong>Reconocimiento europeo</strong>“Hemos conseguido cosas antes de tiempo y estamos haciendo logros importantes, ahora los jugadores quieren venir aquí. El Guaguas ahora es considerado por toda Europa y nuestra afición es gran parte de nuestro éxito”. <em>(Canarias7, 26 de julio de 2024)</em>.</div></div>
+<div class="timeline-event"><span class="timeline-year">2025</span><div class="timeline-content"><strong>Agradecimiento colectivo</strong>“Otra vez hemos tenido la suerte de poder trabajar con grupo de jugadores increíbles. Nuestro cuerpo técnico se ha mostrado incansable, y tenemos mucho que agradecer al presidente Juan Ruiz”. <em>(Web del club, 2 de mayo de 2025)</em>.</div></div>
+<div class="timeline-event"><span class="timeline-year">2026</span><div class="timeline-content"><strong>Pasión como motor</strong>“El Guaguas lo es todo, es mi vida. Llevo muchos años aquí metido y sobre todo es mi pasión. Creo que lo hago por pasión, no lo hago por otra cosa. Cuando se me quite esa pasión, que no creo, pues me iré a otra cosa. Pero por ahora lo vivo todo como si fuese el primer día”. <em>(8sports, 25 de febrero de 2026)</em>.</div></div>
 </div>
 '),
     array('title' => 'Paco Sánchez Jover', 'numero' => '', 'order' => 42, 'show_marker' => false, 'parent_ref' => 'cap05',
         'hero' => array(
-            'image' => libro_img('hero-volleyball-match.jpg'),
-            'overlay' => 'rgba(0, 0, 0, 0.15)',
+            'image' => libro_img('5cap_paco_sanches_jover_foto2.jpg'),
+            'overlay' => 'rgba(0, 0, 0, 0.25)',
             'icon' => 'custom',
             'custom_icon' => libro_img('estrella-iconos.svg'),
+            'custom_icon_color' => '#d69745',
             'icon_width' => 80,
             'icon_height' => 80,
             'alignment' => 'center',
             'vertical' => 'center',
             'height' => '500px',
-            'title_lines' => array(libro_hero_line('PACO SÁNCHEZ', 'hsl(220 50% 12%)', 'hsl(45 100% 50%)', 'black'), libro_hero_line('JOVER', 'hsl(220 50% 12%)', 'hsl(45 100% 50%)', 'black')),
-            'border_color' => 'hsl(45 100% 50%)',
+            'background_position' => 'center 30%',
+            'title_lines' => array(libro_hero_line('PACO SÁNCHEZ', '#000000', '#d69745', 'none'), libro_hero_line('JOVER', '#000000', '#d69745', 'none')),
         ),
         'content' => '
 [capitular]Fue uno de sus profesores, "don Mariano", como matiza, el que, ya en su último año como cadete, le introdujo en el deporte que le haría célebre. Porque Paco Sánchez Jover (Murcia, 1960) estaba predestinado al éxito como uno de los jugadores más reconocidos de todos los tiempos en el voleibol nacional. Pero en su niñez, que se desarrolló en el colegio Nuestra Señora de Atocha, "jamás" imaginó que su vida iba a transcurrir en las pistas y de manera profesional. "Como el voleibol se practicaba en horario lectivo, que te permitía saltarte clases, todo el mundo quería jugar. Nunca lo había practicado, pero me animé y me enganché desde el principio. Medía 1,96 metros, no había quien me ganara por alto. Las condiciones eran precarias: suelo de tierra, red con tela mosquitera y sandalias de las de ir a pescar... Pero éramos felices, lo pasábamos bien y, poco a poco, fui evolucionando. Cuando le ganamos, en la Liga Escolar, al Capuchinos, que era el campeón, me ficharon y me llevaron con ellos, por lo que hice el Bachillerato allí. Entré en otra dimensión porque ya había material para entrenar, balones, equipaciones, un pabellón, regularidad y constancia en las sesiones...", precisa.[/capitular]
@@ -1130,11 +1163,15 @@ c) Examinar las liquidaciones y balances de la entidad.[/articulo]
 
 <p>No aterrizó aquel verano de 1987 solo. Tanto se implicó en el proyecto que le había atraído que recomendó los fichajes de Venancio Costa y Antonio Miralles ("apenas jugaban en Mallorca y le dije a Juan que era una oportunidad buena para el club por la calidad que tenían, y que luego se demostró con creces"), además de su hermano Jesús. Reconoce que intuía que "algo bonito" venía en camino porque "desde el primer momento" percibió que en el Guaguas "se estaban haciendo las cosas muy bien y todos iban a una".</p>
 
+[imagen_contenido file="5cap_paco_sanches_jover_foto1.jpg" caption="Junto a su hermano Jesús, con el que compartió tiempos en el Guaguas y experiencia olímpica en Barcelona 92, en labores de bloqueo."]
+
 <p>Eso sí, es sincero al confesar que el ciclo de éxitos que se iba a firmar "era impensable para todos" dada su magnitud y vigencia: "Que podíamos ganar algo, bueno, sí, se podía esperar porque había un grupo de calidad. Pero eso de ganar Ligas y Copas sin parar, con los presupuestos de los rivales, no entraba en la mente de nadie".</p>
 
 <p>"El paso del San Román al Centro Insular fue el primer gran avance. Teníamos que crecer, aunque a Juan le daba respeto. Pensaba que se nos iba a quedar grande el nuevo pabellón. Pegábamos carteles para dar visibilidad al club, hacíamos de todo por la modestia que imperaba al ser un club sin estructura. Pero no paramos de crecer. Ya la primera temporada, subcampeones de Liga y Copa. Se mantiene la base y comienzan a llegar refuerzos de la talla del Chava, Klos, Golec... Aquello ya era imparable. Ver el CID lleno fue la prueba de que sí, de que aquello iba muy en serio", enfatiza.</p>
 
 <p>Sánchez Jover se hace líder del equipo nada más llegar. Su amplísima experiencia previa en la élite y como internacional absoluto le convierten en referencia indiscutible en un vestuario plagado de jóvenes: "Camarero tenía 20 años, Jorge Ramón también estaba casi empezando... Me tocaba ser algo más que un jugador y no dudé en asumir la responsabilidad que fuera".</p>
+
+[imagen_contenido file="5cap_paco_sanches_jover_foto4.jpg" caption="Concentrado en una sesión preparatoria."]
 
 <p>Abunda en la figura de Camarero con palabras de agradecimiento: "Los dos tenemos una personalidad fuerte. Y, con tantos años juntos, normal que hubiese épocas en las que queríamos matarnos, dicho de una manera metafórica. Y cuando me tocó ser su entrenador, la tensión a veces cortaba el aire. Eso sí, podíamos no hablarnos en la ducha pero en la pista moríamos por el Guaguas. Pero siempre predominó el respeto y la camaradería entre él y yo. Y así se ha demostrado con el paso de los años. Le agradecí que me acogiera con los brazos abiertos, siendo él una de las figuras del Guaguas que me encontré, y que me cediera el rango de capitán, por decirlo de alguna manera, desde el compañerismo y el bien común. Sergio fue, ha sido y es para mí, por encima de todo, un amigo. Y es el compañero que más me ha marcado en mi historia en la entidad. Junto con Juan Ruiz, está para mí en un escalón privilegiado".</p>
 
@@ -1144,7 +1181,11 @@ c) Examinar las liquidaciones y balances de la entidad.[/articulo]
 
 <p>La Copa ganada al Palma en 1989 la tiene en su memoria como "lo más especial" cuando repasa el palmarés: "En la Liga ante el Bomberos, en 1990, sabíamos que no se nos escapaba el título. Fue grandioso, claro. Pero la Copa, esa primera vez, es inigualable. Ganarle al Palma, nada más y nada menos. Mucha gente lloró de emoción, de no creérselo".</p>
 
+[imagen_contenido file="5cap_paco_sanches_jover_foto5.jpg" caption="Levantando uno de los innumerables títulos que ganó el Guaguas ante la adoración de los seguidores."]
+
 <p>"Vinieron años preciosos. Los dobletes, jugar en Europa, ser los mejores. Cada verano me llegaban ofertas y yo pensaba que en ninguna parte iba a estar mejor que aquí. Tras jugar las Olimpiadas de Barcelona 92, más me buscaron para que cambiara de aires. Me lo pasé en grande jugando. Lo hacíamos casi de memoria. Con Venancio, Miralles, Juanma, Sergio o Golec fueron muchísimos años. Con una mirada ya sabíamos por donde tirar. La gente te hacía sentir importante, venían miles de personas a vernos, daban los partidos por la tele cuando solo había dos canales, fuera nos recibían como el rival a batir... Imposible pedir más".</p>
+
+[imagen_contenido file="5cap_paco_sanches_jover_foto3.jpg" caption="Gesto de complicidad con Camarero en el transcurso de un partido."]
 
 <p>"Y no me olvido de la clase dirigente que teníamos. Juan Ruiz siempre ejerció de presidente cercano, sensible y eficiente con nosotros. Es clave en el funcionamiento del club que los que mandan sepan qué se llevan entre manos. Y nosotros teníamos la suerte de que nuestro presidente, supiera más o menos de voleibol, sí tenía muy claro lo que había que hacer y lo que había que evitar para que los proyectos funcionaran", matiza.</p>
 
@@ -1158,38 +1199,43 @@ c) Examinar las liquidaciones y balances de la entidad.[/articulo]
 
 [cita_editorial author="Paco Sánchez Jover"]Ver otra vez al Guaguas campeón es una alegría, pero en el deporte no siempre se gana. Y llegará un momento en el que no nos llevemos la Liga. Pero la satisfacción de reactivar la institución y poder dejarla a los que vengan, porque las personas somos circunstanciales, es algo que no se puede describir. Nos hemos quitado una espina todos los que queremos y sentimos en el corazón este escudo.[/cita_editorial]
 
+[imagen_contenido file="5cap_paco_sanches_jover_foto6.jpg" caption="Punto, set y partido. Abrazo emocionado con un compañero. Al fondo, un CID a reventar."]
+
 [seccion_header]La cronología[/seccion_header]
 
 <div class="timeline-container">
-<div class="timeline-event"><span class="timeline-year">1987</span><div class="timeline-content"><strong>La intuición de un Guaguas que iría a más</strong> — "Si hay continuidad, si seguimos un par de años, el Guaguas puede tener un gran equipo con aspiraciones muy grandes. Pero esto solo se consigue con tiempo y con partidos y más partidos". <em>(La Provincia, 31 de julio de 1987)</em>.</div></div>
-<div class="timeline-event"><span class="timeline-year">1989</span><div class="timeline-content"><strong>Ambición y más ambición</strong> — "Para que en Las Palmas el voleibol suba a la cúspide necesita que el Guaguas gane un título. Creo que es un sueño posible". <em>(Diario de Las Palmas, 8 de marzo de 1989)</em>.</div></div>
-<div class="timeline-event"><span class="timeline-year">1990</span><div class="timeline-content"><strong>La Liga más especial</strong> — "Ya he ganado ligas con otros equipos pero esta es la que mejor sabor tiene, porque es la mejor afición que hay en España. Con un público así no podíamos perder. Nunca, en ninguna cancha, he visto una afición así". <em>(La Provincia, 2 de mayo de 1990)</em>.</div></div>
-<div class="timeline-event"><span class="timeline-year">1991</span><div class="timeline-content"><strong>Un auge imparable</strong> — "No me ha sorprendido el auge del voleibol aquí porque es un deporte que siempre había estado, con buenos jugadores y nivel. Es mejor partir de perdedores y luego ganar, que no como ha hecho el Palma". <em>(Diario de Las Palmas, 26 de abril de 1991)</em>.</div></div>
-<div class="timeline-event"><span class="timeline-year">1994</span><div class="timeline-content"><strong>De homenajes y retos pendientes</strong> — "No quiero un homenaje porque yo soy poco amigo de las ceremonias. Sería una espinita retirarme sin disputar una Final Four con el Gran Canaria". <em>(Diario de Las Palmas, 17 de enero de 1994)</em>.</div></div>
-<div class="timeline-event"><span class="timeline-year">1996</span><div class="timeline-content"><strong>A por todos los títulos</strong> — "El Gran Canaria va a luchar por cada uno de los cuatro títulos que afrontará. Somos favoritos al primer puesto tanto en la Liga ACEVOL como en la Copa del Rey". <em>(Canarias7, 18 de junio de 1996)</em>.</div></div>
-<div class="timeline-event"><span class="timeline-year">1997</span><div class="timeline-content"><strong>Un legado para el futuro</strong> — "Afortunadamente el futuro deportivo del club está asegurado hasta el 2010. El próximo año subirán al primer equipo dos juveniles, Raúl Dávila, un receptor de 1,98, y Pedro Cabrera, un central de 2,05". <em>(La Provincia, 13 de abril de 1997)</em>.</div></div>
-<div class="timeline-event"><span class="timeline-year">1997</span><div class="timeline-content"><strong>La exigencia constante</strong> — "Tenemos un potencial suficiente como para aspirar a lo máximo. El Guaguas es un club que siempre parte con una plantilla con calidad suficiente para afrontar grandes retos". <em>(Diario de Las Palmas, 8 de septiembre de 1997)</em>.</div></div>
-<div class="timeline-event"><span class="timeline-year">1998</span><div class="timeline-content"><strong>Sueño cumplido</strong> — "Llevo desde 1983 soñando con estar en una Final Four. Para mí el sueño se ha acabado. Se convierte en realidad. Esta Final Four debe ser el punto de partida para una nueva época del club". <em>(Canarias7, 14 de marzo de 1998)</em>.</div></div>
-<div class="timeline-event"><span class="timeline-year">1998</span><div class="timeline-content"><strong>Contra el desgaste, cantera</strong> — "Estaba cansado, pero no de voleibol. Sí llevaba tres años muy duros, de mucho trabajo, y no llegaban los resultados que yo quería. Espero mucho de la afición grancanaria, que para mí siempre ha sido un jugador más de nuestro equipo". <em>(Diario de Las Palmas, 24 de agosto de 1998)</em>.</div></div>
-<div class="timeline-event"><span class="timeline-year">1999</span><div class="timeline-content"><strong>El patrimonio de la casa</strong> — "Después de cuatro años hemos conseguido llevar a ocho canteranos al primer equipo. El principal patrimonio del club son los jugadores locales, pero también tenemos que hacer un equipo que nos ilusione y con el que podamos soñar con ganar algo". <em>(Canarias7, 1 de junio de 1999)</em>.</div></div>
+<div class="timeline-event"><span class="timeline-year">1987</span><div class="timeline-content"><strong>La intuición de un Guaguas que iría a más</strong>“Si hay continuidad, si seguimos un par de años, el Guaguas puede tener un gran equipo con aspiraciones muy grandes. Pero esto solo se consigue con tiempo y con partidos y más partidos”. <em>(La Provincia, 31 de julio de 1987)</em>.</div></div>
+<div class="timeline-event"><span class="timeline-year">1989</span><div class="timeline-content"><strong>Ambición y más ambición</strong>“Para que en Las Palmas el voleibol suba a la cúspide necesita que el Guaguas gane un título. Creo que es un sueño posible”. <em>(Diario de Las Palmas, 8 de marzo de 1989)</em>.</div></div>
+<div class="timeline-event"><span class="timeline-year">1990</span><div class="timeline-content"><strong>La Liga más especial</strong>“Ya he ganado ligas con otros equipos pero esta es la que mejor sabor tiene, porque es la mejor afición que hay en España. Con un público así no podíamos perder. Nunca, en ninguna cancha, he visto una afición así”. <em>(La Provincia, 2 de mayo de 1990)</em>.</div></div>
+<div class="timeline-event"><span class="timeline-year">1991</span><div class="timeline-content"><strong>Un auge imparable</strong>“No me ha sorprendido el auge del voleibol aquí porque es un deporte que siempre había estado, con buenos jugadores y nivel. Es mejor partir de perdedores y luego ganar, que no como ha hecho el Palma”. <em>(Diario de Las Palmas, 26 de abril de 1991)</em>.</div></div>
+<div class="timeline-event"><span class="timeline-year">1994</span><div class="timeline-content"><strong>De homenajes y retos pendientes</strong>“No quiero un homenaje porque yo soy poco amigo de las ceremonias. Sería una espinita retirarme sin disputar una Final Four con el Gran Canaria”. <em>(Diario de Las Palmas, 17 de enero de 1994)</em>.</div></div>
+<div class="timeline-event"><span class="timeline-year">1996</span><div class="timeline-content"><strong>A por todos los títulos</strong>“El Gran Canaria va a luchar por cada uno de los cuatro títulos que afrontará. Somos favoritos al primer puesto tanto en la Liga ACEVOL como en la Copa del Rey”. <em>(Canarias7, 18 de junio de 1996)</em>.</div></div>
+<div class="timeline-event"><span class="timeline-year">1997</span><div class="timeline-content"><strong>Un legado para el futuro</strong>“Afortunadamente el futuro deportivo del club está asegurado hasta el 2010. El próximo año subirán al primer equipo dos juveniles, Raúl Dávila, un receptor de 1,98, y Pedro Cabrera, un central de 2,05”. <em>(La Provincia, 13 de abril de 1997)</em>.</div></div>
+<div class="timeline-event"><span class="timeline-year">1997</span><div class="timeline-content"><strong>La exigencia constante</strong>“Tenemos un potencial suficiente como para aspirar a lo máximo. El Guaguas es un club que siempre parte con una plantilla con calidad suficiente para afrontar grandes retos”. <em>(Diario de Las Palmas, 8 de septiembre de 1997)</em>.</div></div>
+<div class="timeline-event"><span class="timeline-year">1998</span><div class="timeline-content"><strong>Sueño cumplido</strong>“Llevo desde 1983 soñando con estar en una Final Four. Para mí el sueño se ha acabado. Se convierte en realidad. Esta Final Four debe ser el punto de partida para una nueva época del club”. <em>(Canarias7, 14 de marzo de 1998)</em>.</div></div>
+<div class="timeline-event"><span class="timeline-year">1998</span><div class="timeline-content"><strong>Contra el desgaste, cantera</strong>“Estaba cansado, pero no de voleibol. Sí llevaba tres años muy duros, de mucho trabajo, y no llegaban los resultados que yo quería. Espero mucho de la afición grancanaria, que para mí siempre ha sido un jugador más de nuestro equipo”. <em>(Diario de Las Palmas, 24 de agosto de 1998)</em>.</div></div>
+<div class="timeline-event"><span class="timeline-year">1999</span><div class="timeline-content"><strong>El patrimonio de la casa</strong>“Después de cuatro años hemos conseguido llevar a ocho canteranos al primer equipo. El principal patrimonio del club son los jugadores locales, pero también tenemos que hacer un equipo que nos ilusione y con el que podamos soñar con ganar algo”. <em>(Canarias7, 1 de junio de 1999)</em>.</div></div>
 </div>
 '),
     array('title' => 'Waclaw Golec', 'numero' => '', 'order' => 43, 'show_marker' => false, 'parent_ref' => 'cap05',
         'hero' => array(
-            'image' => libro_img('hero-volleyball-match.jpg'),
-            'overlay' => 'rgba(0, 0, 0, 0.15)',
+            'image' => libro_img('5cap_golec_foto9.jpg'),
+            'overlay' => 'rgba(0, 0, 0, 0.25)',
             'icon' => 'custom',
             'custom_icon' => libro_img('estrella-iconos.svg'),
+            'custom_icon_color' => '#f6ae50',
             'icon_width' => 80,
             'icon_height' => 80,
             'alignment' => 'center',
             'vertical' => 'center',
             'height' => '500px',
-            'title_lines' => array(libro_hero_line('WACLAW', 'hsl(220 50% 12%)', 'hsl(45 100% 50%)', 'black'), libro_hero_line('GOLEC', 'hsl(220 50% 12%)', 'hsl(45 100% 50%)', 'black')),
-            'border_color' => 'hsl(45 100% 50%)',
+            'background_position' => 'center 10%',
+            'title_lines' => array(libro_hero_line('WACLAW', '#000000', '#f6ae50', 'none'), libro_hero_line('GOLEC', '#000000', '#f6ae50', 'none')),
         ),
         'content' => '
 [capitular]Waclaw Golec (Tarnow, 1963) remite, directamente, a la etapa de esplendor que vivió el Guaguas en la década de los noventa con su registro memorable de cinco Ligas consecutivas (1990-1994), conquista en la que el jugador nacido en Polonia tuvo un papel estelar. "Llegué con 26 años y pasé siete temporadas increíbles en todos los sentidos. Encontré un equipo de guerreros, unos compañeros maravillosos y una tierra fantástica, con una afición que llevo en el corazón", resume cuando le toca hacer retrospectiva y en un castellano que conserva impecable pese al paso del tiempo.[/capitular]
+
+[imagen_contenido file="5cap_golec_foto1.jpg" caption="Con sus brazos eternos y retando a la gravedad para uno de sus remates."]
 
 <p>No fue nada fácil el fichaje de Golec, en aquel entonces toda una estrella en su patria, con más de 100 encuentros internacionales con la absoluta y campeón de todo tras despuntar en el Dunajec Nowy Sadz y consagrarse en las filas del Hutnik de Cracovia y Legia de Varsovia. Por un lado, Golec ya tenía "firmado y totalmente cerrado" su compromiso con un equipo italiano para cuando Juan Ruiz vino a contactarle. Y, por si fuera poco, la legislación de la época en el país centroeuropeo impedía emigrar a los deportistas profesionales menores de 28 años. Su compatriota Ireneusz Klos, adquirido semanas antes, no encontró esa traba burocrática al haber rebasado ese límite impuesto. Ruiz, auxiliado por Marcos Sznchenovic, relaciones externas de la entidad, tuvo que realizar arduas gestiones para obtener el permiso correspondiente de la Oficina Central de Deportes de Polonia, órgano competente para autorizar su salida, además de convencer al propio Golec a renunciar a un contrato con mejores cifras económicas en el campeonato italiano para recalar en un proyecto todavía por modelar.</p>
 
@@ -1199,17 +1245,27 @@ c) Examinar las liquidaciones y balances de la entidad.[/articulo]
 
 <p>Golec, de planta imponente con su 1,95 metros de estatura, con desempeño habitual en la zona cuatro y con habilidades manifiestas como rematador y receptor, encajó "desde el primer momento" en el proyecto, inicialmente dirigido por Robert Croteau, porque, como esperaba, pasó a formar parte "de una plantilla de guerreros dispuestos a morir en la pista".</p>
 
+[imagen_contenido file="5cap_golec_foto2.jpg"]
+
 [cita_editorial author="Waclaw Golec"]Me acostumbré a ganar y, aunque ya se sabe que en el deporte también se pierde, es inevitable, lo que quería era seguir y seguir levantando trofeos. Y en ese equipo era posible. También, tengo que decirlo, con Paco en el banquillo, Juan en el palco y compañeros como Sergio, Klos o Venancio, entre otros, era imposible que aquello saliera mal.[/cita_editorial]
 
 <p>"Entrenábamos y jugábamos al límite. Y eso se notaba en los partidos. Muy pocas veces fuimos inferiores a los rivales, y eso que el Palma tenía una plantilla de lujo. Pero nosotros estábamos un escalón por encima", opina.</p>
 
 <p>Golec también incide en un componente que terminó por disparar la potencialidad del Calvo Sotelo de la transición entre los ochenta y los noventa: el compañerismo. "Éramos amigos. Había un sentimiento de respeto y de apoyo a todos que todavía sigue. Porque aún sigo llamando a muchos con los que compartí aquella experiencia, me preocupo por ellos, les deseo siempre lo mejor. Y cuando jugábamos juntos, era exactamente igual. Queríamos ganar la Liga como fuese y el camino era, además de la calidad y experiencia, del trabajo duro y la constancia, el que en el vestuario todos fuésemos en la misma dirección. Esa fue la base de todo lo que vivimos. Compañeros dentro y fuera", insiste.</p>
 
+[imagen_contenido file="5cap_golec_foto7.jpg" caption="Celebración eufórica de un punto. Klos, Costa, Golec, Jorge Ramón y Sánchez Jover."]
+
 <p>Son "muchísimos los recuerdos" que afloran en su memoria a la hora de hacer balance de su estancia en la entidad isleña. De la afición "todo lo que se diga es poco" porque, en su caso, se congratula de haber sentido "cariño, apoyo y pasión" desde la hinchada que le idolatraba: "Para cualquier deportista profesional siempre es importante notar desde la grada el empuje que necesitas. Yo tuve grandes momentos de forma, pero también sufrí otros menos buenos. Y siempre estuvieron conmigo, jamás una palabra negativa. Eso me hizo muy feliz. Venía de muy lejos y aquí me hacían sentir como si estuviese en mi casa".</p>
 
 <p>"No era el único al que eso le pasaba. En el resto del equipo también estaba la seguridad de que, cuando fallaran las fuerzas, o si no tuviésemos acierto, nuestra gente nos iba a ayudar. Era una seguridad enorme. Notábamos cuando jugábamos como local que al rival todo se le hacía más complicado con el Centro Insular de nuestro lado".</p>
 
-<p>Su sensacional rendimiento despertó el interés de numerosos equipos, que le tentaron para hacer las maletas durante su estancia en el Guaguas: "Me llamaron de Bélgica, el Almería me daba lo que quisiera... Pero no podía ir en contra de mi corazón. Y mi corazón estaba en Gran Canaria y junto a los chicos con los que me divertía jugando y logrando muchísimas cosas bonitas. Las Ligas, las Copas, jugar por Europa, sentir que nos respetaban en cada lugar. Otros en mi lugar lo mismo sí hubiesen dado un paso a otro sitio porque las ofertas eran muy pero que muy buenas. Pero no. Realmente, nunca me planteé irme hasta que regresé a Polonia con 33 años y ya para retirarme. Mientras me quisieron aquí, aquí me quedé".</p>
+<p>Su sensacional rendimiento despertó el interés de numerosos equipos, que le tentaron para hacer las maletas durante su estancia en el Guaguas: "Me llamaron de Bélgica, el Almería me daba lo que quisiera... Pero no podía ir en contra de mi corazón. Y mi corazón estaba en Gran Canaria y junto a los chicos con los que me divertía jugando y logrando muchísimas cosas bonitas. Las Ligas, las Copas, jugar por Europa, sentir que nos respetaban en cada lugar.
+
+[imagen_contenido file="5cap_golec_foto6.jpg"]
+
+Otros en mi lugar lo mismo sí hubiesen dado un paso a otro sitio porque las ofertas eran muy pero que muy buenas. Pero no. Realmente, nunca me planteé irme hasta que regresé a Polonia con 33 años y ya para retirarme. Mientras me quisieron aquí, aquí me quedé".</p>
+
+[imagen_contenido file="5cap_golec_foto4.jpg" caption="Golec no pudo evitar las lágrimas y la emoción al despedirse del club en el que se hizo leyenda. Su último acto de servicio fue levantar la Copa del Rey de 1996."]
 
 [seccion_header]La Liga de 1991: la obra maestra[/seccion_header]
 
@@ -1217,26 +1273,35 @@ c) Examinar las liquidaciones y balances de la entidad.[/articulo]
 
 [cita_editorial author="Waclaw Golec"]Recuerdo que no empezamos bien en el primer set. Un mal parcial y, sin venirnos abajo, reaccionamos y no paramos. Es de esos partidos que nunca quieres que acaben porque termina saliéndote todo. En la pista estábamos muy concentrados. Y mirabas a la grada y todo era amarillo, con la gente aplaudiendo y gritando. Ganamos 3-0 y fuimos campeones con el máximo honor. Los aplastamos en todos los sentidos. Fuimos una máquina perfecta de voleibol.[/cita_editorial]
 
+[imagen_contenido file="5cap_golec_foto8.jpg"]
+
 <p>Confortado por el bagaje profesional y personal que le dejó su larga estancia en el Guaguas ("mejoré en todos los aspectos, maduré muchísimo y compartí muchos sentimientos con gente especial que no hubiese conocido en otro sitio"), Golec asegura estar "muy agradecido" a todos los que confiaron en él y le hicieron entrar en la historia del deporte canario por ser uno de los referentes del club más laureado.</p>
 
+[imagen_contenido file="5cap_golec_foto3.jpg" caption="Imparable con sus remates letales. Al fondo, la afición del CID."]
+
 <p>"Sigo la actualidad del equipo y me pone muy contento que gente como Juan Ruiz, Paco o Sergio hayan vuelto y lo levantaran haciéndolo, de nuevo, campeón. Estoy a miles de kilómetros pero siento como si estuviese allí los títulos que se han conseguido en los últimos años. Ojalá que aquellos años tan bonitos que vivimos se repitan, que la afición regrese, que todos disfruten de esa manera...", concluye desde su tierra pero convertido, "para siempre", en un militante más de la causa.</p>
+
+[imagen_contenido file="5cap_golec_foto5.jpg" caption="Junto a su compatriota Ireneusz Klos."]
 '),
     array('title' => 'Ireneusz Klos', 'numero' => '', 'order' => 44, 'show_marker' => false, 'parent_ref' => 'cap05',
         'hero' => array(
-            'image' => libro_img('hero-volleyball-match.jpg'),
-            'overlay' => 'rgba(0, 0, 0, 0.15)',
+            'image' => libro_img('5cap_klos_foto6.jpg'),
+            'overlay' => 'rgba(0, 0, 0, 0.3)',
             'icon' => 'custom',
             'custom_icon' => libro_img('estrella-iconos.svg'),
+            'custom_icon_color' => '#f3ab4f',
             'icon_width' => 80,
             'icon_height' => 80,
             'alignment' => 'center',
             'vertical' => 'center',
             'height' => '500px',
-            'title_lines' => array(libro_hero_line('IRENEUSZ', 'hsl(220 50% 12%)', 'hsl(45 100% 50%)', 'black'), libro_hero_line('KLOS', 'hsl(220 50% 12%)', 'hsl(45 100% 50%)', 'black')),
-            'border_color' => 'hsl(45 100% 50%)',
+            'background_position' => 'center 35%',
+            'title_lines' => array(libro_hero_line('IRENEUSZ', '#000000', '#f3ab4f', 'none'), libro_hero_line('KLOS', '#000000', '#f3ab4f', 'none')),
         ),
         'content' => '
 [capitular]Considerado uno de los mejores jugadores del mundo, con 364 partidos acumulados con la selección polaca y una amplísima trayectoria jalonada de títulos y prestigio. Así aterrizó en Gran Canaria un 2 de agosto de 1989 Ireneusz Klos (Gorzow Wielkopolski, 1959) para fichar por el Guaguas, todo un bombazo en el mercado internacional. Procedía de su equipo de toda la vida, el Gwardia Wroclaw, fue recibido en el aeropuerto por una comitiva del club encabezada por Juan Ruiz, presidente, y el directivo Ricardo Ramírez.[/capitular]
+
+[imagen_contenido file="5cap_klos_foto1.jpg"]
 
 [cita_prensa source="Prensa local, 2 de agosto de 1989"]Paco Sánchez Jover me ha dicho que es un equipo de futuro y perspectivas enormes.[/cita_prensa]
 
@@ -1246,7 +1311,11 @@ c) Examinar las liquidaciones y balances de la entidad.[/articulo]
 
 <p>Klos mezcla de inmediato con sus compañeros y, pese a no dominar el idioma, "el entendimiento fue total porque el lenguaje del voleibol es universal", según sus consideraciones. "Fui cogiendo el tono físico y, a la vez, integrándome en el grupo. Estar con Golec fue, igualmente, algo que me ayudó, al igual que a él estar conmigo. Rápidamente adquirí mi nivel y me percaté de la calidad que había en el resto del equipo. Llegué con humildad, con ganas de ayudar y pensando que, quizás, todo iba a resultar más complicado, pero era muy fácil jugar con gente como la que tenía al lado. No esperaba encontrar tanta calidad y fue una gran sorpresa, muy positiva. Al poco tiempo de estar en el Guaguas ya sabía que saldríamos campeones".</p>
 
+[imagen_contenido file="5cap_klos_foto2.jpg"]
+
 <p>Al igual que todos sus coetáneos de aquella etapa gloriosa, el aspecto humano es una de las claves que pondera para el asalto a la primera Liga o el doblete de 1991, éxitos en los que tuvo un papel capital. "Había una gran relación entre todos, conocíamos a las familias de los compañeros, compartíamos tiempo libre y éramos un grupo fuerte, unido, muy sano. Era muy importante tener esos vínculos tan fuertes porque, a lo largo de una competición, siempre hay momentos buenos y malos y necesitas confiar en quien tienes al lado, saber que va a apoyarte, a ayudarte".</p>
+
+[imagen_contenido file="5cap_klos_foto3.jpg"]
 
 <p>"Era normal que con Golec tuviese más trato porque ya éramos amigos y compañeros antes de venir al Guaguas. Pero tanto él como yo nos abrimos al resto porque aquí nos hicieron sentir como en nuestra propia casa. Era feliz jugando, entrenando y también al ver a mi familia muy adaptada a la vida en la isla. Yo le había dicho al presidente que necesitaba que los míos estuviesen bien, él me prometió que así sería y, la verdad, cumplió con su palabra. Eso, sin duda, me ayudó a dar mi mejor rendimiento".</p>
 
@@ -1260,6 +1329,8 @@ c) Examinar las liquidaciones y balances de la entidad.[/articulo]
 
 <p>Como aconteció con la mayoría de jugadores del Guaguas de principios de los noventa, Klos recibió numerosas propuestas para cambiar de aires y, pese a que tenía la opción de renovar por otro año más a la conclusión de su contrato, terminó aceptando una del Grenoble de Francia. Fue un adiós "inesperado", dada su pretensión de seguir ligado a un escudo en el que se hizo ídolo y con el que se le intuía un recorrido más duradero. "No fue un paso fácil, pero tuve que elegir. Dejé al Guaguas en lo más alto y, al menos, me quedó ese consuelo. Irme dándolo todo y colaborando en una etapa maravillosa para el equipo de la ciudad", valora.</p>
 
+[imagen_contenido file="5cap_klos_foto5.jpg" caption="Facilitando el remate a Jorge Ramón con una de sus colocaciones."]
+
 [seccion_header]El regreso inesperado[/seccion_header]
 
 <p>"Nunca" imaginó que, con los años, en 1995, tendría un retorno al Guaguas, tras su etapa en Francia y Luxemburgo, ya en el tramo final de su carrera profesional. Todo fue de una manera casual y cuando enfocaba sus pasos a un retiro tranquilo en su país.</p>
@@ -1271,6 +1342,8 @@ c) Examinar las liquidaciones y balances de la entidad.[/articulo]
 <p>A Klos le ofrecieron "unas condiciones económicas muy buenas" y con las que se sintió "bastante valorado" pese a estar en la recta final de su trayectoria en activo. "En mi etapa en Luxemburgo tenía que entrenar a un equipo femenino para completar mi salario y eso, obviamente, me quitaba tiempo de mi preparación. Cuando regresé al Guaguas, Juan Ruiz me hizo un buen contrato que me permitió, además, volver a estar enfocado al ciento por ciento en el voleibol profesional. Fue un año muy bonito, recuperando viejas sensaciones con muchos compañeros que ya conocía y Paco Sánchez Jover de entrenador, y que terminamos con otro título, la Copa del Rey que le ganamos al Soria. Fue mi despedida, junto a la de Golec, y con un gran triunfo. No se puede pedir más".</p>
 
 <p>En su balance de las tres campañas defendiendo la camiseta amarilla pesa todo lo bueno y así lo evidencia: "Para mí fue una época maravillosa y que me gusta recordar. Momentos especiales que siempre van conmigo. Volví en 2015 a un homenaje que nos hicieron y todo me vino a la cabeza. Asocio el Guaguas a una parte muy bonita de mi vida. Y saber que los aficionados disfrutaron de mi juego es lo que más valoro".</p>
+
+[imagen_contenido file="5cap_klos_foto4.jpg" caption="Junto a su compatriota Wlodzimierz Nalazek."]
 '),
 
     // ═══════════════════════════════════════════════
@@ -1280,26 +1353,13 @@ c) Examinar las liquidaciones y balances de la entidad.[/articulo]
         'title' => 'Ignacio Brito / Tributo a los Salesianos',
         'numero' => '06',
         'order' => 50,
-        'show_marker' => true,
+        'show_marker' => false,
+        'ocultar_titulo' => true,
         'ref_id' => 'cap06',
-        'hero' => array(
-            'image' => libro_img('hero-patio-colegio.jpg'),
-            'overlay' => 'rgba(0, 0, 0, 0.15)',
-            'icon' => 'custom',
-            'custom_icon' => libro_img('estrella-icon.svg'),
-            'custom_icon_color' => 'hsl(45 100% 50%)',
-            'icon_width' => 40,
-            'icon_height' => 40,
-            'alignment' => 'center',
-            'vertical' => 'center',
-            'height' => '500px',
-            'title_lines' => array(libro_hero_line('IGNACIO BRITO', 'hsl(220 50% 12%)', 'hsl(45 100% 50%)', 'black'), libro_hero_line('TRIBUTO A LOS', 'hsl(220 50% 12%)', 'hsl(45 100% 50%)', 'black'), libro_hero_line('SALESIANOS', 'hsl(220 50% 12%)', 'hsl(45 100% 50%)', 'black')),
-            'border_color' => 'hsl(45 100% 50%)',
-        ),
-        'content' => '
-[seccion_header]Tributo a los Salesianos[/seccion_header]
+        'content' => '[bloque_color fondo="hsl(46, 92%, 62%)" texto="#1a1a0a"]
+[seccion_header color="hsl(92, 37%, 74%)" star="true" texto="#111111" tag="h2"]Tributo a los Salesianos[/seccion_header]
 
-<p><em>Por Joselu Sánchez</em></p>
+<p><em style="font-weight:600;">Por Joselu Sánchez</em></p>
 
 [capitular]El Colegio Salesianos Las Palmas, fundado en el año 1923, ha sido un pilar fundamental en el desarrollo del voleibol en Gran Canaria. El apoyo al deporte como vehículo de educación y convivencia entre sus alumnos hizo de este centro un referente en el desarrollo de las actividades de competición deportiva de la isla.[/capitular]
 
@@ -1307,15 +1367,20 @@ c) Examinar las liquidaciones y balances de la entidad.[/articulo]
 
 <p>El primer equipo canario en alcanzar la máxima categoría del voleibol en España, el CV Juventud Las Palmas, liderado por los entrenadores Manuel Evaristo y Félix Rodríguez, en la temporada de 1981-82, contó con una plantilla mayoritaria de alumnos salesianos. Entre ellos podemos mencionar jugadores tan sobresalientes como Javier Rodríguez, Manuel Palacios, Tony Acosta, Alberto Calero, Isidro Quintana, Jordi Comi, Juani Nogales, Luis Apolinario, Alfonso Gallardo, Fefo Montelongo, Antonio Díaz, Carlos Franchy, Carmelo Torres, Andrés Martínez o mi caso, entre otros.</p>
 
-<p>Por otro lado, además, alumnos procedentes de esta cantera colegial contribuyeron a la excelente trayectoria del CV Calvo Sotelo, que también lograría ascender, en la temporada 1984-85, a la división de honor de este deporte. Bajo las órdenes de su entrenador y pieza importante del voleibol grancanario, el fallecido Felipe Nuez, en las canchas del colegio nacional Calvo Sotelo, fueron entrenados Miguel Mendaño, Alfredo Padrón, Tony Vázquez, Juan Carlos Rodríguez, Ortega Araña, Ramón Rodríguez, Tony Acosta, Enrique Ramírez. En la temporada 1985-1986 este equipo adoptó el nombre de su patrocinador y pasó a denominarse CV Guaguas.</p>
+[imagen_contenido file="6cap_igna_foto2.jpg"]
 
-[seccion_header]Ignacio Brito[/seccion_header]
+<p>Por otro lado, además, alumnos procedentes de esta cantera colegial contribuyeron a la excelente trayectoria del CV Calvo Sotelo, que también lograría ascender, en la temporada 1984-85, a la división de honor de este deporte. Bajo las órdenes de su entrenador y pieza importante del voleibol grancanario, el fallecido Felipe Nuez, en las canchas del colegio nacional Calvo Sotelo, fueron entrenados Miguel Mendaño, Alfredo Padrón, Tony Vázquez, Juan Carlos Rodríguez, Ortega Araña, Ramón Rodríguez, Tony Acosta, Enrique Ramírez. En la temporada 1985-1986 este equipo adoptó el nombre de su patrocinador y pasó a denominarse CV Guaguas.</p>
+[/bloque_color]
+
+[seccion_header color="hsl(92, 37%, 74%)" star="true" texto="#111111" tag="h2"]Ignacio Brito[/seccion_header]
 
 [capitular]Estuvo en la génesis del gran Guaguas, el equipo que se hizo leyenda con su irrupción triunfal a finales de la década de los ochenta, lo que considera "un orgullo que queda para toda la vida" al ser esa una pertenencia "demasiado especial". Ignacio Brito (Las Palmas de Gran Canaria, 1962), todavía hombre activo del voleibol por su condición de director deportivo del CV Sayre CC La Ballena, fue, en sus tiempos, "un colocador temperamental, competitivo y que quería ganar siempre" en aquel grupo que logró dos ascensos a la máxima categoría, aunque el primero no se ejecutara "por cuestiones ajenas al deporte", y en el que se acogió a un joven empresario como Juan Ruiz que llegó "para revolucionarlo todo".[/capitular]
 
 [cita_editorial author="Ignacio Brito"]Ahora es fácil elogiar a Juan porque ha conseguido cosas impensables. Pero en aquellos años, sin ser un entendido del voleibol, fue un futurista, un visionario porque introdujo en el club una visión nunca antes vista y que supuso un impulso total. Deportivo, económico, institucional... Fue una gestión magistral sin la cual no se sabe qué hubiese sido del club.[/cita_editorial]
 
 <p>"Cuando llegó al vestuario, era normal que lo miráramos con ciertas reservas. Nos pidió que le dejásemos trabajar y muy pronto se ganó nuestra credibilidad por lo que consiguió", subraya Brito, quien coincidió con el histórico presidente en los primeros compases de su mandato.</p>
+
+[imagen_contenido file="6cap_igna_foto1.jpg"]
 
 <p>Surgido en el Marpe y aficionado al voleibol "por el maestro don Eliseo", aunque las canchas de entrenamiento "fueran de cemento, un desastre para la integridad física", y sus primeros pasos como jugador federado los da en el Juventud Las Palmas ("entonces el equipo estrella del vóley en Gran Canaria, el primero en tocar la élite") hasta que, "convencido por Felipe Nuez", desembarca en el embrión del Guaguas que estaba por venir.</p>
 
@@ -1340,8 +1405,8 @@ c) Examinar las liquidaciones y balances de la entidad.[/articulo]
         'show_marker' => true,
         'ref_id' => 'cap07',
         'hero' => array(
-            'image' => libro_img('hero-europa.jpg'),
-            'overlay' => 'rgba(0, 0, 0, 0.15)',
+            'image' => libro_img('7cap_mare_foto4.jpg'),
+            'overlay' => 'rgba(0, 0, 0, 0.45)',
             'icon' => 'custom',
             'custom_icon' => libro_img('estrella-icon.svg'),
             'custom_icon_color' => 'hsl(45 100% 50%)',
@@ -1356,13 +1421,19 @@ c) Examinar las liquidaciones y balances de la entidad.[/articulo]
         'content' => '
 [capitular]Ayer, hoy y siempre. No hay otra manera de referenciar el significado de la figura de Marek Szczesnowicz (Gdansk, Polonia, 1957), historia viva del club por una pertenencia que data de finales de la década de los ochenta y que sigue vigente. Team mánager del equipo ("hice y hago todo lo que sea necesario con tal de ayudar al club"), es testimonio obligado a la hora de celebrar el cincuentenario de la institución por el bagaje que personifica. "El Guaguas ha sido mi vida, mi familia. Ha trascendido lo meramente deportivo porque los años que he dedicado al equipo así lo reflejan. Entré casi de casualidad y, sin saberlo, ahí se inició una historia de la que me siento muy orgulloso", significa.[/capitular]
 
+[imagen_contenido file="7cap_mare_foto1.jpg"]
+
 <p>El inicio de todo se sitúa con los fichajes de las estrellas polacas Ireneusz Klos y Waclaw Golec, compatriotas suyos: "Estaba el problema del idioma y, también, el de una legislación complicada, entonces en el campo comunista, y que impedía salir a los deportistas por debajo de una edad. Yo me había establecido ya en Gran Canaria y, seguramente, no había muchos polacos por aquí porque Juan Ruiz preguntó por gente que fuese de mi país, me localizó y me pidió que lo ayudara en las gestiones, en ir allí a arreglar todo. Lo que iba a ser un trabajo puntual terminó derivando en esta larga relación que se interrumpió unos años por cuestiones laborales pero que no dudé en retomar cuando se dio el momento oportuno".</p>
+
+[imagen_contenido file="7cap_mare_foto2.jpg"]
 
 <p>Ese punto de partida sumerge a Marek en recuerdos imborrables con la etapa dorada de aquel Guaguas que asombró a España con sus títulos y resonancia: "Ahora hemos vuelto a recuperar brillo. Somos campeones, seguimos trayendo a jugadores muy buenos, la afición está regresando... Pero ese Centro Insular lleno hasta la bandera, con las escaleras de acceso atestadas de gente que se había quedado sin asiento, las noches mágicas... Uno se emociona porque fueron campañas preciosas, con plantillas que eran una familia, otros tiempos en los que las relaciones eran familiares, pues te implicabas hasta en temas personales de los jugadores para poder echarles una mano en lo que te pidieran".</p>
 
 [cita_editorial author="Marek Szczesnowicz"]Supone un motivo de satisfacción enorme haber vivido esos años mágicos, irrepetibles, que tampoco podemos comparar porque corresponden a otro contexto. Hoy el fútbol arrasa con todo. Pero nosotros, en esos años de los primeros títulos, nos llegamos a convertir en la bandera del deporte de Gran Canaria.[/cita_editorial]
 
 <p>"Se agotaban las entradas para ver nuestros partidos. Jugábamos por Europa y nos recibían como a las estrellas... Y eso, en un país como España, que no tiene la tradición del voleibol como otros países, tiene un mérito increíble. Y hoy pervive ese espíritu, mantenemos el prestigio, la esencia de un proyecto que ilusionó a todos y que se ha ido adaptando a la modernidad".</p>
+
+[imagen_contenido file="7cap_mare_foto3.jpg"]
 
 <p>Habla Marek de que la conservación de esa raíz que hace único al Guaguas por su experiencia y conocimiento en primera persona, pues sigue liderando las expediciones por Europa y las acogidas que reciben "están a la altura de un club de primer nivel".</p>
 

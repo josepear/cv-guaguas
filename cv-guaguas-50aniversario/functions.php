@@ -600,11 +600,17 @@ add_shortcode('cita_editorial', 'libro_shortcode_cita_editorial');
 function libro_shortcode_imagen_contenido($atts) {
     $atts = shortcode_atts(array(
         'src' => '',
+        'file' => '',
         'alt' => '',
         'caption' => '',
         'fullwidth' => 'false',
     ), $atts, 'imagen_contenido');
-    
+
+    // Allow file="filename.jpg" as shorthand for assets/images/
+    if ( empty($atts['src']) && ! empty($atts['file']) ) {
+        $atts['src'] = get_template_directory_uri() . '/assets/images/' . $atts['file'];
+    }
+
     if (empty($atts['src'])) {
         return '';
     }
@@ -614,7 +620,7 @@ function libro_shortcode_imagen_contenido($atts) {
     ob_start();
     ?>
     <figure class="content-image my-8 md:my-12 <?php echo esc_attr($fullwidth_class); ?>" data-reveal="up">
-        <div class="overflow-hidden rounded bg-muted/20">
+        <div class="overflow-hidden rounded">
             <img 
                 src="<?php echo esc_url($atts['src']); ?>" 
                 alt="<?php echo esc_attr($atts['alt']); ?>"
@@ -661,7 +667,7 @@ function libro_shortcode_imagen_id($atts) {
     ob_start();
     ?>
     <figure class="content-image my-8 md:my-12 <?php echo esc_attr($fullwidth_class); ?>" data-reveal="up">
-        <div class="overflow-hidden rounded bg-muted/20">
+        <div class="overflow-hidden rounded">
             <img 
                 src="<?php echo esc_url($image_src); ?>" 
                 alt="<?php echo esc_attr($image_alt); ?>"
@@ -689,6 +695,7 @@ add_shortcode('imagen', 'libro_shortcode_imagen_id');
 function libro_shortcode_hero_capitulo($atts, $content = null) {
     $atts = shortcode_atts(array(
         'background' => '',
+        'background_color' => '',
         'height' => '',
         'overlay' => '',
         'icon' => 'star',
@@ -760,7 +767,7 @@ function libro_shortcode_hero_capitulo($atts, $content = null) {
     
     ob_start();
     ?>
-    <div class="chapter-hero relative overflow-hidden" style="<?php echo $container_style; ?>">
+    <div class="chapter-hero relative overflow-hidden" style="<?php echo $container_style; ?><?php if ($atts['background_color']) echo 'background-color:' . esc_attr($atts['background_color']) . ';'; ?>">
         <?php if ($atts['background']) : ?>
         <div class="absolute inset-0 bg-cover bg-center bg-no-repeat hero-bg-parallax" style="background-image: url('<?php echo esc_url($atts['background']); ?>');"></div>
         <?php endif; ?>
@@ -831,19 +838,69 @@ add_shortcode('resaltado', 'libro_shortcode_resaltado');
  * Shortcode: Section Header - idéntico a React SectionHeader.tsx
  * Uso: [seccion_header]Título de la sección[/seccion_header]
  * Uso sin resalte: [seccion_header highlighted="false"]Título[/seccion_header]
+ * Uso con color personalizado (SOLO para capítulos con color propio, ej. Cap 3 vino):
+ *   [seccion_header color="hsl(2 82% 30%)"]Título[/seccion_header]
+ *   → El color DEBE definirse explícitamente en cada header. No se hereda automáticamente.
+ *   → Sin color= el highlight es siempre dorado (comportamiento por defecto).
  */
 function libro_shortcode_seccion_header($atts, $content = null) {
     $atts = shortcode_atts(array(
         'highlighted' => 'true',
+        'color'       => '',
+        'star'        => 'false',
+        'texto'       => '',   // text color override; defaults to #ffffff for dark bg, class default for no-color
+        'tag'         => 'h3', // html tag: h2 or h3
     ), $atts, 'seccion_header');
 
-    if ($atts['highlighted'] === 'true' || $atts['highlighted'] === '1') {
-        return '<div class="mt-10 mb-5" data-reveal="left"><h3 class="section-header-highlighted">' . wp_kses_post($content) . '</h3></div>';
+    $tag = in_array($atts['tag'], array('h2', 'h3')) ? $atts['tag'] : 'h3';
+
+    // Star above the header — left-aligned, estrella-icon.svg path inline, proportional to section text (1rem)
+    $star_above = '';
+    if ($atts['star'] === 'true' || $atts['star'] === '1') {
+        $star_color = $atts['color'] && $atts['color'] !== 'inverted' ? esc_attr($atts['color']) : 'hsl(45 100% 50%)';
+        // estrella-icon.svg viewBox 1280×1181 → aspect ratio ~1.08:1 → at 1.2rem height, width ≈ 1.3rem
+        $star_above = '<span aria-hidden="true" style="display:block;margin-bottom:0.3rem;">'
+            . '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1280 1181" style="width:2.3rem;height:2.2rem;display:inline-block;" fill="' . $star_color . '">'
+            . '<g transform="translate(0,1181) scale(0.1,-0.1)" fill="' . $star_color . '" stroke="none">'
+            . '<path d="M6327 11292 c-60 -180 -161 -489 -227 -687 -65 -198 -233 -709 -373 -1135 -141 -426 -367 -1114 -503 -1527 l-248 -753 -2358 0 c-1297 0 -2358 -3 -2358 -7 0 -5 170 -130 378 -279 207 -149 1057 -758 1887 -1353 831 -596 1518 -1091 1528 -1100 20 -19 55 94 -420 -1346 -187 -570 -344 -1047 -628 -1910 -141 -429 -286 -869 -322 -978 -36 -109 -63 -201 -60 -204 7 -6 -236 -180 1912 1362 1012 726 1855 1331 1872 1343 l33 23 762 -548 c2447 -1758 3053 -2191 3056 -2188 2 2 -46 153 -106 337 -61 183 -216 655 -346 1048 -511 1556 -712 2168 -811 2470 -145 440 -185 563 -185 575 0 6 855 623 1900 1373 1045 750 1900 1368 1900 1373 0 5 -909 10 -2357 11 l-2356 3 -164 500 c-90 275 -272 826 -403 1225 -131 399 -383 1166 -560 1705 -177 539 -325 983 -329 987 -4 5 -55 -139 -114 -320z"/>'
+            . '</g></svg></span>';
     }
 
-    return '<h3 class="font-serif text-xl md:text-2xl font-bold text-foreground mt-12 mb-6 uppercase tracking-wide" data-reveal="left">' . wp_kses_post($content) . '</h3>';
+    if ($atts['highlighted'] === 'true' || $atts['highlighted'] === '1') {
+        if ($atts['color'] === 'inverted') {
+            return '<div class="mt-10 mb-5" data-reveal="left">' . $star_above . '<' . $tag . ' class="section-header-highlighted section-header-inverted">' . wp_kses_post($content) . '</' . $tag . '></div>';
+        }
+        $text_color = $atts['texto'] ? esc_attr($atts['texto']) : ($atts['color'] ? '#ffffff' : '');
+        $style = '';
+        if ($atts['color'] || $text_color) {
+            $style = ' style="' . ($atts['color'] ? 'background-color:' . esc_attr($atts['color']) . ';' : '') . ($text_color ? 'color:' . $text_color . ';' : '') . '"';
+        }
+        return '<div class="mt-10 mb-5" data-reveal="left">' . $star_above . '<' . $tag . ' class="section-header-highlighted"' . $style . '>' . wp_kses_post($content) . '</' . $tag . '></div>';
+    }
+
+    return '<' . $tag . ' class="font-serif text-xl md:text-2xl font-bold text-foreground mt-12 mb-6 uppercase tracking-wide" data-reveal="left">' . wp_kses_post($content) . '</' . $tag . '>';
 }
 add_shortcode('seccion_header', 'libro_shortcode_seccion_header');
+
+/**
+ * Shortcode: Bloque de color — envuelve contenido en un div con fondo coloreado
+ * Uso: [bloque_color fondo="hsl(46, 92%, 62%)"]...[/bloque_color]
+ */
+function libro_shortcode_bloque_color($atts, $content = null) {
+    $atts = shortcode_atts(array(
+        'fondo'  => 'hsl(46, 92%, 62%)',
+        'texto'  => '#1a1a0a',
+        'radio'  => '0.5rem',
+    ), $atts, 'bloque_color');
+
+    $style = 'background-color:' . esc_attr($atts['fondo']) . ';color:' . esc_attr($atts['texto']) . ';border-radius:' . esc_attr($atts['radio']) . ';padding:1.5rem 2rem;margin:2rem 0;';
+
+    $processed = do_shortcode($content);
+    // wpautop runs before do_shortcode and injects <br> / empty <p> at the start — strip them
+    $processed = preg_replace('/^(\s*(<br\s*\/?>|<p>\s*<\/p>|<p>&nbsp;<\/p>)\s*)+/i', '', $processed);
+    return '<div class="bloque-color" style="' . $style . '">' . $processed . '</div>';
+}
+add_shortcode('bloque_color', 'libro_shortcode_bloque_color');
 
 /**
  * Shortcode: Encabezado de sección (alias) - usado en Estatutos

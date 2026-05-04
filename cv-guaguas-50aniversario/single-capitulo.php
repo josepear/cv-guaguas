@@ -39,6 +39,7 @@ $hero_vertical = get_post_meta(get_the_ID(), '_hero_vertical', true) ?: 'center'
 $hero_title_lines = get_post_meta(get_the_ID(), '_hero_title_lines', true);
 $hero_border_color = get_post_meta(get_the_ID(), '_hero_border_color', true);
 $hero_bg_position = get_post_meta(get_the_ID(), '_hero_background_position', true) ?: 'center top';
+$hero_bg_color = get_post_meta(get_the_ID(), '_hero_background_color', true);
 
 // Navegación depth-first excluyendo padres con hijos (igual que React getAllChapters())
 // Solo incluimos páginas con contenido real (sin hijos)
@@ -149,10 +150,12 @@ if ($hero_icon === 'custom' && $hero_custom_icon) {
 <!-- Main Content - estructura idéntica a React -->
 <main class="pt-[56px] min-h-screen bg-background">
     
-    <?php if ($hero_enabled === '1' && $hero_image) : ?>
+    <?php if ($hero_enabled === '1' && ($hero_image || $hero_bg_color)) : ?>
     <!-- Chapter Hero -->
-    <div class="chapter-hero relative overflow-hidden w-full" style="<?php echo esc_attr($hero_height_style); ?>">
+    <div class="chapter-hero relative overflow-hidden w-full" style="<?php echo esc_attr($hero_height_style); ?><?php if ($hero_bg_color) echo 'background-color:' . esc_attr($hero_bg_color) . ';'; ?>">
+        <?php if ($hero_image) : ?>
         <div class="absolute inset-0 bg-cover bg-no-repeat hero-bg-parallax" style="background-image: url('<?php echo esc_url($hero_image); ?>'); background-position: <?php echo esc_attr($hero_bg_position); ?>;"></div>
+        <?php endif; ?>
         
         <?php if ($hero_overlay) : ?>
         <div class="absolute inset-0" style="background-color: <?php echo esc_attr($hero_overlay); ?>;"></div>
@@ -273,7 +276,8 @@ if ($hero_icon === 'custom' && $hero_custom_icon) {
                 $libro_has_titulo_deportivo = (strpos($post_content, '[titulo_deportivo') !== false);
             }
             $is_patrocinador = ($post->post_parent && get_post_meta($post->post_parent, '_numero_capitulo', true) === '25');
-            if (!$libro_has_titulo_deportivo && !$is_patrocinador) : ?>
+            $ocultar_titulo  = get_post_meta(get_the_ID(), '_ocultar_titulo', true) === '1';
+            if (!$libro_has_titulo_deportivo && !$is_patrocinador && !$ocultar_titulo) : ?>
             <header class="mb-8 md:mb-12">
                 <?php if ($capitulo_numero) : ?>
                 <span class="chapter-marker block mb-4">

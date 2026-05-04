@@ -242,9 +242,13 @@ Los hijos del Cap 25 usan layout de fondo dorado. El `<h1>` se suprime automáti
 --font-sans:    'Inter', sans-serif;
 --font-serif:   'Inter', sans-serif;
 
-/* Variables de color: SIEMPRE con wrapper hsl() */
-color: hsl(var(--foreground));   /* ✅ */
+/* Variables de color: SIEMPRE con wrapper hsl() para variables de canal */
+color: hsl(var(--foreground));   /* ✅ — variable almacena canales: 220 50% 12% */
 color: var(--foreground);        /* ❌ */
+
+/* EXCEPCIÓN: --lm-gold almacena el color completo, usar con var() directamente */
+color: var(--lm-gold);           /* ✅ — variable almacena hsl(45, 100%, 42%) */
+color: hsl(var(--lm-gold));      /* ❌ — doble wrapper, no funciona */
 
 /* Selectores de modo: SIEMPRE body.dark / body.light */
 body.dark .clase  { ... }   /* ✅ */
@@ -276,6 +280,7 @@ body.light {
     --foreground:        220 50% 12%;
     --muted:             220 15% 92%;
     --border:            220 20% 82%;
+    --lm-gold:           hsl(45, 100%, 42%); /* Gold oscuro legible sobre fondo claro */
 }
 ```
 

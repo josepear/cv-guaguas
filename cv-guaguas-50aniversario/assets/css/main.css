@@ -365,6 +365,22 @@ h1, h2, h3, h4, h5, h6 {
     box-decoration-break: clone;
 }
 
+h2.section-header-highlighted {
+    font-size: 1.75rem;
+}
+
+/* Inverted highlight: black theme
+   dark mode  → white bg + black text
+   light mode → black bg + white text */
+.section-header-inverted {
+    background-color: #ffffff;
+    color: #000000;
+}
+body.light .section-header-inverted {
+    background-color: #000000;
+    color: #ffffff;
+}
+
 /* Player profile name - bold uppercase like book */
 .player-profile-name {
     font-family: var(--font-serif);
@@ -514,6 +530,14 @@ body.light .prologue-name {
     color: hsl(var(--gold));
 }
 
+/* Drop cap inside colored block: use navy so it reads on yellow/light backgrounds */
+.bloque-color .drop-cap {
+    color: hsl(220 50% 10%);
+}
+body.light .bloque-color .drop-cap {
+    color: hsl(220 50% 10%);
+}
+
 /* Timeline styles */
 .timeline-container {
     border-left: 3px solid hsl(var(--gold));
@@ -540,16 +564,30 @@ body.light .prologue-name {
 .timeline-year {
     font-family: var(--font-serif);
     font-weight: 800;
-    font-size: 1.125rem;
-    color: hsl(var(--gold));
-    display: block;
-    margin-bottom: 0.25rem;
+    font-size: 0.85rem;
+    color: hsl(220 50% 10%);
+    background-color: hsl(var(--gold));
+    display: inline-block;
+    padding: 0.1rem 0.5rem;
+    margin-bottom: 0.35rem;
+}
+
+body.light .timeline-year {
+    color: hsl(220 50% 10%);
 }
 
 .timeline-content {
     font-size: 0.95rem;
     line-height: 1.7;
     color: hsl(var(--foreground) / 0.8);
+}
+
+.timeline-content strong {
+    display: block;
+    text-transform: uppercase;
+    font-weight: 600;
+    color: hsl(var(--foreground));
+    margin-bottom: 0.15rem;
 }
 
 /* Article block (estatutos) */

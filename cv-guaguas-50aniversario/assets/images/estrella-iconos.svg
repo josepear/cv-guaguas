@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 120 120" width="120" height="120">
+  <defs>
+    <path id="circleText" d="M 60,60 m -48,0 a 48,48 0 1,1 96,0 a 48,48 0 1,1 -96,0"/>
+  </defs>
+  <polygon points="60.0,24.0 68.8,47.9 94.2,48.9 74.3,64.6 81.2,89.1 60.0,75.0 38.8,89.1 45.7,64.6 25.8,48.9 51.2,47.9" fill="#D4AF37"/>
+  <text fill="#D4AF37" font-family="Arial, Helvetica, sans-serif" font-size="7" font-weight="bold" letter-spacing="1.8">
+    <textPath href="#circleText" startOffset="0%">• ICONOS Y ESTRELLAS DEL GUAGUAS • ICONOS Y ESTRELLAS DEL GUAGUAS</textPath>
+  </text>
+</svg>
