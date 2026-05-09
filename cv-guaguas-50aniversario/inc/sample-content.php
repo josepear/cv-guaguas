@@ -332,6 +332,8 @@ function libro_get_sample_chapters() {
 
 [imagen_contenido file="1cap_pati_foto10.jpg" caption="Equipo infantil femenino del Calvo Sotelo, que se proclamó campeón de los III Juegos Deportivos de la Enseñanza General Básica en el curso 1971/72. (Foto cortesía de Miriam Quiroga)."]
 
+[foto_pendiente descripcion="Plantilla del juvenil femenino de la temporada 1974/75, entrenada por Francisco Rodríguez, que se proclamó campeón provincial escolar de su categoría. (Foto cortesía de Miriam Quiroga y de su libro Génesis y evolución del voleibol en Gran Canaria 1934/1978)."]
+
 [seccion_header]Estatutos fundacionales y despegue[/seccion_header]
 
 <p>En noviembre de 1976, concretamente el día 6, se redactan los estatutos de fundación del Club Voleibol Calvo Sotelo, lo que ya supone, formalmente, el avance que se demandaba para que el proyecto deportivo se oficializara a todos los niveles y adquiriera una consistencia definitiva, como así se demostraría con el transcurso de los años posteriores. Fue el punto de partida que permitía ir del deporte escolar propiamente dicho, y que había sustentado la naturaleza del Calvo Sotelo, al integrado en la competición federada.</p>
@@ -377,6 +379,8 @@ function libro_get_sample_chapters() {
 <p>Finalmente, todos los esfuerzos quedarían desestimados. Así, la temporada 1984-85 arranca condicionada por este frente ajeno a lo deportivo pero que supuso una enorme decepción en el plano institucional, pues se contaba con que prosperaran unas alegaciones fundamentadas.</p>
 
 [imagen_contenido file="1cap_pati_foto13.jpg" caption="Partido de la época en el Obispo Frías. Tony Vázquez se dispone a ejecutar un remate."]
+
+[foto_pendiente descripcion="Isidro Quintana observa el remate de su compañero Ramón Rodríguez durante un partido de la época."]
 
 <p>Vuelta a empezar con un equipo de nuevo llamado a aspirar a la élite y cuya principal novedad estuvo en Sergio Miguel Camarero, un prometedor juvenil de 17 años llamado, con el tiempo, a ser parte del escudo por su impronta y ascendente. El calendario regular se desarrolla con los resultados esperados hasta desembocar, con un meritorio subcampeonato del grupo C, en la fase de ascenso que acogió Mallorca a mitad de marzo de 1985. Ya sería, felizmente, el intento definitivo. Los rivales que le tocaron en suerte esta vez fueron, por este orden, el Renfe de Lérida, el Son Amar de Mallorca, el Jovellanos de Gijón, el José María Pereda de Santander y, ya en la quinta ronda, el Orient Puerto de Málaga.</p>
 
@@ -572,6 +576,8 @@ function libro_get_sample_chapters() {
 <p>"Éramos un grupo sano, de amigos y que teníamos una gran relación dentro y fuera de la cancha. Ninguno podíamos pensar que aquello terminaría yéndose de las manos a todo el mundo y convirtiéndose en lo que fue, un equipo campeón, con dobletes nacionales, algo que tiene un mérito tremendo. La clave en esta transformación, en este salto al estrellato, se personifica en Juan Ruiz. Para mí es el rey, la persona clave. No se entiende el Guaguas sin Juan Ruiz y creo que no se entiende Juan Ruiz sin el Guaguas. Apostó por traer extranjeros, por ir a por los mejores jugadores que había en los rivales. Era la única manera de hacer un proyecto ganador", afirma.</p>
 
 <p>En su rol de periodista, ya finalizada su etapa como jugador en el club, ha sido testigo puntual y al detalle de todas las gestas y progresos del Calvo Sotelo: "Su historia, desde el patio de un colegio, a la cima nacional, es de una grandeza enorme. Irrepetible. Tener a un superclase como Golec, o Klos, que no sabías si iba a rematar o a colocar, considerado uno de los cinco mejores colocadores del mundo, la conexión brutal de Camarero con una grada que hacía volar a los jugadores, ese CID lleno ante el PSG con casi 2.000 personas sin poder entrar, destronar al Palma, que parecía un imposible, regresar tras la desaparición con otro proyecto ganador y que vuelve a ilusionar a todos... Es una secuencia increíble de éxitos y superaciones".</p>
+
+[imagen_contenido file="1cap_pati_foto12.jpg"]
 
 <p>Se congratula de que Juan Ruiz, "acompañado de otros históricos de talla inigualable como Sánchez Jover, Nuez o Camarero", haya podido rescatar un proyecto que parecía ya enterrado: "Fundé un club como el Cantur y terminó desapareciendo pese a los éxitos que logró. En el Vecindario sé que Sánchez Jover se dejó un dineral de su bolsillo y acabó quemado. De ahí que la jugada de coger esta plaza, con derecho a jugar en Europa como premio añadido, haya sido otro acierto más de Juan, capaz de reinventarse de nuevo en favor de un club que es patrimonio de nuestra tierra por trayectoria, historia e importancia".</p>
 '),
@@ -796,6 +802,8 @@ c) Examinar las liquidaciones y balances de la entidad.[/articulo]
 
 [imagen_contenido file="3cap_asi_foto16.jpg" caption="Guaguas de la temporada 1986-87. De pie, de izquierda a derecha, Pericles, Jorge Ramón, Camarero, Óscar Campos, Martinovic, Macías y Juan Ruiz. Agachados, en el mismo orden, Juanma Martín, Batista, David Rodríguez, Domingo, Carlos y Felipe."]
 
+[foto_pendiente descripcion="El apoyo incondicional y multitudinario de los seguidores fue una seña de identidad de la etapa dorada del Guaguas."]
+
 [capitular]La temporada 1985-86 fue la del estreno del Calvo Sotelo en la División de Honor y se afrontó bajo las mismas líneas maestras que habían marcado su trayecto, desde las consideraciones de Felipe Nuez, aunque con la importante novedad del fichaje del yugoslavo Ivo Martinovic, primer extranjero en la historia del club que, con 30 años y amplio bagaje profesional e internacional, venía a darle a la plantilla la cuota de veteranía que se requería para competir a escala máxima. Jorge Ramón, Juanma Martín, Alfredo Padrón, Miguel Mendaño, Óscar Campos, Francisco Reyes, Sergio Miguel Camarero, Martín Medina, el mencionado Ivo Martinovic, Enrique González Silva y José Ramón, más los juveniles Javier Ulacia, Alejandro Menéndez, Roberto Padrón y Alejandro Gil eran los componentes de aquel histórico equipo que se adentró entre los grandes y lo hizo con relativo éxito.[/capitular]
 
 <p>Pese a los condicionantes económicos derivados de no tener un patrocinador (tras dos años con las denominaciones Reales y Lucky, relacionadas con el tabaco, Tabacanarias no renovó su compromiso), lo que supuso un hándicap sustancial, se logró eludir con solvencia el riesgo de descenso y hasta quedar encuadrado en la entonces denominada Serie A1, en la que competían los primeros clasificados de cada grupo. Martinovic, elegido capitán en su primera campaña, y un Camarero que ya demostraba que iba para jugador de época, fueron los sostenes de un grupo que rindió por encima de lo esperado. Para el recuerdo queda aquel 2 de noviembre de 1985, fecha del debut del Calvo Sotelo en la División de Honor con triunfo en Cáceres ante el Licenciados Reunidos por 0-3. Jorge Ramón, Juanma Martín, Campos, Camarero, Martinovic y González fueron los jugadores alineados en el inicio de un trayecto que iba a conducir a la gloria.</p>
@@ -824,6 +832,8 @@ c) Examinar las liquidaciones y balances de la entidad.[/articulo]
 
 [imagen_contenido file="3cap_asi_foto15.jpg" caption="Camarero y Juanma Martín, en el festejo de un título."]
 
+[foto_pendiente descripcion="Venancio Costa y Antonio Miralles, otros dos inolvidables del Guaguas durante la época dorada."]
+
 <p>El recinto capitalino ya era la nueva casa del club después de haber estado desde siempre, tras su ingreso en las competiciones estatales, como anfitrión en el García San Román. La mudanza a la nueva instalación generó ciertas controversias, pues había dudas de que se ajustara a las necesidades de un club todavía con una afición fiel pero minoritaria. Los éxitos trajeron las muchedumbres desde que un 22 de octubre de 1988 se disputara el primer partido del Guaguas en el CID con motivo de su inauguración. Fue en el Torneo Internacional Isla de Gran Canaria, integrando cartel con el Seven Up Santa Catalina, Cisneros de Tenerife y Slavia de Sofía. El Guaguas ganó 3-0 al Seven Up.</p>
 
 <p>Esa Copa, que abría las vitrinas del Guaguas, no hizo más que multiplicar las ambiciones de Juan Ruiz, quien une a su elenco de estrellas, en el verano de 1989, a los internacionales polacos Ireneusz Klos y Waclaw Golec, llamados a ser ídolos y figuras diferenciales. Esa primera Liga que se resistía sería una realidad el 1 de mayo de 1990 con la inolvidable final ante el Bomberos de Barcelona, bajo la denominación comercial de Constructora Atlántica Canaria, y con Sánchez Jover ejerciendo de jugador-entrenador y luego de ocupar la vacante en el banquillo que dejó a mitad del calendario el americano Robert Croteau.</p>
@@ -835,6 +845,8 @@ c) Examinar las liquidaciones y balances de la entidad.[/articulo]
 <p>Particular mención merecen Sánchez Jover y Juanma Martín, consagrados al simultanear sus labores de jugador con las de técnicos y de igual fertilidad para los éxitos de la entidad, poniendo, también, el foco en el cuidado de la cantera. Ya entonces, en ese inicio de la década de los noventa, se reclutan por los colegios (y hasta por la calle, a golpe de intuición) a jóvenes de la tierra para que garanticen el relevo generacional y revaliden el espíritu primigenio del Calvo Sotelo, creado en torno al jugador isleño. Antonio Sánchez es uno de los canteranos criados en esta fase y que tendría larga continuidad en los Alexis Valido, Juan Carlos Vega, los hermanos Cabrera, Raúl Dávila o Níchel Gómez, entre otros.</p>
 
 [imagen_contenido file="3cap_asi_foto10.jpg" caption="Los técnicos argentinos Marcelo Giovanacci y Quique Edelstein, figuras de importancia a comienzos de los noventa por los títulos logrados bajo sus ciclos."]
+
+[foto_pendiente descripcion="Gran plano del Centro Insular de Deportes lleno hasta la bandera durante uno de los partidos estelares de la etapa dorada."]
 
 <p>Fueron doce los títulos que se atraparon desde 1989 a 1997, etapa de concentración luminosa, y que granjeó la leyenda de un Guaguas que, por momentos, llevó la bandera del deporte en Gran Canaria, al coincidir sus hitos con momentos menos pujantes de UD Las Palmas o CB Gran Canaria, los símbolos más tradicionales de las disciplinas por equipos de la isla.</p>
 
@@ -852,7 +864,11 @@ c) Examinar las liquidaciones y balances de la entidad.[/articulo]
 
 [imagen_contenido file="3cap_asi_foto1.jpg" caption="Ofrenda de la Liga 1993-94 a la Virgen del Pino. Sánchez Jover, Jorge Ramón, Milanov, Golec, Falasca, Colom, Antonio Sánchez, Valido, Campos, Juan Ruiz y Costa."]
 
+[foto_pendiente descripcion="El CID se convirtió en la capital de la felicidad gracias al Guaguas. Imagen del pabellón desbordado de seguidores."]
+
 [imagen_contenido file="3cap_asi_foto12.jpg" caption="Alegría con los éxitos que se iban cosechando a finales de los ochenta."]
+
+[foto_pendiente descripcion="Éxtasis sobre el parqué. Jugadores del Guaguas celebrando en la pista uno de sus títulos."]
 
 [cita_editorial author="Paco Sánchez Jover"]Todo cambió y para peor.[/cita_editorial]
 
@@ -921,6 +937,8 @@ c) Examinar las liquidaciones y balances de la entidad.[/articulo]
         ),
         'content' => '
 [imagen_contenido file="4cap_proy_foto3.jpg" caption="Festejando el histórico subcampeonato de Copa de 1988 en sus tiempos iniciales como presidente. Juan Ruiz es el primero en la fila inferior por la derecha y está abrazado por Jorge Ramón."]
+
+[foto_pendiente descripcion="En 1989, con los jugadores polacos Ireneusz Klos y Waclaw Golec en el aeropuerto de Gran Canaria, en el que fue el fichaje estrella de la historia del club."]
 
 [capitular]Nacido en La Aldea de San Nicolás en 1953, emigrante con su familia a Tenerife durante gran parte su adolescencia (1960-1969), en la que hizo sus pinitos en la lucha canaria o el fútbol ("con 16 años llegué a jugar en Tercera División en las filas del Adeje"), Juan Ruiz estaba llamado, sin saberlo, a escribir una historia sin parangón en el deporte canario y al frente del Calvo Sotelo. No hay dirigente isleño con tal nómina de títulos en su poder, todos los conquistados por la entidad, y con el mérito añadido de haber armado un equipo campeón desde las cenizas. Tanto en 1987 como en 2020 acudió al rescate recogiendo una tesorería en ruinas y un porvenir tan comprometido que apuntaba a la desaparición.[/capitular]
 
@@ -1067,14 +1085,14 @@ c) Examinar las liquidaciones y balances de la entidad.[/articulo]
             'overlay' => 'rgba(0, 0, 0, 0.25)',
             'icon' => 'custom',
             'custom_icon' => libro_img('estrella-iconos.svg'),
-            'custom_icon_color' => '#a6a6a6',
+            'custom_icon_color' => 'hsl(204, 13%, 55%)',
             'icon_width' => 80,
             'icon_height' => 80,
             'alignment' => 'center',
             'vertical' => 'center',
             'height' => '500px',
             'background_position' => 'center 20%',
-            'title_lines' => array(libro_hero_line('SERGIO MIGUEL', '#FFFFFF', '#a6a6a6', 'none'), libro_hero_line('CAMARERO', '#FFFFFF', '#a6a6a6', 'none')),
+            'title_lines' => array(libro_hero_line('SERGIO MIGUEL', '#FFFFFF', 'hsl(204, 13%, 55%)', 'none'), libro_hero_line('CAMARERO', '#FFFFFF', 'hsl(204, 13%, 55%)', 'none')),
         ),
         'content' => '
 [capitular]Cuando Sergio Miguel Camarero (Las Palmas de Gran Canaria, 1967) destacaba en el fútbol y como prometedor jugador del San Antonio, el equipo de su barrio, ya soñaba con hacer historia en el deporte. Su aspiración se iba a cumplir, aunque de manera insospechada porque, efectivamente, haría carrera pero en otra disciplina que tardó en practicar y a la que llegó de rebote. "Empecé a jugar al voleibol porque, al regreso de unas vacaciones en el sur de la isla, ya no tenía posibilidad de inscribirme en el equipo de fútbol. Se había acabado el plazo. Y me apunté en la Escuela de Voleibol del San Román. Mis primeros entrenadores fueron Félix Rodríguez, Joselu Sánchez e Ignacio Brito. Tendría 14 o 15 años. Y me enganché", concreta.[/capitular]
@@ -1458,35 +1476,39 @@ Otros en mi lugar lo mismo sí hubiesen dado un paso a otro sitio porque las ofe
         'show_marker' => true,
         'ref_id' => 'cap08',
         'hero' => array(
-            'image' => libro_img('hero-europa.jpg'),
-            'overlay' => 'rgba(26, 35, 126, 0.78)',
-            'icon' => 'custom',
-            'custom_icon' => $star,
-            'icon_width' => 70,
-            'icon_height' => 70,
-            'alignment' => 'center',
-            'vertical' => 'center',
-            'height' => '500px',
-            'title_lines' => array(libro_hero_line('EMBAJADORES', '#D4AF37', '', 'black'), libro_hero_line('POR EUROPA', '#FFFFFF', '', 'black')),
-        ),
-        'content' => ''),
-    array('title' => 'La aventura europea', 'numero' => '', 'order' => 60, 'show_marker' => false, 'parent_ref' => 'cap08',
-        'hero' => array(
-            'image' => libro_img('hero-europa.jpg'),
-            'overlay' => 'rgba(0, 0, 0, 0.15)',
+            'image' => '',
+            'background_color' => 'hsl(220, 30%, 8%)',
+            'overlay' => 'rgba(0, 0, 0, 0)',
             'icon' => 'custom',
             'custom_icon' => libro_img('estrella-icon.svg'),
-            'custom_icon_color' => 'hsl(45 100% 50%)',
+            'custom_icon_color' => 'hsl(201, 16%, 77%)',
             'icon_width' => 40,
             'icon_height' => 40,
             'alignment' => 'center',
             'vertical' => 'center',
             'height' => '500px',
-            'title_lines' => array(libro_hero_line('LA AVENTURA', 'hsl(220 50% 12%)', 'hsl(45 100% 50%)', 'black'), libro_hero_line('EUROPEA', 'hsl(220 50% 12%)', 'hsl(45 100% 50%)', 'black')),
-            'border_color' => 'hsl(45 100% 50%)',
+            'title_lines' => array(libro_hero_line('EMBAJADORES', 'hsl(0, 0%, 0%)', 'hsl(201, 16%, 77%)', 'none'), libro_hero_line('POR EUROPA', 'hsl(0, 0%, 0%)', 'hsl(201, 16%, 77%)', 'none')),
+        ),
+        'content' => ''),
+    array('title' => 'Embajadores por Europa', 'numero' => '', 'order' => 60, 'show_marker' => false, 'parent_ref' => 'cap08',
+        'hero' => array(
+            'image' => '',
+            'background_color' => 'hsl(220, 30%, 8%)',
+            'overlay' => 'rgba(0, 0, 0, 0)',
+            'icon' => 'custom',
+            'custom_icon' => libro_img('estrella-icon.svg'),
+            'custom_icon_color' => 'hsl(201, 16%, 77%)',
+            'icon_width' => 40,
+            'icon_height' => 40,
+            'alignment' => 'center',
+            'vertical' => 'center',
+            'height' => '500px',
+            'title_lines' => array(libro_hero_line('EMBAJADORES', 'hsl(0, 0%, 0%)', 'hsl(201, 16%, 77%)', 'none'), libro_hero_line('POR EUROPA', 'hsl(0, 0%, 0%)', 'hsl(201, 16%, 77%)', 'none')),
         ),
         'content' => '
 [capitular]Si brillantísima ha sido la trayectoria nacional del Guaguas, con dominio de las dos competiciones domésticas, reinado que ha logrado revalidar tras su refundación en 2020, su amplia presencia en competiciones europeas, con punto de inicio de 1987 ante el Knack de Bélgica en la emblemática pista del San Román, también es digna de valoración. Con un balance de más de cincuenta partidos oficiales frente a escudos de otros países, el Guaguas se ha convertido, por méritos propios, en uno de los mejores embajadores de Canarias por todo el mundo.[/capitular]
+
+[imagen_contenido file="8cap_emba_foto4.jpg" caption="Año 1987. La expedición del Guaguas acaba de llegar a Bruselas, en el que fue el primer viaje internacional de la historia del club, con motivo de la eliminatoria de la Copa Confederación ante el Knack de Bélgica."]
 
 <p>Esa vocación sin fronteras a la hora de exportar los valores y potencialidades del club también ha llevado aparejada la bandera tricolor para mayor orgullo de aficionados e instituciones públicas, de alta sensibilidad siempre con la representatividad fuera de España.</p>
 
@@ -1498,10 +1520,14 @@ Otros en mi lugar lo mismo sí hubiesen dado un paso a otro sitio porque las ofe
 
 <p>Como precisa Antonio Benítez, sempiterno mánager y que ha encabezado casi todas las delegaciones del Guaguas en sus comparecencias por las capitales de varios países, esta presencia sostenida procuró una red de relaciones de alto prestigio, además de convertir al equipo en un atractivo para jugar torneos amistosos de primer nivel cada verano. Así lo atestiguan los banderines y placas acumuladas a lo largo de los años, algo que aumenta más si cabe este bagaje más allá de Canarias y España. Las pretemporadas y giras realizadas fuera del país fueron habituales durante varias campañas y reforzaron estos vínculos al margen de los relacionados estrictamente con el ámbito competitivo.</p>
 
+[imagen_contenido file="8cap_emba_foto6.jpg" caption="Celebración de un triunfo en la Champions League de la temporada 2025-26."]
+
 <p>Así, el binomio Guaguas-Europa ya es un clásico en el calendario, con una relación ininterrumpida de trece años (1987-2000), y que ofrece el recorrido con los oponentes que a continuación se detalla.</p>
 '),
     array('title' => 'Manuel Palacio', 'numero' => '', 'order' => 62, 'show_marker' => false, 'parent_ref' => 'cap08',
         'content' => '
+[imagen_contenido file="8cap_emba_foto2.jpg"]
+
 [capitular]Recorrió toda España y viajó, también, por media Europa siguiendo los partidos del mejor Guaguas en competiciones internacionales ("Polonia, Italia, Grecia, Rusia, Portugal, Rumanía, Turquía...") para dar cuenta en sus crónicas de las hazañas de aquella memorable pléyade de jugadores ("entonces, sin internet ni móviles, el método era contratar una llamada internacional en el hotel, rezar para que las comunicaciones no fallaran, y dictarla a la redacción") y como enviado especial del periódico La Provincia. Desde mitad de los setenta, sin embargo, se remontaba su actividad como informador del voleibol en las páginas de El Eco de Canarias y Hoja del Lunes ("tuve que utilizar el seudónimo de Plongeon para poder compatibilizar los dos medios de comunicación"). Fue testigo, por tanto, del nacimiento del Calvo Sotelo y siguió al detalle toda su evolución hasta el apogeo que llegó con los títulos pioneros y que llenaron hasta la bandera el CID. Manuel Palacio (Las Palmas de Gran Canaria, 1958-2023) fue una de las grandes autoridades del voleibol canario tanto por su experiencia en las canchas ("fui jugador y técnico del Juventud, compañero de Isidro Quintana y Joselu Sánchez en el ascenso a Primera División de 1982, además de ejercer de árbitro nacional") como por formación ("profesor de Educación Física y entrenador internacional") y constituyó una referencia obligada. "Perdí la cuenta ya de todas las reseñas que hice del Calvo Sotelo a lo largo de su historia, entre reportajes, entrevistas o crónicas. Podemos hablar de más de mil y lo mismo hasta me quedo corto", se sinceró para dar cuenta de las vivencias que acumulaba a pie de pista ("me sentaba en el mismo banquillo del equipo") y que le convirtieron en testigo único y de valor inestimable.[/capitular]
 
 <p>"Como a otros muchos de mi época, fue Silvestre Cabrera, con el tiempo presidente federativo, el que me captó para el voleibol en los Salesianos y ahí me quedé. Jugaba de colocador y me defendí lo que pude, por así decirlo. Formé parte de aquel Juventud de comienzos de los ochenta tan emergente y, al tiempo, tampoco descuidé sacarme las titulaciones que me permitieran conocer en profundidad el deporte al que me dediqué. Recuerdo que en los primeros tiempos, y por iniciativa del propio Silvestre Cabrera, se nos daba una ayuda de 25 pesetas por cada artículo de voleibol que publicáramos en prensa y con el fin de darle más relevancia. Isidro Quintana, Tony Vázquez, José Miguel Santana o yo nos sacábamos una ayudita de esa manera. Cobrábamos a mes vencido. Le poníamos más entusiasmo que interés económico de todas formas, pero se hizo una labor valiosa. Y más cuando aquí se celebró, en el año 1978, una final de la Copa del Rey entre el Bomberos de Barcelona y el Real Madrid, brindando a la afición la posibilidad de ver un voleibol de un nivel sublime", opinó.</p>
@@ -1521,9 +1547,13 @@ Otros en mi lugar lo mismo sí hubiesen dado un paso a otro sitio porque las ofe
 <p>Aquel partido ante el PSG en el CID "con más de 6.000 espectadores" o la Final Four de la Recopa en Cuneo constituyen otros hitos que resalta por el eco que tuvieron y la expectación que generaron antes, durante y después. "Fueron momentos en los que se hablaba más del Guaguas que de la UD Las Palmas, y eso son palabras mayores. Un equipo que ganaba títulos, competía en Europa y tenía figuras mundiales", añade.</p>
 
 <p>Palacio valora que el Guaguas se haya vuelto a levantar "después de años durísimos en los que parecía que no habría salida", lo que le hace valorar el momento actual: "No se puede entrar en comparaciones. Hace treinta años teníamos un Guaguas campeón y ahora podemos decir lo mismo. Pienso que es lo más importante. Ojalá que la afición se vuelque con el equipo y que cuando lleguen tiempos duros, siga ahí, porque en el deporte no siempre se gana. Será la mejor manera de mantener el espíritu original del Calvo Sotelo y de lo que ha venido después".</p>
+
+[imagen_contenido file="8cap_emba_foto5.jpg"]
 '),
     array('title' => 'Antonio Benítez', 'numero' => '', 'order' => 63, 'show_marker' => false, 'parent_ref' => 'cap08',
         'content' => '
+[foto_pendiente descripcion="Retrato de Antonio Benítez, gerente y mánager del Guaguas desde 1990, artífice de la expansión internacional del club."]
+
 [capitular]Fue por un anuncio de periódico, a finales de 1990. Antonio Benítez (Las Palmas de Gran Canaria, 1960) desarrollaba su labor profesional como profesor de inglés cuando leyó el llamamiento en prensa de un club que requería un gerente para labores logísticas y relacionadas con la organización del personal y de la estructura propia. "Me resultó muy atractivo, me presenté, pasé el proceso de selección y me quedé... Hasta 1998. Nunca imaginé que iba a cubrir una etapa tan duradera y fructífera en el Guaguas y que ha supuesto un orgullo especial", admite un dirigente que siempre tuvo a Juan Ruiz como presidente y no ha dudado en regresar con él tras la refundación de la entidad.[/capitular]
 
 <p>Las peticiones del técnico argentino Enrique Edelstein, que demandó la figura de un mánager con el que reportar y que ejerciera de enlace con la cúpula, motivaron que en el club isleño crearan este cargo de responsabilidad que, desde los inicios, recayó en la misma persona. Organización de viajes, relaciones con los otros clubes, atención a las necesidades de los jugadores que procedían de fuera y necesitaban resolver y tramitar gestiones, planificación de las pretemporadas... Una cartera bien amplia que, concentrada en un único representante, requirió lo mejor de sus capacidades.</p>
@@ -1548,6 +1578,8 @@ Otros en mi lugar lo mismo sí hubiesen dado un paso a otro sitio porque las ofe
 '),
     array('title' => 'Jorge Ramón', 'numero' => '', 'order' => 64, 'show_marker' => false, 'parent_ref' => 'cap08',
         'content' => '
+[imagen_contenido file="8cap_emba_foto3.jpg"]
+
 [capitular]Ya tenía el voleibol en la familia, con sus hermanos Jose y Marisa y su primo Joselu Sánchez como influencias capitales, cuando Jorge Ramón (Las Palmas de Gran Canaria, 1967) arrancó en el deporte que estaba instalado en casa y en las filas del Olímpico. Su altura, a edad juvenil, terminó de catapultarle para ingresar en el Calvo Sotelo después de que se creara la selección juvenil para el Salesianos. "Felipe Nuez me vio y me dijo que me quería en el equipo", rememora. Sin más pretensión que la de "pasarlo bien y disfrutar del deporte" y sin pensar "para nada" en que haría carrera en el equipo, arrancó un ciclo que le llevaría a ganar 5 Ligas y 4 Copas del Rey hasta 1995, el año en el que decidió retirarse, pese a contar con 28 años, para dedicarse plenamente a la informática, campo en el que ha desarrollado su actividad profesional. "Podría haber seguido jugando más, pero hablé con mi mujer y consideré que era el momento".[/capitular]
 
 <p>"Pericles, Batista, Mendaño y Tony Vázquez eran los veteranos cuando yo llegué. Camarero ya se sabía que iba a llegar pese a que era muy joven... En general había un grupo muy bueno con Felipe al frente y eso me ayudó a querer seguir, porque no era fácil compaginar estudios con entrenamientos. Pero, en ese momento, sigues adelante sin plantearte otra cosa. Es como la vida, que pasas de niño a hombre sin darte cuenta. En mi caso, ya estaba jugando en la División de Honor con Ivo Martinovic y Carrasco como refuerzos de fuera y un grupo de jugadores de la tierra realmente bueno".</p>
@@ -1564,6 +1596,8 @@ Otros en mi lugar lo mismo sí hubiesen dado un paso a otro sitio porque las ofe
 '),
     array('title' => 'Juanma Martín', 'numero' => '', 'order' => 65, 'show_marker' => false, 'parent_ref' => 'cap08',
         'content' => '
+[foto_pendiente descripcion="Retrato de Juanma Martín, jugador y entrenador histórico del Guaguas."]
+
 [capitular]Iba para futbolista y hasta los 16 años no tocó un balón de voleibol. Pero el destino quiso que Juanma Martín (Las Palmas de Gran Canaria, 1965) comenzara a jugar en la Universidad Laboral Felo Monzón con el San Roque "casi de casualidad" y, cuando se quiso dar cuenta, ya estaba enrolado en la disciplina del Calvo Sotelo. "Lo único que recuerdo es que Felipe Nuez organizó unos entrenamientos para seleccionar jugadores. Estaban Camarero, Joselu, Jorge Ramón... Y ya pasé a formar parte del club. Me cogió siendo juvenil y ya estaba en Segunda División. Fue todo rapidísimo, sin tiempo para asimilar nada", subraya.[/capitular]
 
 <p>Todavía rememora aquellas sesiones de trabajo en el gimnasio del instituto Pérez Galdós en la etapa previa a la mudanza al San Román en las que, "casi a razón de ocho horas diarias", tanto él como los jugadores de la época adquirieron "nivel y disciplina a la altura de los mejores profesionales".</p>
@@ -1586,6 +1620,8 @@ Otros en mi lugar lo mismo sí hubiesen dado un paso a otro sitio porque las ofe
 '),
     array('title' => 'Óscar Campos', 'numero' => '', 'order' => 66, 'show_marker' => false, 'parent_ref' => 'cap08',
         'content' => '
+[foto_pendiente descripcion="Retrato de Óscar Campos, colocador grancanario, uno de los pilares de la primera plantilla en División de Honor."]
+
 [capitular]Integrante de la primera plantilla que defendió los colores del Calvo Sotelo en la División de Honor, Óscar Campos (Las Palmas de Gran Canaria, 1966) fue otro de los testigos que vivió la transformación del club en su paso de superviviente a candidato a todo. Colocador fichado del Juventud en 1985, cuando mira para atrás para entrar en detalles de aquellos tiempos "predominan los recuerdos positivos" ya que, por encima del balón y los partidos, "la complicidad entre todos era magnífica".[/capitular]
 
 <p>"En mis años en el club siempre recuerdo un vestuario unido, de compañeros, de amigos. Cada uno jugaba su rol. En mi caso, tuve más protagonismo en los primeros años, pues luego con las llegadas de Paco, Venancio, Miralles, Willock, Klos o Golec se puso muy complicado tener minutos. Pero, con independencia de eso, lo que prevalece en mi memoria es un grupo sano y que fue creciendo sin parar hasta lograr títulos y logros de muchísima importancia. Titulares y suplentes íbamos a una, había un verdadero espíritu de equipo. Pensar que íbamos a ser campeones de Liga, sin ir más lejos, parecía de locos. Y se consiguió", razona.</p>
@@ -1598,6 +1634,8 @@ Otros en mi lugar lo mismo sí hubiesen dado un paso a otro sitio porque las ofe
 '),
     array('title' => 'Venancio Acosta', 'numero' => '', 'order' => 67, 'show_marker' => false, 'parent_ref' => 'cap08',
         'content' => '
+[foto_pendiente descripcion="Venancio Acosta en acción con la camiseta del Guaguas, uno de los rematadores estrella de la etapa dorada."]
+
 [capitular]A los 12 años ya estaba en el equipo de Almoradí, empezó gracias al profesor de educación física que lo vio "largirucho" y dijo que era para el voleibol. "En nuestro pueblo hay mucha tradición y es un club con mucha historia. A pesar de ser un pueblo muy pequeño me ofreció una oportunidad". Antes de llegar al Guaguas, jugó dos temporadas en el Son Amar (Palma de Mallorca), su último año juvenil, campeones de España en el año 1985-86, y su primer año como jugador en categoría absoluta 1986-87, en la que se ganó la Liga y la Copa del Rey y debutó con la selección nacional.[/capitular]
 
 <p>"Aterricé en 1987 en el García San Román de la mano de Juan Ruiz Ramos, llegué al Guaguas en un momento de pleno crecimiento y desarrollo del club. Más bien un jugador por consagrar, diría yo, era muy joven y con poca experiencia, pero con muchas ganas y dispuesto a crecer, a pesar de estar ya en el equipo nacional. Desde ese momento comenzó a escribirse una historia única y formar parte de ella siempre ha sido un honor".</p>
@@ -1624,6 +1662,8 @@ Otros en mi lugar lo mismo sí hubiesen dado un paso a otro sitio porque las ofe
 '),
     array('title' => 'Antonio Miralles', 'numero' => '', 'order' => 68, 'show_marker' => false, 'parent_ref' => 'cap08',
         'content' => '
+[foto_pendiente descripcion="Antonio Miralles en un partido con el Guaguas, uno de los rematadores más brillantes de la época dorada."]
+
 [capitular]Fue otro de los fichajes estelares con los que se puso el punto de partida del mejor Guaguas de siempre, el que encadenó títulos sin parar entre finales de los ochenta e inicios de los noventa. "Paco Sánchez Jover era el líder absoluto del voleibol español. Y cuando decidió venir al Guaguas era señal de que algo grande venía en camino. Alguien como él no se iba a ir a cualquier sitio. Fue fácil que, al igual que hizo Venancio Costa, me decidiera". Así justifica su elección por la entidad grancanaria Antonio Miralles (Alicante, 1965), otra de las adquisiciones de época. Venía de un Palma campeón de Liga y Copa y también colgaba de su cuello el oro en los recientes Juegos del Mediterráneo conquistado con España (junto a Costa) y podía elegir destino. Y un Guaguas "de mitad de la tabla" entonces terminó convirtiéndose para él en un club en el que enraizaría "de una manera inimaginable".[/capitular]
 
 <p>"Llegué muy joven, en 1987, y empujado, además de por querer ganar títulos, como me acostumbraron desde niño con una mentalidad en la que no vale ser segundo, por el hecho de que aquí se podía estudiar Educación Física, la carrera que terminaría completando y que siempre fue mi aspiración para formarme. En ese momento ayudó todo y me vi jugando en el Guaguas pese a que creo que terminé llegando porque el deseo de Juan Ruiz, que era Sixto Jiménez, no pudo ser. Con todo, me sentí importante desde el primer momento en un proyecto que no paró de ir hacia arriba. Encontramos una buena base en Camarero, Jorge Ramón... Y se fueron añadiendo retoques de una calidad enorme como Willock o el Chava. No podía acabar de otra forma teniendo el equipazo que teníamos, por mucho que fuese muy especial levantar Ligas y Copas", reconoce.</p>
@@ -1646,6 +1686,8 @@ Otros en mi lugar lo mismo sí hubiesen dado un paso a otro sitio porque las ofe
 '),
     array('title' => 'Chava González', 'numero' => '', 'order' => 69, 'show_marker' => false, 'parent_ref' => 'cap08',
         'content' => '
+[foto_pendiente descripcion="Chava González, el receptor mexicano que participó en la conquista de la primera Copa del Rey de 1989 y la primera Liga de 1990."]
+
 [capitular]Un saque suyo terminó derivando en punto de partido y título histórico para el Guaguas, con aquella Copa del Rey de 1989 ante el Palma que estrenó el palmarés del club. Así quedó para siempre asociado Salvador González, Chava, (Mazatlán, México, 1958) a una de las explosiones de felicidad más atronadoras y recordadas del Centro Insular, abarrotado en un partido irrepetible. Más de treinta años después, todavía conserva frescos en la memoria detalles de todo lo que vino tras la consumación de un triunfo celebrado entre lágrimas y emociones.[/capitular]
 
 [cita_editorial author="Chava González"]Jamás imaginé que viviría algo así porque, cuando me ficharon, lo que me dijeron es que la aspiración era ganarle algún partido al Palma. Para nada se mencionó la posibilidad de levantar trofeos. La pista llena de gente, todo el mundo tocaba el cielo al sentirnos campeones, el abrazo con los compañeros, Juan Ruiz llorando como un niño... Son momentos que quedan para toda la vida, grabados a fuego. De lo mejor que me ha pasado, indudablemente.[/cita_editorial]
@@ -1666,6 +1708,8 @@ Otros en mi lugar lo mismo sí hubiesen dado un paso a otro sitio porque las ofe
 '),
     array('title' => 'Sandeep Sharma', 'numero' => '', 'order' => 70, 'show_marker' => false, 'parent_ref' => 'cap08',
         'content' => '
+[foto_pendiente descripcion="Sandeep Sharma, el opuesto indio apodado el Tigre de Bengala, aclamado por el público del Centro Insular durante sus dos temporadas en el Guaguas."]
+
 [capitular]Fue en un partido de Copa de Europa: "En Polonia, ante el Olstyn, en mi primera temporada en el Guaguas. Habíamos ganado en la ida por 3-1 y teníamos el pase encarrilado porque éramos mejores que ellos. Hacía un frío terrible. Oía que la gente cuando yo tocaba la pelota reaccionaba de manera diferente. La verdad es que me estaba saliendo un gran partido. Edelstein decide sentarme junto a otros compañeros al estar todo resuelto cuando ganamos dos sets porque nos esperaba luego un partido muy importante en Almería y quería dar descansos. Pero, de repente, me piden que vuelva, que debía seguir jugando porque, según me enteré después, el público quería verme. Por la megafonía del pabellón, que estaba lleno, repetían que si nadie había visto nunca a un hindú jugar al voleibol que esa era la oportunidad. Y lo decían desde el respeto, porque me aplaudieron y, después del partido, en la cena con la directiva visitante me felicitaron. También cuando salimos los chicos a dar una vuelta a una discoteca como premio de haber logrado la clasificación. Allí me bautizaron como el Tigre de Bengala".[/capitular]
 
 <p>Sandeep Sharma (Nangal, India, 1966) no ha podido olvidar aquel partido de la campaña 1991-92 en el que su nacionalidad, por sí misma, derivó en una expectación inusitada. Su juego y maestría terminaron elevándole a los cielos a ojos de miles de espectadores que no dudaron en ovacionarle pese a pertenecer a las filas del adversario. Esa admiración fue episódica en Polonia pero más arraigada e intensa en el Centro Insular durante su estancia en el Guaguas (1991-1993 y 1995-96) en la que, además de llenar su palmarés de títulos, se ganó un hueco en la historia del club.</p>
@@ -1684,6 +1728,8 @@ Otros en mi lugar lo mismo sí hubiesen dado un paso a otro sitio porque las ofe
 '),
     array('title' => 'Juan José Cardona', 'numero' => '', 'order' => 71, 'show_marker' => false, 'parent_ref' => 'cap08',
         'content' => '
+[imagen_contenido file="8cap_emba_foto1.jpg"]
+
 [capitular]En su etapa de concejal de Movilidad, Transporte y Tráfico del ayuntamiento de Las Palmas de Gran Canaria, cargo que le otorgaba la presidencia de Guaguas Municipales, la empresa municipal de transporte público, Juan José Cardona (Las Palmas de Gran Canaria, 1962) se significó por ser una de las autoridades públicas que más se implicó en procurarle apoyo y financiación al Guaguas de finales de los noventa. Así se reconoce y valora en el club y con hechos, además, incontestables. En junio de 1997 propició la renovación del patrocinio que siempre ha sido seña de identidad y no dudó, tampoco, en vivir en directo la Final Four de la Recopa de 1998 en Cuneo (Italia). "Siempre me gustó el voleibol y lo practiqué en mi juventud en Arucas. Pero es que, además, el Guaguas tuvo una representatividad e importancia en Las Palmas de Gran Canaria que le hacía llenar el Centro Insular. Palabras mayores porque hablamos de 5.000 espectadores o más en una disciplina que, con todo el respeto se diga, no es de las denominadas mayoritarias, muy por debajo siempre del fútbol y del baloncesto", detalla.[/capitular]
 
 <p>Cardona afirma que el impacto del equipo "traspasó el ámbito deportivo" para convertirse en "una marca de éxito y representatividad", lo que, como gestor público, "no podía desatenderse".</p>
@@ -1719,20 +1765,15 @@ Otros en mi lugar lo mismo sí hubiesen dado un paso a otro sitio porque las ofe
             'title_lines' => array(libro_hero_line('EL RELEVO', '#1a237e', '#FFFFFF', 'black'), libro_hero_line('GENERACIONAL', '#1a237e', '#FFFFFF', 'black')),
         ),
         'content' => ''),
-    array('title' => 'La cantera toma el relevo', 'numero' => '', 'order' => 75, 'show_marker' => false, 'parent_ref' => 'cap09',
+    array('title' => 'El relevo generacional', 'numero' => '', 'order' => 75, 'show_marker' => false, 'parent_ref' => 'cap09',
         'hero' => array(
-            'image' => libro_img('hero-cantera.jpg'),
-            'overlay' => 'rgba(0, 0, 0, 0.15)',
-            'icon' => 'custom',
-            'custom_icon' => libro_img('estrella-icon.svg'),
-            'custom_icon_color' => 'hsl(45 100% 50%)',
-            'icon_width' => 40,
-            'icon_height' => 40,
+            'image' => libro_img('9cap_relevo_hero.png'),
+            'overlay' => 'rgba(0, 0, 0, 0)',
+            'icon' => 'none',
             'alignment' => 'center',
-            'vertical' => 'center',
+            'vertical' => 'bottom',
             'height' => '500px',
-            'title_lines' => array(libro_hero_line('LA CANTERA', 'hsl(220 50% 12%)', 'hsl(45 100% 50%)', 'black'), libro_hero_line('TOMA EL RELEVO', 'hsl(220 50% 12%)', 'hsl(45 100% 50%)', 'black')),
-            'border_color' => 'hsl(45 100% 50%)',
+            'title_lines' => array(libro_hero_line('EL RELEVO', 'hsl(20, 23%, 95%)', 'hsl(0, 0%, 0%)', 'none'), libro_hero_line('GENERACIONAL', 'hsl(20, 23%, 95%)', 'hsl(0, 0%, 0%)', 'none')),
         ),
         'content' => '
 [capitular]La leyenda del Guaguas campeón, cuya hegemonía nacional fue absoluta a inicios de los noventa, se cimentó en un grupo de jugadores de base estable y a la que se fueron añadiendo refuerzos seleccionados, tanto del panorama español como de la pasarela internacional, que no hicieron más que mejorar el nivel de un grupo ya de por sí de una regularidad asombrosa e impermeable a la feroz competencia de otros clubes con mayor presupuesto. El sexteto titular, sujeto a mínimos cambios, era recitado de memoria por aficionados y adversarios, toda vez que figuras como Golec, Camarero, Sánchez Jover o Venancio Costa, entre otros, tuvieron una larga vigencia en la defensa de la camiseta y conformaron un núcleo duro, con una coordinación y automatismos que depararon infinidad de partidos para el recuerdo y con el premio añadido de títulos y prestigio.[/capitular]
@@ -1747,6 +1788,8 @@ Otros en mi lugar lo mismo sí hubiesen dado un paso a otro sitio porque las ofe
 '),
     array('title' => 'Alexis Valido', 'numero' => '', 'order' => 77, 'show_marker' => false, 'parent_ref' => 'cap09',
         'content' => '
+[imagen_contenido file="9cap_rele_foto1.jpg"]
+
 [capitular]Tres etapas tuvo Alexis Valido (Las Palmas de Gran Canaria, 1976) en el Guaguas. Todas cortas, pero, igualmente, trascendentes y de las que asegura sentirse "muy orgulloso", pese a que su prosperidad profesional en el voleibol llegó fuera del club, al igual que su prolongada estancia en la selección absoluta, con la que fue olímpico en Sídney 2000 además de tomar parte en ligas mundiales y torneos internacionales. "Salí de La Paterna y entré en el Guaguas porque Juan Ruiz y Antonio Benítez contactaron conmigo. Entré en edad juvenil porque recuerdo haber participado en el Campeonato de España de la categoría ya integrado en el Guaguas. Y muy pronto, antes de que quise darme cuenta, estaba en el vestuario con los mayores, cambiándome de ropa junto a Camarero, Golec o Sánchez Jover, que eran mis ídolos. Fue una experiencia increíble porque, siendo un todavía un niño, estaba rodeado de figuras de ese nivel. No tuve ni tiempo de asimilarlo", afirma.[/capitular]
 
 <p>Valido fue miembro de la plantilla que alzó la Liga en la temporada 1993-94 ("apenas jugué esa campaña porque había un equipazo y para un canterano tener minutos era poco menos que imposible") y, tras un año a gran nivel en las filas del Cisneros ("teniendo como compañeros a Joel Sotelo o Castañeda"), regresó en 1995. "Cuando supe que querían que volviera, ni me lo pensé. Había rendido muy bien en Tenerife y me sentía preparado para ser importante. Seguía siendo un equipazo, aunque sí tuve más oportunidades y todo concluyó de manera muy feliz con la Copa que ganamos en el Centro Insular", subraya.</p>
@@ -1757,6 +1800,8 @@ Otros en mi lugar lo mismo sí hubiesen dado un paso a otro sitio porque las ofe
 '),
     array('title' => 'Antonio Sánchez', 'numero' => '', 'order' => 78, 'show_marker' => false, 'parent_ref' => 'cap09',
         'content' => '
+[imagen_contenido file="9cap_rele_foto2.jpg"]
+
 [capitular]Las casualidades de la vida hicieron que Antonio Sánchez (Las Palmas de Gran Canaria, 1974) viviera en el mismo edificio en el que residió en sus inicios en el Guaguas Paco Sánchez Jover. Se cruzaban en el ascensor, él un niño y Paco ya consagrado como una figura internacional. "Y un día me dice que me presentara en la pista del San Román a entrenarme con la base del Guaguas, que tenía que hacer voleibol. En mi vida había tocado una pelota, pero ni se me ocurrió llevarle la contraria. Así arranca mi historia con apenas 13 años en el equipo que me marcaría la vida", describe.[/capitular]
 
 <p>Antonio ya se asoma con los profesionales en los tiempos del técnico mexicano Sergio Hernández, la histórica campaña 1988-89 que deparó el primer título con la Copa del Rey ganada al Palma en el Centro Insular, si bien su estreno no se produce hasta 1992, con el argentino Marcelo Giovanacci en el banquillo. La espera tiene su explicación: "Me fui a realizar la concentración permanente en Palencia con la selección júnior, la primera convocatoria de ese tipo que se celebraba y luego se convirtió en habitual. Era una concentración para captar talentos para el equipo nacional. De ahí, al acabar, ya pasé al primer equipo".</p>
@@ -1779,6 +1824,8 @@ Otros en mi lugar lo mismo sí hubiesen dado un paso a otro sitio porque las ofe
 '),
     array('title' => 'Daniel Castañeda', 'numero' => '', 'order' => 79, 'show_marker' => false, 'parent_ref' => 'cap09',
         'content' => '
+[imagen_contenido file="9cap_rele_foto3.jpg"]
+
 [capitular]Figura relevante en el Guaguas del cambio de siglo, Daniel Castañeda (Madrid, 1975) admite que, cuando en 1996 formalizó su fichaje por el club, tras sobresalir en el Palencia y el Cisneros, con el premio de ser citado por la selección española, puso "el punto culminante" a su carrera, ya que, como recuerda, "pocas camisetas más importantes se podían vestir" que la amarilla del equipo grancanario.[/capitular]
 
 <p>"Sabía que iba a un equipo ganador, que iba a estar en los primeros puestos y que, además, estaba entrenado por Paco Sánchez Jover, una referencia en el voleibol. Por si fuera poco, a nivel personal, se me brindaba la opción de compatibilizar el deporte con mis estudios de Arquitectura. No lo dudé y no me arrepentí", asegura a propósito de un periplo que se alargó hasta el año 2002.</p>
@@ -1795,6 +1842,8 @@ Otros en mi lugar lo mismo sí hubiesen dado un paso a otro sitio porque las ofe
 '),
     array('title' => 'Juan Carlos Vega', 'numero' => '', 'order' => 80, 'show_marker' => false, 'parent_ref' => 'cap09',
         'content' => '
+[imagen_contenido file="9cap_rele_foto5.jpg"]
+
 [capitular]Lo lleva en el corazón. "El San Roque me hizo jugador y persona. Y el Guaguas, en la figura de su presidente Juan Ruiz, hasta me ayudó a salir adelante con aportaciones económicas cuando estaba en categoría júnior. Luego tuve el privilegio de defender sus colores, de ganar una Copa, de llegar a la selección absoluta y desarrollar mi carrera profesional en otros clubes gracias a todo lo que me enseñaron en mi casa. Eso va en el corazón para toda la vida". Juan Carlos Vega (Las Palmas de Gran Canaria, 1975) todavía ríe cuando recuerda sus sesiones de entrenamiento en los pasillos del Centro Insular, a las órdenes de Esteban Paganini, para ejercitar el antebrazo. La fusión entre San Roque y Gran Canaria le hizo ingresar en las categorías inferiores del club antes de dar el salto a la primera plantilla y con dos temporadas enlazadas (1997-1999) de buenas prestaciones bajo la batuta técnica de Sánchez Jover.[/capitular]
 
 <p>"Ganamos una Copa del Rey que fue muy festejada, por la remontada que logramos ante el Almería, y, en general, creo que respondimos bien a lo que se esperaba. Paco fue un entrenador muy valiente. Para mí ya era un ídolo por todo lo que nos había dado con los Golec, Klos o Camarero, aquellos tiempos de gloria. Pero cuando me tocó trabajar con él, que le diera confianza a la cantera, que apostara por muchos chicos de la tierra, me hizo tener mejor concepto de él, que ya era difícil por toda la admiración que le tenía", añade.</p>
@@ -1805,6 +1854,8 @@ Otros en mi lugar lo mismo sí hubiesen dado un paso a otro sitio porque las ofe
 '),
     array('title' => 'Hermanos Cabrera', 'numero' => '', 'order' => 81, 'show_marker' => false, 'parent_ref' => 'cap09',
         'content' => '
+[imagen_contenido file="9cap_rele_foto4.png"]
+
 [capitular]De cómo entraron a formar parte del Guaguas los hermanos Cabrera, Antonio y Pedro, con el tiempo internacionales absolutos y figuras consolidadas en el panorama profesional, habla y mucho de la fuerza del destino. Ambos acudieron como espectadores, entre los miles que se congregaron en el Centro Insular, a presenciar el histórico partido de Copa de Europa frente al PSG en la temporada 1993-94. "A mí en el Claret ya me perseguía Camarero, que daba clases de voleibol allí, para que me metiera en el vóley. Yo le decía que no, que eso no era de hombres. Y él insistiendo", rememora Antonio (Las Palmas de Gran Canaria, 1977).[/capitular]
 
 <p>El caso es que ambos hicieron uso de las invitaciones para acudir a un encuentro que colapsó la capital por la riada de gente que se congregó en el recinto de la Avenida Marítima. Y al acabar el choque, culminado con una victoria para el recuerdo, sucedió lo impensable. "De pronto, en mitad de la avalancha de gente celebrando el triunfo, con la pista invadida de gente, Sánchez Jover, todavía vestido con la equipación del Guaguas, se dirige a mí y me dice que me vaya con él al vestuario. Surrealista. Yo era uno más entre la multitud. Me quedé de piedra", relata Pedro (Las Palmas de Gran Canaria, 1978). No acabó todo ahí: "Y Camarero, que andaba por allí, le dijo a Paco que yo tenía un hermano, que también tenía que venirse conmigo", añade. Y así, de repente, los dos se vieron en mitad de autoridades y dirigentes felicitando a jugadores y técnicos. "Lo cuentas y es normal que cueste que te crean, pero fue tal cual. Pasamos de ir a ver al equipo a salir con una propuesta para entrenar en las inferiores del Guaguas en Cruz de Piedra por invitación directa de Paco", remarca Pedro. "Venía de quien venía. Imposible negarse", añade Antonio.</p>
@@ -1827,6 +1878,8 @@ Otros en mi lugar lo mismo sí hubiesen dado un paso a otro sitio porque las ofe
 '),
     array('title' => 'Níchel Gómez', 'numero' => '', 'order' => 82, 'show_marker' => false, 'parent_ref' => 'cap09',
         'content' => '
+[imagen_contenido file="9cap_rele_foto6.jpg"]
+
 [capitular]Lo recuerda con toda precisión. Después de un partido en la competición Intersector ante el Guaguas, en las filas de La Paterna, su barrio de toda la vida, se le acercó Paco Sánchez Jover para proponerle que entrenara en los juveniles del club capitalino. "Yo, que era un chiquillo, hablando con alguien a quien admiraba, al que había visto jugar muchísimas veces, por las guaguas que nos llevaban desde el colegio al Centro Insular con invitaciones para estar en la grada, al que había aplaudido y animado. Y ahí estaba delante de mí... Ni me lo podía creer. Y, como es normal, le dije que estaría encantado, que sí", narra. Así entró Níchel Gómez (Las Palmas de Gran Canaria, 1978) a formar parte de la disciplina del club, de la manera más espontánea y rápida posible.[/capitular]
 
 <p>Y sin parar de crecer durante su formación hasta su debut, que se produjo en 1998. Primero como receptor, y con el tiempo reconvertido al líbero, Níchel asegura que hasta su marcha, al término de la campaña 2002-03, "los buenos recuerdos son abundantes" y le hacen mirar a ese tiempo "con muchísima felicidad".</p>
@@ -1839,6 +1892,8 @@ Otros en mi lugar lo mismo sí hubiesen dado un paso a otro sitio porque las ofe
 '),
     array('title' => 'Raúl Dávila', 'numero' => '', 'order' => 83, 'show_marker' => false, 'parent_ref' => 'cap09',
         'content' => '
+[imagen_contenido file="9cap_rele_foto7.jpg"]
+
 [capitular]Iba para tenista, al ganar el Campeonato de Canarias de su categoría siendo un niño, y, tras obtener una beca para estudiar en Seattle (Estados Unidos), "ya con los billetes comprados", nada le hacía pensar que haría carrera en un deporte, el voleibol, que desconocía "por completo". Pero en el porvenir de Raúl Dávila (Vigo, 1978) se cruzó la figura de Paco Sánchez Jover. "Y eso lo cambió todo", admite. "Un amigo me invitó a unas pruebas de voleibol en Cruz de Piedra. Fui por curiosidad, por matar el rato, sin más pretensión que divertirme. Y algo debía hacer bien porque Paco fue a hablar con mi padre y nos terminó de convencer para que renunciara a irme a América. Ahora se dice fácil, pero fue una decisión muy importante en ese momento. Me hizo enamorarme del voleibol y me quedé por él", apunta.[/capitular]
 
 <p>Con unas condiciones físicas privilegiadas, 1,95 metros de estatura como carta de presentación siendo un juvenil, forjó sus progresos a la par que los hermanos Cabrera, con los que compartía generación y afinidad ("nos hicimos de la familia", aclara), además de tejer una mentalidad en la que no cabía un paso atrás.</p>
@@ -1866,35 +1921,39 @@ Otros en mi lugar lo mismo sí hubiesen dado un paso a otro sitio porque las ofe
         'show_marker' => true,
         'ref_id' => 'cap10',
         'hero' => array(
-            'image' => libro_img('hero-transicion.jpg'),
-            'overlay' => 'rgba(0, 0, 0, 0.40)',
+            'image' => '',
+            'background_color' => 'hsl(14, 10%, 20%)',
+            'overlay' => 'rgba(0, 0, 0, 0)',
             'icon' => 'custom',
             'custom_icon' => $star,
+            'custom_icon_color' => 'hsl(14, 16%, 69%)',
             'icon_width' => 50,
             'icon_height' => 50,
             'alignment' => 'center',
             'vertical' => 'center',
             'height' => '500px',
-            'title_lines' => array(libro_hero_line('UNA TRANSICIÓN', '#8faabe', '', 'black'), libro_hero_line('DOLOROSA', '#FFFFFF', '', 'black')),
+            'title_lines' => array(libro_hero_line('UNA TRANSICIÓN', 'hsl(220 50% 12%)', 'hsl(14, 16%, 69%)', 'none'), libro_hero_line('DOLOROSA', 'hsl(220 50% 12%)', 'hsl(14, 16%, 69%)', 'none')),
         ),
-        'content' => '[capitular]Los años posteriores a la marcha de Juan Ruiz fueron los más convulsos en la historia del club. La inestabilidad directiva, los problemas económicos y la pérdida progresiva de competitividad culminaron en el peor desenlace posible: la desaparición temporal del equipo en 2009.[/capitular]
-[imagen_contenido src="'),
-    array('title' => 'Juan Ruiz traspasa sus poderes; comienza la decadencia', 'numero' => '', 'order' => 86, 'show_marker' => false, 'parent_ref' => 'cap10',
+        'content' => ''),
+    array('title' => 'Una transición dolorosa', 'numero' => '', 'order' => 86, 'show_marker' => false, 'parent_ref' => 'cap10',
         'hero' => array(
-            'image' => libro_img('hero-placeholder.jpg'),
-            'overlay' => 'rgba(0,0,0,0.15)',
+            'image' => libro_img('10cap_tran_foto1.jpg'),
+            'overlay' => 'rgba(0, 0, 0, 0.15)',
             'icon' => 'custom',
             'custom_icon' => libro_img('estrella-icon.svg'),
-            'custom_icon_color' => 'hsl(45 100% 50%)',
+            'custom_icon_color' => 'hsl(14, 16%, 69%)',
             'icon_width' => 40,
             'icon_height' => 40,
             'alignment' => 'center',
             'vertical' => 'center',
             'height' => '500px',
-            'border_color' => 'hsl(45 100% 50%)',
-            'title_lines' => array(libro_hero_line('JUAN RUIZ TRASPASA SUS PODERES', 'hsl(220 50% 12%)', 'hsl(45 100% 50%)', 'black'), libro_hero_line('COMIENZA LA DECADENCIA', 'hsl(220 50% 12%)', 'hsl(45 100% 50%)', 'black')),
+            'title_lines' => array(libro_hero_line('UNA TRANSICIÓN', 'hsl(220 50% 12%)', 'hsl(14, 16%, 69%)', 'none'), libro_hero_line('DOLOROSA', 'hsl(220 50% 12%)', 'hsl(14, 16%, 69%)', 'none')),
         ),
         'content' => '
+[imagen_contenido file="10cap_tran_foto1_color.jpg" caption="El 9 de junio de 1998 se produjo el relevo presidencial en el Guaguas. Juan Ruiz escenificó con este abrazo el traspaso de poderes a Mario Hugendubel, su sustituto."]
+
+[seccion_header color="navy"]Juan Ruiz traspasa sus poderes; comienza la decadencia[/seccion_header]
+
 [capitular]El 9 de junio de 1998 se produjo el relevo presidencial en el Guaguas. Mario Hugendubel, economista que había estado ligado a la directiva saliente el año anterior, asume el mando de la entidad por la salida de Juan Ruiz, quien ponía fin a su largo y exitoso mandato y que se había prolongado desde 1987. El propio Juan Ruiz bendijo la sucesión al declarar que Hugendubel reunía los requisitos para asumir la responsabilidad de mantener en lo más alto al club que, meses antes, en marzo, había alcanzado su mejor participación en competiciones europeas al participar en la Final Four de la Recopa. "Honestidad, trabajo e ilusión", fue lo que solicitó el histórico dirigente a su heredero. A nivel institucional, cuentas saneadas y un prestigio forjado a base de éxitos deportivos y crecimiento sostenido. Hugendubel, que quiso mantener con él a varios ejecutivos de la anterior cúpula, casos de Ismael Chinea o Marcial Ginory, admitía que recogía un legado reluciente.[/capitular]
 
 [cita_prensa source="Diario de Las Palmas, 13 de junio de 1998"]La posibilidad surgió por la amistad que me une con Juan Ruiz. Me lo propuso hace cosa de un año, que necesitaba a alguien que fuera su sucesor y me veía a mí como la persona indicada. Yo en principio no quería hacerle mucho caso, entre otras cosas porque no tenía en mente ser presidente de un club. Me fue involucrando en el tema, me fue dando confianza y al final me decidí. Ha sido una decisión totalmente mía.[/cita_prensa]
@@ -1908,23 +1967,13 @@ Otros en mi lugar lo mismo sí hubiesen dado un paso a otro sitio porque las ofe
 <p>La apuesta de Benjamín Vicedo como su sustituto en el banquillo, auxiliado por un histórico como Antonio Miralles, tampoco funcionó, al igual que una política de fichajes destapada como errónea. Fuera de la lucha por el título y sin clasificarse para competiciones europeas por primera vez desde 1987.</p>
 
 <p>Los problemas internos comienzan a aflorar con las dimisiones en la junta directiva de Hugendubel de varios miembros, casos de José Rodríguez y Miguel Ángel Hernández, lo que termina derivando en un desgaste hasta entonces desconocido en la historia reciente del Guaguas. Ni la consecución de un nuevo patrocinador (Idecnet) que inyectó más músculo financiero logró impulsar un proyecto que estaba muy lejos de las expectativas. La llegada de David Rodríguez en sustitución de Vicedo, exjugador y con experiencia en la dirección técnica tras ser segundo de Sánchez Jover y estar integrado en la selección, se pensó como un estímulo para reactivar al club. Una medida tan bien intencionada como ineficaz como así se delataría con el paso del tiempo.</p>
-'),
-    array('title' => 'La estabilidad imposible', 'numero' => '', 'order' => 87, 'show_marker' => false, 'parent_ref' => 'cap10',
-        'hero' => array(
-            'image' => libro_img('hero-placeholder.jpg'),
-            'overlay' => 'rgba(0,0,0,0.15)',
-            'icon' => 'custom',
-            'custom_icon' => libro_img('estrella-icon.svg'),
-            'custom_icon_color' => 'hsl(45 100% 50%)',
-            'icon_width' => 40,
-            'icon_height' => 40,
-            'alignment' => 'center',
-            'vertical' => 'center',
-            'height' => '500px',
-            'border_color' => 'hsl(45 100% 50%)',
-            'title_lines' => array(libro_hero_line('LA ESTABILIDAD', 'hsl(220 50% 12%)', 'hsl(45 100% 50%)', 'black'), libro_hero_line('IMPOSIBLE', 'hsl(220 50% 12%)', 'hsl(45 100% 50%)', 'black')),
-        ),
-        'content' => '
+
+[seccion_header color="navy"]La estabilidad imposible[/seccion_header]
+
+[foto_pendiente descripcion="Guaguas 1999-2000. En la fila superior, de izquierda a derecha, David Bordón, Antonio Cabrera, Andersen, Pedro Cabrera, Guido Bruinsman y Peter Gallis. En la inferior, en el mismo orden, Raúl Dávila, Manolo Batista, Níchel Gómez, Chugui Pérez, Chiqui Mesa y Daniel Castañeda."]
+
+[foto_pendiente descripcion="Felicidad desbordada en Danny Pointe."]
+
 [capitular]El Guaguas había logrado retener a alguno de sus veteranos más importantes, con Peter Galis y Daniel Castañeda al frente del grupo, pero problemas acrecentados terminarían afectando a la integridad del equipo y sin posibilidad alguna de que se pudieran disimular. Así, en diciembre de 2001 se anuncia un plante de los jugadores por las deudas acumuladas. Los profesionales acordaron no entrenar ni jugar más hasta que se actualizaran sus salarios. La huelga se solucionó días después con el compromiso de pago por parte del presidente, aunque en el ánimo de los jugadores ya pesó este condicionante en el resto de la temporada, lo que motivó una incertidumbre palpable y por todos reconocida. En ninguna de las tres competiciones pudo brillar el Guaguas. Y es que el subcampeonato liguero obtenido, y tan valorado y en las situaciones de adversidad descritas, no bastó para estabilizar los cimientos del representativo.[/capitular]
 
 <p>En junio, cerrado el curso 2001-02, las noticias negativas se suceden. David Rodríguez decide poner fin a su ciclo como técnico para pasar a funciones como director general, pero ese contratiempo queda minimizado cuando se anuncia que, por la grave situación económica que se atraviesa, no estaba garantizada la inscripción del equipo tanto en la Superliga como en la Copa Confederación Europea. El retraso en el cobro de las subvenciones públicas y las deudas que se mantenían con los jugadores arrojaron un escenario de inquietud que se admitió de manera pública a fin de recabar apoyos y soluciones. Un indicativo más de que la salud financiera de la entidad, además de transitar muy lejos de los balances positivos de etapas anteriores, ya era una amenaza para su porvenir.</p>
@@ -1936,23 +1985,13 @@ Otros en mi lugar lo mismo sí hubiesen dado un paso a otro sitio porque las ofe
 <p>Tras otra temporada sin títulos y con eliminación prematura de la competición continental, en junio de 2003 se anuncia el acuerdo con la empresa constructora Jusan Canarias, que sería la denominación del equipo en adelante. El patrocinio era de cinco años y se sumaba al que ya brindaba Guaguas Municipales. "Pasamos de las penurias a poder ilusionar a todos", confesaba Cano al respecto. Es ahí cuando se produce la primera toma de contacto formal de Pedro Cuarental, que sería el siguiente en ser proclamado presidente.</p>
 
 <p>El Jusan Canarias Las Palmas arrancó el curso 2003-04 con energías renovadas y recurriendo a viejos conocidos como Pedro Cabrera o Joel Sotelo, repescados para liderar una plantilla que completaban José Luis Martell, Fran Carballo, Juan Carlos Parada, Rayco Hernández, Semidán Déniz, Rubén Cano, Níchel Gómez, Igor Hernández y Paulo Carballo.</p>
-'),
-    array('title' => 'Camino del fatídico 2009', 'numero' => '', 'order' => 88, 'show_marker' => false, 'parent_ref' => 'cap10',
-        'hero' => array(
-            'image' => libro_img('hero-placeholder.jpg'),
-            'overlay' => 'rgba(0,0,0,0.15)',
-            'icon' => 'custom',
-            'custom_icon' => libro_img('estrella-icon.svg'),
-            'custom_icon_color' => 'hsl(45 100% 50%)',
-            'icon_width' => 40,
-            'icon_height' => 40,
-            'alignment' => 'center',
-            'vertical' => 'center',
-            'height' => '500px',
-            'border_color' => 'hsl(45 100% 50%)',
-            'title_lines' => array(libro_hero_line('CAMINO DEL', 'hsl(220 50% 12%)', 'hsl(45 100% 50%)', 'black'), libro_hero_line('FATÍDICO 2009', 'hsl(220 50% 12%)', 'hsl(45 100% 50%)', 'black')),
-        ),
-        'content' => '
+
+[seccion_header color="navy"]Camino del fatídico 2009[/seccion_header]
+
+[imagen_contenido file="10cap_tran_foto8.jpg"]
+
+[imagen_contenido file="10cap_tran_foto2.jpg" caption="Homenaje a Joel Sotelo el 19 de septiembre de 2004, presidido por Pedro Cuarental."]
+
 [capitular]Con David Rodríguez restituido en el cargo, el grupo humano no paró de crecer, favorecido por la progresiva puesta en escena de Pedro Cuarental quien asumió la presidencia en julio de 2004, aunque desde meses antes ejercía a los mandos tras la renuncia de Cano. En el curso 2003-04 se logra la décima posición y en la 2004-05, ya con jugadores de jerarquía como el brasileño Marcos Dreyer, el balance se resumió en una quinta plaza que daba de nuevo derecho a jugar en Europa al curso siguiente. Una evolución deportiva evidente, que dejaba atrás años más grises e invitaba a todos a soñar con grandes logros en el futuro inmediato. Tanto Cuarental como Rodríguez se prodigaron en los medios de comunicación con optimismo al respecto y tratando de volver a enganchar a una afición que no terminaba de animarse a volver al Centro Insular.[/capitular]
 
 <p>Desafortunadamente, esa progresión no tuvo cimientos sólidos porque, ya en 2007, comienza a merodear el riesgo de que el club pudiera desaparecer. El presidente así lo advierte, sin ambigüedades, dado que se reconocía un déficit superior a los 280.000 euros con La Caja de Canarias, acreedor que, para asegurarse el cobro de lo adeudado, solicitó el embargo de todas las subvenciones públicas. «Cuando asumí la presidencia hace tres años la deuda era de 300.000 euros, y apenas hemos podido reducirla en trece mil. Sin embargo, nosotros mantenemos predisposición para un pago aplazado, que queremos negociar para diez o doce años. Llevamos más de veinte años trabajando con La Caja y aspiramos a seguir así», dijo el presidente, abierto a una solución que, no obstante, se antojaba complicada sin la intervención de las autoridades políticas.</p>
@@ -1966,26 +2005,22 @@ Otros en mi lugar lo mismo sí hubiesen dado un paso a otro sitio porque las ofe
 [cita_editorial author="Roque Díaz"]En mi época me tocó gestionar miseria. No teníamos medios, pero tampoco podíamos permitir que un club como el Guaguas se fuera por la borda de esa manera. Así que, como pudimos, poniendo el mayor ingenio y cariño por esos colores que tanto habían significado para la sociedad grancanaria, actuamos. Fue una satisfacción especial lograrlo en base a un acuerdo que era de justicia y no supuso alteración alguna en los dineros públicos.[/cita_editorial]
 
 <p>Lejos de que el aval consistorial se plasmara en la deseada vuelta a la normalidad, y pese a los esfuerzos de Cuarental en esa dirección, el reloj ya estaba en cuenta atrás.</p>
-'),
-    array('title' => 'El peor desenlace posible', 'numero' => '', 'order' => 89, 'show_marker' => false, 'parent_ref' => 'cap10',
-        'hero' => array(
-            'image' => libro_img('hero-placeholder.jpg'),
-            'overlay' => 'rgba(0,0,0,0.15)',
-            'icon' => 'custom',
-            'custom_icon' => libro_img('estrella-icon.svg'),
-            'custom_icon_color' => 'hsl(45 100% 50%)',
-            'icon_width' => 40,
-            'icon_height' => 40,
-            'alignment' => 'center',
-            'vertical' => 'center',
-            'height' => '500px',
-            'border_color' => 'hsl(45 100% 50%)',
-            'title_lines' => array(libro_hero_line('EL PEOR', 'hsl(220 50% 12%)', 'hsl(45 100% 50%)', 'black'), libro_hero_line('DESENLACE POSIBLE', 'hsl(220 50% 12%)', 'hsl(45 100% 50%)', 'black')),
-        ),
-        'content' => '
+
+[imagen_contenido file="10cap_tran_foto3.jpg" caption="Jusan 2004-05. De pie, de izquierda a derecha, David Rodríguez (entrenador), Renato, Haroldo, Dreyer, Parada, Kvasnicka, Antonio Miralles (segundo entrenador) y Manu del Valle (fisioterapeuta). Agachados, en el mismo orden, De Moura, Rayco Hernández, Lorenzo Vicente, Cárdenes, Artemi Vega y Young."]
+
+[imagen_contenido file="10cap_tran_foto4.jpg" caption="Jusan 2006-07. De pie, de izquierda a derecha, Iker Domínguez (segundo entrenador), Johan Andersson, David Sánchez, Marcos Dreyer, Da Luz, Ignacio García y David Rodríguez (entrenador). Agachados, en el mismo orden, Rayco Hernández, Lorenzo Vicente, Alexandro Rodríguez y Miroslav Svoboda."]
+
+[seccion_header color="navy"]El peor desenlace posible[/seccion_header]
+
+[foto_pendiente descripcion="Jusan 2009: el entrenador Chema Sánchez, durante un entrenamiento ya en los meses anteriores a la desaparición de la entidad."]
+
+[foto_pendiente descripcion="Acción del Jusan Canarias en sus últimas temporadas."]
+
 [capitular]La temporada 2007-08 se inició con el aparente paraguas que daba el respaldo municipal... Pero ya con una plantilla de circunstancias y que no iba a tardar en implosionar por los sempiternos retrasos en los pagos. El opuesto checo Kolacny, el central estadounidense Scheftic y el colocador finlandés Mikula causaron baja en las primeras semanas de competición al no ver cubiertos sus salarios. Y a finales de enero de 2008 fue el entrenador, Álvaro Bourousouzian, quien presentó su renuncia al cargo por idéntico motivo. "Tenemos un mes de retraso en el pago y, además, el plan que nos presentó la entidad contempla más problemas inmediatos, aunque, según nos dice, al final de temporada todo se pondrá al día. Unos podrán esperar y otros no, y en mi caso no", adujo. Días después, ya en febrero, la plantilla, con Samuel Díaz como entrenador, se plantó en protesta por los retrasos en el abono al club de las subvenciones prometidas, lo que ocasionaba una falta de liquidez que ahogaba a los profesionales.[/capitular]
 
 [cita_prensa source="Paulo Carballo, jugador y portavoz de la plantilla"]La huelga es para que las instituciones que habían comprometido una subvención hagan el ingreso al club. A los jugadores nos deben dos meses de nómina, y también se debe dinero a entrenadores de la base. No sé por qué, pero parece que hay un trato diferente hacia nosotros por parte de las instituciones.[/cita_prensa]
+
+[imagen_contenido file="10cap_tran_foto5.jpg" caption="El brasileño Marcos Dreyer, pensativo en el transcurso de un encuentro."]
 
 <p>Cuarental cifraba en 120.000 euros lo que se adeudaba al club y apoyaba la medida de presión ejercida por la plantilla. "Tienen toda la razón", esgrimía.</p>
 
@@ -2000,23 +2035,9 @@ Otros en mi lugar lo mismo sí hubiesen dado un paso a otro sitio porque las ofe
 <p>El 14 de marzo de 2009, tras una derrota en Teruel (3-0), se consumó el descenso a la Superliga 2 del Jusan Canarias y se descartaba de plano la opción, ya utilizada meses atrás, de comprar una plaza en la máxima categoría. "No vamos a jugar en la Superliga, hay que ser realistas y no hipotecar el club. Si no hay nivel para jugar arriba estaremos en la Superliga 2 y seguiremos trabajando para formar un conjunto en condiciones para recuperar la categoría, donde el papel de la cantera debe ser importante", aseguraba el presidente, quien encabezaría, el 29 de abril de ese año, un acto institucional de entrega de insignias de oro y brillantes a varias personalidades de la historia del club, con David Rodríguez entre los elegidos. Sería una de las últimas apariciones públicas de Samuel Díaz como presidente del Calvo Sotelo, cargo del que dimitiría el 2 de junio.</p>
 
 [cita_editorial author="David Rodríguez"]Con todo el dolor de mi corazón no me quedó otro remedio que gestionar todo el papeleo para liquidar la entidad, ya que se mantenían deudas significativas que podían tener consecuencias legales si no se procedía a la desaparición formal del Calvo Sotelo como club deportivo de voleibol.[/cita_editorial]
-'),
-    array('title' => 'La cronología', 'numero' => '', 'order' => 90, 'show_marker' => false, 'parent_ref' => 'cap10',
-        'hero' => array(
-            'image' => libro_img('hero-placeholder.jpg'),
-            'overlay' => 'rgba(0,0,0,0.15)',
-            'icon' => 'custom',
-            'custom_icon' => libro_img('estrella-icon.svg'),
-            'custom_icon_color' => 'hsl(45 100% 50%)',
-            'icon_width' => 40,
-            'icon_height' => 40,
-            'alignment' => 'center',
-            'vertical' => 'center',
-            'height' => '500px',
-            'border_color' => 'hsl(45 100% 50%)',
-            'title_lines' => array(libro_hero_line('LA CRONOLOGÍA', 'hsl(220 50% 12%)', 'hsl(45 100% 50%)', 'black')),
-        ),
-        'content' => '
+
+[seccion_header color="navy"]La cronología[/seccion_header]
+
 <div class="timeline-container">
 <div class="timeline-event"><span class="timeline-year">2000</span><div class="timeline-content">El Guaguas queda fuera de competiciones europeas después de trece años consecutivos estando presente en los distintos torneos continentales.</div></div>
 <div class="timeline-event"><span class="timeline-year">2001</span><div class="timeline-content">El 23 de octubre se nombra a Juan Ruiz presidente de honor en reconocimiento a su labor y legado. En diciembre se produce una huelga de la plantilla por el retraso en los cobros que termina solucionándose aunque generando un problema que ya sobrevolaría siempre en el entorno del club, pues se realizarían nuevas huelgas en años posteriores por este mismo asunto.</div></div>
@@ -2030,21 +2051,9 @@ Otros en mi lugar lo mismo sí hubiesen dado un paso a otro sitio porque las ofe
 </div>
 '),
     array('title' => 'David Rodríguez', 'numero' => '', 'order' => 91, 'show_marker' => false, 'parent_ref' => 'cap10',
-        'hero' => array(
-            'image' => libro_img('hero-placeholder.jpg'),
-            'overlay' => 'rgba(0,0,0,0.15)',
-            'icon' => 'custom',
-            'custom_icon' => libro_img('estrella-icon.svg'),
-            'custom_icon_color' => 'hsl(45 100% 50%)',
-            'icon_width' => 40,
-            'icon_height' => 40,
-            'alignment' => 'center',
-            'vertical' => 'center',
-            'height' => '500px',
-            'border_color' => 'hsl(45 100% 50%)',
-            'title_lines' => array(libro_hero_line('DAVID RODRÍGUEZ', 'hsl(220 50% 12%)', 'hsl(45 100% 50%)', 'black')),
-        ),
         'content' => '
+[imagen_contenido file="10cap_tran_foto6.jpg"]
+
 [capitular]Jugador, preparador físico, coordinador de cantera, segundo entrenador, técnico y presidente. David Rodríguez (Las Palmas de Gran Canaria, 1968) ha dedicado 25 años al Calvo Sotelo en todos los cargos posibles dentro y fuera de la pista, lo que le convierte en un caso único y de obligada referencia en el repaso vital de una entidad que considera "parte fundamental de su vida", dado el largo recorrido que tuvo en la misma así como la disparidad de momentos que, según la época, le tocó vivir en carne propia. "Jugué en un equipo irrepetible, allí me hice hombre, tuve compañeros maravillosos, disfruté en la pista, gané títulos, sentí el cariño de una afición increíble, y adquirí un prestigio como entrenador que me terminó llevando nada más y nada menos que a la selección española. A nivel deportivo, todo fue lo máximo. Pero, por desgracia, a mi vuelta al club, desde la temporada 2000-01, la situación pasó de mala a insostenible, en nada parecido a lo que me tocó vivir anteriormente, hasta el punto de que terminé asumiendo la presidencia para firmar la liquidación del club por la deuda que se tenía y sin solución alguna a la vista. Fue algo que me dolió en el alma pero que tuve que hacer en un gesto de responsabilidad", aclara.[/capitular]
 
 <p>Educado en el Claret ("y en la primera promoción en la que entrenaban juntos chicos y chicas"), muy pronto sintió David la llamada del voleibol ("como era el más grande, jugaba de central") y, entre entrenamientos en la cancha descubierta de Las Alcaravaneras ("un compañero mío jugaba en el Calvo Sotelo B y me animó a que me ejercitara con ellos") y su perfecta integración a ese grupo para perfeccionar sus habilidades, un día recibió la llamada de Felipe Nuez, incansable captador de talentos y que le invitó a que formara parte del club. Era el inicio de su historia defendiendo una camiseta que lleva "en el corazón".</p>
@@ -2074,20 +2083,6 @@ Otros en mi lugar lo mismo sí hubiesen dado un paso a otro sitio porque las ofe
 <p>El renacer de la entidad con el regreso de viejos conocidos de su primera etapa como Camarero, Juan Ruiz, Felipe Nuez o Sánchez Jover le parece "una magnífica noticia" y más por la ilusión que están generando con sus títulos y nueva trayectoria exitosa.</p>
 '),
     array('title' => 'Joel Sotelo', 'numero' => '', 'order' => 92, 'show_marker' => false, 'parent_ref' => 'cap10',
-        'hero' => array(
-            'image' => libro_img('hero-placeholder.jpg'),
-            'overlay' => 'rgba(0,0,0,0.15)',
-            'icon' => 'custom',
-            'custom_icon' => libro_img('estrella-icon.svg'),
-            'custom_icon_color' => 'hsl(45 100% 50%)',
-            'icon_width' => 40,
-            'icon_height' => 40,
-            'alignment' => 'center',
-            'vertical' => 'center',
-            'height' => '500px',
-            'border_color' => 'hsl(45 100% 50%)',
-            'title_lines' => array(libro_hero_line('JOEL SOTELO', 'hsl(220 50% 12%)', 'hsl(45 100% 50%)', 'black')),
-        ),
         'content' => '
 [capitular]Cuatro temporadas como jugador (1995-1998 y 2003-2004), otra como entrenador de la cantera, tres títulos oficiales (2 Copas del Rey y 1 Supercopa de España) y el reconocimiento y afecto unánime del Centro Insular, que siempre rindió pleitesía a un jugador que adoptó como propio desde que llegó y en el que reconoció tanto sus virtudes técnicas como valores humanos. La figura de Joel Sotelo (Ciudad de México, 1970) sigue intacta y vigente cuando toca repasar la nómina de grandes extranjeros que han pasado por el Guaguas. Y él corresponde a semejante estatus con su pasión característica: "Fue el sueño de mi vida, el equipo en el que me consagré, el ciclo que guardo dentro de mi corazón como algo privilegiado, como lo mejor que puedo contar cuando hablo a mi familia y amigos del voleibol". En un palmarés como el suyo, plagado de laureles en el vóley playa, con participaciones en circuitos nacionales y mundiales, más el corolario de los Juegos Olímpicos de Sídney 2000, no resulta gratuita esta jerarquización tan rotunda.[/capitular]
 
@@ -2108,20 +2103,6 @@ Otros en mi lugar lo mismo sí hubiesen dado un paso a otro sitio porque las ofe
 [cita_editorial author="Joel Sotelo"]Pasé más de 20 años en Canarias y dos de mis tres hijas nacieron en Gran Canaria. Salí campeón con el Guaguas. El Centro Insular fue el escenario de mis sueños, con Sergio Miguel Camarero tengo una relación familiar de todo lo que hemos compartido, a Juan Ruiz lo tengo como una de las personas más importantes de mi vida por darme la oportunidad de jugar en ese equipo maravilloso. No hay un día en el que no me salga a la mente un recuerdo del Guaguas y de esa etapa tan fantástica.[/cita_editorial]
 '),
     array('title' => 'Pedro Cuarental', 'numero' => '', 'order' => 93, 'show_marker' => false, 'parent_ref' => 'cap10',
-        'hero' => array(
-            'image' => libro_img('hero-placeholder.jpg'),
-            'overlay' => 'rgba(0,0,0,0.15)',
-            'icon' => 'custom',
-            'custom_icon' => libro_img('estrella-icon.svg'),
-            'custom_icon_color' => 'hsl(45 100% 50%)',
-            'icon_width' => 40,
-            'icon_height' => 40,
-            'alignment' => 'center',
-            'vertical' => 'center',
-            'height' => '500px',
-            'border_color' => 'hsl(45 100% 50%)',
-            'title_lines' => array(libro_hero_line('PEDRO CUARENTAL', 'hsl(220 50% 12%)', 'hsl(45 100% 50%)', 'black')),
-        ),
         'content' => '
 [capitular]Le tocó gestionar en una coyuntura "delicadísima", en su propio calificativo, a inicios del siglo XXI y cuando acudió, de manera voluntaria, al auxilio de un Guaguas "que no tenía dinero ni para inscribirse" ante la ausencia de patrocinios. Corría 2003 y Pedro Cuarental (Las Palmas de Gran Canaria, 1975), en tiempos jugador de la casa en categorías inferiores ("milité en cadete y juvenil y siempre mantuve mi afición por el voleibol"), fue alertado por parte de un amigo ("Rayco Hernández", precisa) de que el riesgo de desaparición era casi una realidad. "Era el director comercial de Jusan, una empresa constructora, y propuse que nos convirtiéramos en patrocinador principal. José Luis Cano era el presidente cuando entramos y ya me proponen a mí asumir el control porque el mandatario que estaba no tenía ganas de continuar. Al principio estuve al frente de una junta gestora y, luego ya, de pleno derecho en el cargo más alto".[/capitular]
 
@@ -2140,21 +2121,9 @@ Otros en mi lugar lo mismo sí hubiesen dado un paso a otro sitio porque las ofe
 <p>Más de cuatro años en la presidencia en los que puso "el mayor esmero posible en ordenar la vida económica" de un Calvo Sotelo que terminaría desapareciendo meses después pese a que se hizo oficial su relevo en la cúpula en favor de Samuel Díaz, que había ejercido anteriormente como entrenador.</p>
 '),
     array('title' => 'Marcos Dreyer', 'numero' => '', 'order' => 94, 'show_marker' => false, 'parent_ref' => 'cap10',
-        'hero' => array(
-            'image' => libro_img('hero-placeholder.jpg'),
-            'overlay' => 'rgba(0,0,0,0.15)',
-            'icon' => 'custom',
-            'custom_icon' => libro_img('estrella-icon.svg'),
-            'custom_icon_color' => 'hsl(45 100% 50%)',
-            'icon_width' => 40,
-            'icon_height' => 40,
-            'alignment' => 'center',
-            'vertical' => 'center',
-            'height' => '500px',
-            'border_color' => 'hsl(45 100% 50%)',
-            'title_lines' => array(libro_hero_line('MARCOS DREYER', 'hsl(220 50% 12%)', 'hsl(45 100% 50%)', 'black')),
-        ),
         'content' => '
+[imagen_contenido file="10cap_tran_foto7.jpg"]
+
 [capitular]Tres años, los que van de mayo de 2004 al mismo mes de 2007, duró la estancia del brasileño Marcos Dreyer (Teresópolis, 1971) en la etapa en la que el equipo se denominó Jusán Canarias. Pero por implicación, rendimiento y compromiso es resaltado como una figura capital en el proceso de transición que se vivió en aquella época. Tanto David Rodríguez, que fue su entrenador, como Pedro Cuarental, entonces presidente, le señalan como el líder del vestuario y distinguido siempre "por velar por el club y mantener el equilibrio en momentos en los que eso era muy complicado". Nadie dudó en cuestionar su rol de capitán y dejó honda huella por su manera de entender el deporte, basada siempre "en la honestidad, sacrificio y máxima profesionalidad", tal y como él mismo describe.[/capitular]
 
 <p>Dreyer llegó procedente del Elche, donde había ganado una Copa del Rey, y dibujaba, antes, una amplia trayectoria internacional, bagaje que puso "al servicio" de los compañeros con el fin de "tratar de hacer las cosas lo mejor posible". Tenía muy claro que el camino a seguir pasaba "por ser exigentes día a día, en cada entrenamiento y en cada partido" y su afán radicó en ese perfeccionismo que nunca rebajó.</p>
@@ -2194,10 +2163,12 @@ Otros en mi lugar lo mismo sí hubiesen dado un paso a otro sitio porque las ofe
             'title_lines' => array(libro_hero_line('TÍTULOS PARA', '#1a237e', '#FFFFFF', 'black'), libro_hero_line('UNA GRAN', '#1a237e', '#FFFFFF', 'black'), libro_hero_line('HISTORIA', '#1a237e', '#FFFFFF', 'black')),
         ),
         'content' => '[capitular]El palmarés del CV Guaguas es el más brillante del voleibol español. Nueve Ligas, nueve Copas del Rey, cinco Supercopas y una Copa Ibérica conforman un historial de éxitos que ningún otro club del país ha igualado.[/capitular]
-[imagen_contenido src="'),
+
+[foto_pendiente descripcion="Imagen del palmarés del Guaguas: trofeos y títulos acumulados a lo largo de la historia del club."]
+'),
     array('title' => 'Copa del Rey 1989', 'numero' => '', 'order' => 101, 'show_marker' => false, 'parent_ref' => 'cap11',
         'content' => '
-[titulo_deportivo numero="1" nombre="COPA DEL REY" anio="1989"]
+[titulo_deportivo numero="1" foto="11cap_tro1_foto1.png" nombre="COPA DEL REY" anio="1989"]
 [ficha_tecnica]
 [equipo numero="3" nombre="GUAGUAS LAS PALMAS"]Chava, Willock, Paco Sánchez Jover, Miralles, Venancio Costa y Camarero. También jugó Juanma Martín. <strong>Entrenador:</strong> Sergio Hernández.[/equipo]
 [equipo numero="1" nombre="C. V. PALMA"]Fernández, Saxton, Jiménez, Vicedo, Martín Lobo y Ernesto. También jugaron Ortiz, Luiso y Calvo. <strong>Entrenador:</strong> Jaime Fernández Barros.[/equipo]
@@ -2211,7 +2182,7 @@ Otros en mi lugar lo mismo sí hubiesen dado un paso a otro sitio porque las ofe
 '),
     array('title' => 'Liga 1989-90', 'numero' => '', 'order' => 102, 'show_marker' => false, 'parent_ref' => 'cap11',
         'content' => '
-[titulo_deportivo numero="2" nombre="LIGA" anio="1989-90"]
+[titulo_deportivo numero="2" foto="11cap_tro2_foto1.png" nombre="LIGA" anio="1989-90"]
 [ficha_tecnica]
 [equipo numero="3" nombre="CONSTRUCTORA ATLÁNTICA CANARIA"]Paco Sánchez Jover, Venancio Costa, Antonio Miralles, Ireneusz Klos, Sergio Camarero y Chava González. También jugaron Juanma Martín, Jesús Sánchez Jover, David Rodríguez, Jorge Ramón y Óscar Campos. <strong>Entrenador:</strong> Paco Sánchez Jover.[/equipo]
 [equipo numero="0" nombre="BOMBEROS ONCE DE BARCELONA"]Javier Rodríguez, Germán López, Antonio Alemany, Cosme Prenafeta, Rafa Pascual y Sergio Arregui. También jugó Javier Bosma. <strong>Entrenador:</strong> Vladimir Bogdevski.[/equipo]
@@ -2225,7 +2196,7 @@ Otros en mi lugar lo mismo sí hubiesen dado un paso a otro sitio porque las ofe
 '),
     array('title' => 'Liga 1990-91', 'numero' => '', 'order' => 103, 'show_marker' => false, 'parent_ref' => 'cap11',
         'content' => '
-[titulo_deportivo numero="3" nombre="LIGA" anio="1990-91"]
+[titulo_deportivo numero="3" foto="11cap_tro3_foto1.png" nombre="LIGA" anio="1990-91"]
 [ficha_tecnica]
 [equipo numero="3" nombre="CLUB VOLEIBOL GRAN CANARIA"]Waclaw Golec, Sergio Camarero, Wlodzimierz Nalazek, Paco Sánchez Jover, Ireneusz Klos y Venancio Costa. También jugaron Juanma Martín y Antonio Miralles. <strong>Entrenador:</strong> Enrique Edelstein.[/equipo]
 [equipo numero="0" nombre="ORISBA PALMA"]Benjamín Vicedo, Pompiliu Dascalu, Ramón Martín Lobo, Ernesto Rodríguez, Rafa Pascual y Bradley Willock. También jugaron Sixto Jiménez, Vladimir Shkurikin y Guillermo Calvo. <strong>Entrenador:</strong> Corneliu Oros.[/equipo]
@@ -2240,7 +2211,7 @@ Otros en mi lugar lo mismo sí hubiesen dado un paso a otro sitio porque las ofe
 
     array('title' => 'Copa del Rey 1991', 'numero' => '', 'order' => 104, 'show_marker' => false, 'parent_ref' => 'cap11',
         'content' => '
-[titulo_deportivo numero="4" nombre="COPA DEL REY" anio="1991"]
+[titulo_deportivo numero="4" foto="11cap_tro4_foto1.png" nombre="COPA DEL REY" anio="1991"]
 [ficha_tecnica]
 [equipo numero="3" nombre="CLUB VOLEIBOL GRAN CANARIA"]Waclaw Golec, Sergio Camarero, Wlodzimierz Nalazek, Paco Sánchez Jover, Ireneusz Klos y Venancio Costa. También jugaron Juanma Martín y Antonio Miralles. <strong>Entrenador:</strong> Enrique Edelstein.[/equipo]
 [equipo numero="0" nombre="CONSTRUCCIONES ALCALÁ DE TENERIFE"]Héctor López, Paco Hervás, Sead Omeragic, Sandeep Sharma, Pero Stanic y Juan Carlos Robles. También jugaron Toño Jiménez y Pedro Bonache. <strong>Entrenador:</strong> Paco Hervás.[/equipo]
@@ -2255,7 +2226,7 @@ Otros en mi lugar lo mismo sí hubiesen dado un paso a otro sitio porque las ofe
 
     array('title' => 'Liga 1991-92', 'numero' => '', 'order' => 105, 'show_marker' => false, 'parent_ref' => 'cap11',
         'content' => '
-[titulo_deportivo numero="5" nombre="LIGA" anio="1991-92"]
+[titulo_deportivo numero="5" foto="11cap_tro5_foto1.png" nombre="LIGA" anio="1991-92"]
 [ficha_tecnica]
 [equipo numero="3" nombre="CALVO SOTELO GRAN CANARIA"]Sergio Camarero, Paco Sánchez Jover, Waclaw Golec, Antonio Miralles, Lars Nilsson y Juanma Martín. También jugaron Jorge Ramón, Javi Dios, Sandeep Sharma y Emilio Agustí. <strong>Entrenador:</strong> Enrique Edelstein.[/equipo]
 [equipo numero="1" nombre="ANDORRA"]Adrián Garrido, Genido da Silva, Pascual Saurín, Angel Ortiz, Antonio Alemany y Leonardo Wiernes. También jugaron Javier Bosma, Cosme Prenafeta y Sergio Arregui. <strong>Entrenador:</strong> Luis Hillaire.[/equipo]
@@ -2270,7 +2241,7 @@ Otros en mi lugar lo mismo sí hubiesen dado un paso a otro sitio porque las ofe
 
     array('title' => 'Copa del Rey 1992', 'numero' => '', 'order' => 106, 'show_marker' => false, 'parent_ref' => 'cap11',
         'content' => '
-[titulo_deportivo numero="6" nombre="COPA DEL REY" anio="1992"]
+[titulo_deportivo numero="6" foto="11cap_tro6_foto1.png" nombre="COPA DEL REY" anio="1992"]
 [ficha_tecnica]
 [equipo numero="3" nombre="CLUB VOLEIBOL GRAN CANARIA"]Paco Sánchez Jover, Antonio Miralles, Waclaw Golec, Juanma Martín, Lars Nilsson y Sandeep Sharma. También jugaron Javi Dios, Jorge Ramón y Emilio Agustí. <strong>Entrenador:</strong> Marcelo Giovanacci.[/equipo]
 [equipo numero="0" nombre="ANDORRA"]Da Silva, Wiernes, Ortiz, Garrido, Alemany y Saurín. También jugaron Bosma y Prenafeta. <strong>Entrenador:</strong> Luis Hillaire.[/equipo]
@@ -2285,7 +2256,7 @@ Otros en mi lugar lo mismo sí hubiesen dado un paso a otro sitio porque las ofe
 
     array('title' => 'Liga 1992-93', 'numero' => '', 'order' => 107, 'show_marker' => false, 'parent_ref' => 'cap11',
         'content' => '
-[titulo_deportivo numero="7" nombre="LIGA" anio="1992-93"]
+[titulo_deportivo numero="7" foto="11cap_tro7_foto1.png" nombre="LIGA" anio="1992-93"]
 [ficha_tecnica]
 [equipo numero="2" nombre="GRUPO DUERO"]Eduardo Macías, Roman Macek, Stand Pochop, Benjamín Vicedo, Ernesto Rodríguez y Antonio Alemany. También jugaron Juan Ignacio Osuna, Jordi Palencia, Raúl Palacios y David Díaz. <strong>Entrenador:</strong> Humberto Rodríguez.[/equipo]
 [equipo numero="3" nombre="GRAN CANARIA"]Paco Sánchez Jover, Waclaw Golec, Chiqui Wiernes, Venancio Costa, Sergio Miguel Camarero y Jorge Ramón. También jugaron Sandeep Sharma, Falasca y Juanma Martín. <strong>Entrenador:</strong> Juanma Martín.[/equipo]
@@ -2300,7 +2271,7 @@ Otros en mi lugar lo mismo sí hubiesen dado un paso a otro sitio porque las ofe
 
     array('title' => 'Copa del Rey 1993', 'numero' => '', 'order' => 108, 'show_marker' => false, 'parent_ref' => 'cap11',
         'content' => '
-[titulo_deportivo numero="8" nombre="COPA DEL REY" anio="1993"]
+[titulo_deportivo numero="8" foto="11cap_tro8_foto1.png" nombre="COPA DEL REY" anio="1993"]
 [ficha_tecnica]
 [equipo numero="2" nombre="UNICAJA ALMERÍA"]Yu Yiqing, Milanov, Rafa Pascual, Cosme Prenafeta, Joaquín Parrado y Jesús Sánchez Jover. También jugaron Fabio Díez, Carlos Carreño y Javi Dios. <strong>Entrenador:</strong> Axel Mondi.[/equipo]
 [equipo numero="3" nombre="GRAN CANARIA"]Paco Sánchez Jover, Waclaw Golec, Venancio Costa, Sergio Miguel Camarero, Chiqui Wiernes y Jorge Ramón. También jugaron Sandeep Sharma y Miguel Ángel Falasca. <strong>Entrenador:</strong> Juanma Martín.[/equipo]
@@ -2315,7 +2286,7 @@ Otros en mi lugar lo mismo sí hubiesen dado un paso a otro sitio porque las ofe
 
     array('title' => 'Liga 1993-94', 'numero' => '', 'order' => 109, 'show_marker' => false, 'parent_ref' => 'cap11',
         'content' => '
-[titulo_deportivo numero="9" nombre="LIGA" anio="1993-94"]
+[titulo_deportivo numero="9" foto="11cap_tro9_foto1.png" nombre="LIGA" anio="1993-94"]
 [ficha_tecnica]
 [equipo numero="1" nombre="GRUPO DUERO"]Macek, Macías, Vicedo, Pochop, Garrido y Rodríguez. También jugaron Palacios, Díaz, Palencia y Sharma. <strong>Entrenador:</strong> Paulo Sevciuc.[/equipo]
 [equipo numero="3" nombre="GRAN CANARIA"]Venancio Costa, Paco Sánchez Jover, Waclaw Golec, Milanov, Falasca y Sergio Miguel Camarero. También jugaron Colom, Sánchez y Jorge Ramón. <strong>Entrenador:</strong> Juanma Martín.[/equipo]
@@ -2330,7 +2301,7 @@ Otros en mi lugar lo mismo sí hubiesen dado un paso a otro sitio porque las ofe
 
     array('title' => 'Copa del Rey 1996', 'numero' => '', 'order' => 110, 'show_marker' => false, 'parent_ref' => 'cap11',
         'content' => '
-[titulo_deportivo numero="10" nombre="COPA DEL REY" anio="1996"]
+[titulo_deportivo numero="10" foto="11cap_tro10_foto1.png" nombre="COPA DEL REY" anio="1996"]
 [ficha_tecnica]
 [equipo numero="3" nombre="GRAN CANARIA"]Sharma, Klos, Golec, Joel Sotelo, Rueda y Miralles. También jugaron Alexis Valido, Martín, Antonio Sánchez y Camarero. <strong>Entrenador:</strong> Paco Sánchez Jover.[/equipo]
 [equipo numero="2" nombre="CAJA SALAMANCA Y SORIA"]Pochop, Gallis, Hernández, Garrido, David Sánchez y Eduardo Sánchez. También jugaron Osuna, Saura y Díaz. <strong>Entrenador:</strong> Benjamín Vicedo.[/equipo]
@@ -2345,7 +2316,7 @@ Otros en mi lugar lo mismo sí hubiesen dado un paso a otro sitio porque las ofe
 
     array('title' => 'Supercopa de España 1993-94', 'numero' => '', 'order' => 111, 'show_marker' => false, 'parent_ref' => 'cap11',
         'content' => '
-[titulo_deportivo numero="11" nombre="SUPERCOPA DE ESPAÑA" anio="1993-94"]
+[titulo_deportivo numero="11" foto="11cap_tro11_foto1.png" nombre="SUPERCOPA DE ESPAÑA" anio="1993-94"]
 [ficha_tecnica]
 [equipo numero="3" nombre="GRAN CANARIA AREHUCAS"]Venancio Costa, Carlos Carreño, Antonio Sánchez, Miguel Ángel Falasca, Danny Pointe y Joel Sotelo. También jugaron Juan Carlos Robles, Antonio Miralles y Dani Castañeda. <strong>Entrenador:</strong> Paco Sánchez Jover.[/equipo]
 [equipo numero="1" nombre="CAJA SALAMANCA Y SORIA"]Ángel Alonso, Garrido, José Luis Moltó, Peter Gallis, Pochop y Saura. También jugaron Martínez, Sánchez y Parejo. <strong>Entrenador:</strong> Benjamín Vicedo.[/equipo]
@@ -2360,7 +2331,7 @@ Otros en mi lugar lo mismo sí hubiesen dado un paso a otro sitio porque las ofe
 
     array('title' => 'Copa del Rey 1997', 'numero' => '', 'order' => 112, 'show_marker' => false, 'parent_ref' => 'cap11',
         'content' => '
-[titulo_deportivo numero="12" nombre="COPA DEL REY" anio="1997"]
+[titulo_deportivo numero="12" foto="11cap_tro12_foto1.png" nombre="COPA DEL REY" anio="1997"]
 [ficha_tecnica]
 [equipo numero="3" nombre="GRAN CANARIA AREHUCAS"]Joel Sotelo, Miguel Ángel Falasca, Venancio Costa, Robles, Vega y Carreño. También jugaron Miralles, Pointe, Castañeda, Antonio Sánchez y Andersson. <strong>Entrenador:</strong> Paco Sánchez Jover.[/equipo]
 [equipo numero="2" nombre="UNICAJA ALMERÍA"]Prenafeta, Elgueta, Rodríguez, Sánchez, Matheus y Parrado. También jugaron Prieto y Berenguel. <strong>Entrenador:</strong> Axel Mondi.[/equipo]
@@ -2375,7 +2346,7 @@ Otros en mi lugar lo mismo sí hubiesen dado un paso a otro sitio porque las ofe
 
     array('title' => 'Copa del Rey 2021', 'numero' => '', 'order' => 113, 'show_marker' => false, 'parent_ref' => 'cap11',
         'content' => '
-[titulo_deportivo numero="13" nombre="COPA DEL REY" anio="2021"]
+[titulo_deportivo numero="13" foto="11cap_tro13_foto1.png" nombre="COPA DEL REY" anio="2021"]
 [ficha_tecnica]
 [equipo numero="3" nombre="CLUB VOLEIBOL GUAGUAS"]Paulo Bertassoni, Jorge Almansa, Matt Knigge, Pablo Kukartsev, Guilherme Hage, Moisés Cézar y Alejandro Fernández. También jugaron Javier Sánchez y Stéfano Nassini. <strong>Entrenador:</strong> Sergio Camarero.[/equipo]
 [equipo numero="0" nombre="URBIA U ENERGIA PALMA"]Ricardo Perini, Gabriel del Carmen, Elvis de Oliveira, Roberto de Melo, Juan Manuel González, Walter da Cruz y Daniel Ruiz. También jugaron Abel Bernal, De la Rosa, Pont, Renzo Cairus y Juan Lladó. <strong>Entrenador:</strong> Marcos Dreyer.[/equipo]
@@ -2390,7 +2361,7 @@ Otros en mi lugar lo mismo sí hubiesen dado un paso a otro sitio porque las ofe
 
     array('title' => 'Liga 2020-21', 'numero' => '', 'order' => 114, 'show_marker' => false, 'parent_ref' => 'cap11',
         'content' => '
-[titulo_deportivo numero="14" nombre="LIGA" anio="2020-21"]
+[titulo_deportivo numero="14" foto="11cap_tro14_foto1.png" nombre="LIGA" anio="2020-21"]
 [ficha_tecnica]
 [equipo numero="1" nombre="UNICAJA COSTA DE ALMERÍA"]Javier Jiménez, Alejandro Vigil, Ignacio Sánchez, Fran Iribarne, Miki Fornés y Augusto Colito. También jugaron Mario Ferrera, Curro Sáez, Esteban Villarreal, Jean Pascal Diedhiou y Marlon Palharini. <strong>Entrenador:</strong> Manuel Berenguel.[/equipo]
 [equipo numero="3" nombre="CLUB VOLEIBOL GUAGUAS"]Paulo Renan, Jorge Almansa, Matthew Knigge, Pablo Kukartsev, Guilherme Hage y Moisés Cézar. También jugaron Álex Fernández, Nassini y Javier Sánchez. <strong>Entrenador:</strong> Sergio Camarero.[/equipo]
@@ -2405,7 +2376,7 @@ Otros en mi lugar lo mismo sí hubiesen dado un paso a otro sitio porque las ofe
 
     array('title' => 'Supercopa de España 2021', 'numero' => '', 'order' => 115, 'show_marker' => false, 'parent_ref' => 'cap11',
         'content' => '
-[titulo_deportivo numero="15" nombre="SUPERCOPA DE ESPAÑA" anio="2021"]
+[titulo_deportivo numero="15" foto="11cap_tro15_foto1.png" nombre="SUPERCOPA DE ESPAÑA" anio="2021"]
 [ficha_tecnica]
 [equipo numero="3" nombre="CLUB VOLEIBOL GUAGUAS"]Borja Ruiz, Paulo Renan, Jorge Almansa, Matt Knigge, Yosvany Hernández, Guilherme Hage y Alejandro Fernández. También jugaron Adrián Escobar, Moisés Cézar y César Martín. <strong>Entrenador:</strong> Sergio Camarero.[/equipo]
 [equipo numero="0" nombre="URBIA U ENERGIA PALMA"]Ignacio Sánchez, Chema Giménez, Sunny Wu, Rodrigo Pernambuco, Renzo Cairus, Manu Carvalho y Daniel Ruiz. También jugaron Guillem Pont y Juan Lladó. <strong>Entrenador:</strong> Abel Bernal.[/equipo]
@@ -2420,7 +2391,7 @@ Otros en mi lugar lo mismo sí hubiesen dado un paso a otro sitio porque las ofe
 
     array('title' => 'Liga 2023', 'numero' => '', 'order' => 116, 'show_marker' => false, 'parent_ref' => 'cap11',
         'content' => '
-[titulo_deportivo numero="16" nombre="LIGA" anio="2023"]
+[titulo_deportivo numero="16" foto="11cap_tro16_foto1.png" nombre="LIGA" anio="2023"]
 [ficha_tecnica]
 [equipo numero="3" nombre="CV GUAGUAS"]Escobar, De Amo, Almansa, Zonca, Knigge, Ramos, Ruiz. También jugaron: Fernández, Olalla, Bertassoni, Rattray, Fernández, Ruiz, Conde. <strong>Entrenador:</strong> Sergio Miguel Camarero.[/equipo]
 [equipo numero="1" nombre="RÍO DUERO SORIA"]Lorente, Villalba, Moreno, Vargas, Dos Santos, Domenech, San Martín. También jugaron: Pérez, Salvador, Pyvovarenko, Jiménez, Tenorio. <strong>Entrenador:</strong> Alberto Toribio.[/equipo]
@@ -2435,7 +2406,7 @@ Otros en mi lugar lo mismo sí hubiesen dado un paso a otro sitio porque las ofe
 
     array('title' => 'Copa Ibérica 2023', 'numero' => '', 'order' => 117, 'show_marker' => false, 'parent_ref' => 'cap11',
         'content' => '
-[titulo_deportivo numero="17" nombre="COPA IBÉRICA" anio="2023"]
+[titulo_deportivo numero="17" foto="11cap_tro17_foto1.png" nombre="COPA IBÉRICA" anio="2023"]
 [ficha_tecnica]
 [equipo numero="3" nombre="CV GUAGUAS"]Nico Bruno, Vigrass, Furtado, Walla Souza, Io de Amo, Jorge Almansa, Juan Moreno, Jean Pascal, Maxi Cavanna, Unai Larrañaga, Hugo López y Ezequiel Pérez. <strong>Entrenador:</strong> Sergio Miguel Camarero.[/equipo]
 [equipo numero="1" nombre="BENFICA"]Thiago de Oliveira, Wohlfahrtsatatter, Seabra, Lucas Gaspar, Pablo Ventura, Felipe Airton, Lucas dos Santos, Eduardo da Cruz, Tiago da Silva, André Ryuma, Nuno Marques, Diodo Fernandes, Pontes Cabral e Ivo Correia. <strong>Entrenador:</strong> Marcel Eickhoff.[/equipo]
@@ -2450,7 +2421,7 @@ Otros en mi lugar lo mismo sí hubiesen dado un paso a otro sitio porque las ofe
 
     array('title' => 'Supercopa de España 2023', 'numero' => '', 'order' => 118, 'show_marker' => false, 'parent_ref' => 'cap11',
         'content' => '
-[titulo_deportivo numero="18" nombre="SUPERCOPA DE ESPAÑA" anio="2023"]
+[titulo_deportivo numero="18" foto="11cap_tro18_foto1.png" nombre="SUPERCOPA DE ESPAÑA" anio="2023"]
 [ficha_tecnica]
 [equipo numero="3" nombre="CV GUAGUAS"]Nicolás Bruno, Manu Furtado, Wallyson Bezerra Souza, Jean Pascal Diedhiou, Paolo Zonca, Maxi Cavanna, Unai Larrañaga. También jugaron: Graham Vigrass, de Amo, Jorge Almansa, Juan Pablo Moreno. <strong>Entrenador:</strong> Sergio Miguel Camarero.[/equipo]
 [equipo numero="2" nombre="GRUPO HERCE SORIA"]Lucas Lorente, Fabián Flores, Adrián Olalla, José Villalba, Bruno Cunha, Joan Domenech, Alejandro San Martín. También jugaron: Luke Belda, Santiago Aulisi. <strong>Entrenador:</strong> Luis Alberto Toribio.[/equipo]
@@ -2465,7 +2436,7 @@ Otros en mi lugar lo mismo sí hubiesen dado un paso a otro sitio porque las ofe
 
     array('title' => 'Copa del Rey 2024', 'numero' => '', 'order' => 119, 'show_marker' => false, 'parent_ref' => 'cap11',
         'content' => '
-[titulo_deportivo numero="19" nombre="COPA DEL REY" anio="2024"]
+[titulo_deportivo numero="19" foto="11cap_tro19_foto1.png" nombre="COPA DEL REY" anio="2024"]
 [ficha_tecnica]
 [equipo numero="0" nombre="UNICAJA COSTA DE ALMERÍA"]Rodríguez, Bertassoni, Fernández, Neaves, Ruiz, Ruiz, Fernández. También jugaron: Viera, Fernández, Vizcaino. <strong>Entrenador:</strong> Manuel Berenguel.[/equipo]
 [equipo numero="3" nombre="CV GUAGUAS"]Bruno, Saxton, Bezerra, De Amo, Diedhiou, Zonca, Larrañaga. También jugaron: Furtado, Almansa, Ramos. <strong>Entrenador:</strong> Sergio Miguel Camarero.[/equipo]
@@ -2480,7 +2451,7 @@ Otros en mi lugar lo mismo sí hubiesen dado un paso a otro sitio porque las ofe
 
     array('title' => 'Liga 2024', 'numero' => '', 'order' => 120, 'show_marker' => false, 'parent_ref' => 'cap11',
         'content' => '
-[titulo_deportivo numero="20" nombre="LIGA" anio="2024"]
+[titulo_deportivo numero="20" foto="11cap_tro20_foto1.png" nombre="LIGA" anio="2024"]
 [ficha_tecnica]
 [equipo numero="1" nombre="GRUPO HERCE SORIA"]Llorente, Pequeño, Olalla, San Martín, Flores, Tenorio, Santos, Aluisi, Villalba, Salvador, Zazo, Belda, Sanchís, Giménez y Doménech. <strong>Entrenador:</strong> Alberto Toribio.[/equipo]
 [equipo numero="3" nombre="CV GUAGUAS"]Pascal, Bruno, Walla, Zonca, Ramos, De Amo, Larrañaga, Moreno, Finoli, Vigrass, Pérez, Furtado, Almansa y López. <strong>Entrenador:</strong> Sergio Miguel Camarero.[/equipo]
@@ -2494,7 +2465,7 @@ Otros en mi lugar lo mismo sí hubiesen dado un paso a otro sitio porque las ofe
 
     array('title' => 'Supercopa de España 2024', 'numero' => '', 'order' => 121, 'show_marker' => false, 'parent_ref' => 'cap11',
         'content' => '
-[titulo_deportivo numero="21" nombre="SUPERCOPA DE ESPAÑA" anio="2024"]
+[titulo_deportivo numero="21" foto="11cap_tro21_foto1.png" nombre="SUPERCOPA DE ESPAÑA" anio="2024"]
 [ficha_tecnica]
 [equipo numero="3" nombre="CV GUAGUAS"]Pascal, Walla, Bruno, Ramos, De Amo, Rousseaux y Larrañaga. También jugaron: Trinidad, Moreno, Almansa, Nalobin y Pereira. <strong>Entrenador:</strong> Sergio Miguel Camarero.[/equipo]
 [equipo numero="0" nombre="UNICAJA COSTA DE ALMERÍA"]González, Ruiz, Bertassoni, J. Fernández, Tarrazo, Todd y F.J. Fernández. También jugaron: Filip. <strong>Entrenador:</strong> Pablo Ruiz.[/equipo]
@@ -2509,7 +2480,7 @@ Otros en mi lugar lo mismo sí hubiesen dado un paso a otro sitio porque las ofe
 
     array('title' => 'Copa del Rey 2025', 'numero' => '', 'order' => 122, 'show_marker' => false, 'parent_ref' => 'cap11',
         'content' => '
-[titulo_deportivo numero="22" nombre="COPA DEL REY" anio="2025"]
+[titulo_deportivo numero="22" foto="11cap_tro22_foto1.png" nombre="COPA DEL REY" anio="2025"]
 [ficha_tecnica]
 [equipo numero="1" nombre="CONECTABALEAR CV MANACOR"]Ribas, Romaní, Lorente, Godbold, Calvo, Cairus, Marzo. También jugaron: Alomar, Vanco, Flequer. <strong>Entrenador:</strong> Alexis González.[/equipo]
 [equipo numero="3" nombre="CV GUAGUAS"]Bruno, Bezerra, De Amo, Diedhiou, Rousseaux, Ramos, Larrañaga. También jugaron: Pérez, Almansa, Trinidad. <strong>Entrenador:</strong> Sergio Miguel Camarero.[/equipo]
@@ -2524,7 +2495,7 @@ Otros en mi lugar lo mismo sí hubiesen dado un paso a otro sitio porque las ofe
 
     array('title' => 'Liga 2025', 'numero' => '', 'order' => 123, 'show_marker' => false, 'parent_ref' => 'cap11',
         'content' => '
-[titulo_deportivo numero="23" nombre="LIGA" anio="2025"]
+[titulo_deportivo numero="23" foto="11cap_tro23_foto1.png" nombre="LIGA" anio="2025"]
 [ficha_tecnica]
 [equipo numero="0" nombre="GRUPO HERCE SORIA"]Arjones, Flores, Olalla, J. Villalba, Cunha, Domenech y Osado. También jugaron: Aulisi, A. Villalba. <strong>Entrenador:</strong> Alberto Toribio.[/equipo]
 [equipo numero="3" nombre="CV GUAGUAS"]Bruno, Walla Souza, Pascal, Rousseaux, Ramos, Trinidad y Larrañaga. También jugaron: De Amo. <strong>Entrenador:</strong> Sergio Miguel Camarero.[/equipo]
@@ -2539,7 +2510,7 @@ Otros en mi lugar lo mismo sí hubiesen dado un paso a otro sitio porque las ofe
 
     array('title' => 'Supercopa de España 2025', 'numero' => '', 'order' => 124, 'show_marker' => false, 'parent_ref' => 'cap11',
         'content' => '
-[titulo_deportivo numero="24" nombre="SUPERCOPA DE ESPAÑA" anio="2025"]
+[titulo_deportivo numero="24" foto="11cap_tro24_foto1.png" nombre="SUPERCOPA DE ESPAÑA" anio="2025"]
 [ficha_tecnica]
 [equipo numero="3" nombre="CV GUAGUAS"]Nico Bruno, Ezequiel Pérez, Hélder Spencer, Osmany Juantorena, Walla Souza, Miguel Ángel de Amo, Unai Larrañaga, Jorge Almansa, Augusto Colito, Jean Pascal Diedhiou, Tomas Rousseaux, Martín Ramos y Dobromir Dimitrov. <strong>Entrenador:</strong> Sergio Miguel Camarero.[/equipo]
 [equipo numero="0" nombre="GRUPO HERCE SORIA"]Óscar Arnaiz, Carlos Montero, Lucas Lorente, Omar Hoyos, Diego Miguel, Moisés Rodrigo, Juan Pablo Moreno, Rodrigo Jiménez (líbero), Alejandro Villalba, Mikel Kalstad, Bernat Castella, Viktor Lindberg, Joan Domenech, Azddin Mimoun y Arnau Masià. <strong>Entrenador:</strong> Luis Alberto Toribio.[/equipo]
@@ -2553,6 +2524,8 @@ Otros en mi lugar lo mismo sí hubiesen dado un paso a otro sitio porque las ofe
 '),
     array('title' => 'Joselu Sánchez', 'numero' => '', 'order' => 125, 'show_marker' => false, 'parent_ref' => 'cap11',
         'content' => '
+[imagen_contenido file="11cap_titu_foto2.jpg"]
+
 [capitular]Fue uno de los jugadores que estuvieron presentes en la pista del García San Román en el histórico partido disputado ante el Knack de Bélgica, correspondiente a la Recopa de Europa, el 7 de noviembre de 1987, bautizo continental de un Guaguas que luego se haría asiduo y respetado en competiciones internacionales.[/capitular]
 
 <p>Y aunque su paso por la plantilla fue fugaz (&ldquo;estuve entrenando, sin fichar, durante la campaña 1986-87 y luego, al tener el servicio militar, tuve que marcharme en enero de 1988, con lo que apenas fueron tres meses como miembro de la plantilla&rdquo;), Joselu Sánchez (Ferrol, 1962) dejó tanta huella que, décadas después, cuando Juan Ruiz ideó la refundación, tuvo muy presente su nombre para integrarlo en el organigrama ejecutivo con las funciones de secretario.</p>
@@ -2575,51 +2548,79 @@ Otros en mi lugar lo mismo sí hubiesen dado un paso a otro sitio porque las ofe
         'order' => 130,
         'show_marker' => true,
         'ref_id' => 'cap12',
-        'content' => '',
-    ),
-    array('title' => 'Un paso por aclamación', 'numero' => '', 'order' => 131, 'show_marker' => false, 'parent_ref' => 'cap12',
         'hero' => array(
-            'image' => libro_img('hero-celebracion.jpg'),
+            'image' => '',
+            'background_color' => 'hsl(206, 20%, 15%)',
+            'overlay' => 'rgba(0, 0, 0, 0)',
+            'icon' => 'custom',
+            'custom_icon' => $star,
+            'custom_icon_color' => 'hsl(206, 20%, 93%)',
+            'icon_width' => 50,
+            'icon_height' => 50,
+            'alignment' => 'center',
+            'vertical' => 'center',
+            'height' => '500px',
+            'title_lines' => array(libro_hero_line('VUELVE EL GRAN', 'hsl(220 50% 12%)', 'hsl(206, 20%, 93%)', 'none'), libro_hero_line('GUAGUAS', 'hsl(220 50% 12%)', 'hsl(206, 20%, 93%)', 'none')),
+        ),
+        'content' => ''),
+    array('title' => 'Vuelve el gran Guaguas', 'numero' => '', 'order' => 131, 'show_marker' => false, 'parent_ref' => 'cap12',
+        'hero' => array(
+            'image' => libro_img('12cap_vuel_foto4.jpg'),
             'overlay' => 'rgba(0,0,0,0.15)',
             'icon' => 'custom',
             'custom_icon' => libro_img('estrella-icon.svg'),
-            'custom_icon_color' => 'hsl(45 100% 50%)',
+            'custom_icon_color' => 'hsl(206, 20%, 93%)',
             'icon_width' => 40,
             'icon_height' => 40,
             'alignment' => 'center',
             'vertical' => 'center',
             'height' => '500px',
-            'border_color' => 'hsl(45 100% 50%)',
+            'border_color' => 'hsl(206, 20%, 93%)',
+            'background_position' => '20% center',
             'title_lines' => array(
-                libro_hero_line('UN PASO POR', 'hsl(220 50% 12%)', 'hsl(45 100% 50%)', 'black'),
-                libro_hero_line('ACLAMACIÓN', 'hsl(220 50% 12%)', 'hsl(45 100% 50%)', 'black'),
+                libro_hero_line('VUELVE EL GRAN', 'hsl(220 50% 12%)', 'hsl(206, 20%, 93%)', 'none'),
+                libro_hero_line('GUAGUAS', 'hsl(220 50% 12%)', 'hsl(206, 20%, 93%)', 'none'),
             ),
         ),
         'content' => '
+[imagen_contenido file="12cap_vuel_foto3.jpg" caption="Felipe Nuez, Juan Ruiz, Sergio Miguel Camarero y Paco Sánchez Jover, retratados juntos, a comienzos de la temporada 2021-22" fullwidth="true"]
+
+[seccion_header color="navy"]Un paso por aclamación[/seccion_header]
+
 [capitular]No fue una opinión aislada, tampoco la petición de algún nostálgico suelto, ni siquiera una suma de sugerencias. A Juan Ruiz llevaban parándole por la calle &ldquo;años y años&rdquo;, como significa, multitud de aficionados que, directamente, no terminaban de digerir que un emblema del deporte y de la sociedad grancanaria contemporánea hubiese desaparecido.[/capitular]
+
+[imagen_contenido file="12cap_vuel_foto2.jpg" caption="El rugido ganador y de orgullo de Camarero desde el banquillo contribuye a que el nuevo Guaguas siga en lo más alto."]
 
 <p>Y el histórico presidente, siempre receptivo a la voz de la gente, fue aparcando el escepticismo inicial para ir modelando un regreso que, sabía, iba a implicar serias complejidades. La refundación de una entidad deportiva, y diez años después de su liquidación como era el caso del Guaguas, obligaba a un proyecto de cimientos estables, de garantías plenas. &ldquo;Estaba prohibido dar un paso en falso&rdquo;, resume Ruiz, quien durante muchos meses fue gestando de qué manera y con qué apoyos iba a rescatar del olvido un escudo que, por historia, apego popular y prestigio jamás mereció caer en el olvido. Ya jubilado y liberado de servidumbres horarias, con una familia &ldquo;que estaba encaminada y siempre se mostró comprensiva&rdquo; con su motivación sentimental de rescatar a la entidad de su vida, inició las maniobras desde la discreción necesaria. Cualquier tipo de publicidad antes de consolidar las estructuras y el andamiaje de patrocinadores podría resultar contraproducente, lo que motivó que esas rondas de contactos y consultas no pasaran del ámbito privado.</p>
 
-<p>Paco Sánchez Jover y Sergio Miguel Camarero, los símbolos de la época de esplendor, fueron de los primeros en conocer sus intenciones. Había que acudir a las raíces y en la estructura y tradición del Calvo Sotelo esos dos nombres eran irrenunciables. Como también el de Felipe Nuez, el entrenador fundacional y referente obligado en esa reconstrucción en ciernes. En todos encontró receptividad y predisposición. Pese al paso del tiempo y a las incertidumbres inevitables, Juan Ruiz supo que la vieja guardia estaba con él. Y ejecutivos que le acompañaron antes de su marcha en 1998, tales como Antonio Benítez o Miguel Ángel Hernández, también le tendieron la mano, prestos a colaborar en lo necesario sin más interés que el de revivir un emblema como el que, en tiempos, llenó hasta la bandera el Centro Insular y campeonó por España.</p>
+<p>Paco Sánchez Jover y Sergio Miguel Camarero, los símbolos de la época de esplendor, fueron de los primeros en conocer sus intenciones. Había que acudir a las raíces y en la estructura y tradición del Calvo Sotelo esos dos nombres eran irrenunciables. Como también el de Felipe Nuez, el entrenador fundacional y referente obligado en esa reconstrucción en ciernes. En todos encontró receptividad y predisposición. Pese al paso del tiempo y a las incertidumbres inevitables, Juan Ruiz supo que la vieja guardia estaba con él. Y ejecutivos que le acompañaron antes de su marcha en 1998, tales como Antonio Benítez o Miguel Ángel Hernández, también le tendieron la mano, prestos a colaborar en lo necesario sin más interés que el de revivir un emblema como el que, en tiempos, llenó hasta la bandera el Centro Insular y campeónó por España.</p>
 
-<p>La decisión ya era firme. El consenso deseado para emprender el nuevo Guaguas, el paso necesario que tantas meditaciones había alimentado en la mente de Juan Ruiz... Todo encajaba y ya a finales de 2019, pese a los rigores de la pandemia, el sueño de restituir una entidad con cinco Ligas, seis Copas del Rey, una Supercopa de España, ídolos inolvidables en su camino y más de cincuenta partidos oficiales en competiciones europeas, comenzaba a cristalizar. Un legado inigualable.</p>
+[imagen_contenido file="12cap_vuel_foto1.jpg" caption="Vuelo sin motor de Hage en un partido disputado en el Centro Insular de Deportes y correspondiente a competición europea."]
+
+<p>La decisión ya era firme. El consenso deseado para emprender el nuevo Guaguas, el paso necesario que tantas meditaciones había alimentado en la mente de Juan Ruiz... Todo encajaba y ya a finales de 2019, pese a los rigores de la pandemia, el sueño de restituir una entidad con cinco Ligas, seis Copas del Rey, una Supercopa de España, íolos inolvidables en su camino y más de cincuenta partidos oficiales en competiciones europeas, comenzaba a cristalizar. Un legado inigualable.</p>
 
 <p>El 11 de mayo de 2020 quedó constancia en el Registro de Entidades Deportivas de Canarias de la entrada de toda la documentación pertinente del nuevo Guaguas con la intención de entrar en el ámbito competitivo y, menos de dos meses después, el 2 de julio, tenía lugar en el Cabildo de Gran Canaria la presentación institucional de un proyecto incubado con mimo, paciencia y entusiasmo.</p>
 
+[imagen_contenido file="12cap_vuel_foto5.jpg" caption="Zonca, Knigge, Ramos, De Amo y Almansa, celebrando un punto."]
+
 <p>Juan Ruiz volvía para ganar. No se conformaba con un Guaguas de transición y así lo demostró con arduas y hábiles gestiones para poner a disposición de Sergio Miguel Camarero una plantilla de calidad y experiencia. Entre las novedades más destacadas, Sánchez Jover se trajo del Vecindario al central brasileño Moisés Cézar, toda una garantía por su amplio recorrido profesional, y también sobresalió la llegada del opuesto argentino Pablo Kukartsev quien, a la postre, sería la pieza más decisiva para la consecución de los títulos que venían en camino.</p>
+
+[imagen_contenido file="12cap_vuel_foto6.png" caption="Jorge Almansa, ejemplo de capitán y representatividad en el Guaguas contemporáneo."]
 
 <p>Alejandro Fernández Rojas, Guilherme Magnani Hage, Carlos Manuel de Carvalho Furtado, Moisés Dos Santos Cézar, Javier Sánchez Carreres, Paulo Renán Bertassoni, Jorge Almansa Martínez, Luca Biliato, Ruiman David Artiles Sosa, Matthew Lambert Knigge, Stefano Nassini Hidalgo, Pablo Sergio Kukartsev y Gustavo Delgado Escribano fueron los integrantes de la plantilla de la campaña 2020-21 y cuyo primer partido oficial fue como visitante, contra el Rotogal Boiro en el pabellón A Cachada de Galicia, el 3 de octubre de 2020, ganando 0-3. Punto de partida de la nueva era en la que el Guaguas vuelve a ser protagonista por su presente de éxito y horizonte de ilusiones.</p>
 '),
-    array('title' => 'Presidentes', 'numero' => '', 'order' => 132, 'show_marker' => false, 'parent_ref' => 'cap12',
+
+    array('title' => 'Todos los presidentes', 'numero' => '', 'order' => 132, 'show_marker' => false, 'parent_ref' => 'cap12',
         'content' => '
 [capitular]Juan Ruiz ocupa un lugar preeminente e indiscutible en este capítulo de dirigentes por la vigencia, bagaje y trascendencia de su mandato, dividido en dos partes, la inicial entre 1986 y 1998, y la actual, nacida en plena pandemia, año 2020 y todavía en curso.[/capitular]
 
-<p>Es el presidente por antonomasia del Guaguas. Todos los títulos del palmarés han llegado bajo sus directrices, también las contrataciones más exitosas y recordadas, así como los ciclos de mayor calado social y repercusión, tanto a nivel regional como nacional y más allá de las fronteras. El escudo va asociado a su figura y no se entiende la trayectoria sin igual del club sin su referencia. A ese servicio continuado, estelar y que ha entrado por derecho propio en la historia del deporte canario por ser un modelo de eficiencia integral, con solvencia económica, sostenibilidad institucional y voracidad en la cancha.</p>
+<p>Es el presidente por antonomasia del Guaguas. Todos los títulos del palamarés han llegado bajo sus directrices, también las contrataciones más exitosas y recordadas, así como los ciclos de mayor calado social y repercusión, tanto a nivel regional como nacional y más allá de las fronteras. El escudo va asociado a su figura y no se entiende la trayectoria sin igual del club sin su referencia. A ese servicio continuado, estelar y que ha entrado por derecho propio en la historia del deporte canario por ser un modelo de eficiencia integral, con solvencia económica, sostenibilidad institucional y voracidad en la cancha.</p>
 
 <p>En su haber también figura, como dato inmaculado, no haber percibido remuneración alguna por su dedicación, tiempo y gestiones en aras de procurar al Guaguas un presente y un futuro. El perfil de ejecutivo remunerado se ha normalizado en los últimos tiempos e incluso hay una legitimización de esa contraprestación económica. Pero Juan Ruiz, que no ha escatimado en sacrificios, renuncias personales y todo tipo de iniciativas desde el altruismo, entiende que su representatividad ya tiene suficiente retorno como para cuantificarla o monetizarla. Ahí también se diferencia de la mayoría de sus homólogos. Esa concepción romántica de dar sin pedir a cambio, la que le llevó a adentrarse en aquel Guaguas de los ochenta que estaba a punto desaparecer guiado por su vocación de ayudar, la mantiene blindada al tiempo como ejemplo y emblema.</p>
 
 <p>Si sobre Guillermo Gil recae el honor de haber sido el presidente fundacional, allá por 1976, en Juan Ruiz reposan los laureles del club con mayor número de títulos de Canarias y el despegue hacia el infinito de un Guaguas instalado en la excelencia.</p>
 
+[bloque_lista_foto file="12cap_vuel_foto8.png" alt="Juan Ruiz"]
 [resaltado]Guillermo Gil[/resaltado]
 [resaltado]José Luzardo[/resaltado]
 [resaltado]Arturo Sureda[/resaltado]
@@ -2632,9 +2633,9 @@ Otros en mi lugar lo mismo sí hubiesen dado un paso a otro sitio porque las ofe
 [resaltado]Pedro Cuarental[/resaltado]
 [resaltado]Samuel Díaz[/resaltado]
 [resaltado]David Rodríguez[/resaltado]
+[/bloque_lista_foto]
 '),
-
-    array('title' => 'Entrenadores', 'numero' => '', 'order' => 133, 'show_marker' => false, 'parent_ref' => 'cap12',
+    array('title' => 'Todos los entrenadores', 'numero' => '', 'order' => 133, 'show_marker' => false, 'parent_ref' => 'cap12',
         'content' => '
 [capitular]De Felipe Nuez, el precursor y con el que empezó todo, pasando por Sánchez Jover, la escuela argentina en los noventa con Quique Edelstein o Marcelo Giovanacci, el sello de la casa como Juanma Martín, siempre con nuevos logros para las vitrinas, hasta el desembarco absolutamente insuperable de Sergio Miguel Camarero, en tiempos estrella en la cancha y reciclado, de igual manera, a entrenador de aureola.[/capitular]
 
@@ -2642,11 +2643,12 @@ Otros en mi lugar lo mismo sí hubiesen dado un paso a otro sitio porque las ofe
 
 <p>Lo cierto es que la galería de preparadores en el medio siglo de vida del club luce ilustres que son inolvidables y de una contribución diferencial para que el equipo se haya convertido en un icono del voleibol español. Esta catarata de conquistas consagra unas líneas maestras en las que un denominador común salta a la vista: el perfil de hombre de la casa siempre se ha elevado y distinguido. Los mencionados ejemplos de Nuez, Sánchez Jover y Camarero constituyen un trío ineludible y que perdurará sin caducidad. Lo que significaron (y en el caso de Camarero todavía se conjuga en presente) ha marcado un camino de exigencia, profesionalidad y maestría sin igual, a la altura de la genética ganadora de la entidad. Si resultó irrepetible aquel tránsito de los ochenta a los noventa jalonada de épica y proezas, ya adentrados en el siglo XXI es Camarero, representante de la vieja guardia, el encargado de mantener la esencia y contagiarla a las nuevas generaciones. Y promete seguir, inasequible al desaliento y con la ambición por bandera.</p>
 
+[bloque_lista_foto file="12cap_vuel_foto7.png" alt="Sergio Miguel Camarero"]
 [resaltado]Felipe Nuez[/resaltado]
 [resaltado]Fidel Morales[/resaltado]
 [resaltado]Sergio Hernández[/resaltado]
 [resaltado]Paco Sánchez Jover[/resaltado]
-[resaltado]Chava González (interino en el verano de 1989)[/resaltado]
+[resaltado]Chava González<br>(interino en el verano de 1989)[/resaltado]
 [resaltado]Robert Croteau[/resaltado]
 [resaltado]Quique Edesltein[/resaltado]
 [resaltado]Marcelo Giovanacci[/resaltado]
@@ -2658,32 +2660,34 @@ Otros en mi lugar lo mismo sí hubiesen dado un paso a otro sitio porque las ofe
 [resaltado]Chema Sánchez[/resaltado]
 [resaltado]Samuel Díaz[/resaltado]
 [resaltado]Sergio Miguel Camarero[/resaltado]
+[/bloque_lista_foto]
 '),
 
     // ═══════════════════════════════════════════════
     // CAPÍTULO 13: DEL CID AL ARENAS
     // ═══════════════════════════════════════════════
     array(
-        'title' => 'Del CID al Arenas',
+        'title' => 'Del CID al Arena',
         'numero' => '13',
         'order' => 140,
         'show_marker' => true,
         'ref_id' => 'cap13',
         'hero' => array(
-            'image'              => libro_img('hero-stadium.jpg'),
-            'overlay'            => 'rgba(0,0,0,0.15)',
-            'icon'               => 'custom',
-            'custom_icon'        => libro_img('estrella-icon.svg'),
-            'custom_icon_color'  => 'hsl(45 100% 50%)',
-            'icon_width'         => 40,
-            'icon_height'        => 40,
-            'alignment'          => 'center',
-            'vertical'           => 'center',
-            'height'             => '500px',
-            'border_color'       => 'hsl(45 100% 50%)',
-            'title_lines'        => array(
-                libro_hero_line('DEL CID', 'hsl(220 50% 12%)', 'hsl(45 100% 50%)', 'black'),
-                libro_hero_line('AL ARENAS', 'hsl(220 50% 12%)', 'hsl(45 100% 50%)', 'black'),
+            'image'               => libro_img('13cap_cid_foto7.jpg'),
+            'overlay'             => 'rgba(0,0,0,0.15)',
+            'icon'                => 'custom',
+            'custom_icon'         => libro_img('estrella-icon.svg'),
+            'custom_icon_color'   => 'hsl(240, 52%, 19%)',
+            'icon_width'          => 40,
+            'icon_height'         => 40,
+            'alignment'           => 'center',
+            'vertical'            => 'center',
+            'height'              => '500px',
+            'background_color'    => 'hsl(220, 50%, 12%)',
+            'background_position' => 'center center',
+            'title_lines'         => array(
+                libro_hero_line('DEL CID', 'hsl(0, 0%, 100%)', 'hsl(240, 52%, 19%)', 'none'),
+                libro_hero_line('AL ARENA', 'hsl(0, 0%, 100%)', 'hsl(240, 52%, 19%)', 'none'),
             ),
         ),
         'content' => '
@@ -2698,6 +2702,8 @@ Otros en mi lugar lo mismo sí hubiesen dado un paso a otro sitio porque las ofe
 <p><strong>Incidencias:</strong> Partido correspondiente a la XXVII Supercopa de España en la temporada 2024-25 disputado en el Gran Canaria Arena ante 2.700 espectadores.</p>
 [/ficha_debut]
 
+[imagen_contenido file="13cap_cid_foto3.jpg" fullwidth="true"]
+
 <p>El Guaguas fue adecuándose a exigencias y nuevos tiempos en lo que se refiere a sus objetivos competitivos y, también, a los escenarios de sus partidos como anfitrión. A la par que su crecimiento, canchas más equipadas, con capacidad superior y aumento notorio de su visibilidad. De un enclave periférico en sus inicios, a establecer su casa en el corazón de la urbe con todo el impacto que eso conllevó. Y sin dejar, jamás, de prestigiar la apuesta municipal por buscarle un enclave que cubriera sus necesidades y merecimientos.</p>
 
 [cita_editorial]Desde el Guaguas siempre hemos agradecido los esfuerzos de Ayuntamiento y Cabildo por brindarnos el mejor escenario posible para nuestras competiciones. Nunca hemos tenido queja alguna y así lo hemos reconocido, sabiendo convivir, además, con otros clubes en la misma instalación y en un clima de absoluta colaboración.[/cita_editorial]
@@ -2706,11 +2712,23 @@ Otros en mi lugar lo mismo sí hubiesen dado un paso a otro sitio porque las ofe
 
 <p>Además de una capacidad mayor, su accesibilidad y equipamientos llevaban al club a la modernidad. Porque, entre otras ventajas añadidas, también conllevó la apertura de unas oficinas más amplias de las que se disponían antes en el CID para desarrollar los trabajos administrativos y ejercer de sede oficial. Un mundo de ventajas que permitían un salto cualitativo indudable.</p>
 
+[imagen_contenido file="13cap_cid_foto8.jpg" caption="Panorámica del Arena en el partido de Champions disputado entre Guaguas y Berlín el 12 de febrero de 2026 y que registró una entrada que superó los 5.000 espectadores." fullwidth="true"]
+
 <p>El compromiso del Cabildo de Gran Canaria es el de devolver la actividad deportiva al Centro Insular cuando haya finalizado su completa remodelación, en torno a mediados de 2027 si se cumplen los plazos y previsiones. Mientras, la vida se está desarrollando en un entorno privilegiado y contribuyendo a diario en la expansión de la marca.</p>
 
 <p>El destino quiso que el primer partido oficial del Guaguas en su nueva casa fuese una final de la Supercopa de España, otro título en juego, y que se saldó de la mejor manera. Fue el 28 de septiembre de 2024 y con un bautizo a pedir de boca. Triunfo claro y contundente por 3-0 al Almería y nuevo título para las vitrinas.</p>
 
+[imagen_contenido file="13cap_cid_foto5.jpg" caption="Bufandas al viento de nuevas generaciones de aficionados del Guaguas, animando a su equipo en un partido como local."]
+
 [cita_editorial]En una de esas en la que no puedes dormir, recordaba a tantas personas que han pasado por la vida del club, y a las que están ahora dando el callo, segundo a segundo. Ellos potencian el papel de un grupo de jugadores magníficos y que pueden crecer mucho aún. El éxito dura muy poco, te consume mucha energía, pero merece la pena por ver las caras de alegría de la gente.[/cita_editorial]
+
+[imagen_contenido file="13cap_cid_foto2.jpg" caption="El debut oficial en el Gran Canaria Arena trajo la alegría de un nuevo título oficial, en este caso, la Supercopa de España 2024."]
+
+[imagen_contenido file="13cap_cid_foto4.jpg" fullwidth="true"]
+
+[imagen_contenido file="13cap_cid_foto6.jpg" caption="Los dirigentes Adolfo Rodríguez, Joselu Sánchez, Juan Ruiz, Antonio Benítez y Marek Szczesnowicz celebran sobre el parqué del Arena la gesta que supuso ganar al Berlín (3-1) en la Champions 2025-26."]
+
+[imagen_contenido file="13cap_cid_foto1.jpg" caption="Argentina, bien presente en el Guaguas con Nico Bruno, el asistente Facundo Leal y Martín Ramos."]
 
 [cita_editorial]Ganar la Supercopa en el Gran Canaria Arena es como abrir una nueva era para el Guaguas. Es un escenario moderno, repleto de posibilidades de crecimiento y desde el club quisiéramos agradecer el trato y el trabajo de los profesionales del Instituto Insular de Deportes, como ya le transmitimos al presidente Antonio Morales y al consejero Aridany Romero.[/cita_editorial]
 ',
@@ -2738,9 +2756,13 @@ Otros en mi lugar lo mismo sí hubiesen dado un paso a otro sitio porque las ofe
             'title_lines' => array(libro_hero_line('LOS NUEVOS', '#1a237e', '#FFFFFF', 'black'), libro_hero_line('ÍDOLOS', '#1a237e', '#FFFFFF', 'black')),
         ),
         'content' => '[capitular]Una nueva generación de estrellas ha tomado el relevo en el Gran Canaria Arena. Los nuevos ídolos del Guaguas combinan talento internacional con la pasión local para escribir nuevos capítulos en la historia del club.[/capitular]
-[imagen_contenido src="'),
+
+[foto_pendiente descripcion="Los nuevos ídolos del Guaguas en el Gran Canaria Arena, representantes de la era de la refundación."]
+'),
     array('title' => 'Pablo Kukartsev', 'numero' => '', 'order' => 1461, 'show_marker' => false, 'parent_ref' => 'cap14',
         'content' => '
+[imagen_contenido file="14cap_nuev_foto8.jpg" fullwidth="true"]
+
 [capitular]En el doblete de 2021, con Liga y Copa del Rey que no se daba desde 1994, el opuesto Pablo Kukartsev (Buenos Aires, 1993) fue una de las figuras más indiscutibles como prueba su designación como jugador más valioso de la temporada.[/capitular]
 
 <p>&ldquo;Uno no busca distinciones individuales porque esto es un juego de equipo. Todo lo que conseguí en ese año se lo debo a mis compañeros, al trabajo que realizamos conjuntamente entre todos porque, aunque pudiera parecerlo, no fue nada fácil hacer lo que hicimos&rdquo;, apunta desde las filas del Almería, su destino profesional actual y del que, precisamente, llegó en el verano de 2020.</p>
@@ -2756,6 +2778,8 @@ Otros en mi lugar lo mismo sí hubiesen dado un paso a otro sitio porque las ofe
 
     array('title' => 'Moisés Cézar', 'numero' => '', 'order' => 1462, 'show_marker' => false, 'parent_ref' => 'cap14',
         'content' => '
+[imagen_contenido file="14cap_nuev_foto5.jpg" fullwidth="true"]
+
 [capitular]En su primer año como jugador del Guaguas, brazalete de capitán y levantando hasta tres títulos: Copa, Liga y Supercopa. Todo, con diferencia de unos meses. &ldquo;Cada vez que me tocó ir a recoger un trofeo, las emociones fueron increíbles, únicas&rdquo;.[/capitular]
 
 <p>El receptor brasileño Moisés Cézar (Belo Horizonte, 1983) ya había tenido una experiencia similar en el Almería, años atrás, acaparando todos los laureles nacionales. Pero hacerlo aquí, con la jerarquía que se le otorgó en virtud de su experiencia previa, tuvo &ldquo;un sabor especial&rdquo;, tal y como admite.</p>
@@ -2773,6 +2797,8 @@ Otros en mi lugar lo mismo sí hubiesen dado un paso a otro sitio porque las ofe
 
     array('title' => 'Alejandro Fernández', 'numero' => '', 'order' => 1463, 'show_marker' => false, 'parent_ref' => 'cap14',
         'content' => '
+[imagen_contenido file="14cap_nuev_foto1.jpg" fullwidth="true"]
+
 [capitular]Diez años fuera de Canarias y la oferta de regresar a una isla, Gran Canaria, que considera su casa, hicieron que Alejandro Fernández (La Laguna, 1987) sintiera un pellizco en el corazón al recibir la propuesta del Guaguas.[/capitular]
 
 <p>&ldquo;Estaba en el Almería, con Hage o Almansa, y no nos faltaban alicientes deportivos. Pero el Guaguas es el Guaguas. La única manera de mejorar lo que tenía era estar aquí. Y más al saber los fichajes que se iban a realizar para que el proyecto tuviese la importancia que se quería. Ni me lo pensé&rdquo;, aclara.</p>
@@ -2792,6 +2818,8 @@ Otros en mi lugar lo mismo sí hubiesen dado un paso a otro sitio porque las ofe
 
     array('title' => 'Guilherme Hage', 'numero' => '', 'order' => 1464, 'show_marker' => false, 'parent_ref' => 'cap14',
         'content' => '
+[imagen_contenido file="14cap_nuev_foto3.jpg" fullwidth="true"]
+
 [capitular]Cuando el Guaguas llamó a Guilherme Hage para incorporarlo a filas, en plena pandemia y tratándose de un jugador contrastado, sin necesidad de aventuras (&ldquo;en el Almería lo tenía todo&rdquo;), pocos creyeron en que tal gestión prosperaría.[/capitular]
 
 <p>Pero tal fue la insistencia, que el jugador nacido en Araquara (Sao Paulo, Brasil) en 1988 se vio en la isla &ldquo;mucho antes de esperarlo&rdquo;, como reconoce. Y fue un flechazo, ni más ni menos. &ldquo;Me enamoré de esta tierra y del club nada más llegar. La sensación que tuve desde el primer momento era de que estaba justo donde quería, en el lugar exacto para mí y mi familia. Y eso me ayudó, indudablemente, a rendir, a responder a la confianza que puso Juan Ruiz en traerme. Un deportista necesita estabilidad dentro y fuera de la cancha y en el Guaguas encontré un equilibrio perfecto&rdquo;, explica. Y, por si fuera poco, títulos y honor a las primeras de cambio, lo que ya supuso el corolario perfecto.</p>
@@ -2805,6 +2833,8 @@ Otros en mi lugar lo mismo sí hubiesen dado un paso a otro sitio porque las ofe
 
     array('title' => 'Gustavo Delgado', 'numero' => '', 'order' => 1465, 'show_marker' => false, 'parent_ref' => 'cap14',
         'content' => '
+[imagen_contenido file="14cap_nuev_foto2.jpg" fullwidth="true"]
+
 [capitular]La historia del Guaguas, esa tradición de lustre y prestigio que estaba de vuelta en 2020, fue el imán que atrajo al madrileño Gustavo Delgado (Móstoles, 1986) a alistarse al proyecto de reconstrucción desde las filas del Rennes francés.[/capitular]
 
 <p>Una experiencia en sus inicios le ayudó a eliminar cualquier atisbo de dudas: &ldquo;Tendría 19 años cuando me enfrenté al Guaguas. Entonces el equipo no era el de los títulos de los noventa y estaba en un momento delicado, pero recuerdo que ya daba respeto tener enfrente a un club de tanto recorrido y éxitos. Y al llamarme Juan Ruiz para estar aquí, ese momento me vino a la cabeza. No podía dejar pasar la oportunidad de vestir esta camiseta&rdquo;.</p>
@@ -2820,6 +2850,8 @@ Otros en mi lugar lo mismo sí hubiesen dado un paso a otro sitio porque las ofe
 
     array('title' => 'Jorge Almansa', 'numero' => '', 'order' => 1466, 'show_marker' => false, 'parent_ref' => 'cap14',
         'content' => '
+[foto_pendiente descripcion="Fotografía de Jorge Almansa"]
+
 [capitular]Jorge Almansa (Cartagena, 1991) llevaba diez años en el Almería, era el capitán y emblema, tenía todas las consideraciones posibles como uno de los receptores de máximo nivel a escala nacional. Por si fuera poco, factores de índole personal, ya a punto de estrenar paternidad, le invitaban &ldquo;muy poco&rdquo; a cambiar de aires.[/capitular]
 
 <p>Le rompieron los esquemas &ldquo;para bien&rdquo; cuando, desde el Guaguas, le lanzaron el reto de unirse a Sergio Camarero y sus muchachos. &ldquo;Me supieron ilusionar, me hablaron de una manera que me conmovió y me llegó al fondo. Tanto es así que pasé de pensármelo a hacer las maletas en muy poco tiempo. Encima tuve la promesa, que se cumplió totalmente, de que tendría el apoyo que necesitaba para que mi familia pudiese estar bien en Gran Canaria. Y ahora, con el paso del tiempo, puedo decir que tomé la mejor decisión posible&rdquo;, argumenta.</p>
@@ -2833,6 +2865,8 @@ Otros en mi lugar lo mismo sí hubiesen dado un paso a otro sitio porque las ofe
 
     array('title' => 'Matt Knigge', 'numero' => '', 'order' => 1467, 'show_marker' => false, 'parent_ref' => 'cap14',
         'content' => '
+[imagen_contenido file="14cap_nuev_foto4.jpg" fullwidth="true"]
+
 [capitular]&ldquo;Cuando pruebas el sabor de ganar, el sabor de ser campeón, no quieres otro. Y trabajas y haces todo lo posible para que no se acabe. En el Guaguas se sigue la misma filosofía y es la que se adapta a mi manera de vivir el deporte y el voleibol&rdquo;.[/capitular]
 
 <p>El central norteamericano Matt Knigge (Nueva Jersey, 1996) cambió el reconocimiento que tenía en Lugo, su anterior club en el campeonato español, por el órdago que se le abría en un equipo &ldquo;en el que no vale ser segundo&rdquo;. Y en el momento de repasar todo lo vivido aquí (&ldquo;la isla es increíble, me encanta la gente, me siento muy integrado y feliz en el equipo y se han conquistado, hasta la fecha, tres títulos de cinco posibles&rdquo;), el balance le hace esbozar una sonrisa. &ldquo;No puedo pedir más&rdquo;, sintetiza.</p>
@@ -2846,6 +2880,8 @@ Otros en mi lugar lo mismo sí hubiesen dado un paso a otro sitio porque las ofe
 
     array('title' => 'Paulo Renan', 'numero' => '', 'order' => 1468, 'show_marker' => false, 'parent_ref' => 'cap14',
         'content' => '
+[imagen_contenido file="14cap_nuev_foto6.jpg" fullwidth="true"]
+
 [capitular]Portugal, Grecia, Italia y, claro está, su Brasil natal. Nunca había podido jugar en un club español Paulo Renan (Curitiba, 1985) hasta que desde Gran Canaria le echaron el lazo.[/capitular]
 
 <p>&ldquo;Siempre tuve ganas de competir aquí y no me lo pensé mucho. Estaba en mi país y me gustó el reto de volver a salir al extranjero y demostrar mis condiciones como colocador. El Guaguas me pareció un desafío perfecto y, después de todo lo que se ha hecho desde 2020, desde luego que me reafirmo en aquel pensamiento que tuve&rdquo;, reconoce.</p>
@@ -2865,6 +2901,8 @@ Otros en mi lugar lo mismo sí hubiesen dado un paso a otro sitio porque las ofe
 
     array('title' => 'Paolo Zonca', 'numero' => '', 'order' => 1469, 'show_marker' => false, 'parent_ref' => 'cap14',
         'content' => '
+[foto_pendiente descripcion="Fotografía de Paolo Zonca"]
+
 [capitular]El receptor italiano Paolo Zonca (Gorizia, 1997) pasó como un trueno por el Guaguas. Decisivo en sus dos temporadas (2022-2024) en la consecución de cinco títulos, con dos Superligas, una Copa del Rey, una Supercopa de España y una Copa Ibérica como legado visible, su impacto resultó incuestionable en el ciclo reciente plagado de laureles.[/capitular]
 
 <p>Figura dentro de la cancha, con jerarquía, ambición y compromiso, su adaptación al club y a la vida en Gran Canaria resultó excepcional, lo que engrandeció más su figura si cabe. Le encantaba la vida en la isla, de hecho no dudaba en pasar sus vacaciones sin moverse de aquí, y presumía de ser el mejor embajador posible de cara al exterior al presumir de una tierra &ldquo;especial, preciosa y única&rdquo;, como repetía a modo de identificación plena.</p>
@@ -2876,6 +2914,8 @@ Otros en mi lugar lo mismo sí hubiesen dado un paso a otro sitio porque las ofe
 
     array('title' => 'Martín Ramos', 'numero' => '', 'order' => 1470, 'show_marker' => false, 'parent_ref' => 'cap14',
         'content' => '
+[foto_pendiente descripcion="Fotografía de Martín Ramos"]
+
 [capitular]Pese a que tenía un palmarés envidiable, con una medalla olímpica en Río de Janeiro 2016 como guinda, Martín Ramos (Buenos Aires, 1991) sintió el deseo de unir su historia exitosa a la del Guaguas, otro paradigma de triunfos, y no dudó en aceptar el reto que le pusieron encima de la mesa en el verano de 2022.[/capitular]
 
 <p>Y la intuición que tuvo de que ese era el inicio de un ciclo de conquistas no ha parado de cumplirse desde entonces porque la cosecha de títulos y de alegrías se ha sucedido sin fin, consecuencia lógica de un binomio imparable, el que forma con el club y, también, de que haya podido encontrar un sitio ideal para, en la madurez de su carrera, sacar a relucir toda su potencia y poder en la pista.</p>
@@ -2889,6 +2929,8 @@ Otros en mi lugar lo mismo sí hubiesen dado un paso a otro sitio porque las ofe
 
     array('title' => 'Io de Amo', 'numero' => '', 'order' => 1471, 'show_marker' => false, 'parent_ref' => 'cap14',
         'content' => '
+[imagen_contenido file="14cap_nuev_foto7.jpg" fullwidth="true"]
+
 [capitular]&ldquo;Mi padre fue jugador del Atlético de Madrid de voleibol y coincidió con este club en sus inicios. Soy consciente de todo lo que ha significado el Guaguas en el voleibol español y ese fue uno de los motivos que me hicieron regresar desde el extranjero&rdquo;.[/capitular]
 
 <p>Miguel Ángel de Amo, Io, (Madrid, 1985) sabía bien el destino que elegía para volver a España después de consagrarse en Eslovaquia y Chequia con experiencias que le apuntalaron más si cabe una hoja de servicios privilegiada, con infinidad de títulos y medallas tanto en la pista como sobre la arena en sus incursiones en el vóley-playa. Juan Ruiz llevaba tras su pista largo tiempo y fue en 2022 cuando, al fin, pudo captarlo para importar su sapiencia, destreza y maestría como colocador.</p>
@@ -2902,6 +2944,8 @@ Otros en mi lugar lo mismo sí hubiesen dado un paso a otro sitio porque las ofe
 
     array('title' => 'Nico Bruno', 'numero' => '', 'order' => 1472, 'show_marker' => false, 'parent_ref' => 'cap14',
         'content' => '
+[foto_pendiente descripcion="Fotografía de Nico Bruno"]
+
 [capitular]Otro exponente más de la raza argentina y de la pasión con la que entienden allí el deporte, convertido casi siempre en una cuestión de vida o muerte. Así se desempeña y juega Nico Bruno (Buenos Aires, 1989), receptor que recaló en el club en 2023.[/capitular]
 
 <p>Brasil, Italia, Bélgica y Turquía, además de su país natal, habían sido escenarios de su imparable ascensión y, tras ser proclamado cuatro veces mejor jugador del campeonato otomano, con lo que eso conlleva, su siguiente paso exigía más excelencia. &ldquo;El Guaguas es el mejor equipo de la liga española, el presidente me trasladó la idea de seguir cosechando títulos y dar un salto de calidad en Europa. Era una propuesta ambiciosa y me interesó sumarme al proyecto&rdquo;, explicaba al argumentar su dirección a Gran Canaria pese a disponer de propuestas que, en términos económicos, mejoraban la realizada por Juan Ruiz.</p>
@@ -2915,6 +2959,8 @@ Otros en mi lugar lo mismo sí hubiesen dado un paso a otro sitio porque las ofe
 
     array('title' => 'Unai Larrañaga', 'numero' => '', 'order' => 1473, 'show_marker' => false, 'parent_ref' => 'cap14',
         'content' => '
+[foto_pendiente descripcion="Fotografía de Unai Larrañaga"]
+
 [capitular]Eficiencia silenciosa, no siempre espectacular pero, invariablemente, valiosísima para el rendimiento y los resultados del equipo. Es el perfil de Unai Larrañaga (Dumbría, La Coruña, 2000), desde 2023 componente esencial del mecanismo de funcionamiento pluscuamperfecto del Guaguas desde su posición estratégica e infalible.[/capitular]
 
 <p>Curtido en el voleibol nacional, con paso por Arenal Emeve, Santanderina y Melilla, y con la condición de fijo en la selección española, en el club hubo unanimidad a la hora de valorar su incorporación, con el añadido de aumentar la cuota española del plantel, aspecto siempre bienvenido y que no se descuida. Larrañaga encajó desde el primer momento con la naturalidad que tienen los grandes.</p>
@@ -2928,6 +2974,8 @@ Otros en mi lugar lo mismo sí hubiesen dado un paso a otro sitio porque las ofe
 
     array('title' => 'Walla Souza', 'numero' => '', 'order' => 1474, 'show_marker' => false, 'parent_ref' => 'cap14',
         'content' => '
+[foto_pendiente descripcion="Fotografía de Walla Souza"]
+
 [capitular]Fue en julio de 2023. Llegaba con 33 años y con la competencia abierta en la demarcación de opuesto con el colombiano Juan Pablo Moreno. Pocos preveían lo que venía en camino con el fichaje del brasileño Francisco Wallysson Souza, Walla (Jaguaribe, 1990).[/capitular]
 
 <p>&ldquo;Creo firmemente que estaremos enfocados en nuestro principal objetivo, que es conquistar títulos. No solo yo, sino todo el equipo estará entregado al 100% para brindar a nuestros aficionados una temporada memorable, culminando con más de un título para nuestro club&rdquo;, declaraba en sus primeras palabras como componente del equipo.</p>
@@ -2939,6 +2987,8 @@ Otros en mi lugar lo mismo sí hubiesen dado un paso a otro sitio porque las ofe
 
     array('title' => 'Tomas Rousseaux', 'numero' => '', 'order' => 1475, 'show_marker' => false, 'parent_ref' => 'cap14',
         'content' => '
+[foto_pendiente descripcion="Fotografía de Tomas Rousseaux"]
+
 [capitular]Un internacional belga procedente de Arabia Saudí, en la mejor etapa de su carrera y con disposición de dar lo mejor de su experiencia y valía en favor de la causa. Eso fue lo que se aseguró el Guaguas cuando en 2024, y tras la repentina marcha del italiano Paolo Zonca, analizó el mercado y se decantó por Tomas Rousseaux.[/capitular]
 
 [cita_editorial]El compromiso del club con la excelencia y su entorno de apoyo a los jugadores fueron factores clave. Además, la oportunidad de trabajar con su experimentado cuerpo técnico y unirme a un equipo con una cultura ganadora hizo que la decisión fuera fácil para mí.[/cita_editorial]
@@ -2954,6 +3004,8 @@ Otros en mi lugar lo mismo sí hubiesen dado un paso a otro sitio porque las ofe
 
     array('title' => 'Osmany Juantorena', 'numero' => '', 'order' => 1476, 'show_marker' => false, 'parent_ref' => 'cap14',
         'content' => '
+[foto_pendiente descripcion="Fotografía de Osmany Juantorena"]
+
 [capitular]La noticia del fichaje de Osmany Juantorena (Santiago de Cuba, 1985) por el Guaguas en el verano de 2025 fue una bomba informativa en toda regla por lo que suponía unir a una plantilla que lo había ganado todo el curso anterior un campeón de primer calibre.[/capitular]
 
 <p>El receptor cubano, con un palmarés plagado de títulos y condecoraciones, incluyendo medallas en Olimpiadas, Europeos y Mundiales a nivel de selecciones, venía a apuntalar un proyecto estelar con su incuestionable liderazgo, calidad y experiencia. &ldquo;Es un milagro que hayamos podido traerlo&rdquo;, significaba el presidente Juan Ruiz tras certificar su incorporación y dar cuenta de la dimensión que implicaba.</p>
@@ -3563,7 +3615,9 @@ Otros en mi lugar lo mismo sí hubiesen dado un paso a otro sitio porque las ofe
             'title_lines' => array(libro_hero_line('SOCIOS Y', '#D4AF37', '', 'black'), libro_hero_line('ABONADOS', '#FFFFFF', '', 'black')),
         ),
         'content' => '[capitular]La afición del Guaguas es el motor del club. Desde aquellos primeros espectadores en el patio del colegio hasta los miles de abonados que llenan el Gran Canaria Arena, los socios han sido el alma del proyecto deportivo más exitoso del voleibol español.[/capitular]
-[imagen_contenido src="'),
+
+[foto_pendiente descripcion="La afición del Guaguas, alma del club. Imagen de los socios y abonados apoyando al equipo en el Gran Canaria Arena."]
+'),
 
     // ═══════════════════════════════════════════════
     // CAPÍTULO 25: EMPRESARIOS DE LA TIERRA

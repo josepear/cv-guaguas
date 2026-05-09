@@ -835,6 +835,45 @@ function libro_shortcode_resaltado($atts, $content = null) {
 add_shortcode('resaltado', 'libro_shortcode_resaltado');
 
 /**
+ * [bloque_lista_foto file="foto.png" alt="Nombre"]
+ * Dos columnas: listado (resaltados fit-content) a la izquierda,
+ * foto cut-out a la derecha alineada al bottom.
+ */
+function libro_shortcode_bloque_lista_foto($atts, $content = null) {
+    $atts = shortcode_atts(array(
+        'file' => '',
+        'alt'  => '',
+    ), $atts, 'bloque_lista_foto');
+
+    $img_url = '';
+    if (!empty($atts['file'])) {
+        $img_url = get_template_directory_uri() . '/assets/images/' . $atts['file'];
+    }
+
+    // Strip wpautop-inserted <br> and empty <p> between shortcodes
+    $content = shortcode_unautop($content);
+    $inner   = do_shortcode($content);
+    $inner   = preg_replace('/<br\s*\/?>\s*/i', '', $inner);
+    $inner   = preg_replace('/<p>\s*<\/p>/i', '', $inner);
+
+    ob_start();
+    ?>
+    <div class="lista-foto-grid">
+        <div class="lista-foto-col">
+            <?php echo $inner; ?>
+        </div>
+        <?php if ($img_url) : ?>
+        <div>
+            <img src="<?php echo esc_url($img_url); ?>" alt="<?php echo esc_attr($atts['alt']); ?>" class="lista-foto-img">
+        </div>
+        <?php endif; ?>
+    </div>
+    <?php
+    return ob_get_clean();
+}
+add_shortcode('bloque_lista_foto', 'libro_shortcode_bloque_lista_foto');
+
+/**
  * Shortcode: Section Header - idéntico a React SectionHeader.tsx
  * Uso: [seccion_header]Título de la sección[/seccion_header]
  * Uso sin resalte: [seccion_header highlighted="false"]Título[/seccion_header]
@@ -870,6 +909,9 @@ function libro_shortcode_seccion_header($atts, $content = null) {
         if ($atts['color'] === 'inverted') {
             return '<div class="mt-10 mb-5" data-reveal="left">' . $star_above . '<' . $tag . ' class="section-header-highlighted section-header-inverted">' . wp_kses_post($content) . '</' . $tag . '></div>';
         }
+        if ($atts['color'] === 'navy') {
+            return '<div class="mt-10 mb-5" data-reveal="left">' . $star_above . '<' . $tag . ' class="section-header-highlighted section-header-navy">' . wp_kses_post($content) . '</' . $tag . '></div>';
+        }
         $text_color = $atts['texto'] ? esc_attr($atts['texto']) : ($atts['color'] ? '#ffffff' : '');
         $style = '';
         if ($atts['color'] || $text_color) {
@@ -901,6 +943,27 @@ function libro_shortcode_bloque_color($atts, $content = null) {
     return '<div class="bloque-color" style="' . $style . '">' . $processed . '</div>';
 }
 add_shortcode('bloque_color', 'libro_shortcode_bloque_color');
+
+/**
+ * Shortcode: Foto pendiente — placeholder visual para fotos no subidas aún
+ * Uso: [foto_pendiente descripcion="Descripción de la foto pendiente"]
+ */
+function libro_shortcode_foto_pendiente($atts) {
+    $atts = shortcode_atts(array(
+        'descripcion' => 'Imagen pendiente',
+    ), $atts, 'foto_pendiente');
+
+    $camera_svg = '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="hsl(45,100%,50%)" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" style="width:2.5rem;height:2.5rem;opacity:0.7;display:block;margin:0 auto 0.75rem;"><path d="M23 19a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h4l2-3h6l2 3h4a2 2 0 0 1 2 2z"/><circle cx="12" cy="13" r="4"/></svg>';
+
+    $desc = esc_html($atts['descripcion']);
+    $style = 'background-color:hsl(220,25%,10%);border:1px dashed hsl(220,20%,25%);border-radius:0.25rem;padding:2.5rem 2rem;margin:2rem 0;text-align:center;';
+
+    return '<div class="foto-pendiente" style="' . $style . '">'
+        . $camera_svg
+        . '<p style="color:hsl(220,15%,60%);font-size:0.8rem;font-style:italic;margin:0;line-height:1.4;">' . $desc . '</p>'
+        . '</div>';
+}
+add_shortcode('foto_pendiente', 'libro_shortcode_foto_pendiente');
 
 /**
  * Shortcode: Encabezado de sección (alias) - usado en Estatutos

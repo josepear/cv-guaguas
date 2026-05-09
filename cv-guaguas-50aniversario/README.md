@@ -67,7 +67,8 @@ cv-guaguas-50aniversario/
 ### Método 1: Subir archivo ZIP (recomendado)
 
 1. **Preparar el tema**
-   - Comprime la carpeta `cv-guaguas-50aniversario` en un archivo ZIP
+   - Renombra la carpeta `wordpress-theme` a `cv-guaguas-50aniversario`
+   - Comprime la carpeta en un archivo ZIP
 
 2. **Subir a WordPress**
    - Ve a `Apariencia → Temas → Añadir nuevo → Subir tema`

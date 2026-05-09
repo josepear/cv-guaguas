@@ -381,6 +381,18 @@ body.light .section-header-inverted {
     color: #ffffff;
 }
 
+/* Navy highlight: dual-mode
+   dark mode  → white bg + dark navy text
+   light mode → dark navy bg + white text */
+.section-header-navy {
+    background-color: #ffffff;
+    color: hsl(220 50% 12%);
+}
+body.light .section-header-navy {
+    background-color: hsl(220 50% 12%);
+    color: #ffffff;
+}
+
 /* Player profile name - bold uppercase like book */
 .player-profile-name {
     font-family: var(--font-serif);
@@ -1901,4 +1913,42 @@ body.dark .ficha-debut-titulo {
     border-left-color: hsl(220 50% 20% / 0.4);
     background: hsl(220 50% 8% / 0.06);
     color: hsl(220 50% 8%);
+}
+
+/* === Lista + Foto (dos columnas) === */
+.lista-foto-grid {
+    display: grid;
+    grid-template-columns: 40% 60%;
+    gap: 24px;
+    align-items: end;
+    margin-top: 28px;
+}
+
+.lista-foto-col {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 6px;
+}
+
+/* Cada resaltado ocupa solo el ancho de su texto */
+.lista-foto-col mark {
+    display: block;
+    width: fit-content;
+    line-height: 1.35;
+}
+
+.lista-foto-img {
+    width: 100%;
+    display: block;
+}
+
+@media (max-width: 640px) {
+    .lista-foto-grid {
+        grid-template-columns: 1fr;
+    }
+    .lista-foto-img {
+        max-width: 200px;
+        margin: 16px auto 0;
+    }
 }
