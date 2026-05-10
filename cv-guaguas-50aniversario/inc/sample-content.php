@@ -269,7 +269,7 @@ function libro_get_sample_chapters() {
     array('title' => 'Del patio del colegio a la División de Honor', 'numero' => '', 'order' => 13, 'show_marker' => false, 'parent_ref' => 'cap01',
         'hero' => array(
             'image' => libro_img('1cap_pati_foto15.jpg'),
-            'overlay' => 'rgba(0, 0, 0, 0.15)',
+            'overlay' => 'rgba(0, 0, 0, 0.25)',
             'icon' => 'custom',
             'custom_icon' => libro_img('estrella-icon.svg'),
             'custom_icon_color' => 'hsl(220 50% 12%)',
@@ -278,6 +278,7 @@ function libro_get_sample_chapters() {
             'alignment' => 'center',
             'vertical' => 'center',
             'height' => '500px',
+            'background_position' => 'center 30%',
             'title_lines' => array(libro_hero_line('DEL PATIO DEL COLEGIO', '#FFFFFF', 'hsl(220 50% 12%)', 'none'), libro_hero_line('A LA DIVISIÓN DE HONOR', '#FFFFFF', 'hsl(220 50% 12%)', 'none')),
             'border_color' => 'hsl(220 50% 12%)',
         ),
@@ -407,11 +408,12 @@ function libro_get_sample_chapters() {
     array('title' => 'Felipe Nuez', 'numero' => '', 'order' => 14, 'show_marker' => false, 'parent_ref' => 'cap01',
         'hero' => array(
             'image' => libro_img('1cap_pati_foto21.jpg'),
-            'overlay' => 'rgba(0,0,0,0.35)',
+            'overlay' => 'rgba(0,0,0,0.25)',
             'icon' => 'none',
             'alignment' => 'center',
             'vertical' => 'center',
             'height' => '500px',
+            'background_position' => 'center 10%',
             'title_lines' => array(libro_hero_line('FELIPE', 'hsl(220 50% 12%)', 'hsl(45 100% 50%)', 'black'), libro_hero_line('NUEZ', 'hsl(220 50% 12%)', 'hsl(45 100% 50%)', 'black'), libro_hero_line('1956–2024', 'hsl(220 50% 12%)', 'hsl(45 100% 50%)', 'black')),
             'border_color' => 'hsl(45 100% 50%)',
         ),
@@ -675,7 +677,7 @@ function libro_get_sample_chapters() {
         'ref_id' => 'cap02',
         'hero' => array(
             'image' => libro_img('2cap_esta_foto1.jpg'),
-            'overlay' => 'rgba(0, 0, 0, 0.55)',
+            'overlay' => 'rgba(0, 0, 0, 0.25)',
             'icon' => 'custom',
             'custom_icon' => libro_img('estrella-icon.svg'),
             'custom_icon_color' => 'hsl(45 100% 50%)',
@@ -784,7 +786,7 @@ c) Examinar las liquidaciones y balances de la entidad.[/articulo]
         'ref_id' => 'cap03',
         'hero' => array(
             'image' => '',
-            'overlay' => 'rgba(0,0,0,0)',
+            'overlay' => 'rgba(0, 0, 0, 0.25)',
             'background_color' => 'hsl(2 82% 30%)',
             'icon' => 'custom',
             'custom_icon' => libro_img('estrella-icon.svg'),
@@ -923,7 +925,7 @@ c) Examinar las liquidaciones y balances de la entidad.[/articulo]
         'hero' => array(
             'image' => '',
             'background_color' => '#000000',
-            'overlay' => 'rgba(0,0,0,0)',
+            'overlay' => 'rgba(0, 0, 0, 0.25)',
             'icon' => 'custom',
             'custom_icon' => libro_img('estrella-icon.svg'),
             'custom_icon_color' => '#000000',
@@ -1091,7 +1093,7 @@ c) Examinar las liquidaciones y balances de la entidad.[/articulo]
             'alignment' => 'center',
             'vertical' => 'center',
             'height' => '500px',
-            'background_position' => 'center 20%',
+            'background_position' => 'center 25%',
             'title_lines' => array(libro_hero_line('SERGIO MIGUEL', '#FFFFFF', 'hsl(204, 13%, 55%)', 'none'), libro_hero_line('CAMARERO', '#FFFFFF', 'hsl(204, 13%, 55%)', 'none')),
         ),
         'content' => '
@@ -1304,7 +1306,7 @@ Otros en mi lugar lo mismo sí hubiesen dado un paso a otro sitio porque las ofe
     array('title' => 'Ireneusz Klos', 'numero' => '', 'order' => 44, 'show_marker' => false, 'parent_ref' => 'cap05',
         'hero' => array(
             'image' => libro_img('5cap_klos_foto6.jpg'),
-            'overlay' => 'rgba(0, 0, 0, 0.3)',
+            'overlay' => 'rgba(0, 0, 0, 0.25)',
             'icon' => 'custom',
             'custom_icon' => libro_img('estrella-iconos.svg'),
             'custom_icon_color' => '#f3ab4f',
@@ -1424,7 +1426,7 @@ Otros en mi lugar lo mismo sí hubiesen dado un paso a otro sitio porque las ofe
         'ref_id' => 'cap07',
         'hero' => array(
             'image' => libro_img('7cap_mare_foto4.jpg'),
-            'overlay' => 'rgba(0, 0, 0, 0.45)',
+            'overlay' => 'rgba(0, 0, 0, 0.25)',
             'icon' => 'custom',
             'custom_icon' => libro_img('estrella-icon.svg'),
             'custom_icon_color' => 'hsl(45 100% 50%)',
@@ -1433,6 +1435,7 @@ Otros en mi lugar lo mismo sí hubiesen dado un paso a otro sitio porque las ofe
             'alignment' => 'center',
             'vertical' => 'center',
             'height' => '500px',
+            'background_position' => 'center 20%',
             'title_lines' => array(libro_hero_line('MAREK', 'hsl(220 50% 12%)', 'hsl(45 100% 50%)', 'black'), libro_hero_line('AYER, HOY', 'hsl(220 50% 12%)', 'hsl(45 100% 50%)', 'black'), libro_hero_line('Y SIEMPRE', 'hsl(220 50% 12%)', 'hsl(45 100% 50%)', 'black')),
             'border_color' => 'hsl(45 100% 50%)',
         ),
@@ -1478,7 +1481,7 @@ Otros en mi lugar lo mismo sí hubiesen dado un paso a otro sitio porque las ofe
         'hero' => array(
             'image' => '',
             'background_color' => 'hsl(220, 30%, 8%)',
-            'overlay' => 'rgba(0, 0, 0, 0)',
+            'overlay' => 'rgba(0, 0, 0, 0.25)',
             'icon' => 'custom',
             'custom_icon' => libro_img('estrella-icon.svg'),
             'custom_icon_color' => 'hsl(201, 16%, 77%)',
@@ -1494,7 +1497,7 @@ Otros en mi lugar lo mismo sí hubiesen dado un paso a otro sitio porque las ofe
         'hero' => array(
             'image' => '',
             'background_color' => 'hsl(220, 30%, 8%)',
-            'overlay' => 'rgba(0, 0, 0, 0)',
+            'overlay' => 'rgba(0, 0, 0, 0.25)',
             'icon' => 'custom',
             'custom_icon' => libro_img('estrella-icon.svg'),
             'custom_icon_color' => 'hsl(201, 16%, 77%)',
@@ -1768,7 +1771,7 @@ Otros en mi lugar lo mismo sí hubiesen dado un paso a otro sitio porque las ofe
     array('title' => 'El relevo generacional', 'numero' => '', 'order' => 75, 'show_marker' => false, 'parent_ref' => 'cap09',
         'hero' => array(
             'image' => libro_img('9cap_relevo_hero.png'),
-            'overlay' => 'rgba(0, 0, 0, 0)',
+            'overlay' => 'rgba(0, 0, 0, 0.25)',
             'icon' => 'none',
             'alignment' => 'center',
             'vertical' => 'bottom',
@@ -1923,7 +1926,7 @@ Otros en mi lugar lo mismo sí hubiesen dado un paso a otro sitio porque las ofe
         'hero' => array(
             'image' => '',
             'background_color' => 'hsl(14, 10%, 20%)',
-            'overlay' => 'rgba(0, 0, 0, 0)',
+            'overlay' => 'rgba(0, 0, 0, 0.25)',
             'icon' => 'custom',
             'custom_icon' => $star,
             'custom_icon_color' => 'hsl(14, 16%, 69%)',
@@ -1938,7 +1941,7 @@ Otros en mi lugar lo mismo sí hubiesen dado un paso a otro sitio porque las ofe
     array('title' => 'Una transición dolorosa', 'numero' => '', 'order' => 86, 'show_marker' => false, 'parent_ref' => 'cap10',
         'hero' => array(
             'image' => libro_img('10cap_tran_foto1.jpg'),
-            'overlay' => 'rgba(0, 0, 0, 0.15)',
+            'overlay' => 'rgba(0, 0, 0, 0.25)',
             'icon' => 'custom',
             'custom_icon' => libro_img('estrella-icon.svg'),
             'custom_icon_color' => 'hsl(14, 16%, 69%)',
@@ -2551,7 +2554,7 @@ Otros en mi lugar lo mismo sí hubiesen dado un paso a otro sitio porque las ofe
         'hero' => array(
             'image' => '',
             'background_color' => 'hsl(206, 20%, 15%)',
-            'overlay' => 'rgba(0, 0, 0, 0)',
+            'overlay' => 'rgba(0, 0, 0, 0.25)',
             'icon' => 'custom',
             'custom_icon' => $star,
             'custom_icon_color' => 'hsl(206, 20%, 93%)',
@@ -2566,7 +2569,7 @@ Otros en mi lugar lo mismo sí hubiesen dado un paso a otro sitio porque las ofe
     array('title' => 'Vuelve el gran Guaguas', 'numero' => '', 'order' => 131, 'show_marker' => false, 'parent_ref' => 'cap12',
         'hero' => array(
             'image' => libro_img('12cap_vuel_foto4.jpg'),
-            'overlay' => 'rgba(0,0,0,0.15)',
+            'overlay' => 'rgba(0,0,0,0.25)',
             'icon' => 'custom',
             'custom_icon' => libro_img('estrella-icon.svg'),
             'custom_icon_color' => 'hsl(206, 20%, 93%)',
@@ -2576,7 +2579,7 @@ Otros en mi lugar lo mismo sí hubiesen dado un paso a otro sitio porque las ofe
             'vertical' => 'center',
             'height' => '500px',
             'border_color' => 'hsl(206, 20%, 93%)',
-            'background_position' => '20% center',
+            'background_position' => 'center 20%',
             'title_lines' => array(
                 libro_hero_line('VUELVE EL GRAN', 'hsl(220 50% 12%)', 'hsl(206, 20%, 93%)', 'none'),
                 libro_hero_line('GUAGUAS', 'hsl(220 50% 12%)', 'hsl(206, 20%, 93%)', 'none'),
@@ -2621,18 +2624,18 @@ Otros en mi lugar lo mismo sí hubiesen dado un paso a otro sitio porque las ofe
 <p>Si sobre Guillermo Gil recae el honor de haber sido el presidente fundacional, allá por 1976, en Juan Ruiz reposan los laureles del club con mayor número de títulos de Canarias y el despegue hacia el infinito de un Guaguas instalado en la excelencia.</p>
 
 [bloque_lista_foto file="12cap_vuel_foto8.png" alt="Juan Ruiz"]
-[resaltado]Guillermo Gil[/resaltado]
-[resaltado]José Luzardo[/resaltado]
-[resaltado]Arturo Sureda[/resaltado]
-[resaltado]Florencio Tejera[/resaltado]
-[resaltado]José María Rodríguez[/resaltado]
-[resaltado]Gustavo Rodríguez[/resaltado]
-[resaltado]Juan Ruiz[/resaltado]
-[resaltado]Mario Hugendubel[/resaltado]
-[resaltado]José Luis Cano[/resaltado]
-[resaltado]Pedro Cuarental[/resaltado]
-[resaltado]Samuel Díaz[/resaltado]
-[resaltado]David Rodríguez[/resaltado]
+[resaltado color_texto="hsl(220, 50%, 12%)"]Guillermo Gil[/resaltado]
+[resaltado color_texto="hsl(220, 50%, 12%)"]José Luzardo[/resaltado]
+[resaltado color_texto="hsl(220, 50%, 12%)"]Arturo Sureda[/resaltado]
+[resaltado color_texto="hsl(220, 50%, 12%)"]Florencio Tejera[/resaltado]
+[resaltado color_texto="hsl(220, 50%, 12%)"]José María Rodríguez[/resaltado]
+[resaltado color_texto="hsl(220, 50%, 12%)"]Gustavo Rodríguez[/resaltado]
+[resaltado color_texto="hsl(220, 50%, 12%)"]Juan Ruiz[/resaltado]
+[resaltado color_texto="hsl(220, 50%, 12%)"]Mario Hugendubel[/resaltado]
+[resaltado color_texto="hsl(220, 50%, 12%)"]José Luis Cano[/resaltado]
+[resaltado color_texto="hsl(220, 50%, 12%)"]Pedro Cuarental[/resaltado]
+[resaltado color_texto="hsl(220, 50%, 12%)"]Samuel Díaz[/resaltado]
+[resaltado color_texto="hsl(220, 50%, 12%)"]David Rodríguez[/resaltado]
 [/bloque_lista_foto]
 '),
     array('title' => 'Todos los entrenadores', 'numero' => '', 'order' => 133, 'show_marker' => false, 'parent_ref' => 'cap12',
@@ -2644,22 +2647,22 @@ Otros en mi lugar lo mismo sí hubiesen dado un paso a otro sitio porque las ofe
 <p>Lo cierto es que la galería de preparadores en el medio siglo de vida del club luce ilustres que son inolvidables y de una contribución diferencial para que el equipo se haya convertido en un icono del voleibol español. Esta catarata de conquistas consagra unas líneas maestras en las que un denominador común salta a la vista: el perfil de hombre de la casa siempre se ha elevado y distinguido. Los mencionados ejemplos de Nuez, Sánchez Jover y Camarero constituyen un trío ineludible y que perdurará sin caducidad. Lo que significaron (y en el caso de Camarero todavía se conjuga en presente) ha marcado un camino de exigencia, profesionalidad y maestría sin igual, a la altura de la genética ganadora de la entidad. Si resultó irrepetible aquel tránsito de los ochenta a los noventa jalonada de épica y proezas, ya adentrados en el siglo XXI es Camarero, representante de la vieja guardia, el encargado de mantener la esencia y contagiarla a las nuevas generaciones. Y promete seguir, inasequible al desaliento y con la ambición por bandera.</p>
 
 [bloque_lista_foto file="12cap_vuel_foto7.png" alt="Sergio Miguel Camarero"]
-[resaltado]Felipe Nuez[/resaltado]
-[resaltado]Fidel Morales[/resaltado]
-[resaltado]Sergio Hernández[/resaltado]
-[resaltado]Paco Sánchez Jover[/resaltado]
-[resaltado]Chava González<br>(interino en el verano de 1989)[/resaltado]
-[resaltado]Robert Croteau[/resaltado]
-[resaltado]Quique Edesltein[/resaltado]
-[resaltado]Marcelo Giovanacci[/resaltado]
-[resaltado]Juanma Martín[/resaltado]
-[resaltado]Benjamín Vicedo[/resaltado]
-[resaltado]David Rodríguez[/resaltado]
-[resaltado]Ángel Alonso[/resaltado]
-[resaltado]Álvaro Bourousouzian[/resaltado]
-[resaltado]Chema Sánchez[/resaltado]
-[resaltado]Samuel Díaz[/resaltado]
-[resaltado]Sergio Miguel Camarero[/resaltado]
+[resaltado color_texto="hsl(220, 50%, 12%)"]Felipe Nuez[/resaltado]
+[resaltado color_texto="hsl(220, 50%, 12%)"]Fidel Morales[/resaltado]
+[resaltado color_texto="hsl(220, 50%, 12%)"]Sergio Hernández[/resaltado]
+[resaltado color_texto="hsl(220, 50%, 12%)"]Paco Sánchez Jover[/resaltado]
+[resaltado color_texto="hsl(220, 50%, 12%)"]Chava González<br>(interino en el verano de 1989)[/resaltado]
+[resaltado color_texto="hsl(220, 50%, 12%)"]Robert Croteau[/resaltado]
+[resaltado color_texto="hsl(220, 50%, 12%)"]Quique Edesltein[/resaltado]
+[resaltado color_texto="hsl(220, 50%, 12%)"]Marcelo Giovanacci[/resaltado]
+[resaltado color_texto="hsl(220, 50%, 12%)"]Juanma Martín[/resaltado]
+[resaltado color_texto="hsl(220, 50%, 12%)"]Benjamín Vicedo[/resaltado]
+[resaltado color_texto="hsl(220, 50%, 12%)"]David Rodríguez[/resaltado]
+[resaltado color_texto="hsl(220, 50%, 12%)"]Ángel Alonso[/resaltado]
+[resaltado color_texto="hsl(220, 50%, 12%)"]Álvaro Bourousouzian[/resaltado]
+[resaltado color_texto="hsl(220, 50%, 12%)"]Chema Sánchez[/resaltado]
+[resaltado color_texto="hsl(220, 50%, 12%)"]Samuel Díaz[/resaltado]
+[resaltado color_texto="hsl(220, 50%, 12%)"]Sergio Miguel Camarero[/resaltado]
 [/bloque_lista_foto]
 '),
 
@@ -2674,7 +2677,7 @@ Otros en mi lugar lo mismo sí hubiesen dado un paso a otro sitio porque las ofe
         'ref_id' => 'cap13',
         'hero' => array(
             'image'               => libro_img('13cap_cid_foto7.jpg'),
-            'overlay'             => 'rgba(0,0,0,0.15)',
+            'overlay'             => 'rgba(0,0,0,0.25)',
             'icon'                => 'custom',
             'custom_icon'         => libro_img('estrella-icon.svg'),
             'custom_icon_color'   => 'hsl(240, 52%, 19%)',
@@ -3027,28 +3030,33 @@ Otros en mi lugar lo mismo sí hubiesen dado un paso a otro sitio porque las ofe
         'show_marker' => true,
         'ref_id' => 'cap15',
         'hero' => array(
-            'image'             => libro_img('hero-stadium.jpg'),
-            'overlay'           => 'rgba(0,0,0,0.15)',
-            'icon'              => 'custom',
-            'custom_icon'       => libro_img('estrella-icon.svg'),
-            'custom_icon_color' => 'hsl(45 100% 50%)',
-            'icon_width'        => 40,
-            'icon_height'       => 40,
-            'alignment'         => 'center',
-            'vertical'          => 'center',
-            'height'            => '500px',
-            'border_color'      => 'hsl(45 100% 50%)',
-            'title_lines'       => array(
-                libro_hero_line('EL IMPACTO', 'hsl(220 50% 12%)', 'hsl(45 100% 50%)', 'black'),
-                libro_hero_line('DEL ESCUDO', 'hsl(220 50% 12%)', 'hsl(45 100% 50%)', 'black'),
+            'image'               => libro_img('15cap_impa_foto3.jpg'),
+            'overlay'             => 'rgba(0,0,0,0.25)',
+            'icon'                => 'custom',
+            'custom_icon'         => libro_img('estrella-icon.svg'),
+            'custom_icon_color'   => 'hsl(240, 52%, 19%)',
+            'icon_width'          => 40,
+            'icon_height'         => 40,
+            'alignment'           => 'center',
+            'vertical'            => 'center',
+            'height'              => '500px',
+            'background_color'    => 'hsl(220, 50%, 12%)',
+            'background_position' => 'center center',
+            'title_lines'         => array(
+                libro_hero_line('EL IMPACTO', 'hsl(0, 0%, 100%)', 'hsl(240, 52%, 19%)', 'none'),
+                libro_hero_line('DEL ESCUDO', 'hsl(0, 0%, 100%)', 'hsl(240, 52%, 19%)', 'none'),
             ),
         ),
         'content' => '
+[imagen_contenido file="15cap_impa_foto1.jpg" caption="Acompañando a Io de Amo tras recoger el premio como MVP en la Supercopa de España 2024." fullwidth="true"]
+
 [capitular]La relevancia social del CV Guaguas, proyecto deportivo en su génesis y actor ineludible de la vida global de Gran Canaria, no ha parado de crecer, consolidarse y enraizar. Es un logro añadido más, congraciando tradición, presente y alcance multidisciplinar.[/capitular]
 
 <p>Y es que el club ha sido puesto como ejemplo en diversos ámbitos, no todos relacionados de manera directa con el deporte, por lo que inspira en cuanto a su genética ganadora, ejemplo de continuidad en la cima y carácter representativo, con una gestión eficaz y autosuficiente y un compromiso rotundo con la tierra que representa.</p>
 
 [cita_editorial author="Juan Ruiz"]En los años en los que el Guaguas no compitió, tras su desaparición, y hasta que en 2020 retomamos el proyecto, la gente no paraba de preguntar y de desear que volviéramos. Eso habla del lugar que nos habíamos ganado y que no se resintió pese a una larga ausencia. Le faltaba algo al deporte canario y era el Guaguas.[/cita_editorial]
+
+[imagen_contenido file="15cap_impa_foto2.jpg" caption="Sabroso saluda a Joselu Sánchez en un agasajo oficial."]
 
 <p>La presencia y eco del Guaguas, privilegio ganado a pulso por títulos, competitividad y arraigo, le han granjeado apoyos empresariales y de orden público, a través de las correspondientes subvenciones, para su sostenibilidad, si bien dos de estos pilares se destacan por su enjundia y valor histórico: la empresa municipal de transporte público de la ciudad de Las Palmas de Gran Canaria, Guaguas Municipales, cuyo vínculo con el club se remonta a la década de los ochenta y al que se debe la nomenclatura actual y más reconocible del equipo, y el Gobierno de Canarias, la máxima autoridad política en la región y que ha brindado, de igual manera, un apoyo valioso y decidido al proyecto.</p>
 
@@ -3115,57 +3123,70 @@ Otros en mi lugar lo mismo sí hubiesen dado un paso a otro sitio porque las ofe
         'content' => '',
     ),
 
-    array('title' => 'La directiva', 'numero' => '', 'order' => 1701, 'show_marker' => false, 'parent_ref' => 'cap16',
+    array('title' => 'La directiva del cincuentenario', 'numero' => '', 'order' => 1701, 'show_marker' => false, 'parent_ref' => 'cap16',
         'hero' => array(
-            'image'             => libro_img('hero-estatutos.jpg'),
-            'overlay'           => 'rgba(0,0,0,0.15)',
-            'icon'              => 'custom',
-            'custom_icon'       => libro_img('estrella-icon.svg'),
-            'custom_icon_color' => 'hsl(45 100% 50%)',
-            'icon_width'        => 40,
-            'icon_height'       => 40,
-            'alignment'         => 'center',
-            'vertical'          => 'center',
-            'height'            => '500px',
-            'border_color'      => 'hsl(45 100% 50%)',
-            'title_lines'       => array(
-                libro_hero_line('LA DIRECTIVA', 'hsl(220 50% 12%)', 'hsl(45 100% 50%)', 'black'),
+            'image'               => libro_img('16cap_dire_foto1.jpg'),
+            'overlay'             => 'rgba(0,0,0,0.25)',
+            'icon'                => 'custom',
+            'custom_icon'         => libro_img('estrella-icon.svg'),
+            'custom_icon_color'   => 'hsl(240, 52%, 19%)',
+            'icon_width'          => 40,
+            'icon_height'         => 40,
+            'alignment'           => 'center',
+            'vertical'            => 'center',
+            'height'              => '500px',
+            'background_color'    => 'hsl(220, 50%, 12%)',
+            'background_position' => 'top center',
+            'title_lines'         => array(
+                libro_hero_line('LA DIRECTIVA', 'hsl(0, 0%, 100%)', 'hsl(240, 52%, 19%)', 'none'),
+                libro_hero_line('DEL CINCUENTENARIO', 'hsl(0, 0%, 100%)', 'hsl(240, 52%, 19%)', 'none'),
             ),
         ),
         'content' => '
 [capitular]Un grupo directivo homogéneo, implicado, en el que la única fuerza motora es la estabilidad, el crecimiento y la funcionalidad del Guaguas. Nadie cobra un euro por sus funciones representativas, con Juan Ruiz como ejemplo histórico y vigente de la entrega altruista por el escudo.[/capitular]
 
-<p>El presidente ha sido testigo de todas las épocas del club, desde las más precarias hasta las que mejor representan la solidez del proyecto, y bajo su tutela se vertebra un equipo ejecutivo con representantes de todas las generaciones y en el que se salvaguarda la filosofía original de servicio y lealtad.</p>
-
-[cita_editorial author="Juan Ruiz"]Hay un compromiso decidido y firme en servir al escudo, en poner lo mejor que tenemos para procurar el crecimiento, la sostenibilidad y el porvenir de la entidad y el trabajo que se está realizando en los últimos años, desde la refundación en 2020, así lo evidencia. La generación de recursos, las relaciones institucionales con los estamentos públicos, la búsqueda de patrocinios, la consolidación de la marca, la transformación necesaria para los desafíos de los nuevos tiempos, la necesaria modernización y profesionalización... Vamos todos en la misma dirección con la responsabilidad que implican nuestros cargos.[/cita_editorial]
+<p>El presidente ha sido testigo de todas las épocas del club, desde las más precarias hasta las que mejor representan la solidez del proyecto, y bajo su tutela se vertebra un equipo ejecutivo con representantes de todas las generaciones y en el que se salvaguarda la filosofía original de servicio y lealtad. &ldquo;Hay un compromiso decidido y firme en servir al escudo, en poner lo mejor que tenemos para procurar el crecimiento, la sostenibilidad y el porvenir de la entidad y el trabajo que se está realizando en los últimos años, desde la refundación en 2020, así lo evidencia. La generación de recursos, las relaciones institucionales con los estamentos públicos, la búsqueda de patrocinios, la consolidación de la marca, la transformación necesaria para los desafíos de los nuevos tiempos, la necesaria modernización y profesionalización&hellip; Vamos todos en la misma dirección con la responsabilidad que implican nuestros cargos&rdquo;, argumenta el presidente.</p>
 
 <p>Ruiz diseñó un grupo de trabajo en la dirigencia con sumo cuidado y sensibilidad, con representantes de la primera etapa, como salvaguarda de las tradiciones y esencias, actores del mundo empresarial y de gestión actual y una importante cuota femenina. Roles definidos, compenetrados y que privilegian el consenso en la toma de decisiones, siempre vinculada al bien del Guaguas dentro de un modelo de gestión transparente.</p>
 
-[cita_editorial author="Juan Ruiz"]Con los medios que tenemos y las aspiraciones competitivas siempre máximas que hay en nuestros proyectos, es esencial una manera de dirigir y decidir desde la seriedad, desde el rigor que comporta estar donde estamos y con muchísimo tacto y firmeza en cada paso, en cada gestión, en cada determinación. Nos guía nuestro amor por el Guaguas y por el deporte, sabiendo que representamos a Canarias y que la ejemplaridad debe ser una constante en nuestro proceder.[/cita_editorial]
-
-<p>Joselu Sánchez, exjugador del Guaguas, que ejerce de secretario, junto a Antonio Benítez, asesor, y Marek Szczesnowicz, team mánager y vocal a la vez, fueron testigos del Guaguas que emergió en los ochenta para ya quedarse entre los grandes y ahora siguen vinculados al proyecto desde sus respectivas carteras y con el mismo ímpetu y pasión que no han perdido pese al paso del tiempo y del que es representante imbatible Juan Ruiz, enérgico y activo tal y como se le conoció en sus inicios en la presidencia en 1986.</p>
+<p>Joselu Sánchez, exjugador del Guaguas, y que ejerce de secretario, junto a Antonio Benítez, asesor, y Marek Szczesnowicz, team mánager y vocal a la vez, fueron testigos del Guaguas que emergió en los ochenta para ya quedarse entre los grandes y ahora siguen vinculados al proyecto desde sus respectivas carteras y con el mismo ímpetu y pasión que no han perdido pese al paso del tiempo y del que es representante imbatible Juan Ruiz, enérgico y activo tal y como se le conoció en sus inicios en la presidencia en 1986.</p>
 
 <p>La vía de las segundas generaciones también está presente con David Ruiz, tesorero e hijo de Juan Ruiz, y las vocales Lucía Ramón y Laura Sánchez, hijas de Jorge Ramón y Joselu Sánchez respectivamente. Otra garantía de calidad.</p>
 
 <p>Y añadir a la dirigencia a Ariel Ortega como vicepresidente, con el aval de su trayectoria empresarial y tener a un exdirector de Deportes del Gobierno de Canarias como José Manuel Betancort, otro de los asesores, añade fortaleza y experiencia a una junta en la que Adolfo Rodríguez representa la continuidad y eficiencia.</p>
+
+[imagen_contenido file="16cap_dire_foto3_num.jpg" fullwidth="true"]
+
+<div class="directiva-list">
+<div class="directiva-item"><span class="d-num">1</span><div class="d-info"><span class="d-name">Lucía Ramón</span><span class="d-role">Vocal</span></div></div>
+<div class="directiva-item"><span class="d-num">2</span><div class="d-info"><span class="d-name">Joselu Sánchez</span><span class="d-role">Secretario</span></div></div>
+<div class="directiva-item"><span class="d-num">3</span><div class="d-info"><span class="d-name">Laura Sánchez</span><span class="d-role">Vocal</span></div></div>
+<div class="directiva-item"><span class="d-num">4</span><div class="d-info"><span class="d-name">Ariel Ortega</span><span class="d-role">Vicepresidente</span></div></div>
+<div class="directiva-item"><span class="d-num">5</span><div class="d-info"><span class="d-name">Juan Ruiz</span><span class="d-role">Presidente</span></div></div>
+<div class="directiva-item"><span class="d-num">6</span><div class="d-info"><span class="d-name">Rosa Montesdeoca</span><span class="d-role">Vocal</span></div></div>
+<div class="directiva-item"><span class="d-num">7</span><div class="d-info"><span class="d-name">Antonio Benítez</span><span class="d-role">Asesor</span></div></div>
+<div class="directiva-item"><span class="d-num">8</span><div class="d-info"><span class="d-name">Marek Szczesnowicz</span><span class="d-role">Vocal</span></div></div>
+<div class="directiva-item"><span class="d-num">9</span><div class="d-info"><span class="d-name">Adolfo Rodríguez</span><span class="d-role">Vocal</span></div></div>
+<div class="directiva-item"><span class="d-num">10</span><div class="d-info"><span class="d-name">José Manuel Betancort</span><span class="d-role">Asesor</span></div></div>
+</div>
 '),
 
     array('title' => 'El futuro que viene', 'numero' => '', 'order' => 1702, 'show_marker' => false, 'parent_ref' => 'cap16',
         'hero' => array(
-            'image'             => libro_img('hero-estatutos.jpg'),
-            'overlay'           => 'rgba(0,0,0,0.15)',
-            'icon'              => 'custom',
-            'custom_icon'       => libro_img('estrella-icon.svg'),
-            'custom_icon_color' => 'hsl(45 100% 50%)',
-            'icon_width'        => 40,
-            'icon_height'       => 40,
-            'alignment'         => 'center',
-            'vertical'          => 'center',
-            'height'            => '500px',
-            'border_color'      => 'hsl(45 100% 50%)',
-            'title_lines'       => array(
-                libro_hero_line('EL FUTURO', 'hsl(220 50% 12%)', 'hsl(45 100% 50%)', 'black'),
-                libro_hero_line('QUE VIENE', 'hsl(220 50% 12%)', 'hsl(45 100% 50%)', 'black'),
+            'image'               => libro_img('16cap_dire_foto5.png'),
+            'overlay'             => 'rgba(0,0,0,0.25)',
+            'icon'                => 'custom',
+            'custom_icon'         => libro_img('estrella-icon.svg'),
+            'custom_icon_color'   => 'hsl(240, 52%, 19%)',
+            'icon_width'          => 40,
+            'icon_height'         => 40,
+            'alignment'           => 'center',
+            'vertical'            => 'center',
+            'height'              => '500px',
+            'background_color'    => 'hsl(17, 14%, 95%)',
+            'background_position' => 'center 20%',
+            'title_lines'         => array(
+                libro_hero_line('EL FUTURO QUE VIENE', 'hsl(0, 0%, 100%)', 'hsl(240, 52%, 19%)', 'none'),
             ),
         ),
         'content' => '
@@ -3176,10 +3197,11 @@ Otros en mi lugar lo mismo sí hubiesen dado un paso a otro sitio porque las ofe
 <p>Y en este elenco de personalidades próximas al máximo mandatario destacan, por edad y capacitación, cuatro nombres propios llamados a tener relevancia en la transición al futuro en la que ya se trabaja. Ariel Ortega, reconocido empresario grancanario, en las funciones de vicepresidente, David Ruiz, tesorero e hijo del factótum histórico y guía del resto, y las vocales Lucía Ramón y Laura Sánchez, también con reconocibles antecedentes familiares en la trayectoria de la entidad, personifican ese aire nuevo y renovado que, en conjunción con la mayor experiencia y antigüedad de los compañeros de la dirigencia, resulta el complemento perfecto.</p>
 
 <p>Un Guaguas en transformación, adaptado a la vanguardia del siglo XXI en su manera de desarrollarse y desplegarse a la sociedad y sin perder la esencia de su herencia triunfal, y bajo unos parámetros de sostenibilidad, compromiso social y alianza con el éxito deportivo, lo que aboca a una gestión impecable, son los cimientos en esta etapa.</p>
-'),
 
-    array('title' => 'Ariel Ortega', 'numero' => '', 'order' => 1703, 'show_marker' => false, 'parent_ref' => 'cap16',
-        'content' => '
+[seccion_header color="navy"]Ariel Ortega[/seccion_header]
+
+[imagen_contenido file="16cap_dire_foto2.png" max_width="50%"]
+
 [capitular]Ariel Ortega (Las Palmas de Gran Canaria, 1972) fue una de las incorporaciones estratégicas de Juan Ruiz para su directiva en el verano de 2023. Licenciado en Empresariales por la Universidad de Salford (Mánchester) y Máster MBA en Dirección de Empresas por Esden (Madrid), a Ortega le avalaba su sólida experiencia al frente de Café Ortega, industria familiar de la que es director general, además de su pasión e inquietud por el deporte, faceta heredada de su padre, en tiempos enrolado en la directiva de la UD Las Palmas.[/capitular]
 
 [cita_editorial author="Ariel Ortega"]Cuando Juan Ruiz me llamó pensé que me iba a pedir dinero, porque él siempre está pensando en el crecimiento del club... Pero no, lo que me trasladó es que quería contar conmigo en virtud de mi trayectoria profesional y mi afición por el deporte. Y pensaba que podía prestigiar la directiva del Guaguas si yo me unía a ellos. No lo consulté a nadie y ni me lo pensé. Acepté al momento.[/cita_editorial]
@@ -3199,10 +3221,11 @@ Otros en mi lugar lo mismo sí hubiesen dado un paso a otro sitio porque las ofe
 <p>&ldquo;La recaudación por taquilla y abonados no suponen el gran grueso de ingresos, pero por supuesto que todo suma. Aquí lo más importante es el calor humano en la cancha, necesitamos a los seguidores para alentar al equipo porque su energía se transmite en positivo al equipo. Competir en el Arena es provisional hasta que se termine de renovar el CID, en febrero de 2027 si se cumplen los plazos. Aún así, estamos muy contentos con el apoyo de los aficionados y hemos notado un aumento de la asistencia. Somos un club saneado porque no gastamos más de lo que ingresamos, pero sí es cierto que sufrimos tensiones de tesorería por depender en un 60% de los ingresos de las instituciones públicas que llegan después de incurrido el gasto&rdquo;.</p>
 
 [cita_editorial author="Ariel Ortega"]Es un trabajo lento, pero aspiramos algún día a poder contar con un gran sponsor privado que pueda complementar a Guaguas Municipales y poder dar ese salto cualitativo en el presupuesto que nos permita aspirar a más en Europa. Sueño con volver al CID renovado y las gradas a tope animando al Guaguas.[/cita_editorial]
-'),
 
-    array('title' => 'Laura Sánchez', 'numero' => '', 'order' => 1704, 'show_marker' => false, 'parent_ref' => 'cap16',
-        'content' => '
+[seccion_header color="navy"]Laura Sánchez[/seccion_header]
+
+[imagen_contenido file="16cap_dire_foto6.png" max_width="50%"]
+
 [capitular]Laura Sánchez (Las Palmas de Gran Canaria, 1999) entró a formar parte de la directiva en 2020 como vocal. Estudió Ingeniería en Organización Industrial y cursó el Máster habilitante de Ingeniería Industrial en la Universidad de Las Palmas de Gran Canaria y el Máster de Minería de Datos e Inteligencia de Negocios en la Universidad Complutense de Madrid. Actualmente ejerce de auditora interna en el Canal de Isabel II, la empresa que gestiona el agua en la Comunidad de Madrid.[/capitular]
 
 <p>Hija de Joselu Sánchez, admite que esa influencia le ha marcado: &ldquo;Mi padre, desde muy pequeña, me ha transmitido tan importantes valores como el amor por el deporte, la disciplina, el esfuerzo y el compromiso, que son exactamente los mismos que siempre han definido la historia del club. Un club que a lo largo de estos años ha conseguido grandes triunfos para el deporte grancanario y para su afición. El voleibol ha estado siempre presente en nuestra historia familiar, primero a través de sus logros como jugador de balonmano, luego del CV Guaguas y, más tarde, en mi trayectoria deportiva en el CV Claret y el JAV Olímpico, con mi padre como mejor apoyo y ejemplo&rdquo;.</p>
@@ -3218,10 +3241,11 @@ Otros en mi lugar lo mismo sí hubiesen dado un paso a otro sitio porque las ofe
 [cita_editorial author="Laura Sánchez"]Al Guaguas lo veo como un proyecto ambicioso e ilusionante. Con todo el esfuerzo y el trabajo que está realizando el equipo directivo, estoy convencida de que el club seguirá creciendo y consolidándose tanto a nivel nacional como internacional. Además, en el ámbito competitivo, espero que continúe siendo un referente, manteniendo la ambición y el espíritu de superación que siempre lo han caracterizado. Pero, más allá de los resultados, confío en que el Guaguas siga teniendo un papel fundamental a nivel social, inspirando a muchos jóvenes a través del deporte, transmitiendo valores como el esfuerzo, la constancia y el trabajo en equipo, y demostrando que con compromiso y pasión se pueden construir proyectos sólidos y duraderos.[/cita_editorial]
 
 <p>E inevitable la referencia a Juan Ruiz: &ldquo;Juan Ruiz es una figura clave en la historia reciente del club. Destacaría su compromiso, su capacidad de liderazgo y su visión a largo plazo. Es un presidente cercano, que escucha a su equipo y que se apoya y confía plenamente en las personas que le rodean, fomentando un clima de trabajo basado en la colaboración y el respeto. Esa forma de dirigir ha sido fundamental para consolidar un proyecto sólido, ambicioso y con identidad propia, siempre con el Guaguas como prioridad&rdquo;.</p>
-'),
 
-    array('title' => 'Lucía Ramón', 'numero' => '', 'order' => 1705, 'show_marker' => false, 'parent_ref' => 'cap16',
-        'content' => '
+[seccion_header color="navy"]Lucía Ramón[/seccion_header]
+
+[imagen_contenido file="16cap_dire_foto7.png" max_width="50%"]
+
 [capitular]Graduada en Fisioterapia, rama en la que ejerce, y estudiante del Grado en Educación Física, Lucía Ramón (Las Palmas de Gran Canaria, 1999) es vocal de la junta directiva desde el año 2024. Hija de un histórico como Jorge Ramón, reconoce que ese legado personal &ldquo;ayuda a valorar más el trabajo que se está realizando para mantener al Guaguas en lo más alto y seguir construyendo un futuro a la altura de su historia&rdquo;.[/capitular]
 
 <p>&ldquo;Desde muy pequeña he visto reflejada en los ojos de mi padre la pasión por el voleibol y, especialmente, por el Club Voleibol Guaguas. Conocer de primera mano la historia del club, sus orígenes y los logros alcanzados en el pasado gracias al esfuerzo, el sacrificio y la ilusión de tantas personas, me ha permitido comprender la verdadera grandeza de este club. El voleibol siempre ha formado parte de mi vida. Desde pequeña he estado en las gradas, viendo partidos y viviendo ese ambiente tan especial que se crea. Aunque nunca he jugado de manera oficial, siento el voleibol como algo muy mío, porque lo he vivido en casa y lo he sentido desde niña. Poder conocer el club desde dentro y participar activamente en su día a día es para mí una oportunidad muy ilusionante. Por eso, cuando Juan Ruiz me propuso formar parte de la directiva, sentí que era el momento de implicarme de una forma diferente y aceptar el reto con muchas ganas&rdquo;, admite.</p>
@@ -3233,10 +3257,11 @@ Otros en mi lugar lo mismo sí hubiesen dado un paso a otro sitio porque las ofe
 [cita_editorial author="Lucía Ramón"]Veo al Guaguas del futuro como un club que sigue creciendo, no solo en lo deportivo, sino también como un referente social y emocional de nuestra ciudad. Si seguimos trabajando en la línea que llevamos, estoy segura de que conseguiremos grandes logros y consolidaremos nuestra presencia en la élite del voleibol. Me emociona ver cómo cada vez más personas se acercan a los partidos y cómo los niños admiran a nuestros jugadores, soñando con seguir sus pasos y formar parte de este equipo algún día. Espero que en los próximos años el Guaguas siga siendo un lugar donde se fomente la pasión por el deporte y donde se transmitan valores que perduren más allá del juego.[/cita_editorial]
 
 <p>En sus reflexiones también cabe una personalizada en la figura del presidente: &ldquo;Para mí, Juan Ruiz es mucho más que el presidente del Guaguas. Lo conozco desde que era niña, porque ya estuvo al frente del club en la época en la que jugaba mi padre, y siempre lo he visto como alguien que ha dedicado su vida a que este club crezca y se mantenga en lo más alto. Es tenaz, apasionado y comprometido, capaz de enfrentar cualquier dificultad con determinación y de transmitir ilusión a todos los que formamos parte de este proyecto. Para mí, Juan Ruiz no es solo un presidente; es historia viva y una inspiración constante que une pasado, presente y futuro del Club Voleibol Guaguas&rdquo;.</p>
-'),
 
-    array('title' => 'David Ruiz', 'numero' => '', 'order' => 1706, 'show_marker' => false, 'parent_ref' => 'cap16',
-        'content' => '
+[seccion_header color="navy"]David Ruiz[/seccion_header]
+
+[imagen_contenido file="16cap_dire_foto8.png" max_width="50%"]
+
 [capitular]David Ruiz (Las Palmas de Gran Canaria, 1977) supo desde niño, y por la vía directa de su padre, qué era el Guaguas y su significado en el deporte y la sociedad grancanaria. Creció siendo testigo directo del auge imparable en la década de los noventa y, conforme a su formación académica, diplomado en Turismo en la Escuela Oficial de Turismo, era inevitable que, en algún momento, trasladara la pasión heredada de su padre, el gran Juan Ruiz, a una función concreta y ejecutiva al servicio del escudo.[/capitular]
 
 <p>Y, con la refundación fechada en 2020, y avalado por su experiencia en el mundo de la banca, en el que ejerce, asumió la tarea de ser el tesorero y vigilar la salud de las cuentas del club que ha marcado su vida.</p>
@@ -3256,7 +3281,10 @@ Otros en mi lugar lo mismo sí hubiesen dado un paso a otro sitio porque las ofe
 <p>En alusión a esa capacidad de sostener al Guaguas en la cima del voleibol, vertebra la receta mágica en cuatro términos: &ldquo;Esfuerzo, trabajo, perseverancia e ilusión&rdquo;.</p>
 
 [cita_editorial author="David Ruiz"]No veo otra opción que la de seguir ganando títulos y disponer de un grupo de jugadores que sean campeones, que lo lleven en la sangre y defiendan de esa manera la camiseta del Guaguas. Y con Juan Ruiz al frente, sin duda que será nuestra tarjeta de presentación tanto en España como en Europa.[/cita_editorial]
-'),
+
+[imagen_contenido file="16cap_dire_foto4.png" fullwidth="true"]
+'
+),
 
     // ═══════════════════════════════════════════════
     // CAPÍTULO 17: MÁS HONORES
@@ -3267,24 +3295,24 @@ Otros en mi lugar lo mismo sí hubiesen dado un paso a otro sitio porque las ofe
         'order' => 175,
         'show_marker' => true,
         'ref_id' => 'cap17',
-        'hero' => array(
-            'image'             => libro_img('hero-trophies.jpg'),
-            'overlay'           => 'rgba(0,0,0,0.15)',
-            'icon'              => 'custom',
-            'custom_icon'       => libro_img('estrella-icon.svg'),
-            'custom_icon_color' => 'hsl(45 100% 50%)',
-            'icon_width'        => 40,
-            'icon_height'       => 40,
-            'alignment'         => 'center',
-            'vertical'          => 'center',
-            'height'            => '500px',
-            'border_color'      => 'hsl(45 100% 50%)',
-            'title_lines'       => array(
-                libro_hero_line('MÁS', 'hsl(220 50% 12%)', 'hsl(45 100% 50%)', 'black'),
-                libro_hero_line('HONORES', 'hsl(220 50% 12%)', 'hsl(45 100% 50%)', 'black'),
+                'hero' => array(
+            'image'               => libro_img('17cap_mas_foto2.jpg'),
+            'overlay'             => 'rgba(0,0,0,0.25)',
+            'icon'                => 'custom',
+            'custom_icon'         => libro_img('estrella-icon.svg'),
+            'custom_icon_color'   => 'hsl(240, 52%, 19%)',
+            'icon_width'          => 40,
+            'icon_height'         => 40,
+            'alignment'           => 'center',
+            'vertical'            => 'center',
+            'height'              => '500px',
+            'background_color'    => 'hsl(220, 50%, 12%)',
+            'background_position' => 'center 40%',
+            'title_lines'         => array(
+                libro_hero_line('MÁS HONORES', 'hsl(0, 0%, 100%)', 'hsl(240, 52%, 19%)', 'none'),
             ),
         ),
-        'content' => '
+'content' => '
 [capitular]El prestigio de la entidad ha trascendido al ámbito del voleibol y le ha permitido alzarse con galardones de máxima relevancia provincial y regional, en reconocimiento a sus méritos deportivos y, también, representativos a niveles globales.[/capitular]
 
 <p>Porque la nominación a condecoraciones como las acumuladas en los últimos tiempos y casi de manera consecutiva, Premio Roque Nublo Deportivo por parte del Cabildo de Gran Canaria (2023), Medalla de Oro de la Ciudad de Las Palmas de Gran Canaria (2023) y Premio al Deporte Canario del Gobierno de Canarias (2024), responde, precisamente, a su indudable calado, de manera unánime valorado por las autoridades correspondientes en su baremación objetiva a la hora de las correspondientes designaciones. Para un club como el Guaguas, abanderado de su tierra por toda Europa, y con una historia de éxitos y superaciones, el significado de estos laureles supone el espaldarazo perfecto y preciso a esa constancia en la cima competitiva, a esa aureola de éxito sostenido, de vitrinas sin comparación. También a la consagración en la que se ha instalado bajo el liderazgo de Juan Ruiz en el palco y Sergio Miguel Camarero a pie de pista, representantes de la vieja guardia, la inolvidable de una hegemonía que todavía perdura, y líderes de la nueva era también jalonada de conquistas.</p>
@@ -3295,7 +3323,9 @@ Otros en mi lugar lo mismo sí hubiesen dado un paso a otro sitio porque las ofe
 
 <p>Entre los trofeos y recuerdos que forman parte del patrimonio vital del Guaguas, las menciones detalladas ocupan, por su dimensión tan preciada, un lugar privilegiado.</p>
 
-[seccion_header]Premio Roque Nublo Deportivo del Cabildo de Gran Canaria (2023)[/seccion_header]
+[seccion_header color="navy"]Premio Roque Nublo Deportivo del Cabildo de Gran Canaria (2023)[/seccion_header]
+
+[imagen_contenido file="17cap_mas_foto3.jpg" fullwidth="true"]
 
 <p>El 17 de marzo de 2023 recogió Juan Ruiz, visiblemente emocionado, y ante una ovación clamorosa, la placa y diploma acreditativos &ldquo;por su contribución de manera decisiva al crecimiento y la práctica del voleibol entre los jóvenes grancanarios, situando de nuevo a Gran Canaria como referente del voleibol nacional y potenciando, además, los valores y promoción turística de la isla en el exterior, siendo el club deportivo más laureado de Canarias&rdquo;. Antonio Morales encabezó en su condición de máximo dirigente cabildicio este evento.</p>
 
@@ -3303,19 +3333,23 @@ Otros en mi lugar lo mismo sí hubiesen dado un paso a otro sitio porque las ofe
 
 [cita_editorial author="Juan Ruiz"]Es un premio de toda la familia del Guaguas. Siendo el club más laureado de Canarias tras la desaparición del Marichal, mucha gente me decía que no comprendía que el Guaguas no tuviese un premio del Gobierno de Canarias, del Cabildo de Gran Canaria o del Ayuntamiento de Las Palmas de Gran Canaria. Hablamos de un premio honorífico, de prestigio, sin connotaciones económicas. Ya se ha hecho justicia.[/cita_editorial]
 
-[seccion_header]Medalla de Oro de la Ciudad de Las Palmas de Gran Canaria (2023)[/seccion_header]
+[seccion_header color="navy"]Medalla de Oro de la Ciudad de Las Palmas de Gran Canaria (2023)[/seccion_header]
+
+[imagen_contenido file="17cap_mas_foto4.png" fullwidth="true"]
 
 <p>El 23 de junio de 2023, en una gala celebrada en el teatro Pérez Galdós, la ciudad de Las Palmas de Gran Canaria destacó la labor de 25 personalidades e instituciones en el acto de honores y distinciones relacionadas con la ciudad y fueron reconocidos con los correspondientes títulos de Hijos e Hijas Predilectos, Hijos e Hijas Adoptivos y Medallas de Oro de la ciudad. El acto institucional de entrega de reconocimientos se celebró en el marco de las Fiestas Fundacionales y el Guaguas, representado por su presidente, obtuvo este galardón por haberse hecho sitio, con todos los honores, en la historia deportiva capitalina.</p>
 
 [cita_editorial author="Juan Ruiz"]Valoraron nuestros títulos, nuestro apoyo a la base, nuestra predisposición siempre a ayudar, promocionar e impulsar las virtudes de nuestra ciudad. Fue otro acto para el recuerdo, muy emotivo, muy brillante y que engrandeció más aún nuestro camino y escudo.[/cita_editorial]
 
-[seccion_header]Premio al Deporte Canario del Gobierno de Canarias (2024)[/seccion_header]
+[seccion_header color="navy"]Premio al Deporte Canario del Gobierno de Canarias (2024)[/seccion_header]
 
 <p>El 15 de noviembre de 2024, y en reconocimiento a su brillante temporada 2023-2024, en la que conquistó cuatro títulos (Superliga, Copa de SM El Rey, Supercopa y Copa Ibérica), además de una sobresaliente participación en la Champions League, principal competición de clubes de Europa, donde alcanzó los cuartos de final, codeándose con los equipos más potentes del Viejo Continente, el club recibió este premio en el transcurso de la feria ExpoDeca, celebrada en Infecar.</p>
 
 <p>La consejería de Educación, Formación Profesional, Actividad Física y Deportes del Gobierno de Canarias quiso, con ello, reconocer la excelencia deportiva y el talento de deportistas, clubes y organizaciones canarias destacados durante la temporada, elevando el nombre del CV Guaguas.</p>
 
 [cita_editorial author="Juan Ruiz"]Nos han votado los 27 periodistas de las Islas Canarias y me alegra mucho como nuestra familia ve recompensado este trabajo en equipo que iniciamos en una época tan dura como fue la pandemia del Covid-19. Y supimos resistir, aguantar y superarlo. Tanto en los primeros años del club como en esta etapa reciente, muchas personas tienen que sentirse partícipes de los éxitos deportivos y también de los buenos momentos que estamos viviendo ahora, con aficionados veteranos y muchos jóvenes que acuden al Gran Canaria Arena.[/cita_editorial]
+
+[imagen_contenido file="17cap_mas_foto1.jpg" fullwidth="true"]
 '),
 
     // ═══════════════════════════════════════════════
@@ -3328,16 +3362,21 @@ Otros en mi lugar lo mismo sí hubiesen dado un paso a otro sitio porque las ofe
         'show_marker' => true,
         'ref_id' => 'cap18',
         'hero' => array(
-            'image' => libro_img('hero-celebracion.jpg'),
-            'overlay' => 'rgba(212, 175, 55, 0.80)',
-            'icon' => 'custom',
-            'custom_icon' => $star,
-            'icon_width' => 60,
-            'icon_height' => 60,
-            'alignment' => 'left',
-            'vertical' => 'center',
-            'height' => '450px',
-            'title_lines' => array(libro_hero_line('EL GUAGUAS', '#1a237e', '#FFFFFF', 'black'), libro_hero_line('COMO EN LOS', '#1a237e', '#FFFFFF', 'black'), libro_hero_line('VIEJOS TIEMPOS', '#1a237e', '#FFFFFF', 'black')),
+            'image'               => libro_img('hero-celebracion.jpg'),
+            'overlay'             => 'rgba(0,0,0,0.25)',
+            'icon'                => 'custom',
+            'custom_icon'         => libro_img('estrella-icon.svg'),
+            'custom_icon_color'   => 'hsl(240, 52%, 19%)',
+            'icon_width'          => 40,
+            'icon_height'         => 40,
+            'alignment'           => 'center',
+            'vertical'            => 'center',
+            'height'              => '500px',
+            'background_color'    => 'hsl(32, 17%, 96%)',
+            'background_position' => 'center center',
+            'title_lines'         => array(
+                libro_hero_line('GUAGUAS COMO EN LOS VIEJOS TIEMPOS', 'hsl(0, 0%, 100%)', 'hsl(240, 52%, 19%)', 'none'),
+            ),
         ),
         'content' => '<p>Contenido del capítulo próximamente.</p>'),
 
@@ -3345,30 +3384,35 @@ Otros en mi lugar lo mismo sí hubiesen dado un paso a otro sitio porque las ofe
     // CAPÍTULO 19: EMPLEADOS Y TÉCNICOS
     // ═══════════════════════════════════════════════
     array(
-        'title' => 'Empleados y técnicos',
+        'title' => 'También son imprescindibles',
         'numero' => '19',
         'order' => 185,
         'show_marker' => true,
         'ref_id' => 'cap19',
         'hero' => array(
-            'image'             => libro_img('hero-stadium.jpg'),
-            'overlay'           => 'rgba(0,0,0,0.15)',
-            'icon'              => 'custom',
-            'custom_icon'       => libro_img('estrella-icon.svg'),
-            'custom_icon_color' => 'hsl(45 100% 50%)',
-            'icon_width'        => 40,
-            'icon_height'       => 40,
-            'alignment'         => 'center',
-            'vertical'          => 'center',
-            'height'            => '500px',
-            'border_color'      => 'hsl(45 100% 50%)',
-            'title_lines'       => array(
-                libro_hero_line('EMPLEADOS', 'hsl(220 50% 12%)', 'hsl(45 100% 50%)', 'black'),
-                libro_hero_line('Y TÉCNICOS', 'hsl(220 50% 12%)', 'hsl(45 100% 50%)', 'black'),
+            'image'               => libro_img('19cap_empl_foto3.jpg'),
+            'overlay'             => 'rgba(0,0,0,0.25)',
+            'icon'                => 'custom',
+            'custom_icon'         => libro_img('estrella-icon.svg'),
+            'custom_icon_color'   => 'hsl(240, 52%, 19%)',
+            'icon_width'          => 40,
+            'icon_height'         => 40,
+            'alignment'           => 'center',
+            'vertical'            => 'center',
+            'height'              => '500px',
+            'background_color'    => 'hsl(220, 50%, 12%)',
+            'background_position' => 'center top',
+            'title_lines'         => array(
+                libro_hero_line('TAMBIÉN SON', 'hsl(0, 0%, 100%)', 'hsl(240, 52%, 19%)', 'none'),
+                libro_hero_line('IMPRESCINDIBLES', 'hsl(0, 0%, 100%)', 'hsl(240, 52%, 19%)', 'none'),
             ),
         ),
         'content' => '
+[imagen_contenido file="19cap_empl_foto3.jpg" caption="Facundo Leal, en pose victoriosa con Walla." fullwidth="true"]
+
 [capitular]El proceso de profesionalización de las estructuras del club ha sido una tarea ineludible en el Guaguas contemporáneo y en consonancia con los nuevos tiempos que se imponen en el ámbito deportivo.[/capitular]
+
+[imagen_contenido file="19cap_empl_foto1.jpg" caption="Adolfo Rodríguez, administrativo del club, junto a Rafael Sosa y Rubén Carreño, miembros del cuerpo técnico." fullwidth="true"]
 
 <p>Aunque el modelo de gobierno presidencialista se mantiene, con la omnipresencia de Juan Ruiz en gestiones de todo tipo, desde la directiva se ha entendido la conveniencia de disponer de un andamiaje de orden administrativo para atender frentes diarios y de obligado cumplimiento tanto en relación directa con el equipo como en otros frentes. Ir reduciendo la dependencia directa del presidente se entiende como un símbolo de modernidad y funcionalidad sin menoscabo alguno de la jerarquía establecida en el organigrama.</p>
 
@@ -3383,6 +3427,8 @@ Otros en mi lugar lo mismo sí hubiesen dado un paso a otro sitio porque las ofe
 <p>Eva Ruiz y Adolfo Rodríguez reportan al presidente de todos los efectos que tienen sus acciones, también a los miembros de la junta directiva que así lo solicitan, y, aunque en comparación con los medios de otros clubes ambos son una minoría, el sentimiento que desprenden por los colores, así como la tradición heredada en sus propias casas, son el mejor motor para que se multipliquen y abarquen más si cabe.</p>
 
 <p>En lo que se refiere al mapa de técnicos, con Sergio Camarero como el cabeza visible de todos por sus atribuciones en el equipo profesional, Facundo Leal, Rubén Carreño, Rafa Sosa y Giovanni de Vincentis completan su cuerpo técnico, mientras que Manuel Santana, Tobías Cabrera y Margarita Georgieva ejercen en filiales.</p>
+
+[imagen_contenido file="19cap_empl_foto2.jpg" caption="Eva Ruiz, directora comercial del CV Guaguas, con Margarita Georgieva." fullwidth="true"]
 '),
 
     // ═══════════════════════════════════════════════
@@ -3395,37 +3441,40 @@ Otros en mi lugar lo mismo sí hubiesen dado un paso a otro sitio porque las ofe
         'show_marker' => true,
         'ref_id' => 'cap20',
         'hero' => array(
-            'image'             => libro_img('hero-celebracion.jpg'),
-            'overlay'           => 'rgba(0,0,0,0.15)',
-            'icon'              => 'custom',
-            'custom_icon'       => libro_img('estrella-icon.svg'),
-            'custom_icon_color' => 'hsl(45 100% 50%)',
-            'icon_width'        => 40,
-            'icon_height'       => 40,
-            'alignment'         => 'center',
-            'vertical'          => 'center',
-            'height'            => '500px',
-            'border_color'      => 'hsl(45 100% 50%)',
-            'title_lines'       => array(
-                libro_hero_line('LA PLANTILLA', 'hsl(220 50% 12%)', 'hsl(45 100% 50%)', 'black'),
-                libro_hero_line('DEL CINCUENTENARIO', 'hsl(220 50% 12%)', 'hsl(45 100% 50%)', 'black'),
+            'image'               => libro_img('20cap_plan_foto2.jpg'),
+            'overlay'             => 'rgba(0,0,0,0.25)',
+            'icon'                => 'custom',
+            'custom_icon'         => libro_img('estrella-icon.svg'),
+            'custom_icon_color'   => 'hsl(240, 52%, 19%)',
+            'icon_width'          => 40,
+            'icon_height'         => 40,
+            'alignment'           => 'center',
+            'vertical'            => 'center',
+            'height'              => '500px',
+            'background_color'    => 'hsl(220, 50%, 12%)',
+            'background_position' => 'center 10%',
+            'title_lines'         => array(
+                libro_hero_line('LA PLANTILLA', 'hsl(0, 0%, 100%)', 'hsl(240, 52%, 19%)', 'none'),
+                libro_hero_line('DEL CINCUENTENARIO', 'hsl(0, 0%, 100%)', 'hsl(240, 52%, 19%)', 'none'),
             ),
         ),
         'content' => '
-<div class="plantilla-cincuentenario">
-    <div class="plantilla-jugador"><span class="plantilla-numero">1</span><div class="plantilla-info"><span class="plantilla-nombre">Osmany Juantorena</span><span class="plantilla-posicion">Receptor</span></div></div>
-    <div class="plantilla-jugador"><span class="plantilla-numero">2</span><div class="plantilla-info"><span class="plantilla-nombre">Jorge Almansa</span><span class="plantilla-posicion">Receptor</span></div></div>
-    <div class="plantilla-jugador"><span class="plantilla-numero">3</span><div class="plantilla-info"><span class="plantilla-nombre">Jean Pascal Diedhiou</span><span class="plantilla-posicion">Central</span></div></div>
-    <div class="plantilla-jugador"><span class="plantilla-numero">4</span><div class="plantilla-info"><span class="plantilla-nombre">Hélder Spencer</span><span class="plantilla-posicion">Central</span></div></div>
-    <div class="plantilla-jugador"><span class="plantilla-numero">5</span><div class="plantilla-info"><span class="plantilla-nombre">Martín Ramos</span><span class="plantilla-posicion">Central</span></div></div>
-    <div class="plantilla-jugador"><span class="plantilla-numero">6</span><div class="plantilla-info"><span class="plantilla-nombre">Augusto Colito</span><span class="plantilla-posicion">Opuesto</span></div></div>
-    <div class="plantilla-jugador"><span class="plantilla-numero">7</span><div class="plantilla-info"><span class="plantilla-nombre">Dobromir Dimitrov</span><span class="plantilla-posicion">Colocador</span></div></div>
-    <div class="plantilla-jugador"><span class="plantilla-numero">8</span><div class="plantilla-info"><span class="plantilla-nombre">Unai Larrañaga</span><span class="plantilla-posicion">Líbero</span></div></div>
-    <div class="plantilla-jugador"><span class="plantilla-numero">9</span><div class="plantilla-info"><span class="plantilla-nombre">Tomas Rousseaux</span><span class="plantilla-posicion">Receptor-Atacante</span></div></div>
-    <div class="plantilla-jugador"><span class="plantilla-numero">10</span><div class="plantilla-info"><span class="plantilla-nombre">Io de Amo</span><span class="plantilla-posicion">Colocador</span></div></div>
-    <div class="plantilla-jugador"><span class="plantilla-numero">12</span><div class="plantilla-info"><span class="plantilla-nombre">Nico Bruno</span><span class="plantilla-posicion">Receptor</span></div></div>
-    <div class="plantilla-jugador"><span class="plantilla-numero">13</span><div class="plantilla-info"><span class="plantilla-nombre">Elio Montesdeoca</span><span class="plantilla-posicion">Central</span></div></div>
-    <div class="plantilla-jugador"><span class="plantilla-numero">14</span><div class="plantilla-info"><span class="plantilla-nombre">Ezequiel Figueroa</span><span class="plantilla-posicion">Líbero</span></div></div>
+[imagen_contenido file="20cap_plan_foto3.jpg" fullwidth="true"]
+
+<div class="directiva-list plantilla-list-full">
+<div class="directiva-item"><span class="d-num">1</span><div class="d-info"><span class="d-name">Osmany Juantorena</span><span class="d-role">Receptor</span></div></div>
+<div class="directiva-item"><span class="d-num">2</span><div class="d-info"><span class="d-name">Jorge Almansa</span><span class="d-role">Receptor</span></div></div>
+<div class="directiva-item"><span class="d-num">3</span><div class="d-info"><span class="d-name">Jean Pascal Diedhiou</span><span class="d-role">Central</span></div></div>
+<div class="directiva-item"><span class="d-num">4</span><div class="d-info"><span class="d-name">Hélder Spencer</span><span class="d-role">Central</span></div></div>
+<div class="directiva-item"><span class="d-num">5</span><div class="d-info"><span class="d-name">Martín Ramos</span><span class="d-role">Central</span></div></div>
+<div class="directiva-item"><span class="d-num">6</span><div class="d-info"><span class="d-name">Augusto Colito</span><span class="d-role">Opuesto</span></div></div>
+<div class="directiva-item"><span class="d-num">7</span><div class="d-info"><span class="d-name">Dobromir Dimitrov</span><span class="d-role">Colocador</span></div></div>
+<div class="directiva-item"><span class="d-num">8</span><div class="d-info"><span class="d-name">Unai Larrañaga</span><span class="d-role">Líbero</span></div></div>
+<div class="directiva-item"><span class="d-num">9</span><div class="d-info"><span class="d-name">Tomas Rousseaux</span><span class="d-role">Receptor</span></div></div>
+<div class="directiva-item"><span class="d-num">10</span><div class="d-info"><span class="d-name">Io de Amo</span><span class="d-role">Colocador</span></div></div>
+<div class="directiva-item"><span class="d-num">12</span><div class="d-info"><span class="d-name">Nico Bruno</span><span class="d-role">Receptor</span></div></div>
+<div class="directiva-item"><span class="d-num">13</span><div class="d-info"><span class="d-name">Elio Montesdeoca</span><span class="d-role">Central</span></div></div>
+<div class="directiva-item"><span class="d-num">14</span><div class="d-info"><span class="d-name">Ezequiel Figueroa</span><span class="d-role">Líbero</span></div></div>
 </div>
 '),
 
@@ -3439,27 +3488,30 @@ Otros en mi lugar lo mismo sí hubiesen dado un paso a otro sitio porque las ofe
         'show_marker' => true,
         'ref_id' => 'cap21',
         'hero' => array(
-            'image'             => libro_img('hero-volleyball-match.jpg'),
-            'overlay'           => 'rgba(0,0,0,0.15)',
-            'icon'              => 'custom',
-            'custom_icon'       => libro_img('estrella-icon.svg'),
-            'custom_icon_color' => 'hsl(45 100% 50%)',
-            'icon_width'        => 40,
-            'icon_height'       => 40,
-            'alignment'         => 'center',
-            'vertical'          => 'center',
-            'height'            => '500px',
-            'border_color'      => 'hsl(45 100% 50%)',
-            'title_lines'       => array(
-                libro_hero_line('RECONOCIMIENTO', 'hsl(220 50% 12%)', 'hsl(45 100% 50%)', 'black'),
-                libro_hero_line('DEL COLECTIVO', 'hsl(220 50% 12%)', 'hsl(45 100% 50%)', 'black'),
-                libro_hero_line('ARBITRAL', 'hsl(220 50% 12%)', 'hsl(45 100% 50%)', 'black'),
+            'image'               => libro_img('21cap_reco_foto3.png'),
+            'overlay'             => 'rgba(0,0,0,0.25)',
+            'icon'                => 'custom',
+            'custom_icon'         => libro_img('estrella-icon.svg'),
+            'custom_icon_color'   => 'hsl(240, 52%, 19%)',
+            'icon_width'          => 40,
+            'icon_height'         => 40,
+            'alignment'           => 'center',
+            'vertical'            => 'center',
+            'height'              => '500px',
+            'background_color'    => 'hsl(17, 14%, 95%)',
+            'background_position' => 'center 20%',
+            'title_lines'         => array(
+                libro_hero_line('RECONOCIMIENTO', 'hsl(0, 0%, 100%)', 'hsl(240, 52%, 19%)', 'none'),
+                libro_hero_line('DEL COLECTIVO', 'hsl(0, 0%, 100%)', 'hsl(240, 52%, 19%)', 'none'),
+                libro_hero_line('ARBITRAL', 'hsl(0, 0%, 100%)', 'hsl(240, 52%, 19%)', 'none'),
             ),
         ),
         'content' => '
 [capitular]José Antonio Santana Andueza, Alexis Fuentes y Mariola Rodríguez integran la santísima trinidad del arbitraje canario de élite, con décadas de experiencia y sabiduría en el gremio y distinguidos por un prestigio sin igual. Voces ineludibles, sus testimonios, a propósito del medio siglo de vida del club proceden y con todos los honores.[/capitular]
 
 [seccion_header]José Antonio Santana Andueza[/seccion_header]
+
+[imagen_contenido file="21cap_reco_foto1.jpg" caption="Homenaje brindado por el Guaguas a la trayectoria de José Antonio Santana Andueza en el gremio arbitral."]
 
 <p>Santana Andueza (Las Palmas de Gran Canaria, 1959), de 1990 a 2014 ininterrumpidamente como colegiado en la máxima categoría, considera que el club &ldquo;ha tenido un papel fundamental en la historia deportiva de la edad contemporánea de Canarias&rdquo;, además de una faceta educativa indudable: &ldquo;Ejercí de profesor de Educación Física y viví en primera persona el furor que se estableció en la juventud por este deporte, superando al fútbol, por las acciones promocionales del club, regalando entradas y fomentando el voleibol de manera continuada&rdquo;.</p>
 
@@ -3471,6 +3523,8 @@ Otros en mi lugar lo mismo sí hubiesen dado un paso a otro sitio porque las ofe
 
 [seccion_header]Alexis Fuentes[/seccion_header]
 
+[imagen_contenido file="21cap_reco_foto3.png" caption="Alexis Fuentes posa con Jorge Almansa antes del inicio de un encuentro."]
+
 <p>Alexis Fuentes (Las Palmas de Gran Canaria, 1974), con más de dos décadas en la Superliga e internacional desde 2006, valora la capacidad que ha tenido Juan Ruiz, &ldquo;al igual que el desaparecido Quico Cabrera&rdquo;, de poder &ldquo;traer a unas islas del Atlántico una cantidad de títulos que causa impresión y admiración&rdquo;.</p>
 
 <p>&ldquo;Debe suponer un lujo para todos los canarios, amantes o no del voleibol, disponer de esta representación absolutamente increíble. Hay un mérito y un trabajo sensacional detrás de tantos años de conquistas, de competitividad, de vivir en lo más alto. Tiene que ser valorado en su justa medida y creo que es así&rdquo;, argumenta.</p>
@@ -3480,6 +3534,8 @@ Otros en mi lugar lo mismo sí hubiesen dado un paso a otro sitio porque las ofe
 [cita_editorial author="Alexis Fuentes"]La felicitación al Guaguas por su cincuentenario es, conociendo a Juan Ruiz, el principio de otro medio siglo que, con personas diferentes por ley de vida, deben mantener al Guaguas en el sitio que heredan, que es el mejor.[/cita_editorial]
 
 [seccion_header]Mariola Rodríguez[/seccion_header]
+
+[imagen_contenido file="21cap_reco_foto2.png" caption="Mariola Rodríguez, en el transcurso de una de sus actuaciones arbitrales."]
 
 <p>Mariola Rodríguez (Santa Cruz de Tenerife, 1974), otra leyenda del arbitraje, internacional desde 2011 y de Superliga desde 2004, tampoco escatima elogios a la institución: &ldquo;El CV Guaguas es historia viva del voleibol español. Cuando empecé a arbitrar, en los años noventa, pude disfrutar de ese Guaguas irrepetible, con Juan Ruiz, junto al CV Tenerife, con Quico Cabrera al frente, que dominaban la división de honor. Dos grandes y que durante muchos años se llevaban todos los títulos&rdquo;.</p>
 
@@ -3494,26 +3550,29 @@ Otros en mi lugar lo mismo sí hubiesen dado un paso a otro sitio porque las ofe
     // CAPÍTULO 22: MIGUEL ÁNGEL RAMÍREZ
     // ═══════════════════════════════════════════════
     array(
-        'title' => 'Miguel Ángel Ramírez',
+        'title' => 'Desde la UD Las Palmas',
+        'numero' => '22',
+        'title' => 'Desde la UD Las Palmas',
         'numero' => '22',
         'order' => 200,
         'show_marker' => true,
         'ref_id' => 'cap22',
         'hero' => array(
-            'image'             => libro_img('hero-stadium.jpg'),
-            'overlay'           => 'rgba(0,0,0,0.15)',
-            'icon'              => 'custom',
-            'custom_icon'       => libro_img('estrella-icon.svg'),
-            'custom_icon_color' => 'hsl(45 100% 50%)',
-            'icon_width'        => 40,
-            'icon_height'       => 40,
-            'alignment'         => 'center',
-            'vertical'          => 'center',
-            'height'            => '500px',
-            'border_color'      => 'hsl(45 100% 50%)',
-            'title_lines'       => array(
-                libro_hero_line('MIGUEL ÁNGEL', 'hsl(220 50% 12%)', 'hsl(45 100% 50%)', 'black'),
-                libro_hero_line('RAMÍREZ', 'hsl(220 50% 12%)', 'hsl(45 100% 50%)', 'black'),
+            'image'               => libro_img('22cap_migu_foto1.jpg'),
+            'overlay'             => 'rgba(0,0,0,0.25)',
+            'icon'                => 'custom',
+            'custom_icon'         => libro_img('estrella-icon.svg'),
+            'custom_icon_color'   => 'hsl(240, 52%, 19%)',
+            'icon_width'          => 40,
+            'icon_height'         => 40,
+            'alignment'           => 'center',
+            'vertical'            => 'center',
+            'height'              => '500px',
+            'background_color'    => 'hsl(220, 50%, 12%)',
+            'background_position' => 'center 20%',
+            'title_lines'         => array(
+                libro_hero_line('DESDE LA', 'hsl(0, 0%, 100%)', 'hsl(240, 52%, 19%)', 'none'),
+                libro_hero_line('UD LAS PALMAS', 'hsl(0, 0%, 100%)', 'hsl(240, 52%, 19%)', 'none'),
             ),
         ),
         'content' => '
@@ -3532,30 +3591,33 @@ Otros en mi lugar lo mismo sí hubiesen dado un paso a otro sitio porque las ofe
     // CAPÍTULO 23: A LA VANGUARDIA DE LA TECNOLOGÍA
     // ═══════════════════════════════════════════════
     array(
-        'title' => 'A la vanguardia de la tecnología',
+        'title' => 'A la vanguardia tecnológica',
         'numero' => '23',
         'order' => 205,
         'show_marker' => true,
         'ref_id' => 'cap23',
         'hero' => array(
-            'image'             => libro_img('hero-volleyball-match.jpg'),
-            'overlay'           => 'rgba(0,0,0,0.15)',
-            'icon'              => 'custom',
-            'custom_icon'       => libro_img('estrella-icon.svg'),
-            'custom_icon_color' => 'hsl(45 100% 50%)',
-            'icon_width'        => 40,
-            'icon_height'       => 40,
-            'alignment'         => 'center',
-            'vertical'          => 'center',
-            'height'            => '500px',
-            'border_color'      => 'hsl(45 100% 50%)',
-            'title_lines'       => array(
-                libro_hero_line('A LA VANGUARDIA', 'hsl(220 50% 12%)', 'hsl(45 100% 50%)', 'black'),
-                libro_hero_line('DE LA TECNOLOGÍA', 'hsl(220 50% 12%)', 'hsl(45 100% 50%)', 'black'),
+            'image'               => libro_img('23cap_vang_montaje.png'),
+            'overlay'             => 'rgba(0,0,0,0)',
+            'icon'                => 'custom',
+            'custom_icon'         => libro_img('estrella-icon.svg'),
+            'custom_icon_color'   => 'hsl(240, 52%, 19%)',
+            'icon_width'          => 40,
+            'icon_height'         => 40,
+            'alignment'           => 'center',
+            'vertical'            => 'center',
+            'height'              => '500px',
+            'background_color'    => 'hsl(32, 17%, 96%)',
+            'background_position' => 'center 40%',
+            'title_lines'         => array(
+                libro_hero_line('A LA VANGUARDIA', 'hsl(0, 0%, 100%)', 'hsl(240, 52%, 19%)', 'none'),
+                libro_hero_line('TECNOLÓGICA', 'hsl(0, 0%, 100%)', 'hsl(240, 52%, 19%)', 'none'),
             ),
         ),
         'content' => '
 [capitular]El CV Guaguas cabalga a buen ritmo en los nuevos tiempos y con las vías de comunicación que se imponen a la hora de interactuar con aficionados, medios de comunicación y público en general. Las redes sociales y la fidelización de la comunidad propia de seguidores juegan un papel esencial en este ámbito.[/capitular]
+
+[imagen_contenido file="23cap_vang_montaje.png" fullwidth="true"]
 
 <p>Y el club, sensible a esta tendencia, cuida de manera especial sus cuentas oficiales, consciente del alcance que tienen, además de aportar una ayuda incalculable en la internacionalización de la marca, otro de los grandes retos en los que se trabaja de una manera específica.</p>
 
@@ -3597,33 +3659,49 @@ Otros en mi lugar lo mismo sí hubiesen dado un paso a otro sitio porque las ofe
     // CAPÍTULO 24: SOCIOS Y ABONADOS
     // ═══════════════════════════════════════════════
     array(
-        'title' => 'Socios y abonados',
+        'title' => 'La gran familia de la afición',
         'numero' => '24',
         'order' => 210,
         'show_marker' => true,
         'ref_id' => 'cap24',
         'hero' => array(
-            'image' => libro_img('hero-celebracion.jpg'),
-            'overlay' => 'rgba(26, 35, 126, 0.80)',
-            'icon' => 'custom',
-            'custom_icon' => $star,
-            'icon_width' => 60,
-            'icon_height' => 60,
-            'alignment' => 'center',
-            'vertical' => 'center',
-            'height' => '450px',
-            'title_lines' => array(libro_hero_line('SOCIOS Y', '#D4AF37', '', 'black'), libro_hero_line('ABONADOS', '#FFFFFF', '', 'black')),
+            'image'               => '',
+            'overlay'             => 'rgba(0,0,0,0)',
+            'icon'                => 'custom',
+            'custom_icon'         => libro_img('estrella-icon.svg'),
+            'custom_icon_color'   => 'hsl(240, 52%, 19%)',
+            'icon_width'          => 40,
+            'icon_height'         => 40,
+            'alignment'           => 'center',
+            'vertical'            => 'center',
+            'height'              => '500px',
+            'background_color'    => 'hsl(220, 50%, 12%)',
+            'title_lines'         => array(
+                libro_hero_line('LA GRAN FAMILIA', 'hsl(0, 0%, 100%)', 'hsl(240, 52%, 19%)', 'none'),
+                libro_hero_line('DE LA AFICIÓN', 'hsl(0, 0%, 100%)', 'hsl(240, 52%, 19%)', 'none'),
+            ),
         ),
-        'content' => '[capitular]La afición del Guaguas es el motor del club. Desde aquellos primeros espectadores en el patio del colegio hasta los miles de abonados que llenan el Gran Canaria Arena, los socios han sido el alma del proyecto deportivo más exitoso del voleibol español.[/capitular]
+        'content' => '
+[capitular]La recuperación del tejido social, esa afición que llenó hasta la bandera el CID en la década de los noventa y convirtió la defensa de la causa en una religión popular, es uno de los puntos cardinales del Guaguas contemporáneo, el surgido tras la refundación del año 2020.[/capitular]
 
-[foto_pendiente descripcion="La afición del Guaguas, alma del club. Imagen de los socios y abonados apoyando al equipo en el Gran Canaria Arena."]
+<p>Después de la desaparición física del proyecto, y tras un inicio de siglo XXI marcado por las noticias negativas de toda índole y que terminaron derivando en el cierre de la actividad asociada al escudo, el reto de la reconquista popular, el de poblar las gradas en los partidos del equipo, ha ido en paralelo al encaje de piezas para configurar proyectos ganadores. Hay que considerar que hasta la nueva era de la entidad se acumulaban dos décadas de abandono progresivo de todo lo relacionado con la institución, un ciclo negro que causó un silencio y olvido difíciles de restañar. Y, como enemigo añadido, el periodo de la pandemia, coincidente con el del segundo ciclo, y que obligó a desarrollar todos los eventos deportivos con pabellones cerrados, como así aconteció con un Guaguas que celebró títulos con las gradas desiertas.</p>
+
+<p>Pero ni esa coyuntura marcada por la incertidumbre derribó las pretensiones de volver a matrimoniar al club con la gente. Las campañas de abonados marcadas por precios al alcance de todos y con atención especial a las familias, menores y jubilados, con tarifas diferenciadas, han ido subiendo los índices de afiliados de manera progresiva, un incremento que también se ha registrado en la asistencia a los partidos, tanto en el CID como, en última instancia, ya en el Gran Canaria Arena.</p>
+
+[cita_editorial author="CV Guaguas"]&lsquo;La fuerza del equipo, la energía de todos&rsquo; es el lema de la campaña del cincuentenario en el que se refleja a la perfección la necesidad de una simbiosis perfecta.[/cita_editorial]
+
+<p>Con más de un millar de fieles ya como base estable para seguir aumentando la familia, desde la sede de la entidad no se escatiman esfuerzos e iniciativas para fortalecer esa correspondencia. Tal es así, que Juan Ruiz, siempre muy sensible en esta materia, testigo como fue de aquellas multitudes enfervorizadas con los Sánchez-Jover, Golec, Klos o Camarero, entre otros, no duda en llamar a cada abonado para agradecerle, de manera personal, su apoyo y creencia en el Guaguas. Una labor tan meticulosa como ilustrativa del valor que se da a cada carné y el empeño vigente en otorgarle la máxima distinción. Así se hace, de igual manera, con los aficionados que acuden a los partidos. La sorpresa de recibir esta comunicación de Juan Ruiz, quien, además, añade un mensaje de optimismo y ambición a sus palabras de reconocimiento (&laquo;no vamos a fallar a su confianza porque seguiremos trayendo títulos&raquo;), ha sido bienvenida por los beneficiarios, tal y como reconoce el dirigente.</p>
+
+<p>En realidad, no es nuevo este gesto, pues en temporadas anteriores también lo hizo, pero no deja de ser una iniciativa &laquo;que hace club y ayuda a engrandecerlo&raquo; por brindar un trato personalizado y sensible a la afición, que no deja de ser el sustento principal de todos sus esfuerzos. Los jugadores, también muy comprometidos con esta labor, tampoco dudan en aportar su presencia y tiempo en todo tipo de actos e iniciativas para tal fin.</p>
+
+<p>El mérito de sustentar un núcleo estable de socios con la amplia oferta de equipos de élite que hay en Gran Canaria no debe pasar desapercibido. El talante conciliador del club, que no rivaliza con otras entidades isleñas y siempre ofrece &ldquo;mano tendida&rdquo; en lo que pueda ayudar, tal y como pondera Ruiz, colabora en esa dirección, y desde la humildad característica pese a disponer de un palmarés de logros sin igual en Canarias.</p>
 '),
 
     // ═══════════════════════════════════════════════
     // CAPÍTULO 25: EMPRESARIOS DE LA TIERRA
     // ═══════════════════════════════════════════════
     array(
-        'title' => 'Empresarios de la tierra',
+        'title' => 'Vínculos empresariales',
         'numero' => '25',
         'order' => 215,
         'show_marker' => true,
@@ -3638,32 +3716,34 @@ Otros en mi lugar lo mismo sí hubiesen dado un paso a otro sitio porque las ofe
             'alignment'         => 'left',
             'vertical'          => 'center',
             'height'            => '450px',
-            'title_lines'       => array(libro_hero_line('EMPRESARIOS', '#1a237e', '#FFFFFF', 'black'), libro_hero_line('DE LA TIERRA', '#1a237e', '#FFFFFF', 'black')),
+            'background_position' => 'center center',
+            'title_lines'       => array(libro_hero_line('VÍNCULOS', '#1a237e', '#FFFFFF', 'black'), libro_hero_line('EMPRESARIALES', '#1a237e', '#FFFFFF', 'black')),
         ),
         'content' => '',
     ),
 
-    array('title' => 'El tejido empresarial canario', 'numero' => '', 'order' => 2151, 'show_marker' => false, 'parent_ref' => 'cap25',
+    array('title' => 'Vínculos empresariales', 'numero' => '', 'order' => 2151, 'show_marker' => false, 'parent_ref' => 'cap25',
         'hero' => array(
-            'image'             => libro_img('hero-estatutos.jpg'),
-            'overlay'           => 'rgba(0,0,0,0.15)',
+            'image'             => libro_img('25cap_vinc_hero.jpg'),
+            'overlay'           => 'rgba(0,0,0,0)',
             'icon'              => 'custom',
             'custom_icon'       => libro_img('estrella-icon.svg'),
-            'custom_icon_color' => 'hsl(45 100% 50%)',
+            'custom_icon_color' => 'hsl(0, 0%, 0%)',
             'icon_width'        => 40,
             'icon_height'       => 40,
             'alignment'         => 'center',
             'vertical'          => 'center',
             'height'            => '500px',
-            'border_color'      => 'hsl(45 100% 50%)',
+            'background_color'  => 'hsl(46, 92%, 62%)',
             'title_lines'       => array(
-                libro_hero_line('EL TEJIDO', 'hsl(220 50% 12%)', 'hsl(45 100% 50%)', 'black'),
-                libro_hero_line('EMPRESARIAL', 'hsl(220 50% 12%)', 'hsl(45 100% 50%)', 'black'),
-                libro_hero_line('CANARIO', 'hsl(220 50% 12%)', 'hsl(45 100% 50%)', 'black'),
+                libro_hero_line('VÍNCULOS', 'hsl(46, 92%, 62%)', 'hsl(0, 0%, 0%)', 'none'),
+                libro_hero_line('EMPRESARIALES', 'hsl(46, 92%, 62%)', 'hsl(0, 0%, 0%)', 'none'),
             ),
         ),
         'content' => '
 [capitular]Además de las subvenciones públicas del Cabildo de Gran Canaria, del Ayuntamiento de Las Palmas de Gran Canaria y del Gobierno de Canarias, ayudas a las que tiene derecho el Guaguas por su condición de club de élite y representativo, con el añadido de ganar títulos y disfrutar de un prestigio histórico fuera de debates, Juan Ruiz y toda su junta directiva han dado un paso más en la viabilidad y sostenibilidad del proyecto esmerándose en la captación de apoyos por parte del empresariado de la tierra.[/capitular]
+
+[imagen_contenido file="25cap_empr_foto5.jpg" fullwidth="true" caption="Presentación de temporada del CV Guaguas junto a sus patrocinadores."]
 
 <p>Y se lleva con mucho orgullo la consecución de una amplia cobertura en este apartado, sin tener nada que envidiar a otras instituciones porque, como admite el presidente, &ldquo;el apoyo es masivo, decidido y con reciprocidad&rdquo;. Como advierte el mandatario, las marcas que se asocian a las siglas corporativas ven un retorno en términos relacionados con el espíritu ganador, la representatividad y la fama que van implícitas al escudo.</p>
 
@@ -3676,6 +3756,14 @@ Otros en mi lugar lo mismo sí hubiesen dado un paso a otro sitio porque las ofe
 <p>El presidente ya fue pionero, a mitad de los años ochenta, y como tarjeta de presentación en su recién estrenado mandato, en privilegiar la independencia económica del club. Por aquel entonces causó elogio generalizado su contrato con Guaguas Municipales, que terminaría dando la denominación al equipo. Y, ya desde esa época, y bajo su dirección, jamás faltaron los ingresos derivados de la pequeña y mediana empresa para apuntalar a la gran marca predominante.</p>
 
 <p>Décadas después, hoy se mantiene ese modelo que combina diferentes escalones en cuanto a participaciones económicas &ldquo;pero todas necesarias, fundamentales y valoradas&rdquo;.</p>
+
+<div class="patrocinador-fotos-grid">
+<div class="patrocinador-fotos-row">
+<figure class="content-image"><div class="content-image__inner"><img src="' . libro_img('25cap_empr_foto4.jpg') . '" alt="Juan Ruiz junto al representante de Aguas de Firgas."></div><figcaption>Juan Ruiz junto al representante de Aguas de Firgas en la renovación del acuerdo de patrocinio.</figcaption></figure>
+<figure class="content-image"><div class="content-image__inner"><img src="' . libro_img('25cap_empr_foto3.jpg') . '" alt="Firma del acuerdo con Toyota Canarias."></div><figcaption>Firma del acuerdo de patrocinio con Toyota Canarias, en presencia de Osmany Juantorena.</figcaption></figure>
+</div>
+<figure class="content-image"><div class="content-image__inner"><img src="' . libro_img('25cap_empr_foto1.jpg') . '" alt="Entrega de camiseta firmada en el CID."></div><figcaption>Entrega de la camiseta firmada del CV Guaguas en el Centro Insular de Deportes.</figcaption></figure>
+</div>
 '),
 
     array('title' => 'Agua Firgas', 'numero' => '', 'order' => 2152, 'show_marker' => false, 'parent_ref' => 'cap25',

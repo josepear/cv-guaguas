@@ -1683,6 +1683,56 @@ body.dark .ficha-debut-titulo {
 
 
 /* ─── Plantilla del cincuentenario ─────────────────────── */
+/* Vínculos empresariales: grid de fotos */
+.patrocinador-fotos-grid {
+    margin: 2rem 0;
+}
+
+.patrocinador-fotos-row {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1rem;
+    margin-bottom: 1rem;
+}
+
+.patrocinador-fotos-row .content-image {
+    margin: 0;
+}
+
+/* Plantilla: foto numerada + lista a dos columnas */
+.plantilla-foto-cols {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 2rem;
+    align-items: start;
+    margin: 2rem 0;
+}
+
+.plantilla-foto-col-img img {
+    width: 100%;
+    height: auto;
+    display: block;
+}
+
+.plantilla-foto-col-list .directiva-list {
+    margin-top: 0;
+}
+
+@media (max-width: 700px) {
+    .plantilla-foto-cols {
+        grid-template-columns: 1fr;
+    }
+}
+
+/* Lista de jugadores full-width con alineación top */
+.plantilla-list-full.directiva-list {
+    margin-top: 1.5rem;
+}
+
+.plantilla-list-full .directiva-item {
+    align-items: flex-start;
+}
+
 .plantilla-cincuentenario {
     display: flex;
     flex-direction: column;
@@ -1951,4 +2001,55 @@ body.dark .ficha-debut-titulo {
         max-width: 200px;
         margin: 16px auto 0;
     }
+}
+
+/* === Directiva numbered list === */
+.directiva-list {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 8px 28px;
+    margin-top: 20px;
+    padding: 4px 0;
+}
+
+.directiva-item {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.d-num {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 26px;
+    height: 26px;
+    min-width: 26px;
+    border-radius: 2px;
+    background: hsl(var(--gold));
+    color: hsl(220 50% 12%);
+    font-weight: 900;
+    font-size: 0.77rem;
+    flex-shrink: 0;
+    align-self: flex-start;
+    margin-top: 2px;
+}
+
+.d-info {
+    display: flex;
+    flex-direction: column;
+}
+
+.d-name {
+    font-weight: 700;
+    font-size: 0.82rem;
+    color: hsl(var(--foreground));
+    text-transform: uppercase;
+    letter-spacing: 0.04em;
+}
+
+.d-role {
+    font-size: 0.72rem;
+    color: hsl(var(--foreground) / 0.55);
+    margin-top: 1px;
 }

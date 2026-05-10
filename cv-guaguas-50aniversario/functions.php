@@ -599,11 +599,12 @@ add_shortcode('cita_editorial', 'libro_shortcode_cita_editorial');
  */
 function libro_shortcode_imagen_contenido($atts) {
     $atts = shortcode_atts(array(
-        'src' => '',
-        'file' => '',
-        'alt' => '',
-        'caption' => '',
+        'src'       => '',
+        'file'      => '',
+        'alt'       => '',
+        'caption'   => '',
         'fullwidth' => 'false',
+        'max_width' => '',
     ), $atts, 'imagen_contenido');
 
     // Allow file="filename.jpg" as shorthand for assets/images/
@@ -616,10 +617,14 @@ function libro_shortcode_imagen_contenido($atts) {
     }
     
     $fullwidth_class = $atts['fullwidth'] === 'true' ? '-mx-4 md:-mx-8' : '';
+    $figure_style    = '';
+    if ( ! empty($atts['max_width']) ) {
+        $figure_style = ' style="max-width:' . esc_attr($atts['max_width']) . ';margin-left:auto;margin-right:auto;"';
+    }
     
     ob_start();
     ?>
-    <figure class="content-image my-8 md:my-12 <?php echo esc_attr($fullwidth_class); ?>" data-reveal="up">
+    <figure class="content-image my-8 md:my-12 <?php echo esc_attr($fullwidth_class); ?>"<?php echo $figure_style; ?> data-reveal="up">
         <div class="overflow-hidden rounded">
             <img 
                 src="<?php echo esc_url($atts['src']); ?>" 
@@ -853,7 +858,9 @@ function libro_shortcode_bloque_lista_foto($atts, $content = null) {
     // Strip wpautop-inserted <br> and empty <p> between shortcodes
     $content = shortcode_unautop($content);
     $inner   = do_shortcode($content);
-    $inner   = preg_replace('/<br\s*\/?>\s*/i', '', $inner);
+    // Only strip <br> that appear between </mark> and <mark> (wpautop artefacts),
+    // NOT <br> inside a <mark> (e.g. Chava González two-line pill)
+    $inner   = preg_replace('|</mark>\s*<br\s*/?>\s*<mark|i', '</mark><mark', $inner);
     $inner   = preg_replace('/<p>\s*<\/p>/i', '', $inner);
 
     ob_start();
