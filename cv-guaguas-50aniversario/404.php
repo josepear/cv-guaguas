@@ -8,8 +8,8 @@
 get_header();
 ?>
 
-<main class="main-content flex-1 overflow-y-auto lg:ml-[320px]">
-    <div class="min-h-screen flex items-center justify-center px-6">
+<main class="main-content" style="min-height: 100vh; display: flex; align-items: center; justify-content: center; padding-top: 52px;">
+    <div class="flex items-center justify-center w-full px-6">
         <div class="text-center max-w-lg">
             
             <!-- Número 404 estilizado -->
@@ -62,6 +62,5 @@ get_header();
 </main>
 
 <?php
-get_sidebar('indice');
 get_footer();
 ?>

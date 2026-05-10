@@ -1,506 +1,607 @@
-# CV Guaguas - 50 Aniversario
+# CV Guaguas — 50 Aniversario
+## Tema WordPress · Libro institucional 1976–2026
 
-Tema WordPress conmemorativo del 50 aniversario del CV Guaguas (1976-2026). Diseño editorial moderno con índice lateral navegable y paleta de colores institucional (amarillo/dorado y azul marino).
+Tema WordPress conmemorativo del 50 aniversario del CV Guaguas. Diseño editorial de libro digital con índice lateral navegable, paleta institucional azul marino / amarillo dorado y soporte completo dark/light mode.
 
-## 🎨 Características
+---
 
-- **Hero full-screen** con imagen del equipo y overlay dorado/azul marino
-- **Marcador "50 Aniversario · 1976 - 2026"** en el hero y sidebar
-- **Sidebar sticky** con índice de capítulos tipo acordeón
-- **Scroll suave** con indicador de sección activa
-- **Tipografía editorial** (Montserrat + Inter)
-- **Botones de descarga** PDF/EPUB
-- **Footer institucional** con 8 logos reales de patrocinadores (modo claro/oscuro)
-- **Soporte completo dark/light mode** con toggle manual y detección del sistema
-- **Resaltados en amarillo dorado** `hsl(45 100% 50%)` consistentes en ambos modos
-- **100% responsive** (mobile-first)
-- **Colores del CV Guaguas** (azul marino + amarillo/dorado)
+## 📋 Índice
 
-## 📁 Estructura de archivos
+1. [Requisitos e instalación](#instalación)
+2. [Configuración inicial](#configuración-post-instalación)
+3. [Gestión de capítulos](#gestión-de-capítulos)
+4. [Shortcodes — referencia completa](#shortcodes)
+5. [Sistema de imágenes hero](#sistema-de-imágenes-hero)
+6. [Personalización CSS](#personalización)
+7. [Troubleshooting](#troubleshooting)
 
-```
-cv-guaguas-50aniversario/
-├── style.css                    # Header del tema + import estilos
-├── functions.php                # Funciones, CPT, shortcodes
-├── header.php                   # Header fijo con menú toggle
-├── footer.php                   # Footer institucional
-├── index.php                    # Template por defecto
-├── 404.php                      # Página de error
-├── sidebar-indice.php           # Sidebar con acordeón jerárquico
-├── template-home.php            # Plantilla principal del 50 aniversario
-├── single-capitulo.php          # Página individual de capítulo
-├── screenshot.png               # Vista previa del tema
-├── README.md                    # Esta documentación
-├── inc/
-│   ├── meta-boxes.php           # Campos personalizados nativos
-│   └── sample-content.php       # 23 capítulos de ejemplo
-└── assets/
-    ├── css/
-    │   └── main.css             # Estilos completos (Tailwind-like)
-    ├── js/
-    │   └── main.js              # JavaScript (acordeón, scroll spy, mobile, theme toggle)
-    └── images/
-        ├── logo-guaguas.png     # Logo del club
-        ├── logo-guaguas.svg     # Logo del club (vector)
-        ├── star-gold.png        # Icono estrella dorada
-        ├── hero-*.jpg           # Imágenes hero de capítulos (9 imágenes)
-        ├── content/             # Imágenes de contenido (16 imágenes)
-        └── sponsors/            # 8 logos de patrocinadores
-            ├── cabildo-gran-canaria.png
-            ├── instituto-insular-deportes.png
-            ├── gobierno-canarias.png
-            ├── islas-canarias.png
-            ├── ayuntamiento-las-palmas.png
-            ├── instituto-municipal-deportes.png
-            ├── turismo-gran-canaria.png
-            └── rfevb.png
-```
+---
 
-## ⚙️ Requisitos previos
+## Instalación
 
-- WordPress 5.0 o superior
+### Requisitos
+- WordPress 6.0 o superior
 - PHP 7.4 o superior
-- No requiere plugins adicionales (ACF es opcional)
+- No requiere plugins adicionales
 
-## 🚀 Instalación
+### Método ZIP (recomendado)
+1. Ve a `Apariencia → Temas → Añadir nuevo → Subir tema`
+2. Selecciona `cv-guaguas-50aniversario-theme.zip`
+3. Instala y activa
 
-### Método 1: Subir archivo ZIP (recomendado)
+### FTP/SFTP
+1. Sube la carpeta `cv-guaguas-50aniversario` a `/wp-content/themes/`
+2. Ve a `Apariencia → Temas` y activa el tema
 
-1. **Preparar el tema**
-   - Renombra la carpeta `wordpress-theme` a `cv-guaguas-50aniversario`
-   - Comprime la carpeta en un archivo ZIP
+### Al activar se ejecuta automáticamente
+- Registro del Custom Post Type `capitulo`
+- Importación de todos los capítulos con contenido
+- Registro de campos personalizados (meta boxes)
+- Regeneración de permalinks
 
-2. **Subir a WordPress**
-   - Ve a `Apariencia → Temas → Añadir nuevo → Subir tema`
-   - Selecciona el archivo ZIP
-   - Haz clic en "Instalar ahora"
+---
 
-3. **Activar el tema**
-   - Una vez instalado, haz clic en "Activar"
+## Configuración post-instalación
 
-### Método 2: FTP/SFTP
+### 1. Página de inicio
+1. Ve a `Páginas → Añadir nueva`, título "Inicio"
+2. Asigna la plantilla **"Página 50 Aniversario CV Guaguas"**
+3. Publica y ve a `Ajustes → Lectura` → establécela como página de inicio
 
-1. Renombra la carpeta `wordpress-theme` a `cv-guaguas-50aniversario`
-2. Sube la carpeta a `/wp-content/themes/` de tu instalación WordPress
-3. Ve a `Apariencia → Temas` y activa "CV Guaguas - 50 Aniversario"
+### 2. Reimportar contenido
+Si necesitas volver al contenido original:
+`Libro → Capítulos → Reimportar contenido de ejemplo`
 
-## 📋 Configuración post-instalación
+### 3. Permalinks
+Si los capítulos dan 404: `Ajustes → Enlaces permanentes → Guardar cambios`
 
-### Automático al activar el tema
+---
 
-Al activar el tema, automáticamente:
-- ✅ Se registra el Custom Post Type "Capítulo"
-- ✅ Se importan 15 capítulos de ejemplo con contenido completo
-- ✅ Se registran los campos personalizados nativos
-- ✅ Se actualizan los permalinks
+## Gestión de capítulos
 
-### Configuración manual requerida
+### Campos del editor
 
-#### 1. Crear página principal
+| Campo | Descripción |
+|-------|-------------|
+| **Número** | Mostrado en sidebar. Ej: `01`, `02`. Vacío = sin badge |
+| **Mostrar marcador** | Activa la estrella "50 Aniversario" en el hero |
+| **Orden** | Controla posición en sidebar (menor = primero) |
+| **Capítulo padre** | Si se asigna, este capítulo es hijo de ese padre |
+| **Hero** | Ver sección de imágenes hero más abajo |
+| **Imagen editorial** | Imagen opcional que aparece al inicio del contenido |
 
-1. Ve a `Páginas → Añadir nueva`
-2. Título: "50 Aniversario" (o el que prefieras)
-3. En el panel derecho, busca "Atributos de página"
-4. Selecciona la plantilla **"Página 50 Aniversario CV Guaguas"**
-5. Publica la página
+### Jerarquía padre/hijo
+Los capítulos padre que tienen hijos **redirigen automáticamente** al primer hijo (301). Su contenido y hero no son visibles directamente.
 
-#### 2. Establecer como página de inicio
+### Orden recomendado
+```
+Prólogos (order=1) → hijos order 2–9
+Cap 01 (order=12) → hijos order 13–21
+Cap 02 (order=25)
+Cap 03 (order=30) ...
+```
 
-1. Ve a `Ajustes → Lectura`
-2. Selecciona "Una página estática"
-3. En "Página de inicio", elige la página que acabas de crear
-4. Guarda los cambios
+---
 
-#### 3. Configurar opciones del tema
+## Shortcodes
 
-1. Ve a `Apariencia → Opciones Libro`
-2. Configura:
-   - **Título del Hero**: Por defecto "50 Años de Historia"
-   - **Subtítulo del Hero**: Por defecto "Cinco décadas de pasión..."
-   - **URL del PDF**: Enlace al archivo PDF del libro
-   - **URL del EPUB**: Enlace al archivo EPUB
-3. Guarda los cambios
+Todos los shortcodes se usan en el editor de contenido de los capítulos. Las imágenes se referencian por nombre de archivo (ubicadas en `assets/images/`).
 
-#### 4. Logos del footer (automáticos)
+---
 
-Los 8 logos de patrocinadores institucionales se cargan automáticamente desde `assets/images/sponsors/`. No requiere configuración adicional. Los logos incluidos son:
+### `[capitular]`
 
-1. Cabildo de Gran Canaria
-2. Instituto Insular de Deportes
-3. Gobierno de Canarias
-4. Islas Canarias
-5. Ayuntamiento de Las Palmas de Gran Canaria
-6. Instituto Municipal de Deportes
-7. Turismo de Gran Canaria
-8. Real Federación Española de Voleibol
-
-Para personalizar los logos, edita el array en `footer.php` o configúralos desde `Apariencia → Opciones Libro`.
-
-## 📖 Gestión de capítulos
-
-### Crear nuevo capítulo
-
-1. Ve a `Libro → Añadir capítulo`
-2. Escribe el título del capítulo
-3. Añade el contenido en el editor
-4. Configura los campos personalizados:
-   - **Número de capítulo**: Ej: 01, 02, 03...
-   - **Subtítulo**: Descripción breve
-   - **Cita destacada**: Frase importante del capítulo
-   - **Autor de la cita**: Quien dijo la cita
-5. Publica el capítulo
-
-### Numeración de capítulos y subcapítulos
-
-El sidebar muestra números con estilo visual distintivo:
-
-- **Capítulos principales**: Badge dorado con texto azul oscuro (ej: `01`, `02`)
-- **Subcapítulos**: Badge blanco con texto azul oscuro (ej: `1.1`, `1.2`)
-
-#### Sistema de numeración automática
-
-| Situación | Resultado |
-|-----------|-----------|
-| Capítulo con número definido | Se muestra el número configurado |
-| Subcapítulo con número definido | Se muestra el número configurado |
-| Subcapítulo sin número + padre con número | Se auto-genera (ej: padre "01" → hijos "01.1", "01.2"...) |
-| Sin número definido | No se muestra badge de número |
-
-#### Ocultar número específico
-
-Puedes ocultar completamente el número de cualquier capítulo o subcapítulo:
-
-1. Edita el capítulo
-2. En "Datos del Capítulo", marca **"Ocultar número en el menú lateral"**
-3. La vista previa mostrará el badge atenuado con "(oculto)"
-4. Guarda los cambios
-
-Esto es útil para:
-- Prólogos o introducciones sin numeración
-- Secciones especiales (anexos, agradecimientos, etc.)
-- Subcapítulos que no deben mostrar número aunque el padre lo tenga
-
-#### Vista previa en el editor
-
-El campo de número incluye una **vista previa en tiempo real** que muestra:
-- Cómo se verá el badge (estilo dorado o blanco según sea capítulo/subcapítulo)
-- Indicador "(auto-generado)" cuando el número se calcula del padre
-- Indicador "(oculto)" cuando está marcada la opción de ocultar
-
-### Crear subcapítulos
-
-1. Crea un nuevo capítulo normalmente
-2. En "Atributos de página" (panel derecho), selecciona el capítulo padre
-3. Ajusta el "Orden" para controlar la posición
-
-### Ordenar capítulos
-
-- El campo "Orden" en "Atributos de página" controla la posición
-- Números más bajos aparecen primero
-- Ejemplo: Prólogo = 0, Capítulo 1 = 10, Capítulo 2 = 20...
-
-## 📝 Shortcodes disponibles
-
-El tema incluye shortcodes para enriquecer el contenido de los capítulos con elementos editoriales idénticos a los componentes React.
-
-### Cita Editorial
-
-Muestra una cita destacada con estilo editorial, borde dorado y comillas decorativas.
+Letra capitular — la primera letra del contenido se agranda con estilo drop cap editorial.
 
 ```
-[cita_editorial author="Nombre del autor" source="Fuente opcional"]
-Texto de la cita aquí. Puede ser una frase memorable o reflexión importante.
+[capitular]El CV Guaguas nació en 1976 de la mano de Felipe Nuez...[/capitular]
+```
+
+> No acepta parámetros.
+
+---
+
+### `[seccion_header]`
+
+Cabecera de sección con estilo destacado. Alias: `[encabezado_seccion]`.
+
+```
+[seccion_header]Felipe Nuez[/seccion_header]
+
+[seccion_header color="navy"]La etapa dorada[/seccion_header]
+
+[seccion_header highlighted="false" tag="h2"]Título sin fondo[/seccion_header]
+```
+
+| Parámetro | Por defecto | Descripción |
+|-----------|-------------|-------------|
+| `highlighted` | `true` | `true` aplica fondo negro/dorado al texto |
+| `color` | `""` | `navy` = estilo azul marino con texto blanco |
+| `star` | `false` | `true` añade estrella decorativa antes del texto |
+| `tag` | `h3` | Elemento HTML: `h2`, `h3`, `h4` |
+| `texto` | `""` | Alternativa a poner el texto como contenido del shortcode |
+
+---
+
+### `[cita_editorial]`
+
+Cita destacada con borde dorado lateral y comillas decorativas.
+
+```
+[cita_editorial author="Juan Ruiz"]El Guaguas es mucho más que un club de voleibol.[/cita_editorial]
+
+[cita_editorial author="Paco Sánchez Jover" source="Entrevista 2025"]
+    Ganar aquí era como ganar dos veces.
 [/cita_editorial]
 ```
 
-**Parámetros:**
-| Parámetro | Requerido | Descripción |
-|-----------|-----------|-------------|
-| `author` | No | Nombre del autor de la cita |
-| `source` | No | Fuente, cargo o contexto de la cita |
-
-**Ejemplo de uso:**
-```
-[cita_editorial author="Manolo Berenguer" source="Fundador del CV Guaguas, 1976"]
-El voleibol no es solo un deporte, es una forma de vida que nos une como familia.
-[/cita_editorial]
-```
+| Parámetro | Por defecto | Descripción |
+|-----------|-------------|-------------|
+| `author` | `""` | Nombre del autor |
+| `source` | `""` | Fuente o contexto (cursiva tras el autor) |
 
 ---
 
-### Imagen con pie de foto
+### `[cita_prensa]`
 
-Inserta una imagen con pie de foto opcional y efecto hover elegante.
-
-#### Opción 1: URL externa
+Cita textual de prensa o fuente documental.
 
 ```
-[imagen_contenido src="URL_DE_LA_IMAGEN" alt="Descripción" caption="Pie de foto" fullwidth="false"]
+[cita_prensa source="La Provincia, 1 de septiembre de 1976"]
+    Junto al preparador técnico, Felipe Nuez, ha venido a incrementar el plantel de entrenadores.
+[/cita_prensa]
 ```
 
-**Parámetros:**
-| Parámetro | Requerido | Descripción |
-|-----------|-----------|-------------|
-| `src` | Sí | URL completa de la imagen |
-| `alt` | No | Texto alternativo para accesibilidad |
-| `caption` | No | Pie de foto que aparece debajo |
-| `fullwidth` | No | `true` para ancho completo, `false` para ancho contenido (por defecto) |
-
-**Ejemplo:**
-```
-[imagen_contenido src="https://ejemplo.com/imagen.jpg" alt="Equipo campeón 1985" caption="El CV Guaguas celebrando su primer título de liga" fullwidth="true"]
-```
+| Parámetro | Por defecto | Descripción |
+|-----------|-------------|-------------|
+| `source` | `""` | Medio y fecha |
 
 ---
 
-#### Opción 2: Imagen de la biblioteca de medios
+### `[imagen_contenido]`
+
+Imagen dentro del contenido con caption opcional, efecto hover y layout responsivo.
 
 ```
-[imagen id="ID_DE_IMAGEN" caption="Pie de foto" fullwidth="false"]
+[imagen_contenido file="foto.jpg"]
+
+[imagen_contenido file="foto.jpg" caption="Pie de foto descriptivo."]
+
+[imagen_contenido file="foto.jpg" fullwidth="true" caption="Foto a sangre completa."]
+
+[imagen_contenido file="foto.jpg" max_width="50%" caption="Imagen centrada al 50%."]
 ```
 
-**Parámetros:**
-| Parámetro | Requerido | Descripción |
-|-----------|-----------|-------------|
-| `id` | Sí | ID numérico de la imagen en la biblioteca de medios |
-| `caption` | No | Pie de foto personalizado (si no se especifica, usa el caption de la imagen) |
-| `fullwidth` | No | `true` para ancho completo |
-
-**Ejemplo:**
-```
-[imagen id="123" caption="Pabellón Insular durante la final de 1992"]
-```
-
-**Cómo obtener el ID de una imagen:**
-1. Ve a `Medios → Biblioteca`
-2. Haz clic en la imagen
-3. El ID aparece en la URL: `post=123` → el ID es 123
+| Parámetro | Por defecto | Descripción |
+|-----------|-------------|-------------|
+| `file` | `""` | Nombre del archivo en `assets/images/` |
+| `src` | `""` | URL absoluta (alternativa a `file`) |
+| `alt` | `""` | Texto alternativo de accesibilidad |
+| `caption` | `""` | Pie de foto |
+| `fullwidth` | `false` | `true` = imagen al 100% del contenedor (bleed) |
+| `max_width` | `""` | Anchura máxima, ej: `50%`, `400px` (centra la imagen) |
 
 ---
 
-### Ejemplos combinados
+### `[imagen]`
 
-```html
-<!-- Capítulo con cita y imagen -->
-<p>El CV Guaguas nació en 1976 como un sueño de un grupo de amigos apasionados por el voleibol.</p>
+Inserta una imagen por su ID de la media library de WordPress.
 
-[cita_editorial author="Manolo Berenguer" source="Presidente fundador"]
-Empezamos con nada más que una pelota y muchas ganas. Hoy somos historia.
-[/cita_editorial]
-
-<p>La primera temporada fue dura pero gratificante...</p>
-
-[imagen id="45" caption="El equipo fundador del CV Guaguas en 1976" fullwidth="true"]
-
-<p>Aquella imagen representa el espíritu que nos ha acompañado durante 50 años.</p>
 ```
+[imagen id="123" caption="Pie de foto."]
+
+[imagen id="456" size="medium" fullwidth="true"]
+```
+
+| Parámetro | Por defecto | Descripción |
+|-----------|-------------|-------------|
+| `id` | `""` | ID del adjunto en media library |
+| `size` | `large` | `thumbnail`, `medium`, `large`, `full` |
+| `caption` | `""` | Pie de foto |
+| `fullwidth` | `false` | Bleed full-width |
 
 ---
 
-### Notas importantes
+### `[resaltado]`
 
-- Los shortcodes generan HTML idéntico a los componentes React (`EditorialQuote` y `ContentImage`)
-- Los estilos están incluidos en `header.php` y son consistentes con el diseño del tema
-- Las imágenes tienen efecto hover con zoom suave (`transform: scale(1.02)`)
-- Las citas incluyen comillas decorativas doradas y borde lateral
+Texto con fondo de color (amarillo dorado por defecto).
+
+```
+[resaltado]texto resaltado en dorado[/resaltado]
+
+[resaltado color_fondo="hsl(220, 50%, 12%)" color_texto="hsl(0, 0%, 100%)"]texto en navy[/resaltado]
+```
+
+| Parámetro | Por defecto | Descripción |
+|-----------|-------------|-------------|
+| `color_fondo` | `hsl(45, 100%, 50%)` | Color de fondo |
+| `color_texto` | `#1a237e` | Color del texto |
 
 ---
 
-### Cabecera de Capítulo (Hero)
+### `[bloque_color]`
 
-Crea cabeceras visuales personalizadas con imagen de fondo, iconos decorativos y títulos estilizados.
-
-#### Opción 1: Desde el editor de WordPress
-
-1. Edita un capítulo
-2. Activa la sección **"Cabecera del Capítulo (Hero)"**
-3. Configura:
-   - **Imagen de fondo**: Selecciona desde la biblioteca de medios
-   - **Altura del hero**: Define en `px` (ej: `500px`) o `vh` (ej: `60vh`). Deja vacío para altura automática
-   - **Color de overlay**: Usa `rgba()` para transparencia (ej: `rgba(26,35,126,0.7)`)
-   - **Borde decorativo**: Color del borde interno opcional
-   - **Tipo de icono**:
-     - `★ Estrella rellena`: Icono de estrella sólida con color personalizable
-     - `☆ Estrella vacía`: Icono de estrella con solo borde
-     - `📷 Imagen personalizada`: Sube tu propio icono (SVG, PNG, JPG, etc.)
-     - `Sin icono`: No mostrar icono
-   - **Color del icono SVG** (nuevo): Si subes un archivo SVG, puedes cambiar su color marcando "Aplicar color" y seleccionando el color deseado. Los archivos PNG/JPG mantienen su color original.
-   - **Dimensiones del icono**: Ancho y alto en píxeles (20-300px)
-   - **Alineación**: Horizontal (izquierda, centro, derecha) y vertical (arriba, centro, abajo)
-   - **Líneas de título**: Cada línea con:
-     - Texto
-     - Color del texto
-     - Resaltado (color de fondo opcional)
-     - **Peso de fuente**: Normal, Medium, Semibold, Bold, Extrabold, Black
-
-#### Opción 2: Usando shortcodes
+Bloque contenedor con fondo de color personalizable.
 
 ```
-[hero_capitulo 
-    background="https://ejemplo.com/fondo.jpg" 
-    height="500px"
-    overlay="rgba(26,35,126,0.7)" 
-    icon="star" 
-    icon_color="#D4AF37"
-    custom_icon="https://ejemplo.com/mi-icono.svg"
-    icon_width="100"
-    icon_height="100"
-    alignment="right" 
-    vertical="center"
-    border_color="#D4AF37"
+[bloque_color]Contenido con fondo amarillo dorado.[/bloque_color]
+
+[bloque_color fondo="hsl(220, 50%, 12%)" texto="hsl(0,0%,100%)" radio="1rem"]
+    Bloque azul marino con esquinas redondeadas.
+[/bloque_color]
+```
+
+| Parámetro | Por defecto | Descripción |
+|-----------|-------------|-------------|
+| `fondo` | `hsl(46, 92%, 62%)` | Color de fondo |
+| `texto` | `#1a1a0a` | Color del texto |
+| `radio` | `0.5rem` | Border-radius |
+
+---
+
+### `[prologo]`
+
+Layout de prólogo con foto hero del prologuista y texto debajo.
+
+```
+[prologo nombre="Fernando Clavijo" cargo="Presidente del Gobierno de Canarias" foto="prol_clavijo.jpg"]
+    Texto completo del prólogo...
+[/prologo]
+```
+
+| Parámetro | Por defecto | Descripción |
+|-----------|-------------|-------------|
+| `nombre` | `""` | Nombre completo del prologuista |
+| `cargo` | `""` | Cargo o título |
+| `foto` | `""` | Nombre del archivo en `assets/images/` |
+| `posicion` | `center 20%` | `background-position` de la foto hero |
+
+---
+
+### `[perfil_jugador]`
+
+Layout biográfico con foto y texto en columnas. Usado en caps 8 y 9.
+
+```
+[perfil_jugador 
+    nombre="Paco Sánchez Jover" 
+    subtitulo="El arquitecto de una época dorada"
+    imagen="5cap_jove_foto1.jpg"
+    imagen_alt="Paco Sánchez Jover"
+    imagen_caption="En el banquillo del CID."
+    posicion_imagen="left"
 ]
-    [hero_linea color="#FFFFFF" font_weight="black"]DEL PATIO[/hero_linea]
-    [hero_linea color="#1a237e" highlight="#D4AF37" font_weight="extrabold"]DEL COLEGIO[/hero_linea]
-    [hero_linea color="#1a237e" highlight="#D4AF37" font_weight="bold"]A LA DIVISIÓN[/hero_linea]
-    [hero_linea color="#1a237e" highlight="#D4AF37" font_weight="bold"]DE HONOR[/hero_linea]
+    Texto biográfico...
+[/perfil_jugador]
+```
+
+| Parámetro | Por defecto | Descripción |
+|-----------|-------------|-------------|
+| `nombre` | `""` | Nombre del jugador |
+| `subtitulo` | `""` | Subtítulo descriptivo |
+| `imagen` | `""` | Nombre del archivo en `assets/images/` |
+| `imagen_alt` | `""` | Texto alternativo |
+| `imagen_caption` | `""` | Pie de foto |
+| `posicion_imagen` | `left` | `left` o `right` |
+
+---
+
+### `[titulo_deportivo]`
+
+Bloque de ficha de título deportivo. Layout 60/40 con número grande, nombre y año. Contiene shortcodes hijos.
+
+```
+[titulo_deportivo numero="9" nombre="Copa del Rey 2024" anio="2024" foto="copa-default.jpg"]
+
+    [ficha_tecnica]
+    **Fecha:** 18 de febrero de 2024
+    **Sede:** Pabellón Europa, Leganés
+    **Resultado:** CV Guaguas 3 - 0 Unicaja Almería
+    [/ficha_tecnica]
+
+    [narrativa]
+    Texto narrativo de la final...
+    [/narrativa]
+
+    [equipo numero="1" nombre="GRAN CANARIA"]
+    Jorge Almansa, Osmany Juantorena, Io de Amo...
+    [/equipo]
+
+    [equipo numero="2" nombre="UNICAJA ALMERÍA"]
+    Jugadores rivales...
+    [/equipo]
+
+[/titulo_deportivo]
+```
+
+**Parámetros de `[titulo_deportivo]`:**
+
+| Parámetro | Por defecto | Descripción |
+|-----------|-------------|-------------|
+| `numero` | `""` | Número del título (256px desktop / 128px mobile) |
+| `nombre` | `""` | Nombre del título |
+| `anio` | `""` | Año de la conquista |
+| `foto` | `copa-default.jpg` | Imagen del trofeo en `assets/images/` |
+
+**Shortcodes hijos de `[titulo_deportivo]`:**
+
+| Shortcode | Descripción |
+|-----------|-------------|
+| `[ficha_tecnica]...[/ficha_tecnica]` | Datos técnicos: fecha, sede, resultado, árbitros |
+| `[narrativa]...[/narrativa]` | Crónica de la final |
+| `[equipo numero="" nombre=""]...[/equipo]` | Alineación. `numero`: 1=local, 2=visitante, 3=campeón |
+
+---
+
+### `[ficha_debut]`
+
+Ficha biográfica de debut de jugador.
+
+```
+[ficha_debut titulo="LA FICHA DEL DEBUT"]
+    **Nombre:** Jorge Almansa
+    **Fecha de nacimiento:** 15 de marzo de 1995
+    **Debut en Guaguas:** 2018
+[/ficha_debut]
+```
+
+| Parámetro | Por defecto | Descripción |
+|-----------|-------------|-------------|
+| `titulo` | `LA FICHA DEL DEBUT` | Título del recuadro |
+
+---
+
+### `[dos_columnas]`
+
+Divide el contenido en dos columnas. El separador entre columnas es `|||`.
+
+```
+[dos_columnas]
+Contenido izquierda.
+
+Puede tener párrafos y shortcodes.
+|||
+Contenido derecha.
+
+También admite shortcodes.
+[/dos_columnas]
+```
+
+> En móvil las columnas se apilan verticalmente.
+
+---
+
+### `[articulo]`
+
+Artículo numerado de estatuto o documento legal.
+
+```
+[articulo numero="1º"]
+    Los estatutos del club quedan sujetos a la jurisdicción de la Delegación Nacional de Deportes.
+[/articulo]
+```
+
+| Parámetro | Por defecto | Descripción |
+|-----------|-------------|-------------|
+| `numero` | `""` | Número del artículo: `1º`, `Art. 3`, `2`, etc. |
+
+---
+
+### `[bloque_lista_foto]`
+
+Foto a la izquierda con lista de nombres/items a la derecha. Usado para listas de jugadores o directivos con imagen numerada.
+
+```
+[bloque_lista_foto file="16cap_dire_foto3_num.jpg" alt="Directiva numerada"]
+    [resaltado]1 — Lucía Ramón[/resaltado]
+    [resaltado]2 — Joselu Sánchez[/resaltado]
+    [resaltado]3 — Laura Sánchez[/resaltado]
+[/bloque_lista_foto]
+```
+
+| Parámetro | Por defecto | Descripción |
+|-----------|-------------|-------------|
+| `file` | `""` | Nombre del archivo en `assets/images/` |
+| `alt` | `""` | Texto alternativo de la imagen |
+
+> Usar `[resaltado]` para cada elemento de la lista interior.
+
+---
+
+### `[foto_pendiente]`
+
+Marcador temporal para fotos aún no disponibles. Muestra un placeholder con descripción.
+
+```
+[foto_pendiente descripcion="Retrato de Antonio Benítez, gerente del club desde 1990."]
+```
+
+| Parámetro | Por defecto | Descripción |
+|-----------|-------------|-------------|
+| `descripcion` | `Imagen pendiente` | Descripción de la foto que sustituirá este placeholder |
+
+> Cuando llegue la foto real, sustituir este shortcode por `[imagen_contenido file="..."]`.
+
+---
+
+### `[hero_capitulo]` / `[hero_linea]`
+
+Hero programático desde el contenido (alternativa a los meta boxes). Uso avanzado — normalmente el hero se configura desde el editor.
+
+```
+[hero_capitulo background="foto.jpg" height="500px" overlay="rgba(0,0,0,0.25)" 
+    icon="custom" custom_icon="estrella-icon.svg" custom_icon_color="hsl(240,52%,19%)" 
+    icon_width="40" icon_height="40" alignment="center"]
+    [hero_linea color="hsl(0,0%,100%)" highlight="hsl(240,52%,19%)"]PRIMERA LÍNEA[/hero_linea]
+    [hero_linea color="hsl(0,0%,100%)" highlight="hsl(240,52%,19%)"]SEGUNDA LÍNEA[/hero_linea]
 [/hero_capitulo]
 ```
 
-**Parámetros de `[hero_capitulo]`:**
-| Parámetro | Requerido | Descripción |
-|-----------|-----------|-------------|
-| `background` | Sí | URL de la imagen de fondo |
-| `height` | No | Altura fija del hero (ej: `500px`, `60vh`). Si no se especifica, usa altura automática |
-| `overlay` | No | Color del overlay con transparencia (ej: `rgba(0,0,0,0.5)`) |
-| `icon` | No | `star` (rellena), `star-outline` (vacía), `custom` (imagen), `none` (sin icono) |
-| `icon_color` | No | Color del icono en hex (por defecto: `#D4AF37`). Solo aplica a estrellas |
-| `custom_icon` | No | URL de imagen personalizada para el icono (SVG, PNG, etc.). Requiere `icon="custom"` |
-| `custom_icon_color` | No | Color a aplicar al icono SVG (solo funciona con archivos .svg) |
-| `icon_width` | No | Ancho del icono en píxeles (por defecto: `80`) |
-| `icon_height` | No | Alto del icono en píxeles (por defecto: `80`) |
-| `alignment` | No | `left`, `center`, `right` (por defecto: `center`) |
-| `vertical` | No | `top`, `center`, `bottom` (por defecto: `center`) |
-| `border_color` | No | Color del borde decorativo interno |
-| `min_height` | No | Altura mínima (por defecto: `400px`). Alternativa a `height` |
-| `aspect_ratio` | No | Ratio de aspecto (ej: `16/9`, `4/3`) |
+**Parámetros `[hero_capitulo]`:**
 
-**Parámetros de `[hero_linea]`:**
-| Parámetro | Requerido | Descripción |
-|-----------|-----------|-------------|
-| `color` | No | Color del texto (por defecto: `#FFFFFF`) |
-| `highlight` | No | Color de fondo/resaltado (si se especifica, el texto tendrá fondo de este color) |
-| `font_weight` | No | Peso de la fuente: `normal`, `medium`, `semibold`, `bold`, `extrabold`, `black` (por defecto: `black`) |
+| Parámetro | Por defecto | Descripción |
+|-----------|-------------|-------------|
+| `background` | `""` | Nombre de archivo o URL de la imagen de fondo |
+| `height` | `""` | Altura fija: `500px`, `60vh` |
+| `overlay` | `""` | Color RGBA sobre la imagen |
+| `icon` | `""` | `star`, `star-outline`, `custom`, `none` |
+| `custom_icon` | `""` | Archivo SVG/PNG del icono |
+| `custom_icon_color` | `""` | Color a aplicar al SVG |
+| `icon_width` / `icon_height` | `80` | Dimensiones del icono en px |
+| `alignment` | `center` | `left`, `center`, `right` |
+| `vertical` | `center` | `top`, `center`, `bottom` |
+| `border_color` | `""` | Color del borde decorativo interno |
+| `background_color` | `""` | Color de fondo (visible con PNG transparente) |
 
-**Ejemplos de estilos:**
+**Parámetros `[hero_linea]`:**
 
-1. **Estilo con icono SVG y color personalizado:**
+| Parámetro | Por defecto | Descripción |
+|-----------|-------------|-------------|
+| `color` | `#FFFFFF` | Color del texto |
+| `highlight` | `""` | Color de fondo del badge/resaltado |
+| `font_weight` | `black` | `normal`, `medium`, `semibold`, `bold`, `extrabold`, `black` |
+
+---
+
+## Sistema de imágenes hero
+
+El hero de cada capítulo se configura desde `Libro → Capítulos → [capítulo] → Cabecera del capítulo`.
+
+### Estilos predefinidos del tema
+
+**Estilo navy** — caps 13 a 24, hijos de caps 1, 4, 5:
 ```
-[hero_capitulo background="estadio.jpg" height="500px" icon="custom" custom_icon="https://mi-sitio.com/icono.svg" custom_icon_color="#D4AF37" icon_width="120" icon_height="120"]
-    [hero_linea color="#FFFFFF" font_weight="black"]LOS ORÍGENES[/hero_linea]
-    [hero_linea color="#D4AF37" font_weight="extrabold"]DEL CLUB[/hero_linea]
-[/hero_capitulo]
-```
-
-2. **Estilo con icono PNG (sin cambio de color):**
-```
-[hero_capitulo background="estadio.jpg" height="500px" icon="custom" custom_icon="https://mi-sitio.com/star-gold.png" icon_width="120" icon_height="120"]
-    [hero_linea color="#FFFFFF" font_weight="black"]LOS ORÍGENES[/hero_linea]
-    [hero_linea color="#D4AF37" font_weight="extrabold"]DEL CLUB[/hero_linea]
-[/hero_capitulo]
+overlay: rgba(0,0,0,0.25)
+background_color: hsl(220, 50%, 12%)
+custom_icon_color: hsl(240, 52%, 19%)
+Título: texto blanco / badge hsl(240, 52%, 19%) / shadow none
 ```
 
-2. **Estilo documentos antiguos (azul oscuro con estrella dorada):**
+**Estilo dorado** — caps 3, 6 y primera era:
 ```
-[hero_capitulo background="estatutos.jpg" height="60vh" overlay="rgba(26,35,126,0.85)" border_color="#D4AF37"]
-    [hero_linea color="#D4AF37" highlight="#1a237e" font_weight="black"]ESTATUTOS[/hero_linea]
-    [hero_linea color="#D4AF37" highlight="#1a237e" font_weight="bold"]FUNDACIONALES[/hero_linea]
-[/hero_capitulo]
-```
-
-3. **Estilo duotono dorado (fondo amarillo):**
-```
-[hero_capitulo background="jugador.jpg" overlay="rgba(212,175,55,0.8)" icon_color="#1a237e"]
-    [hero_linea color="#FFFFFF" font_weight="extrabold"]PACO SÁNCHEZ[/hero_linea]
-    [hero_linea color="#FFFFFF" highlight="#1a237e" font_weight="black"]JOVER[/hero_linea]
-[/hero_capitulo]
+overlay: rgba(0,0,0,0.25)
+border_color: hsl(45, 100%, 50%)
+custom_icon_color: hsl(45, 100%, 50%)
+Título: texto hsl(220,50%,12%) / badge hsl(45,100%,50%)
 ```
 
-4. **Estilo minimalista (título a la derecha con pesos variados):**
+**Estilo fondo claro** — cap 21 (árbitros), cap 23 (tecnología):
 ```
-[hero_capitulo background="colegio.jpg" overlay="rgba(212,175,55,0.9)" icon="star" icon_color="#1a237e" alignment="right"]
-    [hero_linea color="#1a237e" highlight="#FFFFFF" font_weight="medium"]DEL PATIO[/hero_linea]
-    [hero_linea color="#1a237e" highlight="#FFFFFF" font_weight="black"]DEL COLEGIO[/hero_linea]
-[/hero_capitulo]
+background_color: hsl(17, 14%, 95%)  /* crema */
+overlay: rgba(0,0,0,0)
 ```
 
-## 🎨 Personalización
+**Estilo amarillo** — cap 25 y hijos de patrocinadores:
+```
+background_color: hsl(46, 92%, 62%)
+overlay: rgba(0,0,0,0)
+custom_icon_color: hsl(0, 0%, 0%)
+Título: texto hsl(46,92%,62%) / badge hsl(0,0%,0%)
+```
 
-### Variables CSS
+### Imagen editorial
 
-Los colores del tema están en `assets/css/main.css`:
+Además del hero, cada capítulo tiene un campo de **imagen editorial** independiente que aparece automáticamente al inicio del contenido (antes de `the_content()`). Tiene su propio caption.
+
+---
+
+## Personalización
+
+### Variables CSS principales
 
 ```css
+/* Dark mode (defecto) */
 :root {
-    /* Colores principales - Amarillo/Dorado Guaguas */
-    --gold: 45 100% 50%;
-    --gold-light: 45 100% 60%;
-    --gold-dark: 45 100% 40%;
-    
-    /* Fondo - Azul Marino */
-    --background: 220 50% 10%;
-    
-    /* Sidebar - Azul más oscuro */
-    --sidebar: 220 55% 8%;
+    --gold: 45 100% 50%;           /* Dorado principal — usar como hsl(var(--gold)) */
+    --background: 220 50% 10%;     /* Fondo general navy */
+    --foreground: 0 0% 95%;        /* Texto general */
+    --sidebar: 220 55% 8%;         /* Fondo sidebar */
+    --sidebar-width: 320px;        /* Anchura del sidebar */
+}
+
+/* Light mode */
+body.light {
+    --background: 32 17% 96%;      /* Fondo beige cálido */
+    --foreground: 220 50% 12%;     /* Texto navy */
+    --lm-gold: hsl(45, 100%, 42%); /* Dorado light mode — valor HSL completo */
 }
 ```
 
-### Breakpoints responsive
+> `--lm-gold` es la única variable que almacena el valor `hsl()` completo. El resto almacenan solo los canales HSL: `hsl(var(--gold))`.
 
-- **Base**: Móvil (< 768px)
-- **md (768px)**: Tablet
-- **lg (1024px)**: Desktop (sidebar fijo visible)
+### Breakpoints
 
-### Cambiar imagen del hero
-
-Reemplaza el archivo `assets/images/hero-stadium.jpg` manteniendo el mismo nombre.
-
-## 🔧 Troubleshooting
-
-### Los capítulos no aparecen o dan error 404
-
-1. Ve a `Ajustes → Enlaces permanentes`
-2. Sin cambiar nada, haz clic en "Guardar cambios"
-3. Esto regenera los permalinks
-
-### Las imágenes no cargan
-
-1. Verifica que existan en `assets/images/`
-2. Comprueba los permisos de los archivos (644)
-
-### Los estilos no se aplican correctamente
-
-1. Limpia la caché del navegador (Ctrl+Shift+R)
-2. Si usas plugin de caché, vacíalo
-3. Verifica que `main.css` existe y tiene contenido
-
-### El sidebar no funciona en móvil
-
-1. Verifica que `main.js` está cargando (Consola del navegador)
-2. Comprueba que no hay errores JavaScript
-
-## 🔌 Plugins recomendados (opcionales)
-
-- **Yoast SEO**: Para optimización SEO
-- **WP Rocket** o **LiteSpeed Cache**: Para caché y rendimiento
-- **Smush** o **ShortPixel**: Para optimización de imágenes
-- **UpdraftPlus**: Para copias de seguridad
-
-## 📄 Archivos de ejemplo incluidos
-
-El tema incluye contenido de ejemplo que se importa automáticamente:
-
-- **23 capítulos** con estructura jerárquica
-- **Contenido real** sobre la historia del CV Guaguas
-- **Citas destacadas** de figuras importantes
-- **8 logos de patrocinadores** en el footer
-- **9 imágenes hero** para cabeceras de capítulo
-- **16 imágenes de contenido** (equipo, partidos, jugadores)
-- **Imágenes base**: logo-guaguas.png, logo-guaguas.svg, star-gold.png
-
-## 📜 Licencia
-
-GPL v2 o posterior
+| Breakpoint | Píxeles | Comportamiento |
+|------------|---------|----------------|
+| Base | < 1024px | Sidebar oculto, menú toggle |
+| `lg` | ≥ 1024px | Sidebar fijo, contenido con `margin-left: 320px` |
 
 ---
 
-🏐 Desarrollado para celebrar los **50 años del CV Guaguas (1976-2026)**
+## Estructura de archivos
+
+```
+cv-guaguas-50aniversario/
+├── style.css                    # Header del tema
+├── functions.php                # CPT, shortcodes, meta boxes, helpers
+├── header.php                   # Header fijo con toggle de menú y tema
+├── footer.php                   # Footer con logos institucionales
+├── index.php                    # Template por defecto (home)
+├── 404.php                      # Página de error (sin sidebar, centrada)
+├── sidebar-indice.php           # Sidebar con índice jerárquico
+├── template-home.php            # Portada 50 Aniversario
+├── single-capitulo.php          # Página individual de capítulo
+├── README.md                    # Esta documentación
+├── inc/
+│   ├── meta-boxes.php           # Campos hero e imagen editorial
+│   └── sample-content.php       # 25 capítulos con contenido completo
+└── assets/
+    ├── css/main.css             # Estilos completos
+    ├── js/main.js               # Sidebar, scroll spy, dark/light toggle
+    └── images/                  # Todas las imágenes del tema
+        ├── logo-guaguas.png/svg
+        ├── estrella-icon.svg    # Icono estrella (heroes navy)
+        ├── copa-default.jpg     # Trofeo por defecto (cap 11)
+        ├── hero-*.jpg           # Placeholders de hero
+        ├── [N]cap_[xxx]_foto[N].[ext]  # Fotos reales por capítulo
+        └── [sponsor].svg        # Logos patrocinadores (se colorean con CSS)
+```
+
+### Nomenclatura de imágenes
+
+```
+[nº_cap]cap_[abreviatura]_foto[nº].[ext]
+
+Ejemplos:
+  7cap_mare_foto1.jpg      → Cap 7, Marek, foto 1
+  16cap_dire_foto3.png     → Cap 16, directiva, foto 3 (PNG con alfa)
+  21cap_reco_foto3.png     → Cap 21, árbitros, foto 3
+  23cap_vang_montaje.png   → Cap 23, vanguardia, montaje generado
+```
+
+---
+
+## Troubleshooting
+
+| Problema | Solución |
+|----------|----------|
+| Capítulos dan 404 | `Ajustes → Enlaces permanentes → Guardar cambios` |
+| Imágenes no cargan | Verificar que el archivo existe en `assets/images/` con permisos 644 |
+| Sidebar no aparece en desktop | Verificar que `main.js` carga sin errores en la consola |
+| Estilos incorrectos | Limpiar caché del navegador (`Ctrl+Shift+R`) |
+| Contenido importado no aparece tras reinstalar | `wp-admin/edit.php?post_type=capitulo&libro_reimport=1` |
+
+---
+
+## Plugins recomendados (opcionales)
+
+| Plugin | Uso |
+|--------|-----|
+| Yoast SEO | Metadatos SEO por capítulo |
+| WP Rocket / LiteSpeed Cache | Rendimiento y caché |
+| Smush / ShortPixel | Optimización de imágenes |
+| UpdraftPlus | Copias de seguridad |
+
+---
+
+*Desarrollado para celebrar los **50 años del CV Guaguas (1976–2026)***

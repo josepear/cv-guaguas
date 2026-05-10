@@ -2053,3 +2053,19 @@ body.dark .ficha-debut-titulo {
     color: hsl(var(--foreground) / 0.55);
     margin-top: 1px;
 }
+
+/* ============================================
+   404 PAGE
+   ============================================ */
+
+/* On desktop, the 404 content area sits to the right of the 320px sidebar.
+   flex justify-center already centers within that area — no extra offset needed.
+   Remove any inherited margin that could break the centering. */
+.error404 .main-content {
+    display: flex;
+    flex-direction: column;
+}
+
+.error404 .main-content > div {
+    flex: 1;
+}
