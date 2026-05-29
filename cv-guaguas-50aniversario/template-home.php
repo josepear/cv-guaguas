@@ -54,7 +54,7 @@ $primer_capitulo_url = !empty($primer_capitulo) ? get_permalink($primer_capitulo
         </span>
         
         <!-- Main Title -->
-        <h1 class="font-serif font-bold text-4xl md:text-5xl lg:text-7xl text-white mb-6 opacity-0 animate-fade-in-up [animation-delay:200ms]">
+        <h1 class="font-display font-bold text-4xl md:text-5xl lg:text-7xl text-white mb-6 opacity-0 animate-fade-in-up [animation-delay:200ms]">
             <span class="text-gold-gradient"><?php echo esc_html($hero_title); ?></span>
         </h1>
         

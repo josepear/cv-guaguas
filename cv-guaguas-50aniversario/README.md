@@ -358,14 +358,20 @@ Divide el contenido en dos columnas. El separador entre columnas es `|||`.
 ```
 [dos_columnas]
 Contenido izquierda.
-
-Puede tener párrafos y shortcodes.
 |||
 Contenido derecha.
+[/dos_columnas]
 
-También admite shortcodes.
+[dos_columnas igual="true"]
+[imagen_contenido file="foto_a.jpg"]
+|||
+[imagen_contenido file="foto_b.jpg"]
 [/dos_columnas]
 ```
+
+| Parámetro | Por defecto | Descripción |
+|-----------|-------------|-------------|
+| `igual` | `false` | `true` = columnas 1fr 1fr (útil para pares de fotos). Sin divider central |
 
 > En móvil las columnas se apilan verticalmente.
 
@@ -510,6 +516,10 @@ Además del hero, cada capítulo tiene un campo de **imagen editorial** independ
 ### Variables CSS principales
 
 ```css
+/* Fuentes */
+--font-display: 'Antonio', sans-serif;   /* Titulares, heroes, drop caps */
+--font-sans: 'Inter', sans-serif;        /* Cuerpo de texto, UI */
+
 /* Dark mode (defecto) */
 :root {
     --gold: 45 100% 50%;           /* Dorado principal — usar como hsl(var(--gold)) */
@@ -545,9 +555,10 @@ cv-guaguas-50aniversario/
 ├── style.css                    # Header del tema
 ├── functions.php                # CPT, shortcodes, meta boxes, helpers
 ├── header.php                   # Header fijo con toggle de menú y tema
-├── footer.php                   # Footer con logos institucionales
+├── footer.php                   # Footer con logos institucionales + banner cookies
 ├── index.php                    # Template por defecto (home)
 ├── 404.php                      # Página de error (sin sidebar, centrada)
+├── page.php                     # Páginas estáticas (aviso legal, privacidad...)
 ├── sidebar-indice.php           # Sidebar con índice jerárquico
 ├── template-home.php            # Portada 50 Aniversario
 ├── single-capitulo.php          # Página individual de capítulo
@@ -557,7 +568,7 @@ cv-guaguas-50aniversario/
 │   └── sample-content.php       # 25 capítulos con contenido completo
 └── assets/
     ├── css/main.css             # Estilos completos
-    ├── js/main.js               # Sidebar, scroll spy, dark/light toggle
+    ├── js/main.js               # Sidebar, scroll spy, dark/light, cookies
     └── images/                  # Todas las imágenes del tema
         ├── logo-guaguas.png/svg
         ├── estrella-icon.svg    # Icono estrella (heroes navy)
@@ -566,6 +577,21 @@ cv-guaguas-50aniversario/
         ├── [N]cap_[xxx]_foto[N].[ext]  # Fotos reales por capítulo
         └── [sponsor].svg        # Logos patrocinadores (se colorean con CSS)
 ```
+
+### Páginas legales
+
+El tema crea automáticamente cuatro páginas estáticas con slugs fijos:
+
+| Slug | Título |
+|------|--------|
+| `/aviso-legal/` | Aviso Legal |
+| `/politica-de-privacidad/` | Política de Privacidad |
+| `/politica-de-cookies/` | Política de Cookies |
+| `/accesibilidad/` | Declaración de Accesibilidad |
+
+### Banner de cookies
+
+Integrado en `footer.php`. Guarda preferencias en `localStorage` bajo la clave `cv-cookie-consent`. Categorías: analíticas y redes sociales.
 
 ### Nomenclatura de imágenes
 
@@ -604,4 +630,4 @@ Ejemplos:
 
 ---
 
-*Desarrollado para celebrar los **50 años del CV Guaguas (1976–2026)***
+*Desarrollado para celebrar los **50 años del CV Guaguas (1976–2026)** · Última actualización: mayo 2026*

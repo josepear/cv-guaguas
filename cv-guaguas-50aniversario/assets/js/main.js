@@ -357,3 +357,92 @@
     initHeroParallax();
 
 })();
+
+/**
+ * Banner de cookies — CV Guaguas
+ * Preferencias guardadas en localStorage bajo la clave 'cv-cookie-consent'
+ */
+(function() {
+    'use strict';
+
+    var STORAGE_KEY = 'cv-cookie-consent';
+    var banner      = document.getElementById('cv-cookie-banner');
+    var panel       = document.getElementById('cv-cookie-panel');
+    var toggleAnalytics = document.getElementById('cv-toggle-analytics');
+    var toggleSocial    = document.getElementById('cv-toggle-social');
+
+    if (!banner) return;
+
+    // ── Leer preferencia guardada ──────────────────────────────
+    function getConsent() {
+        try { return JSON.parse(localStorage.getItem(STORAGE_KEY)); } catch(e) { return null; }
+    }
+
+    function saveConsent(analytics, social) {
+        localStorage.setItem(STORAGE_KEY, JSON.stringify({
+            analytics: analytics,
+            social:    social,
+            date:      new Date().toISOString()
+        }));
+    }
+
+    // ── Mostrar / ocultar banner ───────────────────────────────
+    function showBanner() {
+        banner.style.display = 'block';
+        banner.setAttribute('aria-hidden', 'false');
+    }
+
+    function hideBanner() {
+        banner.style.display = 'none';
+        banner.setAttribute('aria-hidden', 'true');
+    }
+
+    // Mostrar solo si no hay preferencia guardada
+    if (!getConsent()) {
+        showBanner();
+    }
+
+    // ── Acciones de los botones principales ───────────────────
+    document.getElementById('cv-cookie-accept').addEventListener('click', function() {
+        saveConsent(true, true);
+        hideBanner();
+    });
+
+    document.getElementById('cv-cookie-reject').addEventListener('click', function() {
+        saveConsent(false, false);
+        hideBanner();
+    });
+
+    document.getElementById('cv-cookie-close').addEventListener('click', function() {
+        saveConsent(false, false);
+        hideBanner();
+    });
+
+    // ── Panel de gestión ──────────────────────────────────────
+    document.getElementById('cv-cookie-manage-toggle').addEventListener('click', function() {
+        var isOpen = panel.classList.contains('is-open');
+        panel.classList.toggle('is-open', !isOpen);
+        panel.setAttribute('aria-hidden', isOpen ? 'true' : 'false');
+        this.textContent = isOpen ? 'Gestionar preferencias' : 'Ocultar preferencias';
+    });
+
+    // Toggles individuales
+    function initToggle(btn) {
+        if (!btn) return;
+        btn.addEventListener('click', function() {
+            var checked = this.getAttribute('aria-checked') === 'true';
+            this.setAttribute('aria-checked', checked ? 'false' : 'true');
+        });
+    }
+    initToggle(toggleAnalytics);
+    initToggle(toggleSocial);
+
+    // Guardar preferencias del panel
+    document.getElementById('cv-cookie-save').addEventListener('click', function() {
+        var analytics = toggleAnalytics ? toggleAnalytics.getAttribute('aria-checked') === 'true' : false;
+        var social    = toggleSocial    ? toggleSocial.getAttribute('aria-checked')    === 'true' : false;
+        saveConsent(analytics, social);
+        hideBanner();
+    });
+
+})();

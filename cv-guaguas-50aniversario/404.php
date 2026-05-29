@@ -8,9 +8,9 @@
 get_header();
 ?>
 
-<main class="main-content" style="min-height: 100vh; display: flex; align-items: center; justify-content: center; padding-top: 52px;">
-    <div class="flex items-center justify-center w-full px-6">
-        <div class="text-center max-w-lg">
+<main class="main-content flex-1 overflow-y-auto lg:ml-[320px]" style="min-height: 100vh; display: flex; align-items: center; justify-content: center; padding-top: 52px;">
+    <div class="flex items-center justify-center w-full px-6" style="margin-left: calc(-320px / 2);">
+        <div class="text-center max-w-lg lg:max-w-none lg:w-[32rem]">
             
             <!-- Número 404 estilizado -->
             <div class="mb-8">
@@ -62,5 +62,6 @@ get_header();
 </main>
 
 <?php
+get_sidebar('indice');
 get_footer();
 ?>

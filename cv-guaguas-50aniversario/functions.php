@@ -19,7 +19,7 @@ function libro_enqueue_assets() {
     // Google Fonts - Montserrat + Inter (colores CV Guaguas)
     wp_enqueue_style(
         'libro-fonts',
-        'https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800;900&family=Inter:wght@300;400;500;600;700&display=swap',
+        'https://fonts.googleapis.com/css2?family=Antonio:wght@400;700&family=Montserrat:wght@400;500;600;700;800;900&family=Inter:wght@300;400;500;600;700&display=swap',
         array(),
         null
     );
@@ -1197,6 +1197,7 @@ function libro_shortcode_titulo_deportivo($atts, $content = null) {
             <!-- Ficha técnica debajo del título -->
             <?php if ($ficha) : ?>
             <div class="titulo-deportivo-ficha">
+                <span class="ficha-tecnica-titulo">Ficha técnica</span>
                 <div class="ficha-tecnica-contenido">
                     <?php echo $ficha; ?>
                 </div>
@@ -1224,11 +1225,13 @@ add_shortcode('titulo_deportivo', 'libro_shortcode_titulo_deportivo');
  * En mobile colapsa a una sola columna
  */
 function libro_shortcode_dos_columnas($atts, $content = null) {
+    $atts = shortcode_atts(array('igual' => 'false'), $atts);
+    $igual_class = $atts['igual'] === 'true' ? ' dos-columnas--igual' : '';
     // Split on ||| delimiter
     $parts = explode('|||', $content, 2);
     $left  = isset($parts[0]) ? do_shortcode(trim($parts[0])) : '';
     $right = isset($parts[1]) ? do_shortcode(trim($parts[1])) : '';
-    return '<div class="dos-columnas"><div class="dos-columnas-col">' . $left . '</div><div class="dos-columnas-col">' . $right . '</div></div>';
+    return '<div class="dos-columnas' . $igual_class . '"><div class="dos-columnas-col">' . $left . '</div><div class="dos-columnas-col">' . $right . '</div></div>';
 }
 add_shortcode('dos_columnas', 'libro_shortcode_dos_columnas');
 
