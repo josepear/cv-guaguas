@@ -16,10 +16,10 @@ require_once LIBRO_DIR . '/inc/sample-content.php';
  * Enqueue scripts y styles
  */
 function libro_enqueue_assets() {
-    // Google Fonts - Montserrat + Inter (colores CV Guaguas)
+    // Google Fonts - Antonio + Archivo (colores CV Guaguas)
     wp_enqueue_style(
         'libro-fonts',
-        'https://fonts.googleapis.com/css2?family=Antonio:wght@400;700&family=Montserrat:wght@400;500;600;700;800;900&family=Inter:wght@300;400;500;600;700&display=swap',
+        'https://fonts.googleapis.com/css2?family=Antonio:wght@400;700&family=Archivo:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,300;1,400;1,500;1,600;1,700&display=swap',
         array(),
         null
     );
@@ -1289,6 +1289,82 @@ add_shortcode('equipo', function($atts, $content = null) {
     <?php
     return ob_get_clean();
 });
+
+/**
+ * Shortcode: [competiciones_europa] — infografía fullwidth de rivales europeos del Guaguas
+ * Emite un marcador único que el filtro libro_content_inject_euro recoge y sustituye
+ * por el bloque fullwidth, rompiendo el contenedor de texto limpiamente.
+ */
+function libro_shortcode_competiciones_europa($atts, $content = null) {
+    $atts = shortcode_atts(array(
+        'bg'     => '8cap_emba_compeuro_bg.jpg',
+        'titulo' => '',
+    ), $atts, 'competiciones_europa');
+
+    $bg_url  = libro_img(esc_attr($atts['bg']));
+    $inner   = do_shortcode($content);
+
+    ob_start();
+    ?>
+    <div class="euro-infografia">
+        <div class="euro-infografia__bg" style="background-image:url('<?php echo esc_url($bg_url); ?>');"></div>
+        <div class="euro-infografia__overlay"></div>
+        <div class="euro-infografia__inner">
+            <?php if ($atts['titulo']) : ?>
+            <div class="euro-infografia__titulo">
+                <span class="euro-infografia__titulo-text"><?php echo esc_html(strtoupper($atts['titulo'])); ?></span>
+            </div>
+            <?php endif; ?>
+            <div class="euro-infografia__grid">
+                <?php echo $inner; ?>
+            </div>
+        </div>
+    </div>
+    <?php
+    $html = ob_get_clean();
+
+    return '<!--EURO_INFOGRAFIA_START-->' . $html . '<!--EURO_INFOGRAFIA_END-->';
+}
+add_shortcode('competiciones_europa', 'libro_shortcode_competiciones_europa');
+
+/**
+ * Filtro sobre the_content: no hace nada — los marcadores los procesa
+ * directamente single-capitulo.php antes de que wpautop los toque.
+ */
+
+function libro_shortcode_temp($atts, $content = null) {
+    $atts = shortcode_atts(array(
+        'anio' => '',
+        'comp' => '',
+    ), $atts, 'temp');
+
+    $rivals = do_shortcode($content);
+
+    ob_start();
+    ?>
+    <div class="euro-temp">
+        <div class="euro-temp__anio"><?php echo esc_html($atts['anio']); ?></div>
+        <?php if ($atts['comp']) : ?>
+        <div class="euro-temp__comp"><?php echo esc_html($atts['comp']); ?></div>
+        <?php endif; ?>
+        <ul class="euro-temp__rivales">
+            <?php echo $rivals; ?>
+        </ul>
+    </div>
+    <?php
+    return ob_get_clean();
+}
+add_shortcode('temp', 'libro_shortcode_temp');
+
+function libro_shortcode_rival($atts, $content = null) {
+    return '<li class="euro-rival"><span class="euro-rival__bullet"></span>' . wp_kses_post($content) . '</li>';
+}
+add_shortcode('rival', 'libro_shortcode_rival');
+
+function libro_shortcode_nota_rival($atts, $content = null) {
+    return '<p class="euro-nota">' . wp_kses_post($content) . '</p>';
+}
+add_shortcode('nota_rival', 'libro_shortcode_nota_rival');
 
 /**
  * Redirigir capítulos padre al primer subcapítulo

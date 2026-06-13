@@ -2,6 +2,7 @@
 /**
  * Template para mostrar un capítulo individual
  * Diseño idéntico a React Chapter.tsx
+ * VERSION: 2026-06-13-fullwidth
  */
 
 // Si el capítulo tiene hijos, redirigir al primero (igual que React Chapter.tsx)
@@ -332,7 +333,37 @@ if ($hero_icon === 'custom' && $hero_custom_icon) {
 
                 <?php 
                 while (have_posts()) : the_post();
-                    the_content();
+                    // Obtener contenido con shortcodes procesados pero SIN wpautop
+                    // para que los marcadores HTML no queden envueltos en <p>
+                    $raw = do_shortcode(get_the_content());
+                    $marker_start = '<!--EURO_INFOGRAFIA_START-->';
+                    $marker_end   = '<!--EURO_INFOGRAFIA_END-->';
+
+                    if (strpos($raw, $marker_start) !== false) {
+                        // Partir en: antes | bloque euro | después
+                        list($before, $rest) = explode($marker_start, $raw, 2);
+                        list($euro_html, $after) = explode($marker_end, $rest, 2);
+
+                        // 1. Contenido anterior — dentro del contenedor (con wpautop)
+                        echo wpautop($before);
+
+                        // 2. Cerrar el contenedor padre max-w-4xl para ir a fullwidth
+                        echo '</div><!-- /reading-content (euro break) -->';
+                        echo '</div><!-- /max-w-4xl (euro break) -->';
+
+                        // 3. Infografía fullwidth — hermana directa del main
+                        echo $euro_html;
+
+                        // 4. Reabrir el contenedor y reading-content
+                        echo '<div class="max-w-4xl mx-auto px-6 md:px-12 lg:px-16 pb-16">';
+                        echo '<div class="reading-content text-foreground/85">';
+
+                        // 5. Contenido posterior (con wpautop)
+                        echo wpautop($after);
+                    } else {
+                        // Sin marcador — comportamiento normal
+                        echo apply_filters('the_content', get_the_content());
+                    }
                 endwhile;
                 ?>
                 
@@ -448,6 +479,7 @@ if ($hero_icon === 'custom' && $hero_custom_icon) {
         </nav>
         
     </div>
+
 </main>
 
 <script>

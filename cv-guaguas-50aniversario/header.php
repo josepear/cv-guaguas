@@ -14,7 +14,7 @@
     <!-- Preconnect para performance -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Antonio:wght@400;700&family=Montserrat:wght@400;500;600;700;800;900&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Antonio:wght@400;700&family=Archivo:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,300;1,400;1,500;1,600;1,700&display=swap" rel="stylesheet">
     
     <!-- Tailwind CSS CDN with custom config (identical to React) -->
     <script src="https://cdn.tailwindcss.com"></script>
@@ -68,7 +68,7 @@
                 },
                 fontFamily: {
                     serif: ['Montserrat', '-apple-system', 'BlinkMacSystemFont', 'sans-serif'],
-                    sans: ['Inter', '-apple-system', 'BlinkMacSystemFont', 'sans-serif'],
+                    sans: ['Archivo', '-apple-system', 'BlinkMacSystemFont', 'sans-serif'],
                 },
                 borderRadius: {
                     lg: '0.25rem',
@@ -199,11 +199,11 @@
             background: linear-gradient(135deg, hsl(45 100% 60%) 0%, hsl(45 100% 50%) 50%, hsl(45 100% 40%) 100%);
             -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text;
         }
-        .chapter-marker { font-family: 'Inter', sans-serif; font-size: 0.75rem; font-weight: 600; letter-spacing: 0.2em; text-transform: uppercase; color: hsl(45 100% 50%); }
+        .chapter-marker { font-family: 'Archivo', sans-serif; font-size: 0.75rem; font-weight: 600; letter-spacing: 0.2em; text-transform: uppercase; color: hsl(45 100% 50%); }
         .sidebar-active-indicator { position: relative; }
         .sidebar-active-indicator::before { content: ''; position: absolute; left: 0; top: 50%; transform: translateY(-50%); width: 3px; height: 0; background: hsl(45 100% 50%); transition: height 0.3s ease; border-radius: 0 2px 2px 0; }
         .sidebar-active-indicator.active::before { height: 60%; }
-        .btn-download { display: inline-flex; align-items: center; gap: 0.5rem; padding: 0.625rem 1.25rem; border-radius: 0.25rem; border: 1px solid; font-family: 'Inter', sans-serif; font-size: 0.875rem; font-weight: 500; letter-spacing: 0.05em; text-transform: uppercase; text-decoration: none; transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1); }
+        .btn-download { display: inline-flex; align-items: center; gap: 0.5rem; padding: 0.625rem 1.25rem; border-radius: 0.25rem; border: 1px solid; font-family: 'Archivo', sans-serif; font-size: 0.875rem; font-weight: 500; letter-spacing: 0.05em; text-transform: uppercase; text-decoration: none; transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1); }
         .btn-download-primary { background-color: hsl(45 100% 50%); color: hsl(220 50% 10%); border-color: hsl(45 100% 50%); }
         .btn-download-primary:hover { background-color: transparent; color: hsl(45 100% 50%); box-shadow: 0 0 30px hsl(45 100% 50% / 0.2); }
         .btn-download-outline { background-color: transparent; color: hsl(0 0% 98%); border-color: hsl(220 30% 22%); }

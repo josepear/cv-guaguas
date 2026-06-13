@@ -51,6 +51,7 @@ Este documento detalla paso a paso cómo instalar, configurar y mantener el tema
 - ❌ **No requiere ACF** (Advanced Custom Fields) — usa meta-boxes nativos
 - ❌ **No requiere Composer** ni Node.js en el servidor
 - ✅ Tailwind CSS se carga vía CDN (no necesita compilación)
+- ✅ Google Fonts (Antonio, Archivo, Poppins) se cargan vía CDN
 
 ---
 
@@ -67,7 +68,7 @@ cd TU-REPO
 cp -r wordpress-theme cv-guaguas-50aniversario
 
 # 3. Crear el archivo ZIP
-zip -r cv-guaguas-50aniversario.zip cv-guaguas-50aniversario/
+zip -r cv-guaguas-50aniversario.zip cv-guaguas-50aniversario/ --exclude "*.py" --exclude "*.DS_Store"
 ```
 
 ### Opción B: Descarga directa
@@ -84,7 +85,19 @@ zip -r cv-guaguas-50aniversario.zip cv-guaguas-50aniversario/
 
 ## 3. Instalar el tema en WordPress
 
-### Método 1: Panel de administración (recomendado)
+### Método 1: Reemplazar carpeta directamente (recomendado)
+
+Este es el método más fiable, especialmente al actualizar:
+
+1. Descomprime el ZIP del tema
+2. Abre el Finder (Mac) o Explorer (Windows) y navega a tu instalación local o servidor:
+   `wp-content/themes/`
+3. **Reemplaza completamente** la carpeta `cv-guaguas-50aniversario` con la nueva versión
+4. Ve a **Apariencia → Temas** en el panel de WordPress y activa el tema si no lo estaba
+
+> ✅ Este método garantiza que todos los archivos (PHP, CSS, imágenes) se actualizan correctamente.
+
+### Método 2: Panel de administración
 
 1. Inicia sesión en tu WordPress: `https://tu-dominio.com/wp-admin`
 2. Ve a **Apariencia → Temas → Añadir nuevo**
@@ -92,14 +105,6 @@ zip -r cv-guaguas-50aniversario.zip cv-guaguas-50aniversario/
 4. Selecciona el archivo `cv-guaguas-50aniversario.zip`
 5. Haz clic en **"Instalar ahora"**
 6. Una vez instalado, haz clic en **"Activar"**
-
-### Método 2: FTP / SFTP
-
-1. Conéctate al servidor con un cliente FTP (FileZilla, Cyberduck, etc.)
-2. Navega a `/wp-content/themes/`
-3. Sube la carpeta `cv-guaguas-50aniversario` completa
-4. Ve a **Apariencia → Temas** en el panel de WordPress
-5. Localiza "CV Guaguas - 50 Aniversario" y haz clic en **"Activar"**
 
 ### Método 3: WP-CLI (línea de comandos)
 
@@ -155,7 +160,7 @@ location / {
 
 ## 5. Importar contenido de ejemplo
 
-El tema incluye **23 capítulos** con contenido real del libro del 50 aniversario, así como **8 logos de patrocinadores** en el footer. La importación es automática y sencilla.
+El tema incluye **25 capítulos** con contenido real del libro del 50 aniversario, con estructura jerárquica de hasta dos niveles (padre/hijo). La importación es automática.
 
 ### Paso a paso
 
@@ -167,12 +172,12 @@ El tema incluye **23 capítulos** con contenido real del libro del 50 aniversari
 
 ### ¿Qué se importa?
 
-- 📖 23 capítulos con estructura jerárquica (padres e hijos)
-- 📝 Contenido maquetado con shortcodes (`[cita_editorial]`, `[imagen_contenido]`, `[hero_capitulo]`)
-- 🔢 Números de capítulo y subcapítulo configurados
+- 📖 25 capítulos con estructura jerárquica (padres e hijos)
+- 📝 Contenido maquetado con shortcodes
+- 🔢 Números de capítulo configurados
 - 📊 Orden correcto de los capítulos
-- 🖼️ Referencias a imágenes incluidas en el tema
-- 🏛️ 8 logos de patrocinadores en el footer (carga automática)
+- 🖼️ Referencias a imágenes incluidas en el tema (JPEG/WebP en `assets/images/`)
+- 🏛️ Logos de patrocinadores en el footer (carga automática)
 
 ### Reimportar contenido
 
@@ -191,9 +196,8 @@ Si necesitas volver a importar (resetear todo el contenido):
 ### 6.1 Crear la página
 
 1. Ve a **Páginas → Añadir nueva**
-2. Escribe el título: **"50 Aniversario"** (o el que prefieras)
+2. Escribe el título: **"Inicio"** (o el que prefieras)
 3. En el panel derecho, busca **"Atributos de página"**
-   - Si no lo ves, haz clic en el icono ⚙️ (engranaje) arriba a la derecha
 4. En **"Plantilla"**, selecciona: **"Página 50 Aniversario CV Guaguas"**
 5. Haz clic en **"Publicar"**
 
@@ -201,17 +205,17 @@ Si necesitas volver a importar (resetear todo el contenido):
 
 1. Ve a **Ajustes → Lectura**
 2. Selecciona **"Una página estática"**
-3. En **"Página de inicio"**, elige la página que acabas de crear ("50 Aniversario")
+3. En **"Página de inicio"**, elige la página que acabas de crear
 4. Haz clic en **"Guardar cambios"**
 
 ### 6.3 Verificar
 
 Visita `https://tu-dominio.com` — deberías ver:
 
-- El hero a pantalla completa con la imagen del estadio
-- El marcador "50 Aniversario · 1976 - 2026"
+- El hero a pantalla completa con la imagen duotono del equipo
+- El título "GUAGUAS: UNA HISTORIA DE LEYENDA · 1976 ★ 2026"
+- Los botones de descarga PDF/EPUB y el link "Comenzar a leer"
 - El sidebar con el índice de capítulos
-- Los botones de descarga PDF/EPUB
 
 ---
 
@@ -222,19 +226,17 @@ Visita `https://tu-dominio.com` — deberías ver:
 
 | Campo | Descripción | Ejemplo |
 |-------|-------------|---------|
-| Título del Hero | Texto principal del hero | `50 Años de Historia` |
-| Subtítulo del Hero | Texto secundario | `Cinco décadas de pasión...` |
 | URL del PDF | Enlace de descarga del PDF | `https://tu-dominio.com/wp-content/uploads/libro.pdf` |
 | URL del EPUB | Enlace de descarga del EPUB | `https://tu-dominio.com/wp-content/uploads/libro.epub` |
 
 3. Haz clic en **"Guardar cambios"**
 
-### Subir archivos PDF/EPUB
+### Imagen del hero de la home
 
-1. Ve a **Medios → Añadir nuevo**
-2. Sube los archivos del libro (PDF, EPUB)
-3. Copia la URL del archivo subido
-4. Pégala en las opciones del libro
+La imagen se gestiona directamente desde el archivo:
+`assets/images/hero-home.jpg`
+
+Reemplaza este archivo (1920×1080px recomendado, JPEG calidad 82-90) para cambiar el fondo de la portada.
 
 ---
 
@@ -250,72 +252,108 @@ Visita `https://tu-dominio.com` — deberías ver:
 | Campo | Descripción |
 |-------|-------------|
 | Número de capítulo | Ej: `01`, `02`, `03` |
-| Subtítulo | Descripción breve del capítulo |
-| Cita destacada | Frase importante |
-| Autor de la cita | Quien dijo la frase |
+| Hero: imagen | URL de la imagen de fondo del hero |
+| Hero: overlay | Color RGBA del overlay (ej: `rgba(0,0,0,0.35)`) |
+| Hero: altura | Altura del hero (ej: `500px`) |
+| Hero: posición fondo | Posición CSS (ej: `center center`, `center bottom`) |
 | Ocultar número | Checkbox para ocultar el badge numérico |
+| Ocultar título | Checkbox para ocultar el título automático |
 
 5. Haz clic en **"Publicar"**
 
-### Crear subcapítulos
-
-1. Crea un nuevo capítulo normalmente
-2. En **"Atributos de página"** (panel derecho), selecciona el **capítulo padre**
-3. Ajusta el **"Orden"** para controlar la posición dentro del padre
-
 ### Ordenar capítulos
 
-El campo **"Orden"** en "Atributos de página" controla la posición:
+El campo **"Orden"** en "Atributos de página" controla la posición. Los capítulos del libro siguen esta convención:
 
-| Capítulo | Orden sugerido |
-|----------|---------------|
-| Prólogo | 0 |
-| Capítulo 1 | 10 |
-| Capítulo 2 | 20 |
-| Capítulo 3 | 30 |
-
-> 💡 Usa incrementos de 10 para dejar espacio entre capítulos por si necesitas insertar uno intermedio en el futuro.
-
-### Sistema de numeración
-
-- **Capítulos principales**: Badge dorado con texto azul (ej: `01`, `02`)
-- **Subcapítulos**: Badge blanco con texto azul (ej: `1.1`, `1.2`)
-- **Auto-numeración**: Si un subcapítulo no tiene número pero su padre sí, se genera automáticamente (padre `01` → hijos `01.1`, `01.2`...)
+| Nivel | Rango de orden | Ejemplo |
+|-------|---------------|---------|
+| Capítulos principales | 10, 20, 30... | Cap 1 → 10 |
+| Hijo primero del cap | 11, 21, 31... | Cap 1, hijo 1 → 11 |
+| Hijos sucesivos | +1 por hijo | Cap 1, hijo 2 → 12 |
 
 ---
 
 ## 9. Shortcodes disponibles
 
-### Cita editorial
+### Texto y estructura
 
 ```
-[cita_editorial author="Manolo Berenguer" source="Fundador, 1976"]
-El voleibol no es solo un deporte, es una forma de vida.
+[capitular]Primer párrafo con letra capital...[/capitular]
+
+[cita_editorial author="Juan Ruiz"]
+Texto de la cita destacada.
 [/cita_editorial]
+
+[seccion_header]Título de sección con fondo amarillo[/seccion_header]
+[seccion_header highlighted="false"]Sin fondo[/seccion_header]
+[seccion_header color="hsl(2 82% 30%)"]Con color personalizado[/seccion_header]
+[seccion_header star="true"]Con estrella decorativa[/seccion_header]
+
+[bloque_color fondo="hsl(46, 92%, 62%)" texto="#1a1a0a"]
+Contenido sobre fondo coloreado
+[/bloque_color]
+
+[resaltado]Texto con fondo amarillo inline[/resaltado]
 ```
 
-### Imagen con pie de foto
+### Imágenes
 
 ```
-[imagen_contenido src="URL_IMAGEN" alt="Descripción" caption="Pie de foto" fullwidth="true"]
+[imagen_contenido file="nombre-archivo.jpg" caption="Pie de foto"]
+[imagen_contenido file="nombre-archivo.jpg" caption="Pie de foto" fullwidth="true"]
 ```
 
-O usando la biblioteca de medios:
+### Infografía fullwidth de competiciones europeas
 
 ```
-[imagen id="123" caption="Pie de foto" fullwidth="false"]
+[competiciones_europa bg="imagen-fondo.jpg" titulo="Todas las competiciones europeas"]
+  [temp anio="1987-88" comp="Copa Confederación"]
+    [rival]Knack Roselaire (Bélgica)[/rival]
+  [/temp]
+  [temp anio="2020-21" comp="CEV Cup"]
+    [rival]Fino Kaposvar (Hungría)[/rival]
+    [nota_rival]* No se disputó por Covid.[/nota_rival]
+    [rival]Glatasaray (Turquía)[/rival]
+  [/temp]
+[/competiciones_europa]
 ```
 
-### Cabecera de capítulo (Hero)
+> ⚠️ Este shortcode genera un bloque fullwidth que rompe el contenedor padre. Funciona únicamente dentro de `single-capitulo.php` con la lógica de marcadores `<!--EURO_INFOGRAFIA_START-->`.
+
+### Perfil de jugador
 
 ```
-[hero_capitulo background="URL_FONDO" height="500px" overlay="rgba(26,35,126,0.7)" icon="star"]
-    [hero_linea color="#FFFFFF" font_weight="black"]TÍTULO[/hero_linea]
-    [hero_linea color="#D4AF37" highlight="#1a237e" font_weight="bold"]SUBTÍTULO[/hero_linea]
-[/hero_capitulo]
+[perfil_jugador nombre="Nombre Apellido" posicion="Central" temporadas="1989-1995"]
+Texto biográfico del jugador.
+[/perfil_jugador]
 ```
 
-> 📖 Para documentación completa de shortcodes, consulta el [README principal](README.md#-shortcodes-disponibles).
+### Artículo numerado (estatutos)
+
+```
+[articulo numero="1º"]Texto del artículo...[/articulo]
+```
+
+### Cronología
+
+```html
+<div class="timeline-container">
+  <div class="timeline-event">
+    <span class="timeline-year">1976</span>
+    <div class="timeline-content">Descripción del evento.</div>
+  </div>
+</div>
+```
+
+### Dos columnas
+
+```
+[dos_columnas]
+Columna izquierda
+|||
+Columna derecha
+[/dos_columnas]
+```
 
 ---
 
@@ -327,25 +365,38 @@ Los colores se definen en `assets/css/main.css`:
 
 ```css
 :root {
-    --gold: 45 100% 50%;        /* Amarillo/Dorado Guaguas */
+    --gold: 45 100% 50%;        /* Amarillo/Dorado Guaguas — #FFC400 */
     --gold-light: 45 100% 60%;
     --gold-dark: 45 100% 40%;
     --background: 220 50% 10%;  /* Azul marino de fondo */
-    --sidebar: 220 55% 8%;     /* Sidebar más oscuro */
+    --sidebar: 220 55% 8%;      /* Sidebar más oscuro */
+    --foreground: 0 0% 98%;     /* Texto principal */
 }
 ```
 
-### Cambiar la imagen del hero principal
-
-1. Sube tu imagen a **Medios → Añadir nuevo**
-2. O reemplaza `assets/images/hero-stadium.jpg` vía FTP
+Light mode: añade `class="light"` al `<body>` o actívalo desde el selector del sidebar.
 
 ### Tipografía
 
 El tema usa **Google Fonts** cargadas vía CDN:
 
-- **Montserrat** — Títulos y encabezados
-- **Inter** — Texto de cuerpo
+- **Antonio** (`--font-display`) — Años, títulos de hero, badges y elementos de display
+- **Archivo** (`--font-sans`, `--font-serif`) — Texto de cuerpo y lectura
+- **Poppins** — Exclusivamente en la página de inicio (hero de portada)
+
+### Cambiar la imagen del hero principal
+
+Reemplaza el archivo `assets/images/hero-home.jpg` (1920×1080px, JPEG q82).
+
+### Modos claro/oscuro
+
+El tema soporta ambos modos. El selector está en el sidebar. Para forzar uno en código:
+
+```php
+// En header.php, añadir clase al body:
+<body class="light">  // modo claro
+<body>                // modo oscuro (por defecto)
+```
 
 ---
 
@@ -362,41 +413,46 @@ El tema usa **Google Fonts** cargadas vía CDN:
 
 ### ❌ El sidebar no aparece en escritorio
 
-**Causa**: No se cargó el JavaScript del tema.
-
 **Solución**:
 1. Abre la consola del navegador (F12 → Console)
 2. Busca errores relacionados con `main.js`
-3. Verifica que el archivo existe en `wp-content/themes/cv-guaguas-50aniversario/assets/js/main.js`
+3. Verifica que el archivo existe en `assets/js/main.js`
 
-### ❌ Los estilos no se aplican
+### ❌ Los estilos no se aplican tras actualizar
 
 **Solución**:
 1. Limpia la caché del navegador: `Ctrl + Shift + R`
-2. Si usas un plugin de caché (WP Rocket, LiteSpeed, etc.), vacía la caché
-3. Verifica que Tailwind CDN carga correctamente (revisa la pestaña Network del navegador)
+2. Verifica que has reemplazado **toda la carpeta** del tema, no solo algunos archivos
+3. Comprueba que `assets/css/main.css` tiene la fecha de modificación correcta
+
+### ❌ La infografía de competiciones europeas no es fullwidth
+
+**Causa**: El shortcode `[competiciones_europa]` depende de la lógica de marcadores en `single-capitulo.php`.
+
+**Solución**: Asegúrate de que `single-capitulo.php` contiene el bloque de detección `<!--EURO_INFOGRAFIA_START-->`. Si reimportaste contenido, el shortcode debe estar dentro del contenido del hijo "Embajadores por Europa" del cap. 8.
+
+### ❌ Error de sintaxis PHP tras editar sample-content.php
+
+**Causa**: Comillas simples sin escapar dentro de strings PHP.
+
+**Solución**: Usar siempre comillas tipográficas Unicode (`'` `'`) en lugar de comillas rectas (`'`) dentro de atributos de shortcodes en PHP. Ejecutar el validador incluido:
+
+```bash
+python3 validate_php_strings.py
+```
 
 ### ❌ Las imágenes del contenido no cargan
 
-**Causa**: Las imágenes del tema están en `assets/images/content/`.
-
 **Solución**:
-1. Verifica que la carpeta `assets/images/content/` existe y tiene archivos
+1. Verifica que la carpeta `assets/images/` existe y tiene los archivos
 2. Comprueba permisos: `chmod -R 644 assets/images/`
-3. Si reimportaste contenido, las imágenes deben estar en la ruta del tema
-
-### ❌ El menú móvil no se abre
-
-**Solución**:
-1. Comprueba que no hay conflictos de JavaScript con otros plugins
-2. Desactiva temporalmente todos los plugins para verificar
-3. Revisa la consola del navegador en búsqueda de errores
+3. Las imágenes deben estar en `assets/images/` con el nombre exacto referenciado en el shortcode
 
 ### ❌ Error al importar contenido de ejemplo
 
 **Causa posible**: Límite de memoria PHP.
 
-**Solución**: Aumenta el límite de memoria en `wp-config.php`:
+**Solución**: Aumenta el límite en `wp-config.php`:
 
 ```php
 define('WP_MEMORY_LIMIT', '256M');
@@ -408,44 +464,23 @@ define('WP_MEMORY_LIMIT', '256M');
 
 ### Actualizar sin perder contenido
 
-Los capítulos y su contenido se guardan en la base de datos, no en archivos del tema. Para actualizar:
+Los capítulos y su contenido se guardan en la base de datos. Para actualizar:
 
 1. Descarga la nueva versión del tema
-2. Ve a **Apariencia → Temas**
-3. Desactiva el tema actual
-4. Elimínalo
-5. Sube e instala la nueva versión
-6. Actívala
+2. **Reemplaza completamente** la carpeta `cv-guaguas-50aniversario` en `wp-content/themes/`
+3. Ve a **Apariencia → Temas** y verifica que sigue activo
 
-> ✅ Todo el contenido de los capítulos se mantiene intacto.
-> ⚠️ Si personalizaste archivos CSS o PHP directamente, esos cambios se perderán. Usa un **tema hijo** para personalizaciones permanentes.
+> ✅ El contenido de los capítulos se mantiene intacto (está en la BD).
+> ⚠️ Los cambios en el contenido de `inc/sample-content.php` solo se aplican si realizas una **reimportación**.
 
-### Crear un tema hijo (recomendado para personalizaciones)
+### Cuándo reimportar
 
-```bash
-# Crear carpeta del tema hijo
-mkdir wp-content/themes/cv-guaguas-50aniversario-child
-```
+Reimporta si:
+- Se han añadido nuevos capítulos al `sample-content.php`
+- Se han corregido textos o fotos en el contenido base
+- Se ha cambiado la estructura de capítulos (padres/hijos, orden)
 
-Crear `style.css`:
-
-```css
-/*
-Theme Name: CV Guaguas 50 Aniversario - Child
-Template: cv-guaguas-50aniversario
-*/
-
-/* Tus estilos personalizados aquí */
-```
-
-Crear `functions.php`:
-
-```php
-<?php
-add_action('wp_enqueue_scripts', function() {
-    wp_enqueue_style('parent-style', get_template_directory_uri() . '/style.css');
-});
-```
+> ⚠️ La reimportación **elimina todo el contenido existente** y lo recrea desde cero.
 
 ---
 
@@ -457,14 +492,14 @@ add_action('wp_enqueue_scripts', function() {
 |--------|---------|
 | **Yoast SEO** | Optimización SEO |
 | **WP Rocket** o **LiteSpeed Cache** | Caché y rendimiento |
-| **Smush** o **ShortPixel** | Compresión de imágenes |
+| **Smush** o **ShortPixel** | Compresión de imágenes adicional |
 | **UpdraftPlus** | Copias de seguridad |
 | **Wordfence** | Seguridad y firewall |
 
 ### Optimización de rendimiento
 
 1. **Activa la caché** del servidor o usa un plugin de caché
-2. **Comprime imágenes** antes de subirlas (las del tema ya están optimizadas)
+2. Las imágenes del tema ya están optimizadas (JPEG q82, máx 1400px) pero puedes comprimirlas más con ShortPixel
 3. **Habilita GZIP/Brotli** en tu servidor web
 4. **Usa un CDN** (Cloudflare, etc.) para servir estáticos más rápido
 
@@ -476,8 +511,8 @@ Antes de cualquier cambio importante:
 # Backup de la base de datos
 wp db export backup-$(date +%Y%m%d).sql
 
-# Backup de archivos
-tar -czf wp-content-backup.tar.gz wp-content/
+# Backup de archivos del tema
+tar -czf tema-backup-$(date +%Y%m%d).tar.gz wp-content/themes/cv-guaguas-50aniversario/
 ```
 
 ---
@@ -486,14 +521,13 @@ tar -czf wp-content-backup.tar.gz wp-content/
 
 | Paso | Acción | Tiempo estimado |
 |------|--------|-----------------|
-| 1 | Preparar ZIP del tema | 2 min |
-| 2 | Subir y activar en WordPress | 2 min |
-| 3 | Regenerar enlaces permanentes | 1 min |
-| 4 | Importar contenido de ejemplo | 1 min |
-| 5 | Crear página de inicio con plantilla | 2 min |
-| 6 | Configurar como página estática | 1 min |
-| 7 | Ajustar opciones del libro | 2 min |
-| **Total** | | **~11 min** |
+| 1 | Descomprimir y reemplazar carpeta del tema | 1 min |
+| 2 | Regenerar enlaces permanentes | 1 min |
+| 3 | Importar contenido de ejemplo | 1 min |
+| 4 | Crear página de inicio con plantilla | 2 min |
+| 5 | Configurar como página estática | 1 min |
+| 6 | Configurar URLs de PDF/EPUB | 1 min |
+| **Total** | | **~7 min** |
 
 ---
 

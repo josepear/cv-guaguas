@@ -12,14 +12,14 @@ $logos = get_option('libro_footer_logos', array());
 if (empty($logos)) {
     $base = get_template_directory_uri() . '/assets/images/sponsors/';
     $logos = array(
-        array('alt' => 'Cabildo de Gran Canaria', 'src' => $base . 'cabildo-gran-canaria.png', 'url' => 'https://www.grancanaria.com'),
-        array('alt' => 'Instituto Insular de Deportes', 'src' => $base . 'instituto-insular-deportes.png', 'url' => 'https://www.grancanaria.com'),
-        array('alt' => 'Gobierno de Canarias', 'src' => $base . 'gobierno-canarias.png', 'url' => 'https://www.gobiernodecanarias.org'),
-        array('alt' => 'Islas Canarias', 'src' => $base . 'islas-canarias.png', 'url' => 'https://www.islascanarias.org'),
-        array('alt' => 'Ayuntamiento de Las Palmas de Gran Canaria', 'src' => $base . 'ayuntamiento-las-palmas.png', 'url' => 'https://www.laspalmasgc.es'),
-        array('alt' => 'Instituto Municipal de Deportes', 'src' => $base . 'instituto-municipal-deportes.png', 'url' => 'https://www.laspalmasgc.es'),
-        array('alt' => 'Turismo de Gran Canaria', 'src' => $base . 'turismo-gran-canaria.png', 'url' => 'https://www.grancanaria.com'),
-        array('alt' => 'Real Federación Española de Voleibol', 'src' => $base . 'rfevb.png', 'url' => 'https://www.rfevb.com'),
+        array('alt' => 'Cabildo de Gran Canaria', 'src' => $base . 'cabildo-gran-canaria.webp', 'url' => 'https://www.grancanaria.com'),
+        array('alt' => 'Instituto Insular de Deportes', 'src' => $base . 'instituto-insular-deportes.webp', 'url' => 'https://www.grancanaria.com'),
+        array('alt' => 'Gobierno de Canarias', 'src' => $base . 'gobierno-canarias.webp', 'url' => 'https://www.gobiernodecanarias.org'),
+        array('alt' => 'Islas Canarias', 'src' => $base . 'islas-canarias.webp', 'url' => 'https://www.islascanarias.org'),
+        array('alt' => 'Ayuntamiento de Las Palmas de Gran Canaria', 'src' => $base . 'ayuntamiento-las-palmas.webp', 'url' => 'https://www.laspalmasgc.es'),
+        array('alt' => 'Instituto Municipal de Deportes', 'src' => $base . 'instituto-municipal-deportes.webp', 'url' => 'https://www.laspalmasgc.es'),
+        array('alt' => 'Turismo de Gran Canaria', 'src' => $base . 'turismo-gran-canaria.webp', 'url' => 'https://www.grancanaria.com'),
+        array('alt' => 'Real Federación Española de Voleibol', 'src' => $base . 'rfevb.webp', 'url' => 'https://www.rfevb.com'),
     );
 }
 ?>

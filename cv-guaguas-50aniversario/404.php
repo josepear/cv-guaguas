@@ -51,7 +51,7 @@ get_header();
             <!-- Decoración -->
             <div class="mt-16 flex items-center justify-center gap-3">
                 <span class="w-12 h-px bg-gold/30"></span>
-                <img src="<?php echo LIBRO_URI; ?>/assets/images/logo-guaguas.png" 
+                <img src="<?php echo LIBRO_URI; ?>/assets/images/logo-guaguas.webp" 
                      alt="CV Guaguas" 
                      class="h-8 w-auto opacity-50">
                 <span class="w-12 h-px bg-gold/30"></span>
