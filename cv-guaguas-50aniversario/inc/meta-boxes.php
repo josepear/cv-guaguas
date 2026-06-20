@@ -38,6 +38,7 @@ function libro_capitulo_meta_box_html($post) {
     $ocultar_numero = get_post_meta($post->ID, '_ocultar_numero', true);
     $mostrar_marcador = get_post_meta($post->ID, '_mostrar_marcador', true);
     $subtitulo = get_post_meta($post->ID, '_subtitulo', true);
+    $anclas_internas = get_post_meta($post->ID, '_anclas_internas', true);
     $cita = get_post_meta($post->ID, '_cita_destacada', true);
     $autor_cita = get_post_meta($post->ID, '_autor_cita', true);
     
@@ -262,6 +263,22 @@ function libro_capitulo_meta_box_html($post) {
             style="max-width: 100%;"
         >
         <p class="description">Se mostrará debajo del título en el menú lateral, en texto pequeño y mayúsculas. Útil para cargos en prólogos.</p>
+    </div>
+
+    <div class="libro-meta-field">
+        <label for="libro_anclas_internas">Anclas internas (menú lateral)</label>
+        <textarea 
+            id="libro_anclas_internas" 
+            name="libro_anclas_internas" 
+            rows="4"
+            placeholder="Capítulo I — Constitución, fines y domicilio | capitulo-i&#10;Capítulo II — De los socios | capitulo-ii"
+            style="max-width: 100%; width: 100%; font-family: monospace; font-size: 12px;"
+        ><?php echo esc_textarea($anclas_internas); ?></textarea>
+        <p class="description">
+            Una línea por ancla, formato <code>Texto a mostrar | id-del-ancla</code>.<br>
+            El <code>id-del-ancla</code> debe coincidir con el atributo <code>id</code> usado en <code>[encabezado_seccion id="id-del-ancla"]</code> dentro del contenido.<br>
+            Si se rellena, este capítulo mostrará estas anclas en el menú lateral como si fueran subcapítulos, pero harán scroll dentro de la misma página en lugar de navegar a otra.
+        </p>
     </div>
     
     <!-- Prologue Fields -->
@@ -722,6 +739,10 @@ function libro_save_capitulo_meta($post_id) {
     // Guardar subtítulo
     if (isset($_POST['libro_subtitulo'])) {
         update_post_meta($post_id, '_subtitulo', sanitize_text_field($_POST['libro_subtitulo']));
+    }
+
+    if (isset($_POST['libro_anclas_internas'])) {
+        update_post_meta($post_id, '_anclas_internas', sanitize_textarea_field($_POST['libro_anclas_internas']));
     }
     
     // Guardar ocultar número (checkbox)

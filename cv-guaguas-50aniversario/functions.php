@@ -896,9 +896,11 @@ function libro_shortcode_seccion_header($atts, $content = null) {
         'star'        => 'false',
         'texto'       => '',   // text color override; defaults to #ffffff for dark bg, class default for no-color
         'tag'         => 'h3', // html tag: h2 or h3
+        'id'          => '',   // optional HTML id, used as anchor target for sidebar deep-links
     ), $atts, 'seccion_header');
 
     $tag = in_array($atts['tag'], array('h2', 'h3')) ? $atts['tag'] : 'h3';
+    $anchor_id = $atts['id'] ? ' id="' . esc_attr(sanitize_title($atts['id'])) . '"' : '';
 
     // Star above the header — left-aligned, estrella-icon.svg path inline, proportional to section text (1rem)
     $star_above = '';
@@ -914,22 +916,23 @@ function libro_shortcode_seccion_header($atts, $content = null) {
 
     if ($atts['highlighted'] === 'true' || $atts['highlighted'] === '1') {
         if ($atts['color'] === 'inverted') {
-            return '<div class="mt-10 mb-5" data-reveal="left">' . $star_above . '<' . $tag . ' class="section-header-highlighted section-header-inverted">' . wp_kses_post($content) . '</' . $tag . '></div>';
+            return '<div class="mt-10 mb-5"' . $anchor_id . ' data-reveal="left">' . $star_above . '<' . $tag . ' class="section-header-highlighted section-header-inverted">' . wp_kses_post($content) . '</' . $tag . '></div>';
         }
         if ($atts['color'] === 'navy') {
-            return '<div class="mt-10 mb-5" data-reveal="left">' . $star_above . '<' . $tag . ' class="section-header-highlighted section-header-navy">' . wp_kses_post($content) . '</' . $tag . '></div>';
+            return '<div class="mt-10 mb-5"' . $anchor_id . ' data-reveal="left">' . $star_above . '<' . $tag . ' class="section-header-highlighted section-header-navy">' . wp_kses_post($content) . '</' . $tag . '></div>';
         }
         $text_color = $atts['texto'] ? esc_attr($atts['texto']) : ($atts['color'] ? '#ffffff' : '');
         $style = '';
         if ($atts['color'] || $text_color) {
             $style = ' style="' . ($atts['color'] ? 'background-color:' . esc_attr($atts['color']) . ';' : '') . ($text_color ? 'color:' . $text_color . ';' : '') . '"';
         }
-        return '<div class="mt-10 mb-5" data-reveal="left">' . $star_above . '<' . $tag . ' class="section-header-highlighted"' . $style . '>' . wp_kses_post($content) . '</' . $tag . '></div>';
+        return '<div class="mt-10 mb-5"' . $anchor_id . ' data-reveal="left">' . $star_above . '<' . $tag . ' class="section-header-highlighted"' . $style . '>' . wp_kses_post($content) . '</' . $tag . '></div>';
     }
 
-    return '<' . $tag . ' class="font-serif text-xl md:text-2xl font-bold text-foreground mt-12 mb-6 uppercase tracking-wide" data-reveal="left">' . wp_kses_post($content) . '</' . $tag . '>';
+    return '<' . $tag . ' class="font-serif text-xl md:text-2xl font-bold text-foreground mt-12 mb-6 uppercase tracking-wide"' . $anchor_id . ' data-reveal="left">' . wp_kses_post($content) . '</' . $tag . '>';
 }
 add_shortcode('seccion_header', 'libro_shortcode_seccion_header');
+add_shortcode('encabezado_seccion', 'libro_shortcode_seccion_header');
 
 /**
  * Shortcode: Bloque de color — envuelve contenido en un div con fondo coloreado
@@ -1299,14 +1302,16 @@ function libro_shortcode_competiciones_europa($atts, $content = null) {
     $atts = shortcode_atts(array(
         'bg'     => '8cap_emba_compeuro_bg.jpg',
         'titulo' => '',
+        'id'     => '',
     ), $atts, 'competiciones_europa');
 
-    $bg_url  = libro_img(esc_attr($atts['bg']));
-    $inner   = do_shortcode($content);
+    $bg_url    = libro_img(esc_attr($atts['bg']));
+    $inner     = do_shortcode($content);
+    $anchor_id = $atts['id'] ? ' id="' . esc_attr(sanitize_title($atts['id'])) . '"' : '';
 
     ob_start();
     ?>
-    <div class="euro-infografia">
+    <div class="euro-infografia"<?php echo $anchor_id; ?>>
         <div class="euro-infografia__bg" style="background-image:url('<?php echo esc_url($bg_url); ?>');"></div>
         <div class="euro-infografia__overlay"></div>
         <div class="euro-infografia__inner">

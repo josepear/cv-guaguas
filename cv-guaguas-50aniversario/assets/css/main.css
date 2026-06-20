@@ -2535,7 +2535,7 @@ body.light .cv-cookie-toggle[aria-checked="true"]::after {
     display: inline-block;
     width: 100%;
     font-family: var(--font-display);
-    font-size: 1rem;
+    font-size: 1.5rem;
     font-weight: 900;
     letter-spacing: 0.12em;
     text-transform: uppercase;

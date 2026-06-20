@@ -4,6 +4,25 @@
  * IDENTICAL to React SidebarIndex.tsx
  */
 
+/**
+ * Parsea el meta '_anclas_internas' de un post.
+ * Formato: una línea por ancla, "Texto a mostrar | id-del-ancla"
+ * Devuelve array de ['texto' => ..., 'id' => ...]
+ */
+function libro_parse_anclas_internas($post_id) {
+    $raw = get_post_meta($post_id, '_anclas_internas', true);
+    $anclas = array();
+    if (empty($raw)) return $anclas;
+    foreach (preg_split('/\r\n|\r|\n/', trim($raw)) as $linea) {
+        $linea = trim($linea);
+        if ($linea === '' || strpos($linea, '|') === false) continue;
+        list($texto, $id) = array_map('trim', explode('|', $linea, 2));
+        if ($texto === '' || $id === '') continue;
+        $anclas[] = array('texto' => $texto, 'id' => sanitize_title($id));
+    }
+    return $anclas;
+}
+
 // Obtener capítulos principales (sin padre)
 $capitulos = get_posts(array(
     'post_type'      => 'capitulo',
@@ -31,9 +50,10 @@ $current_slug = is_singular('capitulo') ? get_post_field('post_name', get_the_ID
                 $numero = get_post_meta($cap->ID, '_numero_capitulo', true);
                 $ocultar_numero = get_post_meta($cap->ID, '_ocultar_numero', true) === '1';
                 $cap_slug = get_post_field('post_name', $cap->ID);
+                $cap_permalink = get_permalink($cap->ID);
                 $is_active = ($cap_slug === $current_slug);
                 
-                // Obtener subcapítulos
+                // Obtener subcapítulos reales
                 $subcapitulos = get_posts(array(
                     'post_type'      => 'capitulo',
                     'posts_per_page' => -1,
@@ -42,17 +62,24 @@ $current_slug = is_singular('capitulo') ? get_post_field('post_name', get_the_ID
                     'post_parent'    => $cap->ID,
                 ));
                 
-                $has_children = !empty($subcapitulos);
+                // Anclas internas — subcapítulos "virtuales" que hacen scroll en la misma página
+                $anclas_internas = libro_parse_anclas_internas($cap->ID);
                 
-                // Check if any child is active
+                $has_children = !empty($subcapitulos) || !empty($anclas_internas);
+                
+                // Check if any child is active (real subchapter, or subchapter holding the current anchors)
                 $has_active_child = false;
-                if ($has_children) {
+                if (!empty($subcapitulos)) {
                     foreach ($subcapitulos as $sub) {
                         if (get_post_field('post_name', $sub->ID) === $current_slug) {
                             $has_active_child = true;
                             break;
                         }
                     }
+                }
+                // Si el propio capítulo (el que tiene anclas) está activo, despliega también sus anclas
+                if (!empty($anclas_internas) && $is_active) {
+                    $has_active_child = true;
                 }
             ?>
             <li class="relative capitulo-item <?php echo $has_children ? 'has-children' : ''; ?>">
@@ -72,7 +99,7 @@ $current_slug = is_singular('capitulo') ? get_post_field('post_name', get_the_ID
                     <span class="w-6 flex-shrink-0"></span>
                     <?php endif; ?>
                     
-                    <?php if ($has_children) : ?>
+                    <?php if ($has_children && !empty($subcapitulos)) : ?>
                     <button type="button"
                        class="sidebar-parent-toggle sidebar-active-indicator flex-1 text-left py-2.5 px-3 rounded-sm transition-all duration-200 font-sans text-sm font-medium hover:bg-sidebar-accent hover:text-gold <?php echo $has_active_child ? 'text-gold/80' : 'text-sidebar-foreground'; ?>"
                        data-target="subcapitulos-<?php echo $cap->ID; ?>">
@@ -83,8 +110,20 @@ $current_slug = is_singular('capitulo') ? get_post_field('post_name', get_the_ID
                             <span><?php echo esc_html($cap->post_title); ?></span>
                         </span>
                     </button>
+                    <?php elseif ($has_children && !empty($anclas_internas)) : ?>
+                    <a href="<?php echo esc_url($cap_permalink); ?>"
+                       class="sidebar-parent-toggle sidebar-active-indicator flex-1 text-left py-2.5 px-3 rounded-sm transition-all duration-200 font-sans text-sm font-medium hover:bg-sidebar-accent hover:text-gold <?php echo $is_active ? 'active text-gold bg-sidebar-accent' : 'text-sidebar-foreground'; ?>"
+                       data-section="<?php echo esc_attr($cap_slug); ?>"
+                       data-target="subcapitulos-<?php echo $cap->ID; ?>">
+                        <span class="flex items-center gap-2.5">
+                            <?php if (strlen($numero) > 0 && !$ocultar_numero) : ?>
+                                <span class="chapter-number chapter-number--main"><?php echo esc_html($numero); ?></span>
+                            <?php endif; ?>
+                            <span class="<?php echo $is_active ? 'text-gold' : ''; ?>"><?php echo esc_html($cap->post_title); ?></span>
+                        </span>
+                    </a>
                     <?php else : ?>
-                    <a href="<?php echo get_permalink($cap->ID); ?>" 
+                    <a href="<?php echo $cap_permalink; ?>" 
                        class="sidebar-active-indicator flex-1 text-left py-2.5 px-3 rounded-sm transition-all duration-200 font-sans text-sm font-medium hover:bg-sidebar-accent hover:text-gold <?php echo $is_active ? 'active text-gold bg-sidebar-accent' : 'text-sidebar-foreground'; ?>"
                        data-section="<?php echo esc_attr($cap_slug); ?>">
                         <span class="flex items-center gap-2.5">
@@ -106,15 +145,19 @@ $current_slug = is_singular('capitulo') ? get_post_field('post_name', get_the_ID
                         $sub_is_active = ($sub_slug === $current_slug);
                         $sub_ocultar_numero = get_post_meta($sub->ID, '_ocultar_numero', true) === '1';
                         $sub_subtitulo = get_post_meta($sub->ID, '_subtitulo', true);
+                        $sub_permalink = get_permalink($sub->ID);
                         
                         // Only show number if explicitly set in meta (matching React behavior)
                         $sub_numero = '';
                         if (!$sub_ocultar_numero) {
                             $sub_numero = get_post_meta($sub->ID, '_numero_capitulo', true);
                         }
+                        
+                        // Anclas internas propias de este subcapítulo
+                        $sub_anclas_internas = libro_parse_anclas_internas($sub->ID);
                     ?>
                     <li class="subcapitulo-item">
-                        <a href="<?php echo get_permalink($sub->ID); ?>" 
+                        <a href="<?php echo $sub_permalink; ?>" 
                            class="sidebar-active-indicator block py-2.5 px-3 text-sm rounded-sm transition-all duration-200 hover:bg-sidebar-accent hover:text-gold <?php echo $sub_is_active ? 'active text-gold bg-sidebar-accent' : 'text-sidebar-foreground/80'; ?>"
                            data-section="<?php echo esc_attr($sub_slug); ?>">
                             <span class="flex items-center gap-2.5">
@@ -130,10 +173,36 @@ $current_slug = is_singular('capitulo') ? get_post_field('post_name', get_the_ID
                             </span>
                         </a>
                     </li>
+                    <?php foreach ($sub_anclas_internas as $ancla) : ?>
+                    <li class="subcapitulo-item">
+                        <a href="<?php echo esc_url($sub_permalink . '#' . $ancla['id']); ?>"
+                           class="sidebar-active-indicator sidebar-anchor-link block py-2 px-3 pl-6 text-sm rounded-sm transition-all duration-200 hover:bg-sidebar-accent hover:text-gold text-sidebar-foreground/70"
+                           data-section="<?php echo esc_attr($sub_slug); ?>"
+                           data-anchor="<?php echo esc_attr($ancla['id']); ?>">
+                            <span class="flex items-center gap-2.5">
+                                <span><?php echo esc_html($ancla['texto']); ?></span>
+                            </span>
+                        </a>
+                    </li>
+                    <?php endforeach; ?>
                     <?php 
                         $sub_index++;
                         endforeach; 
                     ?>
+                    <?php foreach ($anclas_internas as $ancla) : 
+                        $ancla_is_active = $is_active && isset($_SERVER['REQUEST_URI']) && strpos($_SERVER['REQUEST_URI'], '#' . $ancla['id']) !== false;
+                    ?>
+                    <li class="subcapitulo-item">
+                        <a href="<?php echo esc_url($cap_permalink . '#' . $ancla['id']); ?>"
+                           class="sidebar-active-indicator sidebar-anchor-link block py-2.5 px-3 text-sm rounded-sm transition-all duration-200 hover:bg-sidebar-accent hover:text-gold text-sidebar-foreground/80"
+                           data-section="<?php echo esc_attr($cap_slug); ?>"
+                           data-anchor="<?php echo esc_attr($ancla['id']); ?>">
+                            <span class="flex items-center gap-2.5">
+                                <span><?php echo esc_html($ancla['texto']); ?></span>
+                            </span>
+                        </a>
+                    </li>
+                    <?php endforeach; ?>
                 </ul>
                 <?php endif; ?>
             </li>

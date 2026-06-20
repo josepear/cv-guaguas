@@ -51,6 +51,9 @@ function libro_import_sample_content() {
             if (!empty($cap['subtitulo'])) {
                 update_post_meta($post_id, '_subtitulo', $cap['subtitulo']);
             }
+            if (!empty($cap['anclas_internas'])) {
+                update_post_meta($post_id, '_anclas_internas', $cap['anclas_internas']);
+            }
             
             // Save chapter number (strlen check: '0' is valid but empty() treats it as false)
             if (isset($cap['numero']) && strlen($cap['numero']) > 0) {
@@ -164,7 +167,7 @@ function libro_get_sample_chapters() {
             'icon_height' => 60,
             'alignment' => 'center',
             'vertical' => 'center',
-            'height' => '400px',
+            'height' => '600px',
             'title_lines' => array(libro_hero_line('PRÓLOGOS', '#D4AF37', '', 'black')),
         ),
         'content' => '
@@ -274,25 +277,24 @@ function libro_get_sample_chapters() {
             'icon_height' => 80,
             'alignment' => 'right',
             'vertical' => 'center',
-            'height' => '500px',
+            'height' => '600px',
             'title_lines' => array(libro_hero_line('DEL PATIO', '#1a237e', '#FFFFFF', 'black'), libro_hero_line('DEL COLEGIO', '#1a237e', '#FFFFFF', 'black'), libro_hero_line('A LA DIVISIÓN', '#1a237e', '#FFFFFF', 'black'), libro_hero_line('DE HONOR', '#1a237e', '#FFFFFF', 'black')),
         ),
         'content' => ''),
     array('title' => 'Del patio del colegio a la División de Honor', 'numero' => '', 'order' => 13, 'show_marker' => false, 'parent_ref' => 'cap01',
         'hero' => array(
-            'image' => libro_img('1cap_pati_foto15.jpg'),
+            'image' => libro_img('1cap_pati_hero.jpg'),
             'overlay' => 'rgba(0, 0, 0, 0.25)',
             'icon' => 'custom',
             'custom_icon' => libro_img('estrella-icon.svg'),
-            'custom_icon_color' => 'hsl(220 50% 12%)',
+            'custom_icon_color' => 'hsl(45 100% 50%)',
             'icon_width' => 40,
             'icon_height' => 40,
             'alignment' => 'center',
             'vertical' => 'center',
-            'height' => '500px',
+            'height' => '600px',
             'background_position' => 'center 30%',
-            'title_lines' => array(libro_hero_line('DEL PATIO DEL COLEGIO', '#FFFFFF', 'hsl(220 50% 12%)', 'none'), libro_hero_line('A LA DIVISIÓN DE HONOR', '#FFFFFF', 'hsl(220 50% 12%)', 'none')),
-            'border_color' => 'hsl(220 50% 12%)',
+            'title_lines' => array(libro_hero_line('DEL PATIO DEL COLEGIO', 'hsl(220 50% 12%)', 'hsl(45 100% 50%)', 'black'), libro_hero_line('A LA DIVISIÓN DE HONOR', 'hsl(220 50% 12%)', 'hsl(45 100% 50%)', 'black')),
         ),
         'content' => '
 [seccion_header]Las horas extraescolares con Francisco Rodríguez[/seccion_header]
@@ -429,15 +431,14 @@ function libro_get_sample_chapters() {
 '),
     array('title' => 'Felipe Nuez', 'numero' => '', 'order' => 14, 'show_marker' => false, 'parent_ref' => 'cap01',
         'hero' => array(
-            'image' => libro_img('1cap_pati_foto21.jpg'),
+            'image' => libro_img('1cap_felnue_hero.jpg'),
             'overlay' => 'rgba(0,0,0,0.25)',
             'icon' => 'none',
             'alignment' => 'center',
             'vertical' => 'center',
-            'height' => '500px',
+            'height' => '600px',
             'background_position' => 'center 10%',
             'title_lines' => array(libro_hero_line('FELIPE', 'hsl(220 50% 12%)', 'hsl(45 100% 50%)', 'black'), libro_hero_line('NUEZ', 'hsl(220 50% 12%)', 'hsl(45 100% 50%)', 'black'), libro_hero_line('1956–2024', 'hsl(220 50% 12%)', 'hsl(45 100% 50%)', 'black')),
-            'border_color' => 'hsl(45 100% 50%)',
         ),
         'content' => '
 [capitular]Felipe Nuez (Moya, 1956-Las Palmas de Gran Canaria, 2024) fue la figura fundamental y maestra en la vida del club. Presente desde el mismo inicio de la actividad escolar que se dedicó al voleibol con especial ahínco, llegó como profesor en prácticas al colegio Calvo Sotelo en 1973 sin saber que, junto a otros precursores, iniciaría una historia de superación y éxitos que todavía perdura y que fue, también, orgullo del deporte canario. Su pasión por la disciplina que le dio fama y prestigio vino por consejo de José Antonio Giráldez, quien fue uno de sus maestros más respetados. "Como todos los chicos de la época, empecé en el fútbol. Pero Giráldez me dijo que me veía condiciones mejores para el voleibol y le hice caso. Lo disfruté más en la faceta de entrenador, aunque hice alguna vez de árbitro y asumí otras responsabilidades. Como jugador no destacaba especialmente en nada y supe darme cuenta para volcarme en lo que siempre me gustó", indicó.[/capitular]
@@ -506,10 +507,20 @@ function libro_get_sample_chapters() {
 [imagen_contenido file="1cap_nuez_foto_plantilla88.jpg" caption="La plantilla de la temporada 1987-88 posa sobre el parqué del García San Román. De pie, de izquierda a derecha, Fidel Morales, Venancio Costa, Paco Sánchez Jover, Antonio Miralles, Jorge Ramón, Joselu, Jesús Sánchez Jover, Óscar Campos, Chinea y Felipe Nuez. Agachados, en el mismo orden, David Rodríguez, Álex, Juanma Martín, Camarero, Manolo Miralles, Borja y Felipe."]
 '),
     array('title' => 'José Miguel Santana', 'numero' => '', 'order' => 15, 'show_marker' => false, 'parent_ref' => 'cap01',
+        'hero' => array(
+            'image' => libro_img('1cap_josmisan_hero.jpg'),
+            'overlay' => 'rgba(0,0,0,0.25)',
+            'icon' => 'none',
+            'alignment' => 'center',
+            'vertical' => 'center',
+            'height' => '600px',
+            'background_position' => 'center center',
+            'title_lines' => array(libro_hero_line('JOSÉ MIGUEL', 'hsl(220 50% 12%)', 'hsl(45 100% 50%)', 'black'), libro_hero_line('SANTANA', 'hsl(220 50% 12%)', 'hsl(45 100% 50%)', 'black')),
+        ),
         'content' => '
-[imagen_contenido file="1cap_pati_foto29.jpg" caption="Almuerzo con varios compañeros de profesión periodística y con miembros del Guaguas como Felipe Nuez, entre otros."]
-
 [capitular]Descubridor de Sergio Miguel Camarero "por un tirón de orejas" ("siendo un niño me robaba los balones que caían fuera de la cancha y terminé recomendándole que se pusiera a jugar, como así haría y no le fue nada mal"), fue testigo y partícipe de un fichaje de leyenda como resultó ser Paco Sánchez Jover, a mitad de los ochenta y en un hotel del Puerto de Santa María durante un Preeuropeo ("convencí al recepcionista para estar en la habitación de al lado para que, cuando hubo que negociar, pudiese colarse por el balcón y que nadie lo viera") y actor impulsor, desde la tribuna de prensa, del fortalecimiento del proyecto justo en la etapa anterior a la gloria de los títulos. Pero antes, mucho antes, José Miguel Santana (Las Palmas de Gran Canaria, 1958) también se significó por jugar un papel activo en los inicios del Calvo Sotelo, entusiasta como siempre fue del voleibol tras pasar por las aulas del Alonso Quesada, en las que era deporte predominante y predilecto. Fichado del Santa Teresa al término de la temporada 1976-77, donde ejercía como entrenador y tras una llamada de Felipe Nuez para que se hiciera cargo del juvenil B masculino y femenino, Santana también hizo una contribución altruista y entusiasta que le procura un sitio privilegiado en la historia.[/capitular]
+
+[imagen_contenido file="1cap_pati_foto29.jpg" caption="Almuerzo con varios compañeros de profesión periodística y con miembros del Guaguas como Felipe Nuez, entre otros."]
 
 [imagen_contenido file="1cap_pati_foto27.jpg" caption="Expedición del Calvo Sotelo en uno de sus viajes en los setenta."]
 
@@ -532,10 +543,20 @@ function libro_get_sample_chapters() {
 [imagen_contenido file="1cap_pati_foto14.jpg" caption="Imagen de un partido a inicios de la década de los ochenta, con remate de Tony Vázquez."]
 '),
     array('title' => 'Florencio Tejera', 'numero' => '', 'order' => 16, 'show_marker' => false, 'parent_ref' => 'cap01',
+        'hero' => array(
+            'image' => libro_img('1cap_floteje_hero.jpg'),
+            'overlay' => 'rgba(0,0,0,0.25)',
+            'icon' => 'none',
+            'alignment' => 'center',
+            'vertical' => 'center',
+            'height' => '600px',
+            'background_position' => 'center center',
+            'title_lines' => array(libro_hero_line('FLORENCIO', 'hsl(220 50% 12%)', 'hsl(45 100% 50%)', 'black'), libro_hero_line('TEJERA', 'hsl(220 50% 12%)', 'hsl(45 100% 50%)', 'black')),
+        ),
         'content' => '
-[imagen_contenido file="1cap_pati_foto19.jpg" caption="Receso en un partido con conjura de los jóvenes jugadores del Calvo Sotelo."]
-
 [capitular]Jugador fundacional del Calvo Sotelo tras la redacción de los estatutos del club y presidente "casi por accidente" en la temporada 1983-84, el testimonio de Florencio Tejera (Las Palmas de Gran Canaria, 1956) también resulta de inestimable valor para conocer la naturaleza primigenia de la entidad en sus albores ya insertada en las exigencias de la alta competición. Porque ese Calvo Sotelo al que se enroló "para poder cumplir el cupo de dos fichas séniors junto a Alfonso Déniz" que se requería ya le impactó por "su nivel de organización, ambición y desarrollo".[/capitular]
+
+[imagen_contenido file="1cap_pati_foto19.jpg" caption="Receso en un partido con conjura de los jóvenes jugadores del Calvo Sotelo."]
 
 <p>"Yo jugaba en el equipo de Magisterio mientras hacía la carrera y Felipe Nuez me invitó a formar parte del Calvo Sotelo por mi edad, ya que entonces había sobrepasado la categoría juvenil y le venía bien para el reglamento, que obligaba a combinar juveniles con, al menos, dos fichas de mayores, aunque yo tenía 20 años. Fue una etapa en la que disfruté del deporte, del espíritu de equipo y en la que me impliqué al máximo porque, más que un equipo, era una manera de vivir".</p>
 
@@ -558,10 +579,20 @@ function libro_get_sample_chapters() {
 [cita_editorial author="Florencio Tejera"]Nadie se podía hacer a la idea de lo que acabaría siendo un Guaguas campeón que fue cogiendo el testigo de un equipo de cantera, plagado de juveniles y chicos de barrio, que llegaron a lo más alto que pudieron. Yo, evidentemente, tampoco. Pero siento que todo lo que hicimos mereció la pena. Fuimos unos locos, por decirlo de alguna manera. Soñamos, competimos, ganamos, entendimos el deporte desde el lado más humano y comprometido. Con eso me quedo.[/cita_editorial]
 '),
     array('title' => 'Tony Vázquez', 'numero' => '', 'order' => 17, 'show_marker' => false, 'parent_ref' => 'cap01',
+        'hero' => array(
+            'image' => libro_img('1cap_tonvaz_hero.jpg'),
+            'overlay' => 'rgba(0,0,0,0.25)',
+            'icon' => 'none',
+            'alignment' => 'center',
+            'vertical' => 'center',
+            'height' => '600px',
+            'background_position' => 'center center',
+            'title_lines' => array(libro_hero_line('TONY', 'hsl(220 50% 12%)', 'hsl(45 100% 50%)', 'black'), libro_hero_line('VÁZQUEZ', 'hsl(220 50% 12%)', 'hsl(45 100% 50%)', 'black')),
+        ),
         'content' => '
-[imagen_contenido file="1cap_pati_foto26.webp"]
-
 [capitular]Andaluz de nacimiento (Cádiz, 1960), pero grancanario de pleno derecho ("me trajeron con tres años y esta es mi tierra"), sobre Tony Vázquez recae el privilegio de haber sido otro de los jugadores fundacionales del Calvo Sotelo. Tras sus inicios en los Salesianos ("iba para el atletismo, pero Silvestre Cabrera me dijo que tenía la altura apropiada y me metió en el voleibol"), la creación de la selección cadete de Las Palmas, a mediados de los setenta y bajo la dirección de Felipe Nuez, fue el impulso definitivo a su posterior trayectoria como receptor ("era un 4 de toda la vida, aunque acabé jugando en todas las posiciones").[/capitular]
+
+[imagen_contenido file="1cap_pati_foto26.webp"]
 
 <p>Vázquez tiene muy nítidos aquellos momentos en los que tomó la decisión de enrolarse en las filas del equipo que marcaría su porvenir: "Después de terminar la experiencia en la selección cadete, en la que recuerdo que intervenimos en unos Campeonatos de España tras eliminar al Tenerife, el camino para aquellos jugadores era ir al Juventud o al Calvo Sotelo. Tenía muy buena relación con Felipe, había estado con él y no me costó decidir. Para nada me arrepiento porque todo lo que vendría después fueron tiempos muy felices, tanto dentro como fuera de la cancha".</p>
 
@@ -592,10 +623,20 @@ function libro_get_sample_chapters() {
 <p>Espectador en el CID de las finales gloriosas ganadas ("siempre pagando mi entrada"), asistió "emocionado" a la consagración de un club que siempre lo consideró "de cantera y por la cantera", aunque los tiempos de élite y profesionalismo "marcaran otro camino".</p>
 '),
     array('title' => 'Isidro Quintana', 'numero' => '', 'order' => 18, 'show_marker' => false, 'parent_ref' => 'cap01',
+        'hero' => array(
+            'image' => libro_img('1cap_isiquin_hero.jpg'),
+            'overlay' => 'rgba(0,0,0,0.25)',
+            'icon' => 'none',
+            'alignment' => 'center',
+            'vertical' => 'center',
+            'height' => '600px',
+            'background_position' => 'center center',
+            'title_lines' => array(libro_hero_line('ISIDRO', 'hsl(220 50% 12%)', 'hsl(45 100% 50%)', 'black'), libro_hero_line('QUINTANA', 'hsl(220 50% 12%)', 'hsl(45 100% 50%)', 'black')),
+        ),
         'content' => '
-[imagen_contenido file="1cap_iq_foto_recepcion.jpg" caption="Isidro Quintana, en labores de recepción."]
-
 [capitular]A Isidro Quintana (Las Palmas de Gran Canaria, 1957) le metieron el voleibol en su vida "por obligación", como reconoce, porque, integrado en la sección de baloncesto de la UD Las Palmas durante su adolescencia ("llegué a jugar contra Domingo Díaz, que luego ha sido lo que ha sido"), iba para pívot con su imponente estatura en plena pubertad. "Pero se me cruzó en el camino Silvestre Cabrera, que me daba clases en los Salesianos, y me dijo, medio en serio, medio en broma, que o hacía voleibol o me suspendía. Me convenció prometiéndome que me llevaría directamente a la selección júnior. Empecé y ya no lo dejé. Fue tal mi interés que me saqué la titulación nacional de entrenador con 17 o 18 años para tener una formación más amplia y poder dirigir equipos, como luego haría con el Santa Teresa, y que, con Carlos Bermúdez como presidente, alcanzó enorme relevancia", añade.[/capitular]
+
+[imagen_contenido file="1cap_iq_foto_recepcion.jpg" caption="Isidro Quintana, en labores de recepción."]
 
 <p>El caso es que, compaginando su labor de jugador, con inicio en el Juventud, con el de técnico en el conocido como Rusell Hall en honor a su patrocinio, y el de periodista, ejerciendo como informador en distintos medios de comunicación, Isidro Quintana se fue convirtiendo en toda una personalidad del voleibol isleño y con una influencia en todos los ámbitos que no paró de expandirse desde finales de los setenta hasta su reciente jubilación.</p>
 
@@ -612,10 +653,20 @@ function libro_get_sample_chapters() {
 <p>En su rol de periodista, ya finalizada su etapa como jugador en el club, ha sido testigo puntual y al detalle de todas las gestas y progresos del Calvo Sotelo, "acompañado de otros históricos de talla inigualable como Sánchez Jover, Nuez o Camarero", haya podido rescatar un proyecto que parecía ya enterrado: "Fundé un club como el Cantur y terminó desapareciendo pese a los éxitos que logró. En el Vecindario sé que Sánchez Jover se dejó un dineral de su bolsillo y acabó quemado. De ahí que la jugada de coger esta plaza, con derecho a jugar en Europa como premio añadido, haya sido otro acierto más de Juan, capaz de reinventarse de nuevo en favor de un club que es patrimonio de nuestra tierra por trayectoria, historia e importancia".</p>
 '),
     array('title' => 'Pericles', 'numero' => '', 'order' => 19, 'show_marker' => false, 'parent_ref' => 'cap01',
+        'hero' => array(
+            'image' => libro_img('1cap_pericles_hero.jpg'),
+            'overlay' => 'rgba(0,0,0,0.25)',
+            'icon' => 'none',
+            'alignment' => 'center',
+            'vertical' => 'center',
+            'height' => '600px',
+            'background_position' => 'center center',
+            'title_lines' => array(libro_hero_line('PERICLES', 'hsl(220 50% 12%)', 'hsl(45 100% 50%)', 'black')),
+        ),
         'content' => '
-[imagen_contenido file="1cap_pati_foto25.jpg"]
-
 [capitular]Un pelo abundante y la barba que le daba aires intelectuales le valieron el apodo, Pericles, con el que se incrustaría, por derecho propio, en el listado de imprescindibles del Calvo Sotelo. "Me dijeron, medio en serio medio en broma, que me parecía a Pericles. No me lo tomé mal y así me quedé", admite. Pedro Román Rosario (Las Palmas de Gran Canaria, 1958) no fue uno más. Durante muchos años capitán y guía del resto, añadió a sus grandes dotes para el voleibol ("como receptor formé con Tony Vázquez una línea fabulosa en esa función") una lección de compromiso y entrega de impresión, ya que, pese a su condición de asmático, perteneció durante largo periplo al equipo y con un rendimiento ejemplar. "Salía a la cancha con mi Ventolín para poder resistir los esfuerzos. En los tiempos muertos y descansos casi prefería el fuelle que me daba el medicamento al agua. Y alguna vez me pincharon por las asfixias que me entraban. Que se lo pregunten a Alfredo Padrón, que iba para doctor, como ejerció posteriormente, y en más de una ocasión fue mi practicante en el vestuario", rememora.[/capitular]
+
+[imagen_contenido file="1cap_pati_foto25.jpg"]
 
 <p>Así, venciendo a una patología tan severa ("hoy en día, jugar en esas condiciones sería impensable por todos los exámenes médicos que se hacen, pero en esa época no teníamos controles de este tipo, no había tanta vigilancia para preservar la salud de los miembros de los equipos"), adquirió galones y ascendente hasta situarse en un estatus que ya siempre le correspondería. De la primera época del Calvo Sotelo no hay miembro que pase por alto la influencia ejercida por Pericles y su aura de liderazgo única.</p>
 
@@ -642,10 +693,20 @@ function libro_get_sample_chapters() {
 [cita_editorial author="Pericles"]Dejaron morir injustamente un equipo que lo ha significado todo para el deporte en Canarias. Eso me produjo un disgusto enorme. Por suerte, ahora se ha recuperado la entidad, aunque preferiría que se apostara más por jóvenes de la tierra aunque eso supusiera no ganar títulos. Eso sí, hay que felicitar a Juan Ruiz por el trabajo que ha hecho para que no cayera en el olvido esta institución tan querida.[/cita_editorial]
 '),
     array('title' => 'José Millán', 'numero' => '', 'order' => 20, 'show_marker' => false, 'parent_ref' => 'cap01',
+        'hero' => array(
+            'image' => libro_img('1cap_josemillan_hero.jpg'),
+            'overlay' => 'rgba(0,0,0,0.25)',
+            'icon' => 'none',
+            'alignment' => 'center',
+            'vertical' => 'center',
+            'height' => '600px',
+            'background_position' => 'center center',
+            'title_lines' => array(libro_hero_line('JOSÉ', 'hsl(220 50% 12%)', 'hsl(45 100% 50%)', 'black'), libro_hero_line('MILLÁN', 'hsl(220 50% 12%)', 'hsl(45 100% 50%)', 'black')),
+        ),
         'content' => '
-[imagen_contenido file="1cap_pati_foto24.jpg"]
-
 [capitular]Si la figura de Silvestre Cabrera fue de trascendencia capital para auspiciar el voleibol durante su mandato como presidente de la Federación de Las Palmas (1973-1985), no es menos relevante la influencia, también de enorme impacto, de José Millán, quien en diciembre de 1976 asumió el cargo de secretario del ente presidido por Cabrera, tomó su relevo a la conclusión de su ciclo como máximo mandatario y terminó encabezando la Federación Canaria de Voleibol hasta 2008. Más de tres décadas de contribución y entrega que le hicieron tener una atalaya privilegiada de los acontecimientos, al tiempo de otorgarle un lugar preferencial en la historia de esta disciplina.[/capitular]
+
+[imagen_contenido file="1cap_pati_foto24.jpg"]
 
 <p>Millán (Sevilla, 1933-Las Palmas de Gran Canaria, 2023) fue otro de los testigos que vivió, desde los inicios hasta su desarrollo, pasando por la eclosión de los títulos, la vida del Calvo Sotelo, una entidad a la que reconoció tener "mucho cariño y respeto" por la contribución que hizo en la historia del deporte en Canarias.</p>
 
@@ -662,6 +723,16 @@ function libro_get_sample_chapters() {
 [imagen_contenido file="1cap_pati_foto23.jpg" caption="José Millán, sentado el segundo por la derecha, durante un agasajo al Guaguas en el transcurso de la temporada 1987-88 y con motivo del celebrado subcampeonato de la Copa del Rey. Millán ocupaba, entonces, la presidencia de la Federación de Voleibol de Gran Canaria."]
 '),
     array('title' => 'Miriam Quiroga', 'numero' => '', 'order' => 21, 'show_marker' => false, 'parent_ref' => 'cap01',
+        'hero' => array(
+            'image' => libro_img('1cap_mirquir_hero.jpg'),
+            'overlay' => 'rgba(0,0,0,0.25)',
+            'icon' => 'none',
+            'alignment' => 'center',
+            'vertical' => 'center',
+            'height' => '600px',
+            'background_position' => 'center center',
+            'title_lines' => array(libro_hero_line('MIRIAM', 'hsl(220 50% 12%)', 'hsl(45 100% 50%)', 'black'), libro_hero_line('QUIROGA', 'hsl(220 50% 12%)', 'hsl(45 100% 50%)', 'black')),
+        ),
         'content' => '
 [capitular]Miriam Quiroga, licenciada en Educación Física y profesora universitaria, publicó en el año 2010 el libro \'Génesis y evolución del voleibol en Gran Canaria 1934-1978\', editado por el Servicio de Publicaciones de la Universidad de Las Palmas de Gran Canaria, en el que se incluye amplia documentación escrita y gráfica del nacimiento y desarrollo del Club Voleibol Calvo Sotelo. Su testimonio es de indudable valor a la hora de analizar el surgimiento de la entidad y, a petición del autor de esta obra, además de mostrar una generosa colaboración bibliográfica, cediendo numeroso material que obraba en su poder, entre el que cabe destacar el documento original de los estatutos fundacionales que se reproduce en su integridad al final de este capítulo, accedió a responder este breve cuestionario y en el que aporta información alusiva a los primeros tiempos de la institución. Conste desde estas páginas el agradecimiento y reconocimiento de la directiva actual del Guaguas, presidida por Juan Ruiz, a su labor investigadora así como a su gesto de ayudar a este proyecto editorial.[/capitular]
 
@@ -707,8 +778,9 @@ function libro_get_sample_chapters() {
         'order' => 25,
         'show_marker' => true,
         'ref_id' => 'cap02',
+        'anclas_internas' => "Capítulo I — Constitución, fines y domicilio | capitulo-i\nCapítulo II — De los socios | capitulo-ii\nCapítulo III — Del Gobierno de la Sociedad | capitulo-iii\nCapítulo IV — De la administración de la Entidad | capitulo-iv",
         'hero' => array(
-            'image' => libro_img('2cap_esta_foto1.jpg'),
+            'image' => libro_img('2cap_hero.jpg'),
             'overlay' => 'rgba(0, 0, 0, 0.25)',
             'icon' => 'custom',
             'custom_icon' => libro_img('estrella-icon.svg'),
@@ -717,14 +789,14 @@ function libro_get_sample_chapters() {
             'icon_height' => 40,
             'alignment' => 'center',
             'vertical' => 'center',
-            'height' => '500px',
+            'height' => '600px',
             'title_lines' => array(libro_hero_line('ESTATUTOS', 'hsl(220 50% 12%)', 'hsl(45 100% 50%)', 'black'), libro_hero_line('FUNDACIONALES', 'hsl(220 50% 12%)', 'hsl(45 100% 50%)', 'black')),
             'border_color' => 'hsl(45 100% 50%)',
         ),
         'content' => '
 [encabezado_seccion]Aprobado en la Junta del día 6 de noviembre de 1976 a las 20.00 horas[/encabezado_seccion]
 
-[encabezado_seccion]Capítulo I — Constitución, fines y domicilio[/encabezado_seccion]
+[encabezado_seccion id="capitulo-i"]Capítulo I — Constitución, fines y domicilio[/encabezado_seccion]
 [articulo numero="1º"]El nombre que adoptará la nueva entidad será el de Club Voleibol Calvo Sotelo.[/articulo]
 [articulo numero="2º"]El objeto de la presente entidad es el fomento y práctica del deporte entre los asociados y, en especial, el Voleibol.[/articulo]
 [articulo numero="3º"]Podrá asimismo la presente entidad ampliar sus funciones deportivas con otras secciones secundarias, recreativas o de otros deportes, siempre que lo acuerden la junta directiva y a cuyo fin crearan aquellas secciones que, previa aprobación en Asamblea General, se estimen necesarias y que sus medios lo permitan.[/articulo]
@@ -732,7 +804,7 @@ function libro_get_sample_chapters() {
 [articulo numero="5º"]Se fija el domicilio de la entidad en Las Palmas, calle Montejurra, número 1.[/articulo]
 [articulo numero="6º"]La duración de la entidad es por tiempo indefinido.[/articulo]
 
-[encabezado_seccion]Capítulo II — De los socios[/encabezado_seccion]
+[encabezado_seccion id="capitulo-ii"]Capítulo II — De los socios[/encabezado_seccion]
 [articulo numero="7º"]La entidad Club Voleibol Calvo Sotelo se compondrá de las siguientes clases de socios: de HONOR y ACTIVOS.
 Serán de HONOR aquellos asociados que, a juicio de la directiva, previa aprobación de la asamblea general extraordinaria de socios, merezcan tal distinción por su labor en pro de la entidad o del deporte en general, los cuales estarán exentos del pago de la cuota.
 Tendrán los mismos derechos que los socios activos si proceden de la categoría de activos.
@@ -769,7 +841,7 @@ a) Formar parte de la junta directiva cuando reúnan los requisitos señalados e
 b) Intervenir con voz y voto en las asambleas, según los artículos y las disposiciones de la Federación Española.
 c) Examinar las liquidaciones y balances de la entidad.[/articulo]
 
-[encabezado_seccion]Capítulo III — Del Gobierno de la Sociedad[/encabezado_seccion]
+[encabezado_seccion id="capitulo-iii"]Capítulo III — Del Gobierno de la Sociedad[/encabezado_seccion]
 <p class="text-sm text-muted-foreground italic mb-4">(Sección 1ª: Junta Directiva)</p>
 [articulo numero="20º"]La entidad estará dirigida, regida y administrada de conformidad con los presentes estatutos por la junta directiva.[/articulo]
 [articulo numero="21º"]La junta directiva se compondrá: presidente, uno o dos vicepresidentes, secretario, tesorero contador y el número de vocales que se estime conveniente.[/articulo]
@@ -802,7 +874,7 @@ c) Examinar las liquidaciones y balances de la entidad.[/articulo]
 [articulo numero="42º"]La asamblea por mayoría de votos sobre la elección del presidente y miembros de la directiva y de conformidad con las disposiciones vigentes de la D. N. de Educación Física y Deportes.[/articulo]
 [articulo numero="43º"]Si se produjera la dimisión o cese total de presidente o directiva, esta no podrá abandonar sus funciones bajo pena de inhabilitación de sus miembros mientras no se haya procedido a la elección de otra nueva y, a este fin, convocará inmediatamente la asamblea general extraordinaria.[/articulo]
 
-[encabezado_seccion]Capítulo IV — De la administración de la Entidad[/encabezado_seccion]
+[encabezado_seccion id="capitulo-iv"]Capítulo IV — De la administración de la Entidad[/encabezado_seccion]
 [articulo numero="44º"]De conformidad con los artículos 27 y 28 de los presentes estatutos, llevarán la administración y contabilidad de la entidad el tesorero y contador con las facultades en dichos artículos expresadas y sujetas a los artículos 24 y 25.[/articulo]
 [articulo numero="45º"]La entidad dará cuenta a sus socios, una vez al año por lo menos, en una memoria presentada a la asamblea general ordinaria, de su gestión deportiva y económica y de sus proyectos para el futuro.[/articulo]
 '),
@@ -827,7 +899,7 @@ c) Examinar las liquidaciones y balances de la entidad.[/articulo]
             'icon_height' => 40,
             'alignment' => 'center',
             'vertical' => 'center',
-            'height' => '500px',
+            'height' => '600px',
             'title_lines' => array(libro_hero_line('ASÍ SE FORJÓ', '#FFFFFF', 'hsl(2 82% 30%)', 'none'), libro_hero_line('UNA LEYENDA', '#FFFFFF', 'hsl(2 82% 30%)', 'none')),
             'border_color' => '',
         ),
@@ -946,7 +1018,7 @@ c) Examinar las liquidaciones y balances de la entidad.[/articulo]
         'show_marker' => true,
         'ref_id' => 'cap04',
         'hero' => array(
-            'image' => libro_img('hero-volleyball-match.jpg'),
+            'image' => libro_img('4cap_hero.jpg'),
             'overlay' => 'rgba(26, 35, 126, 0.85)',
             'icon' => 'custom',
             'custom_icon' => $star,
@@ -954,11 +1026,12 @@ c) Examinar las liquidaciones y balances de la entidad.[/articulo]
             'icon_height' => 60,
             'alignment' => 'center',
             'vertical' => 'center',
-            'height' => '450px',
+            'height' => '600px',
             'title_lines' => array(libro_hero_line('EL PROYECTO', '#D4AF37', '', 'black'), libro_hero_line('VISIONARIO', '#FFFFFF', '', 'black'), libro_hero_line('DE JUAN RUIZ', '#D4AF37', '', 'black')),
         ),
         'content' => ''),
     array('title' => 'El proyecto visionario de Juan Ruiz', 'numero' => '', 'order' => 37, 'show_marker' => false, 'parent_ref' => 'cap04',
+        'anclas_internas' => "La génesis de su proyecto en cronología | genesis-cronologia",
         'hero' => array(
             'image' => libro_img('4cap_proy_hero.jpg'),
             'background_color' => '#000000',
@@ -970,9 +1043,8 @@ c) Examinar las liquidaciones y balances de la entidad.[/articulo]
             'icon_height' => 40,
             'alignment' => 'center',
             'vertical' => 'center',
-            'height' => '500px',
+            'height' => '600px',
             'title_lines' => array(libro_hero_line('EL PROYECTO VISIONARIO', 'hsl(0, 0%, 0%)', 'hsl(201, 16%, 77%)', 'none'), libro_hero_line('DE JUAN RUIZ', 'hsl(0, 0%, 0%)', 'hsl(201, 16%, 77%)', 'none')),
-            'border_color' => '#000000',
         ),
         'content' => '
 [imagen_contenido file="4cap_proy_juanruiz_color.jpg" caption="Juan Ruiz, el presidente visionario que construyó el proyecto ganador del Guaguas."]
@@ -1061,9 +1133,9 @@ c) Examinar las liquidaciones y balances de la entidad.[/articulo]
 [cita_editorial author="Juan Ruiz"]No dudo de que ese momento llegará porque nos lo deben. Cuando llegamos a la Final Four dije que Dios me debía eso, poder disputar una fase final de un título europeo. Sigo diciendo que Dios me debe un título europeo y creo que va a llegar.[/cita_editorial]
 
 <p>Más allá de su legado en las vitrinas, en la adquisición de leyendas y en el periplo internacional que siempre le dio a sus proyectos ("como embajadores de Canarias por toda Europa") como componentes de un ciclo dorado, Juan Ruiz aspira a que se le recuerde como alguien "que no vino al deporte a servirse, sino a servir, y con la idea de hacer feliz a la gente". Tan sencillo y tan complejo a la vez.</p>
-'),
-    array('title' => 'La génesis de su proyecto en cronología', 'numero' => '', 'order' => 38, 'show_marker' => false, 'parent_ref' => 'cap04',
-        'content' => '
+
+[seccion_header id="genesis-cronologia" color="inverted"]La génesis de su proyecto en cronología[/seccion_header]
+
 <div class="timeline-container">
 <div class="timeline-event"><span class="timeline-year">1987</span><div class="timeline-content"><strong>Patrocinios y fichas estelares</strong>“Estamos en una nube con muchos cimientos. Aquí hay un club con cantera, con una estructura deportiva muy sólida basada en excelentes técnicos, y hay también unas buenas razones económicas que se gestan con una administración del club que considero muy responsables. Felipe Nuez me facilitó a principios de temporada una lista de jugadores para hacer al equipo campeón de Liga. Hemos traído quizá a los mejores”. <em>(La Provincia, 17 de julio de 1987)</em>.</div></div>
 <div class="timeline-event"><span class="timeline-year">1989</span><div class="timeline-content"><strong>El primer título como estímulo</strong>“Este es el triunfo del trabajo y del esfuerzo de muchos años, comenzado por otros, como José Luzardo, Antonio Trejo o Felipe Nuez, y rematado por nosotros y por nuestra afición. Es el triunfo de todos y un gran día para el voleibol canario”. <em>(Diario de Las Palmas, 10 de abril de 1989)</em>.</div></div>
@@ -1115,7 +1187,7 @@ c) Examinar las liquidaciones y balances de la entidad.[/articulo]
             'icon_height' => 80,
             'alignment' => 'center',
             'vertical' => 'center',
-            'height' => '500px',
+            'height' => '600px',
             'title_lines' => array(libro_hero_line('ICONOS Y', '#1a237e', '#FFFFFF', 'black'), libro_hero_line('ESTRELLAS', '#1a237e', '#FFFFFF', 'black'), libro_hero_line('DEL GUAGUAS', '#1a237e', '#FFFFFF', 'black')),
         ),
         'content' => ''),
@@ -1130,7 +1202,7 @@ c) Examinar las liquidaciones y balances de la entidad.[/articulo]
             'icon_height' => 80,
             'alignment' => 'center',
             'vertical' => 'center',
-            'height' => '500px',
+            'height' => '600px',
             'background_position' => 'center bottom',
             'title_lines' => array(libro_hero_line('SERGIO MIGUEL', '#FFFFFF', 'hsl(204, 13%, 55%)', 'none'), libro_hero_line('CAMARERO', '#FFFFFF', 'hsl(204, 13%, 55%)', 'none')),
         ),
@@ -1218,7 +1290,7 @@ c) Examinar las liquidaciones y balances de la entidad.[/articulo]
             'icon_height' => 80,
             'alignment' => 'center',
             'vertical' => 'center',
-            'height' => '500px',
+            'height' => '600px',
             'background_position' => 'center 30%',
             'title_lines' => array(libro_hero_line('PACO SÁNCHEZ', '#000000', '#d69745', 'none'), libro_hero_line('JOVER', '#000000', '#d69745', 'none')),
         ),
@@ -1308,7 +1380,7 @@ c) Examinar las liquidaciones y balances de la entidad.[/articulo]
             'icon_height' => 80,
             'alignment' => 'center',
             'vertical' => 'center',
-            'height' => '500px',
+            'height' => '600px',
             'background_position' => 'center 10%',
             'title_lines' => array(libro_hero_line('WACLAW', '#000000', '#f6ae50', 'none'), libro_hero_line('GOLEC', '#000000', '#f6ae50', 'none')),
         ),
@@ -1374,8 +1446,8 @@ Otros en mi lugar lo mismo sí hubiesen dado un paso a otro sitio porque las ofe
             'icon_height' => 80,
             'alignment' => 'center',
             'vertical' => 'center',
-            'height' => '500px',
-            'background_position' => 'center 35%',
+            'height' => '600px',
+            'background_position' => 'center center',
             'title_lines' => array(libro_hero_line('IRENEUSZ', '#000000', '#f3ab4f', 'none'), libro_hero_line('KLOS', '#000000', '#f3ab4f', 'none')),
         ),
         'content' => '
@@ -1450,7 +1522,7 @@ Otros en mi lugar lo mismo sí hubiesen dado un paso a otro sitio porque las ofe
             'icon_height' => 40,
             'alignment' => 'center',
             'vertical' => 'center',
-            'height' => '500px',
+            'height' => '600px',
             'title_lines' => array(libro_hero_line('TRIBUTO A LOS SALESIANOS', '#FFFFFF', 'hsl(204, 13%, 55%)', 'none'), libro_hero_line('IGNACIO BRITO', '#FFFFFF', 'hsl(204, 13%, 55%)', 'none')),
         ),
         'content' => '[bloque_color fondo="hsl(46, 92%, 62%)" texto="#1a1a0a"]
@@ -1511,10 +1583,9 @@ Otros en mi lugar lo mismo sí hubiesen dado un paso a otro sitio porque las ofe
             'icon_height' => 40,
             'alignment' => 'center',
             'vertical' => 'center',
-            'height' => '500px',
+            'height' => '600px',
             'background_position' => 'center 20%',
             'title_lines' => array(libro_hero_line('MAREK', 'hsl(220 50% 12%)', 'hsl(45 100% 50%)', 'black'), libro_hero_line('AYER, HOY', 'hsl(220 50% 12%)', 'hsl(45 100% 50%)', 'black'), libro_hero_line('Y SIEMPRE', 'hsl(220 50% 12%)', 'hsl(45 100% 50%)', 'black')),
-            'border_color' => 'hsl(45 100% 50%)',
         ),
         'content' => '
 [capitular]Ayer, hoy y siempre. No hay otra manera de referenciar el significado de la figura de Marek Szczesnowicz (Gdansk, Polonia, 1957), historia viva del club por una pertenencia que data de finales de la década de los ochenta y que sigue vigente. Team mánager del equipo ("hice y hago todo lo que sea necesario con tal de ayudar al club"), es testimonio obligado a la hora de celebrar el cincuentenario de la institución por el bagaje que personifica. "El Guaguas ha sido mi vida, mi familia. Ha trascendido lo meramente deportivo porque los años que he dedicado al equipo así lo reflejan. Entré casi de casualidad y, sin saberlo, ahí se inició una historia de la que me siento muy orgulloso", significa.[/capitular]
@@ -1567,11 +1638,12 @@ Otros en mi lugar lo mismo sí hubiesen dado un paso a otro sitio porque las ofe
             'icon_height' => 40,
             'alignment' => 'center',
             'vertical' => 'center',
-            'height' => '500px',
+            'height' => '600px',
             'title_lines' => array(libro_hero_line('EMBAJADORES', 'hsl(0, 0%, 0%)', 'hsl(201, 16%, 77%)', 'none'), libro_hero_line('POR EUROPA', 'hsl(0, 0%, 0%)', 'hsl(201, 16%, 77%)', 'none')),
         ),
         'content' => ''),
     array('title' => 'Embajadores por Europa', 'numero' => '', 'order' => 60, 'show_marker' => false, 'parent_ref' => 'cap08',
+        'anclas_internas' => "Todas las competiciones europeas | todas-competiciones-europeas",
         'hero' => array(
             'image' => libro_img('8cap_emba_hero.jpg'),
             'background_color' => 'hsl(220, 30%, 8%)',
@@ -1584,7 +1656,7 @@ Otros en mi lugar lo mismo sí hubiesen dado un paso a otro sitio porque las ofe
             'icon_height' => 40,
             'alignment' => 'center',
             'vertical' => 'center',
-            'height' => '500px',
+            'height' => '600px',
             'title_lines' => array(libro_hero_line('EMBAJADORES', 'hsl(0, 0%, 0%)', 'hsl(201, 16%, 77%)', 'none'), libro_hero_line('POR EUROPA', 'hsl(0, 0%, 0%)', 'hsl(201, 16%, 77%)', 'none')),
         ),
         'content' => '
@@ -1606,7 +1678,7 @@ Otros en mi lugar lo mismo sí hubiesen dado un paso a otro sitio porque las ofe
 
 <p>Así, el binomio Guaguas-Europa ya es un clásico en el calendario, con una relación ininterrumpida de trece años (1987-2000), y que ofrece el recorrido con los oponentes que a continuación se detalla.</p>
 
-[competiciones_europa bg="8cap_emba_compeuro_bg.jpg" titulo="Todas las competiciones europeas"]
+[competiciones_europa bg="8cap_emba_compeuro_bg.jpg" titulo="Todas las competiciones europeas" id="todas-competiciones-europeas"]
 
 [temp anio="1987-88" comp="Copa Confederación"][rival]Knack Roselaire (Bélgica)[/rival][/temp]
 
@@ -1673,7 +1745,7 @@ Otros en mi lugar lo mismo sí hubiesen dado un paso a otro sitio porque las ofe
             'icon_height' => 40,
             'alignment' => 'center',
             'vertical' => 'center',
-            'height' => '500px',
+            'height' => '600px',
             'title_lines' => array(libro_hero_line('MANUEL PALACIO', 'hsl(0, 0%, 0%)', 'hsl(201, 16%, 77%)', 'none')),
         ),
         'content' => '
@@ -1712,7 +1784,7 @@ Otros en mi lugar lo mismo sí hubiesen dado un paso a otro sitio porque las ofe
             'icon_height' => 40,
             'alignment' => 'center',
             'vertical' => 'center',
-            'height' => '500px',
+            'height' => '600px',
             'title_lines' => array(libro_hero_line('ANTONIO BENÍTEZ', 'hsl(0, 0%, 0%)', 'hsl(201, 16%, 77%)', 'none')),
         ),
         'content' => '
@@ -1742,7 +1814,7 @@ Otros en mi lugar lo mismo sí hubiesen dado un paso a otro sitio porque las ofe
         'hero' => array(
             'image' => libro_img('8cap_joramon_hero.jpg'),
             'background_color' => 'hsl(220, 30%, 8%)',
-            'background_position' => 'center center',
+            'background_position' => 'bottom center',
             'overlay' => 'rgba(0, 0, 0, 0.35)',
             'icon' => 'custom',
             'custom_icon' => libro_img('estrella-icon.svg'),
@@ -1751,7 +1823,7 @@ Otros en mi lugar lo mismo sí hubiesen dado un paso a otro sitio porque las ofe
             'icon_height' => 40,
             'alignment' => 'center',
             'vertical' => 'center',
-            'height' => '500px',
+            'height' => '600px',
             'title_lines' => array(libro_hero_line('JORGE RAMÓN', 'hsl(0, 0%, 0%)', 'hsl(201, 16%, 77%)', 'none')),
         ),
         'content' => '
@@ -1773,7 +1845,7 @@ Otros en mi lugar lo mismo sí hubiesen dado un paso a otro sitio porque las ofe
         'hero' => array(
             'image' => libro_img('8cap_juanmart_hero.jpg'),
             'background_color' => 'hsl(220, 30%, 8%)',
-            'background_position' => 'center center',
+            'background_position' => 'bottom center',
             'overlay' => 'rgba(0, 0, 0, 0.35)',
             'icon' => 'custom',
             'custom_icon' => libro_img('estrella-icon.svg'),
@@ -1782,7 +1854,7 @@ Otros en mi lugar lo mismo sí hubiesen dado un paso a otro sitio porque las ofe
             'icon_height' => 40,
             'alignment' => 'center',
             'vertical' => 'center',
-            'height' => '500px',
+            'height' => '600px',
             'title_lines' => array(libro_hero_line('JUANMA MARTÍN', 'hsl(0, 0%, 0%)', 'hsl(201, 16%, 77%)', 'none')),
         ),
         'content' => '
@@ -1819,7 +1891,7 @@ Otros en mi lugar lo mismo sí hubiesen dado un paso a otro sitio porque las ofe
             'icon_height' => 40,
             'alignment' => 'center',
             'vertical' => 'center',
-            'height' => '500px',
+            'height' => '600px',
             'title_lines' => array(libro_hero_line('ÓSCAR CAMPOS', 'hsl(0, 0%, 0%)', 'hsl(201, 16%, 77%)', 'none')),
         ),
         'content' => '
@@ -1846,7 +1918,7 @@ Otros en mi lugar lo mismo sí hubiesen dado un paso a otro sitio porque las ofe
             'icon_height' => 40,
             'alignment' => 'center',
             'vertical' => 'center',
-            'height' => '500px',
+            'height' => '600px',
             'title_lines' => array(libro_hero_line('VENANCIO COSTA', 'hsl(0, 0%, 0%)', 'hsl(201, 16%, 77%)', 'none')),
         ),
         'content' => '
@@ -1887,7 +1959,7 @@ Otros en mi lugar lo mismo sí hubiesen dado un paso a otro sitio porque las ofe
             'icon_height' => 40,
             'alignment' => 'center',
             'vertical' => 'center',
-            'height' => '500px',
+            'height' => '600px',
             'title_lines' => array(libro_hero_line('ANTONIO MIRALLES', 'hsl(0, 0%, 0%)', 'hsl(201, 16%, 77%)', 'none')),
         ),
         'content' => '
@@ -1924,7 +1996,7 @@ Otros en mi lugar lo mismo sí hubiesen dado un paso a otro sitio porque las ofe
             'icon_height' => 40,
             'alignment' => 'center',
             'vertical' => 'center',
-            'height' => '500px',
+            'height' => '600px',
             'title_lines' => array(libro_hero_line('CHAVA GONZÁLEZ', 'hsl(0, 0%, 0%)', 'hsl(201, 16%, 77%)', 'none')),
         ),
         'content' => '
@@ -1959,7 +2031,7 @@ Otros en mi lugar lo mismo sí hubiesen dado un paso a otro sitio porque las ofe
             'icon_height' => 40,
             'alignment' => 'center',
             'vertical' => 'center',
-            'height' => '500px',
+            'height' => '600px',
             'title_lines' => array(libro_hero_line('SANDEEP SHARMA', 'hsl(0, 0%, 0%)', 'hsl(201, 16%, 77%)', 'none')),
         ),
         'content' => '
@@ -1983,7 +2055,7 @@ Otros en mi lugar lo mismo sí hubiesen dado un paso a otro sitio porque las ofe
         'hero' => array(
             'image' => libro_img('8cap_cardo_hero.jpg'),
             'background_color' => 'hsl(220, 30%, 8%)',
-            'background_position' => 'center center',
+            'background_position' => 'top center',
             'overlay' => 'rgba(0, 0, 0, 0.35)',
             'icon' => 'custom',
             'custom_icon' => libro_img('estrella-icon.svg'),
@@ -1992,7 +2064,7 @@ Otros en mi lugar lo mismo sí hubiesen dado un paso a otro sitio porque las ofe
             'icon_height' => 40,
             'alignment' => 'center',
             'vertical' => 'center',
-            'height' => '500px',
+            'height' => '600px',
             'title_lines' => array(libro_hero_line('JUAN JOSÉ CARDONA', 'hsl(0, 0%, 0%)', 'hsl(201, 16%, 77%)', 'none')),
         ),
         'content' => '
@@ -2027,19 +2099,19 @@ Otros en mi lugar lo mismo sí hubiesen dado un paso a otro sitio porque las ofe
             'icon_height' => 60,
             'alignment' => 'left',
             'vertical' => 'center',
-            'height' => '480px',
+            'height' => '600px',
             'title_lines' => array(libro_hero_line('EL RELEVO', '#1a237e', '#FFFFFF', 'black'), libro_hero_line('GENERACIONAL', '#1a237e', '#FFFFFF', 'black')),
         ),
         'content' => ''),
     array('title' => 'El relevo generacional', 'numero' => '', 'order' => 75, 'show_marker' => false, 'parent_ref' => 'cap09',
         'hero' => array(
-            'image' => libro_img('9cap_relevo_hero.png'),
+            'image' => libro_img('9cap_relevo_hero.jpg'),
             'overlay' => 'rgba(0, 0, 0, 0.25)',
             'icon' => 'none',
             'alignment' => 'center',
             'vertical' => 'bottom',
-            'height' => '500px',
-            'title_lines' => array(libro_hero_line('EL RELEVO', 'hsl(20, 23%, 95%)', 'hsl(0, 0%, 0%)', 'none'), libro_hero_line('GENERACIONAL', 'hsl(20, 23%, 95%)', 'hsl(0, 0%, 0%)', 'none')),
+            'height' => '600px',
+            'title_lines' => array(libro_hero_line('EL RELEVO', 'hsl(220 50% 12%)', 'hsl(45 100% 50%)', 'black'), libro_hero_line('GENERACIONAL', 'hsl(220 50% 12%)', 'hsl(45 100% 50%)', 'black')),
         ),
         'content' => '
 [capitular]La leyenda del Guaguas campeón, cuya hegemonía nacional fue absoluta a inicios de los noventa, se cimentó en un grupo de jugadores de base estable y a la que se fueron añadiendo refuerzos seleccionados, tanto del panorama español como de la pasarela internacional, que no hicieron más que mejorar el nivel de un grupo ya de por sí de una regularidad asombrosa e impermeable a la feroz competencia de otros clubes con mayor presupuesto. El sexteto titular, sujeto a mínimos cambios, era recitado de memoria por aficionados y adversarios, toda vez que figuras como Golec, Camarero, Sánchez Jover o Venancio Costa, entre otros, tuvieron una larga vigencia en la defensa de la camiseta y conformaron un núcleo duro, con una coordinación y automatismos que depararon infinidad de partidos para el recuerdo y con el premio añadido de títulos y prestigio.[/capitular]
@@ -2065,7 +2137,7 @@ Otros en mi lugar lo mismo sí hubiesen dado un paso a otro sitio porque las ofe
             'icon_height' => 40,
             'alignment' => 'center',
             'vertical' => 'center',
-            'height' => '500px',
+            'height' => '600px',
             'title_lines' => array(libro_hero_line('ALEXIS VALIDO', 'hsl(0, 0%, 0%)', 'hsl(201, 16%, 77%)', 'none')),
         ),
         'content' => '
@@ -2090,7 +2162,7 @@ Otros en mi lugar lo mismo sí hubiesen dado un paso a otro sitio porque las ofe
             'icon_height' => 40,
             'alignment' => 'center',
             'vertical' => 'center',
-            'height' => '500px',
+            'height' => '600px',
             'title_lines' => array(libro_hero_line('ANTONIO SÁNCHEZ', 'hsl(0, 0%, 0%)', 'hsl(201, 16%, 77%)', 'none')),
         ),
         'content' => '
@@ -2127,7 +2199,7 @@ Otros en mi lugar lo mismo sí hubiesen dado un paso a otro sitio porque las ofe
             'icon_height' => 40,
             'alignment' => 'center',
             'vertical' => 'center',
-            'height' => '500px',
+            'height' => '600px',
             'title_lines' => array(libro_hero_line('DANIEL CASTAÑEDA', 'hsl(0, 0%, 0%)', 'hsl(201, 16%, 77%)', 'none')),
         ),
         'content' => '
@@ -2158,7 +2230,7 @@ Otros en mi lugar lo mismo sí hubiesen dado un paso a otro sitio porque las ofe
             'icon_height' => 40,
             'alignment' => 'center',
             'vertical' => 'center',
-            'height' => '500px',
+            'height' => '600px',
             'title_lines' => array(libro_hero_line('JUAN CARLOS VEGA', 'hsl(0, 0%, 0%)', 'hsl(201, 16%, 77%)', 'none')),
         ),
         'content' => '
@@ -2174,7 +2246,7 @@ Otros en mi lugar lo mismo sí hubiesen dado un paso a otro sitio porque las ofe
         'hero' => array(
             'image' => libro_img('9cap_hermcabre_hero.jpg'),
             'background_color' => 'hsl(220, 30%, 8%)',
-            'background_position' => 'center center',
+            'background_position' => 'top center',
             'overlay' => 'rgba(0, 0, 0, 0.35)',
             'icon' => 'custom',
             'custom_icon' => libro_img('estrella-icon.svg'),
@@ -2183,7 +2255,7 @@ Otros en mi lugar lo mismo sí hubiesen dado un paso a otro sitio porque las ofe
             'icon_height' => 40,
             'alignment' => 'center',
             'vertical' => 'center',
-            'height' => '500px',
+            'height' => '600px',
             'title_lines' => array(libro_hero_line('HERMANOS CABRERA', 'hsl(0, 0%, 0%)', 'hsl(201, 16%, 77%)', 'none')),
         ),
         'content' => '
@@ -2220,7 +2292,7 @@ Otros en mi lugar lo mismo sí hubiesen dado un paso a otro sitio porque las ofe
             'icon_height' => 40,
             'alignment' => 'center',
             'vertical' => 'center',
-            'height' => '500px',
+            'height' => '600px',
             'title_lines' => array(libro_hero_line('NÍCHEL GÓMEZ', 'hsl(0, 0%, 0%)', 'hsl(201, 16%, 77%)', 'none')),
         ),
         'content' => '
@@ -2247,7 +2319,7 @@ Otros en mi lugar lo mismo sí hubiesen dado un paso a otro sitio porque las ofe
             'icon_height' => 40,
             'alignment' => 'center',
             'vertical' => 'center',
-            'height' => '500px',
+            'height' => '600px',
             'title_lines' => array(libro_hero_line('RAÚL DÁVILA', 'hsl(0, 0%, 0%)', 'hsl(201, 16%, 77%)', 'none')),
         ),
         'content' => '
@@ -2288,7 +2360,7 @@ Otros en mi lugar lo mismo sí hubiesen dado un paso a otro sitio porque las ofe
             'icon_height' => 50,
             'alignment' => 'center',
             'vertical' => 'center',
-            'height' => '500px',
+            'height' => '600px',
             'title_lines' => array(libro_hero_line('UNA TRANSICIÓN', 'hsl(220 50% 12%)', 'hsl(14, 16%, 69%)', 'none'), libro_hero_line('DOLOROSA', 'hsl(220 50% 12%)', 'hsl(14, 16%, 69%)', 'none')),
         ),
         'content' => ''),
@@ -2303,7 +2375,7 @@ Otros en mi lugar lo mismo sí hubiesen dado un paso a otro sitio porque las ofe
             'icon_height' => 40,
             'alignment' => 'center',
             'vertical' => 'center',
-            'height' => '500px',
+            'height' => '600px',
             'title_lines' => array(libro_hero_line('UNA TRANSICIÓN', 'hsl(220 50% 12%)', 'hsl(14, 16%, 69%)', 'none'), libro_hero_line('DOLOROSA', 'hsl(220 50% 12%)', 'hsl(14, 16%, 69%)', 'none')),
         ),
         'content' => '
@@ -2406,9 +2478,17 @@ Otros en mi lugar lo mismo sí hubiesen dado un paso a otro sitio porque las ofe
 </div>
 '),
     array('title' => 'David Rodríguez', 'numero' => '', 'order' => 91, 'show_marker' => false, 'parent_ref' => 'cap10',
+        'hero' => array(
+            'image' => libro_img('10cap_davrod_hero.jpg'),
+            'overlay' => 'rgba(0,0,0,0.25)',
+            'icon' => 'none',
+            'alignment' => 'center',
+            'vertical' => 'center',
+            'height' => '600px',
+            'background_position' => 'center center',
+            'title_lines' => array(libro_hero_line('DAVID', 'hsl(220 50% 12%)', 'hsl(45 100% 50%)', 'black'), libro_hero_line('RODRÍGUEZ', 'hsl(220 50% 12%)', 'hsl(45 100% 50%)', 'black')),
+        ),
         'content' => '
-[imagen_contenido file="10cap_tran_foto6.jpg"]
-
 [capitular]Jugador, preparador físico, coordinador de cantera, segundo entrenador, técnico y presidente. David Rodríguez (Las Palmas de Gran Canaria, 1968) ha dedicado 25 años al Calvo Sotelo en todos los cargos posibles dentro y fuera de la pista, lo que le convierte en un caso único y de obligada referencia en el repaso vital de una entidad que considera "parte fundamental de su vida", dado el largo recorrido que tuvo en la misma así como la disparidad de momentos que, según la época, le tocó vivir en carne propia. "Jugué en un equipo irrepetible, allí me hice hombre, tuve compañeros maravillosos, disfruté en la pista, gané títulos, sentí el cariño de una afición increíble, y adquirí un prestigio como entrenador que me terminó llevando nada más y nada menos que a la selección española. A nivel deportivo, todo fue lo máximo. Pero, por desgracia, a mi vuelta al club, desde la temporada 2000-01, la situación pasó de mala a insostenible, en nada parecido a lo que me tocó vivir anteriormente, hasta el punto de que terminé asumiendo la presidencia para firmar la liquidación del club por la deuda que se tenía y sin solución alguna a la vista. Fue algo que me dolió en el alma pero que tuve que hacer en un gesto de responsabilidad", aclara.[/capitular]
 
 <p>Educado en el Claret ("y en la primera promoción en la que entrenaban juntos chicos y chicas"), muy pronto sintió David la llamada del voleibol ("como era el más grande, jugaba de central") y, entre entrenamientos en la cancha descubierta de Las Alcaravaneras ("un compañero mío jugaba en el Calvo Sotelo B y me animó a que me ejercitara con ellos") y su perfecta integración a ese grupo para perfeccionar sus habilidades, un día recibió la llamada de Felipe Nuez, incansable captador de talentos y que le invitó a que formara parte del club. Era el inicio de su historia defendiendo una camiseta que lleva "en el corazón".</p>
@@ -2438,9 +2518,17 @@ Otros en mi lugar lo mismo sí hubiesen dado un paso a otro sitio porque las ofe
 <p>El renacer de la entidad con el regreso de viejos conocidos de su primera etapa como Camarero, Juan Ruiz, Felipe Nuez o Sánchez Jover le parece "una magnífica noticia" y más por la ilusión que están generando con sus títulos y nueva trayectoria exitosa.</p>
 '),
     array('title' => 'Joel Sotelo', 'numero' => '', 'order' => 92, 'show_marker' => false, 'parent_ref' => 'cap10',
+        'hero' => array(
+            'image' => libro_img('10cap_joelsot_hero.jpg'),
+            'overlay' => 'rgba(0,0,0,0.25)',
+            'icon' => 'none',
+            'alignment' => 'center',
+            'vertical' => 'center',
+            'height' => '600px',
+            'background_position' => 'bottom center',
+            'title_lines' => array(libro_hero_line('JOEL', 'hsl(220 50% 12%)', 'hsl(45 100% 50%)', 'black'), libro_hero_line('SOTELO', 'hsl(220 50% 12%)', 'hsl(45 100% 50%)', 'black')),
+        ),
         'content' => '
-[imagen_contenido file="10cap_tran_joelsotelo.jpg"]
-
 [capitular]Cuatro temporadas como jugador (1995-1998 y 2003-2004), otra como entrenador de la cantera, tres títulos oficiales (2 Copas del Rey y 1 Supercopa de España) y el reconocimiento y afecto unánime del Centro Insular, que siempre rindió pleitesía a un jugador que adoptó como propio desde que llegó y en el que reconoció tanto sus virtudes técnicas como valores humanos. La figura de Joel Sotelo (Ciudad de México, 1970) sigue intacta y vigente cuando toca repasar la nómina de grandes extranjeros que han pasado por el Guaguas. Y él corresponde a semejante estatus con su pasión característica: "Fue el sueño de mi vida, el equipo en el que me consagré, el ciclo que guardo dentro de mi corazón como algo privilegiado, como lo mejor que puedo contar cuando hablo a mi familia y amigos del voleibol". En un palmarés como el suyo, plagado de laureles en el vóley playa, con participaciones en circuitos nacionales y mundiales, más el corolario de los Juegos Olímpicos de Sídney 2000, no resulta gratuita esta jerarquización tan rotunda.[/capitular]
 
 [cita_editorial author="Joel Sotelo"]Llegué al Guaguas después de varios años en España y cuando en el Cisneros había alcanzado mi máximo nivel. Ese verano, el de 1995, me proclamé, junto a Camarero, campeón de España de vóley-playa y él fue quien habló con Juan Ruiz al intuir que un jugador de mis características podía venirle bien al Guaguas. Cuando Juan me llamó, ni me lo pensé. Era llegar al que, en mi opinión, era el mejor club de España. Y al fichar me encuentro con los Klos, Golec, Miralles, Rueda, Camarero, Sharma y un entrenador como Paco Sánchez Jover. Un impacto. Impresionante.[/cita_editorial]
@@ -2460,9 +2548,17 @@ Otros en mi lugar lo mismo sí hubiesen dado un paso a otro sitio porque las ofe
 [cita_editorial author="Joel Sotelo"]Pasé más de 20 años en Canarias y dos de mis tres hijas nacieron en Gran Canaria. Salí campeón con el Guaguas. El Centro Insular fue el escenario de mis sueños, con Sergio Miguel Camarero tengo una relación familiar de todo lo que hemos compartido, a Juan Ruiz lo tengo como una de las personas más importantes de mi vida por darme la oportunidad de jugar en ese equipo maravilloso. No hay un día en el que no me salga a la mente un recuerdo del Guaguas y de esa etapa tan fantástica.[/cita_editorial]
 '),
     array('title' => 'Pedro Cuarental', 'numero' => '', 'order' => 93, 'show_marker' => false, 'parent_ref' => 'cap10',
+        'hero' => array(
+            'image' => libro_img('10cap_pedrocua_hero.jpg'),
+            'overlay' => 'rgba(0,0,0,0.25)',
+            'icon' => 'none',
+            'alignment' => 'center',
+            'vertical' => 'center',
+            'height' => '600px',
+            'background_position' => 'center center',
+            'title_lines' => array(libro_hero_line('PEDRO', 'hsl(220 50% 12%)', 'hsl(45 100% 50%)', 'black'), libro_hero_line('CUARENTAL', 'hsl(220 50% 12%)', 'hsl(45 100% 50%)', 'black')),
+        ),
         'content' => '
-[imagen_contenido file="10cap_tran_pedrocuarental.jpg"]
-
 [capitular]Le tocó gestionar en una coyuntura "delicadísima", en su propio calificativo, a inicios del siglo XXI y cuando acudió, de manera voluntaria, al auxilio de un Guaguas "que no tenía dinero ni para inscribirse" ante la ausencia de patrocinios. Corría 2003 y Pedro Cuarental (Las Palmas de Gran Canaria, 1975), en tiempos jugador de la casa en categorías inferiores ("milité en cadete y juvenil y siempre mantuve mi afición por el voleibol"), fue alertado por parte de un amigo ("Rayco Hernández", precisa) de que el riesgo de desaparición era casi una realidad. "Era el director comercial de Jusan, una empresa constructora, y propuse que nos convirtiéramos en patrocinador principal. José Luis Cano era el presidente cuando entramos y ya me proponen a mí asumir el control porque el mandatario que estaba no tenía ganas de continuar. Al principio estuve al frente de una junta gestora y, luego ya, de pleno derecho en el cargo más alto".[/capitular]
 
 <p>De ejercer de salvavidas "sin propósito alguno de entrar ni en la directiva", Cuarental termina encabezando un club "con un grave desajuste económico" por la póliza de crédito suscrita con La Caja de Canarias y que acaba absorbiendo "el cien por cien de los ingresos", lo que ahogaba la economía y hacía inviable cualquier intento de normalización en la vida financiera del club.</p>
@@ -2480,9 +2576,17 @@ Otros en mi lugar lo mismo sí hubiesen dado un paso a otro sitio porque las ofe
 <p>Más de cuatro años en la presidencia en los que puso "el mayor esmero posible en ordenar la vida económica" de un Calvo Sotelo que terminaría desapareciendo meses después pese a que se hizo oficial su relevo en la cúpula en favor de Samuel Díaz, que había ejercido anteriormente como entrenador.</p>
 '),
     array('title' => 'Marcos Dreyer', 'numero' => '', 'order' => 94, 'show_marker' => false, 'parent_ref' => 'cap10',
+        'hero' => array(
+            'image' => libro_img('10cap_marcosdre_hero.jpg'),
+            'overlay' => 'rgba(0,0,0,0.25)',
+            'icon' => 'none',
+            'alignment' => 'center',
+            'vertical' => 'center',
+            'height' => '600px',
+            'background_position' => 'center center',
+            'title_lines' => array(libro_hero_line('MARCOS', 'hsl(220 50% 12%)', 'hsl(45 100% 50%)', 'black'), libro_hero_line('DREYER', 'hsl(220 50% 12%)', 'hsl(45 100% 50%)', 'black')),
+        ),
         'content' => '
-[imagen_contenido file="10cap_tran_foto7.jpg"]
-
 [capitular]Tres años, los que van de mayo de 2004 al mismo mes de 2007, duró la estancia del brasileño Marcos Dreyer (Teresópolis, 1971) en la etapa en la que el equipo se denominó Jusán Canarias. Pero por implicación, rendimiento y compromiso es resaltado como una figura capital en el proceso de transición que se vivió en aquella época. Tanto David Rodríguez, que fue su entrenador, como Pedro Cuarental, entonces presidente, le señalan como el líder del vestuario y distinguido siempre "por velar por el club y mantener el equilibrio en momentos en los que eso era muy complicado". Nadie dudó en cuestionar su rol de capitán y dejó honda huella por su manera de entender el deporte, basada siempre "en la honestidad, sacrificio y máxima profesionalidad", tal y como él mismo describe.[/capitular]
 
 <p>Dreyer llegó procedente del Elche, donde había ganado una Copa del Rey, y dibujaba, antes, una amplia trayectoria internacional, bagaje que puso "al servicio" de los compañeros con el fin de "tratar de hacer las cosas lo mejor posible". Tenía muy claro que el camino a seguir pasaba "por ser exigentes día a día, en cada entrenamiento y en cada partido" y su afán radicó en ese perfeccionismo que nunca rebajó.</p>
@@ -2520,12 +2624,12 @@ Otros en mi lugar lo mismo sí hubiesen dado un paso a otro sitio porque las ofe
             'icon_height' => 80,
             'alignment' => 'center',
             'vertical' => 'center',
-            'height' => '500px',
+            'height' => '600px',
             'title_lines' => array(libro_hero_line('25 TÍTULOS PARA', '#1a237e', '#FFFFFF', 'black'), libro_hero_line('UNA GRAN', '#1a237e', '#FFFFFF', 'black'), libro_hero_line('HISTORIA', '#1a237e', '#FFFFFF', 'black')),
         ),
         'content' => '[capitular]El palmarés del CV Guaguas es el más brillante del voleibol español. Nueve Ligas, nueve Copas del Rey, cinco Supercopas y una Copa Ibérica conforman un historial de éxitos que ningún otro club del país ha igualado.[/capitular]
 '),
-    array('title' => 'Copa del Rey 1989', 'numero' => '', 'order' => 101, 'show_marker' => false, 'parent_ref' => 'cap11',
+    array('title' => 'Copa del Rey 1989', 'numero' => '1', 'order' => 101, 'show_marker' => false, 'parent_ref' => 'cap11',
         'content' => '
 [titulo_deportivo numero="1" foto="11cap_tro2_foto1.webp" nombre="COPA DEL REY" anio="1989"]
 [ficha_tecnica]
@@ -2539,7 +2643,7 @@ Otros en mi lugar lo mismo sí hubiesen dado un paso a otro sitio porque las ofe
 [narrativa]La Copa del Rey conquistada el 9 de abril de 1989 inauguró el palmarés del Guaguas y, por extensión, el del voleibol canario. Una importancia histórica redoblada y de la que fueron testigos directos los más de 5.000 espectadores que abarrotaron hasta la bandera el Centro Insular de Deportes inaugurado meses antes, además de todos los que lo siguieron en directo por la segunda cadena de Televisión Española. El rival, el Palma, no traía buenos recuerdos porque, apenas una semana antes, le había arrebatado la Liga a los jugadores entonces dirigidos por Sergio Hernández. El deseo de revancha no escondía, sin embargo, el favoritismo que colgaba sobre el conjunto balear pese a su condición de visitante. El partido respondió a las expectativas ya que aunó emoción y un altísimo nivel por parte de los contendientes. En las crónicas se destaca el papel coral de todo el Guaguas, motivadísimo para no fallar ante su afición, aunque dos fueron los nombres propios que emergieron sobre el resto, los integrantes de la pareja extranjera, el mexicano Chava González, que dio el punto del triunfo final con un saque desde el fondo, y el canadiense Brad Willock, magistral en la dirección que ejerció sobre el resto. La invasión espontánea de la pista y la felicidad desatada, que obligó a los jugadores a salir de los vestuarios a saludar ante la insistencia de los incondicionales, condimentaron un día grande, el primero de todos los que quedaban por venir al abrir el ciclo exitoso.[/narrativa]
 [/titulo_deportivo]
 '),
-    array('title' => 'Liga 1989-90', 'numero' => '', 'order' => 102, 'show_marker' => false, 'parent_ref' => 'cap11',
+    array('title' => 'Liga 1989-90', 'numero' => '2', 'order' => 102, 'show_marker' => false, 'parent_ref' => 'cap11',
         'content' => '
 [titulo_deportivo numero="2" foto="11cap_tro2_foto2.webp" nombre="LIGA" anio="1989-90"]
 [ficha_tecnica]
@@ -2553,7 +2657,7 @@ Otros en mi lugar lo mismo sí hubiesen dado un paso a otro sitio porque las ofe
 [narrativa]Vino a lo grande el segundo trofeo que ingresó en las vitrinas del Guaguas, en 1990 denominada Constructora Atlántica Canaria. Nada más y nada menos que la Liga, un escenario que parecía inalcanzable poco antes y por las diferencias de presupuesto y potencial que se daban con los adversarios por el cetro nacional. Fue en el cuarto partido del play-off, con una exhibición de suficiencia demoledora frente al Bomberos de Barcelona, y que encumbró a un equipo con la omnipresente figura de Paco Sánchez Jover, que a mitad de campaña se hizo con la dirección técnica del equipo y lo condujo a la gloria cumpliendo, además, con su rol de vital importancia dentro del funcionamiento colectivo. El encuentro fue un monólogo amarillo y ratificó los buenos augurios de una plantilla conjurada y que nunca dudó en que culminaría con alegría una campaña en la que las exigencias ya eran totales y en virtud de un bloque reforzado con figuras de talla mundial como los polacos Golec o Klos. Una hora exacta duró la confrontación decisiva en la que Sánchez Jover tuvo un gesto inolvidable con la grada cuando quiso hacer coincidir en la cancha a cuatro grancanarios (David Rodríguez, Óscar Campos, Juanma Martín y Jorge Ramón) en el tramo final del choque y estando la fiesta ya montada a la luz de un marcador inapelable. El Centro Insular entró en éxtasis en el momento en el que se le brindó la copa soñada.[/narrativa]
 [/titulo_deportivo]
 '),
-    array('title' => 'Liga 1990-91', 'numero' => '', 'order' => 103, 'show_marker' => false, 'parent_ref' => 'cap11',
+    array('title' => 'Liga 1990-91', 'numero' => '3', 'order' => 103, 'show_marker' => false, 'parent_ref' => 'cap11',
         'content' => '
 [titulo_deportivo numero="3" foto="11cap_tro2_foto3.webp" nombre="LIGA" anio="1990-91"]
 [ficha_tecnica]
@@ -2568,7 +2672,7 @@ Otros en mi lugar lo mismo sí hubiesen dado un paso a otro sitio porque las ofe
 [/titulo_deportivo]
 '),
 
-    array('title' => 'Copa del Rey 1991', 'numero' => '', 'order' => 104, 'show_marker' => false, 'parent_ref' => 'cap11',
+    array('title' => 'Copa del Rey 1991', 'numero' => '4', 'order' => 104, 'show_marker' => false, 'parent_ref' => 'cap11',
         'content' => '
 [titulo_deportivo numero="4" foto="11cap_tro2_foto4.webp" nombre="COPA DEL REY" anio="1991"]
 [ficha_tecnica]
@@ -2583,7 +2687,7 @@ Otros en mi lugar lo mismo sí hubiesen dado un paso a otro sitio porque las ofe
 [/titulo_deportivo]
 '),
 
-    array('title' => 'Liga 1991-92', 'numero' => '', 'order' => 105, 'show_marker' => false, 'parent_ref' => 'cap11',
+    array('title' => 'Liga 1991-92', 'numero' => '5', 'order' => 105, 'show_marker' => false, 'parent_ref' => 'cap11',
         'content' => '
 [titulo_deportivo numero="5" foto="11cap_tro2_foto5.webp" nombre="LIGA" anio="1991-92"]
 [ficha_tecnica]
@@ -2598,7 +2702,7 @@ Otros en mi lugar lo mismo sí hubiesen dado un paso a otro sitio porque las ofe
 [/titulo_deportivo]
 '),
 
-    array('title' => 'Copa del Rey 1992', 'numero' => '', 'order' => 106, 'show_marker' => false, 'parent_ref' => 'cap11',
+    array('title' => 'Copa del Rey 1992', 'numero' => '6', 'order' => 106, 'show_marker' => false, 'parent_ref' => 'cap11',
         'content' => '
 [titulo_deportivo numero="6" foto="11cap_tro2_foto6.webp" nombre="COPA DEL REY" anio="1992"]
 [ficha_tecnica]
@@ -2613,7 +2717,7 @@ Otros en mi lugar lo mismo sí hubiesen dado un paso a otro sitio porque las ofe
 [/titulo_deportivo]
 '),
 
-    array('title' => 'Liga 1992-93', 'numero' => '', 'order' => 107, 'show_marker' => false, 'parent_ref' => 'cap11',
+    array('title' => 'Liga 1992-93', 'numero' => '7', 'order' => 107, 'show_marker' => false, 'parent_ref' => 'cap11',
         'content' => '
 [titulo_deportivo numero="7" foto="11cap_tro2_foto7.webp" nombre="LIGA" anio="1992-93"]
 [ficha_tecnica]
@@ -2628,7 +2732,7 @@ Otros en mi lugar lo mismo sí hubiesen dado un paso a otro sitio porque las ofe
 [/titulo_deportivo]
 '),
 
-    array('title' => 'Copa del Rey 1993', 'numero' => '', 'order' => 108, 'show_marker' => false, 'parent_ref' => 'cap11',
+    array('title' => 'Copa del Rey 1993', 'numero' => '8', 'order' => 108, 'show_marker' => false, 'parent_ref' => 'cap11',
         'content' => '
 [titulo_deportivo numero="8" foto="11cap_tro2_foto8.webp" nombre="COPA DEL REY" anio="1993"]
 [ficha_tecnica]
@@ -2643,7 +2747,7 @@ Otros en mi lugar lo mismo sí hubiesen dado un paso a otro sitio porque las ofe
 [/titulo_deportivo]
 '),
 
-    array('title' => 'Liga 1993-94', 'numero' => '', 'order' => 109, 'show_marker' => false, 'parent_ref' => 'cap11',
+    array('title' => 'Liga 1993-94', 'numero' => '9', 'order' => 109, 'show_marker' => false, 'parent_ref' => 'cap11',
         'content' => '
 [titulo_deportivo numero="9" foto="11cap_tro2_foto9.webp" nombre="LIGA" anio="1993-94"]
 [ficha_tecnica]
@@ -2658,7 +2762,7 @@ Otros en mi lugar lo mismo sí hubiesen dado un paso a otro sitio porque las ofe
 [/titulo_deportivo]
 '),
 
-    array('title' => 'Copa del Rey 1996', 'numero' => '', 'order' => 110, 'show_marker' => false, 'parent_ref' => 'cap11',
+    array('title' => 'Copa del Rey 1996', 'numero' => '10', 'order' => 110, 'show_marker' => false, 'parent_ref' => 'cap11',
         'content' => '
 [titulo_deportivo numero="10" foto="11cap_tro2_foto10.webp" nombre="COPA DEL REY" anio="1996"]
 [ficha_tecnica]
@@ -2673,7 +2777,7 @@ Otros en mi lugar lo mismo sí hubiesen dado un paso a otro sitio porque las ofe
 [/titulo_deportivo]
 '),
 
-    array('title' => 'Supercopa de España 1993-94', 'numero' => '', 'order' => 111, 'show_marker' => false, 'parent_ref' => 'cap11',
+    array('title' => 'Supercopa de España 1993-94', 'numero' => '11', 'order' => 111, 'show_marker' => false, 'parent_ref' => 'cap11',
         'content' => '
 [titulo_deportivo numero="11" foto="11cap_tro2_foto11.webp" nombre="SUPERCOPA DE ESPAÑA" anio="1993-94"]
 [ficha_tecnica]
@@ -2688,7 +2792,7 @@ Otros en mi lugar lo mismo sí hubiesen dado un paso a otro sitio porque las ofe
 [/titulo_deportivo]
 '),
 
-    array('title' => 'Copa del Rey 1997', 'numero' => '', 'order' => 112, 'show_marker' => false, 'parent_ref' => 'cap11',
+    array('title' => 'Copa del Rey 1997', 'numero' => '12', 'order' => 112, 'show_marker' => false, 'parent_ref' => 'cap11',
         'content' => '
 [titulo_deportivo numero="12" foto="11cap_tro2_foto12.webp" nombre="COPA DEL REY" anio="1997"]
 [ficha_tecnica]
@@ -2703,7 +2807,7 @@ Otros en mi lugar lo mismo sí hubiesen dado un paso a otro sitio porque las ofe
 [/titulo_deportivo]
 '),
 
-    array('title' => 'Copa del Rey 2021', 'numero' => '', 'order' => 113, 'show_marker' => false, 'parent_ref' => 'cap11',
+    array('title' => 'Copa del Rey 2021', 'numero' => '13', 'order' => 113, 'show_marker' => false, 'parent_ref' => 'cap11',
         'content' => '
 [titulo_deportivo numero="13" foto="11cap_tro2_foto13.webp" nombre="COPA DEL REY" anio="2021"]
 [ficha_tecnica]
@@ -2718,7 +2822,7 @@ Otros en mi lugar lo mismo sí hubiesen dado un paso a otro sitio porque las ofe
 [/titulo_deportivo]
 '),
 
-    array('title' => 'Liga 2020-21', 'numero' => '', 'order' => 114, 'show_marker' => false, 'parent_ref' => 'cap11',
+    array('title' => 'Liga 2020-21', 'numero' => '14', 'order' => 114, 'show_marker' => false, 'parent_ref' => 'cap11',
         'content' => '
 [titulo_deportivo numero="14" foto="11cap_tro2_foto14.webp" nombre="LIGA" anio="2020-21"]
 [ficha_tecnica]
@@ -2733,7 +2837,7 @@ Otros en mi lugar lo mismo sí hubiesen dado un paso a otro sitio porque las ofe
 [/titulo_deportivo]
 '),
 
-    array('title' => 'Supercopa de España 2021', 'numero' => '', 'order' => 115, 'show_marker' => false, 'parent_ref' => 'cap11',
+    array('title' => 'Supercopa de España 2021', 'numero' => '15', 'order' => 115, 'show_marker' => false, 'parent_ref' => 'cap11',
         'content' => '
 [titulo_deportivo numero="15" foto="11cap_tro2_foto15.webp" nombre="SUPERCOPA DE ESPAÑA" anio="2021"]
 [ficha_tecnica]
@@ -2748,7 +2852,7 @@ Otros en mi lugar lo mismo sí hubiesen dado un paso a otro sitio porque las ofe
 [/titulo_deportivo]
 '),
 
-    array('title' => 'Liga 2023', 'numero' => '', 'order' => 116, 'show_marker' => false, 'parent_ref' => 'cap11',
+    array('title' => 'Liga 2023', 'numero' => '16', 'order' => 116, 'show_marker' => false, 'parent_ref' => 'cap11',
         'content' => '
 [titulo_deportivo numero="16" foto="11cap_tro2_foto16.webp" nombre="LIGA" anio="2023"]
 [ficha_tecnica]
@@ -2763,7 +2867,7 @@ Otros en mi lugar lo mismo sí hubiesen dado un paso a otro sitio porque las ofe
 [/titulo_deportivo]
 '),
 
-    array('title' => 'Copa Ibérica 2023', 'numero' => '', 'order' => 117, 'show_marker' => false, 'parent_ref' => 'cap11',
+    array('title' => 'Copa Ibérica 2023', 'numero' => '17', 'order' => 117, 'show_marker' => false, 'parent_ref' => 'cap11',
         'content' => '
 [titulo_deportivo numero="17" foto="11cap_tro2_foto17.webp" nombre="COPA IBÉRICA" anio="2023"]
 [ficha_tecnica]
@@ -2778,7 +2882,7 @@ Otros en mi lugar lo mismo sí hubiesen dado un paso a otro sitio porque las ofe
 [/titulo_deportivo]
 '),
 
-    array('title' => 'Supercopa de España 2023', 'numero' => '', 'order' => 118, 'show_marker' => false, 'parent_ref' => 'cap11',
+    array('title' => 'Supercopa de España 2023', 'numero' => '18', 'order' => 118, 'show_marker' => false, 'parent_ref' => 'cap11',
         'content' => '
 [titulo_deportivo numero="18" foto="11cap_tro2_foto18.webp" nombre="SUPERCOPA DE ESPAÑA" anio="2023"]
 [ficha_tecnica]
@@ -2793,7 +2897,7 @@ Otros en mi lugar lo mismo sí hubiesen dado un paso a otro sitio porque las ofe
 [/titulo_deportivo]
 '),
 
-    array('title' => 'Copa del Rey 2024', 'numero' => '', 'order' => 119, 'show_marker' => false, 'parent_ref' => 'cap11',
+    array('title' => 'Copa del Rey 2024', 'numero' => '19', 'order' => 119, 'show_marker' => false, 'parent_ref' => 'cap11',
         'content' => '
 [titulo_deportivo numero="19" foto="11cap_tro2_foto19.webp" nombre="COPA DEL REY" anio="2024"]
 [ficha_tecnica]
@@ -2808,7 +2912,7 @@ Otros en mi lugar lo mismo sí hubiesen dado un paso a otro sitio porque las ofe
 [/titulo_deportivo]
 '),
 
-    array('title' => 'Liga 2024', 'numero' => '', 'order' => 120, 'show_marker' => false, 'parent_ref' => 'cap11',
+    array('title' => 'Liga 2024', 'numero' => '20', 'order' => 120, 'show_marker' => false, 'parent_ref' => 'cap11',
         'content' => '
 [titulo_deportivo numero="20" foto="11cap_tro2_foto20.webp" nombre="LIGA" anio="2024"]
 [ficha_tecnica]
@@ -2822,7 +2926,7 @@ Otros en mi lugar lo mismo sí hubiesen dado un paso a otro sitio porque las ofe
 [/titulo_deportivo]
 '),
 
-    array('title' => 'Supercopa de España 2024', 'numero' => '', 'order' => 121, 'show_marker' => false, 'parent_ref' => 'cap11',
+    array('title' => 'Supercopa de España 2024', 'numero' => '21', 'order' => 121, 'show_marker' => false, 'parent_ref' => 'cap11',
         'content' => '
 [titulo_deportivo numero="21" foto="11cap_tro2_foto21.webp" nombre="SUPERCOPA DE ESPAÑA" anio="2024"]
 [ficha_tecnica]
@@ -2837,7 +2941,7 @@ Otros en mi lugar lo mismo sí hubiesen dado un paso a otro sitio porque las ofe
 [/titulo_deportivo]
 '),
 
-    array('title' => 'Copa del Rey 2025', 'numero' => '', 'order' => 122, 'show_marker' => false, 'parent_ref' => 'cap11',
+    array('title' => 'Copa del Rey 2025', 'numero' => '22', 'order' => 122, 'show_marker' => false, 'parent_ref' => 'cap11',
         'content' => '
 [titulo_deportivo numero="22" foto="11cap_tro2_foto22.webp" nombre="COPA DEL REY" anio="2025"]
 [ficha_tecnica]
@@ -2852,7 +2956,7 @@ Otros en mi lugar lo mismo sí hubiesen dado un paso a otro sitio porque las ofe
 [/titulo_deportivo]
 '),
 
-    array('title' => 'Liga 2025', 'numero' => '', 'order' => 123, 'show_marker' => false, 'parent_ref' => 'cap11',
+    array('title' => 'Liga 2025', 'numero' => '23', 'order' => 123, 'show_marker' => false, 'parent_ref' => 'cap11',
         'content' => '
 [titulo_deportivo numero="23" foto="11cap_tro2_foto23.webp" nombre="LIGA" anio="2025"]
 [ficha_tecnica]
@@ -2867,7 +2971,7 @@ Otros en mi lugar lo mismo sí hubiesen dado un paso a otro sitio porque las ofe
 [/titulo_deportivo]
 '),
 
-    array('title' => 'Supercopa de España 2025', 'numero' => '', 'order' => 124, 'show_marker' => false, 'parent_ref' => 'cap11',
+    array('title' => 'Supercopa de España 2025', 'numero' => '24', 'order' => 124, 'show_marker' => false, 'parent_ref' => 'cap11',
         'content' => '
 [titulo_deportivo numero="24" foto="11cap_tro2_foto24.webp" nombre="SUPERCOPA DE ESPAÑA" anio="2025"]
 [ficha_tecnica]
@@ -2881,9 +2985,9 @@ Otros en mi lugar lo mismo sí hubiesen dado un paso a otro sitio porque las ofe
 [narrativa]El año 2025, con la Superliga y la Copa del Rey como bagaje anterior, merecía el corolario que trajo la conquista de la Supercopa de España, movida de fecha, del habitual inicio de calendario a uno de los últimos días del año y en sede neutral, en este caso, Valladolid. Y, como es habitual, al Guaguas, ante una final, con la posibilidad de seguir añadiendo títulos, se le abrió el hambre. Poco importó que el adversario, el Grupo Herce Soria, le hubiera ganado en los días previos a la cita en lo que se podía interpretar como un mal presagio. En un partido de poder a poder, con tres sets disputadísimos, todos resueltos por el mismo 25-23, lo que evidencia la intensidad y emoción que hubo, el comportamiento maduro y constante del equipo tuvo su justa recompensa. A la habitual cohesión colectiva se sumaron las apariciones oportunas y decisivas de Walla, Bruno o Juantorena, contundentes en la red para que el 24.º título oficial de la historia cobrara cuerpo y se convirtiera en realidad. Pese a los intentos del contrario de revertir el orden, nada pudo frente a la contundencia amarilla, de principio a fin y sin dar opción a la rebelión soriana. La versión más reconocible del campeón hegemónico permitió que la Supercopa volviera con el equipaje para Gran Canaria.[/narrativa]
 [/titulo_deportivo]
 '),
-    array('title' => 'Liga 2026', 'numero' => '', 'order' => 125, 'show_marker' => false, 'parent_ref' => 'cap11',
+    array('title' => 'Liga 2026', 'numero' => '25', 'order' => 125, 'show_marker' => false, 'parent_ref' => 'cap11',
         'content' => '
-[titulo_deportivo numero="25" foto="" nombre="LIGA" anio="2026"]
+[titulo_deportivo numero="25" foto="11cap_tro2_foto25.webp" nombre="LIGA" anio="2026"]
 [ficha_tecnica]
 [equipo numero="3" nombre="CV GUAGUAS"]Nico Bruno, Ezequiel Pérez, Hélder Spencer, Osmany Juantorena (10), Walla Souza, Miguel Ángel de Amo, Unai Larrañaga, Jorge Almansa, Augusto Colito, Jean Pascal Diedhiou, Tomas Rousseaux, Elio Montesdeoca, Martín Ramos y Dobromir Dimitrov. <strong>Entrenador:</strong> Sergio Miguel Camarero.[/equipo]
 [equipo numero="0" nombre="CV MELILLA"]Lucas Malaber, Víctor Méndez, Héctor García, Abdelhafid Mohamer, Arthur Nath, Federico Arquez, Aurelio Rodríguez, Daniel Macarro, Zeus París, Eduardo Álvarez y Federico Martina. <strong>Entrenador:</strong> Salim Abdelkader.[/equipo]
@@ -2896,9 +3000,17 @@ Otros en mi lugar lo mismo sí hubiesen dado un paso a otro sitio porque las ofe
 [/titulo_deportivo]
 '),
     array('title' => 'Joselu Sánchez', 'numero' => '', 'order' => 126, 'show_marker' => false, 'parent_ref' => 'cap11',
+        'hero' => array(
+            'image' => libro_img('11cap_titu_joselu.jpg'),
+            'overlay' => 'rgba(0,0,0,0.25)',
+            'icon' => 'none',
+            'alignment' => 'center',
+            'vertical' => 'center',
+            'height' => '600px',
+            'background_position' => 'center center',
+            'title_lines' => array(libro_hero_line('JOSELU', 'hsl(220 50% 12%)', 'hsl(45 100% 50%)', 'black'), libro_hero_line('SÁNCHEZ', 'hsl(220 50% 12%)', 'hsl(45 100% 50%)', 'black')),
+        ),
         'content' => '
-[imagen_contenido file="11cap_titu_foto2.jpg"]
-
 [capitular]Fue uno de los jugadores que estuvieron presentes en la pista del García San Román en el histórico partido disputado ante el Knack de Bélgica, correspondiente a la Recopa de Europa, el 7 de noviembre de 1987, bautizo continental de un Guaguas que luego se haría asiduo y respetado en competiciones internacionales.[/capitular]
 
 <p>Y aunque su paso por la plantilla fue fugaz (&ldquo;estuve entrenando, sin fichar, durante la campaña 1986-87 y luego, al tener el servicio militar, tuve que marcharme en enero de 1988, con lo que apenas fueron tres meses como miembro de la plantilla&rdquo;), Joselu Sánchez (Ferrol, 1962) dejó tanta huella que, décadas después, cuando Juan Ruiz ideó la refundación, tuvo muy presente su nombre para integrarlo en el organigrama ejecutivo con las funciones de secretario.</p>
@@ -2932,13 +3044,13 @@ Otros en mi lugar lo mismo sí hubiesen dado un paso a otro sitio porque las ofe
             'icon_height' => 50,
             'alignment' => 'center',
             'vertical' => 'center',
-            'height' => '500px',
+            'height' => '600px',
             'title_lines' => array(libro_hero_line('VUELVE EL GRAN', 'hsl(220 50% 12%)', 'hsl(206, 20%, 93%)', 'none'), libro_hero_line('GUAGUAS', 'hsl(220 50% 12%)', 'hsl(206, 20%, 93%)', 'none')),
         ),
         'content' => ''),
     array('title' => 'Vuelve el gran Guaguas', 'numero' => '', 'order' => 131, 'show_marker' => false, 'parent_ref' => 'cap12',
         'hero' => array(
-            'image' => libro_img('12cap_vuel_foto4.jpg'),
+            'image' => libro_img('12cap_vuel_hero.jpg'),
             'overlay' => 'rgba(0,0,0,0.25)',
             'icon' => 'custom',
             'custom_icon' => libro_img('estrella-icon.svg'),
@@ -2947,9 +3059,8 @@ Otros en mi lugar lo mismo sí hubiesen dado un paso a otro sitio porque las ofe
             'icon_height' => 40,
             'alignment' => 'center',
             'vertical' => 'center',
-            'height' => '500px',
-            'border_color' => 'hsl(206, 20%, 93%)',
-            'background_position' => 'center 20%',
+            'height' => '600px',
+            'background_position' => 'center center',
             'title_lines' => array(
                 libro_hero_line('VUELVE EL GRAN', 'hsl(220 50% 12%)', 'hsl(206, 20%, 93%)', 'none'),
                 libro_hero_line('GUAGUAS', 'hsl(220 50% 12%)', 'hsl(206, 20%, 93%)', 'none'),
@@ -2984,6 +3095,19 @@ Otros en mi lugar lo mismo sí hubiesen dado un paso a otro sitio porque las ofe
 '),
 
     array('title' => 'Todos los presidentes', 'numero' => '', 'order' => 132, 'show_marker' => false, 'parent_ref' => 'cap12',
+        'hero' => array(
+            'image' => libro_img('12cap_presidentes_hero.jpg'),
+            'overlay' => 'rgba(0,0,0,0.25)',
+            'icon' => 'none',
+            'alignment' => 'center',
+            'vertical' => 'center',
+            'height' => '600px',
+            'background_position' => 'center center',
+            'title_lines' => array(
+                libro_hero_line('TODOS LOS', 'hsl(220 50% 12%)', 'hsl(206, 20%, 93%)', 'none'),
+                libro_hero_line('PRESIDENTES', 'hsl(220 50% 12%)', 'hsl(206, 20%, 93%)', 'none'),
+            ),
+        ),
         'content' => '
 [capitular]Juan Ruiz ocupa un lugar preeminente e indiscutible en este capítulo de dirigentes por la vigencia, bagaje y trascendencia de su mandato, dividido en dos partes, la inicial entre 1986 y 1998, y la actual, nacida en plena pandemia, año 2020 y todavía en curso.[/capitular]
 
@@ -3009,6 +3133,19 @@ Otros en mi lugar lo mismo sí hubiesen dado un paso a otro sitio porque las ofe
 [/bloque_lista_foto]
 '),
     array('title' => 'Todos los entrenadores', 'numero' => '', 'order' => 133, 'show_marker' => false, 'parent_ref' => 'cap12',
+        'hero' => array(
+            'image' => libro_img('12cap_entrenadores_hero.jpg'),
+            'overlay' => 'rgba(0,0,0,0.25)',
+            'icon' => 'none',
+            'alignment' => 'center',
+            'vertical' => 'center',
+            'height' => '600px',
+            'background_position' => 'center center',
+            'title_lines' => array(
+                libro_hero_line('TODOS LOS', 'hsl(220 50% 12%)', 'hsl(206, 20%, 93%)', 'none'),
+                libro_hero_line('ENTRENADORES', 'hsl(220 50% 12%)', 'hsl(206, 20%, 93%)', 'none'),
+            ),
+        ),
         'content' => '
 [capitular]De Felipe Nuez, el precursor y con el que empezó todo, pasando por Sánchez Jover, la escuela argentina en los noventa con Quique Edelstein o Marcelo Giovanacci, el sello de la casa como Juanma Martín, siempre con nuevos logros para las vitrinas, hasta el desembarco absolutamente insuperable de Sergio Miguel Camarero, en tiempos estrella en la cancha y reciclado, de igual manera, a entrenador de aureola.[/capitular]
 
@@ -3046,21 +3183,20 @@ Otros en mi lugar lo mismo sí hubiesen dado un paso a otro sitio porque las ofe
         'show_marker' => true,
         'ref_id' => 'cap13',
         'hero' => array(
-            'image'               => libro_img('13cap_cid_foto7.jpg'),
+            'image'               => libro_img('13cap_cid_hero.jpg'),
             'overlay'             => 'rgba(0,0,0,0.25)',
             'icon'                => 'custom',
             'custom_icon'         => libro_img('estrella-icon.svg'),
-            'custom_icon_color'   => 'hsl(240, 52%, 19%)',
+            'custom_icon_color'   => 'hsl(45 100% 50%)',
             'icon_width'          => 40,
             'icon_height'         => 40,
             'alignment'           => 'center',
             'vertical'            => 'center',
-            'height'              => '500px',
-            'background_color'    => 'hsl(220, 50%, 12%)',
-            'background_position' => 'center center',
+            'height'              => '600px',
+            'background_position' => 'bottom center',
             'title_lines'         => array(
-                libro_hero_line('DEL CID', 'hsl(0, 0%, 100%)', 'hsl(240, 52%, 19%)', 'none'),
-                libro_hero_line('AL ARENA', 'hsl(0, 0%, 100%)', 'hsl(240, 52%, 19%)', 'none'),
+                libro_hero_line('DEL CID', 'hsl(220 50% 12%)', 'hsl(45 100% 50%)', 'black'),
+                libro_hero_line('AL ARENA', 'hsl(220 50% 12%)', 'hsl(45 100% 50%)', 'black'),
             ),
         ),
         'content' => '
@@ -3125,15 +3261,23 @@ Otros en mi lugar lo mismo sí hubiesen dado un paso a otro sitio porque las ofe
             'icon_height' => 70,
             'alignment' => 'right',
             'vertical' => 'center',
-            'height' => '480px',
+            'height' => '600px',
             'title_lines' => array(libro_hero_line('LOS NUEVOS', '#1a237e', '#FFFFFF', 'black'), libro_hero_line('ÍDOLOS', '#1a237e', '#FFFFFF', 'black')),
         ),
         'content' => '[capitular]Una nueva generación de estrellas ha tomado el relevo en el Gran Canaria Arena. Los nuevos ídolos del Guaguas combinan talento internacional con la pasión local para escribir nuevos capítulos en la historia del club.[/capitular]
 '),
     array('title' => 'Pablo Kukartsev', 'numero' => '', 'order' => 1461, 'show_marker' => false, 'parent_ref' => 'cap14',
+        'hero' => array(
+            'image' => libro_img('14cap_kukartsev_hero.jpg'),
+            'overlay' => 'rgba(0,0,0,0.25)',
+            'icon' => 'none',
+            'alignment' => 'center',
+            'vertical' => 'center',
+            'height' => '600px',
+            'background_position' => 'top center',
+            'title_lines' => array(libro_hero_line('PABLO', 'hsl(220 50% 12%)', 'hsl(45 100% 50%)', 'black'), libro_hero_line('KUKARTSEV', 'hsl(220 50% 12%)', 'hsl(45 100% 50%)', 'black')),
+        ),
         'content' => '
-[imagen_contenido file="14cap_nuev_foto8.jpg" fullwidth="true"]
-
 [capitular]En el doblete de 2021, con Liga y Copa del Rey que no se daba desde 1994, el opuesto Pablo Kukartsev (Buenos Aires, 1993) fue una de las figuras más indiscutibles como prueba su designación como jugador más valioso de la temporada.[/capitular]
 
 <p>&ldquo;Uno no busca distinciones individuales porque esto es un juego de equipo. Todo lo que conseguí en ese año se lo debo a mis compañeros, al trabajo que realizamos conjuntamente entre todos porque, aunque pudiera parecerlo, no fue nada fácil hacer lo que hicimos&rdquo;, apunta desde las filas del Almería, su destino profesional actual y del que, precisamente, llegó en el verano de 2020.</p>
@@ -3148,9 +3292,17 @@ Otros en mi lugar lo mismo sí hubiesen dado un paso a otro sitio porque las ofe
 '),
 
     array('title' => 'Moisés Cézar', 'numero' => '', 'order' => 1462, 'show_marker' => false, 'parent_ref' => 'cap14',
+        'hero' => array(
+            'image' => libro_img('14cap_moisescezar_hero.jpg'),
+            'overlay' => 'rgba(0,0,0,0.25)',
+            'icon' => 'none',
+            'alignment' => 'center',
+            'vertical' => 'center',
+            'height' => '600px',
+            'background_position' => 'center center',
+            'title_lines' => array(libro_hero_line('MOISÉS', 'hsl(220 50% 12%)', 'hsl(45 100% 50%)', 'black'), libro_hero_line('CÉZAR', 'hsl(220 50% 12%)', 'hsl(45 100% 50%)', 'black')),
+        ),
         'content' => '
-[imagen_contenido file="14cap_nuev_foto5.jpg" fullwidth="true"]
-
 [capitular]En su primer año como jugador del Guaguas, brazalete de capitán y levantando hasta tres títulos: Copa, Liga y Supercopa. Todo, con diferencia de unos meses. &ldquo;Cada vez que me tocó ir a recoger un trofeo, las emociones fueron increíbles, únicas&rdquo;.[/capitular]
 
 <p>El receptor brasileño Moisés Cézar (Belo Horizonte, 1983) ya había tenido una experiencia similar en el Almería, años atrás, acaparando todos los laureles nacionales. Pero hacerlo aquí, con la jerarquía que se le otorgó en virtud de su experiencia previa, tuvo &ldquo;un sabor especial&rdquo;, tal y como admite.</p>
@@ -3167,9 +3319,17 @@ Otros en mi lugar lo mismo sí hubiesen dado un paso a otro sitio porque las ofe
 '),
 
     array('title' => 'Alejandro Fernández', 'numero' => '', 'order' => 1463, 'show_marker' => false, 'parent_ref' => 'cap14',
+        'hero' => array(
+            'image' => libro_img('14cap_alejandro_hero.jpg'),
+            'overlay' => 'rgba(0,0,0,0.25)',
+            'icon' => 'none',
+            'alignment' => 'center',
+            'vertical' => 'center',
+            'height' => '600px',
+            'background_position' => 'center center',
+            'title_lines' => array(libro_hero_line('ALEJANDRO', 'hsl(220 50% 12%)', 'hsl(45 100% 50%)', 'black'), libro_hero_line('FERNÁNDEZ', 'hsl(220 50% 12%)', 'hsl(45 100% 50%)', 'black')),
+        ),
         'content' => '
-[imagen_contenido file="14cap_nuev_foto1.jpg" fullwidth="true"]
-
 [capitular]Diez años fuera de Canarias y la oferta de regresar a una isla, Gran Canaria, que considera su casa, hicieron que Alejandro Fernández (La Laguna, 1987) sintiera un pellizco en el corazón al recibir la propuesta del Guaguas.[/capitular]
 
 <p>&ldquo;Estaba en el Almería, con Hage o Almansa, y no nos faltaban alicientes deportivos. Pero el Guaguas es el Guaguas. La única manera de mejorar lo que tenía era estar aquí. Y más al saber los fichajes que se iban a realizar para que el proyecto tuviese la importancia que se quería. Ni me lo pensé&rdquo;, aclara.</p>
@@ -3188,9 +3348,17 @@ Otros en mi lugar lo mismo sí hubiesen dado un paso a otro sitio porque las ofe
 '),
 
     array('title' => 'Guilherme Hage', 'numero' => '', 'order' => 1464, 'show_marker' => false, 'parent_ref' => 'cap14',
+        'hero' => array(
+            'image' => libro_img('14cap_hage_hero.jpg'),
+            'overlay' => 'rgba(0,0,0,0.25)',
+            'icon' => 'none',
+            'alignment' => 'center',
+            'vertical' => 'center',
+            'height' => '600px',
+            'background_position' => 'top center',
+            'title_lines' => array(libro_hero_line('GUILHERME', 'hsl(220 50% 12%)', 'hsl(45 100% 50%)', 'black'), libro_hero_line('HAGE', 'hsl(220 50% 12%)', 'hsl(45 100% 50%)', 'black')),
+        ),
         'content' => '
-[imagen_contenido file="14cap_nuev_foto3.jpg" fullwidth="true"]
-
 [capitular]Cuando el Guaguas llamó a Guilherme Hage para incorporarlo a filas, en plena pandemia y tratándose de un jugador contrastado, sin necesidad de aventuras (&ldquo;en el Almería lo tenía todo&rdquo;), pocos creyeron en que tal gestión prosperaría.[/capitular]
 
 <p>Pero tal fue la insistencia, que el jugador nacido en Araquara (Sao Paulo, Brasil) en 1988 se vio en la isla &ldquo;mucho antes de esperarlo&rdquo;, como reconoce. Y fue un flechazo, ni más ni menos. &ldquo;Me enamoré de esta tierra y del club nada más llegar. La sensación que tuve desde el primer momento era de que estaba justo donde quería, en el lugar exacto para mí y mi familia. Y eso me ayudó, indudablemente, a rendir, a responder a la confianza que puso Juan Ruiz en traerme. Un deportista necesita estabilidad dentro y fuera de la cancha y en el Guaguas encontré un equilibrio perfecto&rdquo;, explica. Y, por si fuera poco, títulos y honor a las primeras de cambio, lo que ya supuso el corolario perfecto.</p>
@@ -3203,9 +3371,17 @@ Otros en mi lugar lo mismo sí hubiesen dado un paso a otro sitio porque las ofe
 '),
 
     array('title' => 'Gustavo Delgado', 'numero' => '', 'order' => 1465, 'show_marker' => false, 'parent_ref' => 'cap14',
+        'hero' => array(
+            'image' => libro_img('14cap_gustavo_hero.jpg'),
+            'overlay' => 'rgba(0,0,0,0.25)',
+            'icon' => 'none',
+            'alignment' => 'center',
+            'vertical' => 'center',
+            'height' => '600px',
+            'background_position' => 'top center',
+            'title_lines' => array(libro_hero_line('GUSTAVO', 'hsl(220 50% 12%)', 'hsl(45 100% 50%)', 'black'), libro_hero_line('DELGADO', 'hsl(220 50% 12%)', 'hsl(45 100% 50%)', 'black')),
+        ),
         'content' => '
-[imagen_contenido file="14cap_nuev_foto2.jpg" fullwidth="true"]
-
 [capitular]La historia del Guaguas, esa tradición de lustre y prestigio que estaba de vuelta en 2020, fue el imán que atrajo al madrileño Gustavo Delgado (Móstoles, 1986) a alistarse al proyecto de reconstrucción desde las filas del Rennes francés.[/capitular]
 
 <p>Una experiencia en sus inicios le ayudó a eliminar cualquier atisbo de dudas: &ldquo;Tendría 19 años cuando me enfrenté al Guaguas. Entonces el equipo no era el de los títulos de los noventa y estaba en un momento delicado, pero recuerdo que ya daba respeto tener enfrente a un club de tanto recorrido y éxitos. Y al llamarme Juan Ruiz para estar aquí, ese momento me vino a la cabeza. No podía dejar pasar la oportunidad de vestir esta camiseta&rdquo;.</p>
@@ -3220,9 +3396,17 @@ Otros en mi lugar lo mismo sí hubiesen dado un paso a otro sitio porque las ofe
 '),
 
     array('title' => 'Jorge Almansa', 'numero' => '', 'order' => 1466, 'show_marker' => false, 'parent_ref' => 'cap14',
+        'hero' => array(
+            'image' => libro_img('14cap_almansa_hero.jpg'),
+            'overlay' => 'rgba(0,0,0,0.25)',
+            'icon' => 'none',
+            'alignment' => 'center',
+            'vertical' => 'center',
+            'height' => '600px',
+            'background_position' => 'top center',
+            'title_lines' => array(libro_hero_line('JORGE', 'hsl(220 50% 12%)', 'hsl(45 100% 50%)', 'black'), libro_hero_line('ALMANSA', 'hsl(220 50% 12%)', 'hsl(45 100% 50%)', 'black')),
+        ),
         'content' => '
-[imagen_contenido file="14cap_nuev_almansa.jpg" fullwidth="true"]
-
 [capitular]Jorge Almansa (Cartagena, 1991) llevaba diez años en el Almería, era el capitán y emblema, tenía todas las consideraciones posibles como uno de los receptores de máximo nivel a escala nacional. Por si fuera poco, factores de índole personal, ya a punto de estrenar paternidad, le invitaban &ldquo;muy poco&rdquo; a cambiar de aires.[/capitular]
 
 <p>Le rompieron los esquemas &ldquo;para bien&rdquo; cuando, desde el Guaguas, le lanzaron el reto de unirse a Sergio Camarero y sus muchachos. &ldquo;Me supieron ilusionar, me hablaron de una manera que me conmovió y me llegó al fondo. Tanto es así que pasé de pensármelo a hacer las maletas en muy poco tiempo. Encima tuve la promesa, que se cumplió totalmente, de que tendría el apoyo que necesitaba para que mi familia pudiese estar bien en Gran Canaria. Y ahora, con el paso del tiempo, puedo decir que tomé la mejor decisión posible&rdquo;, argumenta.</p>
@@ -3235,9 +3419,17 @@ Otros en mi lugar lo mismo sí hubiesen dado un paso a otro sitio porque las ofe
 '),
 
     array('title' => 'Matt Knigge', 'numero' => '', 'order' => 1467, 'show_marker' => false, 'parent_ref' => 'cap14',
+        'hero' => array(
+            'image' => libro_img('14cap_knigge_hero.jpg'),
+            'overlay' => 'rgba(0,0,0,0.25)',
+            'icon' => 'none',
+            'alignment' => 'center',
+            'vertical' => 'center',
+            'height' => '600px',
+            'background_position' => 'bottom center',
+            'title_lines' => array(libro_hero_line('MATT', 'hsl(220 50% 12%)', 'hsl(45 100% 50%)', 'black'), libro_hero_line('KNIGGE', 'hsl(220 50% 12%)', 'hsl(45 100% 50%)', 'black')),
+        ),
         'content' => '
-[imagen_contenido file="14cap_nuev_foto4.jpg" fullwidth="true"]
-
 [capitular]&ldquo;Cuando pruebas el sabor de ganar, el sabor de ser campeón, no quieres otro. Y trabajas y haces todo lo posible para que no se acabe. En el Guaguas se sigue la misma filosofía y es la que se adapta a mi manera de vivir el deporte y el voleibol&rdquo;.[/capitular]
 
 <p>El central norteamericano Matt Knigge (Nueva Jersey, 1996) cambió el reconocimiento que tenía en Lugo, su anterior club en el campeonato español, por el órdago que se le abría en un equipo &ldquo;en el que no vale ser segundo&rdquo;. Y en el momento de repasar todo lo vivido aquí (&ldquo;la isla es increíble, me encanta la gente, me siento muy integrado y feliz en el equipo y se han conquistado, hasta la fecha, tres títulos de cinco posibles&rdquo;), el balance le hace esbozar una sonrisa. &ldquo;No puedo pedir más&rdquo;, sintetiza.</p>
@@ -3250,9 +3442,17 @@ Otros en mi lugar lo mismo sí hubiesen dado un paso a otro sitio porque las ofe
 '),
 
     array('title' => 'Paulo Renan', 'numero' => '', 'order' => 1468, 'show_marker' => false, 'parent_ref' => 'cap14',
+        'hero' => array(
+            'image' => libro_img('14cap_renan_hero.jpg'),
+            'overlay' => 'rgba(0,0,0,0.25)',
+            'icon' => 'none',
+            'alignment' => 'center',
+            'vertical' => 'center',
+            'height' => '600px',
+            'background_position' => 'top center',
+            'title_lines' => array(libro_hero_line('PAULO', 'hsl(220 50% 12%)', 'hsl(45 100% 50%)', 'black'), libro_hero_line('RENAN', 'hsl(220 50% 12%)', 'hsl(45 100% 50%)', 'black')),
+        ),
         'content' => '
-[imagen_contenido file="14cap_nuev_foto6.jpg" fullwidth="true"]
-
 [capitular]Portugal, Grecia, Italia y, claro está, su Brasil natal. Nunca había podido jugar en un club español Paulo Renan (Curitiba, 1985) hasta que desde Gran Canaria le echaron el lazo.[/capitular]
 
 <p>&ldquo;Siempre tuve ganas de competir aquí y no me lo pensé mucho. Estaba en mi país y me gustó el reto de volver a salir al extranjero y demostrar mis condiciones como colocador. El Guaguas me pareció un desafío perfecto y, después de todo lo que se ha hecho desde 2020, desde luego que me reafirmo en aquel pensamiento que tuve&rdquo;, reconoce.</p>
@@ -3271,9 +3471,17 @@ Otros en mi lugar lo mismo sí hubiesen dado un paso a otro sitio porque las ofe
 '),
 
     array('title' => 'Paolo Zonca', 'numero' => '', 'order' => 1469, 'show_marker' => false, 'parent_ref' => 'cap14',
+        'hero' => array(
+            'image' => libro_img('14cap_paolozonca_hero.jpg'),
+            'overlay' => 'rgba(0,0,0,0.25)',
+            'icon' => 'none',
+            'alignment' => 'center',
+            'vertical' => 'center',
+            'height' => '600px',
+            'background_position' => 'center center',
+            'title_lines' => array(libro_hero_line('PAOLO', 'hsl(220 50% 12%)', 'hsl(45 100% 50%)', 'black'), libro_hero_line('ZONCA', 'hsl(220 50% 12%)', 'hsl(45 100% 50%)', 'black')),
+        ),
         'content' => '
-[imagen_contenido file="14cap_nuev_paolozonca.jpg" fullwidth="true"]
-
 [capitular]El receptor italiano Paolo Zonca (Gorizia, 1997) pasó como un trueno por el Guaguas. Decisivo en sus dos temporadas (2022-2024) en la consecución de cinco títulos, con dos Superligas, una Copa del Rey, una Supercopa de España y una Copa Ibérica como legado visible, su impacto resultó incuestionable en el ciclo reciente plagado de laureles.[/capitular]
 
 <p>Figura dentro de la cancha, con jerarquía, ambición y compromiso, su adaptación al club y a la vida en Gran Canaria resultó excepcional, lo que engrandeció más su figura si cabe. Le encantaba la vida en la isla, de hecho no dudaba en pasar sus vacaciones sin moverse de aquí, y presumía de ser el mejor embajador posible de cara al exterior al presumir de una tierra &ldquo;especial, preciosa y única&rdquo;, como repetía a modo de identificación plena.</p>
@@ -3284,9 +3492,17 @@ Otros en mi lugar lo mismo sí hubiesen dado un paso a otro sitio porque las ofe
 '),
 
     array('title' => 'Martín Ramos', 'numero' => '', 'order' => 1470, 'show_marker' => false, 'parent_ref' => 'cap14',
+        'hero' => array(
+            'image' => libro_img('14cap_martinramos_hero.jpg'),
+            'overlay' => 'rgba(0,0,0,0.25)',
+            'icon' => 'none',
+            'alignment' => 'center',
+            'vertical' => 'center',
+            'height' => '600px',
+            'background_position' => 'center center',
+            'title_lines' => array(libro_hero_line('MARTÍN', 'hsl(220 50% 12%)', 'hsl(45 100% 50%)', 'black'), libro_hero_line('RAMOS', 'hsl(220 50% 12%)', 'hsl(45 100% 50%)', 'black')),
+        ),
         'content' => '
-[imagen_contenido file="14cap_nuev_martinramos.jpg" fullwidth="true"]
-
 [capitular]Pese a que tenía un palmarés envidiable, con una medalla olímpica en Río de Janeiro 2016 como guinda, Martín Ramos (Buenos Aires, 1991) sintió el deseo de unir su historia exitosa a la del Guaguas, otro paradigma de triunfos, y no dudó en aceptar el reto que le pusieron encima de la mesa en el verano de 2022.[/capitular]
 
 <p>Y la intuición que tuvo de que ese era el inicio de un ciclo de conquistas no ha parado de cumplirse desde entonces porque la cosecha de títulos y de alegrías se ha sucedido sin fin, consecuencia lógica de un binomio imparable, el que forma con el club y, también, de que haya podido encontrar un sitio ideal para, en la madurez de su carrera, sacar a relucir toda su potencia y poder en la pista.</p>
@@ -3299,9 +3515,17 @@ Otros en mi lugar lo mismo sí hubiesen dado un paso a otro sitio porque las ofe
 '),
 
     array('title' => 'Io de Amo', 'numero' => '', 'order' => 1471, 'show_marker' => false, 'parent_ref' => 'cap14',
+        'hero' => array(
+            'image' => libro_img('14cap_ioamo_hero.jpg'),
+            'overlay' => 'rgba(0,0,0,0.25)',
+            'icon' => 'none',
+            'alignment' => 'center',
+            'vertical' => 'center',
+            'height' => '600px',
+            'background_position' => 'center center',
+            'title_lines' => array(libro_hero_line('IO', 'hsl(220 50% 12%)', 'hsl(45 100% 50%)', 'black'), libro_hero_line('DE AMO', 'hsl(220 50% 12%)', 'hsl(45 100% 50%)', 'black')),
+        ),
         'content' => '
-[imagen_contenido file="14cap_nuev_ioamo.jpg" fullwidth="true"]
-
 [capitular]&ldquo;Mi padre fue jugador del Atlético de Madrid de voleibol y coincidió con este club en sus inicios. Soy consciente de todo lo que ha significado el Guaguas en el voleibol español y ese fue uno de los motivos que me hicieron regresar desde el extranjero&rdquo;.[/capitular]
 
 <p>Miguel Ángel de Amo, Io, (Madrid, 1985) sabía bien el destino que elegía para volver a España después de consagrarse en Eslovaquia y Chequia con experiencias que le apuntalaron más si cabe una hoja de servicios privilegiada, con infinidad de títulos y medallas tanto en la pista como sobre la arena en sus incursiones en el vóley-playa. Juan Ruiz llevaba tras su pista largo tiempo y fue en 2022 cuando, al fin, pudo captarlo para importar su sapiencia, destreza y maestría como colocador.</p>
@@ -3314,9 +3538,17 @@ Otros en mi lugar lo mismo sí hubiesen dado un paso a otro sitio porque las ofe
 '),
 
     array('title' => 'Nico Bruno', 'numero' => '', 'order' => 1472, 'show_marker' => false, 'parent_ref' => 'cap14',
+        'hero' => array(
+            'image' => libro_img('14cap_nicobruno_hero.jpg'),
+            'overlay' => 'rgba(0,0,0,0.25)',
+            'icon' => 'none',
+            'alignment' => 'center',
+            'vertical' => 'center',
+            'height' => '600px',
+            'background_position' => 'center center',
+            'title_lines' => array(libro_hero_line('NICO', 'hsl(220 50% 12%)', 'hsl(45 100% 50%)', 'black'), libro_hero_line('BRUNO', 'hsl(220 50% 12%)', 'hsl(45 100% 50%)', 'black')),
+        ),
         'content' => '
-[imagen_contenido file="14cap_nuev_nicobruno.jpg" fullwidth="true"]
-
 [capitular]Otro exponente más de la raza argentina y de la pasión con la que entienden allí el deporte, convertido casi siempre en una cuestión de vida o muerte. Así se desempeña y juega Nico Bruno (Buenos Aires, 1989), receptor que recaló en el club en 2023.[/capitular]
 
 <p>Brasil, Italia, Bélgica y Turquía, además de su país natal, habían sido escenarios de su imparable ascensión y, tras ser proclamado cuatro veces mejor jugador del campeonato otomano, con lo que eso conlleva, su siguiente paso exigía más excelencia. &ldquo;El Guaguas es el mejor equipo de la liga española, el presidente me trasladó la idea de seguir cosechando títulos y dar un salto de calidad en Europa. Era una propuesta ambiciosa y me interesó sumarme al proyecto&rdquo;, explicaba al argumentar su dirección a Gran Canaria pese a disponer de propuestas que, en términos económicos, mejoraban la realizada por Juan Ruiz.</p>
@@ -3329,9 +3561,17 @@ Otros en mi lugar lo mismo sí hubiesen dado un paso a otro sitio porque las ofe
 '),
 
     array('title' => 'Unai Larrañaga', 'numero' => '', 'order' => 1473, 'show_marker' => false, 'parent_ref' => 'cap14',
+        'hero' => array(
+            'image' => libro_img('14cap_larranaga_hero.jpg'),
+            'overlay' => 'rgba(0,0,0,0.25)',
+            'icon' => 'none',
+            'alignment' => 'center',
+            'vertical' => 'center',
+            'height' => '600px',
+            'background_position' => 'top center',
+            'title_lines' => array(libro_hero_line('UNAI', 'hsl(220 50% 12%)', 'hsl(45 100% 50%)', 'black'), libro_hero_line('LARRAÑAGA', 'hsl(220 50% 12%)', 'hsl(45 100% 50%)', 'black')),
+        ),
         'content' => '
-[imagen_contenido file="14cap_nuev_larranaga.jpg" fullwidth="true"]
-
 [capitular]Eficiencia silenciosa, no siempre espectacular pero, invariablemente, valiosísima para el rendimiento y los resultados del equipo. Es el perfil de Unai Larrañaga (Dumbría, La Coruña, 2000), desde 2023 componente esencial del mecanismo de funcionamiento pluscuamperfecto del Guaguas desde su posición estratégica e infalible.[/capitular]
 
 <p>Curtido en el voleibol nacional, con paso por Arenal Emeve, Santanderina y Melilla, y con la condición de fijo en la selección española, en el club hubo unanimidad a la hora de valorar su incorporación, con el añadido de aumentar la cuota española del plantel, aspecto siempre bienvenido y que no se descuida. Larrañaga encajó desde el primer momento con la naturalidad que tienen los grandes.</p>
@@ -3344,9 +3584,17 @@ Otros en mi lugar lo mismo sí hubiesen dado un paso a otro sitio porque las ofe
 '),
 
     array('title' => 'Walla Souza', 'numero' => '', 'order' => 1474, 'show_marker' => false, 'parent_ref' => 'cap14',
+        'hero' => array(
+            'image' => libro_img('14cap_walla_hero.jpg'),
+            'overlay' => 'rgba(0,0,0,0.25)',
+            'icon' => 'none',
+            'alignment' => 'center',
+            'vertical' => 'center',
+            'height' => '600px',
+            'background_position' => 'bottom center',
+            'title_lines' => array(libro_hero_line('WALLA', 'hsl(220 50% 12%)', 'hsl(45 100% 50%)', 'black'), libro_hero_line('SOUZA', 'hsl(220 50% 12%)', 'hsl(45 100% 50%)', 'black')),
+        ),
         'content' => '
-[imagen_contenido file="14cap_nuev_walla.jpg" fullwidth="true"]
-
 [capitular]Fue en julio de 2023. Llegaba con 33 años y con la competencia abierta en la demarcación de opuesto con el colombiano Juan Pablo Moreno. Pocos preveían lo que venía en camino con el fichaje del brasileño Francisco Wallysson Souza, Walla (Jaguaribe, 1990).[/capitular]
 
 <p>&ldquo;Creo firmemente que estaremos enfocados en nuestro principal objetivo, que es conquistar títulos. No solo yo, sino todo el equipo estará entregado al 100% para brindar a nuestros aficionados una temporada memorable, culminando con más de un título para nuestro club&rdquo;, declaraba en sus primeras palabras como componente del equipo.</p>
@@ -3357,9 +3605,17 @@ Otros en mi lugar lo mismo sí hubiesen dado un paso a otro sitio porque las ofe
 '),
 
     array('title' => 'Tomas Rousseaux', 'numero' => '', 'order' => 1475, 'show_marker' => false, 'parent_ref' => 'cap14',
+        'hero' => array(
+            'image' => libro_img('14cap_rousseaux_hero.jpg'),
+            'overlay' => 'rgba(0,0,0,0.25)',
+            'icon' => 'none',
+            'alignment' => 'center',
+            'vertical' => 'center',
+            'height' => '600px',
+            'background_position' => 'center center',
+            'title_lines' => array(libro_hero_line('TOMAS', 'hsl(220 50% 12%)', 'hsl(45 100% 50%)', 'black'), libro_hero_line('ROUSSEAUX', 'hsl(220 50% 12%)', 'hsl(45 100% 50%)', 'black')),
+        ),
         'content' => '
-[imagen_contenido file="14cap_nuev_rousseaux.jpg" fullwidth="true"]
-
 [capitular]Un internacional belga procedente de Arabia Saudí, en la mejor etapa de su carrera y con disposición de dar lo mejor de su experiencia y valía en favor de la causa. Eso fue lo que se aseguró el Guaguas cuando en 2024, y tras la repentina marcha del italiano Paolo Zonca, analizó el mercado y se decantó por Tomas Rousseaux.[/capitular]
 
 [cita_editorial]El compromiso del club con la excelencia y su entorno de apoyo a los jugadores fueron factores clave. Además, la oportunidad de trabajar con su experimentado cuerpo técnico y unirme a un equipo con una cultura ganadora hizo que la decisión fuera fácil para mí.[/cita_editorial]
@@ -3374,9 +3630,17 @@ Otros en mi lugar lo mismo sí hubiesen dado un paso a otro sitio porque las ofe
 '),
 
     array('title' => 'Osmany Juantorena', 'numero' => '', 'order' => 1476, 'show_marker' => false, 'parent_ref' => 'cap14',
+        'hero' => array(
+            'image' => libro_img('14cap_juantorena_hero.jpg'),
+            'overlay' => 'rgba(0,0,0,0.25)',
+            'icon' => 'none',
+            'alignment' => 'center',
+            'vertical' => 'center',
+            'height' => '600px',
+            'background_position' => 'top center',
+            'title_lines' => array(libro_hero_line('OSMANY', 'hsl(220 50% 12%)', 'hsl(45 100% 50%)', 'black'), libro_hero_line('JUANTORENA', 'hsl(220 50% 12%)', 'hsl(45 100% 50%)', 'black')),
+        ),
         'content' => '
-[imagen_contenido file="14cap_nuev_juantorena.jpg" fullwidth="true"]
-
 [capitular]La noticia del fichaje de Osmany Juantorena (Santiago de Cuba, 1985) por el Guaguas en el verano de 2025 fue una bomba informativa en toda regla por lo que suponía unir a una plantilla que lo había ganado todo el curso anterior un campeón de primer calibre.[/capitular]
 
 <p>El receptor cubano, con un palmarés plagado de títulos y condecoraciones, incluyendo medallas en Olimpiadas, Europeos y Mundiales a nivel de selecciones, venía a apuntalar un proyecto estelar con su incuestionable liderazgo, calidad y experiencia. &ldquo;Es un milagro que hayamos podido traerlo&rdquo;, significaba el presidente Juan Ruiz tras certificar su incorporación y dar cuenta de la dimensión que implicaba.</p>
@@ -3398,21 +3662,20 @@ Otros en mi lugar lo mismo sí hubiesen dado un paso a otro sitio porque las ofe
         'show_marker' => true,
         'ref_id' => 'cap15',
         'hero' => array(
-            'image'               => libro_img('15cap_impa_foto3.jpg'),
+            'image'               => libro_img('15cap_impa_hero.jpg'),
             'overlay'             => 'rgba(0,0,0,0.25)',
             'icon'                => 'custom',
             'custom_icon'         => libro_img('estrella-icon.svg'),
-            'custom_icon_color'   => 'hsl(240, 52%, 19%)',
+            'custom_icon_color'   => 'hsl(45 100% 50%)',
             'icon_width'          => 40,
             'icon_height'         => 40,
             'alignment'           => 'center',
             'vertical'            => 'center',
-            'height'              => '500px',
-            'background_color'    => 'hsl(220, 50%, 12%)',
+            'height'              => '600px',
             'background_position' => 'center center',
             'title_lines'         => array(
-                libro_hero_line('EL IMPACTO', 'hsl(0, 0%, 100%)', 'hsl(240, 52%, 19%)', 'none'),
-                libro_hero_line('DEL ESCUDO', 'hsl(0, 0%, 100%)', 'hsl(240, 52%, 19%)', 'none'),
+                libro_hero_line('EL IMPACTO', 'hsl(220 50% 12%)', 'hsl(45 100% 50%)', 'black'),
+                libro_hero_line('DEL ESCUDO', 'hsl(220 50% 12%)', 'hsl(45 100% 50%)', 'black'),
             ),
         ),
         'content' => '
@@ -3491,23 +3754,21 @@ Otros en mi lugar lo mismo sí hubiesen dado un paso a otro sitio porque las ofe
         'content' => '',
     ),
 
-    array('title' => 'La directiva del cincuentenario', 'numero' => '', 'order' => 1701, 'show_marker' => false, 'parent_ref' => 'cap16',
+    array('title' => 'La directiva', 'numero' => '', 'order' => 1701, 'show_marker' => false, 'parent_ref' => 'cap16',
         'hero' => array(
-            'image'               => libro_img('16cap_dire_foto1.jpg'),
+            'image'               => libro_img('16cap_directiva_hero.jpg'),
             'overlay'             => 'rgba(0,0,0,0.25)',
             'icon'                => 'custom',
             'custom_icon'         => libro_img('estrella-icon.svg'),
-            'custom_icon_color'   => 'hsl(240, 52%, 19%)',
+            'custom_icon_color'   => 'hsl(45 100% 50%)',
             'icon_width'          => 40,
             'icon_height'         => 40,
             'alignment'           => 'center',
             'vertical'            => 'center',
-            'height'              => '500px',
-            'background_color'    => 'hsl(220, 50%, 12%)',
+            'height'              => '600px',
             'background_position' => 'top center',
             'title_lines'         => array(
-                libro_hero_line('LA DIRECTIVA', 'hsl(0, 0%, 100%)', 'hsl(240, 52%, 19%)', 'none'),
-                libro_hero_line('DEL CINCUENTENARIO', 'hsl(0, 0%, 100%)', 'hsl(240, 52%, 19%)', 'none'),
+                libro_hero_line('LA DIRECTIVA', 'hsl(220 50% 12%)', 'hsl(45 100% 50%)', 'black'),
             ),
         ),
         'content' => '
@@ -3540,21 +3801,21 @@ Otros en mi lugar lo mismo sí hubiesen dado un paso a otro sitio porque las ofe
 '),
 
     array('title' => 'El futuro que viene', 'numero' => '', 'order' => 1702, 'show_marker' => false, 'parent_ref' => 'cap16',
+        'anclas_internas' => "Ariel Ortega | ariel-ortega\nLaura Sánchez | laura-sanchez\nLucía Ramón | lucia-ramon\nDavid Ruiz | david-ruiz",
         'hero' => array(
-            'image'               => libro_img('16cap_dire_foto5.webp'),
+            'image'               => libro_img('16cap_futuro_hero.jpg'),
             'overlay'             => 'rgba(0,0,0,0.25)',
             'icon'                => 'custom',
             'custom_icon'         => libro_img('estrella-icon.svg'),
-            'custom_icon_color'   => 'hsl(240, 52%, 19%)',
+            'custom_icon_color'   => 'hsl(45 100% 50%)',
             'icon_width'          => 40,
             'icon_height'         => 40,
             'alignment'           => 'center',
             'vertical'            => 'center',
-            'height'              => '500px',
-            'background_color'    => 'hsl(17, 14%, 95%)',
-            'background_position' => 'center 20%',
+            'height'              => '600px',
+            'background_position' => 'top center',
             'title_lines'         => array(
-                libro_hero_line('EL FUTURO QUE VIENE', 'hsl(0, 0%, 100%)', 'hsl(240, 52%, 19%)', 'none'),
+                libro_hero_line('EL FUTURO QUE VIENE', 'hsl(220 50% 12%)', 'hsl(45 100% 50%)', 'black'),
             ),
         ),
         'content' => '
@@ -3566,7 +3827,7 @@ Otros en mi lugar lo mismo sí hubiesen dado un paso a otro sitio porque las ofe
 
 <p>Un Guaguas en transformación, adaptado a la vanguardia del siglo XXI en su manera de desarrollarse y desplegarse a la sociedad y sin perder la esencia de su herencia triunfal, y bajo unos parámetros de sostenibilidad, compromiso social y alianza con el éxito deportivo, lo que aboca a una gestión impecable, son los cimientos en esta etapa.</p>
 
-[seccion_header color="navy"]Ariel Ortega[/seccion_header]
+[seccion_header color="navy" id="ariel-ortega"]Ariel Ortega[/seccion_header]
 
 [imagen_contenido file="16cap_dire_foto2.webp" max_width="50%"]
 
@@ -3590,7 +3851,7 @@ Otros en mi lugar lo mismo sí hubiesen dado un paso a otro sitio porque las ofe
 
 [cita_editorial author="Ariel Ortega"]Es un trabajo lento, pero aspiramos algún día a poder contar con un gran sponsor privado que pueda complementar a Guaguas Municipales y poder dar ese salto cualitativo en el presupuesto que nos permita aspirar a más en Europa. Sueño con volver al CID renovado y las gradas a tope animando al Guaguas.[/cita_editorial]
 
-[seccion_header color="navy"]Laura Sánchez[/seccion_header]
+[seccion_header color="navy" id="laura-sanchez"]Laura Sánchez[/seccion_header]
 
 [imagen_contenido file="16cap_dire_foto6.webp" max_width="50%"]
 
@@ -3610,7 +3871,7 @@ Otros en mi lugar lo mismo sí hubiesen dado un paso a otro sitio porque las ofe
 
 <p>E inevitable la referencia a Juan Ruiz: &ldquo;Juan Ruiz es una figura clave en la historia reciente del club. Destacaría su compromiso, su capacidad de liderazgo y su visión a largo plazo. Es un presidente cercano, que escucha a su equipo y que se apoya y confía plenamente en las personas que le rodean, fomentando un clima de trabajo basado en la colaboración y el respeto. Esa forma de dirigir ha sido fundamental para consolidar un proyecto sólido, ambicioso y con identidad propia, siempre con el Guaguas como prioridad&rdquo;.</p>
 
-[seccion_header color="navy"]Lucía Ramón[/seccion_header]
+[seccion_header color="navy" id="lucia-ramon"]Lucía Ramón[/seccion_header]
 
 [imagen_contenido file="16cap_dire_foto7.webp" max_width="50%"]
 
@@ -3626,7 +3887,7 @@ Otros en mi lugar lo mismo sí hubiesen dado un paso a otro sitio porque las ofe
 
 <p>En sus reflexiones también cabe una personalizada en la figura del presidente: &ldquo;Para mí, Juan Ruiz es mucho más que el presidente del Guaguas. Lo conozco desde que era niña, porque ya estuvo al frente del club en la época en la que jugaba mi padre, y siempre lo he visto como alguien que ha dedicado su vida a que este club crezca y se mantenga en lo más alto. Es tenaz, apasionado y comprometido, capaz de enfrentar cualquier dificultad con determinación y de transmitir ilusión a todos los que formamos parte de este proyecto. Para mí, Juan Ruiz no es solo un presidente; es historia viva y una inspiración constante que une pasado, presente y futuro del Club Voleibol Guaguas&rdquo;.</p>
 
-[seccion_header color="navy"]David Ruiz[/seccion_header]
+[seccion_header color="navy" id="david-ruiz"]David Ruiz[/seccion_header]
 
 [imagen_contenido file="16cap_dire_foto8.webp" max_width="50%"]
 
@@ -3664,20 +3925,19 @@ Otros en mi lugar lo mismo sí hubiesen dado un paso a otro sitio porque las ofe
         'show_marker' => true,
         'ref_id' => 'cap17',
                 'hero' => array(
-            'image'               => libro_img('17cap_mas_foto2.jpg'),
+            'image'               => libro_img('17cap_mas_hero.jpg'),
             'overlay'             => 'rgba(0,0,0,0.25)',
             'icon'                => 'custom',
             'custom_icon'         => libro_img('estrella-icon.svg'),
-            'custom_icon_color'   => 'hsl(240, 52%, 19%)',
+            'custom_icon_color'   => 'hsl(45 100% 50%)',
             'icon_width'          => 40,
             'icon_height'         => 40,
             'alignment'           => 'center',
             'vertical'            => 'center',
-            'height'              => '500px',
-            'background_color'    => 'hsl(220, 50%, 12%)',
-            'background_position' => 'center 40%',
+            'height'              => '600px',
+            'background_position' => 'top center',
             'title_lines'         => array(
-                libro_hero_line('MÁS HONORES', 'hsl(0, 0%, 100%)', 'hsl(240, 52%, 19%)', 'none'),
+                libro_hero_line('MÁS HONORES', 'hsl(220 50% 12%)', 'hsl(45 100% 50%)', 'black'),
             ),
         ),
 'content' => '
@@ -3731,21 +3991,20 @@ Otros en mi lugar lo mismo sí hubiesen dado un paso a otro sitio porque las ofe
         'show_marker' => true,
         'ref_id' => 'cap18',
         'hero' => array(
-            'image'               => libro_img('19cap_empl_foto3.jpg'),
+            'image'               => libro_img('18cap_empl_hero.jpg'),
             'overlay'             => 'rgba(0,0,0,0.25)',
             'icon'                => 'custom',
             'custom_icon'         => libro_img('estrella-icon.svg'),
-            'custom_icon_color'   => 'hsl(240, 52%, 19%)',
+            'custom_icon_color'   => 'hsl(45 100% 50%)',
             'icon_width'          => 40,
             'icon_height'         => 40,
             'alignment'           => 'center',
             'vertical'            => 'center',
-            'height'              => '500px',
-            'background_color'    => 'hsl(220, 50%, 12%)',
-            'background_position' => 'center top',
+            'height'              => '600px',
+            'background_position' => 'bottom center',
             'title_lines'         => array(
-                libro_hero_line('TAMBIÉN SON', 'hsl(0, 0%, 100%)', 'hsl(240, 52%, 19%)', 'none'),
-                libro_hero_line('IMPRESCINDIBLES', 'hsl(0, 0%, 100%)', 'hsl(240, 52%, 19%)', 'none'),
+                libro_hero_line('TAMBIÉN SON', 'hsl(220 50% 12%)', 'hsl(45 100% 50%)', 'black'),
+                libro_hero_line('IMPRESCINDIBLES', 'hsl(220 50% 12%)', 'hsl(45 100% 50%)', 'black'),
             ),
         ),
         'content' => '
@@ -3782,25 +4041,26 @@ Otros en mi lugar lo mismo sí hubiesen dado un paso a otro sitio porque las ofe
         'show_marker' => true,
         'ref_id' => 'cap19',
         'hero' => array(
-            'image'               => libro_img('20cap_plan_foto2.jpg'),
+            'image'               => libro_img('19cap_plan_hero.jpg'),
             'overlay'             => 'rgba(0,0,0,0.25)',
             'icon'                => 'custom',
             'custom_icon'         => libro_img('estrella-icon.svg'),
-            'custom_icon_color'   => 'hsl(240, 52%, 19%)',
+            'custom_icon_color'   => 'hsl(45 100% 50%)',
             'icon_width'          => 40,
             'icon_height'         => 40,
             'alignment'           => 'center',
             'vertical'            => 'center',
-            'height'              => '500px',
-            'background_color'    => 'hsl(220, 50%, 12%)',
-            'background_position' => 'center 10%',
+            'height'              => '600px',
+            'background_position' => 'center center',
             'title_lines'         => array(
-                libro_hero_line('LA PLANTILLA', 'hsl(0, 0%, 100%)', 'hsl(240, 52%, 19%)', 'none'),
-                libro_hero_line('DEL CINCUENTENARIO', 'hsl(0, 0%, 100%)', 'hsl(240, 52%, 19%)', 'none'),
+                libro_hero_line('LA PLANTILLA', 'hsl(220 50% 12%)', 'hsl(45 100% 50%)', 'black'),
+                libro_hero_line('DEL CINCUENTENARIO', 'hsl(220 50% 12%)', 'hsl(45 100% 50%)', 'black'),
             ),
         ),
         'content' => '
-[imagen_contenido file="20cap_plan_foto3.jpg" fullwidth="true"]
+[imagen_contenido file="20cap_plan_foto1.jpg" fullwidth="true"]
+
+[imagen_contenido file="20cap_plan_foto3.jpg" max_width="320px" caption="Numeración de la plantilla del 50 aniversario."]
 
 <div class="directiva-list plantilla-list-full">
 <div class="directiva-item"><span class="d-num">1</span><div class="d-info"><span class="d-name">Osmany Juantorena</span><span class="d-role">Receptor</span></div></div>
@@ -3829,22 +4089,21 @@ Otros en mi lugar lo mismo sí hubiesen dado un paso a otro sitio porque las ofe
         'show_marker' => true,
         'ref_id' => 'cap20',
         'hero' => array(
-            'image'               => libro_img('21cap_reco_foto3.webp'),
+            'image'               => libro_img('20cap_reco_hero.jpg'),
             'overlay'             => 'rgba(0,0,0,0.25)',
             'icon'                => 'custom',
             'custom_icon'         => libro_img('estrella-icon.svg'),
-            'custom_icon_color'   => 'hsl(240, 52%, 19%)',
+            'custom_icon_color'   => 'hsl(45 100% 50%)',
             'icon_width'          => 40,
             'icon_height'         => 40,
             'alignment'           => 'center',
             'vertical'            => 'center',
-            'height'              => '500px',
-            'background_color'    => 'hsl(17, 14%, 95%)',
-            'background_position' => 'center 20%',
+            'height'              => '600px',
+            'background_position' => 'top center',
             'title_lines'         => array(
-                libro_hero_line('RECONOCIMIENTO', 'hsl(0, 0%, 100%)', 'hsl(240, 52%, 19%)', 'none'),
-                libro_hero_line('DEL COLECTIVO', 'hsl(0, 0%, 100%)', 'hsl(240, 52%, 19%)', 'none'),
-                libro_hero_line('ARBITRAL', 'hsl(0, 0%, 100%)', 'hsl(240, 52%, 19%)', 'none'),
+                libro_hero_line('RECONOCIMIENTO', 'hsl(220 50% 12%)', 'hsl(45 100% 50%)', 'black'),
+                libro_hero_line('DEL COLECTIVO', 'hsl(220 50% 12%)', 'hsl(45 100% 50%)', 'black'),
+                libro_hero_line('ARBITRAL', 'hsl(220 50% 12%)', 'hsl(45 100% 50%)', 'black'),
             ),
         ),
         'content' => '
@@ -3893,30 +4152,29 @@ Otros en mi lugar lo mismo sí hubiesen dado un paso a otro sitio porque las ofe
     array(
         'title' => 'Desde la UD Las Palmas',
         'numero' => '21',
-        'title' => 'Desde la UD Las Palmas',
-        'numero' => '21',
         'order' => 200,
         'show_marker' => true,
         'ref_id' => 'cap21',
         'hero' => array(
-            'image'               => libro_img('22cap_migu_foto1.jpg'),
+            'image'               => libro_img('21cap_migu_hero.jpg'),
             'overlay'             => 'rgba(0,0,0,0.25)',
             'icon'                => 'custom',
             'custom_icon'         => libro_img('estrella-icon.svg'),
-            'custom_icon_color'   => 'hsl(240, 52%, 19%)',
+            'custom_icon_color'   => 'hsl(45 100% 50%)',
             'icon_width'          => 40,
             'icon_height'         => 40,
             'alignment'           => 'center',
             'vertical'            => 'center',
-            'height'              => '500px',
-            'background_color'    => 'hsl(220, 50%, 12%)',
-            'background_position' => 'center 20%',
+            'height'              => '600px',
+            'background_position' => 'center center',
             'title_lines'         => array(
-                libro_hero_line('DESDE LA', 'hsl(0, 0%, 100%)', 'hsl(240, 52%, 19%)', 'none'),
-                libro_hero_line('UD LAS PALMAS', 'hsl(0, 0%, 100%)', 'hsl(240, 52%, 19%)', 'none'),
+                libro_hero_line('DESDE LA', 'hsl(220 50% 12%)', 'hsl(45 100% 50%)', 'black'),
+                libro_hero_line('UD LAS PALMAS', 'hsl(220 50% 12%)', 'hsl(45 100% 50%)', 'black'),
             ),
         ),
         'content' => '
+[seccion_header]MIGUEL ÁNGEL RAMÍREZ[/seccion_header]
+
 [capitular]La historia y representatividad de la UD Las Palmas, bandera de Gran Canaria desde 1949, trasciende al deporte en la sociedad isleña y es símbolo unificador y sinónimo de prestigio. Desde la entidad amarilla, en voz de Miguel Ángel Ramírez, su presidente, hay un reconocimiento sincero y elogioso de lo que significa el CV Guaguas con su medio siglo de existencia y un palmarés que le diferencia.[/capitular]
 
 [cita_editorial author="Miguel Ángel Ramírez"]Todos conocemos la trayectoria de superaciones y éxitos del Guaguas, que ha permitido a nuestra tierra tener un papel hegemónico en el voleibol español, con gestas y triunfos de enorme mérito y brillo. Aquellos tiempos en el CID lleno con los Camarero, Klos, Golec, Sánchez Jover... Y ahora, también, después de su refundación. En el deporte no es fácil ganar y, frecuentemente, son más habituales las derrotas. Con el Guaguas no ha sido así. Hay que valorar todo lo que ha ido logrando con el paso de los años, siempre con una exigencia máxima y compitiendo con clubes que manejaban mayores presupuestos. Repasar su colección de títulos es motivo de orgullo y satisfacción para todos los grancanarios y ahora que cumple 50 años desde la UD Las Palmas le trasladamos nuestro aprecio, admiración y felicitación.[/cita_editorial]
@@ -3938,21 +4196,20 @@ Otros en mi lugar lo mismo sí hubiesen dado un paso a otro sitio porque las ofe
         'show_marker' => true,
         'ref_id' => 'cap22',
         'hero' => array(
-            'image'               => libro_img('23cap_vang_montaje.webp'),
-            'overlay'             => 'rgba(0,0,0,0)',
+            'image'               => libro_img('22cap_vang_hero.jpg'),
+            'overlay'             => 'rgba(0,0,0,0.25)',
             'icon'                => 'custom',
             'custom_icon'         => libro_img('estrella-icon.svg'),
-            'custom_icon_color'   => 'hsl(240, 52%, 19%)',
+            'custom_icon_color'   => 'hsl(45 100% 50%)',
             'icon_width'          => 40,
             'icon_height'         => 40,
             'alignment'           => 'center',
             'vertical'            => 'center',
-            'height'              => '500px',
-            'background_color'    => 'hsl(32, 17%, 96%)',
-            'background_position' => 'center 40%',
+            'height'              => '600px',
+            'background_position' => 'center center',
             'title_lines'         => array(
-                libro_hero_line('A LA VANGUARDIA', 'hsl(0, 0%, 100%)', 'hsl(240, 52%, 19%)', 'none'),
-                libro_hero_line('TECNOLÓGICA', 'hsl(0, 0%, 100%)', 'hsl(240, 52%, 19%)', 'none'),
+                libro_hero_line('A LA VANGUARDIA', 'hsl(220 50% 12%)', 'hsl(45 100% 50%)', 'black'),
+                libro_hero_line('TECNOLÓGICA', 'hsl(220 50% 12%)', 'hsl(45 100% 50%)', 'black'),
             ),
         ),
         'content' => '
@@ -4006,20 +4263,20 @@ Otros en mi lugar lo mismo sí hubiesen dado un paso a otro sitio porque las ofe
         'show_marker' => true,
         'ref_id' => 'cap23',
         'hero' => array(
-            'image'               => libro_img('24cap_afic_hero.jpg'),
-            'overlay'             => 'rgba(0,0,0,0.45)',
+            'image'               => libro_img('23cap_afic_hero.jpg'),
+            'overlay'             => 'rgba(0,0,0,0.25)',
             'icon'                => 'custom',
             'custom_icon'         => libro_img('estrella-icon.svg'),
-            'custom_icon_color'   => 'hsl(240, 52%, 19%)',
+            'custom_icon_color'   => 'hsl(45 100% 50%)',
             'icon_width'          => 40,
             'icon_height'         => 40,
             'alignment'           => 'center',
             'vertical'            => 'center',
-            'height'              => '500px',
-            'background_color'    => 'hsl(220, 50%, 12%)',
+            'height'              => '600px',
+            'background_position' => 'center center',
             'title_lines'         => array(
-                libro_hero_line('LA GRAN FAMILIA', 'hsl(0, 0%, 100%)', 'hsl(240, 52%, 19%)', 'none'),
-                libro_hero_line('DE LA AFICIÓN', 'hsl(0, 0%, 100%)', 'hsl(240, 52%, 19%)', 'none'),
+                libro_hero_line('LA GRAN FAMILIA', 'hsl(220 50% 12%)', 'hsl(45 100% 50%)', 'black'),
+                libro_hero_line('DE LA AFICIÓN', 'hsl(220 50% 12%)', 'hsl(45 100% 50%)', 'black'),
             ),
         ),
         'content' => '
@@ -4056,7 +4313,7 @@ Otros en mi lugar lo mismo sí hubiesen dado un paso a otro sitio porque las ofe
             'icon_height'       => 60,
             'alignment'         => 'left',
             'vertical'          => 'center',
-            'height'            => '450px',
+            'height'            => '600px',
             'background_position' => 'center center',
             'title_lines'       => array(libro_hero_line('VÍNCULOS', '#1a237e', '#FFFFFF', 'black'), libro_hero_line('EMPRESARIALES', '#1a237e', '#FFFFFF', 'black')),
         ),
@@ -4065,20 +4322,20 @@ Otros en mi lugar lo mismo sí hubiesen dado un paso a otro sitio porque las ofe
 
     array('title' => 'Vínculos empresariales', 'numero' => '', 'order' => 2151, 'show_marker' => false, 'parent_ref' => 'cap24',
         'hero' => array(
-            'image'             => libro_img('25cap_vinc_hero.jpg'),
-            'overlay'           => 'rgba(0,0,0,0)',
+            'image'             => libro_img('24cap_vinc_hero.jpg'),
+            'overlay'           => 'rgba(0,0,0,0.25)',
             'icon'              => 'custom',
             'custom_icon'       => libro_img('estrella-icon.svg'),
-            'custom_icon_color' => 'hsl(0, 0%, 0%)',
+            'custom_icon_color' => 'hsl(45 100% 50%)',
             'icon_width'        => 40,
             'icon_height'       => 40,
             'alignment'         => 'center',
             'vertical'          => 'center',
-            'height'            => '500px',
-            'background_color'  => 'hsl(46, 92%, 62%)',
+            'height'            => '600px',
+            'background_position' => 'center center',
             'title_lines'       => array(
-                libro_hero_line('VÍNCULOS', 'hsl(46, 92%, 62%)', 'hsl(0, 0%, 0%)', 'none'),
-                libro_hero_line('EMPRESARIALES', 'hsl(46, 92%, 62%)', 'hsl(0, 0%, 0%)', 'none'),
+                libro_hero_line('VÍNCULOS', 'hsl(220 50% 12%)', 'hsl(45 100% 50%)', 'black'),
+                libro_hero_line('EMPRESARIALES', 'hsl(220 50% 12%)', 'hsl(45 100% 50%)', 'black'),
             ),
         ),
         'content' => '
@@ -4108,6 +4365,7 @@ Otros en mi lugar lo mismo sí hubiesen dado un paso a otro sitio porque las ofe
 '),
 
     array('title' => 'Agua Firgas', 'numero' => '', 'order' => 2152, 'show_marker' => false, 'parent_ref' => 'cap24',
+        'ocultar_titulo' => true,
         'content' => '
 <div class="patrocinador-page">
 <div class="patrocinador-logo"><img src="' . libro_img('firgas.svg') . '" alt="Firgas Aquavia"></div>
@@ -4127,6 +4385,7 @@ Otros en mi lugar lo mismo sí hubiesen dado un paso a otro sitio porque las ofe
 '),
 
     array('title' => 'Icare', 'numero' => '', 'order' => 2153, 'show_marker' => false, 'parent_ref' => 'cap24',
+        'ocultar_titulo' => true,
         'content' => '
 <div class="patrocinador-page">
 <div class="patrocinador-logo"><img src="' . libro_img('icare.svg') . '" alt="Icare"></div>
@@ -4146,6 +4405,7 @@ Otros en mi lugar lo mismo sí hubiesen dado un paso a otro sitio porque las ofe
 '),
 
     array('title' => 'R2 Hotels', 'numero' => '', 'order' => 2154, 'show_marker' => false, 'parent_ref' => 'cap24',
+        'ocultar_titulo' => true,
         'content' => '
 <div class="patrocinador-page">
 <div class="patrocinador-logo"><img src="' . libro_img('r2hotels.svg') . '" alt="R2 Hotels"></div>
@@ -4166,6 +4426,7 @@ Otros en mi lugar lo mismo sí hubiesen dado un paso a otro sitio porque las ofe
 '),
 
     array('title' => 'Hoteles Vistaflor', 'numero' => '', 'order' => 2155, 'show_marker' => false, 'parent_ref' => 'cap24',
+        'ocultar_titulo' => true,
         'content' => '
 <div class="patrocinador-page">
 <div class="patrocinador-logo"><img src="' . libro_img('vistaflor.svg') . '" alt="Hoteles Vistaflor"></div>
@@ -4185,6 +4446,7 @@ Otros en mi lugar lo mismo sí hubiesen dado un paso a otro sitio porque las ofe
 '),
 
     array('title' => 'El Extinguidor', 'numero' => '', 'order' => 2156, 'show_marker' => false, 'parent_ref' => 'cap24',
+        'ocultar_titulo' => true,
         'content' => '
 <div class="patrocinador-page">
 <div class="patrocinador-logo"><img src="' . libro_img('elextinguidor.svg') . '" alt="El Extinguidor"></div>
@@ -4204,6 +4466,7 @@ Otros en mi lugar lo mismo sí hubiesen dado un paso a otro sitio porque las ofe
 '),
 
     array('title' => 'AFS Formación', 'numero' => '', 'order' => 2157, 'show_marker' => false, 'parent_ref' => 'cap24',
+        'ocultar_titulo' => true,
         'content' => '
 <div class="patrocinador-page">
 <div class="patrocinador-logo"><img src="' . libro_img('afs.svg') . '" alt="AFS Formación"></div>
@@ -4224,6 +4487,7 @@ Otros en mi lugar lo mismo sí hubiesen dado un paso a otro sitio porque las ofe
 '),
 
     array('title' => 'Universidad del Atlántico Medio', 'numero' => '', 'order' => 2158, 'show_marker' => false, 'parent_ref' => 'cap24',
+        'ocultar_titulo' => true,
         'content' => '
 <div class="patrocinador-page">
 <div class="patrocinador-logo"><img src="' . libro_img('universidad.svg') . '" alt="Universidad del Atlántico Medio"></div>
@@ -4243,6 +4507,7 @@ Otros en mi lugar lo mismo sí hubiesen dado un paso a otro sitio porque las ofe
 '),
 
     array('title' => 'HiperDino', 'numero' => '', 'order' => 2159, 'show_marker' => false, 'parent_ref' => 'cap24',
+        'ocultar_titulo' => true,
         'content' => '
 <div class="patrocinador-page">
 <div class="patrocinador-logo"><img src="' . libro_img('hiperdino.svg') . '" alt="HiperDino"></div>
@@ -4263,6 +4528,7 @@ Otros en mi lugar lo mismo sí hubiesen dado un paso a otro sitio porque las ofe
 '),
 
     array('title' => 'Toyota Canarias', 'numero' => '', 'order' => 2160, 'show_marker' => false, 'parent_ref' => 'cap24',
+        'ocultar_titulo' => true,
         'content' => '
 <div class="patrocinador-page">
 <div class="patrocinador-logo"><img src="' . libro_img('toyota.svg') . '" alt="Toyota Canarias"></div>
@@ -4283,6 +4549,7 @@ Otros en mi lugar lo mismo sí hubiesen dado un paso a otro sitio porque las ofe
 '),
 
     array('title' => 'Acerbis', 'numero' => '', 'order' => 2161, 'show_marker' => false, 'parent_ref' => 'cap24',
+        'ocultar_titulo' => true,
         'content' => '
 <div class="patrocinador-page">
 <div class="patrocinador-logo"><img src="' . libro_img('acerbis.svg') . '" alt="Acerbis"></div>
@@ -4309,24 +4576,35 @@ Otros en mi lugar lo mismo sí hubiesen dado un paso a otro sitio porque las ofe
         'show_marker' => true,
         'ref_id' => 'cap25',
         'hero' => array(
-            'image'               => '',
-            'background_color'    => 'hsl(220, 50%, 10%)',
-            'overlay'             => 'rgba(0, 0, 0, 0.3)',
+            'image'               => libro_img('25cap_gala_hero.jpg'),
+            'overlay'             => 'rgba(0,0,0,0.25)',
             'icon'                => 'custom',
             'custom_icon'         => libro_img('estrella-icon.svg'),
-            'custom_icon_color'   => 'hsl(45, 100%, 50%)',
+            'custom_icon_color'   => 'hsl(45 100% 50%)',
             'icon_width'          => 40,
             'icon_height'         => 40,
             'alignment'           => 'center',
             'vertical'            => 'center',
-            'height'              => '500px',
+            'height'              => '600px',
             'background_position' => 'center center',
             'title_lines'         => array(
-                libro_hero_line('CENA DE GALA', 'hsl(220, 50%, 10%)', 'hsl(45, 100%, 50%)', 'black'),
-                libro_hero_line('EN FAMILIA', 'hsl(220, 50%, 10%)', 'hsl(45, 100%, 50%)', 'black'),
+                libro_hero_line('CENA DE GALA', 'hsl(220 50% 12%)', 'hsl(45 100% 50%)', 'black'),
+                libro_hero_line('EN FAMILIA', 'hsl(220 50% 12%)', 'hsl(45 100% 50%)', 'black'),
             ),
         ),
-        'content' => '<p>Contenido del capítulo próximamente.</p>',
+        'content' => '
+[capitular]Fue el pasado 23 de mayo, en el emblemático hotel Santa Catalina y con un éxito de convocatoria a la altura de la ocasión: la cena de gala para conmemorar el cincuenta aniversario de la fundación del club.[/capitular]
+
+<p>Durante meses se preparó con empeño e ilusión esta velada, bajo un cuidado protocolo y sin desatender detalle alguno. Todo tenía que salir a la perfección y así fue. Toda la gran familia del CV Guaguas, jugadores, dirigentes, empleados y miembros de antigua militancia, agasajaron a autoridades y personalidades de la sociedad grancanaria, citadas para tomar parte de un acto simbólico y en el que se evidenció la fuerza, vigencia y representatividad del escudo.</p>
+
+<p>El presidente del Cabildo de Gran Canaria, Antonio Morales, la alcaldesa capitalina, Carolina Darias, y el viceconsejero de Deportes del Gobierno de Canarias, respondieron a la invitación cursada y, en sus respectivos parlamentos, no ahorraron elogios y parabienes al pasado, presente y futuro del Guaguas, poniendo de relieve su impacto y prestigio dentro y fuera de la cancha. Ese valor añadido, acompañado por un palmarés sin igual, que le otorga al equipo una exclusividad reluciente.</p>
+
+<p>Un vídeo que sintetizó los éxitos contemporáneos, y que levantó el aplauso unánime de los presentes, contextualizó un entorno marcado por la satisfacción compartida de ser testigos del medio centenario de una institución deportiva que ya forma parte de la historia por derecho propio.</p>
+
+<p>Juan Ruiz no pudo evitar su emoción al tomar la palabra y se comprometió a mantener la línea de progreso, eficiencia y ambición que han llevado al Guaguas a la élite del voleibol continental, además de haber implantado una hegemonía nacional que nadie discute y se certifica con su cascada de títulos temporada a temporada.</p>
+
+<p>La actuación del artista majorero Domingo Rodríguez, El Colorao, junto al guitarrista Javier Cerpa y el cantante Pedro Manuel Afonso, puso el colofón perfecto ante los 200 asistentes.</p>
+',
         ),
 
     ); // end chapters array

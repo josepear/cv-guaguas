@@ -150,7 +150,11 @@
      * Close sidebar when clicking on chapter links (like React onClose)
      */
     function initChapterLinkClose() {
-        const allLinks = document.querySelectorAll('#sidebar-indice a');
+        // Excluimos los enlaces que actúan como toggle de acordeón (ej. cap2,
+        // que solo tiene anclas internas y por eso usa <a> en vez de <button>
+        // para el botón padre). Ese enlace no debe cerrar el sidebar al hacer
+        // click, ya que su función es expandir/colapsar las anclas internas.
+        const allLinks = document.querySelectorAll('#sidebar-indice a:not(.sidebar-parent-toggle)');
         
         allLinks.forEach(link => {
             link.addEventListener('click', function() {
@@ -445,4 +449,128 @@
         hideBanner();
     });
 
+})();
+
+// ── Anclas internas del sidebar (scroll suave dentro de la misma página) ──
+(function() {
+    function doScroll(id, smooth) {
+        var target = document.getElementById(id);
+        if (!target) return false;
+        var headerOffset = 80; // compensar header fijo
+        var top = target.getBoundingClientRect().top + window.pageYOffset - headerOffset;
+        window.scrollTo({ top: top, behavior: smooth ? 'smooth' : 'auto' });
+        return true;
+    }
+
+    // Las imágenes con loading="lazy" y sin width/height reservan 0px hasta cargar,
+    // lo que desplaza el documento hacia abajo justo después del primer scroll.
+    // Esperamos a que las imágenes ANTERIORES al ancla terminen de cargar (o forzamos
+    // su carga si siguen en lazy) antes de hacer el scroll definitivo.
+    function imagesBeforeTarget(target) {
+        var all = document.querySelectorAll('img');
+        var before = [];
+        all.forEach(function(img) {
+            // Solo nos interesan imágenes que aparecen antes del target en el documento
+            if (target.compareDocumentPosition(img) & Node.DOCUMENT_POSITION_PRECEDING) {
+                before.push(img);
+            }
+        });
+        return before;
+    }
+
+    function scrollToAnchor(id) {
+        var target = document.getElementById(id);
+        if (!target) return false;
+
+        // Forzar carga inmediata de imágenes lazy anteriores al ancla,
+        // para que reserven su altura real antes de calcular el scroll
+        var imgs = imagesBeforeTarget(target);
+        imgs.forEach(function(img) {
+            if (img.loading === 'lazy') img.loading = 'eager';
+        });
+
+        // Primer scroll inmediato (mejor esfuerzo, sin esperar)
+        doScroll(id, true);
+
+        var pending = imgs.filter(function(img) { return !img.complete; });
+
+        if (pending.length === 0) {
+            // No hay imágenes pendientes: un par de reintentos por seguridad y listo
+            requestAnimationFrame(function() {
+                doScroll(id, true);
+                setTimeout(function() { doScroll(id, true); }, 300);
+            });
+            return true;
+        }
+
+        // Recalcular el scroll cada vez que una imagen pendiente termine de cargar
+        var remaining = pending.length;
+        function onImgDone() {
+            remaining--;
+            doScroll(id, false); // sin "smooth" para evitar peleas con scrolls en curso
+            if (remaining <= 0) {
+                // Último ajuste suave una vez todo ha cargado
+                setTimeout(function() { doScroll(id, true); }, 50);
+            }
+        }
+        pending.forEach(function(img) {
+            img.addEventListener('load', onImgDone, { once: true });
+            img.addEventListener('error', onImgDone, { once: true });
+        });
+
+        // Red de seguridad: si alguna imagen nunca dispara load/error, no nos quedamos colgados
+        setTimeout(function() { doScroll(id, true); }, 1200);
+
+        return true;
+    }
+
+    // Clic en un enlace de ancla del sidebar
+    document.addEventListener('click', function(e) {
+        var link = e.target.closest('.sidebar-anchor-link');
+        if (!link) return;
+
+        var href = link.getAttribute('href') || '';
+        var hashIndex = href.indexOf('#');
+        if (hashIndex === -1) return;
+
+        var anchorId = href.substring(hashIndex + 1);
+        var currentPath = window.location.pathname.replace(/\/$/, '');
+        var linkPath = href.split('#')[0].replace(/\/$/, '');
+
+        // Si ya estamos en la misma página, hacemos scroll directo sin recargar
+        if (linkPath === '' || currentPath.endsWith(linkPath) || linkPath.endsWith(currentPath)) {
+            e.preventDefault();
+            history.pushState(null, '', '#' + anchorId);
+
+            // Cerrar sidebar en móvil ANTES de calcular el scroll, para que el
+            // cierre no desplace el layout después de haber hecho scrollTo
+            var sidebar = document.getElementById('sidebar-indice');
+            var sidebarWasOpen = sidebar && window.innerWidth < 1024 && !sidebar.classList.contains('-translate-x-full');
+            if (sidebarWasOpen) {
+                sidebar.classList.add('-translate-x-full');
+                setTimeout(function() { scrollToAnchor(anchorId); }, 320);
+            } else {
+                scrollToAnchor(anchorId);
+            }
+        }
+        // Si es otra página, deja que el navegador navegue normalmente con el hash
+    });
+
+    // Al cargar la página, si la URL ya trae un hash, hacer scroll tras pintar el contenido
+    window.addEventListener('DOMContentLoaded', function() {
+        if (window.location.hash) {
+            var id = window.location.hash.substring(1);
+            setTimeout(function() {
+                scrollToAnchor(id);
+            }, 200);
+        }
+    });
+
+    // Reforzar tras la carga completa de la página (todas las imágenes ya tienen su tamaño final)
+    window.addEventListener('load', function() {
+        if (window.location.hash) {
+            var id = window.location.hash.substring(1);
+            doScroll(id, true);
+        }
+    });
 })();
