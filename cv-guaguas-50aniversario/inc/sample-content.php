@@ -1845,7 +1845,7 @@ Otros en mi lugar lo mismo sí hubiesen dado un paso a otro sitio porque las ofe
         'hero' => array(
             'image' => libro_img('8cap_juanmart_hero.jpg'),
             'background_color' => 'hsl(220, 30%, 8%)',
-            'background_position' => 'bottom center',
+            'background_position' => 'top center',
             'overlay' => 'rgba(0, 0, 0, 0.35)',
             'icon' => 'custom',
             'custom_icon' => libro_img('estrella-icon.svg'),
