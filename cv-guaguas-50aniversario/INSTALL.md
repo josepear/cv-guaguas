@@ -128,15 +128,15 @@ Tras activar el tema, deberías ver:
 
 ## 4. Configuración inicial
 
-### 4.1 Regenerar enlaces permanentes
+### 4.1 Enlaces permanentes (automático)
 
-Este paso es **obligatorio** para que los capítulos funcionen correctamente:
+El tema regenera las reglas de reescritura automáticamente al activarse, así que las URLs del tipo `/capitulo/nombre-del-capitulo/` deberían funcionar sin pasos adicionales.
+
+Si en tu servidor las páginas de capítulo dan error 404 (puede ocurrir en algunos hostings que cachean las reglas de reescritura), repite manualmente este paso como solución:
 
 1. Ve a **Ajustes → Enlaces permanentes**
 2. Selecciona **"Nombre de la entrada"** (o cualquier formato que no sea "Simple")
 3. Haz clic en **"Guardar cambios"** (incluso sin cambiar nada)
-
-> 💡 Esto regenera las reglas de reescritura y activa las URLs del tipo `/capitulo/nombre-del-capitulo/`.
 
 ### 4.2 Verificar que .htaccess es escribible
 
@@ -191,24 +191,11 @@ Si necesitas volver a importar (resetear todo el contenido):
 
 ---
 
-## 6. Crear la página de inicio
+## 6. Página de inicio (automática)
 
-### 6.1 Crear la página
+Al activar el tema se crea automáticamente una página llamada **"Inicio"** con la plantilla **"Página 50 Aniversario CV Guaguas"** ya asignada, y se establece como página de portada (Ajustes → Lectura). No es necesario hacerlo manualmente.
 
-1. Ve a **Páginas → Añadir nueva**
-2. Escribe el título: **"Inicio"** (o el que prefieras)
-3. En el panel derecho, busca **"Atributos de página"**
-4. En **"Plantilla"**, selecciona: **"Página 50 Aniversario CV Guaguas"**
-5. Haz clic en **"Publicar"**
-
-### 6.2 Establecer como página de inicio
-
-1. Ve a **Ajustes → Lectura**
-2. Selecciona **"Una página estática"**
-3. En **"Página de inicio"**, elige la página que acabas de crear
-4. Haz clic en **"Guardar cambios"**
-
-### 6.3 Verificar
+### 6.1 Verificar
 
 Visita `https://tu-dominio.com` — deberías ver:
 
@@ -522,12 +509,11 @@ tar -czf tema-backup-$(date +%Y%m%d).tar.gz wp-content/themes/cv-guaguas-50anive
 | Paso | Acción | Tiempo estimado |
 |------|--------|-----------------|
 | 1 | Descomprimir y reemplazar carpeta del tema | 1 min |
-| 2 | Regenerar enlaces permanentes | 1 min |
-| 3 | Importar contenido de ejemplo | 1 min |
-| 4 | Crear página de inicio con plantilla | 2 min |
-| 5 | Configurar como página estática | 1 min |
-| 6 | Configurar URLs de PDF/EPUB | 1 min |
-| **Total** | | **~7 min** |
+| 2 | Activar el tema en Apariencia → Temas | 1 min |
+| 3 | Configurar URLs de PDF/EPUB (opcional) | 1 min |
+| **Total** | | **~3 min** |
+
+> Al activar el tema, todo lo demás ocurre automáticamente: se importan los capítulos, se crean las páginas legales, se crea la página de inicio con su plantilla y se establece como portada, y se regeneran los enlaces permanentes. No se requieren pasos manuales adicionales.
 
 ---
 

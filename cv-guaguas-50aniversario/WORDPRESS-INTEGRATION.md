@@ -8,8 +8,8 @@ Tema WordPress personalizado para el libro conmemorativo del 50 aniversario del 
 
 1. Copiar la carpeta en `wp-content/themes/cv-guaguas-50aniversario/`
 2. Activar el tema desde **Apariencia → Temas**
-3. El contenido se genera automáticamente al activar
-4. Para regenerar: **Libro CV Guaguas → Capítulos → Regenerar contenido de ejemplo**
+3. Al activar, automáticamente: se importan los capítulos, se crean las 4 páginas legales, se crea y asigna la página de inicio (con su plantilla) como portada, y se regeneran los enlaces permanentes
+4. Para regenerar capítulos: **Libro CV Guaguas → Capítulos → Regenerar contenido de ejemplo**
 
 ---
 
@@ -292,4 +292,3 @@ body.light {
 
 **Regenerar contenido** — Al regenerar se borran y recrean todos los posts de tipo `capitulo`. Los metadatos adicionales (imágenes destacadas, etc.) deben resubirse manualmente si procede.
 
-**Capítulos pendientes** — Cap 18 y Cap 24 no tienen contenido aún. Se muestran en el menú lateral pero al acceder muestran página vacía. Actualizar `sample-content.php` cuando estén disponibles y regenerar.

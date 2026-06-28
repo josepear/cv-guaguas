@@ -27,6 +27,47 @@ function libro_add_capitulo_meta_box() {
 add_action('add_meta_boxes', 'libro_add_capitulo_meta_box');
 
 /**
+ * Aviso en páginas que usan la plantilla de portada (template-home.php),
+ * ya que esta plantilla no usa el contenido del editor: todo su contenido
+ * (imagen, título, botones, etc.) se edita desde Apariencia → Opciones Libro.
+ */
+function libro_add_homepage_notice_meta_box() {
+    $screen = get_current_screen();
+    if (!$screen || $screen->post_type !== 'page') {
+        return;
+    }
+    global $post;
+    if (!$post) {
+        return;
+    }
+    $template = get_post_meta($post->ID, '_wp_page_template', true);
+    if ($template !== 'template-home.php') {
+        return;
+    }
+    add_meta_box(
+        'libro_homepage_notice',
+        'Esta página usa la plantilla de portada',
+        'libro_homepage_notice_html',
+        'page',
+        'normal',
+        'high'
+    );
+}
+add_action('add_meta_boxes', 'libro_add_homepage_notice_meta_box');
+
+function libro_homepage_notice_html($post) {
+    ?>
+    <p>El contenido que escribas aquí en el editor de bloques <strong>no se muestra</strong> en la web: esta página usa una plantilla totalmente personalizada (imagen a pantalla completa, título, subtítulo, años, botones de descarga...).</p>
+    <p>Para editar la imagen de fondo, los textos y los botones de la portada, ve al panel:</p>
+    <p>
+        <a href="<?php echo esc_url(admin_url('themes.php?page=libro-options')); ?>" class="button button-primary">
+            Apariencia → Opciones Libro
+        </a>
+    </p>
+    <?php
+}
+
+/**
  * HTML del meta box
  */
 function libro_capitulo_meta_box_html($post) {
@@ -36,6 +77,7 @@ function libro_capitulo_meta_box_html($post) {
     // Obtener valores guardados
     $numero = get_post_meta($post->ID, '_numero_capitulo', true);
     $ocultar_numero = get_post_meta($post->ID, '_ocultar_numero', true);
+    $ocultar_titulo = get_post_meta($post->ID, '_ocultar_titulo', true);
     $mostrar_marcador = get_post_meta($post->ID, '_mostrar_marcador', true);
     $subtitulo = get_post_meta($post->ID, '_subtitulo', true);
     $anclas_internas = get_post_meta($post->ID, '_anclas_internas', true);
@@ -47,6 +89,7 @@ function libro_capitulo_meta_box_html($post) {
     $hero_image = get_post_meta($post->ID, '_hero_image', true);
     $hero_height = get_post_meta($post->ID, '_hero_height', true) ?: '';
     $hero_overlay = get_post_meta($post->ID, '_hero_overlay', true);
+    $hero_background_color = get_post_meta($post->ID, '_hero_background_color', true);
     $hero_icon = get_post_meta($post->ID, '_hero_icon', true) ?: 'star';
     $hero_icon_color = get_post_meta($post->ID, '_hero_icon_color', true) ?: '#D4AF37';
     $hero_custom_icon = get_post_meta($post->ID, '_hero_custom_icon', true);
@@ -211,6 +254,21 @@ function libro_capitulo_meta_box_html($post) {
                 <span>Ocultar número en el menú lateral</span>
             </label>
             <p class="description" style="margin-left: 26px; margin-top: 3px;">Marca esta opción para que este capítulo/subcapítulo no muestre etiqueta de número.</p>
+        </div>
+
+        <!-- Opción para ocultar título -->
+        <div style="margin-top: 10px;">
+            <label style="display: inline-flex; align-items: center; gap: 8px; font-weight: normal; cursor: pointer;">
+                <input 
+                    type="checkbox" 
+                    id="libro_ocultar_titulo" 
+                    name="libro_ocultar_titulo" 
+                    value="1" 
+                    <?php checked($ocultar_titulo, '1'); ?>
+                >
+                <span>Ocultar título en la página</span>
+            </label>
+            <p class="description" style="margin-left: 26px; margin-top: 3px;">Marca esta opción para que el encabezado con el título no se muestre en el cuerpo de la página (útil para páginas con hero propio o maquetación personalizada, como las de patrocinadores).</p>
         </div>
     </div>
     
@@ -446,6 +504,19 @@ function libro_capitulo_meta_box_html($post) {
                     style="max-width: 300px;"
                 >
                 <p class="description">Usa rgba() para transparencia. Ej: rgba(26,35,126,0.7) para azul oscuro</p>
+            </div>
+            
+            <div class="libro-meta-field">
+                <label for="libro_hero_background_color">Color de fondo (si no hay imagen)</label>
+                <input 
+                    type="text" 
+                    id="libro_hero_background_color" 
+                    name="libro_hero_background_color" 
+                    value="<?php echo esc_attr($hero_background_color); ?>" 
+                    placeholder="Ej: hsl(220, 50%, 12%) o #1a237e"
+                    style="max-width: 300px;"
+                >
+                <p class="description">Color de fondo sólido del hero. Se usa cuando no hay imagen, o detrás de ella si tiene transparencia.</p>
             </div>
             
             <div class="libro-meta-field">
@@ -749,6 +820,10 @@ function libro_save_capitulo_meta($post_id) {
     $ocultar_numero = isset($_POST['libro_ocultar_numero']) ? '1' : '0';
     update_post_meta($post_id, '_ocultar_numero', $ocultar_numero);
     
+    // Guardar ocultar título (checkbox)
+    $ocultar_titulo = isset($_POST['libro_ocultar_titulo']) ? '1' : '0';
+    update_post_meta($post_id, '_ocultar_titulo', $ocultar_titulo);
+    
     // Guardar mostrar marcador (checkbox)
     $mostrar_marcador = isset($_POST['libro_mostrar_marcador']) ? '1' : '0';
     update_post_meta($post_id, '_mostrar_marcador', $mostrar_marcador);
@@ -777,6 +852,10 @@ function libro_save_capitulo_meta($post_id) {
     
     if (isset($_POST['libro_hero_overlay'])) {
         update_post_meta($post_id, '_hero_overlay', sanitize_text_field($_POST['libro_hero_overlay']));
+    }
+    
+    if (isset($_POST['libro_hero_background_color'])) {
+        update_post_meta($post_id, '_hero_background_color', sanitize_text_field($_POST['libro_hero_background_color']));
     }
     
     if (isset($_POST['libro_hero_border_color'])) {

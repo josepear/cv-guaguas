@@ -352,8 +352,15 @@ add_action('widgets_init', 'libro_widgets_init');
 function libro_register_settings() {
     register_setting('libro_options', 'libro_pdf_url');
     register_setting('libro_options', 'libro_epub_url');
+    register_setting('libro_options', 'libro_hero_image');
     register_setting('libro_options', 'libro_hero_title');
     register_setting('libro_options', 'libro_hero_subtitle');
+    register_setting('libro_options', 'libro_hero_year_start');
+    register_setting('libro_options', 'libro_hero_year_end');
+    register_setting('libro_options', 'libro_hero_star');
+    register_setting('libro_options', 'libro_btn_pdf_text');
+    register_setting('libro_options', 'libro_btn_epub_text');
+    register_setting('libro_options', 'libro_btn_leer_text');
     register_setting('libro_options', 'libro_footer_logos');
 }
 add_action('admin_init', 'libro_register_settings');
@@ -376,6 +383,10 @@ function libro_options_page_html() {
     if (!current_user_can('manage_options')) {
         return;
     }
+
+    // Red de seguridad: siembra los logos por defecto si aún no hay ninguno
+    // (por ejemplo, si el tema ya estaba activo antes de añadir esta función).
+    libro_seed_footer_logos();
 
     // Handle regenerate content action
     if (
@@ -413,37 +424,83 @@ function libro_options_page_html() {
         <form action="options.php" method="post">
             <?php settings_fields('libro_options'); ?>
             
-            <h2>Sección Hero</h2>
+            <h2>Sección Hero (página principal)</h2>
             <table class="form-table">
                 <tr>
-                    <th scope="row"><label for="libro_hero_title">Título del Hero</label></th>
-                    <td><input type="text" id="libro_hero_title" name="libro_hero_title" value="<?php echo esc_attr(get_option('libro_hero_title', '50 Años de Historia')); ?>" class="regular-text"></td>
+                    <th scope="row"><label for="libro_hero_image">Imagen de fondo</label></th>
+                    <td>
+                        <input type="url" id="libro_hero_image" name="libro_hero_image" value="<?php echo esc_attr(get_option('libro_hero_image', LIBRO_URI . '/assets/images/hero-home.jpg')); ?>" class="regular-text">
+                        <button type="button" class="button libro-upload-logo">Seleccionar imagen</button>
+                        <p class="description">Imagen de fondo a pantalla completa de la portada. Recomendado: formato apaisado, mínimo 1600px de ancho.</p>
+                        <?php $current_hero_image = get_option('libro_hero_image', LIBRO_URI . '/assets/images/hero-home.jpg'); ?>
+                        <?php if ($current_hero_image) : ?>
+                            <div style="margin-top: 10px;"><img src="<?php echo esc_url($current_hero_image); ?>" style="max-width: 320px; height: auto; border: 1px solid #ddd;"></div>
+                        <?php endif; ?>
+                    </td>
                 </tr>
                 <tr>
-                    <th scope="row"><label for="libro_hero_subtitle">Subtítulo del Hero</label></th>
-                    <td><textarea id="libro_hero_subtitle" name="libro_hero_subtitle" class="large-text" rows="2"><?php echo esc_textarea(get_option('libro_hero_subtitle', 'Cinco décadas de pasión, títulos y leyendas del voleibol canario')); ?></textarea></td>
+                    <th scope="row"><label for="libro_hero_title">Título</label></th>
+                    <td><input type="text" id="libro_hero_title" name="libro_hero_title" value="<?php echo esc_attr(get_option('libro_hero_title', 'Guaguas:')); ?>" class="regular-text"></td>
+                </tr>
+                <tr>
+                    <th scope="row"><label for="libro_hero_subtitle">Subtítulo</label></th>
+                    <td>
+                        <textarea id="libro_hero_subtitle" name="libro_hero_subtitle" class="large-text" rows="2"><?php echo esc_textarea(get_option('libro_hero_subtitle', "Una historia\nde leyenda")); ?></textarea>
+                        <p class="description">Pulsa Intro para forzar un salto de línea (se muestra en dos líneas en la portada).</p>
+                    </td>
+                </tr>
+                <tr>
+                    <th scope="row">Años (con símbolo)</th>
+                    <td>
+                        <input type="text" name="libro_hero_year_start" value="<?php echo esc_attr(get_option('libro_hero_year_start', '1976')); ?>" class="small-text" style="width:80px;">
+                        <input type="text" name="libro_hero_star" value="<?php echo esc_attr(get_option('libro_hero_star', '★')); ?>" class="small-text" style="width:50px; text-align:center; margin: 0 8px;">
+                        <input type="text" name="libro_hero_year_end" value="<?php echo esc_attr(get_option('libro_hero_year_end', '2026')); ?>" class="small-text" style="width:80px;">
+                        <p class="description">El símbolo central puede ser cualquier carácter o emoji (★, •, —, 🏐...).</p>
+                    </td>
                 </tr>
             </table>
             
-            <h2>Archivos de Descarga</h2>
+            <h2>Botones de la Portada</h2>
             <table class="form-table">
                 <tr>
                     <th scope="row"><label for="libro_pdf_url">URL del PDF</label></th>
                     <td><input type="url" id="libro_pdf_url" name="libro_pdf_url" value="<?php echo esc_attr(get_option('libro_pdf_url', '#')); ?>" class="regular-text"></td>
                 </tr>
                 <tr>
+                    <th scope="row"><label for="libro_btn_pdf_text">Texto del botón PDF</label></th>
+                    <td><input type="text" id="libro_btn_pdf_text" name="libro_btn_pdf_text" value="<?php echo esc_attr(get_option('libro_btn_pdf_text', 'Descargar PDF')); ?>" class="regular-text"></td>
+                </tr>
+                <tr>
                     <th scope="row"><label for="libro_epub_url">URL del EPUB</label></th>
                     <td><input type="url" id="libro_epub_url" name="libro_epub_url" value="<?php echo esc_attr(get_option('libro_epub_url', '#')); ?>" class="regular-text"></td>
+                </tr>
+                <tr>
+                    <th scope="row"><label for="libro_btn_epub_text">Texto del botón EPUB</label></th>
+                    <td><input type="text" id="libro_btn_epub_text" name="libro_btn_epub_text" value="<?php echo esc_attr(get_option('libro_btn_epub_text', 'Descargar EPUB')); ?>" class="regular-text"></td>
+                </tr>
+                <tr>
+                    <th scope="row"><label for="libro_btn_leer_text">Texto del botón "Comenzar a leer"</label></th>
+                    <td>
+                        <input type="text" id="libro_btn_leer_text" name="libro_btn_leer_text" value="<?php echo esc_attr(get_option('libro_btn_leer_text', 'Comenzar a leer')); ?>" class="regular-text">
+                        <p class="description">El enlace de este botón es siempre automático: apunta al primer capítulo del libro, así que no necesita configurarse.</p>
+                    </td>
                 </tr>
             </table>
             
             <h2>Logos del Footer</h2>
-            <p class="description">Añade los logos de las instituciones colaboradoras. Si no añades ninguno, se mostrarán placeholders.</p>
+            <p class="description">Añade los logos de las instituciones colaboradoras. Si no añades ninguno, se mostrarán placeholders. Usa las flechas para cambiar el orden en que aparecen.</p>
             
             <div id="logos-container" style="margin-top: 20px;">
                 <?php if (!empty($logos)) : ?>
                     <?php foreach ($logos as $index => $logo) : ?>
                     <div class="logo-row" style="background: #f9f9f9; padding: 15px; margin-bottom: 10px; border: 1px solid #ddd; border-radius: 4px;">
+                        <div style="display:flex; align-items:center; justify-content:space-between; margin-bottom: 8px;">
+                            <span class="libro-logo-position" style="font-weight:600; color:#555;">Posición <?php echo (int)$index + 1; ?></span>
+                            <span>
+                                <button type="button" class="button libro-move-up" title="Subir">↑</button>
+                                <button type="button" class="button libro-move-down" title="Bajar">↓</button>
+                            </span>
+                        </div>
                         <p>
                             <label><strong>Nombre/Alt:</strong></label><br>
                             <input type="text" name="libro_footer_logos[<?php echo $index; ?>][alt]" value="<?php echo esc_attr($logo['alt']); ?>" class="regular-text" placeholder="Ej: Gobierno de Canarias">
@@ -507,9 +564,28 @@ function libro_options_page_html() {
     jQuery(document).ready(function($) {
         var logoIndex = <?php echo !empty($logos) ? count($logos) : 0; ?>;
         
+        // Renumera los atributos name="" y la etiqueta "Posición N" según el
+        // orden visual actual de las filas, para que el orden mostrado sea
+        // siempre el que se guarda al pulsar "Guardar cambios".
+        function renumberLogoRows() {
+            $('#logos-container .logo-row').each(function(i) {
+                var $row = $(this);
+                $row.find('.libro-logo-position').text('Posición ' + (i + 1));
+                $row.find('input[name]').each(function() {
+                    var name = $(this).attr('name');
+                    var newName = name.replace(/libro_footer_logos\[\d+\]/, 'libro_footer_logos[' + i + ']');
+                    $(this).attr('name', newName);
+                });
+            });
+        }
+        
         // Añadir nuevo logo
         $('#add-logo').on('click', function() {
             var html = '<div class="logo-row" style="background: #f9f9f9; padding: 15px; margin-bottom: 10px; border: 1px solid #ddd; border-radius: 4px;">' +
+                '<div style="display:flex; align-items:center; justify-content:space-between; margin-bottom: 8px;">' +
+                '<span class="libro-logo-position" style="font-weight:600; color:#555;">Posición</span>' +
+                '<span><button type="button" class="button libro-move-up" title="Subir">↑</button> ' +
+                '<button type="button" class="button libro-move-down" title="Bajar">↓</button></span></div>' +
                 '<p><label><strong>Nombre/Alt:</strong></label><br>' +
                 '<input type="text" name="libro_footer_logos[' + logoIndex + '][alt]" class="regular-text" placeholder="Ej: Gobierno de Canarias"></p>' +
                 '<p><label><strong>URL de la imagen:</strong></label><br>' +
@@ -521,11 +597,31 @@ function libro_options_page_html() {
             
             $('#logos-container').append(html);
             logoIndex++;
+            renumberLogoRows();
         });
         
         // Eliminar logo
         $(document).on('click', '.libro-remove-logo', function() {
             $(this).closest('.logo-row').remove();
+            renumberLogoRows();
+        });
+        
+        // Subir / bajar posición
+        $(document).on('click', '.libro-move-up', function() {
+            var $row = $(this).closest('.logo-row');
+            var $prev = $row.prev('.logo-row');
+            if ($prev.length) {
+                $row.insertBefore($prev);
+                renumberLogoRows();
+            }
+        });
+        $(document).on('click', '.libro-move-down', function() {
+            var $row = $(this).closest('.logo-row');
+            var $next = $row.next('.logo-row');
+            if ($next.length) {
+                $row.insertAfter($next);
+                renumberLogoRows();
+            }
         });
         
         // Media uploader para logos
@@ -553,11 +649,84 @@ function libro_options_page_html() {
 }
 
 /**
- * Flush rewrite rules al activar el tema
+ * Siembra la opción 'libro_footer_logos' con los 8 logos por defecto del tema,
+ * si todavía no hay ninguno guardado. Así aparecen ya como filas editables
+ * en el panel "Opciones Libro" en vez de ser solo un fallback en código.
  */
+function libro_seed_footer_logos() {
+    $logos = get_option('libro_footer_logos', array());
+    if (!empty($logos)) {
+        return;
+    }
+    $base = get_template_directory_uri() . '/assets/images/sponsors/';
+    update_option('libro_footer_logos', array(
+        array('alt' => 'Cabildo de Gran Canaria', 'src' => $base . 'cabildo-gran-canaria.webp', 'url' => 'https://www.grancanaria.com'),
+        array('alt' => 'Instituto Insular de Deportes', 'src' => $base . 'instituto-insular-deportes.webp', 'url' => 'https://www.grancanaria.com'),
+        array('alt' => 'Gobierno de Canarias', 'src' => $base . 'gobierno-canarias.webp', 'url' => 'https://www.gobiernodecanarias.org'),
+        array('alt' => 'Islas Canarias', 'src' => $base . 'islas-canarias.webp', 'url' => 'https://www.islascanarias.org'),
+        array('alt' => 'Ayuntamiento de Las Palmas de Gran Canaria', 'src' => $base . 'ayuntamiento-las-palmas.webp', 'url' => 'https://www.laspalmasgc.es'),
+        array('alt' => 'Instituto Municipal de Deportes', 'src' => $base . 'instituto-municipal-deportes.webp', 'url' => 'https://www.laspalmasgc.es'),
+        array('alt' => 'Turismo de Gran Canaria', 'src' => $base . 'turismo-gran-canaria.webp', 'url' => 'https://www.grancanaria.com'),
+        array('alt' => 'Real Federación Española de Voleibol', 'src' => $base . 'rfevb.webp', 'url' => 'https://www.rfevb.com'),
+    ));
+}
+add_action('after_switch_theme', 'libro_seed_footer_logos');
+
+/**
+ * Crea automáticamente la página de inicio (con la plantilla del 50 Aniversario)
+ * y la establece como página de portada, si no existe ya una página usando
+ * esta plantilla. Evita el paso manual de "Ajustes → Lectura".
+ */
+function libro_setup_homepage() {
+    $template_file = 'template-home.php';
+
+    // ¿Ya existe una página con esta plantilla asignada?
+    $existing = get_posts(array(
+        'post_type'      => 'page',
+        'posts_per_page'  => 1,
+        'post_status'    => array('publish', 'draft', 'private'),
+        'meta_key'       => '_wp_page_template',
+        'meta_value'     => $template_file,
+        'fields'         => 'ids',
+    ));
+
+    if (!empty($existing)) {
+        $home_page_id = $existing[0];
+    } else {
+        $home_page_id = wp_insert_post(array(
+            'post_title'     => 'Inicio',
+            'post_status'    => 'publish',
+            'post_type'      => 'page',
+            'comment_status' => 'closed',
+        ), false);
+
+        if ($home_page_id && !is_wp_error($home_page_id)) {
+            update_post_meta($home_page_id, '_wp_page_template', $template_file);
+        }
+    }
+
+    if (empty($home_page_id) || is_wp_error($home_page_id)) {
+        return;
+    }
+
+    // Establecerla como página de portada, solo si la portada actual
+    // no es ya una página válida (para no pisar una elección deliberada).
+    $current_front_id = (int) get_option('page_on_front');
+    if (get_option('show_on_front') !== 'page' || !$current_front_id || !get_post($current_front_id)) {
+        update_option('show_on_front', 'page');
+        update_option('page_on_front', $home_page_id);
+    }
+}
+add_action('after_switch_theme', 'libro_setup_homepage');
+
+
 function libro_theme_activation() {
     libro_register_capitulos_cpt();
     flush_rewrite_rules();
+    // Nota: la importación de capítulos (libro_import_sample_content) y la
+    // creación de páginas legales (libro_create_legal_pages) ya están
+    // enganchadas a 'after_switch_theme' de forma independiente en
+    // inc/sample-content.php, así que no es necesario llamarlas aquí.
 }
 add_action('after_switch_theme', 'libro_theme_activation');
 

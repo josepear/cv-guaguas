@@ -9,11 +9,12 @@ Tema WordPress conmemorativo del 50 aniversario del CV Guaguas. Diseño editoria
 
 1. [Requisitos e instalación](#instalación)
 2. [Configuración inicial](#configuración-post-instalación)
-3. [Gestión de capítulos](#gestión-de-capítulos)
-4. [Shortcodes — referencia completa](#shortcodes)
-5. [Sistema de imágenes hero](#sistema-de-imágenes-hero)
-6. [Personalización CSS](#personalización)
-7. [Troubleshooting](#troubleshooting)
+3. [Panel "Opciones Libro" (home, descargas, footer)](#panel-opciones-libro)
+4. [Gestión de capítulos](#gestión-de-capítulos)
+5. [Shortcodes — referencia completa](#shortcodes)
+6. [Sistema de imágenes hero](#sistema-de-imágenes-hero)
+7. [Personalización CSS](#personalización)
+8. [Troubleshooting](#troubleshooting)
 
 ---
 
@@ -36,6 +37,9 @@ Tema WordPress conmemorativo del 50 aniversario del CV Guaguas. Diseño editoria
 ### Al activar se ejecuta automáticamente
 - Registro del Custom Post Type `capitulo`
 - Importación de todos los capítulos con contenido
+- Creación de las 4 páginas legales
+- Creación de la página de inicio con su plantilla asignada, establecida como página de portada
+- Siembra de los 8 logos institucionales por defecto en el panel "Opciones Libro" (editables desde el primer momento)
 - Registro de campos personalizados (meta boxes)
 - Regeneración de permalinks
 
@@ -43,17 +47,50 @@ Tema WordPress conmemorativo del 50 aniversario del CV Guaguas. Diseño editoria
 
 ## Configuración post-instalación
 
-### 1. Página de inicio
-1. Ve a `Páginas → Añadir nueva`, título "Inicio"
-2. Asigna la plantilla **"Página 50 Aniversario CV Guaguas"**
-3. Publica y ve a `Ajustes → Lectura` → establécela como página de inicio
+No se requiere ningún paso manual: la página de inicio, las páginas legales y los permalinks quedan configurados automáticamente al activar el tema.
+
+### 1. (Opcional) Cambiar la página de inicio
+Si prefieres usar otra página o plantilla distinta a la creada automáticamente, puedes reasignarla en `Ajustes → Lectura`.
+
+> ℹ️ Si abres la página "Inicio" en el editor de bloques verás el lienzo vacío — es normal. Esta plantilla no usa el contenido del editor; todo su contenido real (imagen, título, botones...) se edita desde el panel "Opciones Libro" (ver más abajo). La propia pantalla de edición de la página muestra un aviso con enlace directo a ese panel.
 
 ### 2. Reimportar contenido
 Si necesitas volver al contenido original:
 `Libro → Capítulos → Reimportar contenido de ejemplo`
 
 ### 3. Permalinks
-Si los capítulos dan 404: `Ajustes → Enlaces permanentes → Guardar cambios`
+Si los capítulos dan 404 (poco frecuente, algunos hostings cachean las reglas): `Ajustes → Enlaces permanentes → Guardar cambios`
+
+---
+
+## Panel "Opciones Libro"
+
+Disponible en `Apariencia → Opciones Libro`. Permite editar sin tocar código:
+
+### Sección Hero (página principal)
+| Campo | Descripción |
+|-------|-------------|
+| **Imagen de fondo** | Imagen a pantalla completa de la portada, con selector de medios de WordPress |
+| **Título** | Texto principal (por defecto "Guaguas:") |
+| **Subtítulo** | Pulsa Intro en el textarea para forzar el salto de línea |
+| **Años** | Año inicial, símbolo central (cualquier carácter o emoji, no solo ★) y año final |
+
+### Botones de la portada
+| Campo | Descripción |
+|-------|-------------|
+| **URL del PDF / EPUB** | Enlaces de descarga |
+| **Texto de cada botón** | Incluye el botón "Comenzar a leer" (su enlace es siempre automático: apunta al primer capítulo) |
+
+### Logos del Footer
+Los 8 logos institucionales por defecto del tema aparecen ya como filas editables al abrir el panel por primera vez (no hace falta añadirlos a mano). Por cada logo puedes:
+- Editar nombre/alt, imagen (con selector de medios de WordPress) y enlace
+- Reordenarlo con las flechas **↑ / ↓** — el orden visual de las filas es el orden en que se muestran en el footer
+- Añadir nuevos logos o eliminar los que no quieras, con "+ Añadir logo" y "Eliminar logo"
+
+Si llegases a borrar todos los logos, el footer recurre de nuevo a los 8 por defecto (en código) hasta que vuelvas a configurar alguno.
+
+### Regenerar contenido
+Botón para borrar y reimportar todos los capítulos desde cero con el contenido más reciente del tema. Útil tras actualizar el tema con nuevo contenido.
 
 ---
 
@@ -64,11 +101,14 @@ Si los capítulos dan 404: `Ajustes → Enlaces permanentes → Guardar cambios`
 | Campo | Descripción |
 |-------|-------------|
 | **Número** | Mostrado en sidebar. Ej: `01`, `02`. Vacío = sin badge |
+| **Ocultar número** | Oculta la etiqueta de número en el menú lateral sin borrar el campo |
+| **Ocultar título** | Oculta el encabezado con el título en el cuerpo de la página (útil para heroes propios o maquetaciones especiales, p. ej. páginas de patrocinadores) |
 | **Mostrar marcador** | Activa la estrella "50 Aniversario" en el hero |
 | **Orden** | Controla posición en sidebar (menor = primero) |
 | **Capítulo padre** | Si se asigna, este capítulo es hijo de ese padre |
-| **Hero** | Ver sección de imágenes hero más abajo |
+| **Hero** | Ver sección de imágenes hero más abajo. Incluye imagen, altura, posición, overlay, color de fondo, borde, icono y líneas de título |
 | **Imagen editorial** | Imagen opcional que aparece al inicio del contenido |
+| **Anclas internas** | Subcapítulos virtuales con scroll a una sección de la misma página, visibles en el sidebar |
 
 ### Jerarquía padre/hijo
 Los capítulos padre que tienen hijos **redirigen automáticamente** al primer hijo (301). Su contenido y hero no son visibles directamente.
@@ -473,37 +513,49 @@ Hero programático desde el contenido (alternativa a los meta boxes). Uso avanza
 
 El hero de cada capítulo se configura desde `Libro → Capítulos → [capítulo] → Cabecera del capítulo`.
 
-### Estilos predefinidos del tema
+### Estilos predefinidos del tema (actualizado)
 
-**Estilo navy** — caps 13 a 24, hijos de caps 1, 4, 5:
+**Estilo amarillo** — el estilo principal del libro, usado en la mayoría de capítulos principales (13, 15, 17, 18, 19, 20, 21, 22, 23, 25, hijo "Vínculos empresariales" del 24) y en numerosos subcapítulos (hijos del cap1, cap10, cap14, "La directiva", "El futuro que viene", "Joselu Sánchez"...). Con o sin estrella decorativa según el caso.
 ```
 overlay: rgba(0,0,0,0.25)
-background_color: hsl(220, 50%, 12%)
-custom_icon_color: hsl(240, 52%, 19%)
-Título: texto blanco / badge hsl(240, 52%, 19%) / shadow none
+custom_icon_color: hsl(45 100% 50%)        /* si lleva estrella */
+Título: texto hsl(220 50% 12%) / badge hsl(45 100% 50%) / borde black
 ```
 
-**Estilo dorado** — caps 3, 6 y primera era:
+**Estilo gris-azulado** — biografías de jugadores de los caps 8 y 9, y el hijo "El proyecto visionario de Juan Ruiz" (cap 4):
 ```
-overlay: rgba(0,0,0,0.25)
-border_color: hsl(45, 100%, 50%)
-custom_icon_color: hsl(45, 100%, 50%)
-Título: texto hsl(220,50%,12%) / badge hsl(45,100%,50%)
+overlay: rgba(0,0,0,0.25) o similar
+Título: texto #000000 / badge hsl(201, 16%, 77%) / sin borde
 ```
 
-**Estilo fondo claro** — cap 21 (árbitros), cap 23 (tecnología):
+**Estilo gris-azulado claro** — cap 12 ("Vuelve el gran Guaguas", "Todos los presidentes", "Todos los entrenadores"):
 ```
-background_color: hsl(17, 14%, 95%)  /* crema */
-overlay: rgba(0,0,0,0)
+Título: texto hsl(220 50% 12%) / badge hsl(206, 20%, 93%) / sin borde
 ```
 
-**Estilo amarillo** — cap 25 y hijos de patrocinadores:
+**Estilo gris medio** — Sergio Miguel Camarero (cap 5) y "Tributo a los Salesianos / Ignacio Brito" (cap 6):
 ```
-background_color: hsl(46, 92%, 62%)
-overlay: rgba(0,0,0,0)
-custom_icon_color: hsl(0, 0%, 0%)
-Título: texto hsl(46,92%,62%) / badge hsl(0,0%,0%)
+Título: texto #FFFFFF / badge hsl(204, 13%, 55%) / sin borde
 ```
+
+**Estilo terracota** — "Una transición dolorosa" (cap 10):
+```
+Título: texto hsl(220 50% 12%) / badge hsl(14, 16%, 69%) / sin borde
+```
+
+**Estilo rojo** — "Así se forjó una leyenda":
+```
+Título: texto #FFFFFF / badge hsl(2 82% 30%) / sin borde
+```
+
+**Estilos individuales (tonos cálidos)** — Paco Sánchez Jover (`#d69745`), Waclaw Golec (`#f6ae50`) e Ireneusz Klos (`#f3ab4f`), todos con texto `#000000` y sin borde — variaciones de un mismo tono naranja/dorado para diferenciar a cada jugador.
+
+**Estilo dorado clásico (legado)** — solo en "Prólogos" (visible) y en el hero del capítulo 4 padre (nunca se renderiza al público porque redirige automáticamente a su hijo):
+```
+Título: texto #D4AF37 / sin badge / borde black
+```
+
+> Cuando crees un hero nuevo, el estilo amarillo es la referencia recomendada salvo que el contexto (biografía, sección especial) pida explícitamente otro de los anteriores.
 
 ### Imagen editorial
 
@@ -565,7 +617,7 @@ cv-guaguas-50aniversario/
 ├── README.md                    # Esta documentación
 ├── inc/
 │   ├── meta-boxes.php           # Campos hero e imagen editorial
-│   └── sample-content.php       # 25 capítulos con contenido completo
+│   └── sample-content.php       # 26 capítulos (0-25) con contenido completo
 └── assets/
     ├── css/main.css             # Estilos completos
     ├── js/main.js               # Sidebar, scroll spy, dark/light, cookies
@@ -630,4 +682,4 @@ Ejemplos:
 
 ---
 
-*Desarrollado para celebrar los **50 años del CV Guaguas (1976–2026)** · Última actualización: mayo 2026*
+*Desarrollado para celebrar los **50 años del CV Guaguas (1976–2026)** · Última actualización: junio 2026*

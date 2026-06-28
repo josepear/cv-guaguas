@@ -8,6 +8,16 @@ get_header();
 
 $pdf_url  = get_option('libro_pdf_url', '#');
 $epub_url = get_option('libro_epub_url', '#');
+$btn_pdf_text  = get_option('libro_btn_pdf_text', 'Descargar PDF');
+$btn_epub_text = get_option('libro_btn_epub_text', 'Descargar EPUB');
+$btn_leer_text = get_option('libro_btn_leer_text', 'Comenzar a leer');
+
+$hero_image      = get_option('libro_hero_image', LIBRO_URI . '/assets/images/hero-home.jpg');
+$hero_title      = get_option('libro_hero_title', 'Guaguas:');
+$hero_subtitle   = get_option('libro_hero_subtitle', "Una historia\nde leyenda");
+$hero_year_start = get_option('libro_hero_year_start', '1976');
+$hero_year_end   = get_option('libro_hero_year_end', '2026');
+$hero_star       = get_option('libro_hero_star', '★');
 
 $primer_capitulo = get_posts(array(
     'post_type'      => 'capitulo',
@@ -147,7 +157,7 @@ $primer_capitulo_url = !empty($primer_capitulo) ? get_permalink($primer_capitulo
 
     <!-- Imagen de fondo -->
     <img
-        src="<?php echo LIBRO_URI; ?>/assets/images/hero-home.jpg"
+        src="<?php echo esc_url($hero_image); ?>"
         alt=""
         fetchpriority="high"
         decoding="async"
@@ -168,17 +178,17 @@ $primer_capitulo_url = !empty($primer_capitulo) ? get_permalink($primer_capitulo
             style="height: 120px; width: auto;"
         >
 
-        <!-- GUAGUAS: -->
-        <h1 class="home-title">Guaguas:</h1>
+        <!-- Título -->
+        <h1 class="home-title"><?php echo esc_html($hero_title); ?></h1>
 
-        <!-- UNA HISTORIA DE LEYENDA -->
-        <p class="home-subtitle">Una historia<br>de leyenda</p>
+        <!-- Subtítulo -->
+        <p class="home-subtitle"><?php echo wp_kses_post(nl2br(esc_html($hero_subtitle))); ?></p>
 
-        <!-- 1976 ★ 2026 -->
+        <!-- Años -->
         <div class="home-years">
-            <span>1976</span>
-            <span class="star">★</span>
-            <span>2026</span>
+            <span><?php echo esc_html($hero_year_start); ?></span>
+            <span class="star"><?php echo esc_html($hero_star); ?></span>
+            <span><?php echo esc_html($hero_year_end); ?></span>
         </div>
 
         <!-- Botones descarga -->
@@ -187,19 +197,19 @@ $primer_capitulo_url = !empty($primer_capitulo) ? get_permalink($primer_capitulo
                 <svg width="16" height="16" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"/>
                 </svg>
-                Descargar PDF
+                <?php echo esc_html($btn_pdf_text); ?>
             </a>
             <a href="<?php echo esc_url($epub_url ?: '#'); ?>" class="btn-epub">
                 <svg width="16" height="16" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253"/>
                 </svg>
-                Descargar EPUB
+                <?php echo esc_html($btn_epub_text); ?>
             </a>
         </div>
 
         <!-- Comenzar a leer -->
         <a href="<?php echo esc_url($primer_capitulo_url); ?>" class="btn-leer">
-            Comenzar a leer
+            <?php echo esc_html($btn_leer_text); ?>
             <svg width="18" height="18" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"/>
             </svg>
