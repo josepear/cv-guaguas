@@ -451,6 +451,44 @@
 
 })();
 
+// ── Cambio suave entre páginas internas ───────────────────────
+(function() {
+    var isLeaving = false;
+
+    document.addEventListener('click', function(e) {
+        var link = e.target.closest('a[href]');
+        if (!link || isLeaving || e.defaultPrevented) return;
+
+        var href = link.getAttribute('href');
+        var opensNewWindow = link.target === '_blank' || link.hasAttribute('download');
+        var hasModifier = e.metaKey || e.ctrlKey || e.shiftKey || e.altKey || e.button !== 0;
+
+        // Solo se animan enlaces normales de esta misma web.
+        if (!href || href.charAt(0) === '#' || opensNewWindow || hasModifier) return;
+
+        var destination;
+        try {
+            destination = new URL(link.href, window.location.href);
+        } catch (error) {
+            return;
+        }
+
+        var samePage = destination.pathname === window.location.pathname &&
+            destination.search === window.location.search;
+
+        if (destination.origin !== window.location.origin || samePage) return;
+
+        e.preventDefault();
+        isLeaving = true;
+        document.body.classList.add('guaguas-page-is-leaving');
+
+        // Espera lo justo para que se vea la salida y navega a la nueva página.
+        window.setTimeout(function() {
+            window.location.href = destination.href;
+        }, 180);
+    });
+})();
+
 // ── Anclas internas del sidebar (scroll suave dentro de la misma página) ──
 (function() {
     function doScroll(id, smooth) {

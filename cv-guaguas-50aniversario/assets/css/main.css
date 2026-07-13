@@ -315,7 +315,7 @@ h1, h2, h3, h4, h5, h6 {
     .guaguas-menu-layout > main,
     .guaguas-menu-layout > section {
         position: relative;
-        animation: guaguas-page-reveal 300ms cubic-bezier(0.22, 1, 0.36, 1) both;
+        animation: guaguas-page-reveal 520ms cubic-bezier(0.22, 1, 0.36, 1) both;
     }
 
     .guaguas-menu-layout > main::after,
@@ -331,19 +331,32 @@ h1, h2, h3, h4, h5, h6 {
         pointer-events: none;
         transform: scaleX(0);
         transform-origin: left center;
-        animation: guaguas-page-line 520ms cubic-bezier(0.22, 1, 0.36, 1) both;
+        animation: guaguas-page-line 760ms cubic-bezier(0.22, 1, 0.36, 1) both;
     }
 }
 
 @keyframes guaguas-page-reveal {
-    from { opacity: 0.9; }
+    from { opacity: 0.96; }
     to { opacity: 1; }
+}
+
+/* Salida breve antes de abrir otro capítulo: evita el corte seco de navegación. */
+@media (prefers-reduced-motion: no-preference) {
+    body.guaguas-page-is-leaving .guaguas-menu-layout > main,
+    body.guaguas-page-is-leaving .guaguas-menu-layout > section {
+        animation: guaguas-page-leave 180ms ease-out both;
+    }
+}
+
+@keyframes guaguas-page-leave {
+    from { opacity: 1; }
+    to { opacity: 0.92; }
 }
 
 @keyframes guaguas-page-line {
     0% { opacity: 0; transform: scaleX(0); }
-    18% { opacity: 1; }
-    72% { opacity: 1; transform: scaleX(1); }
+    22% { opacity: 0.85; }
+    76% { opacity: 0.85; transform: scaleX(1); }
     100% { opacity: 0; transform: scaleX(1); }
 }
 
