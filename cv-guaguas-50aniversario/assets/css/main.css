@@ -338,11 +338,9 @@ h1, h2, h3, h4, h5, h6 {
 @keyframes guaguas-page-reveal {
     from {
         opacity: 0;
-        transform: translateY(8px);
     }
     to {
         opacity: 1;
-        transform: translateY(0);
     }
 }
 
@@ -357,11 +355,9 @@ h1, h2, h3, h4, h5, h6 {
 @keyframes guaguas-page-leave {
     from {
         opacity: 1;
-        transform: translateY(0);
     }
     to {
         opacity: 0;
-        transform: translateY(-8px);
     }
 }
 
