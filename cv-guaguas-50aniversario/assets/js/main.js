@@ -106,7 +106,6 @@
      */
     function initAccordions() {
         const accordionToggles = document.querySelectorAll('.sidebar-accordion-toggle');
-        const parentToggles = document.querySelectorAll('.sidebar-parent-toggle');
         
         function toggleAccordion(capitulo) {
             const content = capitulo?.querySelector('.subcapitulos-list');
@@ -135,13 +134,6 @@
             });
         });
         
-        parentToggles.forEach(toggle => {
-            toggle.addEventListener('click', function(e) {
-                e.preventDefault();
-                e.stopPropagation();
-                toggleAccordion(this.closest('.capitulo-item'));
-            });
-        });
     }
 
     initAccordions();
@@ -150,11 +142,7 @@
      * Close sidebar when clicking on chapter links (like React onClose)
      */
     function initChapterLinkClose() {
-        // Excluimos los enlaces que actúan como toggle de acordeón (ej. cap2,
-        // que solo tiene anclas internas y por eso usa <a> en vez de <button>
-        // para el botón padre). Ese enlace no debe cerrar el sidebar al hacer
-        // click, ya que su función es expandir/colapsar las anclas internas.
-        const allLinks = document.querySelectorAll('#sidebar-indice a:not(.sidebar-parent-toggle)');
+        const allLinks = document.querySelectorAll('#sidebar-indice a');
         
         allLinks.forEach(link => {
             link.addEventListener('click', function() {

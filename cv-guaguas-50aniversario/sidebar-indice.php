@@ -66,6 +66,13 @@ $current_slug = is_singular('capitulo') ? get_post_field('post_name', get_the_ID
                 $anclas_internas = libro_parse_anclas_internas($cap->ID);
                 
                 $has_children = !empty($subcapitulos) || !empty($anclas_internas);
+
+                // El título abre la primera sección real; la flecha conserva
+                // la función de desplegar o cerrar la lista de secciones.
+                $cap_destination = $cap_permalink;
+                if (!empty($subcapitulos)) {
+                    $cap_destination = get_permalink($subcapitulos[0]->ID);
+                }
                 
                 // Check if any child is active (real subchapter, or subchapter holding the current anchors)
                 $has_active_child = false;
@@ -100,21 +107,19 @@ $current_slug = is_singular('capitulo') ? get_post_field('post_name', get_the_ID
                     <?php endif; ?>
                     
                     <?php if ($has_children && !empty($subcapitulos)) : ?>
-                    <button type="button"
-                       class="sidebar-parent-toggle sidebar-active-indicator flex-1 text-left py-2.5 px-3 rounded-sm transition-all duration-200 font-sans text-sm font-medium hover:bg-sidebar-accent hover:text-gold <?php echo $has_active_child ? 'text-gold/80' : 'text-sidebar-foreground'; ?>"
-                       data-target="subcapitulos-<?php echo $cap->ID; ?>">
+                    <a href="<?php echo esc_url($cap_destination); ?>"
+                       class="sidebar-active-indicator flex-1 text-left py-2.5 px-3 rounded-sm transition-all duration-200 font-sans text-sm font-medium hover:bg-sidebar-accent hover:text-gold <?php echo $has_active_child ? 'text-gold/80' : 'text-sidebar-foreground'; ?>">
                         <span class="flex items-center gap-2.5">
                             <?php if (strlen($numero) > 0 && !$ocultar_numero) : ?>
                                 <span class="chapter-number chapter-number--main"><?php echo esc_html($numero); ?></span>
                             <?php endif; ?>
                             <span><?php echo esc_html($cap->post_title); ?></span>
                         </span>
-                    </button>
+                    </a>
                     <?php elseif ($has_children && !empty($anclas_internas)) : ?>
                     <a href="<?php echo esc_url($cap_permalink); ?>"
-                       class="sidebar-parent-toggle sidebar-active-indicator flex-1 text-left py-2.5 px-3 rounded-sm transition-all duration-200 font-sans text-sm font-medium hover:bg-sidebar-accent hover:text-gold <?php echo $is_active ? 'active text-gold bg-sidebar-accent' : 'text-sidebar-foreground'; ?>"
-                       data-section="<?php echo esc_attr($cap_slug); ?>"
-                       data-target="subcapitulos-<?php echo $cap->ID; ?>">
+                       class="sidebar-active-indicator flex-1 text-left py-2.5 px-3 rounded-sm transition-all duration-200 font-sans text-sm font-medium hover:bg-sidebar-accent hover:text-gold <?php echo $is_active ? 'active text-gold bg-sidebar-accent' : 'text-sidebar-foreground'; ?>"
+                       data-section="<?php echo esc_attr($cap_slug); ?>">
                         <span class="flex items-center gap-2.5">
                             <?php if (strlen($numero) > 0 && !$ocultar_numero) : ?>
                                 <span class="chapter-number chapter-number--main"><?php echo esc_html($numero); ?></span>
