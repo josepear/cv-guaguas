@@ -14,6 +14,7 @@
     const themeBtn = document.getElementById('toggle-theme');
     const sunIcon = themeBtn?.querySelector('.theme-icon-sun');
     const moonIcon = themeBtn?.querySelector('.theme-icon-moon');
+    let sidebarCloseTimer = null;
 
     /**
      * Theme Toggle - localStorage + system preference (like React useTheme)
@@ -79,6 +80,12 @@
     }
 
     function openSidebar() {
+        if (sidebarCloseTimer) {
+            window.clearTimeout(sidebarCloseTimer);
+            sidebarCloseTimer = null;
+        }
+
+        document.body.classList.remove('sidebar-is-closing');
         sidebar?.classList.remove('-translate-x-full');
         sidebar?.classList.add('translate-x-0');
         menuIcon?.classList.add('hidden');
@@ -93,7 +100,14 @@
         menuIcon?.classList.remove('hidden');
         closeIcon?.classList.add('hidden');
         document.body.classList.remove('sidebar-is-open');
+        document.body.classList.add('sidebar-is-closing');
         toggleBtn?.setAttribute('aria-expanded', 'false');
+
+        // Conserva el estado de cierre hasta que termina la animación suave.
+        sidebarCloseTimer = window.setTimeout(function() {
+            document.body.classList.remove('sidebar-is-closing');
+            sidebarCloseTimer = null;
+        }, 720);
     }
 
     // Event Listeners for sidebar toggle

@@ -259,6 +259,11 @@ h1, h2, h3, h4, h5, h6 {
         --guaguas-menu-width: 320px;
     }
 
+    body.sidebar-is-closing .guaguas-menu-layout {
+        transition-duration: 720ms;
+        transition-timing-function: cubic-bezier(0.65, 0, 0.35, 1);
+    }
+
     .guaguas-menu-layout > #sidebar-indice {
         grid-area: sidebar;
         position: sticky;
@@ -279,6 +284,12 @@ h1, h2, h3, h4, h5, h6 {
         opacity: 1;
         pointer-events: auto;
         transition: opacity 220ms ease 100ms;
+    }
+
+    body.sidebar-is-closing .guaguas-menu-layout > #sidebar-indice {
+        opacity: 0;
+        pointer-events: none;
+        transition: opacity 360ms ease 100ms;
     }
 
     .guaguas-menu-layout > main,
