@@ -700,7 +700,8 @@ body.light .bloque-color .drop-cap {
 }
 
 .timeline-event {
-    margin-bottom: 1.25rem;
+    /* Separa cada hito completo del año que viene después. */
+    margin-bottom: 2rem;
     position: relative;
 }
 
@@ -726,7 +727,8 @@ body.light .bloque-color .drop-cap {
     /* La fecha ocupa su propia fila y queda unida al contenido del hito. */
     display: table;
     padding: 0.22rem 0.65rem;
-    margin-bottom: 0.2rem;
+    /* Fecha y titular se leen como una sola cabecera. */
+    margin-bottom: 0;
 }
 
 body.light .timeline-year {
