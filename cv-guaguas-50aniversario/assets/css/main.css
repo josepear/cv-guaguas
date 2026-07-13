@@ -241,6 +241,27 @@ h1, h2, h3, h4, h5, h6 {
 /* Header padding offset */
 .pt-header { padding-top: 52px; }
 
+/*
+   En escritorio, el índice deja espacio real a su izquierda: el libro se
+   adapta al hueco disponible en vez de quedar oscurecido por una capa encima.
+*/
+@media (min-width: 768px) {
+    main {
+        transition: margin-left 300ms ease, width 300ms ease;
+    }
+
+    body.sidebar-is-open main {
+        width: calc(100% - 320px);
+        margin-left: 320px;
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    main {
+        transition: none;
+    }
+}
+
 /* Hover utilities */
 .hover\:text-gold:hover { color: hsl(var(--gold)); }
 .hover\:text-gold-light:hover { color: hsl(var(--gold-light)); }

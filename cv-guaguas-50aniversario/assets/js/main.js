@@ -9,7 +9,6 @@
     // DOM Elements
     const toggleBtn = document.getElementById('toggle-indice');
     const sidebar = document.getElementById('sidebar-indice');
-    const overlay = document.getElementById('sidebar-overlay');
     const menuIcon = toggleBtn?.querySelector('.menu-icon');
     const closeIcon = toggleBtn?.querySelector('.close-icon');
     const themeBtn = document.getElementById('toggle-theme');
@@ -82,24 +81,23 @@
     function openSidebar() {
         sidebar?.classList.remove('-translate-x-full');
         sidebar?.classList.add('translate-x-0');
-        overlay?.classList.remove('hidden');
         menuIcon?.classList.add('hidden');
         closeIcon?.classList.remove('hidden');
-        document.body.style.overflow = 'hidden';
+        document.body.classList.add('sidebar-is-open');
+        toggleBtn?.setAttribute('aria-expanded', 'true');
     }
 
     function closeSidebar() {
         sidebar?.classList.add('-translate-x-full');
         sidebar?.classList.remove('translate-x-0');
-        overlay?.classList.add('hidden');
         menuIcon?.classList.remove('hidden');
         closeIcon?.classList.add('hidden');
-        document.body.style.overflow = '';
+        document.body.classList.remove('sidebar-is-open');
+        toggleBtn?.setAttribute('aria-expanded', 'false');
     }
 
     // Event Listeners for sidebar toggle
     toggleBtn?.addEventListener('click', toggleSidebar);
-    overlay?.addEventListener('click', closeSidebar);
 
     /**
      * Accordion Toggle for Subchapters - IDENTICAL to React behavior

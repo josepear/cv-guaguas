@@ -238,7 +238,7 @@
 <!-- Fixed Header - identical to React -->
 <header class="fixed top-0 left-0 right-0 z-50 flex items-center justify-between px-4 h-[52px] header-blur border-b border-sidebar-border">
     <!-- Menu Toggle Button -->
-    <button id="toggle-indice" class="flex items-center gap-2 px-3 py-2 text-foreground hover:text-gold transition-colors duration-300" aria-label="Abrir índice">
+    <button id="toggle-indice" class="flex items-center gap-2 px-3 py-2 text-foreground hover:text-gold transition-colors duration-300" aria-label="Abrir índice" aria-expanded="false" aria-controls="sidebar-indice">
         <svg class="menu-icon w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/>
         </svg>
@@ -260,6 +260,3 @@
         </a>
     </div>
 </header>
-
-<!-- Overlay - IDENTICAL to React (shows on all devices when sidebar is open) -->
-<div id="sidebar-overlay" class="fixed inset-0 top-[52px] bg-background/80 backdrop-blur-sm z-40 hidden"></div>
