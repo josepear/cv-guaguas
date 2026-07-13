@@ -308,27 +308,58 @@
      * Scroll-Reveal Animations via IntersectionObserver
      * Replicates React useScrollReveal hook behavior
      */
+    function addGlobalScrollReveals() {
+        if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+
+        // Solo animamos bloques de lectura; menús, botones y formularios quedan intactos.
+        const selector = [
+            '.reading-content p',
+            '.reading-content h2',
+            '.reading-content h3',
+            '.reading-content h4',
+            '.reading-content .content-image',
+            '.reading-content .timeline-event',
+            '.reading-content .editorial-quote',
+            '.reading-content .newspaper-quote',
+            '.reading-content .seccion-header-wrapper',
+            '.reading-content .titulo-deportivo-wrapper'
+        ].join(', ');
+
+        document.querySelectorAll(selector).forEach(function(element) {
+            // Los bloques que ya tenían animación conservan su comportamiento original.
+            if (!element.hasAttribute('data-reveal') && !element.closest('.editorial-quote, .newspaper-quote')) {
+                element.classList.add('scroll-reveal');
+            }
+        });
+    }
+
     function initScrollReveal() {
         if (!('IntersectionObserver' in window)) {
             // Fallback: show everything immediately
             document.querySelectorAll('[data-reveal]').forEach(el => el.classList.add('revealed'));
+            document.querySelectorAll('.scroll-reveal').forEach(el => el.classList.add('scroll-revealed'));
             return;
         }
 
         const observer = new IntersectionObserver((entries) => {
             entries.forEach(entry => {
                 if (entry.isIntersecting) {
-                    entry.target.classList.add('revealed');
+                    if (entry.target.hasAttribute('data-reveal')) {
+                        entry.target.classList.add('revealed');
+                    }
+                    entry.target.classList.add('scroll-revealed');
                     observer.unobserve(entry.target);
                 }
             });
         }, {
-            threshold: 0.2
+            rootMargin: '0px 0px -8% 0px',
+            threshold: 0.1
         });
 
-        document.querySelectorAll('[data-reveal]').forEach(el => observer.observe(el));
+        document.querySelectorAll('[data-reveal], .scroll-reveal').forEach(el => observer.observe(el));
     }
 
+    addGlobalScrollReveals();
     initScrollReveal();
 
     /**

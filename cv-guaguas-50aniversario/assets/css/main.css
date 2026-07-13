@@ -695,7 +695,7 @@ body.light .bloque-color .drop-cap {
 
 /* Timeline styles */
 .timeline-container {
-    border-left: 3px solid hsl(var(--gold));
+    border-left: 2px solid hsl(var(--gold));
     padding-left: 1.5rem;
 }
 
@@ -707,8 +707,8 @@ body.light .bloque-color .drop-cap {
 .timeline-event::before {
     content: '';
     position: absolute;
-    /* El punto se calcula desde el centro de la línea de 3px. */
-    left: calc(-1.5rem - 6.5px);
+    /* El punto se calcula desde el centro de la línea de 2px. */
+    left: calc(-1.5rem - 6px);
     top: 0.5rem;
     width: 10px;
     height: 10px;
@@ -928,6 +928,27 @@ body.light .reading-content p {
 [data-reveal].revealed {
     opacity: 1;
     transform: translateY(0) translateX(0);
+}
+
+/* Aparición progresiva de los bloques de lectura al hacer scroll. */
+.scroll-reveal {
+    opacity: 0;
+    transform: translateY(16px);
+    transition: opacity 480ms ease-out, transform 480ms ease-out;
+    will-change: opacity, transform;
+}
+
+.scroll-reveal.scroll-revealed {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .scroll-reveal {
+        opacity: 1;
+        transform: none;
+        transition: none;
+    }
 }
 
 [data-reveal-delay="100"] { transition-delay: 100ms; }
