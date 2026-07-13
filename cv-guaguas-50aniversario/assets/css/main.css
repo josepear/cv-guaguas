@@ -707,13 +707,13 @@ body.light .bloque-color .drop-cap {
 .timeline-event::before {
     content: '';
     position: absolute;
-    left: -1.85rem;
+    /* El punto se calcula desde el centro de la línea de 3px. */
+    left: calc(-1.5rem - 6.5px);
     top: 0.5rem;
     width: 10px;
     height: 10px;
     background: hsl(var(--gold));
-    border-radius: 0;
-    transform: rotate(45deg);
+    border-radius: 50%;
 }
 
 .timeline-year {
