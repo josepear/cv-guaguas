@@ -482,10 +482,10 @@
         isLeaving = true;
         document.body.classList.add('guaguas-page-is-leaving');
 
-        // Espera lo justo para que se vea la salida y navega a la nueva página.
+        // Espera a que termine el fundido de salida antes de abrir la nueva página.
         window.setTimeout(function() {
             window.location.href = destination.href;
-        }, 180);
+        }, 280);
     });
 })();
 
