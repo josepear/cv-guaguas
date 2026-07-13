@@ -723,9 +723,10 @@ body.light .bloque-color .drop-cap {
     line-height: 1;
     color: hsl(220 50% 10%);
     background-color: hsl(var(--gold));
-    display: inline-block;
+    /* La fecha ocupa su propia fila y queda unida al contenido del hito. */
+    display: table;
     padding: 0.22rem 0.65rem;
-    margin-bottom: 0.5rem;
+    margin-bottom: 0.2rem;
 }
 
 body.light .timeline-year {
@@ -733,6 +734,7 @@ body.light .timeline-year {
 }
 
 .timeline-content {
+    margin-top: 0;
     font-size: 0.95rem;
     line-height: 1.7;
     color: hsl(var(--foreground) / 0.8);
