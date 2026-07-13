@@ -8,6 +8,7 @@
 get_header();
 ?>
 
+<div class="guaguas-menu-layout">
 <main class="main-content flex-1 overflow-y-auto lg:ml-[320px]" style="min-height: 100vh; display: flex; align-items: center; justify-content: center; padding-top: 52px;">
     <div class="flex items-center justify-center w-full px-6" style="margin-left: calc(-320px / 2);">
         <div class="text-center max-w-lg lg:max-w-none lg:w-[32rem]">
@@ -63,5 +64,8 @@ get_header();
 
 <?php
 get_sidebar('indice');
+?>
+</div>
+<?php
 get_footer();
 ?>

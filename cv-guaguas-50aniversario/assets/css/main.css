@@ -245,22 +245,50 @@ h1, h2, h3, h4, h5, h6 {
    En escritorio, el índice deja espacio real a su izquierda: el libro se
    adapta al hueco disponible en vez de quedar oscurecido por una capa encima.
 */
-@media (min-width: 768px) {
-    main {
+@media (min-width: 1024px) {
+    .guaguas-menu-layout {
+        --guaguas-menu-width: 0px;
+        display: grid;
+        grid-template-areas: "sidebar content";
+        grid-template-columns: var(--guaguas-menu-width) minmax(0, 1fr);
+        align-items: start;
+        transition: grid-template-columns 580ms cubic-bezier(0.22, 1, 0.36, 1);
+    }
+
+    body.sidebar-is-open .guaguas-menu-layout {
+        --guaguas-menu-width: 320px;
+    }
+
+    .guaguas-menu-layout > #sidebar-indice {
+        grid-area: sidebar;
+        position: sticky;
+        top: 52px;
+        left: auto;
+        z-index: 40;
         width: 100%;
-        margin-left: 0;
-        will-change: width, margin-left;
-        transition: margin-left 460ms cubic-bezier(0.22, 0.61, 0.36, 1), width 460ms cubic-bezier(0.22, 0.61, 0.36, 1);
+        min-width: 0;
+        height: calc(100vh - 52px);
+        overflow: hidden;
+        transform: none !important;
+        opacity: 0;
+        pointer-events: none;
+        transition: opacity 180ms ease;
     }
 
-    body.sidebar-is-open main {
-        width: calc(100% - 320px);
-        margin-left: 320px;
+    body.sidebar-is-open .guaguas-menu-layout > #sidebar-indice {
+        opacity: 1;
+        pointer-events: auto;
+        transition: opacity 220ms ease 100ms;
     }
 
-    #sidebar-indice {
-        transition-duration: 460ms;
-        transition-timing-function: cubic-bezier(0.22, 0.61, 0.36, 1);
+    .guaguas-menu-layout > main,
+    .guaguas-menu-layout > section {
+        grid-area: content;
+        width: auto !important;
+        min-width: 0;
+        margin-left: 0 !important;
+        transition: none;
+        will-change: auto;
     }
 }
 

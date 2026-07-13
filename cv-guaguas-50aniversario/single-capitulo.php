@@ -145,6 +145,7 @@ if ($hero_icon === 'custom' && $hero_custom_icon) {
     <div id="reading-progress-bar" class="h-full bg-gold transition-all duration-100 ease-out" style="width: 0%;"></div>
 </div>
 
+<div class="guaguas-menu-layout">
 <!-- Sidebar -->
 <?php get_template_part('sidebar', 'indice'); ?>
 
@@ -481,6 +482,7 @@ if ($hero_icon === 'custom' && $hero_custom_icon) {
     </div>
 
 </main>
+</div>
 
 <script>
 // Reading Progress Bar - igual que ReadingProgressBar.tsx

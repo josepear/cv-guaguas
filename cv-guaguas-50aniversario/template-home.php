@@ -153,6 +153,7 @@ $primer_capitulo_url = !empty($primer_capitulo) ? get_permalink($primer_capitulo
 }
 </style>
 
+<div class="guaguas-menu-layout">
 <section id="hero-home" class="relative min-h-screen flex items-center justify-center overflow-hidden">
 
     <!-- Imagen de fondo -->
@@ -223,5 +224,6 @@ $primer_capitulo_url = !empty($primer_capitulo) ? get_permalink($primer_capitulo
 
 <!-- Sidebar -->
 <?php get_template_part('sidebar', 'indice'); ?>
+</div>
 
 <?php get_footer(); ?>

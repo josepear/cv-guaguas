@@ -10,6 +10,7 @@
 get_header();
 ?>
 
+<div class="guaguas-menu-layout">
 <!-- Sidebar -->
 <?php get_template_part('sidebar', 'indice'); ?>
 
@@ -57,5 +58,6 @@ get_header();
 
     </div>
 </main>
+</div>
 
 <?php get_footer(); ?>
