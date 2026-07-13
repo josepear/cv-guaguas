@@ -309,6 +309,44 @@ h1, h2, h3, h4, h5, h6 {
     }
 }
 
+/* Entrada editorial: el contenido aparece sin saltos y una línea dorada guía
+   el cambio de página. No bloquea la navegación ni desplaza la lectura. */
+@media (prefers-reduced-motion: no-preference) {
+    .guaguas-menu-layout > main,
+    .guaguas-menu-layout > section {
+        position: relative;
+        animation: guaguas-page-reveal 300ms cubic-bezier(0.22, 1, 0.36, 1) both;
+    }
+
+    .guaguas-menu-layout > main::after,
+    .guaguas-menu-layout > section::after {
+        content: '';
+        position: absolute;
+        top: 0;
+        right: 0;
+        left: 0;
+        z-index: 30;
+        height: 2px;
+        background: hsl(var(--gold));
+        pointer-events: none;
+        transform: scaleX(0);
+        transform-origin: left center;
+        animation: guaguas-page-line 520ms cubic-bezier(0.22, 1, 0.36, 1) both;
+    }
+}
+
+@keyframes guaguas-page-reveal {
+    from { opacity: 0.9; }
+    to { opacity: 1; }
+}
+
+@keyframes guaguas-page-line {
+    0% { opacity: 0; transform: scaleX(0); }
+    18% { opacity: 1; }
+    72% { opacity: 1; transform: scaleX(1); }
+    100% { opacity: 0; transform: scaleX(1); }
+}
+
 /* Hover utilities */
 .hover\:text-gold:hover { color: hsl(var(--gold)); }
 .hover\:text-gold-light:hover { color: hsl(var(--gold-light)); }
