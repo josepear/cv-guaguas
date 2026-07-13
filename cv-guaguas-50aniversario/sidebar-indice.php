@@ -73,6 +73,11 @@ $current_slug = is_singular('capitulo') ? get_post_field('post_name', get_the_ID
                 if (!empty($subcapitulos)) {
                     $cap_destination = get_permalink($subcapitulos[0]->ID);
                 }
+
+                // El título padre ya abre este primer contenido: no repetimos
+                // el enlace si ambos títulos son el mismo.
+                $ocultar_primer_subcapitulo_duplicado = !empty($subcapitulos) &&
+                    sanitize_title($cap->post_title) === sanitize_title($subcapitulos[0]->post_title);
                 
                 // Check if any child is active (real subchapter, or subchapter holding the current anchors)
                 $has_active_child = false;
@@ -141,11 +146,12 @@ $current_slug = is_singular('capitulo') ? get_post_field('post_name', get_the_ID
                     <?php endif; ?>
                 </div>
                 
-                <?php if ($has_children) : 
-                    $sub_index = 1;
-                ?>
+                <?php if ($has_children) : ?>
                 <ul id="subcapitulos-<?php echo $cap->ID; ?>" class="subcapitulos-list ml-4 mt-1 space-y-0.5 border-l border-sidebar-border pl-2 <?php echo $has_active_child ? '' : 'hidden'; ?>">
-                    <?php foreach ($subcapitulos as $sub) : 
+                    <?php foreach ($subcapitulos as $sub_index => $sub) :
+                        if ($ocultar_primer_subcapitulo_duplicado && $sub_index === 0) {
+                            continue;
+                        }
                         $sub_slug = get_post_field('post_name', $sub->ID);
                         $sub_is_active = ($sub_slug === $current_slug);
                         $sub_ocultar_numero = get_post_meta($sub->ID, '_ocultar_numero', true) === '1';
@@ -190,10 +196,7 @@ $current_slug = is_singular('capitulo') ? get_post_field('post_name', get_the_ID
                         </a>
                     </li>
                     <?php endforeach; ?>
-                    <?php 
-                        $sub_index++;
-                        endforeach; 
-                    ?>
+                    <?php endforeach; ?>
                     <?php foreach ($anclas_internas as $ancla) : 
                         $ancla_is_active = $is_active && isset($_SERVER['REQUEST_URI']) && strpos($_SERVER['REQUEST_URI'], '#' . $ancla['id']) !== false;
                     ?>
