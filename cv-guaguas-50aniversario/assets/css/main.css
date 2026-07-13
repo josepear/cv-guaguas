@@ -701,7 +701,7 @@ body.light .bloque-color .drop-cap {
 
 .timeline-event {
     /* Separa cada hito completo del año que viene después. */
-    margin-bottom: 2rem;
+    margin-bottom: 3rem;
     position: relative;
 }
 
@@ -737,7 +737,7 @@ body.light .timeline-year {
 
 .timeline-content {
     /* Compensa la altura de la fila de la fecha para unirla al titular. */
-    margin-top: -0.35rem;
+    margin-top: -0.6rem;
     font-size: 0.95rem;
     line-height: 1.7;
     color: hsl(var(--foreground) / 0.8);
