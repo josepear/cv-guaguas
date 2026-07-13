@@ -4647,7 +4647,9 @@ function libro_add_reimport_button() {
         });
     }
 }
-add_action('admin_init', 'libro_add_reimport_button');
+// El reimportador borra todos los capítulos existentes. Se deja el código como
+// referencia, pero no se activa para proteger el contenido real del libro.
+// add_action('admin_init', 'libro_add_reimport_button');
 
 /**
  * Añadir enlace de reimportar en la página de capítulos
@@ -4666,7 +4668,7 @@ function libro_add_reimport_link($views) {
     
     return $views;
 }
-add_filter('views_edit-capitulo', 'libro_add_reimport_link');
+// add_filter('views_edit-capitulo', 'libro_add_reimport_link');
 
 /**
  * Asegurar que el capítulo "Prólogos" tenga _numero_capitulo = '0'

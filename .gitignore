@@ -17,6 +17,8 @@ dist-ssr
 !.vscode/extensions.json
 .idea
 .DS_Store
+# Archivo de metadatos de macOS que aparece como "Icon" con un retorno oculto.
+Icon?
 *.suo
 *.ntvs*
 *.njsproj

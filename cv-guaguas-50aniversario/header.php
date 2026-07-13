@@ -11,11 +11,6 @@
     <meta property="og:type" content="website">
     <meta property="og:image" content="<?php echo LIBRO_URI; ?>/assets/images/hero-home.jpg">
     
-    <!-- Preconnect para performance -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Antonio:wght@400;700&family=Archivo:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,300;1,400;1,500;1,600;1,700&display=swap" rel="stylesheet">
-    
     <!-- Tailwind CSS CDN with custom config (identical to React) -->
     <script src="https://cdn.tailwindcss.com"></script>
     <script>
@@ -223,8 +218,6 @@
         .editorial-quote::before { content: '"'; position: absolute; top: -0.5rem; left: 0.5rem; font-size: 3rem; font-family: Georgia, serif; color: hsl(45 100% 50% / 0.3); line-height: 1; }
         .content-image img { transition: transform 0.5s cubic-bezier(0.4, 0, 0.2, 1); }
         .content-image:hover img { transform: scale(1.02); }
-        .reading-content p { font-size: 1.125rem; line-height: 1.8; margin-bottom: 1.5rem; }
-        .reading-content p:last-child { margin-bottom: 0; }
         .bg-card\/30 { background-color: hsl(220 45% 20% / 0.3); }
         .bg-card\/50 { background-color: hsl(220 45% 20% / 0.5); }
     </style>

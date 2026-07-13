@@ -4,9 +4,18 @@
  */
 
 // Definir constantes del tema
-define('LIBRO_VERSION', '1.0.0');
 define('LIBRO_DIR', get_template_directory());
 define('LIBRO_URI', get_template_directory_uri());
+
+/**
+ * Genera una versión nueva cuando cambia un archivo del tema.
+ * Así el navegador descarga el CSS y JavaScript actualizados.
+ */
+function libro_asset_version($relative_path) {
+    $file_path = LIBRO_DIR . $relative_path;
+
+    return file_exists($file_path) ? (string) filemtime($file_path) : '1.0.0';
+}
 
 // Cargar módulos del tema
 require_once LIBRO_DIR . '/inc/meta-boxes.php';
@@ -29,7 +38,7 @@ function libro_enqueue_assets() {
         'libro-main',
         LIBRO_URI . '/assets/css/main.css',
         array('libro-fonts'),
-        LIBRO_VERSION
+        libro_asset_version('/assets/css/main.css')
     );
     
     // JavaScript principal
@@ -37,7 +46,7 @@ function libro_enqueue_assets() {
         'libro-main',
         LIBRO_URI . '/assets/js/main.js',
         array(),
-        LIBRO_VERSION,
+        libro_asset_version('/assets/js/main.js'),
         true
     );
     
