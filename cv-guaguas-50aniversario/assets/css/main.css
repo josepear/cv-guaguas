@@ -736,7 +736,8 @@ body.light .timeline-year {
 }
 
 .timeline-content {
-    margin-top: 0;
+    /* Compensa la altura de la fila de la fecha para unirla al titular. */
+    margin-top: -0.35rem;
     font-size: 0.95rem;
     line-height: 1.7;
     color: hsl(var(--foreground) / 0.8);
