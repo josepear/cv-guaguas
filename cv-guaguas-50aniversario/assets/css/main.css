@@ -338,13 +338,55 @@ h1, h2, h3, h4, h5, h6 {
     box-shadow: 0 0 6px rgba(255, 255, 255, 0.4);
 }
 
-/* Editorial quote styling */
-.editorial-quote {
-    font-family: var(--font-serif);
-    font-style: italic;
+/* Citas destacadas: mismo tratamiento para personas, prensa y documentos. */
+.editorial-quote,
+.newspaper-quote {
+    margin: 2rem 0;
+    padding: 0.25rem 0 0.25rem 1.25rem;
+    background: transparent;
+    border-left: 2px solid hsl(var(--gold));
+    color: hsl(var(--foreground) / 0.9);
+    font-family: 'Archivo', sans-serif;
+    font-size: inherit;
+    font-style: normal;
+    line-height: 1.4;
+}
+
+.editorial-quote p,
+.newspaper-quote p {
     position: relative;
-    padding-left: 2rem;
-    border-left: 3px solid hsl(var(--gold));
+    margin: 0;
+    color: inherit;
+    font-family: inherit;
+    font-size: inherit !important;
+    font-style: normal;
+    font-weight: 400;
+    letter-spacing: 0.2px;
+    line-height: inherit;
+}
+
+.editorial-quote p::before,
+.newspaper-quote p::before {
+    content: '\201C';
+    position: absolute;
+    top: -0.6rem;
+    left: -1.1rem;
+    color: hsl(var(--gold));
+    font-family: var(--font-serif);
+    font-size: 2.5rem;
+    font-weight: 700;
+    line-height: 1;
+}
+
+.editorial-quote footer,
+.newspaper-quote .newspaper-quote-source {
+    display: block;
+    margin-top: 0.55rem;
+    color: hsl(var(--muted-foreground));
+    font-family: 'Archivo', sans-serif;
+    font-size: 0.8rem;
+    font-style: normal;
+    font-weight: 500;
 }
 
 /* Section header highlighted - yellow background like the book */
@@ -497,30 +539,6 @@ body.light .prologue-name {
     }
 }
 
-
-.newspaper-quote {
-    margin: 1.5rem 0;
-    padding: 1rem 1.5rem;
-    background: hsl(var(--muted) / 0.3);
-    border-left: 3px solid hsl(var(--gold) / 0.5);
-    font-style: italic;
-    font-size: 0.95rem;
-    line-height: 1.7;
-    color: hsl(var(--foreground) / 0.85);
-}
-
-.newspaper-quote p {
-    margin: 0;
-}
-
-.newspaper-quote-source {
-    display: block;
-    margin-top: 0.5rem;
-    font-style: normal;
-    font-size: 0.8rem;
-    color: hsl(var(--muted-foreground));
-    font-weight: 500;
-}
 
 /* Drop Cap - Editorial book style */
 .drop-cap-paragraph {

@@ -740,6 +740,15 @@ function libro_theme_activation() {
 add_action('after_switch_theme', 'libro_theme_activation');
 
 /**
+ * La cita ya puede traer una comilla inicial desde el texto del libro.
+ * La retiramos solo al mostrarla porque el estilo visual añade una única
+ * comilla decorativa; el contenido guardado en WordPress no se modifica.
+ */
+function libro_mostrar_cita_con_una_sola_comilla($content) {
+    return preg_replace('/^(\s*(?:<p>)?\s*)[\"\x{201C}\x{00AB}]/u', '$1', $content, 1);
+}
+
+/**
  * Shortcode: Editorial Quote - idéntico a React EditorialQuote.tsx
  * Uso: [cita_editorial author="Nombre" source="Fuente"]Texto de la cita[/cita_editorial]
  */
@@ -748,12 +757,12 @@ function libro_shortcode_cita_editorial($atts, $content = null) {
         'author' => '',
         'source' => '',
     ), $atts, 'cita_editorial');
-    
+
     ob_start();
     ?>
     <blockquote class="editorial-quote my-8 md:my-12 py-4" data-reveal="left">
         <p class="text-xl md:text-2xl text-foreground/90 leading-relaxed mb-4">
-            <?php echo wp_kses_post($content); ?>
+            <?php echo wp_kses_post(libro_mostrar_cita_con_una_sola_comilla($content)); ?>
         </p>
         <?php if ($atts['author'] || $atts['source']) : ?>
         <footer class="text-sm text-muted-foreground">
@@ -1223,7 +1232,7 @@ function libro_shortcode_cita_prensa($atts, $content = null) {
     ?>
     <div data-reveal="left">
         <blockquote class="newspaper-quote">
-            <p><?php echo wp_kses_post($content); ?></p>
+            <p><?php echo wp_kses_post(libro_mostrar_cita_con_una_sola_comilla($content)); ?></p>
             <?php if ($atts['source']) : ?>
             <cite class="newspaper-quote-source"><?php echo esc_html($atts['source']); ?></cite>
             <?php endif; ?>
