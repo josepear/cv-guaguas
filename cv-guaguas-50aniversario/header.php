@@ -146,7 +146,6 @@
         .light ::selection { background: hsl(45 100% 42% / 0.25); color: var(--lm-fg); }
         .light .newspaper-quote { background: hsl(220 15% 90% / 0.3); border-left-color: hsl(45 100% 42% / 0.5); color: hsl(220 50% 12% / 0.85); }
         .light .editorial-quote { border-left-color: var(--lm-gold); }
-        .light .editorial-quote::before { color: hsl(45 100% 42% / 0.3); }
         .light .timeline-container { border-left-color: var(--lm-gold); }
         .light .timeline-event::before { background: var(--lm-gold); }
         .light .timeline-year { color: var(--lm-gold); }
@@ -214,8 +213,6 @@
         .\[animation-delay\:400ms\] { animation-delay: 400ms; }
         .\[animation-delay\:600ms\] { animation-delay: 600ms; }
         .\[animation-delay\:800ms\] { animation-delay: 800ms; }
-        .editorial-quote { position: relative; padding-left: 1.5rem; border-left: 3px solid hsl(45 100% 50%); font-style: italic; }
-        .editorial-quote::before { content: '"'; position: absolute; top: -0.5rem; left: 0.5rem; font-size: 3rem; font-family: Georgia, serif; color: hsl(45 100% 50% / 0.3); line-height: 1; }
         .content-image img { transition: transform 0.5s cubic-bezier(0.4, 0, 0.2, 1); }
         .content-image:hover img { transform: scale(1.02); }
         .bg-card\/30 { background-color: hsl(220 45% 20% / 0.3); }
