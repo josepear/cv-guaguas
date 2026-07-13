@@ -28,7 +28,7 @@ function libro_enqueue_assets() {
     // Google Fonts - Antonio + Archivo (colores CV Guaguas)
     wp_enqueue_style(
         'libro-fonts',
-        'https://fonts.googleapis.com/css2?family=Antonio:wght@400;700&family=Archivo:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,300;1,400;1,500;1,600;1,700&display=swap',
+        'https://fonts.googleapis.com/css2?family=Antonio:wght@400;700;900&family=Archivo:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,300;1,400;1,500;1,600;1,700&display=swap',
         array(),
         null
     );
