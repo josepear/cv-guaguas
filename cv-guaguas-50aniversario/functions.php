@@ -1092,7 +1092,8 @@ function libro_shortcode_seccion_header($atts, $content = null) {
     // Star above the header — left-aligned, estrella-icon.svg path inline, proportional to section text (1rem)
     $star_above = '';
     if ($atts['star'] === 'true' || $atts['star'] === '1') {
-        $star_color = $atts['color'] && $atts['color'] !== 'inverted' ? esc_attr($atts['color']) : 'hsl(45 100% 50%)';
+        // Norma editorial: las estrellas de los subtítulos usan siempre el dorado corporativo.
+        $star_color = 'hsl(45 100% 50%)';
         // estrella-icon.svg viewBox 1280×1181 → aspect ratio ~1.08:1 → at 1.2rem height, width ≈ 1.3rem
         $star_above = '<span aria-hidden="true" style="display:block;margin-bottom:0.3rem;">'
             . '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1280 1181" style="width:2.3rem;height:2.2rem;display:inline-block;" fill="' . $star_color . '">'

@@ -44,6 +44,14 @@ $hero_tablet_bg_position = get_post_meta(get_the_ID(), '_hero_tablet_background_
 $hero_mobile_bg_position = get_post_meta(get_the_ID(), '_hero_mobile_background_position', true) ?: $hero_bg_position;
 $hero_bg_color = get_post_meta(get_the_ID(), '_hero_background_color', true);
 
+// Norma editorial: las estrellas de las cabeceras siempre usan el dorado corporativo.
+if ($hero_icon === 'star' || $hero_icon === 'star-outline') {
+    $hero_icon_color = 'hsl(45 100% 50%)';
+}
+if ($hero_custom_icon && stripos(basename(parse_url($hero_custom_icon, PHP_URL_PATH)), 'estrella') !== false) {
+    $hero_custom_icon_color = 'hsl(45 100% 50%)';
+}
+
 // Navegación depth-first excluyendo padres con hijos (igual que React getAllChapters())
 // Solo incluimos páginas con contenido real (sin hijos)
 $top_chapters = get_posts(array(
