@@ -532,6 +532,15 @@ h1, h2, h3, h4, h5, h6 {
     box-decoration-break: clone;
 }
 
+/* Norma editorial: cabeceras grandes y subtítulos comparten el código visual del capítulo 01. */
+.chapter-hero .hero-line-animated > span,
+.section-header-highlighted,
+.section-header-inverted,
+.section-header-navy {
+    color: hsl(220 50% 10%) !important;
+    background-color: hsl(var(--gold)) !important;
+}
+
 h2.section-header-highlighted {
     font-size: 2.19rem;
 }
