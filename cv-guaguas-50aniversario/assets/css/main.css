@@ -1002,6 +1002,13 @@ body.light .reading-content p {
     transition: none;
 }
 
+/* Tablet tiene su propio foco sin alterar ni escritorio ni móvil. */
+@media (min-width: 768px) and (max-width: 1023px) {
+    .chapter-hero .hero-bg-parallax {
+        background-position: var(--hero-tablet-background-position) !important;
+    }
+}
+
 /* En pantalla vertical se conserva el detalle importante de cada fotografía. */
 @media (max-width: 767px) {
     .chapter-hero {
