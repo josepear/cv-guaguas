@@ -40,6 +40,7 @@ $hero_vertical = get_post_meta(get_the_ID(), '_hero_vertical', true) ?: 'center'
 $hero_title_lines = get_post_meta(get_the_ID(), '_hero_title_lines', true);
 $hero_border_color = get_post_meta(get_the_ID(), '_hero_border_color', true);
 $hero_bg_position = get_post_meta(get_the_ID(), '_hero_background_position', true) ?: 'center top';
+$hero_mobile_bg_position = get_post_meta(get_the_ID(), '_hero_mobile_background_position', true) ?: $hero_bg_position;
 $hero_bg_color = get_post_meta(get_the_ID(), '_hero_background_color', true);
 
 // Navegación depth-first excluyendo padres con hijos (igual que React getAllChapters())
@@ -156,7 +157,7 @@ if ($hero_icon === 'custom' && $hero_custom_icon) {
     <!-- Chapter Hero -->
     <div class="chapter-hero relative overflow-hidden w-full" style="<?php echo esc_attr($hero_height_style); ?><?php if ($hero_bg_color) echo 'background-color:' . esc_attr($hero_bg_color) . ';'; ?>">
         <?php if ($hero_image) : ?>
-        <div class="absolute inset-0 bg-cover bg-no-repeat hero-bg-parallax" style="background-image: url('<?php echo esc_url($hero_image); ?>'); background-position: <?php echo esc_attr($hero_bg_position); ?>;"></div>
+        <div class="absolute inset-0 bg-cover bg-no-repeat hero-bg-parallax" style="background-image: url('<?php echo esc_url($hero_image); ?>'); background-position: <?php echo esc_attr($hero_bg_position); ?>; --hero-mobile-background-position: <?php echo esc_attr($hero_mobile_bg_position); ?>;"></div>
         <?php endif; ?>
         
         <?php if ($hero_overlay) : ?>

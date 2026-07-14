@@ -1002,6 +1002,17 @@ body.light .reading-content p {
     transition: none;
 }
 
+/* En pantalla vertical se conserva el detalle importante de cada fotografía. */
+@media (max-width: 767px) {
+    .chapter-hero {
+        height: min(460px, 64svh) !important;
+    }
+
+    .chapter-hero .hero-bg-parallax {
+        background-position: var(--hero-mobile-background-position) !important;
+    }
+}
+
 /* ============================================
    TAILWIND-LIKE UTILITIES
    ============================================ */
