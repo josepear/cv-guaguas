@@ -520,12 +520,87 @@
     });
 })();
 
+// ── Barra fija de ubicación durante la lectura ─────────────────
+(function() {
+    var bar = document.querySelector('.reading-context-bar');
+    var breadcrumb = document.querySelector('.reading-context-trigger');
+    if (!bar || !breadcrumb) return;
+
+    function updateReadingContext() {
+        // Muestra la barra solo cuando el lugar de las migas ya pasó bajo el menú fijo.
+        var hasPassedBreadcrumb = breadcrumb.getBoundingClientRect().top <= 52;
+        bar.classList.toggle('is-visible', hasPassedBreadcrumb);
+        bar.setAttribute('aria-hidden', hasPassedBreadcrumb ? 'false' : 'true');
+    }
+
+    window.addEventListener('scroll', updateReadingContext, { passive: true });
+    window.addEventListener('resize', updateReadingContext);
+    updateReadingContext();
+})();
+
+// ── Abrir en el índice el capítulo indicado desde la barra contextual ──
+(function() {
+    document.addEventListener('click', function(e) {
+        var button = e.target.closest('.reading-context-bar__parent[data-open-chapter]');
+        if (!button) return;
+
+        var chapterId = button.getAttribute('data-open-chapter');
+        var sidebar = document.getElementById('sidebar-indice');
+        var list = document.getElementById('subcapitulos-' + chapterId);
+        if (!sidebar || !list) return;
+
+        // Separa la entrada del panel de la apertura del capítulo para evitar un salto.
+        document.body.classList.add('sidebar-opening-from-context');
+        document.body.classList.remove('sidebar-is-closing');
+        var menuToggle = document.getElementById('toggle-indice');
+        var toggle = list.closest('.capitulo-item')?.querySelector('.sidebar-accordion-toggle');
+
+        // Algunas páginas ya traen esta lista abierta por ser la sección activa.
+        // La cerramos un instante para poder desplegarla después de la entrada del panel.
+        list.classList.add('hidden');
+        toggle?.setAttribute('aria-expanded', 'false');
+        toggle?.querySelector('.chevron-icon')?.classList.remove('rotate-90');
+
+        // Dos fotogramas dan al navegador tiempo para preparar la animación de entrada.
+        requestAnimationFrame(function() {
+            requestAnimationFrame(function() {
+                sidebar.classList.remove('-translate-x-full');
+                sidebar.classList.add('translate-x-0');
+                document.body.classList.add('sidebar-is-open');
+                menuToggle?.setAttribute('aria-expanded', 'true');
+                menuToggle?.querySelector('.menu-icon')?.classList.add('hidden');
+                menuToggle?.querySelector('.close-icon')?.classList.remove('hidden');
+
+                window.setTimeout(function() {
+                    list.classList.remove('hidden');
+                    toggle?.setAttribute('aria-expanded', 'true');
+                    toggle?.querySelector('.chevron-icon')?.classList.add('rotate-90');
+                    list.closest('.capitulo-item')?.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+                }, 250);
+            });
+        });
+
+        window.setTimeout(function() {
+            document.body.classList.remove('sidebar-opening-from-context');
+        }, 760);
+    });
+})();
+
 // ── Anclas internas del sidebar (scroll suave dentro de la misma página) ──
 (function() {
+    function getFixedReadingOffset() {
+        var header = document.querySelector('header.fixed');
+        var contextBar = document.querySelector('.reading-context-bar');
+        var headerHeight = header ? header.offsetHeight : 52;
+        // La barra aparecerá al bajar hasta el ancla, aunque esté oculta al calcular.
+        var contextHeight = contextBar ? contextBar.offsetHeight : 0;
+        return headerHeight + contextHeight + 16;
+    }
+
     function doScroll(id, smooth) {
         var target = document.getElementById(id);
         if (!target) return false;
-        var headerOffset = 80; // compensar header fijo
+        var headerOffset = getFixedReadingOffset();
         var top = target.getBoundingClientRect().top + window.pageYOffset - headerOffset;
         window.scrollTo({ top: top, behavior: smooth ? 'smooth' : 'auto' });
         return true;

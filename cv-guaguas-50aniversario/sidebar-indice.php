@@ -12,14 +12,30 @@
 function libro_parse_anclas_internas($post_id) {
     $raw = get_post_meta($post_id, '_anclas_internas', true);
     $anclas = array();
-    if (empty($raw)) return $anclas;
-    foreach (preg_split('/\r\n|\r|\n/', trim($raw)) as $linea) {
-        $linea = trim($linea);
-        if ($linea === '' || strpos($linea, '|') === false) continue;
-        list($texto, $id) = array_map('trim', explode('|', $linea, 2));
-        if ($texto === '' || $id === '') continue;
-        $anclas[] = array('texto' => $texto, 'id' => sanitize_title($id));
+    if (!empty($raw)) {
+        foreach (preg_split('/\r\n|\r|\n/', trim($raw)) as $linea) {
+            $linea = trim($linea);
+            if ($linea === '' || strpos($linea, '|') === false) continue;
+            list($texto, $id) = array_map('trim', explode('|', $linea, 2));
+            if ($texto === '' || $id === '') continue;
+            $anclas[] = array('texto' => $texto, 'id' => sanitize_title($id));
+        }
     }
+
+    // Las cronologías se detectan solas: no hay que crear su submenú a mano.
+    $content = get_post_field('post_content', $post_id);
+    $has_timeline = stripos($content, 'timeline-container') !== false;
+    $has_timeline_anchor = false;
+    foreach ($anclas as $ancla) {
+        if ($ancla['id'] === 'cronologia') {
+            $has_timeline_anchor = true;
+            break;
+        }
+    }
+    if ($has_timeline && !$has_timeline_anchor) {
+        $anclas[] = array('texto' => 'Cronología', 'id' => 'cronologia');
+    }
+
     return $anclas;
 }
 
@@ -78,6 +94,12 @@ $current_slug = is_singular('capitulo') ? get_post_field('post_name', get_the_ID
                 // el enlace si ambos títulos son el mismo.
                 $ocultar_primer_subcapitulo_duplicado = !empty($subcapitulos) &&
                     sanitize_title($cap->post_title) === sanitize_title($subcapitulos[0]->post_title);
+
+                // Si el primer contenido comparte título con el capítulo, se oculta
+                // para no repetirlo. Sus anclas, como Cronología, siguen disponibles.
+                $anclas_primer_subcapitulo_oculto = $ocultar_primer_subcapitulo_duplicado
+                    ? libro_parse_anclas_internas($subcapitulos[0]->ID)
+                    : array();
                 
                 // Check if any child is active (real subchapter, or subchapter holding the current anchors)
                 $has_active_child = false;
@@ -196,6 +218,18 @@ $current_slug = is_singular('capitulo') ? get_post_field('post_name', get_the_ID
                         </a>
                     </li>
                     <?php endforeach; ?>
+                    <?php endforeach; ?>
+                    <?php foreach ($anclas_primer_subcapitulo_oculto as $ancla) : ?>
+                    <li class="subcapitulo-item">
+                        <a href="<?php echo esc_url(get_permalink($subcapitulos[0]->ID) . '#' . $ancla['id']); ?>"
+                           class="sidebar-active-indicator sidebar-anchor-link block py-2.5 px-3 text-sm rounded-sm transition-all duration-200 hover:bg-sidebar-accent hover:text-gold text-sidebar-foreground/80"
+                           data-section="<?php echo esc_attr(get_post_field('post_name', $subcapitulos[0]->ID)); ?>"
+                           data-anchor="<?php echo esc_attr($ancla['id']); ?>">
+                            <span class="flex items-center gap-2.5">
+                                <span><?php echo esc_html($ancla['texto']); ?></span>
+                            </span>
+                        </a>
+                    </li>
                     <?php endforeach; ?>
                     <?php foreach ($anclas_internas as $ancla) : 
                         $ancla_is_active = $is_active && isset($_SERVER['REQUEST_URI']) && strpos($_SERVER['REQUEST_URI'], '#' . $ancla['id']) !== false;

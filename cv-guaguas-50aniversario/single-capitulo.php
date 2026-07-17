@@ -90,6 +90,36 @@ $next_capitulo = ($current_flat_index !== false && $current_flat_index < count($
     ? get_post($all_chapters_flat[$current_flat_index + 1])
     : null;
 
+// Las tarjetas solo enseñan el número al cruzar de una sección a otra.
+// Una sección es el capítulo padre; si la página no tiene padre, es ella misma.
+$current_section_id = wp_get_post_parent_id(get_the_ID()) ?: get_the_ID();
+$format_section_number = function($post) use ($current_section_id) {
+    if (!$post) {
+        return '';
+    }
+
+    $section_id = wp_get_post_parent_id($post->ID) ?: $post->ID;
+    if ($section_id === $current_section_id) {
+        return '';
+    }
+
+    $number = get_post_meta($section_id, '_numero_capitulo', true);
+    $digits = preg_replace('/\D+/', '', (string) $number);
+    return $digits === '' ? '' : str_pad((string) (int) $digits, 2, '0', STR_PAD_LEFT);
+};
+
+$prev_section_number = $format_section_number($prev_capitulo);
+$next_section_number = $format_section_number($next_capitulo);
+
+// Al cambiar de capítulo, la tarjeta nombra el capítulo y deja la primera
+// lectura como segunda línea. Dentro del mismo capítulo mantiene solo la página.
+$prev_section_id = $prev_capitulo ? (wp_get_post_parent_id($prev_capitulo->ID) ?: $prev_capitulo->ID) : 0;
+$next_section_id = $next_capitulo ? (wp_get_post_parent_id($next_capitulo->ID) ?: $next_capitulo->ID) : 0;
+$prev_navigation_title = $prev_section_number ? get_the_title($prev_section_id) : ($prev_capitulo ? $prev_capitulo->post_title : '');
+$next_navigation_title = $next_section_number ? get_the_title($next_section_id) : ($next_capitulo ? $next_capitulo->post_title : '');
+$prev_navigation_detail = ($prev_section_number && $prev_capitulo && $prev_capitulo->post_title !== $prev_navigation_title) ? $prev_capitulo->post_title : '';
+$next_navigation_detail = ($next_section_number && $next_capitulo && $next_capitulo->post_title !== $next_navigation_title) ? $next_capitulo->post_title : '';
+
 // Alignment classes for hero
 $align_classes = array(
     'left' => 'items-start text-left',
@@ -154,6 +184,8 @@ if ($hero_icon === 'custom' && $hero_custom_icon) {
 <div class="fixed top-[52px] left-0 right-0 h-1 bg-border/30 z-40">
     <div id="reading-progress-bar" class="h-full bg-gold transition-all duration-100 ease-out" style="width: 0%;"></div>
 </div>
+
+<?php libro_context_bar(get_the_ID()); ?>
 
 <div class="guaguas-menu-layout">
 <!-- Sidebar -->
@@ -236,7 +268,7 @@ if ($hero_icon === 'custom' && $hero_custom_icon) {
         $ocultar_num = get_post_meta(get_the_ID(), '_ocultar_numero', true) === '1';
         $current_label = (!$ocultar_num && $cap_numero) ? $cap_numero . '. ' . get_the_title() : get_the_title();
         ?>
-        <nav aria-label="breadcrumb" class="mb-6">
+        <nav aria-label="breadcrumb" class="mb-6 reading-context-trigger">
             <ol class="flex flex-wrap items-center gap-1.5 break-words text-xs text-muted-foreground sm:gap-2.5">
                 <li class="inline-flex items-center gap-1.5">
                     <a href="<?php echo esc_url(home_url('/')); ?>" class="text-muted-foreground hover:text-gold transition-colors flex items-center gap-1">
@@ -346,7 +378,7 @@ if ($hero_icon === 'custom' && $hero_custom_icon) {
                 while (have_posts()) : the_post();
                     // Obtener contenido con shortcodes procesados pero SIN wpautop
                     // para que los marcadores HTML no queden envueltos en <p>
-                    $raw = do_shortcode(get_the_content());
+                    $raw = libro_add_timeline_anchor(do_shortcode(get_the_content()));
                     $marker_start = '<!--EURO_INFOGRAFIA_START-->';
                     $marker_end   = '<!--EURO_INFOGRAFIA_END-->';
 
@@ -431,9 +463,7 @@ if ($hero_icon === 'custom' && $hero_custom_icon) {
             <div class="flex flex-col sm:flex-row items-stretch gap-4">
                 
                 <!-- Previous Chapter -->
-                <?php if ($prev_capitulo) : 
-                    $prev_numero = get_post_meta($prev_capitulo->ID, '_numero_capitulo', true);
-                ?>
+                <?php if ($prev_capitulo) : ?>
                 <a 
                     id="nav-prev"
                     href="<?php echo get_permalink($prev_capitulo->ID); ?>" 
@@ -447,10 +477,13 @@ if ($hero_icon === 'custom' && $hero_custom_icon) {
                             Anterior
                         </span>
                         <span class="font-serif text-foreground group-hover:text-gold transition-colors">
-                            <?php if ($prev_numero) : ?>
-                                <span class="text-gold-muted mr-2"><?php echo esc_html($prev_numero); ?></span>
+                            <?php if ($prev_section_number) : ?>
+                                <span class="text-gold-muted mr-2"><?php echo esc_html($prev_section_number); ?></span>
                             <?php endif; ?>
-                            <?php echo esc_html($prev_capitulo->post_title); ?>
+                            <?php echo esc_html($prev_navigation_title); ?>
+                            <?php if ($prev_navigation_detail) : ?>
+                                <span class="block mt-1 font-sans text-xs text-muted-foreground"><?php echo esc_html($prev_navigation_detail); ?></span>
+                            <?php endif; ?>
                         </span>
                     </div>
                 </a>
@@ -459,9 +492,7 @@ if ($hero_icon === 'custom' && $hero_custom_icon) {
                 <?php endif; ?>
                 
                 <!-- Next Chapter -->
-                <?php if ($next_capitulo) : 
-                    $next_numero = get_post_meta($next_capitulo->ID, '_numero_capitulo', true);
-                ?>
+                <?php if ($next_capitulo) : ?>
                 <a 
                     id="nav-next"
                     href="<?php echo get_permalink($next_capitulo->ID); ?>" 
@@ -472,10 +503,13 @@ if ($hero_icon === 'custom' && $hero_custom_icon) {
                             Siguiente
                         </span>
                         <span class="font-serif text-foreground group-hover:text-gold transition-colors">
-                            <?php if ($next_numero) : ?>
-                                <span class="text-gold-muted mr-2"><?php echo esc_html($next_numero); ?></span>
+                            <?php if ($next_section_number) : ?>
+                                <span class="text-gold-muted mr-2"><?php echo esc_html($next_section_number); ?></span>
                             <?php endif; ?>
-                            <?php echo esc_html($next_capitulo->post_title); ?>
+                            <?php echo esc_html($next_navigation_title); ?>
+                            <?php if ($next_navigation_detail) : ?>
+                                <span class="block mt-1 font-sans text-xs text-muted-foreground"><?php echo esc_html($next_navigation_detail); ?></span>
+                            <?php endif; ?>
                         </span>
                     </div>
                     <svg class="w-5 h-5 text-muted-foreground group-hover:text-gold transition-colors" fill="none" stroke="currentColor" viewBox="0 0 24 24">

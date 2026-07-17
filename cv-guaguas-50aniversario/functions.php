@@ -59,6 +59,57 @@ function libro_enqueue_assets() {
 add_action('wp_enqueue_scripts', 'libro_enqueue_assets');
 
 /**
+ * Da una dirección fija a la primera cronología de cada lectura.
+ * Así el índice puede llevar al lector a ella sin crear una página nueva.
+ */
+function libro_add_timeline_anchor($content) {
+    if (stripos($content, 'timeline-container') === false || stripos($content, 'id="cronologia"') !== false) {
+        return $content;
+    }
+
+    return preg_replace(
+        '/<div class=([\'\"])timeline-container\\1/i',
+        '<div id="cronologia" class=$1timeline-container$1',
+        $content,
+        1
+    );
+}
+add_filter('the_content', 'libro_add_timeline_anchor', 20);
+
+/**
+ * Barra contextual que mantiene visible el lugar de lectura al hacer scroll.
+ * Usa el título real de la página, por lo que no hay que rellenarla a mano.
+ */
+function libro_context_bar($post_id = 0) {
+    $post_id = $post_id ?: get_the_ID();
+    if (!$post_id) {
+        return;
+    }
+
+    $parent_id = wp_get_post_parent_id($post_id);
+    $numero = get_post_meta($post_id, '_numero_capitulo', true);
+    $ocultar_numero = get_post_meta($post_id, '_ocultar_numero', true) === '1';
+    $current_label = (!$ocultar_numero && $numero) ? $numero . '. ' . get_the_title($post_id) : get_the_title($post_id);
+    ?>
+    <aside class="reading-context-bar" aria-label="Ubicación actual" aria-hidden="true">
+        <div class="reading-context-bar__inner">
+            <?php if ($parent_id) :
+                $parent_numero = get_post_meta($parent_id, '_numero_capitulo', true);
+                $parent_ocultar = get_post_meta($parent_id, '_ocultar_numero', true) === '1';
+                $parent_label = (!$parent_ocultar && $parent_numero) ? $parent_numero . '. ' . get_the_title($parent_id) : get_the_title($parent_id);
+            ?>
+                <button class="reading-context-bar__parent" type="button" data-open-chapter="<?php echo esc_attr($parent_id); ?>" aria-controls="subcapitulos-<?php echo esc_attr($parent_id); ?>">
+                    <?php echo esc_html($parent_label); ?>
+                </button>
+                <span class="reading-context-bar__separator" aria-hidden="true">›</span>
+            <?php endif; ?>
+            <span class="reading-context-bar__current" aria-current="page"><?php echo esc_html($current_label); ?></span>
+        </div>
+    </aside>
+    <?php
+}
+
+/**
  * Enqueue media uploader para la página de opciones
  */
 function libro_admin_scripts($hook) {
@@ -1081,6 +1132,7 @@ function libro_shortcode_seccion_header($atts, $content = null) {
         'highlighted' => 'true',
         'color'       => '',
         'star'        => 'false',
+        'star_position' => 'above',
         'texto'       => '',   // text color override; defaults to #ffffff for dark bg, class default for no-color
         'tag'         => 'h3', // html tag: h2 or h3
         'id'          => '',   // optional HTML id, used as anchor target for sidebar deep-links
@@ -1095,7 +1147,10 @@ function libro_shortcode_seccion_header($atts, $content = null) {
         // Norma editorial: las estrellas de los subtítulos usan siempre el dorado corporativo.
         $star_color = 'hsl(45 100% 50%)';
         // estrella-icon.svg viewBox 1280×1181 → aspect ratio ~1.08:1 → at 1.2rem height, width ≈ 1.3rem
-        $star_above = '<span aria-hidden="true" style="display:block;margin-bottom:0.3rem;">'
+        $star_style = $atts['star_position'] === 'left'
+            ? 'display:inline-flex;flex:0 0 auto;margin-right:0.7rem;align-items:center;'
+            : 'display:block;margin-bottom:0.3rem;';
+        $star_above = '<span aria-hidden="true" style="' . $star_style . '">'
             . '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1280 1181" style="width:2.3rem;height:2.2rem;display:inline-block;" fill="' . $star_color . '">'
             . '<g transform="translate(0,1181) scale(0.1,-0.1)" fill="' . $star_color . '" stroke="none">'
             . '<path d="M6327 11292 c-60 -180 -161 -489 -227 -687 -65 -198 -233 -709 -373 -1135 -141 -426 -367 -1114 -503 -1527 l-248 -753 -2358 0 c-1297 0 -2358 -3 -2358 -7 0 -5 170 -130 378 -279 207 -149 1057 -758 1887 -1353 831 -596 1518 -1091 1528 -1100 20 -19 55 94 -420 -1346 -187 -570 -344 -1047 -628 -1910 -141 -429 -286 -869 -322 -978 -36 -109 -63 -201 -60 -204 7 -6 -236 -180 1912 1362 1012 726 1855 1331 1872 1343 l33 23 762 -548 c2447 -1758 3053 -2191 3056 -2188 2 2 -46 153 -106 337 -61 183 -216 655 -346 1048 -511 1556 -712 2168 -811 2470 -145 440 -185 563 -185 575 0 6 855 623 1900 1373 1045 750 1900 1368 1900 1373 0 5 -909 10 -2357 11 l-2356 3 -164 500 c-90 275 -272 826 -403 1225 -131 399 -383 1166 -560 1705 -177 539 -325 983 -329 987 -4 5 -55 -139 -114 -320z"/>'
@@ -1104,20 +1159,23 @@ function libro_shortcode_seccion_header($atts, $content = null) {
 
     if ($atts['highlighted'] === 'true' || $atts['highlighted'] === '1') {
         if ($atts['color'] === 'inverted') {
-            return '<div class="mt-10 mb-5"' . $anchor_id . ' data-reveal="left">' . $star_above . '<' . $tag . ' class="section-header-highlighted section-header-inverted">' . wp_kses_post($content) . '</' . $tag . '></div>';
+            $layout_style = $atts['star_position'] === 'left' ? ' style="display:flex;align-items:center;"' : '';
+            return '<div class="mt-20 mb-5"' . $anchor_id . ' data-reveal="left"' . $layout_style . '>' . $star_above . '<' . $tag . ' class="section-header-highlighted section-header-inverted">' . wp_kses_post($content) . '</' . $tag . '></div>';
         }
         if ($atts['color'] === 'navy') {
-            return '<div class="mt-10 mb-5"' . $anchor_id . ' data-reveal="left">' . $star_above . '<' . $tag . ' class="section-header-highlighted section-header-navy">' . wp_kses_post($content) . '</' . $tag . '></div>';
+            $layout_style = $atts['star_position'] === 'left' ? ' style="display:flex;align-items:center;"' : '';
+            return '<div class="mt-20 mb-5"' . $anchor_id . ' data-reveal="left"' . $layout_style . '>' . $star_above . '<' . $tag . ' class="section-header-highlighted section-header-navy">' . wp_kses_post($content) . '</' . $tag . '></div>';
         }
         $text_color = $atts['texto'] ? esc_attr($atts['texto']) : ($atts['color'] ? '#ffffff' : '');
         $style = '';
         if ($atts['color'] || $text_color) {
             $style = ' style="' . ($atts['color'] ? 'background-color:' . esc_attr($atts['color']) . ';' : '') . ($text_color ? 'color:' . $text_color . ';' : '') . '"';
         }
-        return '<div class="mt-10 mb-5"' . $anchor_id . ' data-reveal="left">' . $star_above . '<' . $tag . ' class="section-header-highlighted"' . $style . '>' . wp_kses_post($content) . '</' . $tag . '></div>';
+        $layout_style = $atts['star_position'] === 'left' ? ' style="display:flex;align-items:center;"' : '';
+        return '<div class="mt-20 mb-5"' . $anchor_id . ' data-reveal="left"' . $layout_style . '>' . $star_above . '<' . $tag . ' class="section-header-highlighted"' . $style . '>' . wp_kses_post($content) . '</' . $tag . '></div>';
     }
 
-    return '<' . $tag . ' class="font-serif text-xl md:text-2xl font-bold text-foreground mt-12 mb-6 uppercase tracking-wide"' . $anchor_id . ' data-reveal="left">' . wp_kses_post($content) . '</' . $tag . '>';
+    return '<' . $tag . ' class="font-serif text-xl md:text-2xl font-bold text-foreground mt-24 mb-6 uppercase tracking-wide"' . $anchor_id . ' data-reveal="left">' . wp_kses_post($content) . '</' . $tag . '>';
 }
 add_shortcode('seccion_header', 'libro_shortcode_seccion_header');
 add_shortcode('encabezado_seccion', 'libro_shortcode_seccion_header');
