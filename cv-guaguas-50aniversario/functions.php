@@ -883,6 +883,166 @@ function libro_shortcode_imagen_contenido($atts) {
 add_shortcode('imagen_contenido', 'libro_shortcode_imagen_contenido');
 
 /**
+ * Foto de plantilla con dorsales superpuestos.
+ * Los porcentajes permiten que las etiquetas acompañen a cada jugador al escalar.
+ */
+function libro_dorsales_por_defecto() {
+    return array(
+        1 => array('left' => '15%', 'top' => '34%'),
+        2 => array('left' => '29%', 'top' => '38%'),
+        3 => array('left' => '35%', 'top' => '25%'),
+        4 => array('left' => '47%', 'top' => '29%'),
+        5 => array('left' => '59%', 'top' => '28%'),
+        6 => array('left' => '66%', 'top' => '33%'),
+        7 => array('left' => '77%', 'top' => '31%'),
+        8 => array('left' => '23%', 'top' => '39%'),
+        9 => array('left' => '37%', 'top' => '39%'),
+        10 => array('left' => '49%', 'top' => '42%'),
+        11 => array('left' => '61%', 'top' => '50%'),
+        12 => array('left' => '76%', 'top' => '48%'),
+        13 => array('left' => '33%', 'top' => '66%'),
+        14 => array('left' => '48%', 'top' => '66%'),
+    );
+}
+
+function libro_shortcode_foto_plantilla($atts) {
+    $atts = shortcode_atts(array(
+        'file' => '',
+        'alt'  => 'Plantilla del CV Guaguas',
+    ), $atts, 'foto_plantilla');
+
+    if (empty($atts['file'])) {
+        return '';
+    }
+
+    $dorsales = libro_dorsales_por_defecto();
+    $post_id = get_the_ID();
+    $guardados = $post_id ? get_post_meta($post_id, '_libro_dorsales_plantilla', true) : '';
+    if (is_array($guardados) && count($guardados) === count($dorsales)) {
+        $dorsales = $guardados;
+    }
+
+    ob_start();
+    ?>
+    <figure class="plantilla-foto-numerada content-image my-8 md:my-12 -mx-4 md:-mx-8" data-reveal="up">
+        <div class="plantilla-foto-numerada__frame">
+            <img src="<?php echo esc_url(get_template_directory_uri() . '/assets/images/' . $atts['file']); ?>" alt="<?php echo esc_attr($atts['alt']); ?>" loading="lazy">
+            <?php foreach ($dorsales as $numero => $posicion) : ?>
+                <span class="plantilla-foto-numerada__numero" style="left:<?php echo esc_attr($posicion['left']); ?>;top:<?php echo esc_attr($posicion['top']); ?>;"><?php echo esc_html($numero); ?></span>
+            <?php endforeach; ?>
+        </div>
+    </figure>
+    <?php
+    return ob_get_clean();
+}
+add_shortcode('foto_plantilla', 'libro_shortcode_foto_plantilla');
+
+/**
+ * Editor visual de dorsales para el capítulo 19.
+ * Guarda solo posiciones, no modifica el texto ni las imágenes originales.
+ */
+function libro_dorsales_add_meta_box($post) {
+    if (!$post || $post->post_name !== 'la-plantilla-del-cincuentenario') {
+        return;
+    }
+
+    add_meta_box(
+        'libro_dorsales_plantilla',
+        'Colocar dorsales sobre la foto',
+        'libro_dorsales_render_meta_box',
+        'capitulo',
+        'normal',
+        'high'
+    );
+}
+add_action('add_meta_boxes_capitulo', 'libro_dorsales_add_meta_box', 10, 1);
+
+function libro_dorsales_render_meta_box($post) {
+    if ($post->post_name !== 'la-plantilla-del-cincuentenario') {
+        echo '<p>Esta herramienta está reservada para el capítulo 19.</p>';
+        return;
+    }
+
+    wp_nonce_field('libro_dorsales_guardar', 'libro_dorsales_nonce');
+    $dorsales = libro_dorsales_por_defecto();
+    $guardados = get_post_meta($post->ID, '_libro_dorsales_plantilla', true);
+    if (is_array($guardados) && count($guardados) === count($dorsales)) {
+        $dorsales = $guardados;
+    }
+    ?>
+    <p>Arrastra cada número hasta el pecho del jugador. Después pulsa <strong>Actualizar</strong>.</p>
+    <div id="libro-editor-dorsales" style="position:relative;max-width:900px;line-height:0;background:#fff;overflow:hidden;border:1px solid #ccd0d4;">
+        <img src="<?php echo esc_url(get_template_directory_uri() . '/assets/images/20cap_plan_foto1.jpg'); ?>" alt="Plantilla del CV Guaguas" style="display:block;width:100%;height:auto;">
+        <?php foreach ($dorsales as $numero => $posicion) : ?>
+            <button type="button" class="libro-editor-dorsal" data-numero="<?php echo esc_attr($numero); ?>" style="position:absolute;left:<?php echo esc_attr($posicion['left']); ?>;top:<?php echo esc_attr($posicion['top']); ?>;transform:translate(-50%,-50%);width:30px;height:30px;padding:0;border:0;border-radius:3px;background:#ffc000;color:#101a2d;font-weight:900;line-height:30px;cursor:grab;">
+                <?php echo esc_html($numero); ?>
+            </button>
+        <?php endforeach; ?>
+    </div>
+    <input type="hidden" id="libro_dorsales_positions" name="libro_dorsales_positions" value="<?php echo esc_attr(wp_json_encode($dorsales)); ?>">
+    <script>
+    (function () {
+        const editor = document.getElementById('libro-editor-dorsales');
+        const input = document.getElementById('libro_dorsales_positions');
+        if (!editor || !input) return;
+        const positions = JSON.parse(input.value);
+        let moving = null;
+
+        editor.querySelectorAll('.libro-editor-dorsal').forEach(function (marker) {
+            marker.addEventListener('pointerdown', function (event) {
+                moving = marker;
+                marker.setPointerCapture(event.pointerId);
+                marker.style.cursor = 'grabbing';
+                event.preventDefault();
+            });
+
+            marker.addEventListener('pointermove', function (event) {
+                if (!moving) return;
+                const rect = editor.getBoundingClientRect();
+                const left = Math.max(0, Math.min(100, ((event.clientX - rect.left) / rect.width) * 100));
+                const top = Math.max(0, Math.min(100, ((event.clientY - rect.top) / rect.height) * 100));
+                const numero = marker.dataset.numero;
+                marker.style.left = left + '%';
+                marker.style.top = top + '%';
+                positions[numero] = {left: left.toFixed(2) + '%', top: top.toFixed(2) + '%'};
+                input.value = JSON.stringify(positions);
+            });
+
+            marker.addEventListener('pointerup', function () {
+                moving = null;
+                marker.style.cursor = 'grab';
+            });
+        });
+    }());
+    </script>
+    <?php
+}
+
+function libro_dorsales_save_meta($post_id) {
+    if (!isset($_POST['libro_dorsales_nonce']) || !wp_verify_nonce($_POST['libro_dorsales_nonce'], 'libro_dorsales_guardar')) return;
+    if (defined('DOING_AUTOSAVE') && DOING_AUTOSAVE) return;
+    if (wp_is_post_revision($post_id) || get_post_type($post_id) !== 'capitulo') return;
+    if (!current_user_can('edit_post', $post_id) || get_post_field('post_name', $post_id) !== 'la-plantilla-del-cincuentenario') return;
+    if (empty($_POST['libro_dorsales_positions'])) return;
+
+    $positions = json_decode(wp_unslash($_POST['libro_dorsales_positions']), true);
+    if (!is_array($positions) || count($positions) !== 14) return;
+
+    $clean = array();
+    foreach ($positions as $numero => $posicion) {
+        if (!isset($posicion['left'], $posicion['top'])) continue;
+        $clean[(int) $numero] = array(
+            'left' => max(0, min(100, (float) $posicion['left'])) . '%',
+            'top'  => max(0, min(100, (float) $posicion['top'])) . '%',
+        );
+    }
+    if (count($clean) === 14) {
+        update_post_meta($post_id, '_libro_dorsales_plantilla', $clean);
+    }
+}
+add_action('save_post_capitulo', 'libro_dorsales_save_meta');
+
+/**
  * Shortcode alternativo para imágenes usando ID de media
  * Uso: [imagen id="123" caption="pie de foto" fullwidth="true"]
  */
@@ -1618,11 +1778,14 @@ function libro_shortcode_nota_rival($atts, $content = null) {
 add_shortcode('nota_rival', 'libro_shortcode_nota_rival');
 
 /**
- * Redirigir capítulos padre al primer subcapítulo
- * Idéntico al comportamiento de React: Navigate to={children[0].slug}
+ * Los capítulos con contenido propio deben mostrarlo antes de sus subcapítulos.
+ * Los capítulos vacíos conservan la entrada automática al primer subcapítulo.
  */
 function libro_redirect_parent_chapters() {
     if (!is_singular('capitulo')) return;
+
+    $current = get_post(get_the_ID());
+    if ($current && trim(wp_strip_all_tags($current->post_content)) !== '') return;
     
     $children = get_posts(array(
         'post_type'      => 'capitulo',

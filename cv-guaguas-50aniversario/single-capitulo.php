@@ -5,24 +5,13 @@
  * VERSION: 2026-06-13-fullwidth
  */
 
-// Si el capítulo tiene hijos, redirigir al primero (igual que React Chapter.tsx)
-$first_child = get_posts(array(
-    'post_type'      => 'capitulo',
-    'posts_per_page' => 1,
-    'orderby'        => 'menu_order',
-    'order'          => 'ASC',
-    'post_parent'    => get_the_ID(),
-));
-if (!empty($first_child)) {
-    wp_redirect(get_permalink($first_child[0]->ID), 301);
-    exit;
-}
-
 get_header();
 
 // Obtener datos del capítulo actual
 $capitulo_numero = get_post_meta(get_the_ID(), '_numero_capitulo', true);
 $capitulo_subtitulo = get_post_meta(get_the_ID(), '_subtitulo', true);
+$chapter_root_id = wp_get_post_parent_id(get_the_ID()) ?: get_the_ID();
+$chapter_special_class = get_post_meta($chapter_root_id, '_numero_capitulo', true) === '24' ? ' chapter-24-style' : '';
 
 // Hero fields
 $hero_enabled = get_post_meta(get_the_ID(), '_hero_enabled', true);
@@ -71,13 +60,19 @@ foreach ($top_chapters as $top) {
         'order'          => 'ASC',
         'post_parent'    => $top->ID,
     ));
+
+    // Los padres con texto propio también forman parte de la lectura.
+    // Después se añaden sus subcapítulos en el orden habitual.
+    if (trim(wp_strip_all_tags($top->post_content)) !== '') {
+        $all_chapters_flat[] = $top->ID;
+    }
+
     if (!empty($children)) {
-        // Padre con hijos: añadir solo los hijos, no el padre
         foreach ($children as $child) {
             $all_chapters_flat[] = $child->ID;
         }
-    } else {
-        // Página standalone sin hijos: añadirla directamente
+    } elseif (trim(wp_strip_all_tags($top->post_content)) === '') {
+        // Página standalone sin hijos ni contenido propio: añadirla directamente
         $all_chapters_flat[] = $top->ID;
     }
 }
@@ -192,7 +187,7 @@ if ($hero_icon === 'custom' && $hero_custom_icon) {
 <?php get_template_part('sidebar', 'indice'); ?>
 
 <!-- Main Content - estructura idéntica a React -->
-<main class="pt-[56px] min-h-screen bg-background">
+<main class="pt-[56px] min-h-screen bg-background<?php echo esc_attr($chapter_special_class); ?>">
     
     <?php if ($hero_enabled === '1' && ($hero_image || $hero_bg_color)) : ?>
     <!-- Chapter Hero -->
@@ -410,51 +405,6 @@ if ($hero_icon === 'custom' && $hero_custom_icon) {
                 endwhile;
                 ?>
                 
-                <?php
-                // Sub-chapters (if any)
-                $subcapitulos = get_posts(array(
-                    'post_type' => 'capitulo',
-                    'post_parent' => get_the_ID(),
-                    'orderby' => 'menu_order',
-                    'order' => 'ASC',
-                    'numberposts' => -1
-                ));
-                
-                if ($subcapitulos) :
-                ?>
-                <section class="mt-12 pt-8 border-t border-border/30">
-                    <h3 class="text-xl font-serif font-semibold text-foreground mb-6">
-                        En este capítulo
-                    </h3>
-                    
-                    <div class="grid gap-4">
-                        <?php foreach ($subcapitulos as $sub) : 
-                            $sub_numero = get_post_meta($sub->ID, '_numero_capitulo', true);
-                        ?>
-                        <a 
-                            href="<?php echo get_permalink($sub->ID); ?>" 
-                            class="group flex items-center gap-4 p-4 rounded border border-border/50 bg-card/30 hover:border-gold/50 hover:bg-card/50 transition-all duration-300"
-                        >
-                            <?php if ($sub_numero) : ?>
-                            <span class="flex-shrink-0 w-10 h-10 flex items-center justify-center rounded bg-gold/10 text-gold text-sm font-medium">
-                                <?php echo esc_html($sub_numero); ?>
-                            </span>
-                            <?php endif; ?>
-                            
-                            <div class="flex-1 min-w-0">
-                                <h4 class="font-serif font-medium text-foreground group-hover:text-gold transition-colors">
-                                    <?php echo esc_html($sub->post_title); ?>
-                                </h4>
-                            </div>
-                            
-                            <svg class="w-5 h-5 text-muted-foreground group-hover:text-gold group-hover:translate-x-1 transition-all" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/>
-                            </svg>
-                        </a>
-                        <?php endforeach; ?>
-                    </div>
-                </section>
-                <?php endif; ?>
             </div>
         </section>
         

@@ -83,10 +83,15 @@ $current_slug = is_singular('capitulo') ? get_post_field('post_name', get_the_ID
                 
                 $has_children = !empty($subcapitulos) || !empty($anclas_internas);
 
-                // El título abre la primera sección real; la flecha conserva
-                // la función de desplegar o cerrar la lista de secciones.
+                // Si el capítulo tiene contenido propio, el título abre ese contenido.
+                // Si está vacío, el título entra en el primer subcapítulo.
                 $cap_destination = $cap_permalink;
-                if (!empty($subcapitulos)) {
+                $cap_has_content = trim(wp_strip_all_tags($cap->post_content)) !== '';
+                if (!$cap_has_content && !empty($subcapitulos)) {
+                    $cap_destination = get_permalink($subcapitulos[0]->ID);
+                }
+                // Prólogos entra siempre en el primer prólogo, Fernando Clavijo.
+                if ($cap->post_title === 'Prólogos' && !empty($subcapitulos)) {
                     $cap_destination = get_permalink($subcapitulos[0]->ID);
                 }
 

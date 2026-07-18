@@ -691,6 +691,14 @@ body.light .section-header-navy {
     color: #ffffff;
 }
 
+/* Capítulo 24: titulares amarillos con tipografía azul, sin afectar al resto. */
+.chapter-24-style .section-header-highlighted,
+.chapter-24-style .section-header-inverted,
+.chapter-24-style .section-header-navy {
+    color: #1a237e !important;
+    background-color: hsl(var(--gold)) !important;
+}
+
 /* Player profile name - bold uppercase like book */
 .player-profile-name {
     font-family: var(--font-serif);
@@ -2412,6 +2420,76 @@ body.dark .ficha-debut-titulo {
     color: hsl(220 50% 8%);
 }
 
+/* El capitulo 24 usa una pagina dorada completa, tambien en modo oscuro. */
+.chapter-24-style {
+    background-color: hsl(var(--gold)) !important;
+}
+
+/* El fondo y el contraste se aplican a toda la pagina, no solo al bloque interior. */
+main.chapter-24-style,
+main.chapter-24-style .reading-content,
+main.chapter-24-style .patrocinador-page {
+    background-color: hsl(var(--gold)) !important;
+    color: #1a237e !important;
+}
+
+main.chapter-24-style .reading-content p,
+main.chapter-24-style .reading-content li,
+main.chapter-24-style .reading-content h1,
+main.chapter-24-style .reading-content h2,
+main.chapter-24-style .reading-content h3,
+main.chapter-24-style .reading-content h4,
+main.chapter-24-style .reading-content strong,
+main.chapter-24-style .reading-content a {
+    color: #1a237e !important;
+}
+
+/* Los pases de pagina necesitan una tarjeta oscura para contrastar con el fondo amarillo. */
+main.chapter-24-style nav a#nav-prev,
+main.chapter-24-style nav a#nav-next {
+    background-color: hsl(var(--background-elevated)) !important;
+    border-color: hsl(var(--border)) !important;
+    color: #ffffff !important;
+}
+
+main.chapter-24-style nav a#nav-prev:hover,
+main.chapter-24-style nav a#nav-next:hover {
+    background-color: hsl(var(--background-card)) !important;
+    border-color: hsl(var(--border)) !important;
+}
+
+main.chapter-24-style nav a#nav-prev span,
+main.chapter-24-style nav a#nav-next span,
+main.chapter-24-style nav a#nav-prev svg,
+main.chapter-24-style nav a#nav-next svg {
+    color: #ffffff !important;
+}
+
+main.chapter-24-style nav a#nav-prev .text-gold-muted,
+main.chapter-24-style nav a#nav-next .text-gold-muted {
+    color: #ffc400 !important;
+}
+
+.chapter-24-style .patrocinador-page,
+.chapter-24-style .patrocinador-page .reading-content {
+    background-color: hsl(var(--gold)) !important;
+    color: #1a237e !important;
+}
+
+.chapter-24-style .patrocinador-page p,
+.chapter-24-style .patrocinador-page strong,
+.chapter-24-style .patrocinador-page a,
+.chapter-24-style .patrocinador-page li,
+.chapter-24-style .patrocinador-page blockquote,
+.chapter-24-style .patrocinador-page .cita-editorial,
+.chapter-24-style .patrocinador-page .patrocinador-texto,
+.chapter-24-style .patrocinador-page .patrocinador-ficha,
+.chapter-24-style .patrocinador-page .patrocinador-ficha-titulo,
+.chapter-24-style .patrocinador-page .patrocinador-redes,
+.chapter-24-style .patrocinador-page .patrocinador-redes-titulo {
+    color: #1a237e !important;
+}
+
 /* === Lista + Foto (dos columnas) === */
 .lista-foto-grid {
     display: grid;
@@ -2504,6 +2582,46 @@ body.dark .ficha-debut-titulo {
 /* ============================================
    404 PAGE
    ============================================ */
+
+/* Foto de plantilla a todo el ancho con dorsales que escalan con la imagen. */
+.plantilla-foto-numerada__frame {
+    position: relative;
+    width: 100%;
+    overflow: hidden;
+    border-radius: 0.25rem;
+}
+
+.plantilla-foto-numerada__frame img {
+    display: block;
+    width: 100%;
+    height: auto;
+}
+
+.plantilla-foto-numerada__numero {
+    position: absolute;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: clamp(0.9rem, 1.8vw, 1.5rem);
+    height: clamp(0.9rem, 1.8vw, 1.5rem);
+    transform: translate(-50%, -50%);
+    border-radius: 2px;
+    background: hsl(var(--gold));
+    color: hsl(220 50% 12%);
+    font-family: 'Antonio', sans-serif;
+    font-size: clamp(0.58rem, 1vw, 0.9rem);
+    font-weight: 900;
+    line-height: 1;
+    z-index: 1;
+}
+
+@media (max-width: 700px) {
+    .plantilla-foto-numerada__numero {
+        width: clamp(0.78rem, 3.8vw, 1.1rem);
+        height: clamp(0.78rem, 3.8vw, 1.1rem);
+        font-size: clamp(0.5rem, 2vw, 0.7rem);
+    }
+}
 
 /* On desktop, the 404 content area sits to the right of the 320px sidebar.
    flex justify-center already centers within that area — no extra offset needed.
