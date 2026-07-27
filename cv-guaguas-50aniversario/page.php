@@ -10,6 +10,9 @@
 get_header();
 ?>
 
+<?php libro_context_bar(get_the_ID()); ?>
+
+<div class="guaguas-menu-layout">
 <!-- Sidebar -->
 <?php get_template_part('sidebar', 'indice'); ?>
 
@@ -18,7 +21,7 @@ get_header();
     <div class="max-w-4xl mx-auto px-6 md:px-12 lg:px-16 py-16">
 
         <!-- Breadcrumb -->
-        <nav aria-label="breadcrumb" class="mb-6">
+        <nav aria-label="breadcrumb" class="mb-6 reading-context-trigger">
             <ol class="flex flex-wrap items-center gap-1.5 break-words text-xs text-muted-foreground sm:gap-2.5">
                 <li class="inline-flex items-center gap-1.5">
                     <a href="<?php echo esc_url(home_url('/')); ?>" class="text-muted-foreground hover:text-gold transition-colors flex items-center gap-1">
@@ -57,5 +60,6 @@ get_header();
 
     </div>
 </main>
+</div>
 
 <?php get_footer(); ?>

@@ -12,14 +12,30 @@
 function libro_parse_anclas_internas($post_id) {
     $raw = get_post_meta($post_id, '_anclas_internas', true);
     $anclas = array();
-    if (empty($raw)) return $anclas;
-    foreach (preg_split('/\r\n|\r|\n/', trim($raw)) as $linea) {
-        $linea = trim($linea);
-        if ($linea === '' || strpos($linea, '|') === false) continue;
-        list($texto, $id) = array_map('trim', explode('|', $linea, 2));
-        if ($texto === '' || $id === '') continue;
-        $anclas[] = array('texto' => $texto, 'id' => sanitize_title($id));
+    if (!empty($raw)) {
+        foreach (preg_split('/\r\n|\r|\n/', trim($raw)) as $linea) {
+            $linea = trim($linea);
+            if ($linea === '' || strpos($linea, '|') === false) continue;
+            list($texto, $id) = array_map('trim', explode('|', $linea, 2));
+            if ($texto === '' || $id === '') continue;
+            $anclas[] = array('texto' => $texto, 'id' => sanitize_title($id));
+        }
     }
+
+    // Las cronologías se detectan solas: no hay que crear su submenú a mano.
+    $content = get_post_field('post_content', $post_id);
+    $has_timeline = stripos($content, 'timeline-container') !== false;
+    $has_timeline_anchor = false;
+    foreach ($anclas as $ancla) {
+        if ($ancla['id'] === 'cronologia') {
+            $has_timeline_anchor = true;
+            break;
+        }
+    }
+    if ($has_timeline && !$has_timeline_anchor) {
+        $anclas[] = array('texto' => 'Cronología', 'id' => 'cronologia');
+    }
+
     return $anclas;
 }
 
@@ -66,6 +82,29 @@ $current_slug = is_singular('capitulo') ? get_post_field('post_name', get_the_ID
                 $anclas_internas = libro_parse_anclas_internas($cap->ID);
                 
                 $has_children = !empty($subcapitulos) || !empty($anclas_internas);
+
+                // Si el capítulo tiene contenido propio, el título abre ese contenido.
+                // Si está vacío, el título entra en el primer subcapítulo.
+                $cap_destination = $cap_permalink;
+                $cap_has_content = trim(wp_strip_all_tags($cap->post_content)) !== '';
+                if (!$cap_has_content && !empty($subcapitulos)) {
+                    $cap_destination = get_permalink($subcapitulos[0]->ID);
+                }
+                // Prólogos entra siempre en el primer prólogo, Fernando Clavijo.
+                if ($cap->post_title === 'Prólogos' && !empty($subcapitulos)) {
+                    $cap_destination = get_permalink($subcapitulos[0]->ID);
+                }
+
+                // El título padre ya abre este primer contenido: no repetimos
+                // el enlace si ambos títulos son el mismo.
+                $ocultar_primer_subcapitulo_duplicado = !empty($subcapitulos) &&
+                    sanitize_title($cap->post_title) === sanitize_title($subcapitulos[0]->post_title);
+
+                // Si el primer contenido comparte título con el capítulo, se oculta
+                // para no repetirlo. Sus anclas, como Cronología, siguen disponibles.
+                $anclas_primer_subcapitulo_oculto = $ocultar_primer_subcapitulo_duplicado
+                    ? libro_parse_anclas_internas($subcapitulos[0]->ID)
+                    : array();
                 
                 // Check if any child is active (real subchapter, or subchapter holding the current anchors)
                 $has_active_child = false;
@@ -100,21 +139,19 @@ $current_slug = is_singular('capitulo') ? get_post_field('post_name', get_the_ID
                     <?php endif; ?>
                     
                     <?php if ($has_children && !empty($subcapitulos)) : ?>
-                    <button type="button"
-                       class="sidebar-parent-toggle sidebar-active-indicator flex-1 text-left py-2.5 px-3 rounded-sm transition-all duration-200 font-sans text-sm font-medium hover:bg-sidebar-accent hover:text-gold <?php echo $has_active_child ? 'text-gold/80' : 'text-sidebar-foreground'; ?>"
-                       data-target="subcapitulos-<?php echo $cap->ID; ?>">
+                    <a href="<?php echo esc_url($cap_destination); ?>"
+                       class="sidebar-active-indicator flex-1 text-left py-2.5 px-3 rounded-sm transition-all duration-200 font-sans text-sm font-medium hover:bg-sidebar-accent hover:text-gold <?php echo $has_active_child ? 'text-gold/80' : 'text-sidebar-foreground'; ?>">
                         <span class="flex items-center gap-2.5">
                             <?php if (strlen($numero) > 0 && !$ocultar_numero) : ?>
                                 <span class="chapter-number chapter-number--main"><?php echo esc_html($numero); ?></span>
                             <?php endif; ?>
                             <span><?php echo esc_html($cap->post_title); ?></span>
                         </span>
-                    </button>
+                    </a>
                     <?php elseif ($has_children && !empty($anclas_internas)) : ?>
                     <a href="<?php echo esc_url($cap_permalink); ?>"
-                       class="sidebar-parent-toggle sidebar-active-indicator flex-1 text-left py-2.5 px-3 rounded-sm transition-all duration-200 font-sans text-sm font-medium hover:bg-sidebar-accent hover:text-gold <?php echo $is_active ? 'active text-gold bg-sidebar-accent' : 'text-sidebar-foreground'; ?>"
-                       data-section="<?php echo esc_attr($cap_slug); ?>"
-                       data-target="subcapitulos-<?php echo $cap->ID; ?>">
+                       class="sidebar-active-indicator flex-1 text-left py-2.5 px-3 rounded-sm transition-all duration-200 font-sans text-sm font-medium hover:bg-sidebar-accent hover:text-gold <?php echo $is_active ? 'active text-gold bg-sidebar-accent' : 'text-sidebar-foreground'; ?>"
+                       data-section="<?php echo esc_attr($cap_slug); ?>">
                         <span class="flex items-center gap-2.5">
                             <?php if (strlen($numero) > 0 && !$ocultar_numero) : ?>
                                 <span class="chapter-number chapter-number--main"><?php echo esc_html($numero); ?></span>
@@ -136,11 +173,12 @@ $current_slug = is_singular('capitulo') ? get_post_field('post_name', get_the_ID
                     <?php endif; ?>
                 </div>
                 
-                <?php if ($has_children) : 
-                    $sub_index = 1;
-                ?>
+                <?php if ($has_children) : ?>
                 <ul id="subcapitulos-<?php echo $cap->ID; ?>" class="subcapitulos-list ml-4 mt-1 space-y-0.5 border-l border-sidebar-border pl-2 <?php echo $has_active_child ? '' : 'hidden'; ?>">
-                    <?php foreach ($subcapitulos as $sub) : 
+                    <?php foreach ($subcapitulos as $sub_index => $sub) :
+                        if ($ocultar_primer_subcapitulo_duplicado && $sub_index === 0) {
+                            continue;
+                        }
                         $sub_slug = get_post_field('post_name', $sub->ID);
                         $sub_is_active = ($sub_slug === $current_slug);
                         $sub_ocultar_numero = get_post_meta($sub->ID, '_ocultar_numero', true) === '1';
@@ -185,10 +223,19 @@ $current_slug = is_singular('capitulo') ? get_post_field('post_name', get_the_ID
                         </a>
                     </li>
                     <?php endforeach; ?>
-                    <?php 
-                        $sub_index++;
-                        endforeach; 
-                    ?>
+                    <?php endforeach; ?>
+                    <?php foreach ($anclas_primer_subcapitulo_oculto as $ancla) : ?>
+                    <li class="subcapitulo-item">
+                        <a href="<?php echo esc_url(get_permalink($subcapitulos[0]->ID) . '#' . $ancla['id']); ?>"
+                           class="sidebar-active-indicator sidebar-anchor-link block py-2.5 px-3 text-sm rounded-sm transition-all duration-200 hover:bg-sidebar-accent hover:text-gold text-sidebar-foreground/80"
+                           data-section="<?php echo esc_attr(get_post_field('post_name', $subcapitulos[0]->ID)); ?>"
+                           data-anchor="<?php echo esc_attr($ancla['id']); ?>">
+                            <span class="flex items-center gap-2.5">
+                                <span><?php echo esc_html($ancla['texto']); ?></span>
+                            </span>
+                        </a>
+                    </li>
+                    <?php endforeach; ?>
                     <?php foreach ($anclas_internas as $ancla) : 
                         $ancla_is_active = $is_active && isset($_SERVER['REQUEST_URI']) && strpos($_SERVER['REQUEST_URI'], '#' . $ancla['id']) !== false;
                     ?>

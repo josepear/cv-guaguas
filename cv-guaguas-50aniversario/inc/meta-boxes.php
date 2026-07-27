@@ -492,6 +492,32 @@ function libro_capitulo_meta_box_html($post) {
                 >
                 <p class="description">CSS background-position. Ej: center top, center center, left center. Por defecto: center top.</p>
             </div>
+
+            <div class="libro-meta-field">
+                <label for="libro_hero_mobile_bg_position">Encuadre de la imagen en móvil (opcional)</label>
+                <input
+                    type="text"
+                    id="libro_hero_mobile_bg_position"
+                    name="libro_hero_mobile_bg_position"
+                    value="<?php echo esc_attr(get_post_meta($post->ID, '_hero_mobile_background_position', true)); ?>"
+                    placeholder="Ej: left center"
+                    style="max-width: 200px;"
+                >
+                <p class="description">Elige qué parte de la foto debe verse en móvil. Ejemplos: left center, center top, right center. Si lo dejas vacío se usa el encuadre de escritorio.</p>
+            </div>
+
+            <div class="libro-meta-field">
+                <label for="libro_hero_tablet_bg_position">Encuadre de la imagen en tablet (opcional)</label>
+                <input
+                    type="text"
+                    id="libro_hero_tablet_bg_position"
+                    name="libro_hero_tablet_bg_position"
+                    value="<?php echo esc_attr(get_post_meta($post->ID, '_hero_tablet_background_position', true)); ?>"
+                    placeholder="Ej: center top"
+                    style="max-width: 200px;"
+                >
+                <p class="description">Ajusta el foco para tablet. Si lo dejas vacío se usa el encuadre de escritorio.</p>
+            </div>
             
             <div class="libro-meta-field">
                 <label for="libro_hero_overlay">Color de overlay (opcional)</label>
@@ -864,6 +890,14 @@ function libro_save_capitulo_meta($post_id) {
     
     if (isset($_POST['libro_hero_bg_position'])) {
         update_post_meta($post_id, '_hero_background_position', sanitize_text_field($_POST['libro_hero_bg_position']));
+    }
+
+    if (isset($_POST['libro_hero_mobile_bg_position'])) {
+        update_post_meta($post_id, '_hero_mobile_background_position', sanitize_text_field($_POST['libro_hero_mobile_bg_position']));
+    }
+
+    if (isset($_POST['libro_hero_tablet_bg_position'])) {
+        update_post_meta($post_id, '_hero_tablet_background_position', sanitize_text_field($_POST['libro_hero_tablet_bg_position']));
     }
     
     if (isset($_POST['libro_hero_icon'])) {

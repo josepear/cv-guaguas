@@ -9,12 +9,12 @@
     // DOM Elements
     const toggleBtn = document.getElementById('toggle-indice');
     const sidebar = document.getElementById('sidebar-indice');
-    const overlay = document.getElementById('sidebar-overlay');
     const menuIcon = toggleBtn?.querySelector('.menu-icon');
     const closeIcon = toggleBtn?.querySelector('.close-icon');
     const themeBtn = document.getElementById('toggle-theme');
     const sunIcon = themeBtn?.querySelector('.theme-icon-sun');
     const moonIcon = themeBtn?.querySelector('.theme-icon-moon');
+    let sidebarCloseTimer = null;
 
     /**
      * Theme Toggle - localStorage + system preference (like React useTheme)
@@ -80,33 +80,44 @@
     }
 
     function openSidebar() {
+        if (sidebarCloseTimer) {
+            window.clearTimeout(sidebarCloseTimer);
+            sidebarCloseTimer = null;
+        }
+
+        document.body.classList.remove('sidebar-is-closing');
         sidebar?.classList.remove('-translate-x-full');
         sidebar?.classList.add('translate-x-0');
-        overlay?.classList.remove('hidden');
         menuIcon?.classList.add('hidden');
         closeIcon?.classList.remove('hidden');
-        document.body.style.overflow = 'hidden';
+        document.body.classList.add('sidebar-is-open');
+        toggleBtn?.setAttribute('aria-expanded', 'true');
     }
 
     function closeSidebar() {
         sidebar?.classList.add('-translate-x-full');
         sidebar?.classList.remove('translate-x-0');
-        overlay?.classList.add('hidden');
         menuIcon?.classList.remove('hidden');
         closeIcon?.classList.add('hidden');
-        document.body.style.overflow = '';
+        document.body.classList.remove('sidebar-is-open');
+        document.body.classList.add('sidebar-is-closing');
+        toggleBtn?.setAttribute('aria-expanded', 'false');
+
+        // Conserva el estado de cierre hasta que termina la animación suave.
+        sidebarCloseTimer = window.setTimeout(function() {
+            document.body.classList.remove('sidebar-is-closing');
+            sidebarCloseTimer = null;
+        }, 720);
     }
 
     // Event Listeners for sidebar toggle
     toggleBtn?.addEventListener('click', toggleSidebar);
-    overlay?.addEventListener('click', closeSidebar);
 
     /**
      * Accordion Toggle for Subchapters - IDENTICAL to React behavior
      */
     function initAccordions() {
         const accordionToggles = document.querySelectorAll('.sidebar-accordion-toggle');
-        const parentToggles = document.querySelectorAll('.sidebar-parent-toggle');
         
         function toggleAccordion(capitulo) {
             const content = capitulo?.querySelector('.subcapitulos-list');
@@ -135,13 +146,6 @@
             });
         });
         
-        parentToggles.forEach(toggle => {
-            toggle.addEventListener('click', function(e) {
-                e.preventDefault();
-                e.stopPropagation();
-                toggleAccordion(this.closest('.capitulo-item'));
-            });
-        });
     }
 
     initAccordions();
@@ -150,11 +154,7 @@
      * Close sidebar when clicking on chapter links (like React onClose)
      */
     function initChapterLinkClose() {
-        // Excluimos los enlaces que actúan como toggle de acordeón (ej. cap2,
-        // que solo tiene anclas internas y por eso usa <a> en vez de <button>
-        // para el botón padre). Ese enlace no debe cerrar el sidebar al hacer
-        // click, ya que su función es expandir/colapsar las anclas internas.
-        const allLinks = document.querySelectorAll('#sidebar-indice a:not(.sidebar-parent-toggle)');
+        const allLinks = document.querySelectorAll('#sidebar-indice a');
         
         allLinks.forEach(link => {
             link.addEventListener('click', function() {
@@ -308,27 +308,58 @@
      * Scroll-Reveal Animations via IntersectionObserver
      * Replicates React useScrollReveal hook behavior
      */
+    function addGlobalScrollReveals() {
+        if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+
+        // Solo animamos bloques de lectura; menús, botones y formularios quedan intactos.
+        const selector = [
+            '.reading-content p',
+            '.reading-content h2',
+            '.reading-content h3',
+            '.reading-content h4',
+            '.reading-content .content-image',
+            '.reading-content .timeline-event',
+            '.reading-content .editorial-quote',
+            '.reading-content .newspaper-quote',
+            '.reading-content .seccion-header-wrapper',
+            '.reading-content .titulo-deportivo-wrapper'
+        ].join(', ');
+
+        document.querySelectorAll(selector).forEach(function(element) {
+            // Los bloques que ya tenían animación conservan su comportamiento original.
+            if (!element.hasAttribute('data-reveal') && !element.closest('.editorial-quote, .newspaper-quote')) {
+                element.classList.add('scroll-reveal');
+            }
+        });
+    }
+
     function initScrollReveal() {
         if (!('IntersectionObserver' in window)) {
             // Fallback: show everything immediately
             document.querySelectorAll('[data-reveal]').forEach(el => el.classList.add('revealed'));
+            document.querySelectorAll('.scroll-reveal').forEach(el => el.classList.add('scroll-revealed'));
             return;
         }
 
         const observer = new IntersectionObserver((entries) => {
             entries.forEach(entry => {
                 if (entry.isIntersecting) {
-                    entry.target.classList.add('revealed');
+                    if (entry.target.hasAttribute('data-reveal')) {
+                        entry.target.classList.add('revealed');
+                    }
+                    entry.target.classList.add('scroll-revealed');
                     observer.unobserve(entry.target);
                 }
             });
         }, {
-            threshold: 0.2
+            rootMargin: '0px 0px -8% 0px',
+            threshold: 0.1
         });
 
-        document.querySelectorAll('[data-reveal]').forEach(el => observer.observe(el));
+        document.querySelectorAll('[data-reveal], .scroll-reveal').forEach(el => observer.observe(el));
     }
 
+    addGlobalScrollReveals();
     initScrollReveal();
 
     /**
@@ -451,12 +482,125 @@
 
 })();
 
+// ── Cambio suave entre páginas internas ───────────────────────
+(function() {
+    var isLeaving = false;
+
+    document.addEventListener('click', function(e) {
+        var link = e.target.closest('a[href]');
+        if (!link || isLeaving || e.defaultPrevented) return;
+
+        var href = link.getAttribute('href');
+        var opensNewWindow = link.target === '_blank' || link.hasAttribute('download');
+        var hasModifier = e.metaKey || e.ctrlKey || e.shiftKey || e.altKey || e.button !== 0;
+
+        // Solo se animan enlaces normales de esta misma web.
+        if (!href || href.charAt(0) === '#' || opensNewWindow || hasModifier) return;
+
+        var destination;
+        try {
+            destination = new URL(link.href, window.location.href);
+        } catch (error) {
+            return;
+        }
+
+        var samePage = destination.pathname === window.location.pathname &&
+            destination.search === window.location.search;
+
+        if (destination.origin !== window.location.origin || samePage) return;
+
+        e.preventDefault();
+        isLeaving = true;
+        document.body.classList.add('guaguas-page-is-leaving');
+
+        // Espera a que termine el fundido de salida antes de abrir la nueva página.
+        window.setTimeout(function() {
+            window.location.href = destination.href;
+        }, 280);
+    });
+})();
+
+// ── Barra fija de ubicación durante la lectura ─────────────────
+(function() {
+    var bar = document.querySelector('.reading-context-bar');
+    var breadcrumb = document.querySelector('.reading-context-trigger');
+    if (!bar || !breadcrumb) return;
+
+    function updateReadingContext() {
+        // Muestra la barra solo cuando el lugar de las migas ya pasó bajo el menú fijo.
+        var hasPassedBreadcrumb = breadcrumb.getBoundingClientRect().top <= 52;
+        bar.classList.toggle('is-visible', hasPassedBreadcrumb);
+        bar.setAttribute('aria-hidden', hasPassedBreadcrumb ? 'false' : 'true');
+    }
+
+    window.addEventListener('scroll', updateReadingContext, { passive: true });
+    window.addEventListener('resize', updateReadingContext);
+    updateReadingContext();
+})();
+
+// ── Abrir en el índice el capítulo indicado desde la barra contextual ──
+(function() {
+    document.addEventListener('click', function(e) {
+        var button = e.target.closest('.reading-context-bar__parent[data-open-chapter]');
+        if (!button) return;
+
+        var chapterId = button.getAttribute('data-open-chapter');
+        var sidebar = document.getElementById('sidebar-indice');
+        var list = document.getElementById('subcapitulos-' + chapterId);
+        if (!sidebar || !list) return;
+
+        // Separa la entrada del panel de la apertura del capítulo para evitar un salto.
+        document.body.classList.add('sidebar-opening-from-context');
+        document.body.classList.remove('sidebar-is-closing');
+        var menuToggle = document.getElementById('toggle-indice');
+        var toggle = list.closest('.capitulo-item')?.querySelector('.sidebar-accordion-toggle');
+
+        // Algunas páginas ya traen esta lista abierta por ser la sección activa.
+        // La cerramos un instante para poder desplegarla después de la entrada del panel.
+        list.classList.add('hidden');
+        toggle?.setAttribute('aria-expanded', 'false');
+        toggle?.querySelector('.chevron-icon')?.classList.remove('rotate-90');
+
+        // Dos fotogramas dan al navegador tiempo para preparar la animación de entrada.
+        requestAnimationFrame(function() {
+            requestAnimationFrame(function() {
+                sidebar.classList.remove('-translate-x-full');
+                sidebar.classList.add('translate-x-0');
+                document.body.classList.add('sidebar-is-open');
+                menuToggle?.setAttribute('aria-expanded', 'true');
+                menuToggle?.querySelector('.menu-icon')?.classList.add('hidden');
+                menuToggle?.querySelector('.close-icon')?.classList.remove('hidden');
+
+                window.setTimeout(function() {
+                    list.classList.remove('hidden');
+                    toggle?.setAttribute('aria-expanded', 'true');
+                    toggle?.querySelector('.chevron-icon')?.classList.add('rotate-90');
+                    list.closest('.capitulo-item')?.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+                }, 250);
+            });
+        });
+
+        window.setTimeout(function() {
+            document.body.classList.remove('sidebar-opening-from-context');
+        }, 760);
+    });
+})();
+
 // ── Anclas internas del sidebar (scroll suave dentro de la misma página) ──
 (function() {
+    function getFixedReadingOffset() {
+        var header = document.querySelector('header.fixed');
+        var contextBar = document.querySelector('.reading-context-bar');
+        var headerHeight = header ? header.offsetHeight : 52;
+        // La barra aparecerá al bajar hasta el ancla, aunque esté oculta al calcular.
+        var contextHeight = contextBar ? contextBar.offsetHeight : 0;
+        return headerHeight + contextHeight + 16;
+    }
+
     function doScroll(id, smooth) {
         var target = document.getElementById(id);
         if (!target) return false;
-        var headerOffset = 80; // compensar header fijo
+        var headerOffset = getFixedReadingOffset();
         var top = target.getBoundingClientRect().top + window.pageYOffset - headerOffset;
         window.scrollTo({ top: top, behavior: smooth ? 'smooth' : 'auto' });
         return true;

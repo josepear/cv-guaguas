@@ -11,11 +11,6 @@
     <meta property="og:type" content="website">
     <meta property="og:image" content="<?php echo LIBRO_URI; ?>/assets/images/hero-home.jpg">
     
-    <!-- Preconnect para performance -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Antonio:wght@400;700&family=Archivo:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,300;1,400;1,500;1,600;1,700&display=swap" rel="stylesheet">
-    
     <!-- Tailwind CSS CDN with custom config (identical to React) -->
     <script src="https://cdn.tailwindcss.com"></script>
     <script>
@@ -151,7 +146,6 @@
         .light ::selection { background: hsl(45 100% 42% / 0.25); color: var(--lm-fg); }
         .light .newspaper-quote { background: hsl(220 15% 90% / 0.3); border-left-color: hsl(45 100% 42% / 0.5); color: hsl(220 50% 12% / 0.85); }
         .light .editorial-quote { border-left-color: var(--lm-gold); }
-        .light .editorial-quote::before { color: hsl(45 100% 42% / 0.3); }
         .light .timeline-container { border-left-color: var(--lm-gold); }
         .light .timeline-event::before { background: var(--lm-gold); }
         .light .timeline-year { color: var(--lm-gold); }
@@ -219,12 +213,8 @@
         .\[animation-delay\:400ms\] { animation-delay: 400ms; }
         .\[animation-delay\:600ms\] { animation-delay: 600ms; }
         .\[animation-delay\:800ms\] { animation-delay: 800ms; }
-        .editorial-quote { position: relative; padding-left: 1.5rem; border-left: 3px solid hsl(45 100% 50%); font-style: italic; }
-        .editorial-quote::before { content: '"'; position: absolute; top: -0.5rem; left: 0.5rem; font-size: 3rem; font-family: Georgia, serif; color: hsl(45 100% 50% / 0.3); line-height: 1; }
         .content-image img { transition: transform 0.5s cubic-bezier(0.4, 0, 0.2, 1); }
         .content-image:hover img { transform: scale(1.02); }
-        .reading-content p { font-size: 1.125rem; line-height: 1.8; margin-bottom: 1.5rem; }
-        .reading-content p:last-child { margin-bottom: 0; }
         .bg-card\/30 { background-color: hsl(220 45% 20% / 0.3); }
         .bg-card\/50 { background-color: hsl(220 45% 20% / 0.5); }
     </style>
@@ -245,7 +235,7 @@
 <!-- Fixed Header - identical to React -->
 <header class="fixed top-0 left-0 right-0 z-50 flex items-center justify-between px-4 h-[52px] header-blur border-b border-sidebar-border">
     <!-- Menu Toggle Button -->
-    <button id="toggle-indice" class="flex items-center gap-2 px-3 py-2 text-foreground hover:text-gold transition-colors duration-300" aria-label="Abrir índice">
+    <button id="toggle-indice" class="flex items-center gap-2 px-3 py-2 text-foreground hover:text-gold transition-colors duration-300" aria-label="Abrir índice" aria-expanded="false" aria-controls="sidebar-indice">
         <svg class="menu-icon w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/>
         </svg>
@@ -267,6 +257,3 @@
         </a>
     </div>
 </header>
-
-<!-- Overlay - IDENTICAL to React (shows on all devices when sidebar is open) -->
-<div id="sidebar-overlay" class="fixed inset-0 top-[52px] bg-background/80 backdrop-blur-sm z-40 hidden"></div>

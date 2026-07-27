@@ -5,8 +5,6 @@
  * Colors: Navy Blue + Yellow/Gold (CV Guaguas branding)
  */
 
-@import url('https://fonts.googleapis.com/css2?family=Antonio:wght@400;700&family=Archivo:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,300;1,400;1,500;1,600;1,700&display=swap');
-
 /* ============================================
    CSS VARIABLES - Design System
    ============================================ */
@@ -243,6 +241,255 @@ h1, h2, h3, h4, h5, h6 {
 /* Header padding offset */
 .pt-header { padding-top: 52px; }
 
+/* Barra contextual: releva a las migas normales cuando estas salen de pantalla. */
+.reading-context-bar {
+    position: fixed;
+    top: 52px;
+    left: 0;
+    right: 0;
+    z-index: 45;
+    display: flex;
+    justify-content: center;
+    padding: 0.55rem 1.5rem;
+    color: hsl(0 0% 96%);
+    /* Continúa el header: no es una banda independiente sobre el contenido. */
+    background: hsl(220 55% 8%);
+    border-bottom: 1px solid hsl(var(--gold) / 0.35);
+    box-shadow: none;
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(-0.75rem);
+    pointer-events: none;
+    transition: opacity 220ms ease, transform 220ms ease, visibility 220ms ease, left 580ms cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.reading-context-bar.is-visible {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
+    pointer-events: auto;
+}
+
+.reading-context-bar__inner {
+    display: flex;
+    align-items: center;
+    gap: 0.45rem;
+    width: min(100%, 70rem);
+    min-width: 0;
+    font-family: var(--font-sans);
+    font-size: 0.76rem;
+    line-height: 1.25;
+    white-space: nowrap;
+}
+
+.reading-context-bar a,
+.reading-context-bar button {
+    color: hsl(var(--gold));
+    text-decoration: none;
+    transition: color 160ms ease;
+}
+
+.reading-context-bar button {
+    padding: 0;
+    font: inherit;
+    background: transparent;
+    border: 0;
+    cursor: pointer;
+}
+
+.reading-context-bar a:hover,
+.reading-context-bar button:hover { color: hsl(0 0% 100%); }
+.reading-context-bar__separator { color: hsl(0 0% 100% / 0.5); }
+.reading-context-bar__current {
+    overflow: hidden;
+    color: hsl(0 0% 100% / 0.9);
+    text-overflow: ellipsis;
+}
+
+@media (min-width: 1024px) {
+    body.sidebar-is-open .reading-context-bar { left: 320px; }
+    body.sidebar-is-closing .reading-context-bar {
+        transition-duration: 720ms;
+        transition-timing-function: cubic-bezier(0.65, 0, 0.35, 1);
+    }
+
+    /* Al abrir desde una miga, primero entra el índice y luego su contenido. */
+    body.sidebar-opening-from-context .guaguas-menu-layout {
+        transition-duration: 720ms;
+    }
+
+    body.sidebar-opening-from-context .guaguas-menu-layout > #sidebar-indice {
+        transition: opacity 360ms cubic-bezier(0.22, 1, 0.36, 1) 110ms;
+    }
+}
+
+@media (max-width: 1023px) {
+    body.sidebar-opening-from-context #sidebar-indice {
+        transition-duration: 520ms !important;
+        transition-timing-function: cubic-bezier(0.22, 1, 0.36, 1) !important;
+    }
+}
+
+@media (max-width: 640px) {
+    .reading-context-bar { padding: 0.5rem 1rem; }
+    .reading-context-bar__inner { font-size: 0.69rem; gap: 0.32rem; }
+}
+
+body.light .reading-context-bar {
+    color: hsl(220 50% 12%);
+    background: hsl(40 25% 95%);
+    border-bottom-color: hsl(45 100% 42% / 0.5);
+}
+
+body.light .reading-context-bar__current { color: hsl(220 50% 12% / 0.85); }
+body.light .reading-context-bar__separator { color: hsl(220 50% 12% / 0.45); }
+
+/* Cuando se muestra la ubicación, header y miga forman un único bloque sólido. */
+body:has(.reading-context-bar.is-visible) .header-blur {
+    background-color: hsl(220 55% 8%) !important;
+    border-bottom-color: transparent !important;
+}
+
+body.light:has(.reading-context-bar.is-visible) .header-blur {
+    background-color: hsl(40 25% 95%) !important;
+}
+
+/* Las migas originales dejan su lugar como referencia de scroll, pero no se muestran. */
+.reading-context-trigger {
+    height: 1px;
+    margin: 0 !important;
+    overflow: hidden;
+    visibility: hidden;
+    pointer-events: none;
+}
+
+/*
+   En escritorio, el índice deja espacio real a su izquierda: el libro se
+   adapta al hueco disponible en vez de quedar oscurecido por una capa encima.
+*/
+@media (min-width: 1024px) {
+    .guaguas-menu-layout {
+        --guaguas-menu-width: 0px;
+        display: grid;
+        grid-template-areas: "sidebar content";
+        grid-template-columns: var(--guaguas-menu-width) minmax(0, 1fr);
+        align-items: start;
+        transition: grid-template-columns 580ms cubic-bezier(0.22, 1, 0.36, 1);
+    }
+
+    body.sidebar-is-open .guaguas-menu-layout {
+        --guaguas-menu-width: 320px;
+    }
+
+    body.sidebar-is-closing .guaguas-menu-layout {
+        transition-duration: 720ms;
+        transition-timing-function: cubic-bezier(0.65, 0, 0.35, 1);
+    }
+
+    .guaguas-menu-layout > #sidebar-indice {
+        grid-area: sidebar;
+        position: sticky;
+        top: 52px;
+        left: auto;
+        z-index: 40;
+        width: 100%;
+        min-width: 0;
+        height: calc(100vh - 52px);
+        overflow: hidden;
+        transform: none !important;
+        opacity: 0;
+        pointer-events: none;
+        transition: opacity 180ms ease;
+    }
+
+    body.sidebar-is-open .guaguas-menu-layout > #sidebar-indice {
+        opacity: 1;
+        pointer-events: auto;
+        transition: opacity 220ms ease 100ms;
+    }
+
+    body.sidebar-is-closing .guaguas-menu-layout > #sidebar-indice {
+        opacity: 0;
+        pointer-events: none;
+        transition: opacity 360ms ease 100ms;
+    }
+
+    .guaguas-menu-layout > main,
+    .guaguas-menu-layout > section {
+        grid-area: content;
+        width: auto !important;
+        min-width: 0;
+        margin-left: 0 !important;
+        transition: none;
+        will-change: auto;
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    main {
+        transition: none;
+    }
+}
+
+/* Entrada editorial: el contenido aparece sin saltos y una línea dorada guía
+   el cambio de página. No bloquea la navegación ni desplaza la lectura. */
+@media (prefers-reduced-motion: no-preference) {
+    .guaguas-menu-layout > main,
+    .guaguas-menu-layout > section {
+        position: relative;
+        animation: guaguas-page-reveal 420ms cubic-bezier(0.22, 1, 0.36, 1) both;
+    }
+
+    .guaguas-menu-layout > main::after,
+    .guaguas-menu-layout > section::after {
+        content: '';
+        position: absolute;
+        top: 0;
+        right: 0;
+        left: 0;
+        z-index: 30;
+        height: 2px;
+        background: hsl(var(--gold));
+        pointer-events: none;
+        transform: scaleX(0);
+        transform-origin: left center;
+        animation: guaguas-page-line 760ms cubic-bezier(0.22, 1, 0.36, 1) both;
+    }
+}
+
+@keyframes guaguas-page-reveal {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+/* Salida breve antes de abrir otro capítulo: evita el corte seco de navegación. */
+@media (prefers-reduced-motion: no-preference) {
+    body.guaguas-page-is-leaving .guaguas-menu-layout > main,
+    body.guaguas-page-is-leaving .guaguas-menu-layout > section {
+        animation: guaguas-page-leave 280ms cubic-bezier(0.4, 0, 1, 1) both;
+    }
+}
+
+@keyframes guaguas-page-leave {
+    from {
+        opacity: 1;
+    }
+    to {
+        opacity: 0;
+    }
+}
+
+@keyframes guaguas-page-line {
+    0% { opacity: 0; transform: scaleX(0); }
+    22% { opacity: 0.85; }
+    76% { opacity: 0.85; transform: scaleX(1); }
+    100% { opacity: 0; transform: scaleX(1); }
+}
+
 /* Hover utilities */
 .hover\:text-gold:hover { color: hsl(var(--gold)); }
 .hover\:text-gold-light:hover { color: hsl(var(--gold-light)); }
@@ -340,13 +587,55 @@ h1, h2, h3, h4, h5, h6 {
     box-shadow: 0 0 6px rgba(255, 255, 255, 0.4);
 }
 
-/* Editorial quote styling */
-.editorial-quote {
-    font-family: var(--font-serif);
-    font-style: italic;
+/* Citas destacadas: mismo tratamiento para personas, prensa y documentos. */
+.editorial-quote,
+.newspaper-quote {
+    margin: 2rem 0;
+    padding: 0.25rem 0 0.25rem 1.25rem;
+    background: transparent;
+    border-left: 2px solid hsl(var(--gold));
+    color: hsl(var(--foreground) / 0.9);
+    font-family: 'Archivo', sans-serif;
+    font-size: inherit;
+    font-style: normal;
+    line-height: 1.4;
+}
+
+.editorial-quote p,
+.newspaper-quote p {
     position: relative;
-    padding-left: 2rem;
-    border-left: 3px solid hsl(var(--gold));
+    margin: 0;
+    color: inherit;
+    font-family: inherit;
+    font-size: inherit !important;
+    font-style: normal;
+    font-weight: 400;
+    letter-spacing: 0.2px;
+    line-height: inherit;
+}
+
+.editorial-quote p::before,
+.newspaper-quote p::before {
+    content: '\201C';
+    position: absolute;
+    top: -0.6rem;
+    left: -1.1rem;
+    color: hsl(var(--gold));
+    font-family: var(--font-serif);
+    font-size: 2.5rem;
+    font-weight: 700;
+    line-height: 1;
+}
+
+.editorial-quote footer,
+.newspaper-quote .newspaper-quote-source {
+    display: block;
+    margin-top: 0.55rem;
+    color: hsl(var(--muted-foreground));
+    font-family: 'Archivo', sans-serif;
+    font-size: 0.8rem;
+    font-style: normal;
+    font-weight: 500;
 }
 
 /* Section header highlighted - yellow background like the book */
@@ -363,6 +652,15 @@ h1, h2, h3, h4, h5, h6 {
     padding: 0.25rem 0.5rem;
     -webkit-box-decoration-break: clone;
     box-decoration-break: clone;
+}
+
+/* Norma editorial: cabeceras grandes y subtítulos comparten el código visual del capítulo 01. */
+.chapter-hero .hero-line-animated > span,
+.section-header-highlighted,
+.section-header-inverted,
+.section-header-navy {
+    color: hsl(220 50% 10%) !important;
+    background-color: hsl(var(--gold)) !important;
 }
 
 h2.section-header-highlighted {
@@ -391,6 +689,14 @@ body.light .section-header-inverted {
 body.light .section-header-navy {
     background-color: hsl(220 50% 12%);
     color: #ffffff;
+}
+
+/* Capítulo 24: titulares amarillos con tipografía azul, sin afectar al resto. */
+.chapter-24-style .section-header-highlighted,
+.chapter-24-style .section-header-inverted,
+.chapter-24-style .section-header-navy {
+    color: #1a237e !important;
+    background-color: hsl(var(--gold)) !important;
 }
 
 /* Player profile name - bold uppercase like book */
@@ -500,30 +806,6 @@ body.light .prologue-name {
 }
 
 
-.newspaper-quote {
-    margin: 1.5rem 0;
-    padding: 1rem 1.5rem;
-    background: hsl(var(--muted) / 0.3);
-    border-left: 3px solid hsl(var(--gold) / 0.5);
-    font-style: italic;
-    font-size: 0.95rem;
-    line-height: 1.7;
-    color: hsl(var(--foreground) / 0.85);
-}
-
-.newspaper-quote p {
-    margin: 0;
-}
-
-.newspaper-quote-source {
-    display: block;
-    margin-top: 0.5rem;
-    font-style: normal;
-    font-size: 0.8rem;
-    color: hsl(var(--muted-foreground));
-    font-weight: 500;
-}
-
 /* Drop Cap - Editorial book style */
 .drop-cap-paragraph {
     font-size: 1.125rem;
@@ -552,36 +834,40 @@ body.light .bloque-color .drop-cap {
 
 /* Timeline styles */
 .timeline-container {
-    border-left: 3px solid hsl(var(--gold));
+    border-left: 2px solid hsl(var(--gold));
     padding-left: 1.5rem;
 }
 
 .timeline-event {
-    margin-bottom: 1.25rem;
+    /* Separa cada hito completo del año que viene después. */
+    margin-bottom: 3rem;
     position: relative;
 }
 
 .timeline-event::before {
     content: '';
     position: absolute;
-    left: -1.85rem;
+    /* El punto se calcula desde el centro de la línea de 2px. */
+    left: calc(-1.5rem - 6px);
     top: 0.5rem;
     width: 10px;
     height: 10px;
     background: hsl(var(--gold));
-    border-radius: 0;
-    transform: rotate(45deg);
+    border-radius: 50%;
 }
 
 .timeline-year {
     font-family: var(--font-display);
     font-weight: 900;
-    font-size: 1.06rem;
+    font-size: 1.4rem;
+    line-height: 1;
     color: hsl(220 50% 10%);
     background-color: hsl(var(--gold));
-    display: inline-block;
-    padding: 0.1rem 0.5rem;
-    margin-bottom: 0.35rem;
+    /* La fecha ocupa su propia fila y queda unida al contenido del hito. */
+    display: table;
+    padding: 0.22rem 0.65rem;
+    /* Fecha y titular se leen como una sola cabecera. */
+    margin-bottom: 0;
 }
 
 body.light .timeline-year {
@@ -589,6 +875,8 @@ body.light .timeline-year {
 }
 
 .timeline-content {
+    /* Compensa la altura de la fila de la fecha para unirla al titular. */
+    margin-top: -0.6rem;
     font-size: 0.95rem;
     line-height: 1.7;
     color: hsl(var(--foreground) / 0.8);
@@ -643,7 +931,18 @@ body.light .timeline-year {
 }
 
 .reading-content p {
+    font-family: 'Archivo', sans-serif;
+    font-weight: 300;
+    color: hsl(var(--foreground));
+    line-height: 1.4;
+    letter-spacing: 0.5px;
+    -webkit-font-smoothing: antialiased;
     margin-bottom: 1.5em;
+}
+
+/* En modo claro el texto de lectura debe permanecer negro y legible. */
+body.light .reading-content p {
+    color: #1e1e1e;
 }
 
 .reading-content h2 {
@@ -775,6 +1074,27 @@ body.light .timeline-year {
     transform: translateY(0) translateX(0);
 }
 
+/* Aparición progresiva de los bloques de lectura al hacer scroll. */
+.scroll-reveal {
+    opacity: 0;
+    transform: translateY(16px);
+    transition: opacity 480ms ease-out, transform 480ms ease-out;
+    will-change: opacity, transform;
+}
+
+.scroll-reveal.scroll-revealed {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .scroll-reveal {
+        opacity: 1;
+        transform: none;
+        transition: none;
+    }
+}
+
 [data-reveal-delay="100"] { transition-delay: 100ms; }
 [data-reveal-delay="200"] { transition-delay: 200ms; }
 [data-reveal-delay="300"] { transition-delay: 300ms; }
@@ -819,6 +1139,24 @@ body.light .timeline-year {
     transform: scale(1.1);
     will-change: transform;
     transition: none;
+}
+
+/* Tablet tiene su propio foco sin alterar ni escritorio ni móvil. */
+@media (min-width: 768px) and (max-width: 1023px) {
+    .chapter-hero .hero-bg-parallax {
+        background-position: var(--hero-tablet-background-position) !important;
+    }
+}
+
+/* En pantalla vertical se conserva el detalle importante de cada fotografía. */
+@media (max-width: 767px) {
+    .chapter-hero {
+        height: min(460px, 64svh) !important;
+    }
+
+    .chapter-hero .hero-bg-parallax {
+        background-position: var(--hero-mobile-background-position) !important;
+    }
 }
 
 /* ============================================
@@ -2082,6 +2420,76 @@ body.dark .ficha-debut-titulo {
     color: hsl(220 50% 8%);
 }
 
+/* El capitulo 24 usa una pagina dorada completa, tambien en modo oscuro. */
+.chapter-24-style {
+    background-color: hsl(var(--gold)) !important;
+}
+
+/* El fondo y el contraste se aplican a toda la pagina, no solo al bloque interior. */
+main.chapter-24-style,
+main.chapter-24-style .reading-content,
+main.chapter-24-style .patrocinador-page {
+    background-color: hsl(var(--gold)) !important;
+    color: #1a237e !important;
+}
+
+main.chapter-24-style .reading-content p,
+main.chapter-24-style .reading-content li,
+main.chapter-24-style .reading-content h1,
+main.chapter-24-style .reading-content h2,
+main.chapter-24-style .reading-content h3,
+main.chapter-24-style .reading-content h4,
+main.chapter-24-style .reading-content strong,
+main.chapter-24-style .reading-content a {
+    color: #1a237e !important;
+}
+
+/* Los pases de pagina necesitan una tarjeta oscura para contrastar con el fondo amarillo. */
+main.chapter-24-style nav a#nav-prev,
+main.chapter-24-style nav a#nav-next {
+    background-color: hsl(var(--background-elevated)) !important;
+    border-color: hsl(var(--border)) !important;
+    color: #ffffff !important;
+}
+
+main.chapter-24-style nav a#nav-prev:hover,
+main.chapter-24-style nav a#nav-next:hover {
+    background-color: hsl(var(--background-card)) !important;
+    border-color: hsl(var(--border)) !important;
+}
+
+main.chapter-24-style nav a#nav-prev span,
+main.chapter-24-style nav a#nav-next span,
+main.chapter-24-style nav a#nav-prev svg,
+main.chapter-24-style nav a#nav-next svg {
+    color: #ffffff !important;
+}
+
+main.chapter-24-style nav a#nav-prev .text-gold-muted,
+main.chapter-24-style nav a#nav-next .text-gold-muted {
+    color: #ffc400 !important;
+}
+
+.chapter-24-style .patrocinador-page,
+.chapter-24-style .patrocinador-page .reading-content {
+    background-color: hsl(var(--gold)) !important;
+    color: #1a237e !important;
+}
+
+.chapter-24-style .patrocinador-page p,
+.chapter-24-style .patrocinador-page strong,
+.chapter-24-style .patrocinador-page a,
+.chapter-24-style .patrocinador-page li,
+.chapter-24-style .patrocinador-page blockquote,
+.chapter-24-style .patrocinador-page .cita-editorial,
+.chapter-24-style .patrocinador-page .patrocinador-texto,
+.chapter-24-style .patrocinador-page .patrocinador-ficha,
+.chapter-24-style .patrocinador-page .patrocinador-ficha-titulo,
+.chapter-24-style .patrocinador-page .patrocinador-redes,
+.chapter-24-style .patrocinador-page .patrocinador-redes-titulo {
+    color: #1a237e !important;
+}
+
 /* === Lista + Foto (dos columnas) === */
 .lista-foto-grid {
     display: grid;
@@ -2174,6 +2582,46 @@ body.dark .ficha-debut-titulo {
 /* ============================================
    404 PAGE
    ============================================ */
+
+/* Foto de plantilla a todo el ancho con dorsales que escalan con la imagen. */
+.plantilla-foto-numerada__frame {
+    position: relative;
+    width: 100%;
+    overflow: hidden;
+    border-radius: 0.25rem;
+}
+
+.plantilla-foto-numerada__frame img {
+    display: block;
+    width: 100%;
+    height: auto;
+}
+
+.plantilla-foto-numerada__numero {
+    position: absolute;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: clamp(0.9rem, 1.8vw, 1.5rem);
+    height: clamp(0.9rem, 1.8vw, 1.5rem);
+    transform: translate(-50%, -50%);
+    border-radius: 2px;
+    background: hsl(var(--gold));
+    color: hsl(220 50% 12%);
+    font-family: 'Antonio', sans-serif;
+    font-size: clamp(0.58rem, 1vw, 0.9rem);
+    font-weight: 900;
+    line-height: 1;
+    z-index: 1;
+}
+
+@media (max-width: 700px) {
+    .plantilla-foto-numerada__numero {
+        width: clamp(0.78rem, 3.8vw, 1.1rem);
+        height: clamp(0.78rem, 3.8vw, 1.1rem);
+        font-size: clamp(0.5rem, 2vw, 0.7rem);
+    }
+}
 
 /* On desktop, the 404 content area sits to the right of the 320px sidebar.
    flex justify-center already centers within that area — no extra offset needed.
@@ -2625,6 +3073,11 @@ body.light .cv-cookie-toggle[aria-checked="true"]::after {
 }
 
 @media (max-width: 560px) {
+    /* En móvil quitamos solo la foto decorativa; la tabla sigue visible. */
+    .euro-infografia__bg {
+        display: none;
+    }
+
     .euro-infografia__grid {
         columns: 1;
     }

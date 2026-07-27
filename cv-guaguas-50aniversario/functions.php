@@ -4,9 +4,18 @@
  */
 
 // Definir constantes del tema
-define('LIBRO_VERSION', '1.0.0');
 define('LIBRO_DIR', get_template_directory());
 define('LIBRO_URI', get_template_directory_uri());
+
+/**
+ * Genera una versión nueva cuando cambia un archivo del tema.
+ * Así el navegador descarga el CSS y JavaScript actualizados.
+ */
+function libro_asset_version($relative_path) {
+    $file_path = LIBRO_DIR . $relative_path;
+
+    return file_exists($file_path) ? (string) filemtime($file_path) : '1.0.0';
+}
 
 // Cargar módulos del tema
 require_once LIBRO_DIR . '/inc/meta-boxes.php';
@@ -19,7 +28,7 @@ function libro_enqueue_assets() {
     // Google Fonts - Antonio + Archivo (colores CV Guaguas)
     wp_enqueue_style(
         'libro-fonts',
-        'https://fonts.googleapis.com/css2?family=Antonio:wght@400;700&family=Archivo:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,300;1,400;1,500;1,600;1,700&display=swap',
+        'https://fonts.googleapis.com/css2?family=Antonio:wght@400;700;900&family=Archivo:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,300;1,400;1,500;1,600;1,700&display=swap',
         array(),
         null
     );
@@ -29,7 +38,7 @@ function libro_enqueue_assets() {
         'libro-main',
         LIBRO_URI . '/assets/css/main.css',
         array('libro-fonts'),
-        LIBRO_VERSION
+        libro_asset_version('/assets/css/main.css')
     );
     
     // JavaScript principal
@@ -37,7 +46,7 @@ function libro_enqueue_assets() {
         'libro-main',
         LIBRO_URI . '/assets/js/main.js',
         array(),
-        LIBRO_VERSION,
+        libro_asset_version('/assets/js/main.js'),
         true
     );
     
@@ -48,6 +57,57 @@ function libro_enqueue_assets() {
     ));
 }
 add_action('wp_enqueue_scripts', 'libro_enqueue_assets');
+
+/**
+ * Da una dirección fija a la primera cronología de cada lectura.
+ * Así el índice puede llevar al lector a ella sin crear una página nueva.
+ */
+function libro_add_timeline_anchor($content) {
+    if (stripos($content, 'timeline-container') === false || stripos($content, 'id="cronologia"') !== false) {
+        return $content;
+    }
+
+    return preg_replace(
+        '/<div class=([\'\"])timeline-container\\1/i',
+        '<div id="cronologia" class=$1timeline-container$1',
+        $content,
+        1
+    );
+}
+add_filter('the_content', 'libro_add_timeline_anchor', 20);
+
+/**
+ * Barra contextual que mantiene visible el lugar de lectura al hacer scroll.
+ * Usa el título real de la página, por lo que no hay que rellenarla a mano.
+ */
+function libro_context_bar($post_id = 0) {
+    $post_id = $post_id ?: get_the_ID();
+    if (!$post_id) {
+        return;
+    }
+
+    $parent_id = wp_get_post_parent_id($post_id);
+    $numero = get_post_meta($post_id, '_numero_capitulo', true);
+    $ocultar_numero = get_post_meta($post_id, '_ocultar_numero', true) === '1';
+    $current_label = (!$ocultar_numero && $numero) ? $numero . '. ' . get_the_title($post_id) : get_the_title($post_id);
+    ?>
+    <aside class="reading-context-bar" aria-label="Ubicación actual" aria-hidden="true">
+        <div class="reading-context-bar__inner">
+            <?php if ($parent_id) :
+                $parent_numero = get_post_meta($parent_id, '_numero_capitulo', true);
+                $parent_ocultar = get_post_meta($parent_id, '_ocultar_numero', true) === '1';
+                $parent_label = (!$parent_ocultar && $parent_numero) ? $parent_numero . '. ' . get_the_title($parent_id) : get_the_title($parent_id);
+            ?>
+                <button class="reading-context-bar__parent" type="button" data-open-chapter="<?php echo esc_attr($parent_id); ?>" aria-controls="subcapitulos-<?php echo esc_attr($parent_id); ?>">
+                    <?php echo esc_html($parent_label); ?>
+                </button>
+                <span class="reading-context-bar__separator" aria-hidden="true">›</span>
+            <?php endif; ?>
+            <span class="reading-context-bar__current" aria-current="page"><?php echo esc_html($current_label); ?></span>
+        </div>
+    </aside>
+    <?php
+}
 
 /**
  * Enqueue media uploader para la página de opciones
@@ -731,6 +791,15 @@ function libro_theme_activation() {
 add_action('after_switch_theme', 'libro_theme_activation');
 
 /**
+ * La cita ya puede traer una comilla inicial desde el texto del libro.
+ * La retiramos solo al mostrarla porque el estilo visual añade una única
+ * comilla decorativa; el contenido guardado en WordPress no se modifica.
+ */
+function libro_mostrar_cita_con_una_sola_comilla($content) {
+    return preg_replace('/^(\s*(?:<p>)?\s*)[\"\x{201C}\x{00AB}]/u', '$1', $content, 1);
+}
+
+/**
  * Shortcode: Editorial Quote - idéntico a React EditorialQuote.tsx
  * Uso: [cita_editorial author="Nombre" source="Fuente"]Texto de la cita[/cita_editorial]
  */
@@ -739,12 +808,12 @@ function libro_shortcode_cita_editorial($atts, $content = null) {
         'author' => '',
         'source' => '',
     ), $atts, 'cita_editorial');
-    
+
     ob_start();
     ?>
     <blockquote class="editorial-quote my-8 md:my-12 py-4" data-reveal="left">
         <p class="text-xl md:text-2xl text-foreground/90 leading-relaxed mb-4">
-            <?php echo wp_kses_post($content); ?>
+            <?php echo wp_kses_post(libro_mostrar_cita_con_una_sola_comilla($content)); ?>
         </p>
         <?php if ($atts['author'] || $atts['source']) : ?>
         <footer class="text-sm text-muted-foreground">
@@ -812,6 +881,166 @@ function libro_shortcode_imagen_contenido($atts) {
     return ob_get_clean();
 }
 add_shortcode('imagen_contenido', 'libro_shortcode_imagen_contenido');
+
+/**
+ * Foto de plantilla con dorsales superpuestos.
+ * Los porcentajes permiten que las etiquetas acompañen a cada jugador al escalar.
+ */
+function libro_dorsales_por_defecto() {
+    return array(
+        1 => array('left' => '15%', 'top' => '34%'),
+        2 => array('left' => '29%', 'top' => '38%'),
+        3 => array('left' => '35%', 'top' => '25%'),
+        4 => array('left' => '47%', 'top' => '29%'),
+        5 => array('left' => '59%', 'top' => '28%'),
+        6 => array('left' => '66%', 'top' => '33%'),
+        7 => array('left' => '77%', 'top' => '31%'),
+        8 => array('left' => '23%', 'top' => '39%'),
+        9 => array('left' => '37%', 'top' => '39%'),
+        10 => array('left' => '49%', 'top' => '42%'),
+        11 => array('left' => '61%', 'top' => '50%'),
+        12 => array('left' => '76%', 'top' => '48%'),
+        13 => array('left' => '33%', 'top' => '66%'),
+        14 => array('left' => '48%', 'top' => '66%'),
+    );
+}
+
+function libro_shortcode_foto_plantilla($atts) {
+    $atts = shortcode_atts(array(
+        'file' => '',
+        'alt'  => 'Plantilla del CV Guaguas',
+    ), $atts, 'foto_plantilla');
+
+    if (empty($atts['file'])) {
+        return '';
+    }
+
+    $dorsales = libro_dorsales_por_defecto();
+    $post_id = get_the_ID();
+    $guardados = $post_id ? get_post_meta($post_id, '_libro_dorsales_plantilla', true) : '';
+    if (is_array($guardados) && count($guardados) === count($dorsales)) {
+        $dorsales = $guardados;
+    }
+
+    ob_start();
+    ?>
+    <figure class="plantilla-foto-numerada content-image my-8 md:my-12 -mx-4 md:-mx-8" data-reveal="up">
+        <div class="plantilla-foto-numerada__frame">
+            <img src="<?php echo esc_url(get_template_directory_uri() . '/assets/images/' . $atts['file']); ?>" alt="<?php echo esc_attr($atts['alt']); ?>" loading="lazy">
+            <?php foreach ($dorsales as $numero => $posicion) : ?>
+                <span class="plantilla-foto-numerada__numero" style="left:<?php echo esc_attr($posicion['left']); ?>;top:<?php echo esc_attr($posicion['top']); ?>;"><?php echo esc_html($numero); ?></span>
+            <?php endforeach; ?>
+        </div>
+    </figure>
+    <?php
+    return ob_get_clean();
+}
+add_shortcode('foto_plantilla', 'libro_shortcode_foto_plantilla');
+
+/**
+ * Editor visual de dorsales para el capítulo 19.
+ * Guarda solo posiciones, no modifica el texto ni las imágenes originales.
+ */
+function libro_dorsales_add_meta_box($post) {
+    if (!$post || $post->post_name !== 'la-plantilla-del-cincuentenario') {
+        return;
+    }
+
+    add_meta_box(
+        'libro_dorsales_plantilla',
+        'Colocar dorsales sobre la foto',
+        'libro_dorsales_render_meta_box',
+        'capitulo',
+        'normal',
+        'high'
+    );
+}
+add_action('add_meta_boxes_capitulo', 'libro_dorsales_add_meta_box', 10, 1);
+
+function libro_dorsales_render_meta_box($post) {
+    if ($post->post_name !== 'la-plantilla-del-cincuentenario') {
+        echo '<p>Esta herramienta está reservada para el capítulo 19.</p>';
+        return;
+    }
+
+    wp_nonce_field('libro_dorsales_guardar', 'libro_dorsales_nonce');
+    $dorsales = libro_dorsales_por_defecto();
+    $guardados = get_post_meta($post->ID, '_libro_dorsales_plantilla', true);
+    if (is_array($guardados) && count($guardados) === count($dorsales)) {
+        $dorsales = $guardados;
+    }
+    ?>
+    <p>Arrastra cada número hasta el pecho del jugador. Después pulsa <strong>Actualizar</strong>.</p>
+    <div id="libro-editor-dorsales" style="position:relative;max-width:900px;line-height:0;background:#fff;overflow:hidden;border:1px solid #ccd0d4;">
+        <img src="<?php echo esc_url(get_template_directory_uri() . '/assets/images/20cap_plan_foto1.jpg'); ?>" alt="Plantilla del CV Guaguas" style="display:block;width:100%;height:auto;">
+        <?php foreach ($dorsales as $numero => $posicion) : ?>
+            <button type="button" class="libro-editor-dorsal" data-numero="<?php echo esc_attr($numero); ?>" style="position:absolute;left:<?php echo esc_attr($posicion['left']); ?>;top:<?php echo esc_attr($posicion['top']); ?>;transform:translate(-50%,-50%);width:30px;height:30px;padding:0;border:0;border-radius:3px;background:#ffc000;color:#101a2d;font-weight:900;line-height:30px;cursor:grab;">
+                <?php echo esc_html($numero); ?>
+            </button>
+        <?php endforeach; ?>
+    </div>
+    <input type="hidden" id="libro_dorsales_positions" name="libro_dorsales_positions" value="<?php echo esc_attr(wp_json_encode($dorsales)); ?>">
+    <script>
+    (function () {
+        const editor = document.getElementById('libro-editor-dorsales');
+        const input = document.getElementById('libro_dorsales_positions');
+        if (!editor || !input) return;
+        const positions = JSON.parse(input.value);
+        let moving = null;
+
+        editor.querySelectorAll('.libro-editor-dorsal').forEach(function (marker) {
+            marker.addEventListener('pointerdown', function (event) {
+                moving = marker;
+                marker.setPointerCapture(event.pointerId);
+                marker.style.cursor = 'grabbing';
+                event.preventDefault();
+            });
+
+            marker.addEventListener('pointermove', function (event) {
+                if (!moving) return;
+                const rect = editor.getBoundingClientRect();
+                const left = Math.max(0, Math.min(100, ((event.clientX - rect.left) / rect.width) * 100));
+                const top = Math.max(0, Math.min(100, ((event.clientY - rect.top) / rect.height) * 100));
+                const numero = marker.dataset.numero;
+                marker.style.left = left + '%';
+                marker.style.top = top + '%';
+                positions[numero] = {left: left.toFixed(2) + '%', top: top.toFixed(2) + '%'};
+                input.value = JSON.stringify(positions);
+            });
+
+            marker.addEventListener('pointerup', function () {
+                moving = null;
+                marker.style.cursor = 'grab';
+            });
+        });
+    }());
+    </script>
+    <?php
+}
+
+function libro_dorsales_save_meta($post_id) {
+    if (!isset($_POST['libro_dorsales_nonce']) || !wp_verify_nonce($_POST['libro_dorsales_nonce'], 'libro_dorsales_guardar')) return;
+    if (defined('DOING_AUTOSAVE') && DOING_AUTOSAVE) return;
+    if (wp_is_post_revision($post_id) || get_post_type($post_id) !== 'capitulo') return;
+    if (!current_user_can('edit_post', $post_id) || get_post_field('post_name', $post_id) !== 'la-plantilla-del-cincuentenario') return;
+    if (empty($_POST['libro_dorsales_positions'])) return;
+
+    $positions = json_decode(wp_unslash($_POST['libro_dorsales_positions']), true);
+    if (!is_array($positions) || count($positions) !== 14) return;
+
+    $clean = array();
+    foreach ($positions as $numero => $posicion) {
+        if (!isset($posicion['left'], $posicion['top'])) continue;
+        $clean[(int) $numero] = array(
+            'left' => max(0, min(100, (float) $posicion['left'])) . '%',
+            'top'  => max(0, min(100, (float) $posicion['top'])) . '%',
+        );
+    }
+    if (count($clean) === 14) {
+        update_post_meta($post_id, '_libro_dorsales_plantilla', $clean);
+    }
+}
+add_action('save_post_capitulo', 'libro_dorsales_save_meta');
 
 /**
  * Shortcode alternativo para imágenes usando ID de media
@@ -1063,6 +1292,7 @@ function libro_shortcode_seccion_header($atts, $content = null) {
         'highlighted' => 'true',
         'color'       => '',
         'star'        => 'false',
+        'star_position' => 'above',
         'texto'       => '',   // text color override; defaults to #ffffff for dark bg, class default for no-color
         'tag'         => 'h3', // html tag: h2 or h3
         'id'          => '',   // optional HTML id, used as anchor target for sidebar deep-links
@@ -1074,9 +1304,13 @@ function libro_shortcode_seccion_header($atts, $content = null) {
     // Star above the header — left-aligned, estrella-icon.svg path inline, proportional to section text (1rem)
     $star_above = '';
     if ($atts['star'] === 'true' || $atts['star'] === '1') {
-        $star_color = $atts['color'] && $atts['color'] !== 'inverted' ? esc_attr($atts['color']) : 'hsl(45 100% 50%)';
+        // Norma editorial: las estrellas de los subtítulos usan siempre el dorado corporativo.
+        $star_color = 'hsl(45 100% 50%)';
         // estrella-icon.svg viewBox 1280×1181 → aspect ratio ~1.08:1 → at 1.2rem height, width ≈ 1.3rem
-        $star_above = '<span aria-hidden="true" style="display:block;margin-bottom:0.3rem;">'
+        $star_style = $atts['star_position'] === 'left'
+            ? 'display:inline-flex;flex:0 0 auto;margin-right:0.7rem;align-items:center;'
+            : 'display:block;margin-bottom:0.3rem;';
+        $star_above = '<span aria-hidden="true" style="' . $star_style . '">'
             . '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1280 1181" style="width:2.3rem;height:2.2rem;display:inline-block;" fill="' . $star_color . '">'
             . '<g transform="translate(0,1181) scale(0.1,-0.1)" fill="' . $star_color . '" stroke="none">'
             . '<path d="M6327 11292 c-60 -180 -161 -489 -227 -687 -65 -198 -233 -709 -373 -1135 -141 -426 -367 -1114 -503 -1527 l-248 -753 -2358 0 c-1297 0 -2358 -3 -2358 -7 0 -5 170 -130 378 -279 207 -149 1057 -758 1887 -1353 831 -596 1518 -1091 1528 -1100 20 -19 55 94 -420 -1346 -187 -570 -344 -1047 -628 -1910 -141 -429 -286 -869 -322 -978 -36 -109 -63 -201 -60 -204 7 -6 -236 -180 1912 1362 1012 726 1855 1331 1872 1343 l33 23 762 -548 c2447 -1758 3053 -2191 3056 -2188 2 2 -46 153 -106 337 -61 183 -216 655 -346 1048 -511 1556 -712 2168 -811 2470 -145 440 -185 563 -185 575 0 6 855 623 1900 1373 1045 750 1900 1368 1900 1373 0 5 -909 10 -2357 11 l-2356 3 -164 500 c-90 275 -272 826 -403 1225 -131 399 -383 1166 -560 1705 -177 539 -325 983 -329 987 -4 5 -55 -139 -114 -320z"/>'
@@ -1085,20 +1319,23 @@ function libro_shortcode_seccion_header($atts, $content = null) {
 
     if ($atts['highlighted'] === 'true' || $atts['highlighted'] === '1') {
         if ($atts['color'] === 'inverted') {
-            return '<div class="mt-10 mb-5"' . $anchor_id . ' data-reveal="left">' . $star_above . '<' . $tag . ' class="section-header-highlighted section-header-inverted">' . wp_kses_post($content) . '</' . $tag . '></div>';
+            $layout_style = $atts['star_position'] === 'left' ? ' style="display:flex;align-items:center;"' : '';
+            return '<div class="mt-20 mb-5"' . $anchor_id . ' data-reveal="left"' . $layout_style . '>' . $star_above . '<' . $tag . ' class="section-header-highlighted section-header-inverted">' . wp_kses_post($content) . '</' . $tag . '></div>';
         }
         if ($atts['color'] === 'navy') {
-            return '<div class="mt-10 mb-5"' . $anchor_id . ' data-reveal="left">' . $star_above . '<' . $tag . ' class="section-header-highlighted section-header-navy">' . wp_kses_post($content) . '</' . $tag . '></div>';
+            $layout_style = $atts['star_position'] === 'left' ? ' style="display:flex;align-items:center;"' : '';
+            return '<div class="mt-20 mb-5"' . $anchor_id . ' data-reveal="left"' . $layout_style . '>' . $star_above . '<' . $tag . ' class="section-header-highlighted section-header-navy">' . wp_kses_post($content) . '</' . $tag . '></div>';
         }
         $text_color = $atts['texto'] ? esc_attr($atts['texto']) : ($atts['color'] ? '#ffffff' : '');
         $style = '';
         if ($atts['color'] || $text_color) {
             $style = ' style="' . ($atts['color'] ? 'background-color:' . esc_attr($atts['color']) . ';' : '') . ($text_color ? 'color:' . $text_color . ';' : '') . '"';
         }
-        return '<div class="mt-10 mb-5"' . $anchor_id . ' data-reveal="left">' . $star_above . '<' . $tag . ' class="section-header-highlighted"' . $style . '>' . wp_kses_post($content) . '</' . $tag . '></div>';
+        $layout_style = $atts['star_position'] === 'left' ? ' style="display:flex;align-items:center;"' : '';
+        return '<div class="mt-20 mb-5"' . $anchor_id . ' data-reveal="left"' . $layout_style . '>' . $star_above . '<' . $tag . ' class="section-header-highlighted"' . $style . '>' . wp_kses_post($content) . '</' . $tag . '></div>';
     }
 
-    return '<' . $tag . ' class="font-serif text-xl md:text-2xl font-bold text-foreground mt-12 mb-6 uppercase tracking-wide"' . $anchor_id . ' data-reveal="left">' . wp_kses_post($content) . '</' . $tag . '>';
+    return '<' . $tag . ' class="font-serif text-xl md:text-2xl font-bold text-foreground mt-24 mb-6 uppercase tracking-wide"' . $anchor_id . ' data-reveal="left">' . wp_kses_post($content) . '</' . $tag . '>';
 }
 add_shortcode('seccion_header', 'libro_shortcode_seccion_header');
 add_shortcode('encabezado_seccion', 'libro_shortcode_seccion_header');
@@ -1214,7 +1451,7 @@ function libro_shortcode_cita_prensa($atts, $content = null) {
     ?>
     <div data-reveal="left">
         <blockquote class="newspaper-quote">
-            <p><?php echo wp_kses_post($content); ?></p>
+            <p><?php echo wp_kses_post(libro_mostrar_cita_con_una_sola_comilla($content)); ?></p>
             <?php if ($atts['source']) : ?>
             <cite class="newspaper-quote-source"><?php echo esc_html($atts['source']); ?></cite>
             <?php endif; ?>
@@ -1541,11 +1778,14 @@ function libro_shortcode_nota_rival($atts, $content = null) {
 add_shortcode('nota_rival', 'libro_shortcode_nota_rival');
 
 /**
- * Redirigir capítulos padre al primer subcapítulo
- * Idéntico al comportamiento de React: Navigate to={children[0].slug}
+ * Los capítulos con contenido propio deben mostrarlo antes de sus subcapítulos.
+ * Los capítulos vacíos conservan la entrada automática al primer subcapítulo.
  */
 function libro_redirect_parent_chapters() {
     if (!is_singular('capitulo')) return;
+
+    $current = get_post(get_the_ID());
+    if ($current && trim(wp_strip_all_tags($current->post_content)) !== '') return;
     
     $children = get_posts(array(
         'post_type'      => 'capitulo',

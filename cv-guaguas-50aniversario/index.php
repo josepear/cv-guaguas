@@ -11,6 +11,7 @@
 get_header(); 
 ?>
 
+<div class="guaguas-menu-layout">
 <main class="main-content flex-1 overflow-y-auto lg:ml-[320px]">
     <div class="max-w-4xl mx-auto px-6 py-12">
         
@@ -48,5 +49,8 @@ get_header();
 
 <?php 
 get_sidebar('indice');
+?>
+</div>
+<?php
 get_footer(); 
 ?>

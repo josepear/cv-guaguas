@@ -5,24 +5,13 @@
  * VERSION: 2026-06-13-fullwidth
  */
 
-// Si el capítulo tiene hijos, redirigir al primero (igual que React Chapter.tsx)
-$first_child = get_posts(array(
-    'post_type'      => 'capitulo',
-    'posts_per_page' => 1,
-    'orderby'        => 'menu_order',
-    'order'          => 'ASC',
-    'post_parent'    => get_the_ID(),
-));
-if (!empty($first_child)) {
-    wp_redirect(get_permalink($first_child[0]->ID), 301);
-    exit;
-}
-
 get_header();
 
 // Obtener datos del capítulo actual
 $capitulo_numero = get_post_meta(get_the_ID(), '_numero_capitulo', true);
 $capitulo_subtitulo = get_post_meta(get_the_ID(), '_subtitulo', true);
+$chapter_root_id = wp_get_post_parent_id(get_the_ID()) ?: get_the_ID();
+$chapter_special_class = get_post_meta($chapter_root_id, '_numero_capitulo', true) === '24' ? ' chapter-24-style' : '';
 
 // Hero fields
 $hero_enabled = get_post_meta(get_the_ID(), '_hero_enabled', true);
@@ -40,7 +29,17 @@ $hero_vertical = get_post_meta(get_the_ID(), '_hero_vertical', true) ?: 'center'
 $hero_title_lines = get_post_meta(get_the_ID(), '_hero_title_lines', true);
 $hero_border_color = get_post_meta(get_the_ID(), '_hero_border_color', true);
 $hero_bg_position = get_post_meta(get_the_ID(), '_hero_background_position', true) ?: 'center top';
+$hero_tablet_bg_position = get_post_meta(get_the_ID(), '_hero_tablet_background_position', true) ?: $hero_bg_position;
+$hero_mobile_bg_position = get_post_meta(get_the_ID(), '_hero_mobile_background_position', true) ?: $hero_bg_position;
 $hero_bg_color = get_post_meta(get_the_ID(), '_hero_background_color', true);
+
+// Norma editorial: las estrellas de las cabeceras siempre usan el dorado corporativo.
+if ($hero_icon === 'star' || $hero_icon === 'star-outline') {
+    $hero_icon_color = 'hsl(45 100% 50%)';
+}
+if ($hero_custom_icon && stripos(basename(parse_url($hero_custom_icon, PHP_URL_PATH)), 'estrella') !== false) {
+    $hero_custom_icon_color = 'hsl(45 100% 50%)';
+}
 
 // Navegación depth-first excluyendo padres con hijos (igual que React getAllChapters())
 // Solo incluimos páginas con contenido real (sin hijos)
@@ -61,13 +60,19 @@ foreach ($top_chapters as $top) {
         'order'          => 'ASC',
         'post_parent'    => $top->ID,
     ));
+
+    // Los padres con texto propio también forman parte de la lectura.
+    // Después se añaden sus subcapítulos en el orden habitual.
+    if (trim(wp_strip_all_tags($top->post_content)) !== '') {
+        $all_chapters_flat[] = $top->ID;
+    }
+
     if (!empty($children)) {
-        // Padre con hijos: añadir solo los hijos, no el padre
         foreach ($children as $child) {
             $all_chapters_flat[] = $child->ID;
         }
-    } else {
-        // Página standalone sin hijos: añadirla directamente
+    } elseif (trim(wp_strip_all_tags($top->post_content)) === '') {
+        // Página standalone sin hijos ni contenido propio: añadirla directamente
         $all_chapters_flat[] = $top->ID;
     }
 }
@@ -79,6 +84,36 @@ $prev_capitulo = ($current_flat_index !== false && $current_flat_index > 0)
 $next_capitulo = ($current_flat_index !== false && $current_flat_index < count($all_chapters_flat) - 1)
     ? get_post($all_chapters_flat[$current_flat_index + 1])
     : null;
+
+// Las tarjetas solo enseñan el número al cruzar de una sección a otra.
+// Una sección es el capítulo padre; si la página no tiene padre, es ella misma.
+$current_section_id = wp_get_post_parent_id(get_the_ID()) ?: get_the_ID();
+$format_section_number = function($post) use ($current_section_id) {
+    if (!$post) {
+        return '';
+    }
+
+    $section_id = wp_get_post_parent_id($post->ID) ?: $post->ID;
+    if ($section_id === $current_section_id) {
+        return '';
+    }
+
+    $number = get_post_meta($section_id, '_numero_capitulo', true);
+    $digits = preg_replace('/\D+/', '', (string) $number);
+    return $digits === '' ? '' : str_pad((string) (int) $digits, 2, '0', STR_PAD_LEFT);
+};
+
+$prev_section_number = $format_section_number($prev_capitulo);
+$next_section_number = $format_section_number($next_capitulo);
+
+// Al cambiar de capítulo, la tarjeta nombra el capítulo y deja la primera
+// lectura como segunda línea. Dentro del mismo capítulo mantiene solo la página.
+$prev_section_id = $prev_capitulo ? (wp_get_post_parent_id($prev_capitulo->ID) ?: $prev_capitulo->ID) : 0;
+$next_section_id = $next_capitulo ? (wp_get_post_parent_id($next_capitulo->ID) ?: $next_capitulo->ID) : 0;
+$prev_navigation_title = $prev_section_number ? get_the_title($prev_section_id) : ($prev_capitulo ? $prev_capitulo->post_title : '');
+$next_navigation_title = $next_section_number ? get_the_title($next_section_id) : ($next_capitulo ? $next_capitulo->post_title : '');
+$prev_navigation_detail = ($prev_section_number && $prev_capitulo && $prev_capitulo->post_title !== $prev_navigation_title) ? $prev_capitulo->post_title : '';
+$next_navigation_detail = ($next_section_number && $next_capitulo && $next_capitulo->post_title !== $next_navigation_title) ? $next_capitulo->post_title : '';
 
 // Alignment classes for hero
 $align_classes = array(
@@ -145,17 +180,20 @@ if ($hero_icon === 'custom' && $hero_custom_icon) {
     <div id="reading-progress-bar" class="h-full bg-gold transition-all duration-100 ease-out" style="width: 0%;"></div>
 </div>
 
+<?php libro_context_bar(get_the_ID()); ?>
+
+<div class="guaguas-menu-layout">
 <!-- Sidebar -->
 <?php get_template_part('sidebar', 'indice'); ?>
 
 <!-- Main Content - estructura idéntica a React -->
-<main class="pt-[56px] min-h-screen bg-background">
+<main class="pt-[56px] min-h-screen bg-background<?php echo esc_attr($chapter_special_class); ?>">
     
     <?php if ($hero_enabled === '1' && ($hero_image || $hero_bg_color)) : ?>
     <!-- Chapter Hero -->
     <div class="chapter-hero relative overflow-hidden w-full" style="<?php echo esc_attr($hero_height_style); ?><?php if ($hero_bg_color) echo 'background-color:' . esc_attr($hero_bg_color) . ';'; ?>">
         <?php if ($hero_image) : ?>
-        <div class="absolute inset-0 bg-cover bg-no-repeat hero-bg-parallax" style="background-image: url('<?php echo esc_url($hero_image); ?>'); background-position: <?php echo esc_attr($hero_bg_position); ?>;"></div>
+        <div class="absolute inset-0 bg-cover bg-no-repeat hero-bg-parallax" style="background-image: url('<?php echo esc_url($hero_image); ?>'); background-position: <?php echo esc_attr($hero_bg_position); ?>; --hero-tablet-background-position: <?php echo esc_attr($hero_tablet_bg_position); ?>; --hero-mobile-background-position: <?php echo esc_attr($hero_mobile_bg_position); ?>;"></div>
         <?php endif; ?>
         
         <?php if ($hero_overlay) : ?>
@@ -225,7 +263,7 @@ if ($hero_icon === 'custom' && $hero_custom_icon) {
         $ocultar_num = get_post_meta(get_the_ID(), '_ocultar_numero', true) === '1';
         $current_label = (!$ocultar_num && $cap_numero) ? $cap_numero . '. ' . get_the_title() : get_the_title();
         ?>
-        <nav aria-label="breadcrumb" class="mb-6">
+        <nav aria-label="breadcrumb" class="mb-6 reading-context-trigger">
             <ol class="flex flex-wrap items-center gap-1.5 break-words text-xs text-muted-foreground sm:gap-2.5">
                 <li class="inline-flex items-center gap-1.5">
                     <a href="<?php echo esc_url(home_url('/')); ?>" class="text-muted-foreground hover:text-gold transition-colors flex items-center gap-1">
@@ -335,7 +373,7 @@ if ($hero_icon === 'custom' && $hero_custom_icon) {
                 while (have_posts()) : the_post();
                     // Obtener contenido con shortcodes procesados pero SIN wpautop
                     // para que los marcadores HTML no queden envueltos en <p>
-                    $raw = do_shortcode(get_the_content());
+                    $raw = libro_add_timeline_anchor(do_shortcode(get_the_content()));
                     $marker_start = '<!--EURO_INFOGRAFIA_START-->';
                     $marker_end   = '<!--EURO_INFOGRAFIA_END-->';
 
@@ -367,51 +405,6 @@ if ($hero_icon === 'custom' && $hero_custom_icon) {
                 endwhile;
                 ?>
                 
-                <?php
-                // Sub-chapters (if any)
-                $subcapitulos = get_posts(array(
-                    'post_type' => 'capitulo',
-                    'post_parent' => get_the_ID(),
-                    'orderby' => 'menu_order',
-                    'order' => 'ASC',
-                    'numberposts' => -1
-                ));
-                
-                if ($subcapitulos) :
-                ?>
-                <section class="mt-12 pt-8 border-t border-border/30">
-                    <h3 class="text-xl font-serif font-semibold text-foreground mb-6">
-                        En este capítulo
-                    </h3>
-                    
-                    <div class="grid gap-4">
-                        <?php foreach ($subcapitulos as $sub) : 
-                            $sub_numero = get_post_meta($sub->ID, '_numero_capitulo', true);
-                        ?>
-                        <a 
-                            href="<?php echo get_permalink($sub->ID); ?>" 
-                            class="group flex items-center gap-4 p-4 rounded border border-border/50 bg-card/30 hover:border-gold/50 hover:bg-card/50 transition-all duration-300"
-                        >
-                            <?php if ($sub_numero) : ?>
-                            <span class="flex-shrink-0 w-10 h-10 flex items-center justify-center rounded bg-gold/10 text-gold text-sm font-medium">
-                                <?php echo esc_html($sub_numero); ?>
-                            </span>
-                            <?php endif; ?>
-                            
-                            <div class="flex-1 min-w-0">
-                                <h4 class="font-serif font-medium text-foreground group-hover:text-gold transition-colors">
-                                    <?php echo esc_html($sub->post_title); ?>
-                                </h4>
-                            </div>
-                            
-                            <svg class="w-5 h-5 text-muted-foreground group-hover:text-gold group-hover:translate-x-1 transition-all" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/>
-                            </svg>
-                        </a>
-                        <?php endforeach; ?>
-                    </div>
-                </section>
-                <?php endif; ?>
             </div>
         </section>
         
@@ -420,9 +413,7 @@ if ($hero_icon === 'custom' && $hero_custom_icon) {
             <div class="flex flex-col sm:flex-row items-stretch gap-4">
                 
                 <!-- Previous Chapter -->
-                <?php if ($prev_capitulo) : 
-                    $prev_numero = get_post_meta($prev_capitulo->ID, '_numero_capitulo', true);
-                ?>
+                <?php if ($prev_capitulo) : ?>
                 <a 
                     id="nav-prev"
                     href="<?php echo get_permalink($prev_capitulo->ID); ?>" 
@@ -436,10 +427,13 @@ if ($hero_icon === 'custom' && $hero_custom_icon) {
                             Anterior
                         </span>
                         <span class="font-serif text-foreground group-hover:text-gold transition-colors">
-                            <?php if ($prev_numero) : ?>
-                                <span class="text-gold-muted mr-2"><?php echo esc_html($prev_numero); ?></span>
+                            <?php if ($prev_section_number) : ?>
+                                <span class="text-gold-muted mr-2"><?php echo esc_html($prev_section_number); ?></span>
                             <?php endif; ?>
-                            <?php echo esc_html($prev_capitulo->post_title); ?>
+                            <?php echo esc_html($prev_navigation_title); ?>
+                            <?php if ($prev_navigation_detail) : ?>
+                                <span class="block mt-1 font-sans text-xs text-muted-foreground"><?php echo esc_html($prev_navigation_detail); ?></span>
+                            <?php endif; ?>
                         </span>
                     </div>
                 </a>
@@ -448,9 +442,7 @@ if ($hero_icon === 'custom' && $hero_custom_icon) {
                 <?php endif; ?>
                 
                 <!-- Next Chapter -->
-                <?php if ($next_capitulo) : 
-                    $next_numero = get_post_meta($next_capitulo->ID, '_numero_capitulo', true);
-                ?>
+                <?php if ($next_capitulo) : ?>
                 <a 
                     id="nav-next"
                     href="<?php echo get_permalink($next_capitulo->ID); ?>" 
@@ -461,10 +453,13 @@ if ($hero_icon === 'custom' && $hero_custom_icon) {
                             Siguiente
                         </span>
                         <span class="font-serif text-foreground group-hover:text-gold transition-colors">
-                            <?php if ($next_numero) : ?>
-                                <span class="text-gold-muted mr-2"><?php echo esc_html($next_numero); ?></span>
+                            <?php if ($next_section_number) : ?>
+                                <span class="text-gold-muted mr-2"><?php echo esc_html($next_section_number); ?></span>
                             <?php endif; ?>
-                            <?php echo esc_html($next_capitulo->post_title); ?>
+                            <?php echo esc_html($next_navigation_title); ?>
+                            <?php if ($next_navigation_detail) : ?>
+                                <span class="block mt-1 font-sans text-xs text-muted-foreground"><?php echo esc_html($next_navigation_detail); ?></span>
+                            <?php endif; ?>
                         </span>
                     </div>
                     <svg class="w-5 h-5 text-muted-foreground group-hover:text-gold transition-colors" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -481,6 +476,7 @@ if ($hero_icon === 'custom' && $hero_custom_icon) {
     </div>
 
 </main>
+</div>
 
 <script>
 // Reading Progress Bar - igual que ReadingProgressBar.tsx
